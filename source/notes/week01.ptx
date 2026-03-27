@@ -14,7 +14,35 @@
     <title>Monday 8/22</title>
 
     <p>
+      This is my first paragraph.
     </p>
+
+    <p>
+      This is my second paragraph.
+    </p>
+
+    <theorem xml:id="thm-pythagorean">
+      <title>Pythagorean Theorem</title>
+      
+      
+      <statement>
+        <p>
+          For a right triangle with sides <m>a</m> and <m>b</m> and hypotenuse <m>c</m>, 
+          <md>
+            a^2+b^2=c^2
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+    
+    <proof>
+      <p>
+        Left to the reader.
+      </p>
+    </proof>
+
+    
   </subsection>
 
 
