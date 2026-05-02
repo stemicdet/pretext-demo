@@ -6,9 +6,9 @@
   <xi:include href="./docinfo.ptx" />
   <!-- By creating a PreTeXt "book" for the course, we can split components into "chapters" -->
   <book>
-    <title>PreTeXt Demo Course</title>
+    <title>Real Variables</title>
 
-    <subtitle>MATH 101 Semester 2026</subtitle>
+    <subtitle>MATH 650 Fall 2026</subtitle>
 
     <!-- Optional: include frontmatter with author info and date -->
     <xi:include href="./frontmatter.ptx" />
@@ -38,26 +38,9 @@
     </chapter>
 
 
-    <chapter xml:id="activities">
-      <title>In-Class Activities</title>
+   
 
-      <introduction>
-        <p>
-          These are copies of the in-class activities distributed during the semester.
-        </p>
-      </introduction>
-
-      <!-- Remove the example and replace with your own activities -->
-      <xi:include href="./activities/01-intro-activity.ptx"/>
-
-      <!-- Add more xi:include files here to include them in the main course -->
-    </chapter>
-
-    <chapter xml:id="handouts">
-      <title>Handouts</title>
-      <!-- Include handouts -->
-      <!--<xi:include href="./handouts/handout-filename.ptx"/>-->
-    </chapter>
+    
 
     <chapter xml:id="homework">
       <title>Homework</title>

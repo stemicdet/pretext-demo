@@ -1,13 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="notes-week-02">
-  <title>Week 2</title>
+  <title>Week 2: Outer Measure on $\mathbf{R}$ (2A) </title>
 
-  <subsection>
-    <title>Monday</title>
+  <subsection xml:id="Motivation">
+    <title>Motivation and Definition of Outer Measure</title>
 
     <p>
+      Lebesgue's revolutionary new idea of how to integrate is that we should partition the range of the function and not the domain.
     </p>
+
+    <p>
+      This means that the integral will take the form of a sum
+      <md>
+         S = \sum \eta_i m(E_i)
+      </md>
+      that ranges over all output values $\eta_i$. In this sum, $E_i$ is the set of all $x$ in the domain such that $f(x) = \eta_i$.
+    </p>
+
+    <p>
+      If $E_i$ is an interval, then $m(E_i)$ should denote the length of the interval. Similarly if $E_i$ is a finite union of intervals, then $m(E_i)$ should be the sum of the lengths of each sub-interval. 
+    </p>
+
+    <p>
+      The set $E_i$ can be more complicated then an interval or a union of intervals. How should we define $m(E_i)$ in this case?
+    </p>
+
+    <p>
+      Lebesgue's first attempt at generalizing the length of an interval led to the development of Outer Measure.
+    </p>
+
+    <p>
+      To define Outer Measure we first define the length of an open interval.
+    </p>
+
+   <definition xml:id="def-length">
+    <title>Length of an Open Interval</title>
+    
+    
+    <statement>
+      <p>
+        The length $\ell(I)$ of an open interval is defined by 
+        <md>
+          \ell(I) = \begin{cases} 
+      \hfill  b-a \amp \text{ if $I = (a,b)$ for some $a,b \in \mathbf{R}$ with $a &lt; b$,} \\
+      \hfill  0  \amp \text{ if $I = \emptyset$,} \\
+      \hfill  \infty \amp \text{ if $I = (-\infty,a)$ or $I = (a, \infty)$ for some $a \in \mathbf{R}$,} \\
+      \hfill  \infty  \amp \text{ if $I = (-\infty, \infty)$} 
+  \end{cases}
+        </md>
+        
+      </p>
+    </statement>
+   </definition>
+
+   <p>
+    If $A \subseteq \mathbf{R}$ is an arbitrary set then the size of $A$ should be less than the lengths of a sequence of intervals that contain $A$. By taking the infinimum over all such covers of $A$ we get a pretty good estimate for the size of $A$.
+   </p>
+
+   <definition xml:id="def-outer-measure">
+    <statement>
+      <p>
+        The outer measure of $A \subseteq \mathbf{R}$ is denoted by $|A|$ and defined by
+        <md>
+          |A| = \inf \left\{ \sum_{k=1}^{\infty} \ell(I_k): I_1, I_2, \ldots \text{ are open intervals such that } A \subseteq \bigcup_{k=1}^{\infty} I_k \right\}
+        </md>
+        
+      </p>
+    </statement>
+   </definition>
+
+   <example>
+    The outer measure of the closed interval $[a,b]$ is $b-a$.
+   </example>
+
+   <proof>
+    <p>
+       First we will show that $|[a,b]| \leq b-a$. Let $\epsilon>0$ be arbitrary. Then $[a,b]$ is contained in the open interval $(a-\epsilon, b+\epsilon)$, which has length $b-a+2\epsilon$. Since $\epsilon$ can be made arbitrarily small, it follows that $|[a,b]| \leq b-a$.
+    </p>
+
+    <p>
+      To prove the other direction we will need the Heine-Borel theorem.
+    </p>
+   </proof>
+
+   <theorem xml:id="thm-heine-borel">
+    <statement>
+      <p>
+        Let $F \subseteq \mathbf{R}$. The following are equivalent.
+        <ol>
+          <li>
+            <p>
+              $F$ is compact. (That is, every sequence of points in $F$ has a subsequence that converges in $F$.)
+            </p>
+          </li>
+          <li>
+            <p>
+              $F$ is closed and bounded.
+            </p>
+          </li>
+          <li>
+            <p>
+              Every open cover of $F$ contains a finite subcover.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+   </theorem>
+   
+   <p>
+    We now return to the proof that $|[a,b]| \geq b-a$, suppose that $[a,b] \subseteq \bigcup_{k=1}^{\infty} I_k$.
+   </p>
+
+   <proof>
+    <p>
+      By the Heine-Borel Theorem, there is a finite collection of these sets so that $[a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n$.
+    </p>
+    <p>
+      We will prove by induction that
+      <md>
+        \sum_{k=1}^n \ell(I_k) \geq b-a
+      </md>
+      which implies that $|[a,b]| \geq b-a$.
+    </p>
+
+    <p>
+       For the base case, note that if $n = 1$ then this means that $[a,b] \subseteq I_1$ and hence $\ell(I_1) \geq b-a$.
+    </p>
+
+    <p>
+      Now we assume that $n &gt; 1$ and $[a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n$ implies that 
+      <md>
+        \sum_{k=1}^n \ell(I_k) \geq b-a
+      </md>
+      for all choices of $a,b \in \mathbf{R}$ with $a &lt; b$. 
+    </p>
+
+    <p>
+      Now suppose that $I_1, I_2, \ldots I_{n+1}$ are open intervals and $[a,b] \subseteq I_1 \cup I_2 \cup  \ldots \cup I_{n+1}$. Then $b$ belongs to one of those intervals and by relabeling them if necessary we can assume that $b \in I_{n+1}$.
+    </p>
+
+    <p>
+      Suppose $I_{n+1} = (c,d)$. If $c \leq a$ then $a \in I_{n+1}$ and $\ell(I_{n+1}) \geq b-a$. Hence we have proven what we want if this is the case.
+    </p>
+
+    <p>
+      Thus we can assume that $a &lt; c &lt; b &lt; d$.
+    </p>
+
+    <p>
+      Since $I_{n+1}$ only covers $(c,d)$, this means that $(a,c) \subseteq I_1 \cup I_2 \cup \ldots \cup I_n$. Hence by the induction hypothesis,
+      <md>
+         \sum_{k=1}^n \ell(I_k) \geq c-a.
+      </md>
+      
+    </p>
+
+    <p>
+      Thus,
+      <md>
+        <mrow>\sum_{k=1}^{n+1} \ell(I_k) = \sum_{k=1}^n \ell(I_k) + \ell(I_{n+1}) \amp \geq c-a + b-c </mrow>
+        <mrow> \amp =b-a,</mrow>
+      </md>
+      which completes the proof. \qed
+    </p>
+
+   </proof>
+
+
   </subsection>
 
 
