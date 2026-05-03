@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="notes-week-02">
-  <title>Week 2: Outer Measure on $\mathbf{R}$ (2A) </title>
+  <title>Week 2: Outer Measure on <m>\mathbf{R}</m> (2A) </title>
 
   <subsection xml:id="Motivation">
     <title>Motivation and Definition of Outer Measure</title>
@@ -15,15 +15,15 @@
       <md>
          S = \sum \eta_i m(E_i)
       </md>
-      that ranges over all output values $\eta_i$. In this sum, $E_i$ is the set of all $x$ in the domain such that $f(x) = \eta_i$.
+      that ranges over all output values <m>\eta_i</m>. In this sum, <m>E_i</m> is the set of all <m>x</m> in the domain such that <m>f(x) = \eta_i</m>.
     </p>
 
     <p>
-      If $E_i$ is an interval, then $m(E_i)$ should denote the length of the interval. Similarly if $E_i$ is a finite union of intervals, then $m(E_i)$ should be the sum of the lengths of each sub-interval. 
+      If <m>E_i</m> is an interval, then <m>m(E_i)</m> should denote the length of the interval. Similarly if <m>E_i</m> is a finite union of intervals, then <m>m(E_i)</m> should be the sum of the lengths of each sub-interval. 
     </p>
 
     <p>
-      The set $E_i$ can be more complicated then an interval or a union of intervals. How should we define $m(E_i)$ in this case?
+      The set <m>E_i</m> can be more complicated then an interval or a union of intervals. How should we define <m>m(E_i)</m> in this case?
     </p>
 
     <p>
@@ -40,7 +40,7 @@
     
     <statement>
       <p>
-        The length $\ell(I)$ of an open interval is defined by 
+        The length <m>\ell(I)</m> of an open interval is defined by 
         <md>
           \ell(I) = \begin{cases} 
       \hfill  b-a \amp \text{ if $I = (a,b)$ for some $a,b \in \mathbf{R}$ with $a &lt; b$,} \\
@@ -55,13 +55,13 @@
    </definition>
 
    <p>
-    If $A \subseteq \mathbf{R}$ is an arbitrary set then the size of $A$ should be less than the lengths of a sequence of intervals that contain $A$. By taking the infinimum over all such covers of $A$ we get a pretty good estimate for the size of $A$.
+    If <m>A \subseteq \mathbf{R}</m> is an arbitrary set then the size of <m>A</m> should be less than the lengths of a sequence of intervals that contain <m>A</m>. By taking the infinimum over all such covers of <m>A</m> we get a pretty good estimate for the size of <m>A</m>.
    </p>
 
    <definition xml:id="def-outer-measure">
     <statement>
       <p>
-        The outer measure of $A \subseteq \mathbf{R}$ is denoted by $|A|$ and defined by
+        The outer measure of <m>A \subseteq \mathbf{R}</m> is denoted by <m>|A|</m> and defined by
         <md>
           |A| = \inf \left\{ \sum_{k=1}^{\infty} \ell(I_k): I_1, I_2, \ldots \text{ are open intervals such that } A \subseteq \bigcup_{k=1}^{\infty} I_k \right\}
         </md>
@@ -70,13 +70,13 @@
     </statement>
    </definition>
 
-   <example>
-    The outer measure of the closed interval $[a,b]$ is $b-a$.
-   </example>
+   <p>
+    Example: The outer measure of the closed interval <m>[a,b]</m> is <m>b-a</m>.
+   </p>
 
    <proof>
     <p>
-       First we will show that $|[a,b]| \leq b-a$. Let $\epsilon>0$ be arbitrary. Then $[a,b]$ is contained in the open interval $(a-\epsilon, b+\epsilon)$, which has length $b-a+2\epsilon$. Since $\epsilon$ can be made arbitrarily small, it follows that $|[a,b]| \leq b-a$.
+       First we will show that <m>|[a,b]| \leq b-a</m>. Let <m>\epsilon>0</m> be arbitrary. Then <m>[a,b]</m> is contained in the open interval <m>(a-\epsilon, b+\epsilon)</m>, which has length <m>b-a+2\epsilon</m>. Since <m>\epsilon</m> can be made arbitrarily small, it follows that <m>|[a,b]| \leq b-a</m>.
     </p>
 
     <p>
@@ -87,21 +87,21 @@
    <theorem xml:id="thm-heine-borel">
     <statement>
       <p>
-        Let $F \subseteq \mathbf{R}$. The following are equivalent.
+        Let <m>F \subseteq \mathbf{R}</m>. The following are equivalent.
         <ol>
           <li>
             <p>
-              $F$ is compact. (That is, every sequence of points in $F$ has a subsequence that converges in $F$.)
+              <m>F</m> is compact. (That is, every sequence of points in <m>F</m> has a subsequence that converges in <m>F</m>.)
             </p>
           </li>
           <li>
             <p>
-              $F$ is closed and bounded.
+              <m>F</m> is closed and bounded.
             </p>
           </li>
           <li>
             <p>
-              Every open cover of $F$ contains a finite subcover.
+              Every open cover of <m>F</m> contains a finite subcover.
             </p>
           </li>
         </ol>
@@ -110,47 +110,47 @@
    </theorem>
    
    <p>
-    We now return to the proof that $|[a,b]| \geq b-a$, suppose that $[a,b] \subseteq \bigcup_{k=1}^{\infty} I_k$.
+    We now return to the proof that <m>|[a,b]| \geq b-a</m>, suppose that <m>[a,b] \subseteq \bigcup_{k=1}^{\infty} I_k</m>.
    </p>
 
    <proof>
     <p>
-      By the Heine-Borel Theorem, there is a finite collection of these sets so that $[a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n$.
+      By the Heine-Borel Theorem, there is a finite collection of these sets so that <m>[a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n</m>.
     </p>
     <p>
       We will prove by induction that
       <md>
         \sum_{k=1}^n \ell(I_k) \geq b-a
       </md>
-      which implies that $|[a,b]| \geq b-a$.
+      which implies that <m>|[a,b]| \geq b-a</m>.
     </p>
 
     <p>
-       For the base case, note that if $n = 1$ then this means that $[a,b] \subseteq I_1$ and hence $\ell(I_1) \geq b-a$.
+       For the base case, note that if <m>n = 1</m> then this means that <m>[a,b] \subseteq I_1</m> and hence <m>\ell(I_1) \geq b-a</m>.
     </p>
 
     <p>
-      Now we assume that $n &gt; 1$ and $[a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n$ implies that 
+      Now we assume that <m>n &gt; 1</m> and <m>[a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n</m> implies that 
       <md>
         \sum_{k=1}^n \ell(I_k) \geq b-a
       </md>
-      for all choices of $a,b \in \mathbf{R}$ with $a &lt; b$. 
+      for all choices of <m>a,b \in \mathbf{R}</m> with <m>a &lt; b</m>. 
     </p>
 
     <p>
-      Now suppose that $I_1, I_2, \ldots I_{n+1}$ are open intervals and $[a,b] \subseteq I_1 \cup I_2 \cup  \ldots \cup I_{n+1}$. Then $b$ belongs to one of those intervals and by relabeling them if necessary we can assume that $b \in I_{n+1}$.
+      Now suppose that <m>I_1, I_2, \ldots I_{n+1}</m> are open intervals and <m>[a,b] \subseteq I_1 \cup I_2 \cup  \ldots \cup I_{n+1}</m>. Then <m>b</m> belongs to one of those intervals and by relabeling them if necessary we can assume that <m>b \in I_{n+1}</m>.
     </p>
 
     <p>
-      Suppose $I_{n+1} = (c,d)$. If $c \leq a$ then $a \in I_{n+1}$ and $\ell(I_{n+1}) \geq b-a$. Hence we have proven what we want if this is the case.
+      Suppose <m>I_{n+1} = (c,d)</m>. If <m>c \leq a</m> then <m>a \in I_{n+1}</m> and <m>\ell(I_{n+1}) \geq b-a</m>. Hence we have proven what we want if this is the case.
     </p>
 
     <p>
-      Thus we can assume that $a &lt; c &lt; b &lt; d$.
+      Thus we can assume that <m>a &lt; c &lt; b &lt; d</m>.
     </p>
 
     <p>
-      Since $I_{n+1}$ only covers $(c,d)$, this means that $(a,c) \subseteq I_1 \cup I_2 \cup \ldots \cup I_n$. Hence by the induction hypothesis,
+      Since <m>I_{n+1}</m> only covers <m>(c,d)</m>, this means that <m>(a,c) \subseteq I_1 \cup I_2 \cup \ldots \cup I_n</m>. Hence by the induction hypothesis,
       <md>
          \sum_{k=1}^n \ell(I_k) \geq c-a.
       </md>
@@ -163,27 +163,406 @@
         <mrow>\sum_{k=1}^{n+1} \ell(I_k) = \sum_{k=1}^n \ell(I_k) + \ell(I_{n+1}) \amp \geq c-a + b-c </mrow>
         <mrow> \amp =b-a,</mrow>
       </md>
-      which completes the proof. \qed
+      which completes the proof. 
     </p>
 
+   </proof>
+
+   <p>
+     Example: Finite sets have outer measure <m>0</m>.
+   </p>
+
+   <proof>
+    <p>
+      Suppose <m>A = \{a_1, a_2, \ldots, a_n\}</m> is a finite set of real numbers. Let <m>\epsilon &gt; 0</m> be arbitrary and define a sequence of open intervals <m>I_1, I_2, \ldots, I_n</m> by <m>I_k = (a_k-\epsilon, a_k+\epsilon)</m>.
+    </p>
+
+    <p>
+      Then <m>A \subseteq I_1 \cup I_2 \cup \ldots \cup I_n</m> and 
+      <md>
+        \sum_{k=1}^n \ell(I_k) = 2n \epsilon
+      </md>
+      Since <m>2n \epsilon</m> can be made smaller than every positive number it follows that <m>|A| = 0</m>. 
+    </p>
    </proof>
 
 
   </subsection>
 
 
-  <subsection>
-    <title>Wednesday</title>
+  <subsection xml:id="good-properties">
+    <title>Good Properties of Outer Measure</title>
+
+    <theorem xml:id="thm-measure-zero">
+      <statement>
+        <p>
+          Every countable subset of <m>\mathbf{R}</m> has outer measure <m>0</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Suppose <m>A = \{a_1, a_2, \ldots, \}</m> is a countable set of real numbers. Let <m>\epsilon>0</m> be arbitrary and define a sequence of open intervals <m>I_1, I_2, \ldots</m> by <m>I_k = (a_k-\frac{\epsilon}{2^k}, a_k+ \frac{\epsilon}{2^k})</m>.
+      </p>
+
+      <p>
+        Then <m>A \subseteq \displaystyle \bigcup_{k=1}^{\infty} I_k</m> and
+        <md>
+          \sum_{k=1}^{\infty} \ell(I_k) = \sum_{k=1}^{\infty} \frac{2\epsilon}{2^k} = 2\epsilon.
+        </md>
+        Since <m>2 \epsilon</m> can be made smaller than every positive number it follows that <m>|A| = 0</m>. 
+      </p>
+    </proof>
 
     <p>
+      The next theorem shows that the outer measure of a subset is smaller than the outer measure of the larger set. The fancy word for this is that outer measure is monotone.
     </p>
+
+    <theorem xml:id="thm-monotone">
+      <title>Outer Measure Preserves Order</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>A</m> and <m>B</m> are subsets of <m>\mathbf{R}</m> and <m>A \subseteq B</m>. Then <m>|A| \leq |B|</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Suppose <m>I_1, I_2, \ldots</m> is a sequence of intervals whose union contains <m>B</m>. Then <m>A</m> is also contained in the union and hence
+        <md>
+          |A| \leq \sum_{k=1}^{\infty} \ell(I_k).
+        </md>
+        Taking the infimum over all covers of <m>B</m> gives that <m>|A| \leq |B|</m>. 
+      </p>
+    </proof>
+
+    <p>
+      The previous results give us a nice way to show that <m>\mathbf{R}</m> is an uncountable set.
+    </p>
+
+    <corollary xml:id="cor-nontrivial-sets-uncountable">
+      <title>Nontrivial Intervals are Uncountable</title>
+      
+      
+      <statement>
+        <p>
+          Every interval in <m>\mathbf{R}</m> that contains at least 2 distinct elements is uncountable.
+        </p>
+      </statement>
+    </corollary>
+    
+    <proof>
+      <p>
+        Let <m>I</m> be an interval that contains <m>a</m> and <m>b</m> with <m>a &lt; b</m>. Because outer measure preserves order
+        <md>
+          |I| \geq |[a,b]| = b-a > 0,
+        </md>
+        and since countable sets have outer measure <m>0</m>, <m>I</m> is an uncountable set.
+      </p>
+    </proof>
+
+    <p>
+      The size of a set should not change if it is moved up or down the real line. Shifting a set in this way is called a translation.
+    </p>
+
+    <definition xml:id="def-translation">
+      <title>Translation</title>
+      
+      
+      <statement>
+        <p>
+          If <m>t \in \mathbf{R}</m> and <m>A \subseteq \mathbf{R}</m> then the <term>translation</term> <m>t+A</m> is the set defined by
+          <md>
+            t+A = \{t+a: a \in A  \}
+          </md>
+          
+        </p>
+      </statement>
+    </definition>
+
+    <theorem xml:id="thm-translation-invariance">
+      <title>Outer Measure is Translation Invariant</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>t \in \mathbf{R}</m> and <m>A \subseteq \mathbf{R}</m>. Then <m>|t+A| = |A|</m>.
+        </p>
+      </statement>
+    </theorem>
+    
+    <proof>
+      <p>
+        Let <m>I_1, I_2, \ldots</m> be a sequence of intervals that covers <m>A</m>. Then the translations <m>t+I_1, t+I_2, \ldots</m> is a sequence of intervals that contains <m>t+A</m>. Hence
+        <md>
+          |t+A| \leq \sum_{k=1}^{\infty} \ell(t+I_k) = \sum_{k=1}^{\infty} \ell(I_k)
+        </md>
+        Taking the infimum over all covers of <m>A</m> gives that <m>|t+A| \leq |A|</m>.
+      </p>
+
+      <p>
+        For the other direction, we can write <m>A = -t + (t+A)</m>. Thus if <m>I_1, I_2, \ldots</m> is a sequence of intervals that covers <m>t+A</m> then the translations <m>-t+I_1, -t+I_2, \ldots</m> covers <m>A</m>. Hence
+        <md>
+          |A| \leq \sum_{k=1}^{\infty} \ell(-t+I_k) = \sum_{k=1}^{\infty} \ell(I_k)
+        </md>
+        Taking the infimum over all covers of <m>t+A</m> gives that <m>|A| \leq |t+A|</m>. Thus <m>|A| = |t+A|</m>. 
+      </p>
+
+    </proof>
+
+    <p>
+      The final property concerns how outer measure interacts with unions of sets. If <m>A</m> and <m>B</m> are disjoint sets then intuitively the length of <m>A\cup B</m> should equal the length of <m>A</m> plus the length of <m>B</m>, and if <m>A</m> and <m>B</m> overlap then the length of <m>A\cup B</m> should be less than or equal to the combined lengths of <m>A</m> and <m>B</m>.
+    </p>
+
+    <p>
+      An example with intervals confirms this intuition. If <m>A = (0,3)</m> and <m>B = (2,4)</m> then <m>A \cup B = (0,4)</m>. Hence <m>|A| = 3</m>, <m>|B| = 2</m>, and <m>|A\cup B| = 4</m>, so <m>|A \cup B| \leq |A| + |B|</m>.
+    </p>
+
+    <p>
+      In fact, this property, which is called subadditivity, holds for countable unions of arbitrary sets.
+    </p>
+    
+    <theorem xml:id="thm-subadditivity">
+      <title>Countable Subadditivity of Outer Measure</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>A_1</m>, <m>A_2</m>, <m>\ldots</m> is a countable sequence of subsets of <m>\mathbf{R}</m>. Then 
+          <md>
+            \left| \bigcup_{k=1}^{\infty} A_k \right| \leq \sum_{k=1}^{\infty}|A_k|.
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+    
+    <p>
+      Note: The theorem is false for the union of uncountably many sets. Consider the union of each point in <m>[0,1]</m>.
+    </p>
+
+    <proof>
+      <p>
+        If at least one of the <m>A_k</m> has outer measure <m>\infty</m> then the inequality holds. So we may suppose that <m>|A_k| &gt; \infty</m> for all <m>k</m>.
+      </p>
+
+      <p>
+        Let <m>\epsilon>0</m>. For each <m>k</m> let <m>I_{1,k}, I_{2,k}, \ldots</m> be a sequence of intervals that covers <m>I_k</m> such that
+        <md>
+          \sum_{j=1}^{\infty} \ell(I_{j,k}) \leq \frac{\epsilon}{2^k} + |A_k|.
+        </md>
+        
+      </p>
+
+      <p>
+        Thus
+        <md>
+          \sum_{k=1}^{\infty} \sum_{j=1}^{\infty} \ell(I_{j,k}) \leq \epsilon + \sum_{k=1}^{\infty}|A_k|.
+        </md>
+        
+      </p>
+
+      <p>
+        The proof is finished once we show that the doubly indexed intervals <m>I_{j,k}</m> can be rearranged to form a sequence whose union covers <m>\bigcup_{k=1}^{\infty} A_k</m>.
+      </p>
+
+      <p>
+        Consider the sequence <m>I_{1,1}, I_{1,2}, I_{2,1}, I_{1,3}, I_{2,2}, I_{3,1}, I_{1,4}, I_{2,3}, I_{3,2}, I_{4,1}, \ldots</m>, where in step <m>k</m> we adjoin the <m>k-1</m> intervals whose indices sum to <m>k</m>.
+      </p>
+
+      <p>
+        This gives a sequence of intervals whose union covers <m>\bigcup_{k=1}^{\infty} A_k</m> and whose sum is <m>\displaystyle \leq \epsilon + \sum_{k=1}^{\infty}|A_k|</m>. Since <m>\epsilon &gt; 0</m> is arbitrary, 
+        <md>
+          \left| \bigcup_{k=1}^{\infty} A_k \right| \leq \sum_{k=1}^{\infty}|A_k|.
+        </md>
+        
+      </p>
+
+    </proof>
+
+  
+    
   </subsection>
 
 
-  <subsection>
-    <title>Friday</title>
+  <subsection xml:id="outer-measure-not-additive">
+    <title>Outer Measure is Not Additive</title>
 
     <p>
+      We just proved that <m>|A \cup B| \leq |A| + |B|</m>. Intuitively, we would expect that if <m>A</m> and <m>B</m> are disjoint sets then <m>|A \cup B| = |A| + |B|</m>. Unfortunately this is not the case.
     </p>
+
+    <theorem xml:id="thm-non-additive">
+      <title>Non-additivity of Outer Measure</title>
+      
+      
+      <statement>
+        <p>
+          There exists disjoint subsets <m>A</m> and <m>B</m> of <m>\mathbf{R}</m> such that <m>|A \cup B| \neq |A| + |B|</m>
+        </p>
+      </statement>
+    </theorem>
+
+    
+      <p>
+       We constuct these sets as follows. For <m>a \in [-1,1]</m>, let <m>\tilde{a}</m> be the set of numbers in <m>[-1,1]</m> that differ from <m>a</m> by a rational number. That is,
+        <md>
+          \tilde{a}= \{c \in [-1,1]: a-c \in \mathbf{Q}\}
+        </md>
+        
+      </p>
+    
+
+    <lemma xml:id="lem-tilde">
+      <statement>
+        <p>
+          If <m>a, b \in [-1,1]</m> and <m>\tilde{a} \cap \tilde{b} \neq \emptyset</m>, then <m>\tilde{a} = \tilde{b}</m>.
+        </p>
+      </statement>
+    </lemma>
+
+    <proof>
+      <p>
+        Suppose <m>d \in \tilde{a} \cap \tilde{b}</m>. Then <m>a-d</m> and <m>b-d</m> are both rational numbers. By subtraction <m>a-b</m> is also a rational number. 
+      </p>
+
+      <p>
+        Thus <m>a</m> and <m>b</m> differ by rational numbers, so <m>a \in \tilde{b}</m> and <m>b \in \tilde{a}</m>. Hence if <m>c \in \tilde{a}</m> then <m>c</m> differs from <m>a</m> by a rational number so <m>c</m> differs from <m>b</m> by a rational number and hence <m>c \in \tilde{b}</m>.
+      </p>
+
+      <p>
+        Similarly if <m>c \in \tilde{b}</m> then <m>c \in \tilde{a}</m>. Hence <m>\tilde{a} = \tilde{b}</m>. 
+      </p>
+    </proof>
+
+    <p>
+      Since <m>a \in \tilde{a}</m> for each <m>a \in [-1,1]</m>, it follows that <m>[-1,1] = \displaystyle \bigcup_{a \in [-1,1]} \tilde{a}</m>.
+    </p>
+
+    <p>
+      Using the axiom of choice we may create a set <m>V</m> by choosing exactly one element from each of the distinct sets in <m>\{\tilde{a}: a \in [-1,1]\}</m>.
+    </p>
+
+    <p>
+      In other words for each <m>a \in [-1,1]</m> the set <m>V \cap \tilde{a}</m> contains exactly one element.
+    </p>
+
+    <p>
+      Let <m>r_1, r_2, \ldots</m> be a sequence of distinct rational numbers such that
+      <md>
+        [-2,2] \cap \mathbf{Q} = \{r_1, r_2, \ldots \}
+      </md>
+      Then
+      <md>
+        [-1,1] \subseteq \bigcup_{k=1}^{\infty} (r_k+V)
+      </md>
+      
+    </p>
+
+    <p>
+      This is because if <m>a \in [-1,1]</m> and <m>v</m> is the unique element in <m>V \cap \tilde{a}</m> then <m>a-v</m> is a rational number in <m>[-2,2]</m>.
+    </p>
+
+    <p>
+      It thus follows from the countable subadditivity of outer measure that
+      <md>
+         |[-1,1]| \leq \sum_{k=1}^{\infty} |r_k+V|
+      </md>
+      
+    </p>
+
+    <p>
+      Since <m>[-1,1]</m> is a closed interval <m>|[-1,1]|=2</m> and by translation invariance <m>|r_k+V| = |V|</m>. Hence
+      <md>
+         2 \leq \sum_{k=1}^{\infty} |V|.
+      </md>
+      
+    </p>
+
+    <p>
+      This shows that <m>|V|>0</m>.
+    </p>
+
+    <lemma xml:id="lem-disjoint">
+      <statement>
+        <p>
+          The sets <m>r_1 +V, r_2+V, \ldots</m> are disjoint.
+        </p>
+      </statement>
+    </lemma>
+
+    <proof>
+      <p>
+        Suppose that <m>t \in (r_j+V) \cap (r_k+V)</m>. This means that <m>t = r_j+v_1 = r_k + v_2</m>. 
+      </p>
+
+      <p>
+        Hence <m>v_1-v_2 = r_j-r_k \in \mathbf{Q}</m>. Since <m>v_1</m> and <m>v_2</m> differ by a rational number they belong to the same <m>\tilde{a}</m>. But since <m>V</m> contains a single element from each <m>\tilde{a}</m> this means that <m>v_1 = v_2</m>.
+      </p>
+
+      <p>
+        Hence <m>r_j = r_k</m> and thus <m>j=k</m>. 
+      </p>
+
+      </proof>
+
+      <p>
+        We now have our disjoint sets. Now we need to show that the outer measure of the union of these sets is not equal to the sum of the outer measure of each individual set.
+      </p>
+
+      <p>
+        Let <m>n</m> be an arbitrary positive integer. Because <m>V \subseteq [-1,1]</m> and each <m>r_k \in [-2,2]</m> it follows that
+        <md>
+          \bigcup_{k=1}^n (r_k + V) \subseteq [-3,3].
+        </md>
+        
+      </p>
+
+      <p>
+        Thus
+        <md>
+          \left| \bigcup_{k=1}^n (r_k + V)\right| \leq 6.
+        </md>
+        
+      </p>
+
+      <p>
+        However,
+        <md>
+          \sum_{k=1}^n |r_k+V| = \sum_{k=1}^n |V| = n|V|
+        </md>
+        
+      </p>
+
+      <p>
+        So if we choose <m>n</m> so that <m>n|V|>6</m> (Remember that <m>|V|>0)</m> then we have that 
+        <md>
+          \left| \bigcup_{k=1}^n (r_k + V)\right| &lt; \sum_{k=1}^n |r_k+V|.
+        </md>
+        
+      </p>
+
+      <p>
+        If it were true that <m>|A \cup B| = |A|+|B|</m> for all disjoint subsets of <m>\mathbf{R}</m> then by induction it would follow that 
+        <md>
+          \left| \bigcup_{k=1}^n A_k \right| = \sum_{k=1}^n A_k
+        </md>
+        for all disjoint subsets <m>A_k</m> of <m>\mathbf{R}</m>.
+      </p>
+
+      <p>
+        However,
+        <md>
+          \left| \bigcup_{k=1}^n (r_k + V)\right| &lt; \sum_{k=1}^n |r_k+V|.
+        </md>
+        so this cannot be true. 
+      </p>
+
+    
+    
   </subsection>
 </section>
