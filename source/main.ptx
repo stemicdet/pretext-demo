@@ -31,8 +31,8 @@
         </p>
       </introduction>
 
-      <xi:include href="./notes/week01.ptx"/>
       <xi:include href="./notes/week02.ptx"/>
+       <xi:include href="./notes/week03.ptx"/>
       <!-- etc. -->
 
     </chapter>

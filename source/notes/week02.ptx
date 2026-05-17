@@ -539,7 +539,7 @@
       </p>
 
       <p>
-        So if we choose <m>n</m> so that <m>n|V|>6</m> (Remember that <m>|V|>0)</m> then we have that 
+        So if we choose <m>n</m> so that <m>n|V| &gt; 6</m> (Remember that <m>|V| &gt; 0)</m> then we have that 
         <md>
           \left| \bigcup_{k=1}^n (r_k + V)\right| &lt; \sum_{k=1}^n |r_k+V|.
         </md>

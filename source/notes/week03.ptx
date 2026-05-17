@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-03">
+  <title>Week 3: Measurable Spaces and Functions (2B) </title>
+
+  <subsection xml:id="desired">
+    <title>Desired Properties of Measures</title>
+
+    <p>
+        The length of an interval has a number of important properties. If our definition of measure, $\mu$, is to extend the notion of the length of an interval to all subsets of $\mathbf{R}$ then it should possess the following properties.
+        <ol>
+            <li>
+                <p>
+                    $\mu$ is a function from the set of subsets of $\mathbf{R}$ to $[0, \infty)$.
+                </p>
+            </li>
+            <li>
+                <p>
+                    $\mu(I) = \ell(I)$ for every open interval $I$ of $\mathbf{R}$.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <md>
+                        \mu \left(\bigcup_{k=1}^{\infty} A_k \right) = \sum_{k=1}^{\infty} \mu(A_k)
+                    </md>
+                    for every disjoint sequence $A_1, A_2, \ldots$ of subsets of $\mathbf{R}$. (Countable Additivity)
+                </p>
+            </li>
+            <li>
+                <p>
+                    $\mu(t+A) = \mu(A)$ for every $A \subset \mathbf{R}$ and $t \in \mathbf{R}$. (Translation Invariance)
+                </p>
+            </li>
+        </ol>
+    </p>
+
+    <p>
+        Outer measure satisfies properties (a), (b), and (d) but fails (c) because it is not additive.
+    </p>
+
+    <p>
+        We might try to modify the definition of outer measure to make it countably additive or to search for another way to measure the size of subsets of $\mathbf{R}$ that will satisfy the desired properties, but neither of these are fruitful endeavors. As the next theorem shows, there is no measure that satisfies all four properties.
+    </p>
+
+    <theorem xml:id="thm-nonexist-length">
+        <title>Nonexistence of extension of length to all subsets of $\mathbf{R}$</title>
+        
+        
+        <statement>
+            <p>
+                There does not exists a function $\mu$ with all the following properties:
+                <ol>
+            <li>
+                <p>
+                    $\mu$ is a function from the set of subsets of $\mathbf{R}$ to $[0, \infty)$.
+                </p>
+            </li>
+            <li>
+                <p>
+                    $\mu(I) = \ell(I)$ for every open interval $I$ of $\mathbf{R}$.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <md>
+                        \mu \left(\bigcup_{k=1}^{\infty} A_k \right) = \sum_{k=1}^{\infty} \mu(A_k)
+                    </md>
+                    for every disjoint sequence $A_1, A_2, \ldots$ of subsets of $\mathbf{R}$. (Countable Additivity)
+                </p>
+            </li>
+            <li>
+                <p>
+                    $\mu(t+A) = \mu(A)$ for every $A \subset \mathbf{R}$ and $t \in \mathbf{R}$. (Translation Invariance)
+                </p>
+            </li>
+        </ol>
+
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            We will prove this by showing that any function that satisfies (a), (b), and (d) must fail (c). Actually, we kind of already did this in our proof that outer measure is not additive.
+        </p>
+
+        <p>
+            Thinking back to that proof, we made use of the following properties of outer measure:
+            <ol>
+                <li>
+                    <p>
+                        If $A \subseteq B$ then $\mu(A) \leq \mu(B)$.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        $\mu([a,b]) = b-a$.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If $A_1, A_2, \ldots$ is a sequence of (not necessarily disjoint) subsets of $\mathbf{R}$ then 
+                        <md>
+                            \mu \left(\bigcup_{k=1}^{\infty} A_k \right) \leq \sum_{k=1}^{\infty} \mu(A_k) \text{ (Countable Subadditivity)}
+                        </md>
+                        
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <p>
+            We will show that any function that satisfies (a), (b), (c), and (d) also satisfies (1), (2), and (3). Thus the same proof that we used to show that outer measure is not additive applies and show that $\mu$ is not additive-- a contradiction.
+        </p>
+
+        <p>
+            To show (1), suppose that $A \subseteq B$. Then $B = (B \setminus A) \cup A$ and these are disjoint sets.
+        </p>
+
+        <p>
+            Hence by $(c)$ $\mu(B) = \mu(B \setminus A) + \mu(A)$. Since $\mu(B \setminus A) \geq 0$ by (a), it follows that $\mu(B) \geq \mu(A)$.
+        </p>
+
+        <p>
+            To show (2) suppose that $a,b \in \mathbf{R}$ with $a &lt; b$ and let $\epsilon &gt; 0$ be arbitrary. Then $(a,b) \subseteq [a,b] \subseteq (a-\epsilon, b+ \epsilon)$.
+        </p>
+
+        <p>
+            Hence by (1), $\mu \left( (a,b) \right) \leq \mu \left( [a,b] \right) \leq \mu \left( (a-\epsilon,b+\epsilon) \right)$
+        </p>
+
+        <p>
+            Thus it follows from (b) that $b-a \leq \mu([a,b]) \leq b-a + 2\epsilon$ and since $\epsilon$ can be made arbitrarily small it follows that $\mu([a,b]) = b-a$.
+        </p>
+
+        <p>
+            Finally to show (3) suppose that $A_1, A_2, \ldots$ is a sequence of (not necessarily disjoint) subsets of $\mathbf{R}$.
+        </p>
+
+        <p>
+            Then the sequence $A_1, A_2 \setminus A_1, A_3 \setminus (A_1 \cup A_2), \ldots, $ is a sequence of disjoint subsets whose union is the same as $\displaystyle \bigcup_{k=1}^{\infty} A_k$.
+        </p>
+
+        <p>
+            Hence by (c),
+            <md>
+                <mrow> \mu \left( \bigcup_{k=1}^{\infty} A_k\right) \amp = \mu(A_1) + \mu(A_2 \setminus A_1) + \mu(A_3 \setminus (A_1 \cup A_2)) + \ldots</mrow>
+                <mrow> \amp \leq \sum_{k=1}^{\infty} \mu(A_k) </mrow>
+            </md>
+            which is what we want to show.
+        </p>
+
+        <p>
+            Our measure $\mu$ has the same properties of outer measure that we used to construct non-additive disjoint sets. Thus our measure cannot be additive.
+        </p>
+
+        <p>
+            Hence $\mu$ cannot satisfy all four properties (a), (b), (c), and (d).
+        </p>
+    </proof>
+    
+
+    </subsection>
+
+    <subsection xml:id="subsec-Simga-Algebras">
+        <title>Sigma Algebras</title>
+
+        <p>
+            Our previous results shows that if we want to extend the length of an interval to all subsets of $\mathbf{R}$ we cannot have all four desired properties of measures. We must give up one of our desired properties. But which one do we choose?
+        </p>
+
+        <p>
+            We don't want to give up (b) because the measure of an interval needs to be its length, we don't want to give up (c) because countable additivity is useful to have when working with limits, and we don't want to give up (d) because the size of a set should be the same no matter how much you shift it along with real line.
+        </p>
+
+        <p>
+            So we will give up (a). This means that there are some subsets of $\mathbf{R}$ whose size cannot be defined. Such sets are called non-measureable sets.
+        </p>
+
+        <p>
+            The sets that we constructed in the proof that outer measure is not additive are non-measurable sets.
+        </p>
+
+        <p>
+             Fortunately, in practice all the important sets will turn out to be measurable, so we won't have to worry too much about non-measurable sets.
+        </p>
+
+        <p>
+            The collection of all subsets of $\mathbf{R}$ contains non-measurable sets. The collection of all measurable subsets of $\mathbf{R}$ forms a $\sigma$-algebra, a collection of subsets that has a number of nice properties.
+        </p>
+
+        <definition xml:id="def-sigma-algebra">
+            <title>$\sigma$-algebra</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $X$ is a set and $S$ is a collection of subsets of $X$. Then $S$ is called a $\sigma$-algebra on $X$ if the following three conditions are satisfied:
+                    <ol>
+                        <li>
+                            <p>
+                                $\emptyset \in S$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If $E \in S$ then $X\setminus E \in S$. ($S$ is closed under compliments)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                 If $E_1$, $E_2$, $\ldots$ is a sequence of subsets in $S$ then 
+                                 <md>
+                                    \bigcup_{k=1}^{\infty} E_k \in S. 
+                                 </md>
+                                 ($S$ is closed under countable unions)
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            Examples: Suppose that $X$ is a set. Then the following are $\sigma$-algebras of $X$:
+            <ol>
+                <li>
+                    <p>
+                        $S = \{\emptyset, X\}$
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The set of all subsets of $X$.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The set of all subsets $E$ of $X$ such that $E$ is countable or $X \setminus E$ is countable.
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <p>
+            The following theorem proves some important properties of $\sigma$-algebras.
+        </p>
+
+        <theorem xml:id="thm-sigma-properties">
+            <title>Properties of $\sigma$-algebras</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $S$ is a $\sigma$-algebra on a set $X$. Then 
+                    <ol>
+                        <li>
+                            <p>
+                                $X \in S$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If $D, E \in S$ then $D \cup E \in S$, $D \cap E \in S$ and $D \setminus E \in S$. ($\sigma$-algebras are closed under unions, intersections, and relative compliments)
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If $E_1, E_2, \ldots$ is a sequence of subsets in $S$ then 
+                                <md>
+                                    \bigcap_{k=1}^{\infty} E_k \in S.
+                                </md>
+                                ($\sigma$-algebras are closed under countable intersections)
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                (1) follows because $X$ is the compliment of the empty set and $\emptyset \in S$.
+            </p>
+
+            <p>
+                Proving (2) requires that we show three different things. First, $D \cup E\in S$ since $S$ is closed under countable unions. Second, it follows from De Morgan's Laws that 
+                <md>
+                    X \setminus (D \cap E) = (X \setminus D) \cup (X\setminus E) 
+                </md>
+                
+            </p>
+
+            <p>
+                Since $S$ is closed under compliments, both $(X\setminus D)$ and $(X \setminus E)$ belong to $S$. Since $S$ is closed under countable unions, their union also belongs to $S$, which means that $X \setminus (D \cap E) \in S$. Finally since $S$ is closed under compliments, $D \cap E \in S$.
+            </p>
+
+            <p>
+                Lastly, $D \setminus E = D \cap (X \setminus E)$. By the properties of $\sigma$-algebras it follows that $D$ and $X \setminus E \in S$. Since $S$ is closed under intersections, it follows that $D \setminus E \in S$. This completes the proof of (b). 
+            </p>
+
+            <p>
+                To prove (c), we note that it also follows from De Morgan's Laws that 
+                <md>
+                     X \setminus \bigcap_{k=1}^{\infty} E_k = \bigcup_{k=1}^{\infty} (X \setminus E_k).
+                </md>
+                
+            </p>
+
+            <p>
+                We just showed that if $E_k \in S$, then so is $X \setminus E_k$. Since $S$ is closed under countable unions, it follows that $\displaystyle \bigcup_{k=1}^{\infty} (X \setminus E_k) \in S$.
+            </p>
+
+            <p>
+                Hence $X \setminus \bigcap_{k=1}^{\infty} E_k\in S$ and thus by the properties of $\sigma$-algebras
+                <md>
+                     X \setminus \left( X \setminus \bigcap_{k=1}^{\infty} E_k\right) =  \bigcap_{k=1}^{\infty} E_k \in S
+                </md>
+                Thus $S$ is closed under countable compliments.
+            </p>
+
+        </proof>
+
+        <p>
+            The word ``measurable'' is used in the next definition because we will define a measure on these measurable sets.
+        </p>
+
+        <definition xml:id="def-measurable-space">
+            <title>Measureable Space</title>
+            
+            
+            <statement>
+                <p>
+                    A <term>measurable space</term> is an ordered pair $(X,S)$ where $X$ is a set and $S$ is a $\sigma$-algebra on $X$.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            A subset in $S$ is called an $S$-measurable set or just a measurable set if $S$ is clear from context.
+        </p>
+        
+        
+    </subsection>
+
+    </section>
