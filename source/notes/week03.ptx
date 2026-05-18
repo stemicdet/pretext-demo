@@ -344,4 +344,213 @@
         
     </subsection>
 
+    <subsection xml:id="subsec-Borel-Subsets-of-R">
+        <title>Borel Subsets of R and Inverse Images</title>
+
+        <p>
+            An important property of $\sigma$-algebras is that given a set $A$ of subsets of $X$ there is a smallest $\sigma$-algebra that contains $A$.
+        </p>
+
+        <theorem xml:id="thm-smallest-sigma">
+            <title>Smallest $\sigma$-algebra containing a collection of subsets</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $X$ is a set and $A$ is a set of subsets of $X$. Then the intersection of all $\sigma$-algebras on $X$ containing $A$ is also a $\sigma$-algebra on $X$.
+                </p>
+            </statement>
+        </theorem>
+
+        <p>
+            This intersection, $S$, is the smallest $\sigma$-algebra that contains $A$ because if $T$ is another $\sigma$-algebra that contains $A$, then $S \subseteq T$.
+        </p>
+        
+        <proof>
+            <p>
+                Let $S$ be the intersection of all $\sigma$-algebras containing $A$. To show that $S$ is a $\sigma$-algebra we need to verify the three properties of $\sigma$-algebras.
+            </p>
+
+            <p>
+                First $\emptyset \in S$ because $\emptyset$ is in every $\sigma$-algebra.
+            </p>
+
+            <p>
+                Next, If $E \in S$ then $E$ is in every $\sigma$-algebra that contains $A$. Hence $X \setminus E$ is in every $\sigma$-algebra that contains $A$ so $X \setminus E \in S$.
+            </p>
+
+            <p>
+                Finally, suppose $E_1, E_2, \ldots$ is a sequence of subsets in $S$. Then $E_1, E_2, \ldots$ belongs to every $\sigma$-algebra containing $A$. Thus 
+                <md>
+                    \bigcup_{k=1}^{\infty} E_k
+                </md>
+                belongs to every $\sigma$-algebra containing $A$.
+            </p>
+
+            <p>
+                Thus $\displaystyle \bigcup_{k=1}^{\infty} E_k \in S$ and $S$ is a $\sigma$-algebra.
+            </p>
+        </proof>
+
+        <definition xml:id="def-Borel-set">
+            <title>Borel Set</title>
+            
+            
+            <statement>
+                <p>
+                    The smallest $\sigma$-algebra containing all the open subsets of $\mathbf{R}$ is called the collection of <term>Borel subsets</term> of $\mathbf{R}$. A subset in this $\sigma$-algebra is called a <term>Borel set</term>.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            Clearly every open set is a Borel set. Since the compliment of a closed set is an open set, every closed set is also a Borel set.
+        </p>
+
+        <p>
+            Recall that a $G_{\delta}$ set is a set that can be written as a countable intersection of open sets. Since $\sigma$-algebras are closed under countable intersections, every $G_{\delta}$ set is also a Borel set.
+        </p>
+
+        <p>
+            Recall that an $F_{\sigma}$ set is a set that can be written as a countable union of closed sets. Since $\sigma$-algebras are closed under countable unions, every $F_{\sigma}$ set is also a Borel set.
+        </p>
+
+        <p>
+            However, there are Borel sets that are neither $G_{\delta}$ sets nor $F_{\sigma}$ sets. In fact, there is no finite procedure involving countable unions, countable intersections, and compliments for constructing the collection of Borel sets.
+        </p>
+
+        <p>
+            There are subsets of $\mathbf{R}$ that are not Borel sets, but any subset of $\mathbf{R}$ that can be explicitly written down is a Borel set.
+        </p>
+
+        <definition xml:id="def-inverse-image">
+            <title>Inverse Image</title>
+            
+            
+            <statement>
+                <p>
+                    If $f:X \to Y$ is a function and $A \subseteq Y$, then the set $f^{-1}(A)$ defined by 
+                    <md>
+                        f^{-1}(A) = \{x\in X: f(x) \in A\}
+                    </md>
+                    is called the <term>inverse image</term> of $A$
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            We used the inverse image before when we discussed how the main idea of Lebesgue integration is to partition the range. The sets $E_i$ were the inverse images of certain values of the range.
+        </p>
+
+        <p>
+            Example: Suppose $f:[0,3\pi] \to \mathbf{R}$ is defined by $f(x) = \cos(x)$. Then
+            <ol>
+                <li>
+                    <p>
+                        $f^{-1}\left( (0,1) \right) = (0, \frac{\pi}{2}) \cup (\frac{3\pi}{2}, \frac{5\pi}{2})$
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        $f^{-1}(\{0\}) = \{\frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2} \}$
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        $f^{-1} \left( (2,3) \right) = \emptyset$
+                    </p>
+                </li>
+            </ol>
+        </p>
+
+        <theorem xml:id="thm-alg-inv-im">
+            <title>Algebra of Inverse Images</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $f: X \to Y$ is a function. Then
+                    <ol>
+                        <li>
+                            <p>
+                                $f^{-1}(Y \setminus A) = X \setminus f^{-1}(A)$ for every $A \subseteq Y$
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <md>
+                                    f^{-1} \left( \bigcup_{A \in \mathcal{A}} A  \right)= \bigcup_{A \in \mathcal{A}} f^{-1}(A)
+                                </md>
+                                for every collection $\mathcal{A}$ of subsets of $Y$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <md>
+                                    f^{-1} \left( \bigcap_{A \in \mathcal{A}} A  \right)= \bigcap_{A \in \mathcal{A}} f^{-1}(A)
+                                </md>
+                                for every collection $\mathcal{A}$ of subsets of $Y$.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                Suppose $x \in A \subseteq Y$. Then 
+                <md>
+                <mrow> x \in f^{-1}(Y \setminus A) \amp \Longleftrightarrow f(x) \in Y \setminus A </mrow>
+                <mrow> \amp \Longleftrightarrow f(x) \notin A </mrow>
+                <mrow> \amp \Longleftrightarrow x \notin f^{-1}(A) </mrow>
+                <mrow> \amp \Longleftrightarrow x \in X \setminus f^{-1}(A)</mrow>
+                </md>
+                Thus (a) is proved.
+            </p>
+
+            <p>
+                Now suppose $\mathcal{A}$ is a collection of subsets of $Y$. Then 
+                <md>
+                    <mrow>x \in f^{-1} \left( \bigcup_{A \in \mathcal{A}} A  \right) \amp \Longleftrightarrow f(x) \in  \bigcup_{A \in \mathcal{A}} A </mrow>
+                    <mrow> \amp \Longleftrightarrow f(x) \in A \text{ for some } A \in \mathcal{A}</mrow>
+                    <mrow> \amp \Longleftrightarrow x \in f^{-1}(A) \text{ for some } A \in \mathcal{A}</mrow>
+                    <mrow> \amp \Longleftrightarrow x \in \bigcup_{A \in \mathcal{A}} f^{-1}(A)</mrow>
+                </md>
+                Thus (b) is proved. The proof of (c) is done the same way as the proof of (b) but with unions replaced with intersections and  ``for some'' replaced with ``for all''.
+            </p>
+
+        </proof>
+
+        <theorem xml:id="thm-inv-comp">
+            <title>Inverse Image of a Composition</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $f: X \to Y$ and $g:Y\to W$ are functions. Then 
+                    <md>
+                        (g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))
+                    </md>
+                    for every $A \subseteq W$.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                Suppose $A \subseteq W$. Then for $x \in X$
+                <md>
+                    <mrow> x \in (g \circ f)^{-1}(A) \amp \Longleftrightarrow (g \circ f)(x) \in A</mrow>
+                    <mrow> \amp \Longleftrightarrow g(f(x)) \in  A</mrow>
+                    <mrow> \amp \Longleftrightarrow f(x) \in g^{-1}(A)</mrow>
+                    <mrow> \amp \Longleftrightarrow x \in f^{-1}(g^{-1}(A)) </mrow>
+                </md>
+                Thus the theorem is proved.
+            </p>
+        </proof>
+        
+        
+    </subsection>
+
     </section>
