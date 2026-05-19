@@ -7,16 +7,16 @@
     <title>Desired Properties of Measures</title>
 
     <p>
-        The length of an interval has a number of important properties. If our definition of measure, $\mu$, is to extend the notion of the length of an interval to all subsets of $\mathbf{R}$ then it should possess the following properties.
+        The length of an interval has a number of important properties. If our definition of measure, <m>\mu</m>, is to extend the notion of the length of an interval to all subsets of <m>\mathbf{R}</m> then it should possess the following properties.
         <ol>
             <li>
                 <p>
-                    $\mu$ is a function from the set of subsets of $\mathbf{R}$ to $[0, \infty)$.
+                    <m>\mu</m> is a function from the set of subsets of <m>\mathbf{R}</m> to <m>[0, \infty)</m>.
                 </p>
             </li>
             <li>
                 <p>
-                    $\mu(I) = \ell(I)$ for every open interval $I$ of $\mathbf{R}$.
+                    <m>\mu(I) = \ell(I)</m> for every open interval <m>I</m> of <m>\mathbf{R}</m>.
                 </p>
             </li>
             <li>
@@ -24,12 +24,12 @@
                     <md>
                         \mu \left(\bigcup_{k=1}^{\infty} A_k \right) = \sum_{k=1}^{\infty} \mu(A_k)
                     </md>
-                    for every disjoint sequence $A_1, A_2, \ldots$ of subsets of $\mathbf{R}$. (Countable Additivity)
+                    for every disjoint sequence <m>A_1, A_2, \ldots</m> of subsets of <m>\mathbf{R}</m>. (Countable Additivity)
                 </p>
             </li>
             <li>
                 <p>
-                    $\mu(t+A) = \mu(A)$ for every $A \subset \mathbf{R}$ and $t \in \mathbf{R}$. (Translation Invariance)
+                    <m>\mu(t+A) = \mu(A)</m> for every <m>A \subset \mathbf{R}</m> and <m>t \in \mathbf{R}</m>. (Translation Invariance)
                 </p>
             </li>
         </ol>
@@ -40,25 +40,25 @@
     </p>
 
     <p>
-        We might try to modify the definition of outer measure to make it countably additive or to search for another way to measure the size of subsets of $\mathbf{R}$ that will satisfy the desired properties, but neither of these are fruitful endeavors. As the next theorem shows, there is no measure that satisfies all four properties.
+        We might try to modify the definition of outer measure to make it countably additive or to search for another way to measure the size of subsets of <m>\mathbf{R}</m> that will satisfy the desired properties, but neither of these are fruitful endeavors. As the next theorem shows, there is no measure that satisfies all four properties.
     </p>
 
     <theorem xml:id="thm-nonexist-length">
-        <title>Nonexistence of extension of length to all subsets of $\mathbf{R}$</title>
+        <title>Nonexistence of extension of length to all subsets of <m>\mathbf{R}</m></title>
         
         
         <statement>
             <p>
-                There does not exists a function $\mu$ with all the following properties:
+                There does not exists a function <m>\mu</m> with all the following properties:
                 <ol>
             <li>
                 <p>
-                    $\mu$ is a function from the set of subsets of $\mathbf{R}$ to $[0, \infty)$.
+                    <m>\mu</m> is a function from the set of subsets of <m>\mathbf{R}</m> to <m>[0, \infty)</m>.
                 </p>
             </li>
             <li>
                 <p>
-                    $\mu(I) = \ell(I)$ for every open interval $I$ of $\mathbf{R}$.
+                    <m>\mu(I) = \ell(I)</m> for every open interval <m>I</m> of <m>\mathbf{R}</m>.
                 </p>
             </li>
             <li>
@@ -66,12 +66,12 @@
                     <md>
                         \mu \left(\bigcup_{k=1}^{\infty} A_k \right) = \sum_{k=1}^{\infty} \mu(A_k)
                     </md>
-                    for every disjoint sequence $A_1, A_2, \ldots$ of subsets of $\mathbf{R}$. (Countable Additivity)
+                    for every disjoint sequence <m>A_1, A_2, \ldots</m> of subsets of <m>\mathbf{R}</m>. (Countable Additivity)
                 </p>
             </li>
             <li>
                 <p>
-                    $\mu(t+A) = \mu(A)$ for every $A \subset \mathbf{R}$ and $t \in \mathbf{R}$. (Translation Invariance)
+                    <m>\mu(t+A) = \mu(A)</m> for every <m>A \subset \mathbf{R}</m> and <m>t \in \mathbf{R}</m>. (Translation Invariance)
                 </p>
             </li>
         </ol>
@@ -90,17 +90,17 @@
             <ol>
                 <li>
                     <p>
-                        If $A \subseteq B$ then $\mu(A) \leq \mu(B)$.
+                        If <m>A \subseteq B</m> then <m>\mu(A) \leq \mu(B)</m>.
                     </p>
                 </li>
                 <li>
                     <p>
-                        $\mu([a,b]) = b-a$.
+                        <m>\mu([a,b]) = b-a</m>.
                     </p>
                 </li>
                 <li>
                     <p>
-                        If $A_1, A_2, \ldots$ is a sequence of (not necessarily disjoint) subsets of $\mathbf{R}$ then 
+                        If <m>A_1, A_2, \ldots</m> is a sequence of (not necessarily disjoint) subsets of <m>\mathbf{R}</m> then 
                         <md>
                             \mu \left(\bigcup_{k=1}^{\infty} A_k \right) \leq \sum_{k=1}^{\infty} \mu(A_k) \text{ (Countable Subadditivity)}
                         </md>
@@ -111,35 +111,35 @@
         </p>
 
         <p>
-            We will show that any function that satisfies (a), (b), (c), and (d) also satisfies (1), (2), and (3). Thus the same proof that we used to show that outer measure is not additive applies and show that $\mu$ is not additive-- a contradiction.
+            We will show that any function that satisfies (a), (b), (c), and (d) also satisfies (1), (2), and (3). Thus the same proof that we used to show that outer measure is not additive applies and show that <m>\mu</m> is not additive-- a contradiction.
         </p>
 
         <p>
-            To show (1), suppose that $A \subseteq B$. Then $B = (B \setminus A) \cup A$ and these are disjoint sets.
+            To show (1), suppose that <m>A \subseteq B</m>. Then <m>B = (B \setminus A) \cup A</m> and these are disjoint sets.
         </p>
 
         <p>
-            Hence by $(c)$ $\mu(B) = \mu(B \setminus A) + \mu(A)$. Since $\mu(B \setminus A) \geq 0$ by (a), it follows that $\mu(B) \geq \mu(A)$.
+            Hence by <m>(c)</m> <m>\mu(B) = \mu(B \setminus A) + \mu(A)</m>. Since <m>\mu(B \setminus A) \geq 0</m> by (a), it follows that <m>\mu(B) \geq \mu(A)</m>.
         </p>
 
         <p>
-            To show (2) suppose that $a,b \in \mathbf{R}$ with $a &lt; b$ and let $\epsilon &gt; 0$ be arbitrary. Then $(a,b) \subseteq [a,b] \subseteq (a-\epsilon, b+ \epsilon)$.
+            To show (2) suppose that <m>a,b \in \mathbf{R}</m> with <m>a &lt; b</m> and let <m>\epsilon &gt; 0</m> be arbitrary. Then <m>(a,b) \subseteq [a,b] \subseteq (a-\epsilon, b+ \epsilon)</m>.
         </p>
 
         <p>
-            Hence by (1), $\mu \left( (a,b) \right) \leq \mu \left( [a,b] \right) \leq \mu \left( (a-\epsilon,b+\epsilon) \right)$
+            Hence by (1), <m>\mu \left( (a,b) \right) \leq \mu \left( [a,b] \right) \leq \mu \left( (a-\epsilon,b+\epsilon) \right)</m>
         </p>
 
         <p>
-            Thus it follows from (b) that $b-a \leq \mu([a,b]) \leq b-a + 2\epsilon$ and since $\epsilon$ can be made arbitrarily small it follows that $\mu([a,b]) = b-a$.
+            Thus it follows from (b) that <m>b-a \leq \mu([a,b]) \leq b-a + 2\epsilon</m> and since <m>\epsilon</m> can be made arbitrarily small it follows that <m>\mu([a,b]) = b-a</m>.
         </p>
 
         <p>
-            Finally to show (3) suppose that $A_1, A_2, \ldots$ is a sequence of (not necessarily disjoint) subsets of $\mathbf{R}$.
+            Finally to show (3) suppose that <m>A_1, A_2, \ldots</m> is a sequence of (not necessarily disjoint) subsets of <m>\mathbf{R}</m>.
         </p>
 
         <p>
-            Then the sequence $A_1, A_2 \setminus A_1, A_3 \setminus (A_1 \cup A_2), \ldots, $ is a sequence of disjoint subsets whose union is the same as $\displaystyle \bigcup_{k=1}^{\infty} A_k$.
+            Then the sequence <m>A_1, A_2 \setminus A_1, A_3 \setminus (A_1 \cup A_2), \ldots, </m> is a sequence of disjoint subsets whose union is the same as <m>\displaystyle \bigcup_{k=1}^{\infty} A_k</m>.
         </p>
 
         <p>
@@ -152,11 +152,11 @@
         </p>
 
         <p>
-            Our measure $\mu$ has the same properties of outer measure that we used to construct non-additive disjoint sets. Thus our measure cannot be additive.
+            Our measure <m>\mu</m> has the same properties of outer measure that we used to construct non-additive disjoint sets. Thus our measure cannot be additive.
         </p>
 
         <p>
-            Hence $\mu$ cannot satisfy all four properties (a), (b), (c), and (d).
+            Hence <m>\mu</m> cannot satisfy all four properties (a), (b), (c), and (d).
         </p>
     </proof>
     
@@ -167,7 +167,7 @@
         <title>Sigma Algebras</title>
 
         <p>
-            Our previous results shows that if we want to extend the length of an interval to all subsets of $\mathbf{R}$ we cannot have all four desired properties of measures. We must give up one of our desired properties. But which one do we choose?
+            Our previous results shows that if we want to extend the length of an interval to all subsets of <m>\mathbf{R}</m> we cannot have all four desired properties of measures. We must give up one of our desired properties. But which one do we choose?
         </p>
 
         <p>
@@ -175,7 +175,7 @@
         </p>
 
         <p>
-            So we will give up (a). This means that there are some subsets of $\mathbf{R}$ whose size cannot be defined. Such sets are called non-measureable sets.
+            So we will give up (a). This means that there are some subsets of <m>\mathbf{R}</m> whose size cannot be defined. Such sets are called non-measureable sets.
         </p>
 
         <p>
@@ -187,34 +187,34 @@
         </p>
 
         <p>
-            The collection of all subsets of $\mathbf{R}$ contains non-measurable sets. The collection of all measurable subsets of $\mathbf{R}$ forms a $\sigma$-algebra, a collection of subsets that has a number of nice properties.
+            The collection of all subsets of <m>\mathbf{R}</m> contains non-measurable sets. The collection of all measurable subsets of <m>\mathbf{R}</m> forms a <m>\sigma</m>-algebra, a collection of subsets that has a number of nice properties.
         </p>
 
         <definition xml:id="def-sigma-algebra">
-            <title>$\sigma$-algebra</title>
+            <title><m>\sigma</m>-algebra</title>
             
             
             <statement>
                 <p>
-                    Suppose $X$ is a set and $S$ is a collection of subsets of $X$. Then $S$ is called a $\sigma$-algebra on $X$ if the following three conditions are satisfied:
+                    Suppose <m>X</m> is a set and <m>S</m> is a collection of subsets of <m>X</m>. Then <m>S</m> is called a <m>\sigma</m>-algebra on <m>X</m> if the following three conditions are satisfied:
                     <ol>
                         <li>
                             <p>
-                                $\emptyset \in S$.
+                                <m>\emptyset \in S</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                If $E \in S$ then $X\setminus E \in S$. ($S$ is closed under compliments)
+                                If <m>E \in S</m> then <m>X\setminus E \in S</m>. (<m>S</m> is closed under compliments)
                             </p>
                         </li>
                         <li>
                             <p>
-                                 If $E_1$, $E_2$, $\ldots$ is a sequence of subsets in $S$ then 
+                                 If <m>E_1</m>, <m>E_2</m>, <m>\ldots</m> is a sequence of subsets in <m>S</m> then 
                                  <md>
                                     \bigcup_{k=1}^{\infty} E_k \in S. 
                                  </md>
-                                 ($S$ is closed under countable unions)
+                                 (<m>S</m> is closed under countable unions)
                             </p>
                         </li>
                     </ol>
@@ -223,55 +223,55 @@
         </definition>
 
         <p>
-            Examples: Suppose that $X$ is a set. Then the following are $\sigma$-algebras of $X$:
+            Examples: Suppose that <m>X</m> is a set. Then the following are <m>\sigma</m>-algebras of <m>X</m>:
             <ol>
                 <li>
                     <p>
-                        $S = \{\emptyset, X\}$
+                        <m>S = \{\emptyset, X\}</m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        The set of all subsets of $X$.
+                        The set of all subsets of <m>X</m>.
                     </p>
                 </li>
                 <li>
                     <p>
-                        The set of all subsets $E$ of $X$ such that $E$ is countable or $X \setminus E$ is countable.
+                        The set of all subsets <m>E</m> of <m>X</m> such that <m>E</m> is countable or <m>X \setminus E</m> is countable.
                     </p>
                 </li>
             </ol>
         </p>
 
         <p>
-            The following theorem proves some important properties of $\sigma$-algebras.
+            The following theorem proves some important properties of <m>\sigma</m>-algebras.
         </p>
 
         <theorem xml:id="thm-sigma-properties">
-            <title>Properties of $\sigma$-algebras</title>
+            <title>Properties of <m>\sigma</m>-algebras</title>
             
             
             <statement>
                 <p>
-                    Suppose $S$ is a $\sigma$-algebra on a set $X$. Then 
+                    Suppose <m>S</m> is a <m>\sigma</m>-algebra on a set <m>X</m>. Then 
                     <ol>
                         <li>
                             <p>
-                                $X \in S$.
+                                <m>X \in S</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                If $D, E \in S$ then $D \cup E \in S$, $D \cap E \in S$ and $D \setminus E \in S$. ($\sigma$-algebras are closed under unions, intersections, and relative compliments)
+                                If <m>D, E \in S</m> then <m>D \cup E \in S</m>, <m>D \cap E \in S</m> and <m>D \setminus E \in S</m>. (<m>\sigma</m>-algebras are closed under unions, intersections, and relative compliments)
                             </p>
                         </li>
                         <li>
                             <p>
-                                If $E_1, E_2, \ldots$ is a sequence of subsets in $S$ then 
+                                If <m>E_1, E_2, \ldots</m> is a sequence of subsets in <m>S</m> then 
                                 <md>
                                     \bigcap_{k=1}^{\infty} E_k \in S.
                                 </md>
-                                ($\sigma$-algebras are closed under countable intersections)
+                                (<m>\sigma</m>-algebras are closed under countable intersections)
                             </p>
                         </li>
                     </ol>
@@ -281,11 +281,11 @@
 
         <proof>
             <p>
-                (1) follows because $X$ is the compliment of the empty set and $\emptyset \in S$.
+                (1) follows because <m>X</m> is the compliment of the empty set and <m>\emptyset \in S</m>.
             </p>
 
             <p>
-                Proving (2) requires that we show three different things. First, $D \cup E\in S$ since $S$ is closed under countable unions. Second, it follows from De Morgan's Laws that 
+                Proving (2) requires that we show three different things. First, <m>D \cup E\in S</m> since <m>S</m> is closed under countable unions. Second, it follows from De Morgan's Laws that 
                 <md>
                     X \setminus (D \cap E) = (X \setminus D) \cup (X\setminus E) 
                 </md>
@@ -293,11 +293,11 @@
             </p>
 
             <p>
-                Since $S$ is closed under compliments, both $(X\setminus D)$ and $(X \setminus E)$ belong to $S$. Since $S$ is closed under countable unions, their union also belongs to $S$, which means that $X \setminus (D \cap E) \in S$. Finally since $S$ is closed under compliments, $D \cap E \in S$.
+                Since <m>S</m> is closed under compliments, both <m>(X\setminus D)</m> and <m>(X \setminus E)</m> belong to <m>S</m>. Since <m>S</m> is closed under countable unions, their union also belongs to <m>S</m>, which means that <m>X \setminus (D \cap E) \in S</m>. Finally since <m>S</m> is closed under compliments, <m>D \cap E \in S</m>.
             </p>
 
             <p>
-                Lastly, $D \setminus E = D \cap (X \setminus E)$. By the properties of $\sigma$-algebras it follows that $D$ and $X \setminus E \in S$. Since $S$ is closed under intersections, it follows that $D \setminus E \in S$. This completes the proof of (b). 
+                Lastly, <m>D \setminus E = D \cap (X \setminus E)</m>. By the properties of <m>\sigma</m>-algebras it follows that <m>D</m> and <m>X \setminus E \in S</m>. Since <m>S</m> is closed under intersections, it follows that <m>D \setminus E \in S</m>. This completes the proof of (b). 
             </p>
 
             <p>
@@ -309,15 +309,15 @@
             </p>
 
             <p>
-                We just showed that if $E_k \in S$, then so is $X \setminus E_k$. Since $S$ is closed under countable unions, it follows that $\displaystyle \bigcup_{k=1}^{\infty} (X \setminus E_k) \in S$.
+                We just showed that if <m>E_k \in S</m>, then so is <m>X \setminus E_k</m>. Since <m>S</m> is closed under countable unions, it follows that <m>\displaystyle \bigcup_{k=1}^{\infty} (X \setminus E_k) \in S</m>.
             </p>
 
             <p>
-                Hence $X \setminus \bigcap_{k=1}^{\infty} E_k\in S$ and thus by the properties of $\sigma$-algebras
+                Hence <m>X \setminus \bigcap_{k=1}^{\infty} E_k\in S</m> and thus by the properties of <m>\sigma</m>-algebras
                 <md>
                      X \setminus \left( X \setminus \bigcap_{k=1}^{\infty} E_k\right) =  \bigcap_{k=1}^{\infty} E_k \in S
                 </md>
-                Thus $S$ is closed under countable compliments.
+                Thus <m>S</m> is closed under countable compliments.
             </p>
 
         </proof>
@@ -332,13 +332,13 @@
             
             <statement>
                 <p>
-                    A <term>measurable space</term> is an ordered pair $(X,S)$ where $X$ is a set and $S$ is a $\sigma$-algebra on $X$.
+                    A <term>measurable space</term> is an ordered pair <m>(X,S)</m> where <m>X</m> is a set and <m>S</m> is a <m>\sigma</m>-algebra on <m>X</m>.
                 </p>
             </statement>
         </definition>
 
         <p>
-            A subset in $S$ is called an $S$-measurable set or just a measurable set if $S$ is clear from context.
+            A subset in <m>S</m> is called an <m>S</m>-measurable set or just a measurable set if <m>S</m> is clear from context.
         </p>
         
         
@@ -348,47 +348,47 @@
         <title>Borel Subsets of R and Inverse Images</title>
 
         <p>
-            An important property of $\sigma$-algebras is that given a set $A$ of subsets of $X$ there is a smallest $\sigma$-algebra that contains $A$.
+            An important property of <m>\sigma</m>-algebras is that given a set <m>A</m> of subsets of <m>X</m> there is a smallest <m>\sigma</m>-algebra that contains <m>A</m>.
         </p>
 
         <theorem xml:id="thm-smallest-sigma">
-            <title>Smallest $\sigma$-algebra containing a collection of subsets</title>
+            <title>Smallest <m>\sigma</m>-algebra containing a collection of subsets</title>
             
             
             <statement>
                 <p>
-                    Suppose $X$ is a set and $A$ is a set of subsets of $X$. Then the intersection of all $\sigma$-algebras on $X$ containing $A$ is also a $\sigma$-algebra on $X$.
+                    Suppose <m>X</m> is a set and <m>A</m> is a set of subsets of <m>X</m>. Then the intersection of all <m>\sigma</m>-algebras on <m>X</m> containing <m>A</m> is also a <m>\sigma</m>-algebra on <m>X</m>.
                 </p>
             </statement>
         </theorem>
 
         <p>
-            This intersection, $S$, is the smallest $\sigma$-algebra that contains $A$ because if $T$ is another $\sigma$-algebra that contains $A$, then $S \subseteq T$.
+            This intersection, <m>S</m>, is the smallest <m>\sigma</m>-algebra that contains <m>A</m> because if <m>T</m> is another <m>\sigma</m>-algebra that contains <m>A</m>, then <m>S \subseteq T</m>.
         </p>
         
         <proof>
             <p>
-                Let $S$ be the intersection of all $\sigma$-algebras containing $A$. To show that $S$ is a $\sigma$-algebra we need to verify the three properties of $\sigma$-algebras.
+                Let <m>S</m> be the intersection of all <m>\sigma</m>-algebras containing <m>A</m>. To show that <m>S</m> is a <m>\sigma</m>-algebra we need to verify the three properties of <m>\sigma</m>-algebras.
             </p>
 
             <p>
-                First $\emptyset \in S$ because $\emptyset$ is in every $\sigma$-algebra.
+                First <m>\emptyset \in S</m> because <m>\emptyset</m> is in every <m>\sigma</m>-algebra.
             </p>
 
             <p>
-                Next, If $E \in S$ then $E$ is in every $\sigma$-algebra that contains $A$. Hence $X \setminus E$ is in every $\sigma$-algebra that contains $A$ so $X \setminus E \in S$.
+                Next, If <m>E \in S</m> then <m>E</m> is in every <m>\sigma</m>-algebra that contains <m>A</m>. Hence <m>X \setminus E</m> is in every <m>\sigma</m>-algebra that contains <m>A</m> so <m>X \setminus E \in S</m>.
             </p>
 
             <p>
-                Finally, suppose $E_1, E_2, \ldots$ is a sequence of subsets in $S$. Then $E_1, E_2, \ldots$ belongs to every $\sigma$-algebra containing $A$. Thus 
+                Finally, suppose <m>E_1, E_2, \ldots</m> is a sequence of subsets in <m>S</m>. Then <m>E_1, E_2, \ldots</m> belongs to every <m>\sigma</m>-algebra containing <m>A</m>. Thus 
                 <md>
                     \bigcup_{k=1}^{\infty} E_k
                 </md>
-                belongs to every $\sigma$-algebra containing $A$.
+                belongs to every <m>\sigma</m>-algebra containing <m>A</m>.
             </p>
 
             <p>
-                Thus $\displaystyle \bigcup_{k=1}^{\infty} E_k \in S$ and $S$ is a $\sigma$-algebra.
+                Thus <m>\displaystyle \bigcup_{k=1}^{\infty} E_k \in S</m> and <m>S</m> is a <m>\sigma</m>-algebra.
             </p>
         </proof>
 
@@ -398,7 +398,7 @@
             
             <statement>
                 <p>
-                    The smallest $\sigma$-algebra containing all the open subsets of $\mathbf{R}$ is called the collection of <term>Borel subsets</term> of $\mathbf{R}$. A subset in this $\sigma$-algebra is called a <term>Borel set</term>.
+                    The smallest <m>\sigma</m>-algebra containing all the open subsets of <m>\mathbf{R}</m> is called the collection of <term>Borel subsets</term> of <m>\mathbf{R}</m>. A subset in this <m>\sigma</m>-algebra is called a <term>Borel set</term>.
                 </p>
             </statement>
         </definition>
@@ -408,19 +408,19 @@
         </p>
 
         <p>
-            Recall that a $G_{\delta}$ set is a set that can be written as a countable intersection of open sets. Since $\sigma$-algebras are closed under countable intersections, every $G_{\delta}$ set is also a Borel set.
+            Recall that a <m>G_{\delta}</m> set is a set that can be written as a countable intersection of open sets. Since <m>\sigma</m>-algebras are closed under countable intersections, every <m>G_{\delta}</m> set is also a Borel set.
         </p>
 
         <p>
-            Recall that an $F_{\sigma}$ set is a set that can be written as a countable union of closed sets. Since $\sigma$-algebras are closed under countable unions, every $F_{\sigma}$ set is also a Borel set.
+            Recall that an <m>F_{\sigma}</m> set is a set that can be written as a countable union of closed sets. Since <m>\sigma</m>-algebras are closed under countable unions, every <m>F_{\sigma}</m> set is also a Borel set.
         </p>
 
         <p>
-            However, there are Borel sets that are neither $G_{\delta}$ sets nor $F_{\sigma}$ sets. In fact, there is no finite procedure involving countable unions, countable intersections, and compliments for constructing the collection of Borel sets.
+            However, there are Borel sets that are neither <m>G_{\delta}</m> sets nor <m>F_{\sigma}</m> sets. In fact, there is no finite procedure involving countable unions, countable intersections, and compliments for constructing the collection of Borel sets.
         </p>
 
         <p>
-            There are subsets of $\mathbf{R}$ that are not Borel sets, but any subset of $\mathbf{R}$ that can be explicitly written down is a Borel set.
+            There are subsets of <m>\mathbf{R}</m> that are not Borel sets, but any subset of <m>\mathbf{R}</m> that can be explicitly written down is a Borel set.
         </p>
 
         <definition xml:id="def-inverse-image">
@@ -429,35 +429,35 @@
             
             <statement>
                 <p>
-                    If $f:X \to Y$ is a function and $A \subseteq Y$, then the set $f^{-1}(A)$ defined by 
+                    If <m>f:X \to Y</m> is a function and <m>A \subseteq Y</m>, then the set <m>f^{-1}(A)</m> defined by 
                     <md>
                         f^{-1}(A) = \{x\in X: f(x) \in A\}
                     </md>
-                    is called the <term>inverse image</term> of $A$
+                    is called the <term>inverse image</term> of <m>A</m>
                 </p>
             </statement>
         </definition>
 
         <p>
-            We used the inverse image before when we discussed how the main idea of Lebesgue integration is to partition the range. The sets $E_i$ were the inverse images of certain values of the range.
+            We used the inverse image before when we discussed how the main idea of Lebesgue integration is to partition the range. The sets <m>E_i</m> were the inverse images of certain values of the range.
         </p>
 
         <p>
-            Example: Suppose $f:[0,3\pi] \to \mathbf{R}$ is defined by $f(x) = \cos(x)$. Then
+            Example: Suppose <m>f:[0,3\pi] \to \mathbf{R}</m> is defined by <m>f(x) = \cos(x)</m>. Then
             <ol>
                 <li>
                     <p>
-                        $f^{-1}\left( (0,1) \right) = (0, \frac{\pi}{2}) \cup (\frac{3\pi}{2}, \frac{5\pi}{2})$
+                        <m>f^{-1}\left( (0,1) \right) = (0, \frac{\pi}{2}) \cup (\frac{3\pi}{2}, \frac{5\pi}{2})</m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        $f^{-1}(\{0\}) = \{\frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2} \}$
+                        <m>f^{-1}(\{0\}) = \{\frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2} \}</m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        $f^{-1} \left( (2,3) \right) = \emptyset$
+                        <m>f^{-1} \left( (2,3) \right) = \emptyset</m>
                     </p>
                 </li>
             </ol>
@@ -469,11 +469,11 @@
             
             <statement>
                 <p>
-                    Suppose $f: X \to Y$ is a function. Then
+                    Suppose <m>f: X \to Y</m> is a function. Then
                     <ol>
                         <li>
                             <p>
-                                $f^{-1}(Y \setminus A) = X \setminus f^{-1}(A)$ for every $A \subseteq Y$
+                                <m>f^{-1}(Y \setminus A) = X \setminus f^{-1}(A)</m> for every <m>A \subseteq Y</m>
                             </p>
                         </li>
                         <li>
@@ -481,7 +481,7 @@
                                 <md>
                                     f^{-1} \left( \bigcup_{A \in \mathcal{A}} A  \right)= \bigcup_{A \in \mathcal{A}} f^{-1}(A)
                                 </md>
-                                for every collection $\mathcal{A}$ of subsets of $Y$.
+                                for every collection <m>\mathcal{A}</m> of subsets of <m>Y</m>.
                             </p>
                         </li>
                         <li>
@@ -489,7 +489,7 @@
                                 <md>
                                     f^{-1} \left( \bigcap_{A \in \mathcal{A}} A  \right)= \bigcap_{A \in \mathcal{A}} f^{-1}(A)
                                 </md>
-                                for every collection $\mathcal{A}$ of subsets of $Y$.
+                                for every collection <m>\mathcal{A}</m> of subsets of <m>Y</m>.
                             </p>
                         </li>
                     </ol>
@@ -499,7 +499,7 @@
         
         <proof>
             <p>
-                Suppose $x \in A \subseteq Y$. Then 
+                Suppose <m>x \in A \subseteq Y</m>. Then 
                 <md>
                 <mrow> x \in f^{-1}(Y \setminus A) \amp \Longleftrightarrow f(x) \in Y \setminus A </mrow>
                 <mrow> \amp \Longleftrightarrow f(x) \notin A </mrow>
@@ -510,7 +510,7 @@
             </p>
 
             <p>
-                Now suppose $\mathcal{A}$ is a collection of subsets of $Y$. Then 
+                Now suppose <m>\mathcal{A}</m> is a collection of subsets of <m>Y</m>. Then 
                 <md>
                     <mrow>x \in f^{-1} \left( \bigcup_{A \in \mathcal{A}} A  \right) \amp \Longleftrightarrow f(x) \in  \bigcup_{A \in \mathcal{A}} A </mrow>
                     <mrow> \amp \Longleftrightarrow f(x) \in A \text{ for some } A \in \mathcal{A}</mrow>
@@ -528,18 +528,18 @@
             
             <statement>
                 <p>
-                    Suppose $f: X \to Y$ and $g:Y\to W$ are functions. Then 
+                    Suppose <m>f: X \to Y</m> and <m>g:Y\to W</m> are functions. Then 
                     <md>
                         (g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))
                     </md>
-                    for every $A \subseteq W$.
+                    for every <m>A \subseteq W</m>.
                 </p>
             </statement>
         </theorem>
 
         <proof>
             <p>
-                Suppose $A \subseteq W$. Then for $x \in X$
+                Suppose <m>A \subseteq W</m>. Then for <m>x \in X</m>
                 <md>
                     <mrow> x \in (g \circ f)^{-1}(A) \amp \Longleftrightarrow (g \circ f)(x) \in A</mrow>
                     <mrow> \amp \Longleftrightarrow g(f(x)) \in  A</mrow>
@@ -551,6 +551,585 @@
         </proof>
         
         
+    </subsection>
+
+    <subsection xml:id="subsec-measurable-function">
+        <title>Measurable Functions</title>
+        
+
+        <p>
+            Since some sets are unmeasurable, we want to make sure that we are working with functions that behave reasonably with respect to the <m>\sigma</m>-algebra on their domains.
+        </p>
+
+        <definition xml:id="def-measurable-funct">
+            <title>Measurable Functions</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>(X,S)</m> is a measurable space. A function <m>f:X \to \mathbf{R}</m> is called <m>S</m>-<term>measurable</term> (or just <term>measurable</term> if the context is clear) if
+                    <md>
+                         f^{-1}(B) \in S
+                    </md>
+                    for every Borel set <m>B \subseteq \mathbf{R}</m>
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            Example: If <m>S</m> is the set of all subsets of <m>X</m> then every function is <m>S</m>-Measurable.
+        </p>
+
+        <p>
+            Example: Suppose <m>E</m> is a subset of the set <m>X</m>. The characteristic function of <m>E</m> (Also called the indicator function of <m>E</m>) is the function <m>\chi_E:X \to \mathbf{R}</m> defined by 
+            <md>
+                \chi_E(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in E$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin E$} 
+  \end{cases}
+            </md>
+            
+        </p>
+
+        <p>
+            If <m>E = \mathbf{Q}</m>, then <m>\chi_E(x)</m> is Dirichlet's function.
+        </p>
+
+        <p>
+            Suppose <m>(X,S)</m> is a measurable space, <m>E \subseteq X</m> and <m>B \subseteq \mathbf{R}</m>. Then 
+            <md>
+                \chi_E^{-1}(B) = \begin{cases} 
+      \hfill  E \amp \text{ if $0 \notin B$ and $1 \in B$} \\
+      \hfill  X \setminus E \amp \text{ if $0 \in B$ and $1 \notin B$} \\
+      \hfill  X \amp \text{ if $0 \in B$ and $1 \in B$} \\
+      \hfill  \emptyset \amp \text{ if $0 \notin B$ and $1 \notin B$} 
+  \end{cases}
+            </md>
+            
+        </p>
+
+        <p>
+            Thus <m>\chi_E(x)</m> is a measurable function if and only if <m>E \in S</m>
+        </p>
+
+        <p>
+            The definition of measurable functions requires us to check the inverse image of every subset of <m>\mathbf{R}</m>. Fortunately, the next theorem tells us that we only need to check a certain subset of intervals.
+        </p>
+        
+        <theorem xml:id="thm-condition-meas-funct">
+            <title>Condition for Measureable Functions</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose that <m>(X,S)</m> is a measurable space and <m>f: X \to \mathbf{R}</m> is a function such that 
+                    <md>
+                        f^{-1}((a, \infty)) \in S
+                    </md>
+                     for all <m>a \in \mathbf{R}</m>. Then <m>f</m> is an <m>S</m>-measurable function.
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                Let
+                <md>
+                    T = \{A \subseteq \mathbf{R}: f^{-1}(A) \in S\}
+                </md>
+                We will show that every Borel subset of <m>\mathbf{R}</m> belongs to <m>T</m>. To do this, we will first show that <m>T</m> is a <m>\sigma</m>-algebra.
+            </p>
+
+            <p>
+                First, <m>\emptyset \in T</m> because <m>f^{-1}(\emptyset) = \emptyset \in S</m>.
+            </p>
+
+            <p>
+                Second, if <m>A \in T</m>, then <m>f^{-1}(A) \in S</m>. Hence by property (a) of inverse images,
+                <md>
+                    f^{-1}(\mathbf{R} \setminus A) = X \setminus f^{-1}(A) \in S
+                </md>
+                since <m>S</m> is a <m>\sigma</m>-algebra.
+            </p>
+
+            <p>
+                Thus <m>\mathbf{R} \setminus A \in T</m> and <m>T</m> is closed under compliments.
+            </p>
+
+            <p>
+                Finally, if <m>A_1</m>, <m>A_2</m>, <m>\ldots \in T</m> then <m>f^{-1}(A_1), f^{-1}(A_2), \ldots \in S</m>.
+            </p>
+
+            <p>
+                Hence by property (b) of inverse images and since <m>S</m> is a <m>\sigma</m>-algebra,
+                <md>
+                    f^{-1} \left(\bigcup_{k=1}^{\infty} A_k \right) = \bigcup_{k=1}^{\infty} f^{-1}(A_k) \in S.
+                </md>
+                
+            </p>
+
+            <p>
+                Hence <m>\displaystyle \bigcup_{k=1}^{\infty} A_k \in T</m> and so <m>T</m> is closed under countable unions. Thus <m>T</m> is a <m>\sigma</m>-algebra.
+            </p>
+
+            <p>
+                We will now show that <m>T</m> contains every open subset of <m>\mathbf{R}</m>. Since <m>T</m> is a <m>\sigma</m>-algebra, this will show that <m>T</m> contains the smallest <m>\sigma</m>-algebra that contains every open subset of <m>\mathbf{R}</m> and hence <m>T</m> contains every Borel subset of <m>\mathbf{R}</m>. This shows that <m>f</m> is <m>S</m>-measurable.
+            </p>
+
+            <p>
+                By hypothesis <m>T</m> contains <m>\{(a,\infty): a \in \mathbf{R}\}</m>. Since <m>T</m> is closed under compliments <m>T</m> also contains <m>\{(-\infty, b] : b \in \mathbf{R}\}</m>.
+            </p>
+
+            <p>
+                Since <m>T</m> is closed under countable intersections, we also have that <m>T</m> contains <m>(a,b]: a,b \in \mathbf{R}\}</m>.
+            </p>
+
+            <p>
+                Since we can write <m>(a,b) = \displaystyle \bigcup_{k=1}^{\infty} \left(a,b-\frac{1}{k}\right] </m> and <m>T</m> is closed under countable unions, <m>T</m> contains <m>\{(a,b): a,b \in \mathbf{R}\}</m>.
+            </p>
+
+            <p>
+                Also, we can write <m>(-\infty,b)</m> as <m>\displaystyle \bigcup_{k=1}^{\infty} \left(-k, b-\frac{1}{k}\right]</m> and <m>T</m> is closed under countable unions, <m>T</m> contains <m>\{(-\infty,b): b, \in \mathbf{R}\}</m>
+            </p>
+
+            <p>
+                Thus <m>T</m> contains every open interval in <m>\mathbf{R}</m>.
+            </p>
+
+            <p>
+                Every open subset of <m>\mathbf{R}</m> can be written as a countable union of open intervals. Since <m>T</m> is closed under countable unions <m>T</m> contains every open subset of <m>\mathbf{R}</m>
+            </p>
+
+            <p>
+                Thus <m>T</m> is a <m>\sigma</m>-algebra that contains every open subset of <m>\mathbf{R}</m>. So <m>T</m> contains all the Borel subsets of <m>\mathbf{R}</m>. Thus <m>f</m> is a measurable function.
+            </p>
+
+        </proof>
+
+        <p>
+            We defined measurable functions for an arbitrary set <m>X</m> and <m>\sigma</m>-algebra <m>S</m>, but for most purposes we want to work with Borel sets.
+        </p>
+
+        <definition xml:id="def-borel-funct">
+            <title>Borel Measurable Function</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>X \subseteq \mathbf{R}</m>. A function <m>f: X \to \mathbf{R}</m> is called <term>Borel measurable</term> if <m>f^{-1}(B)</m> is a Borel set for every Borel set <m>B \subseteq \mathbf{R}</m>.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            If <m>X \subseteq \mathbf{R}</m> and <m>f:X \to \mathbf{R}</m> is a Borel measurable function, then <m>X</m> must be a Borel set since <m>X = f^{-1}(\mathbf{R})</m>.
+        </p>
+
+        <p>
+            From the theorem we just proved, if <m>X \subseteq \mathbf{R}</m> and <m>f:X \to \mathbf{R}</m> is a function, then <m>f</m> is a Borel measurable function if and only if <m>f^{-1}((a, \infty))</m> is a Borel set for all <m>a \in \mathbf{R}</m>.
+        </p>
+
+        <p>
+            Suppose <m>X \subseteq \mathbf{R}</m> and <m>f:X \to \mathbf{R}</m> is a function. Whether <m>f</m> is measurable depends on which <m>\sigma</m>-algebra we are talking about. If <m>S</m> is the set of Borel sets contained in <m>X</m> then <m>S</m>-measurable and Borel measurable are the same thing.
+        </p>
+
+        <p>
+            Even if <m>S</m> is not the set of Borel sets contained in <m>X</m> to check if <m>f</m> is <m>S</m>-measurable, we still consider the inverse images of Borel subsets of <m>\mathbf{R}</m>.
+        </p>
+
+        <theorem xml:id="thm-cont-funct-borel">
+            <title>Continuous Functions are Borel Measurable</title>
+            
+            
+            <statement>
+                <p>
+                    Every continuous real valued function defined on a Borel subset of <m>\mathbf{R}</m> is Borel Measurable.
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                Our strategy is to show that <m>f^{-1}((a,\infty))</m> is a Borel set for all <m>a \in \mathbf{R}</m>. So fix <m>a \in \mathbf{R}</m> and choose <m>x \in X</m> with <m>f(x) &gt; a</m>. (If there is no such <m>x</m> then <m>f^{-1}((a, \infty)) = \emptyset</m>, which is a Borel set.)
+            </p>
+
+            <p>
+            Since <m>f</m> is continuous there exists <m>\delta_x &gt; 0</m> such that <m>f(y) &gt; a</m> for all <m>a \in (x-\delta_x, x+\delta_x) \cap X</m>.
+        </p>
+
+        <p>
+            Hence
+            <md>
+                f^{-1}((a,\infty)) = \left(\bigcup_{x\in f^{-1}(a,\infty)} (x-\delta_x, x + \delta_x) \right) \cap X.
+            </md>
+            
+        </p>
+
+        <p>
+            Since we have written <m>f^{-1}(a, \infty)</m> as a countable union of open sets intersected with <m>X</m>, it is a Borel set. Thus <m>f</m> is a Borel measurable function.
+        </p>
+        </proof>
+
+        <p>
+            We just showed that continuous functions are Borel measurable. Now we will show that increasing functions are Borel measurable.
+        </p>
+
+        <definition xml:id="def-increasing-function">
+            <title>Increasing Function</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>f:X \to \mathbf{R}</m> is a function. <m>f</m> is called <term>(strictly) increasing</term> if:
+                    <md>
+                        f(x) \leq f(y) (f(x) &lt; f(y)) \text{ for all } x,y \in X \text{ with } x &lt; y.
+                    </md>
+                    
+                </p>
+            </statement>
+        </definition>
+
+        <theorem xml:id="thm-increasing-borel">
+            <title>Increasing Functions are Borel Measurable</title>
+            
+            
+            <statement>
+                <p>
+                    Every increasing function defined on a Borel subset of <m>\mathbf{R}</m> is a Borel measurable function.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                Let <m>X \subseteq \mathbf{R}</m> be a Borel set and suppose that <m>f:X \to \mathbf{R}</m> is increasing. Our strategy is to show that <m>f^{-1}((a,\infty))</m> is a Borel set for all <m>a \in \mathbf{R}</m> 
+            </p>
+
+            <p>
+                Fix <m>a \in \mathbf{R}</m> and let <m>b = \inf f^{-1}((a,\infty))</m>. Then either <m>f^{-1}((a,\infty)) = (b,\infty) \cap X</m> or <m>f^{-1}((a,\infty)) = [b,\infty) \cap X</m>.
+            </p>
+
+            <p>
+                Since we either have the intersection of <m>X</m> with an open set or the intersection of <m>X</m> with a closed set, we know that <m>f^{-1}((a,\infty))</m> is a Borel set and thus <m>f</m> is Borel-measurable.
+            </p>
+
+        </proof>
+
+        <theorem xml:id="thm-comp-measurable">
+            <title>Composition of Measurable Functions</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>(X,S)</m> is a measurable space and <m>f:X \to S</m> is an <m>S</m>-measurable function. Suppose <m>g</m> is a real valued Borel measurable function defined on a subset of <m>\mathbf{R}</m> that includes the range of <m>f</m>. Then <m>g \circ f: X \to \mathbf{R}</m> is an <m>S</m>-measurable function.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                Suppose <m>B</m> is a Borel set. Then <m>(g\circ f)^{-1}(B) = f^{-1}(g^{-1}(B))</m>. Because <m>g</m> is a Borel measurable function <m>g^{-1}(B)</m> is a Borel set. Because <m>f</m> is an <m>S</m>-measurable function <m>f^{-1}(g^{-1}(B)) \in S</m>. Thus <m>(g\circ f)^{-1}(B) \in S</m> and <m>g \circ f</m> is an <m>S</m>-measurable function.
+            </p>
+        </proof>
+        
+        <p>
+            Example: If <m>f</m> is an <m>S</m>-measurable function then so are <m>-f,\frac{1}{2} f, f^2, |f|</m>.
+        </p>
+        
+        <proof>
+            <p>
+                All four functions can be written as a composition of <m>f</m> with a continuous function and continuous functions are Borel measurable, so by the previous theorem all four functions are <m>S</m>-measurable.
+            </p>
+        </proof>
+
+        <theorem xml:id="thm-alg-operation-measurable-funct">
+            <title>Algebraic Operations on Measureable Functions</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>(X,S)</m> is a measurable space and <m>f,g: X \to \mathbf{R}</m> are <m>S</m>-measurable. Then 
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                <m>f+g</m>, <m>f-g</m>, <m>fg</m> are <m>S</m>-measurable functions
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                If <m>g(x) \neq 0</m> for all <m>x \in X</m> then <m>\frac{f}{g}</m> is an <m>S</m>-measurable function
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                We will first show that <m>f+g</m> is <m>S</m>-measurable. Our strategy is to show that <m>(f+g)^{-1}((a,\infty)) \in S</m> for all <m>a\in \mathbf{R}</m>. 
+            </p>
+
+            <p>
+                Specifically, we will show that 
+                <md>
+                    (f+g)^{-1}((a,\infty)) = \bigcup_{r \in \mathbf{Q}} f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))
+                </md>
+                
+            </p>
+
+            <p>
+                Because this is a countable union of finite intersections of open subsets of <m>S</m>, this will show that <m>(f+g)^{-1}((a,\infty)) \in S</m>.
+            </p>
+
+            <p>
+                Suppose that <m>x \in (f+g)^{-1}((a,\infty))</m>. (If there is no such <m>x</m> then  <m>(f+g)^{-1}((a,\infty)) = \emptyset \in S</m>.)
+            </p>
+
+            <p>
+                Thus <m>a &lt; f(x) + g(x)</m> and the open interval <m>(a-g(x),f(x))</m> is non-empty and contains a rational number <m>r</m>.
+            </p>
+
+            <p>
+                Hence <m>r &lt; f(x)</m>, which means that <m>x \in f^{-1}((r, \infty))</m>. Likewise <m>a-g(x) &lt; r</m> which means that <m>x \in g^{-1}((a-r, \infty))</m>.
+            </p>
+
+            <p>
+                Hence <m>x \in f^{-1}((r, \infty)) \cap g^{-1}((a-r, \infty))</m> which implies that 
+                <md>
+                    (f+g)^{-1}((a,\infty)) \subseteq \bigcup_{r \in \mathbf{Q}} f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))
+                </md>
+                
+            </p>
+
+            <p>
+                To prove the other inclusion suppose <m>x \in f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))</m> for some <m>r \in \mathbf{Q}</m>. Then <m>r &lt; f(x)</m> and <m>a-r &lt; g(x)</m>.
+            </p>
+
+            <p>
+                Adding these inequalities together gives that <m>a &lt; f(x) + g(x)</m> and thus <m>x \in (f+g)^{-1}(a,\infty)</m>.
+            </p>
+
+            <p>
+                Hence
+                <md>
+                    (f+g)^{-1}((a,\infty)) = \bigcup_{r \in \mathbf{Q}} f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))
+                </md>
+                And thus <m>f+g</m> is an <m>S</m>-measurable function.
+            </p>
+
+            <p>
+                To show that <m>f-g</m> is a measurable function we write it as <m>f + (-g)</m>. Since <m>g</m> is measurable, so is <m>-g</m> and since the sum of measurable functions is measurable, so is <m>f-g</m>.
+            </p>
+
+            <p>
+                To show that <m>fg</m> is a measurable function we note that
+                <md>
+                    fg = \frac{(f+g)^2-f^2-g^2}{2}.
+                </md>
+                
+            </p>
+
+            <p>
+                If <m>f</m> and <m>g</m> are measurable then so are <m>f+g, f^2,</m> and <m> g^2</m>. Hence <m>fg</m> is also a measurable function.
+            </p>
+
+            <p>
+                Finally, to show that <m>\frac{f}{g}</m> is measurable we note that <m>\frac{1}{x}</m> is continuous on <m>\mathbf{R}\setminus \{0\}</m> and hence Borel measurable. Since <m>g(x) \neq 0</m>, this means that <m>\frac{1}{g}</m> is an <m>S</m>-measurable function. 
+            </p>
+
+            <p>
+                Because <m>\frac{f}{g} = f \cdot \frac{1}{g}</m>, and the product of measurable functions is measurable, it follows that <m>\frac{f}{g}</m> is also measurable.
+            </p>
+
+        </proof>
+
+        <theorem xml:id="thm-pointwise-limit-meas-funct">
+            <title>Pointwise Limit of <m>S</m>-Measurable Functions</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose that <m>(X,S)</m> is a measurable space and <m>f_1, f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>\mathbf{R}</m>. Suppose <m>\lim_{k\to \infty} f_k(x)</m> exists for each <m>x \in X</m>. Define <m>f:X \to \mathbf{R}</m> by 
+                    <md>
+                        f(x) = \lim_{k\to \infty} f_k(x).
+                    </md>
+                    Then <m>f</m> is an <m>S</m>-measurable function.
+                </p>
+            </statement>
+        </theorem>
+        
+        <p>
+            Note: The fact that convergence only needs to be pointwise is a very nice property to have. Recall that the pointwise limit of a sequence of Riemann integrals is not necessarily Riemann integrable and the pointwise limit of a sequence of continuous functions is not necessarily continuous.
+        </p>
+
+        <proof>
+            <p>
+                Once again, our strategy is to show that <m>f^{-1}((a,\infty)) \in S</m> for all <m>a \in \mathbf{R}</m>.
+            </p>
+
+            <p>
+                More precisely, we will show that
+                <md>
+                    f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                </md>
+                
+            </p>
+
+            <p>
+                Since the right side is a countable union of a finite intersection of sets in <m>S</m>, it belongs to <m>S</m> as well. Thus showing this equality will prove that <m>f^{-1}((a,\infty)) \in S</m>.
+            </p>
+
+            <p>
+                First suppose <m>x \in f^{-1}((a,\infty))</m>. Then <m>a &lt; f(x)</m> and hence there exists a positive integer <m>j</m> such that <m>a + \frac{1}{j}&lt; f(x)</m>.
+            </p>
+
+            <p>
+                Hence there exists a positive integer <m>m</m> such that <m>a + \frac{1}{j}&lt; f_k(x)</m> for all <m>k \geq m</m>. So <m>x \in f_k^{-1}\left(a+ \frac{1}{j}, \infty\right)</m> for some <m>j</m> and all <m>k\geq m</m>.
+            </p>
+
+            <p>
+                Hence
+                <md>
+                    f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                </md>
+                
+            </p>
+
+            <p>
+                To prove the opposite inclusion suppose that
+                <md>
+                    x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                </md>
+                
+            </p>
+
+            <p>
+                Thus there exists positive integers <m>j</m> and <m>m</m> so that <m>x \in f_k^{-1}\left(a+ \frac{1}{j}, \infty\right)</m> for all <m>k \geq m</m>.
+            </p>
+
+            <p>
+                This implies that <m>a + \frac{1}{j} &lt; f_k(x)</m> for all <m>k \geq m</m>. Thus taking the limit as <m>k \to \infty</m> yields that <m>a + \frac{1}{j}&lt; f(x)</m> and hence <m>x \in f^{-1}((a,\infty))</m>.
+            </p>
+
+            <p>
+                Hence we have proven that
+                <md>
+                    f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                </md>
+                which implies that <m>f</m> is an <m>S</m>-measurable function.
+            </p>
+
+        </proof>
+
+        <p>
+            Sometimes we will want to consider functions that can attain the value <m>\infty</m> or <m>-\infty</m>. We can thus extend the notion of Borel sets to subsets of <m>[-\infty, \infty]</m>
+        </p>
+
+        <definition xml:id="def-borel-inf">
+            <title>Borel Subsets of <m>[-\infty, \infty]</m></title>
+            
+            
+            <statement>
+                <p>
+                    A subset of <m>[-\infty, \infty]</m> is called a <term>Borel set</term> if its intersection with <m>\mathbf{R}</m> is a Borel set.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            With the above definition, the set of Borel subsets of <m>[-\infty, \infty]</m> is a <m>\sigma</m>-algebra.
+        </p>
+
+        <definition xml:id="def-measurable-function-inf">
+            <title>Measurable Function</title>
+            
+            
+            <statement>
+                <p>
+                    A function <m>f: X \to [-\infty, \infty]</m> is called <m>S</m><term>-measurable</term> if <m>f^{-1}(B) \in S</m> for all Borel subsets <m>B</m> of <m>[-\infty, \infty]</m>
+                </p>
+            </statement>
+        </definition>
+
+        <theorem xml:id="thm-cond-measure-inf">
+            <title>Condition for a Measurable Function</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>(X,S)</m> is a measurable space and <m>f:X \to [\infty,\infty]</m> is a function such that <m>f^{-1}((a,\infty]) \in S</m> for all <m>a \in \mathbf{R}</m>. Then <m>f</m> is an <m>S</m>-measurable function.
+                </p>
+            </statement>
+        </theorem>
+
+        <theorem xml:id="thm-pointwise-inf-sup-meas">
+            <title>Pointwise Infimum and Supremum of a Sequence of <m>S</m>-Measurable Functions</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>(X,S)</m> is a measurable space and <m>f_1, f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>[-\infty,\infty]</m>. Define <m>g,h:X \to [\infty,\infty]</m> by 
+                    <md>
+                        g(x) = \inf \{ f_k(x): k \in \mathbf{N} \} \quad h(x) = \sup \{ f_k(x): k \in \mathbf{N} \}
+                    </md>
+                    Then <m>g</m> and <m>h</m> are <m>S</m>-measurable functions.
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                We will first show that <m>h</m> is an <m>S</m>-measurable function. Our strategy is to show that <m>h^{-1}((a,\infty]) \in S</m> for all <m>a\in \mathbf{R}</m>.
+            </p>
+
+            <p>
+                We will show that
+                <md>
+                    h^{-1}((a,\infty]) = \bigcup_{k=1}^{\infty} f_k^{-1}((a,\infty])
+                </md>
+                and since the right hand side is a countable union of functions in <m>S</m> this will show that <m>h^{-1}((a,\infty]) \in S</m>.
+            </p>
+
+            <p>
+               Suppose <m>x \in h^{-1}((a,\infty]</m>. Then <m>a &lt; h(x)</m>. Since <m>h</m> is the supremum, this means that there exists <m>K \in \mathbf{N}</m> such that <m>a &lt; f_K(x)</m>. Thus <m>x \in f_K^{-1}((a,\infty])</m>. 
+            </p>
+
+            <p>
+                Hence
+                <md>
+                     h^{-1}((a,\infty]) \subseteq \bigcup_{k=1}^{\infty} f_k^{-1}((a,\infty]).
+                </md>
+                
+            </p>
+
+            <p>
+                To show the other inclusion, suppose <m>x</m> belongs to the right hand side. Then there exists <m>K \in \mathbf{N}</m> such that <m>x \in f_K^{-1}((a,\infty])</m>.
+            </p>
+
+            <p>
+                Hence <m>a &lt; f_K(x) \leq h(x)</m> since <m>h(x)</m> is the supremum. Thus <m>x \in h^{-1}((a,\infty])</m> and hence 
+                <md>
+                    h^{-1}((a,\infty]) = \bigcup_{k=1}^{\infty} f_k^{-1}((a,\infty]).
+                </md>
+                
+            </p>
+
+            <p>
+                Thus <m>h(x)</m> is an <m>S</m>-measurable function.
+            </p>
+
+            <p>
+                To show that <m>g(x)</m> is an <m>S</m>-measurable function, note that <m>g(x) = - \sup \{-f_k(x): k \in \mathbf{N}\}</m>.
+            </p>
+
+            <p>
+                Thus the result we proved about supremums shows that <m>g(x)</m> is also an <m>S</m>-measurable function.
+            </p>
+
+        </proof>
+        
+
     </subsection>
 
     </section>
