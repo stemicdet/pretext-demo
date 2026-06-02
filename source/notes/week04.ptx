@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-04">
+  <title>Week 4: Measures and Their Properties (2C) </title>
+
+  <subsection xml:id="subsec-Definition-and-Examples-of-Measures">
+    <title>Definition and Examples of Measures</title>
+    
+    <p>
+      The motivation for defining outer measure was to extend the concept of the length of an interval to all subsets of <m>\mathbf{R}</m>. However we will define a more general definition of measure which will also extend areas of squares and volumes of cubes to subsets of <m>\mathbf{R^2}</m> and <m>\mathbf{R^3}</m>. 
+    </p>
+
+    <definition xml:id="def-measure">
+      <title>Measure</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>X</m> is a set and <m>S</m> is a <m>\sigma</m>-algebra on <m>X</m>. A <m>measure</m> on <m>(X,S)</m> is a function <m>\mu: S \to [0,\infty]</m> such that <m>\mu(\emptyset) = 0</m> and 
+          <md>
+            \mu \left( \bigcup_{k=1}^{\infty} E_k \right) = \sum_{k=1}^{\infty} \mu(E_k)
+          </md>
+          for every sequence of disjoint subsets <m>E_1, E_2, \ldots</m> of sets in <m>S</m>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Example: Let <m>X</m> be a set and let <m>S</m> be the <m>\sigma</m>-algebra of all subsets of <m>X</m>. Define a measure on <m>X</m> by <m>\mu(E) = n</m> if <m>E</m> contains <m>n</m> elements and <m>\mu(E) = \infty</m> if <m>E</m> contains infinitely many elements. This <m>\mu</m> is called the counting measure.
+    </p>
+
+    <p>
+      Example: Let <m>S</m> be the <m>\sigma</m>-algebra of all subsets of <m>\mathbf{R}</m>. Then the outer measure on <m>\mathbf{R}</m> is not a measure on <m>(\mathbf{R},S)</m> because it is not countably additive.
+    </p>
+
+    <p>
+      Example: Let <m>S</m> be the <m>\sigma</m>-algebra of all Borel subsets of <m>\mathbf{R}</m>. We will prove in the next section that the outer measure on <m>\mathbf{R}</m> is a measure on <m>(\mathbf{R},S)</m>.
+    </p>
+
+    <p>
+      Example: Suppose <m>S</m> is a <m>\sigma</m>-algebra on a set <m>X</m>. A <term>probability measure</term> is a measure <m>\mu</m> on <m>(X,S)</m> such that <m>\mu(X) = 1</m>.
+    </p>
+
+    <p>
+      <m>X</m> is called the <term>sample space</term> and a subset in <m>S</m> is called an <term>event</term>.
+    </p>
+
+    <p>
+      If <m>A</m> is an event then <m>\mu(A)</m> is called the <term>probability</term> of <m>A</m>.
+    </p>
+
+    <p>
+      Consider an experiment in which a 6 sided die is rolled. The sample space is the set <m>X = \{1,2,3,4,5,6\}</m>.
+    </p>
+
+    <p>
+      Let <m>S</m> be the <m>\sigma</m>-algebra of all subsets of <m>X</m> and let <m>\mu</m> be the measure on <m>(X,S)</m> defined by <m>\mu(E) = \frac{n}{6}</m> where <m>n</m> is the number of elements of <m>E</m>. Then <m>\mu</m> is a probability measure on <m>(X,S)</m>.
+    </p>
+
+    <p>
+      Let <m>A</m> be the event that the die lands on an even number. Then <m>A = \{2,4,6\}</m>. Hence <m>\mu(A) = \frac{1}{2}</m>.
+    </p>
+
+    <p>
+      Recall that a measurable space is a set <m>X</m> along with a <m>\sigma</m>-algebra <m>S</m>. If we include a measure <m>\mu</m> then we have a measure space.
+    </p>
+
+    <definition xml:id="def-measure-space">
+      <title>Measure Space</title>
+      
+      
+      <statement>
+        <p>
+          A <term>measure space</term> is an ordered triple <m>(X,S,\mu)</m> where <m>X</m> is a set, <m>S</m> is a <m>\sigma</m>-algebra on <m>X</m> and <m>\mu</m> is a measure on <m>(X,S)</m>.
+        </p>
+      </statement>
+
+      <p>
+        If <m>\mu</m> is a probability measure on <m>(X,S)</m> then the triple <m>(X,S,\mu)</m> is called a <term>probability space</term>.
+      </p>
+
+    </definition>
+    
+
+  </subsection>
+
+  <subsection xml:id="subsec-properties-measr">
+    <title>Properties of Measures</title>
+
+    <theorem xml:id="thm-meas-prese-order">
+      <title>Measures Preserve Order; Measure of Set Difference</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>(X,S,\mu)</m> is a measure space and <m>D,E \in S</m> such that <m>D \subseteq E</m>. Then
+          <ol>
+            <li>
+              <p>
+                <m>\mu(D) \leq \mu(E)</m>. (Measures are monotone.)
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\mu(E \setminus D) = \mu(E) - \mu(D)</m> provided that <m>\mu(D) &lt; \infty</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Note that we need the condition that <m>\mu(D) &lt; \infty</m> to avoid getting an indeterminate form of <m>\infty - \infty</m>.
+    </p>
+
+    <proof>
+      <p>
+        We can rewrite <m>E</m> as <m>E = D \bigcup E\setminus D</m>. Because this is a disjoint union it follows from the countable additivity of measures that <m>\mu(E) = \mu(D) + \mu(E\setminus D)</m>. 
+      </p>
+
+      <p>
+        Since <m>\mu(E \setminus D) \geq 0</m>, it follows that <m>\mu(D) \leq \mu(E)</m>.
+      </p>
+
+      <p>
+        Also if <m>\mu(D) &lt; \infty</m> then subtracting <m>\mu(D)</m> on both sides of the equation gives that <m>\mu(E \setminus D) = \mu(E) - \mu(D)</m>.
+      </p>
+    </proof>
+
+    <p>
+      The countable additivity property of measures only applies to disjoint unions; however, measures satisfy the countable subadditivity property on arbitrary countable unions.
+    </p>
+
+    <theorem xml:id="thm-count-subaditivity">
+      <title>Countable Subadditivity of Measures</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>(X,S,\mu)</m> is a measure space and <m>E_1, E_2, \ldots</m> are subsets in <m>S</m>. Then 
+          <md>
+            \mu \left(\bigcup_{k=1}^{\infty} E_k \right) \leq \sum_{k=1}^{\infty} \mu(E_k).
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Let <m>D_1 = \emptyset</m> and <m>D_k = E_1 \cup \ldots \cup E_{k-1}</m> for <m>k \geq 2</m>. Then the sequence <m>E_1 \setminus D_1</m>, <m>E_2 \setminus D_2</m>, <m>\ldots</m> is a distinct sequence of subsets whose union equals <m> \displaystyle \bigcup_{k=1}^{\infty} E_k</m>
+      </p>
+
+      <p>
+        Thus it follows from countable addivitity and monotonicity that 
+        <md>
+          <mrow> \mu \left( \bigcup_{k=1}^{\infty} E_k \right) \amp = \mu \left( \bigcup_{k=1}^{\infty} E_k \setminus D_k \right)</mrow>
+          <mrow> \amp = \sum_{k=1}^{\infty} E_k \setminus D_k</mrow>
+          <mrow> \amp \leq \sum_{k=1}^{\infty} E_k</mrow>
+        </md>
+        
+      </p>
+
+    </proof>
+
+    <theorem xml:id="thm-meas-inc-union">
+      <title>Measure of an Increasing Union</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>(X,S,\mu)</m> is a measure space and <m>E_1 \subset E_2 \subset \ldots</m> is an increasing sequence of sets in <m>S</m>. Then 
+          <md>
+            \mu \left( \bigcup_{k=1}^{\infty} E_k\right) = \lim_{k\to \infty} \mu(E_k)
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        If <m>\mu(E_k) = \infty</m> for some <m>k \in \mathbf{N}</m> then both sides of the above equation are equal to <m>\infty</m> and theorem is true. Thus we may suppose that <m>\mu(E_k) &lt; \infty</m> for all <m>k</m>.
+      </p>
+
+      <p>
+        Our strategy is to rewrite the left hand side as a disjoint union so that we can apply countable additivity. Let <m>E_0 = \emptyset</m>. Then
+        <md>
+          \bigcup_{k=1}^{\infty} E_k = \bigcup_{j=1} E_j \setminus E_{j-1},
+        </md>
+        and the right side is a disjoint union.
+      </p>
+
+      <p>
+        Hence by countable additivity of measure,
+        <md>
+          \mu \left(   \bigcup_{k=1}^{\infty} E_k \right) = \sum_{j=1}^{\infty} \mu( E_j \setminus E_{j-1}).
+        </md>
+        
+      </p>
+
+      <p>
+        It follows from the measure of set difference that
+        <md>
+          <mrow>\mu \left(   \bigcup_{k=1}^{\infty} E_k \right) \amp = \sum_{j=1}^{\infty} \mu( E_j \setminus E_{j-1}) </mrow>
+          <mrow> \amp = \lim_{k\to \infty} \sum_{j=1}^{k} \mu( E_j \setminus E_{j-1})</mrow>
+          <mrow> \amp = \lim_{k\to \infty} \sum_{j=1}^{k} \mu( E_j) -\mu(E_{j-1})</mrow>
+          <mrow> \amp = \lim_{k\to \infty} \mu(E_k).</mrow>
+        </md>
+        
+      </p>
+
+    </proof>
+
+    <p>
+      Measures also behave as expected with respect to decreasing intersections, provided that the sets under consideration have finite measures.
+    </p>
+
+    <theorem xml:id="thm-meas-decr-intersect">
+      <title>Measure of a Decreasing Intersection</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>(X,S,\mu)</m> is a measure space and <m>E_1 \supseteq E_2 \supseteq \ldots</m> is a decreasing sequence of sets in <m>S</m> with <m>\mu(E_1) &lt; \infty</m>. Then 
+          <md>
+            \mu \left( \bigcap_{k=1}^{\infty} E_k \right) = \lim_{k\to \infty} \mu(E_k).
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+
+    <proof>
+      <p>
+        Our strategy is to rewrite the left hand side as an increasing union so that we can apply the previous result. It follows from De Morgan's laws that
+        <md>
+           E_1 \setminus \bigcap_{k=1}^{\infty} E_k = \bigcup_{k=1}^{\infty} E_1 \setminus E_k. 
+        </md>
+        
+      </p>
+
+      <p>
+        We note that <m>E_1 \setminus E_1 \subseteq E_1 \setminus E_2 \subseteq E_1 \setminus E_3 \subseteq</m> is an increasing sequence of sets in <m>S</m>.
+      </p>
+
+      <p>
+        Hence by our previous result,
+        <md>
+          \mu \left( E_1 \setminus \bigcap_{k=1}^{\infty} E_k \right) = \mu \left( \bigcup_{k=1}^{\infty} E_1 \setminus E_k \right) = \lim_{k\to \infty} \mu(E_1 \setminus E_k).
+        </md>
+        
+      </p>
+
+      <p>
+        Using the formula for the measure of set difference, we can rewrite this as
+        <md>
+          \mu(E_1) - \mu \left( \bigcap_{k=1}^{\infty} E_k \right) = \mu(E_1) - \lim_{k\to \infty} \mu(E_k)
+        </md>
+        and the theorem follows by subtracting <m>\mu(E_1)</m> from both sides and dividing by <m>-1</m>.
+      </p>
+
+    </proof>
+
+    <theorem xml:id="thm-measure-union">
+      <title>Measure of a Union</title>
+      
+      
+      <statement>
+        <p>
+          Suppose <m>(X,S,\mu)</m> is a measure space and <m>D,E \in S</m> with <m>\mu(D \cap E) &lt; \infty</m>. Then
+          <md>
+            \mu(D \cup E) = \mu(E) + \mu(D) - \mu(D \cap E).
+          </md>
+          
+        </p>
+      </statement>
+    </theorem>
+    
+
+    <p>
+      If <m>(X,S,\mu)</m> is a probability space and <m>D</m> and <m>E</m> are events, then the above equation is just the formula for the probability of a disjunction.
+      <md>
+        P(D \text{ or } E) = P(D) + P(E) - P(D \text{ and } E).
+      </md>
+      
+    </p>
+
+    <p>
+      If <m>E</m> and <m>D</m> are mutually exclusive events (meaning <m>D \cap E = \emptyset</m>) then 
+      <md>
+        P(D \text{ or } E) = P(D) + P(E).
+      </md>
+      
+    </p>
+
+    <proof>
+      <p>
+        Our strategy is to rewrite the left hand side as a disjoint union and apply countable additivity.
+        <md>
+          D \cup E = (D \setminus (D\cap E)) \cup (E \setminus (D\cap E)) \cup (D\cap E)
+        </md>
+        
+      </p>
+
+      <p>
+        Since the right hand side is a disjoint union we have
+        <md>
+          <mrow> \mu( D \cup E) \amp = \mu(D \setminus (D\cap E)) + \mu(E \setminus (D\cap E)) + \mu(D\cap E)</mrow>
+          <mrow> \amp =\mu(D) - \mu(D\cap E) + \mu(E) - \mu(D\cap E) + \mu(D\cap E)</mrow>
+          <mrow> \amp =\mu(D) + \mu(E) - \mu(D\cap E).</mrow>
+        </md>
+        
+      </p>
+    </proof>
+    
+    
+    
+    
+  </subsection>
+
+  </section>
