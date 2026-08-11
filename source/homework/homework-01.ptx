@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <worksheet>
-  <title>Homework 01</title>
+  <title>Homework 1 (Due August 27)</title>
   <introduction>
     <p>
       <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
@@ -12,8 +12,70 @@
     <exercise>
       <statement>
         <p>
-          This is the first homework exercise.
+          Define <m>f:[0,1] \to \mathbf{R}</m> by
+          <md>
+            f(x) = \begin{cases} 
+      \hfill  1  \amp \text{ if $x$ is rational} \\
+      \hfill  2 \hfill \amp \text{ if $x$ is irrational} 
+  \end{cases}
+          </md>
+          Explain why <m>f</m> is not Riemann integrable on <m>[0,1]</m>.
         </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>a \leq s &lt; t\leq b</m>. Define <m>f: [a,b] \to \mathbf{R}</m> by
+          <md>
+                    f(x) = \begin{cases} 
+      \hfill  1  \amp \text{ if $ s &lt; x &lt; t$} \\
+      \hfill  0 \hfill \amp \text{ otherwise} \\
+  \end{cases}  
+          </md>
+Prove that <m>f</m> is Riemann integrable on <m>[a,b]</m> and 
+<md>
+  \int_a^b f(x) dx = t-s.
+</md>
+
+
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          For each <m>k \in \mathbf{N}</m>, define <m>f_k: (0,1] \to \mathbf{R}</m> by
+
+          <md>
+            f_k(x) = \begin{cases} 
+      \hfill  k  \amp \text{ if $ 0 &lt; x &lt; \frac{1}{k}$} \\
+      \hfill  0 \hfill \amp \text{ otherwise} 
+  \end{cases}
+          </md>
+          
+        </p>
+         <p>
+          <ol>
+            <li>
+              <p>
+                Show that for each <m>x \in (0,1]</m> the sequence <m>\{f_k(x)\}</m> converges pointwise to <m>0</m> as <m>k \to \infty</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Show that
+                <md>
+                  \int_0^1 f_k(x) dx = 1
+                </md>
+                for all <m>k\in \mathbf{N}</m>. (This shows that in general <m>\displaystyle \lim_{k\to \infty} \int_a^b f_k(x) dx \neq  \int_a^b \lim_{k\to \infty} f_k(x) dx</m>.)
+              </p>
+            </li>
+          </ol>
+        </p>
+
       </statement>
     </exercise>
 
