@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 3: Measurable Spaces and Functions (2B)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Real Variables">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Real Variables</span> <span class="subtitle">MATH 650 Fall 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-02.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="notes-week-04.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="syllabus.html" class="internal"><span class="title">Syllabus</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#sec-course-info" class="internal"><span class="title">Course Information</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="syllabus.html#sec-assessments" class="internal"><span class="title">Assessments and Grades</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#Motivation" class="internal"><span class="title">Motivation and Definition of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#good-properties" class="internal"><span class="title">Good Properties of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#outer-measure-not-additive" class="internal"><span class="title">Outer Measure is Not Additive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: Measurable Spaces and Functions (2B)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#desired" class="internal"><span class="title">Desired Properties of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Simga-Algebras" class="internal"><span class="title">Sigma Algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Borel-Subsets-of-R" class="internal"><span class="title">Borel Subsets of R and Inverse Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-measurable-function" class="internal"><span class="title">Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Measures and Their Properties (2C)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Definition-and-Examples-of-Measures" class="internal"><span class="title">Definition and Examples of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-properties-measr" class="internal"><span class="title">Properties of Measures</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-03"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 3: Measurable Spaces and Functions (2B)</span>
+</h2>
+<section class="subsection" id="desired"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Desired Properties of Measures</span>
+</h3>
+<div class="para logical" id="desired-2">
+<div class="para">The length of an interval has a number of important properties. If our definition of measure, <span class="process-math">\(\mu\text{,}\)</span> is to extend the notion of the length of an interval to all subsets of <span class="process-math">\(\mathbf{R}\)</span> then it should possess the following properties.</div>
+<ol class="decimal" id="desired-2-3">
+<li id="desired-2-3-1">
+<div class="para" id="desired-2-3-1-1">
+<span class="process-math">\(\mu\)</span> is a function from the set of subsets of <span class="process-math">\(\mathbf{R}\)</span> to <span class="process-math">\([0, \infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-2-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#desired-2-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="desired-2-3-2">
+<div class="para" id="desired-2-3-2-1">
+<span class="process-math">\(\mu(I) = \ell(I)\)</span> for every open interval <span class="process-math">\(I\)</span> of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-2-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#desired-2-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="desired-2-3-3">
+<div class="para logical" id="desired-2-3-3-1">
+<div class="displaymath process-math" id="desired-2-3-3-1-1">
+\begin{equation*}
+\mu \left(\bigcup_{k=1}^{\infty} A_k \right) = \sum_{k=1}^{\infty} \mu(A_k)
+\end{equation*}
+</div>
+<div class="para">for every disjoint sequence <span class="process-math">\(A_1, A_2, \ldots\)</span> of subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> (Countable Additivity)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#desired-2-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#desired-2-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="desired-2-3-4">
+<div class="para" id="desired-2-3-4-1">
+<span class="process-math">\(\mu(t+A) = \mu(A)\)</span> for every <span class="process-math">\(A \subset \mathbf{R}\)</span> and <span class="process-math">\(t \in \mathbf{R}\text{.}\)</span> (Translation Invariance)<div class="autopermalink" data-description="Paragraph"><a href="#desired-2-3-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#desired-2-3-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#desired-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-3">Outer measure satisfies properties (a), (b), and (d) but fails (c) because it is not additive.<div class="autopermalink" data-description="Paragraph"><a href="#desired-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-4">We might try to modify the definition of outer measure to make it countably additive or to search for another way to measure the size of subsets of <span class="process-math">\(\mathbf{R}\)</span> that will satisfy the desired properties, but neither of these are fruitful endeavors. As the next theorem shows, there is no measure that satisfies all four properties.<div class="autopermalink" data-description="Paragraph"><a href="#desired-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-nonexist-length"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nonexistence of extension of length to all subsets of <span class="process-math">\(\mathbf{R}\)</span>.</span>
+</h4>
+<div class="para logical" id="thm-nonexist-length-2-1">
+<div class="para">There does not exists a function <span class="process-math">\(\mu\)</span> with all the following properties:</div>
+<ol class="decimal" id="thm-nonexist-length-2-1-2">
+<li id="thm-nonexist-length-2-1-2-1">
+<div class="para" id="thm-nonexist-length-2-1-2-1-1">
+<span class="process-math">\(\mu\)</span> is a function from the set of subsets of <span class="process-math">\(\mathbf{R}\)</span> to <span class="process-math">\([0, \infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-nonexist-length-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-nonexist-length-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-nonexist-length-2-1-2-2">
+<div class="para" id="thm-nonexist-length-2-1-2-2-1">
+<span class="process-math">\(\mu(I) = \ell(I)\)</span> for every open interval <span class="process-math">\(I\)</span> of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-nonexist-length-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-nonexist-length-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-nonexist-length-2-1-2-3">
+<div class="para logical" id="thm-nonexist-length-2-1-2-3-1">
+<div class="displaymath process-math" id="thm-nonexist-length-2-1-2-3-1-1">
+\begin{equation*}
+\mu \left(\bigcup_{k=1}^{\infty} A_k \right) = \sum_{k=1}^{\infty} \mu(A_k)
+\end{equation*}
+</div>
+<div class="para">for every disjoint sequence <span class="process-math">\(A_1, A_2, \ldots\)</span> of subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> (Countable Additivity)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-nonexist-length-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-nonexist-length-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="thm-nonexist-length-2-1-2-4">
+<div class="para" id="thm-nonexist-length-2-1-2-4-1">
+<span class="process-math">\(\mu(t+A) = \mu(A)\)</span> for every <span class="process-math">\(A \subset \mathbf{R}\)</span> and <span class="process-math">\(t \in \mathbf{R}\text{.}\)</span> (Translation Invariance)<div class="autopermalink" data-description="Paragraph"><a href="#thm-nonexist-length-2-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#thm-nonexist-length-2-1-2-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-nonexist-length-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 13: Nonexistence of extension of length to all subsets of \mathbf{R}"><a href="#thm-nonexist-length" title="Copy heading and permalink for Theorem 13: Nonexistence of extension of length to all subsets of \mathbf{R}" aria-label="Copy heading and permalink for Theorem 13: Nonexistence of extension of length to all subsets of \mathbf{R}">🔗</a></div></article><details id="desired-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="desired-6-1">We will prove this by showing that any function that satisfies (a), (b), and (d) must fail (c). Actually, we kind of already did this in our proof that outer measure is not additive.<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="desired-6-2">
+<div class="para">Thinking back to that proof, we made use of the following properties of outer measure:</div>
+<ol class="decimal" id="desired-6-2-1">
+<li id="desired-6-2-1-1">
+<div class="para" id="desired-6-2-1-1-1">If <span class="process-math">\(A \subseteq B\)</span> then <span class="process-math">\(\mu(A) \leq \mu(B)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#desired-6-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="desired-6-2-1-2">
+<div class="para" id="desired-6-2-1-2-1">
+<span class="process-math">\(\mu([a,b]) = b-a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#desired-6-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="desired-6-2-1-3">
+<div class="para logical" id="desired-6-2-1-3-1">
+<div class="para">If <span class="process-math">\(A_1, A_2, \ldots\)</span> is a sequence of (not necessarily disjoint) subsets of <span class="process-math">\(\mathbf{R}\)</span> then</div>
+<div class="displaymath process-math" id="desired-6-2-1-3-1-3">
+\begin{equation*}
+\mu \left(\bigcup_{k=1}^{\infty} A_k \right) \leq \sum_{k=1}^{\infty} \mu(A_k) \text{ (Countable Subadditivity)}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#desired-6-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-3">We will show that any function that satisfies (a), (b), (c), and (d) also satisfies (1), (2), and (3). Thus the same proof that we used to show that outer measure is not additive applies and show that <span class="process-math">\(\mu\)</span> is not additive-- a contradiction.<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-4">To show (1), suppose that <span class="process-math">\(A \subseteq B\text{.}\)</span> Then <span class="process-math">\(B = (B \setminus A) \cup A\)</span> and these are disjoint sets.<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-5">Hence by <span class="process-math">\((c)\)</span> <span class="process-math">\(\mu(B) = \mu(B \setminus A) + \mu(A)\text{.}\)</span> Since <span class="process-math">\(\mu(B \setminus A) \geq 0\)</span> by (a), it follows that <span class="process-math">\(\mu(B) \geq \mu(A)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-6">To show (2) suppose that <span class="process-math">\(a,b \in \mathbf{R}\)</span> with <span class="process-math">\(a &lt; b\)</span> and let <span class="process-math">\(\epsilon &gt; 0\)</span> be arbitrary. Then <span class="process-math">\((a,b) \subseteq [a,b] \subseteq (a-\epsilon, b+ \epsilon)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-7">Hence by (1), <span class="process-math">\(\mu \left( (a,b) \right) \leq \mu \left( [a,b] \right) \leq \mu \left( (a-\epsilon,b+\epsilon) \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-8">Thus it follows from (b) that <span class="process-math">\(b-a \leq \mu([a,b]) \leq b-a + 2\epsilon\)</span> and since <span class="process-math">\(\epsilon\)</span> can be made arbitrarily small it follows that <span class="process-math">\(\mu([a,b]) = b-a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-9">Finally to show (3) suppose that <span class="process-math">\(A_1, A_2, \ldots\)</span> is a sequence of (not necessarily disjoint) subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-10">Then the sequence <span class="process-math">\(A_1, A_2 \setminus A_1, A_3 \setminus (A_1 \cup A_2), \ldots, \)</span> is a sequence of disjoint subsets whose union is the same as <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} A_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#desired-6-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="desired-6-11">
+<div class="para">Hence by (c),</div>
+<div class="displaymath process-math" id="desired-6-11-1">
+\begin{align*}
+\mu \left( \bigcup_{k=1}^{\infty} A_k\right) \amp = \mu(A_1) + \mu(A_2 \setminus A_1) + \mu(A_3 \setminus (A_1 \cup A_2)) + \ldots\\
+\amp \leq \sum_{k=1}^{\infty} \mu(A_k) 
+\end{align*}
+</div>
+<div class="para">which is what we want to show.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-12">Our measure <span class="process-math">\(\mu\)</span> has the same properties of outer measure that we used to construct non-additive disjoint sets. Thus our measure cannot be additive.<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="desired-6-13">Hence <span class="process-math">\(\mu\)</span> cannot satisfy all four properties (a), (b), (c), and (d).<div class="autopermalink" data-description="Paragraph"><a href="#desired-6-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#desired-6" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Desired Properties of Measures"><a href="#desired" title="Copy heading and permalink for Subsection: Desired Properties of Measures" aria-label="Copy heading and permalink for Subsection: Desired Properties of Measures">🔗</a></div></section><section class="subsection" id="subsec-Simga-Algebras"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Sigma Algebras</span>
+</h3>
+<div class="para" id="subsec-Simga-Algebras-2">Our previous results shows that if we want to extend the length of an interval to all subsets of <span class="process-math">\(\mathbf{R}\)</span> we cannot have all four desired properties of measures. We must give up one of our desired properties. But which one do we choose?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-3">We don’t want to give up (b) because the measure of an interval needs to be its length, we don’t want to give up (c) because countable additivity is useful to have when working with limits, and we don’t want to give up (d) because the size of a set should be the same no matter how much you shift it along with real line.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-4">So we will give up (a). This means that there are some subsets of <span class="process-math">\(\mathbf{R}\)</span> whose size cannot be defined. Such sets are called non-measureable sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-5">The sets that we constructed in the proof that outer measure is not additive are non-measurable sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-6">Fortunately, in practice all the important sets will turn out to be measurable, so we won’t have to worry too much about non-measurable sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-7">The collection of all subsets of <span class="process-math">\(\mathbf{R}\)</span> contains non-measurable sets. The collection of all measurable subsets of <span class="process-math">\(\mathbf{R}\)</span> forms a <span class="process-math">\(\sigma\)</span>-algebra, a collection of subsets that has a number of nice properties.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-sigma-algebra"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(\sigma\)</span>-algebra.</span>
+</h4>
+<div class="para logical" id="def-sigma-algebra-2-1">
+<div class="para">Suppose <span class="process-math">\(X\)</span> is a set and <span class="process-math">\(S\)</span> is a collection of subsets of <span class="process-math">\(X\text{.}\)</span> Then <span class="process-math">\(S\)</span> is called a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(X\)</span> if the following three conditions are satisfied:</div>
+<ol class="decimal" id="def-sigma-algebra-2-1-7">
+<li id="def-sigma-algebra-2-1-7-1">
+<div class="para" id="def-sigma-algebra-2-1-7-1-1">
+<span class="process-math">\(\emptyset \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-sigma-algebra-2-1-7-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#def-sigma-algebra-2-1-7-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="def-sigma-algebra-2-1-7-2">
+<div class="para" id="def-sigma-algebra-2-1-7-2-1">If <span class="process-math">\(E \in S\)</span> then <span class="process-math">\(X\setminus E \in S\text{.}\)</span> (<span class="process-math">\(S\)</span> is closed under compliments)<div class="autopermalink" data-description="Paragraph"><a href="#def-sigma-algebra-2-1-7-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#def-sigma-algebra-2-1-7-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="def-sigma-algebra-2-1-7-3">
+<div class="para logical" id="def-sigma-algebra-2-1-7-3-1">
+<div class="para">If <span class="process-math">\(E_1\text{,}\)</span> <span class="process-math">\(E_2\text{,}\)</span> <span class="process-math">\(\ldots\)</span> is a sequence of subsets in <span class="process-math">\(S\)</span> then</div>
+<div class="displaymath process-math" id="def-sigma-algebra-2-1-7-3-1-5">
+\begin{equation*}
+\bigcup_{k=1}^{\infty} E_k \in S. 
+\end{equation*}
+</div>
+<div class="para">(<span class="process-math">\(S\)</span> is closed under countable unions)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-sigma-algebra-2-1-7-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#def-sigma-algebra-2-1-7-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-sigma-algebra-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 14: \sigma-algebra"><a href="#def-sigma-algebra" title="Copy heading and permalink for Definition 14: \sigma-algebra" aria-label="Copy heading and permalink for Definition 14: \sigma-algebra">🔗</a></div></article><div class="para logical" id="subsec-Simga-Algebras-9">
+<div class="para">Examples: Suppose that <span class="process-math">\(X\)</span> is a set. Then the following are <span class="process-math">\(\sigma\)</span>-algebras of <span class="process-math">\(X\text{:}\)</span>
+</div>
+<ol class="decimal" id="subsec-Simga-Algebras-9-4">
+<li id="subsec-Simga-Algebras-9-4-1">
+<div class="para" id="subsec-Simga-Algebras-9-4-1-1">
+<span class="process-math">\(\displaystyle S = \{\emptyset, X\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-9-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Simga-Algebras-9-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Simga-Algebras-9-4-2">
+<div class="para" id="subsec-Simga-Algebras-9-4-2-1">The set of all subsets of <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-9-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Simga-Algebras-9-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-Simga-Algebras-9-4-3">
+<div class="para" id="subsec-Simga-Algebras-9-4-3-1">The set of all subsets <span class="process-math">\(E\)</span> of <span class="process-math">\(X\)</span> such that <span class="process-math">\(E\)</span> is countable or <span class="process-math">\(X \setminus E\)</span> is countable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-9-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-Simga-Algebras-9-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-10">The following theorem proves some important properties of <span class="process-math">\(\sigma\)</span>-algebras.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-sigma-properties"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of <span class="process-math">\(\sigma\)</span>-algebras.</span>
+</h4>
+<div class="para logical" id="thm-sigma-properties-2-1">
+<div class="para">Suppose <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on a set <span class="process-math">\(X\text{.}\)</span> Then</div>
+<ol class="decimal" id="thm-sigma-properties-2-1-4">
+<li id="thm-sigma-properties-2-1-4-1">
+<div class="para" id="thm-sigma-properties-2-1-4-1-1">
+<span class="process-math">\(X \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-sigma-properties-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-sigma-properties-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-sigma-properties-2-1-4-2">
+<div class="para" id="thm-sigma-properties-2-1-4-2-1">If <span class="process-math">\(D, E \in S\)</span> then <span class="process-math">\(D \cup E \in S\text{,}\)</span> <span class="process-math">\(D \cap E \in S\)</span> and <span class="process-math">\(D \setminus E \in S\text{.}\)</span> (<span class="process-math">\(\sigma\)</span>-algebras are closed under unions, intersections, and relative compliments)<div class="autopermalink" data-description="Paragraph"><a href="#thm-sigma-properties-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-sigma-properties-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-sigma-properties-2-1-4-3">
+<div class="para logical" id="thm-sigma-properties-2-1-4-3-1">
+<div class="para">If <span class="process-math">\(E_1, E_2, \ldots\)</span> is a sequence of subsets in <span class="process-math">\(S\)</span> then</div>
+<div class="displaymath process-math" id="thm-sigma-properties-2-1-4-3-1-3">
+\begin{equation*}
+\bigcap_{k=1}^{\infty} E_k \in S.
+\end{equation*}
+</div>
+<div class="para">(<span class="process-math">\(\sigma\)</span>-algebras are closed under countable intersections)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-sigma-properties-2-1-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-sigma-properties-2-1-4-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-sigma-properties-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 15: Properties of \sigma-algebras"><a href="#thm-sigma-properties" title="Copy heading and permalink for Theorem 15: Properties of \sigma-algebras" aria-label="Copy heading and permalink for Theorem 15: Properties of \sigma-algebras">🔗</a></div></article><details id="subsec-Simga-Algebras-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Simga-Algebras-12-1">(1) follows because <span class="process-math">\(X\)</span> is the compliment of the empty set and <span class="process-math">\(\emptyset \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Simga-Algebras-12-2">
+<div class="para">Proving (2) requires that we show three different things. First, <span class="process-math">\(D \cup E\in S\)</span> since <span class="process-math">\(S\)</span> is closed under countable unions. Second, it follows from De Morgan’s Laws that</div>
+<div class="displaymath process-math" id="subsec-Simga-Algebras-12-2-3">
+\begin{equation*}
+X \setminus (D \cap E) = (X \setminus D) \cup (X\setminus E) 
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-12-3">Since <span class="process-math">\(S\)</span> is closed under compliments, both <span class="process-math">\((X\setminus D)\)</span> and <span class="process-math">\((X \setminus E)\)</span> belong to <span class="process-math">\(S\text{.}\)</span> Since <span class="process-math">\(S\)</span> is closed under countable unions, their union also belongs to <span class="process-math">\(S\text{,}\)</span> which means that <span class="process-math">\(X \setminus (D \cap E) \in S\text{.}\)</span> Finally since <span class="process-math">\(S\)</span> is closed under compliments, <span class="process-math">\(D \cap E \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-12-4">Lastly, <span class="process-math">\(D \setminus E = D \cap (X \setminus E)\text{.}\)</span> By the properties of <span class="process-math">\(\sigma\)</span>-algebras it follows that <span class="process-math">\(D\)</span> and <span class="process-math">\(X \setminus E \in S\text{.}\)</span> Since <span class="process-math">\(S\)</span> is closed under intersections, it follows that <span class="process-math">\(D \setminus E \in S\text{.}\)</span> This completes the proof of (b).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Simga-Algebras-12-5">
+<div class="para">To prove (c), we note that it also follows from De Morgan’s Laws that</div>
+<div class="displaymath process-math" id="subsec-Simga-Algebras-12-5-1">
+\begin{equation*}
+X \setminus \bigcap_{k=1}^{\infty} E_k = \bigcup_{k=1}^{\infty} (X \setminus E_k).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Simga-Algebras-12-6">We just showed that if <span class="process-math">\(E_k \in S\text{,}\)</span> then so is <span class="process-math">\(X \setminus E_k\text{.}\)</span> Since <span class="process-math">\(S\)</span> is closed under countable unions, it follows that <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} (X \setminus E_k) \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Simga-Algebras-12-7">
+<div class="para">Hence <span class="process-math">\(X \setminus \bigcap_{k=1}^{\infty} E_k\in S\)</span> and thus by the properties of <span class="process-math">\(\sigma\)</span>-algebras</div>
+<div class="displaymath process-math" id="subsec-Simga-Algebras-12-7-3">
+\begin{equation*}
+X \setminus \left( X \setminus \bigcap_{k=1}^{\infty} E_k\right) =  \bigcap_{k=1}^{\infty} E_k \in S
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(S\)</span> is closed under countable compliments.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-12-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Simga-Algebras-12" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Simga-Algebras-13">The word ``measurable’’ is used in the next definition because we will define a measure on these measurable sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-measurable-space"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measureable Space.</span>
+</h4>
+<div class="para" id="def-measurable-space-2-1">A <dfn class="terminology">measurable space</dfn> is an ordered pair <span class="process-math">\((X,S)\)</span> where <span class="process-math">\(X\)</span> is a set and <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-measurable-space-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 16: Measureable Space"><a href="#def-measurable-space" title="Copy heading and permalink for Definition 16: Measureable Space" aria-label="Copy heading and permalink for Definition 16: Measureable Space">🔗</a></div></article><div class="para" id="subsec-Simga-Algebras-15">A subset in <span class="process-math">\(S\)</span> is called an <span class="process-math">\(S\)</span>-measurable set or just a measurable set if <span class="process-math">\(S\)</span> is clear from context.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Simga-Algebras-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Sigma Algebras"><a href="#subsec-Simga-Algebras" title="Copy heading and permalink for Subsection: Sigma Algebras" aria-label="Copy heading and permalink for Subsection: Sigma Algebras">🔗</a></div></section><section class="subsection" id="subsec-Borel-Subsets-of-R"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Borel Subsets of R and Inverse Images</span>
+</h3>
+<div class="para" id="subsec-Borel-Subsets-of-R-2">An important property of <span class="process-math">\(\sigma\)</span>-algebras is that given a set <span class="process-math">\(A\)</span> of subsets of <span class="process-math">\(X\)</span> there is a smallest <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-smallest-sigma"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Smallest <span class="process-math">\(\sigma\)</span>-algebra containing a collection of subsets.</span>
+</h4>
+<div class="para" id="thm-smallest-sigma-2-1">Suppose <span class="process-math">\(X\)</span> is a set and <span class="process-math">\(A\)</span> is a set of subsets of <span class="process-math">\(X\text{.}\)</span> Then the intersection of all <span class="process-math">\(\sigma\)</span>-algebras on <span class="process-math">\(X\)</span> containing <span class="process-math">\(A\)</span> is also a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-smallest-sigma-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 17: Smallest \sigma-algebra containing a collection of subsets"><a href="#thm-smallest-sigma" title="Copy heading and permalink for Theorem 17: Smallest \sigma-algebra containing a collection of subsets" aria-label="Copy heading and permalink for Theorem 17: Smallest \sigma-algebra containing a collection of subsets">🔗</a></div></article><div class="para" id="subsec-Borel-Subsets-of-R-4">This intersection, <span class="process-math">\(S\text{,}\)</span> is the smallest <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(A\)</span> because if <span class="process-math">\(T\)</span> is another <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(S \subseteq T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Borel-Subsets-of-R-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Borel-Subsets-of-R-5-1">Let <span class="process-math">\(S\)</span> be the intersection of all <span class="process-math">\(\sigma\)</span>-algebras containing <span class="process-math">\(A\text{.}\)</span> To show that <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra we need to verify the three properties of <span class="process-math">\(\sigma\)</span>-algebras.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-5-2">First <span class="process-math">\(\emptyset \in S\)</span> because <span class="process-math">\(\emptyset\)</span> is in every <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-5-3">Next, If <span class="process-math">\(E \in S\)</span> then <span class="process-math">\(E\)</span> is in every <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(A\text{.}\)</span> Hence <span class="process-math">\(X \setminus E\)</span> is in every <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(A\)</span> so <span class="process-math">\(X \setminus E \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Borel-Subsets-of-R-5-4">
+<div class="para">Finally, suppose <span class="process-math">\(E_1, E_2, \ldots\)</span> is a sequence of subsets in <span class="process-math">\(S\text{.}\)</span> Then <span class="process-math">\(E_1, E_2, \ldots\)</span> belongs to every <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(A\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="subsec-Borel-Subsets-of-R-5-4-6">
+\begin{equation*}
+\bigcup_{k=1}^{\infty} E_k
+\end{equation*}
+</div>
+<div class="para">belongs to every <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(A\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-5-5">Thus <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} E_k \in S\)</span> and <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Borel-Subsets-of-R-5" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="definition definition-like" id="def-Borel-set"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Borel Set.</span>
+</h4>
+<div class="para" id="def-Borel-set-2-1">The smallest <span class="process-math">\(\sigma\)</span>-algebra containing all the open subsets of <span class="process-math">\(\mathbf{R}\)</span> is called the collection of <dfn class="terminology">Borel subsets</dfn> of <span class="process-math">\(\mathbf{R}\text{.}\)</span> A subset in this <span class="process-math">\(\sigma\)</span>-algebra is called a <dfn class="terminology">Borel set</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-Borel-set-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 18: Borel Set"><a href="#def-Borel-set" title="Copy heading and permalink for Definition 18: Borel Set" aria-label="Copy heading and permalink for Definition 18: Borel Set">🔗</a></div></article><div class="para" id="subsec-Borel-Subsets-of-R-7">Clearly every open set is a Borel set. Since the compliment of a closed set is an open set, every closed set is also a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-8">Recall that a <span class="process-math">\(G_{\delta}\)</span> set is a set that can be written as a countable intersection of open sets. Since <span class="process-math">\(\sigma\)</span>-algebras are closed under countable intersections, every <span class="process-math">\(G_{\delta}\)</span> set is also a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-9">Recall that an <span class="process-math">\(F_{\sigma}\)</span> set is a set that can be written as a countable union of closed sets. Since <span class="process-math">\(\sigma\)</span>-algebras are closed under countable unions, every <span class="process-math">\(F_{\sigma}\)</span> set is also a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-10">However, there are Borel sets that are neither <span class="process-math">\(G_{\delta}\)</span> sets nor <span class="process-math">\(F_{\sigma}\)</span> sets. In fact, there is no finite procedure involving countable unions, countable intersections, and compliments for constructing the collection of Borel sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Borel-Subsets-of-R-11">There are subsets of <span class="process-math">\(\mathbf{R}\)</span> that are not Borel sets, but any subset of <span class="process-math">\(\mathbf{R}\)</span> that can be explicitly written down is a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-inverse-image"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverse Image.</span>
+</h4>
+<div class="para logical" id="def-inverse-image-2-1">
+<div class="para">If <span class="process-math">\(f:X \to Y\)</span> is a function and <span class="process-math">\(A \subseteq Y\text{,}\)</span> then the set <span class="process-math">\(f^{-1}(A)\)</span> defined by</div>
+<div class="displaymath process-math" id="def-inverse-image-2-1-4">
+\begin{equation*}
+f^{-1}(A) = \{x\in X: f(x) \in A\}
+\end{equation*}
+</div>
+<div class="para">is called the <dfn class="terminology">inverse image</dfn> of <span class="process-math">\(A\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-inverse-image-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 19: Inverse Image"><a href="#def-inverse-image" title="Copy heading and permalink for Definition 19: Inverse Image" aria-label="Copy heading and permalink for Definition 19: Inverse Image">🔗</a></div></article><div class="para" id="subsec-Borel-Subsets-of-R-13">We used the inverse image before when we discussed how the main idea of Lebesgue integration is to partition the range. The sets <span class="process-math">\(E_i\)</span> were the inverse images of certain values of the range.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Borel-Subsets-of-R-14">
+<div class="para">Example: Suppose <span class="process-math">\(f:[0,3\pi] \to \mathbf{R}\)</span> is defined by <span class="process-math">\(f(x) = \cos(x)\text{.}\)</span> Then</div>
+<ol class="decimal" id="subsec-Borel-Subsets-of-R-14-3">
+<li id="subsec-Borel-Subsets-of-R-14-3-1">
+<div class="para" id="subsec-Borel-Subsets-of-R-14-3-1-1">
+<span class="process-math">\(\displaystyle f^{-1}\left( (0,1) \right) = (0, \frac{\pi}{2}) \cup (\frac{3\pi}{2}, \frac{5\pi}{2})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-14-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-Borel-Subsets-of-R-14-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-Borel-Subsets-of-R-14-3-2">
+<div class="para" id="subsec-Borel-Subsets-of-R-14-3-2-1">
+<span class="process-math">\(\displaystyle f^{-1}(\{0\}) = \{\frac{\pi}{2}, \frac{3\pi}{2}, \frac{5\pi}{2} \}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-14-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-Borel-Subsets-of-R-14-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-Borel-Subsets-of-R-14-3-3">
+<div class="para" id="subsec-Borel-Subsets-of-R-14-3-3-1">
+<span class="process-math">\(\displaystyle f^{-1} \left( (2,3) \right) = \emptyset\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-14-3-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-Borel-Subsets-of-R-14-3-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-alg-inv-im"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebra of Inverse Images.</span>
+</h4>
+<div class="para logical" id="thm-alg-inv-im-2-1">
+<div class="para">Suppose <span class="process-math">\(f: X \to Y\)</span> is a function. Then</div>
+<ol class="decimal" id="thm-alg-inv-im-2-1-2">
+<li id="thm-alg-inv-im-2-1-2-1">
+<div class="para" id="thm-alg-inv-im-2-1-2-1-1">
+<span class="process-math">\(f^{-1}(Y \setminus A) = X \setminus f^{-1}(A)\)</span> for every <span class="process-math">\(A \subseteq Y\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-inv-im-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-alg-inv-im-2-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-alg-inv-im-2-1-2-2">
+<div class="para logical" id="thm-alg-inv-im-2-1-2-2-1">
+<div class="displaymath process-math" id="thm-alg-inv-im-2-1-2-2-1-1">
+\begin{equation*}
+f^{-1} \left( \bigcup_{A \in \mathcal{A}} A  \right)= \bigcup_{A \in \mathcal{A}} f^{-1}(A)
+\end{equation*}
+</div>
+<div class="para">for every collection <span class="process-math">\(\mathcal{A}\)</span> of subsets of <span class="process-math">\(Y\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-inv-im-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-alg-inv-im-2-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-alg-inv-im-2-1-2-3">
+<div class="para logical" id="thm-alg-inv-im-2-1-2-3-1">
+<div class="displaymath process-math" id="thm-alg-inv-im-2-1-2-3-1-1">
+\begin{equation*}
+f^{-1} \left( \bigcap_{A \in \mathcal{A}} A  \right)= \bigcap_{A \in \mathcal{A}} f^{-1}(A)
+\end{equation*}
+</div>
+<div class="para">for every collection <span class="process-math">\(\mathcal{A}\)</span> of subsets of <span class="process-math">\(Y\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-inv-im-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-alg-inv-im-2-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-inv-im-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 20: Algebra of Inverse Images"><a href="#thm-alg-inv-im" title="Copy heading and permalink for Theorem 20: Algebra of Inverse Images" aria-label="Copy heading and permalink for Theorem 20: Algebra of Inverse Images">🔗</a></div></article><details id="subsec-Borel-Subsets-of-R-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Borel-Subsets-of-R-16-1">
+<div class="para">Suppose <span class="process-math">\(x \in A \subseteq Y\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Borel-Subsets-of-R-16-1-2">
+\begin{align*}
+x \in f^{-1}(Y \setminus A) \amp \Longleftrightarrow f(x) \in Y \setminus A \\
+\amp \Longleftrightarrow f(x) \notin A \\
+\amp \Longleftrightarrow x \notin f^{-1}(A) \\
+\amp \Longleftrightarrow x \in X \setminus f^{-1}(A)
+\end{align*}
+</div>
+<div class="para">Thus (a) is proved.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Borel-Subsets-of-R-16-2">
+<div class="para">Now suppose <span class="process-math">\(\mathcal{A}\)</span> is a collection of subsets of <span class="process-math">\(Y\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Borel-Subsets-of-R-16-2-3">
+\begin{align*}
+x \in f^{-1} \left( \bigcup_{A \in \mathcal{A}} A  \right) \amp \Longleftrightarrow f(x) \in  \bigcup_{A \in \mathcal{A}} A \\
+\amp \Longleftrightarrow f(x) \in A \text{ for some } A \in \mathcal{A}\\
+\amp \Longleftrightarrow x \in f^{-1}(A) \text{ for some } A \in \mathcal{A}\\
+\amp \Longleftrightarrow x \in \bigcup_{A \in \mathcal{A}} f^{-1}(A)
+\end{align*}
+</div>
+<div class="para">Thus (b) is proved. The proof of (c) is done the same way as the proof of (b) but with unions replaced with intersections and  ``for some’’ replaced with ``for all’’.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Borel-Subsets-of-R-16" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-inv-comp"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Inverse Image of a Composition.</span>
+</h4>
+<div class="para logical" id="thm-inv-comp-2-1">
+<div class="para">Suppose <span class="process-math">\(f: X \to Y\)</span> and <span class="process-math">\(g:Y\to W\)</span> are functions. Then</div>
+<div class="displaymath process-math" id="thm-inv-comp-2-1-3">
+\begin{equation*}
+(g \circ f)^{-1}(A) = f^{-1}(g^{-1}(A))
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\(A \subseteq W\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-inv-comp-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 21: Inverse Image of a Composition"><a href="#thm-inv-comp" title="Copy heading and permalink for Theorem 21: Inverse Image of a Composition" aria-label="Copy heading and permalink for Theorem 21: Inverse Image of a Composition">🔗</a></div></article><details id="subsec-Borel-Subsets-of-R-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Borel-Subsets-of-R-18-1">
+<div class="para">Suppose <span class="process-math">\(A \subseteq W\text{.}\)</span> Then for <span class="process-math">\(x \in X\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Borel-Subsets-of-R-18-1-3">
+\begin{align*}
+x \in (g \circ f)^{-1}(A) \amp \Longleftrightarrow (g \circ f)(x) \in A\\
+\amp \Longleftrightarrow g(f(x)) \in  A\\
+\amp \Longleftrightarrow f(x) \in g^{-1}(A)\\
+\amp \Longleftrightarrow x \in f^{-1}(g^{-1}(A)) 
+\end{align*}
+</div>
+<div class="para">Thus the theorem is proved.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Borel-Subsets-of-R-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-Borel-Subsets-of-R-18" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Borel Subsets of R and Inverse Images"><a href="#subsec-Borel-Subsets-of-R" title="Copy heading and permalink for Subsection: Borel Subsets of R and Inverse Images" aria-label="Copy heading and permalink for Subsection: Borel Subsets of R and Inverse Images">🔗</a></div></section><section class="subsection" id="subsec-measurable-function"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measurable Functions</span>
+</h3>
+<div class="para" id="subsec-measurable-function-2">Since some sets are unmeasurable, we want to make sure that we are working with functions that behave reasonably with respect to the <span class="process-math">\(\sigma\)</span>-algebra on their domains.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-measurable-funct"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measurable Functions.</span>
+</h4>
+<div class="para logical" id="def-measurable-funct-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S)\)</span> is a measurable space. A function <span class="process-math">\(f:X \to \mathbf{R}\)</span> is called <span class="process-math">\(S\)</span>-<dfn class="terminology">measurable</dfn> (or just <dfn class="terminology">measurable</dfn> if the context is clear) if</div>
+<div class="displaymath process-math" id="def-measurable-funct-2-1-6">
+\begin{equation*}
+f^{-1}(B) \in S
+\end{equation*}
+</div>
+<div class="para">for every Borel set <span class="process-math">\(B \subseteq \mathbf{R}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-measurable-funct-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 22: Measurable Functions"><a href="#def-measurable-funct" title="Copy heading and permalink for Definition 22: Measurable Functions" aria-label="Copy heading and permalink for Definition 22: Measurable Functions">🔗</a></div></article><div class="para" id="subsec-measurable-function-4">Example: If <span class="process-math">\(S\)</span> is the set of all subsets of <span class="process-math">\(X\)</span> then every function is <span class="process-math">\(S\)</span>-Measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-5">
+<div class="para">Example: Suppose <span class="process-math">\(E\)</span> is a subset of the set <span class="process-math">\(X\text{.}\)</span> The characteristic function of <span class="process-math">\(E\)</span> (Also called the indicator function of <span class="process-math">\(E\)</span>) is the function <span class="process-math">\(\chi_E:X \to \mathbf{R}\)</span> defined by</div>
+<div class="displaymath process-math" id="subsec-measurable-function-5-6">
+\begin{equation*}
+\chi_E(x) = \begin{cases} 
+\hfill  1 \amp \text{ if $x \in E$} \\
+\hfill  0 \hfill \amp \text{ if $x \notin E$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-6">If <span class="process-math">\(E = \mathbf{Q}\text{,}\)</span> then <span class="process-math">\(\chi_E(x)\)</span> is Dirichlet’s function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-7">
+<div class="para">Suppose <span class="process-math">\((X,S)\)</span> is a measurable space, <span class="process-math">\(E \subseteq X\)</span> and <span class="process-math">\(B \subseteq \mathbf{R}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-measurable-function-7-4">
+\begin{equation*}
+\chi_E^{-1}(B) = \begin{cases} 
+\hfill  E \amp \text{ if $0 \notin B$ and $1 \in B$} \\
+\hfill  X \setminus E \amp \text{ if $0 \in B$ and $1 \notin B$} \\
+\hfill  X \amp \text{ if $0 \in B$ and $1 \in B$} \\
+\hfill  \emptyset \amp \text{ if $0 \notin B$ and $1 \notin B$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-8">Thus <span class="process-math">\(\chi_E(x)\)</span> is a measurable function if and only if <span class="process-math">\(E \in S\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-9">The definition of measurable functions requires us to check the inverse image of every subset of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Fortunately, the next theorem tells us that we only need to check a certain subset of intervals.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-condition-meas-funct"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">23</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Condition for Measureable Functions.</span>
+</h4>
+<div class="para logical" id="thm-condition-meas-funct-2-1">
+<div class="para">Suppose that <span class="process-math">\((X,S)\)</span> is a measurable space and <span class="process-math">\(f: X \to \mathbf{R}\)</span> is a function such that</div>
+<div class="displaymath process-math" id="thm-condition-meas-funct-2-1-3">
+\begin{equation*}
+f^{-1}((a, \infty)) \in S
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a \in \mathbf{R}\text{.}\)</span> Then <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-condition-meas-funct-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 23: Condition for Measureable Functions"><a href="#thm-condition-meas-funct" title="Copy heading and permalink for Theorem 23: Condition for Measureable Functions" aria-label="Copy heading and permalink for Theorem 23: Condition for Measureable Functions">🔗</a></div></article><details id="subsec-measurable-function-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-measurable-function-11-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="subsec-measurable-function-11-1-1">
+\begin{equation*}
+T = \{A \subseteq \mathbf{R}: f^{-1}(A) \in S\}
+\end{equation*}
+</div>
+<div class="para">We will show that every Borel subset of <span class="process-math">\(\mathbf{R}\)</span> belongs to <span class="process-math">\(T\text{.}\)</span> To do this, we will first show that <span class="process-math">\(T\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-2">First, <span class="process-math">\(\emptyset \in T\)</span> because <span class="process-math">\(f^{-1}(\emptyset) = \emptyset \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-11-3">
+<div class="para">Second, if <span class="process-math">\(A \in T\text{,}\)</span> then <span class="process-math">\(f^{-1}(A) \in S\text{.}\)</span> Hence by property (a) of inverse images,</div>
+<div class="displaymath process-math" id="subsec-measurable-function-11-3-3">
+\begin{equation*}
+f^{-1}(\mathbf{R} \setminus A) = X \setminus f^{-1}(A) \in S
+\end{equation*}
+</div>
+<div class="para">since <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-4">Thus <span class="process-math">\(\mathbf{R} \setminus A \in T\)</span> and <span class="process-math">\(T\)</span> is closed under compliments.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-5">Finally, if <span class="process-math">\(A_1\text{,}\)</span> <span class="process-math">\(A_2\text{,}\)</span> <span class="process-math">\(\ldots \in T\)</span> then <span class="process-math">\(f^{-1}(A_1), f^{-1}(A_2), \ldots \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-11-6">
+<div class="para">Hence by property (b) of inverse images and since <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra,</div>
+<div class="displaymath process-math" id="subsec-measurable-function-11-6-3">
+\begin{equation*}
+f^{-1} \left(\bigcup_{k=1}^{\infty} A_k \right) = \bigcup_{k=1}^{\infty} f^{-1}(A_k) \in S.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-7">Hence <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} A_k \in T\)</span> and so <span class="process-math">\(T\)</span> is closed under countable unions. Thus <span class="process-math">\(T\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-8">We will now show that <span class="process-math">\(T\)</span> contains every open subset of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Since <span class="process-math">\(T\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra, this will show that <span class="process-math">\(T\)</span> contains the smallest <span class="process-math">\(\sigma\)</span>-algebra that contains every open subset of <span class="process-math">\(\mathbf{R}\)</span> and hence <span class="process-math">\(T\)</span> contains every Borel subset of <span class="process-math">\(\mathbf{R}\text{.}\)</span> This shows that <span class="process-math">\(f\)</span> is <span class="process-math">\(S\)</span>-measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-9">By hypothesis <span class="process-math">\(T\)</span> contains <span class="process-math">\(\{(a,\infty): a \in \mathbf{R}\}\text{.}\)</span> Since <span class="process-math">\(T\)</span> is closed under compliments <span class="process-math">\(T\)</span> also contains <span class="process-math">\(\{(-\infty, b] : b \in \mathbf{R}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-10">Since <span class="process-math">\(T\)</span> is closed under countable intersections, we also have that <span class="process-math">\(T\)</span> contains <span class="process-math">\((a,b]: a,b \in \mathbf{R}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-11">Since we can write <span class="process-math">\((a,b) = \displaystyle \bigcup_{k=1}^{\infty} \left(a,b-\frac{1}{k}\right] \)</span> and <span class="process-math">\(T\)</span> is closed under countable unions, <span class="process-math">\(T\)</span> contains <span class="process-math">\(\{(a,b): a,b \in \mathbf{R}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-12">Also, we can write <span class="process-math">\((-\infty,b)\)</span> as <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} \left(-k, b-\frac{1}{k}\right]\)</span> and <span class="process-math">\(T\)</span> is closed under countable unions, <span class="process-math">\(T\)</span> contains <span class="process-math">\(\{(-\infty,b): b, \in \mathbf{R}\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-13">Thus <span class="process-math">\(T\)</span> contains every open interval in <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-14">Every open subset of <span class="process-math">\(\mathbf{R}\)</span> can be written as a countable union of open intervals. Since <span class="process-math">\(T\)</span> is closed under countable unions <span class="process-math">\(T\)</span> contains every open subset of <span class="process-math">\(\mathbf{R}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-11-15">Thus <span class="process-math">\(T\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra that contains every open subset of <span class="process-math">\(\mathbf{R}\text{.}\)</span> So <span class="process-math">\(T\)</span> contains all the Borel subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Thus <span class="process-math">\(f\)</span> is a measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-11-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-measurable-function-11" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-measurable-function-12">We defined measurable functions for an arbitrary set <span class="process-math">\(X\)</span> and <span class="process-math">\(\sigma\)</span>-algebra <span class="process-math">\(S\text{,}\)</span> but for most purposes we want to work with Borel sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-borel-funct"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">24</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Borel Measurable Function.</span>
+</h4>
+<div class="para" id="def-borel-funct-2-1">Suppose <span class="process-math">\(X \subseteq \mathbf{R}\text{.}\)</span> A function <span class="process-math">\(f: X \to \mathbf{R}\)</span> is called <dfn class="terminology">Borel measurable</dfn> if <span class="process-math">\(f^{-1}(B)\)</span> is a Borel set for every Borel set <span class="process-math">\(B \subseteq \mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-borel-funct-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 24: Borel Measurable Function"><a href="#def-borel-funct" title="Copy heading and permalink for Definition 24: Borel Measurable Function" aria-label="Copy heading and permalink for Definition 24: Borel Measurable Function">🔗</a></div></article><div class="para" id="subsec-measurable-function-14">If <span class="process-math">\(X \subseteq \mathbf{R}\)</span> and <span class="process-math">\(f:X \to \mathbf{R}\)</span> is a Borel measurable function, then <span class="process-math">\(X\)</span> must be a Borel set since <span class="process-math">\(X = f^{-1}(\mathbf{R})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-15">From the theorem we just proved, if <span class="process-math">\(X \subseteq \mathbf{R}\)</span> and <span class="process-math">\(f:X \to \mathbf{R}\)</span> is a function, then <span class="process-math">\(f\)</span> is a Borel measurable function if and only if <span class="process-math">\(f^{-1}((a, \infty))\)</span> is a Borel set for all <span class="process-math">\(a \in \mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-16">Suppose <span class="process-math">\(X \subseteq \mathbf{R}\)</span> and <span class="process-math">\(f:X \to \mathbf{R}\)</span> is a function. Whether <span class="process-math">\(f\)</span> is measurable depends on which <span class="process-math">\(\sigma\)</span>-algebra we are talking about. If <span class="process-math">\(S\)</span> is the set of Borel sets contained in <span class="process-math">\(X\)</span> then <span class="process-math">\(S\)</span>-measurable and Borel measurable are the same thing.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-17">Even if <span class="process-math">\(S\)</span> is not the set of Borel sets contained in <span class="process-math">\(X\)</span> to check if <span class="process-math">\(f\)</span> is <span class="process-math">\(S\)</span>-measurable, we still consider the inverse images of Borel subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-cont-funct-borel"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">25</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Functions are Borel Measurable.</span>
+</h4>
+<div class="para" id="thm-cont-funct-borel-2-1">Every continuous real valued function defined on a Borel subset of <span class="process-math">\(\mathbf{R}\)</span> is Borel Measurable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-cont-funct-borel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 25: Continuous Functions are Borel Measurable"><a href="#thm-cont-funct-borel" title="Copy heading and permalink for Theorem 25: Continuous Functions are Borel Measurable" aria-label="Copy heading and permalink for Theorem 25: Continuous Functions are Borel Measurable">🔗</a></div></article><details id="subsec-measurable-function-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-19-1">Our strategy is to show that <span class="process-math">\(f^{-1}((a,\infty))\)</span> is a Borel set for all <span class="process-math">\(a \in \mathbf{R}\text{.}\)</span> So fix <span class="process-math">\(a \in \mathbf{R}\)</span> and choose <span class="process-math">\(x \in X\)</span> with <span class="process-math">\(f(x) &gt; a\text{.}\)</span> (If there is no such <span class="process-math">\(x\)</span> then <span class="process-math">\(f^{-1}((a, \infty)) = \emptyset\text{,}\)</span> which is a Borel set.)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-19-2">Since <span class="process-math">\(f\)</span> is continuous there exists <span class="process-math">\(\delta_x &gt; 0\)</span> such that <span class="process-math">\(f(y) &gt; a\)</span> for all <span class="process-math">\(a \in (x-\delta_x, x+\delta_x) \cap X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-19-3">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-measurable-function-19-3-1">
+\begin{equation*}
+f^{-1}((a,\infty)) = \left(\bigcup_{x\in f^{-1}(a,\infty)} (x-\delta_x, x + \delta_x) \right) \cap X.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-19-4">Since we have written <span class="process-math">\(f^{-1}(a, \infty)\)</span> as a countable union of open sets intersected with <span class="process-math">\(X\text{,}\)</span> it is a Borel set. Thus <span class="process-math">\(f\)</span> is a Borel measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-19-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-measurable-function-19" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="subsec-measurable-function-20">We just showed that continuous functions are Borel measurable. Now we will show that increasing functions are Borel measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-increasing-function"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">26</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Increasing Function.</span>
+</h4>
+<div class="para logical" id="def-increasing-function-2-1">
+<div class="para">Suppose <span class="process-math">\(f:X \to \mathbf{R}\)</span> is a function. <span class="process-math">\(f\)</span> is called <dfn class="terminology">(strictly) increasing</dfn> if:</div>
+<div class="displaymath process-math" id="def-increasing-function-2-1-4">
+\begin{equation*}
+f(x) \leq f(y) (f(x) &lt; f(y)) \text{ for all } x,y \in X \text{ with } x &lt; y.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-increasing-function-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 26: Increasing Function"><a href="#def-increasing-function" title="Copy heading and permalink for Definition 26: Increasing Function" aria-label="Copy heading and permalink for Definition 26: Increasing Function">🔗</a></div></article><article class="theorem theorem-like" id="thm-increasing-borel"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">27</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Increasing Functions are Borel Measurable.</span>
+</h4>
+<div class="para" id="thm-increasing-borel-2-1">Every increasing function defined on a Borel subset of <span class="process-math">\(\mathbf{R}\)</span> is a Borel measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#thm-increasing-borel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 27: Increasing Functions are Borel Measurable"><a href="#thm-increasing-borel" title="Copy heading and permalink for Theorem 27: Increasing Functions are Borel Measurable" aria-label="Copy heading and permalink for Theorem 27: Increasing Functions are Borel Measurable">🔗</a></div></article><details id="subsec-measurable-function-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-23-1">Let <span class="process-math">\(X \subseteq \mathbf{R}\)</span> be a Borel set and suppose that <span class="process-math">\(f:X \to \mathbf{R}\)</span> is increasing. Our strategy is to show that <span class="process-math">\(f^{-1}((a,\infty))\)</span> is a Borel set for all <span class="process-math">\(a \in \mathbf{R}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-23-2">Fix <span class="process-math">\(a \in \mathbf{R}\)</span> and let <span class="process-math">\(b = \inf f^{-1}((a,\infty))\text{.}\)</span> Then either <span class="process-math">\(f^{-1}((a,\infty)) = (b,\infty) \cap X\)</span> or <span class="process-math">\(f^{-1}((a,\infty)) = [b,\infty) \cap X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-23-3">Since we either have the intersection of <span class="process-math">\(X\)</span> with an open set or the intersection of <span class="process-math">\(X\)</span> with a closed set, we know that <span class="process-math">\(f^{-1}((a,\infty))\)</span> is a Borel set and thus <span class="process-math">\(f\)</span> is Borel-measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-23-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-measurable-function-23" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-comp-measurable"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">28</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Composition of Measurable Functions.</span>
+</h4>
+<div class="para" id="thm-comp-measurable-2-1">Suppose <span class="process-math">\((X,S)\)</span> is a measurable space and <span class="process-math">\(f:X \to S\)</span> is an <span class="process-math">\(S\)</span>-measurable function. Suppose <span class="process-math">\(g\)</span> is a real valued Borel measurable function defined on a subset of <span class="process-math">\(\mathbf{R}\)</span> that includes the range of <span class="process-math">\(f\text{.}\)</span> Then <span class="process-math">\(g \circ f: X \to \mathbf{R}\)</span> is an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#thm-comp-measurable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 28: Composition of Measurable Functions"><a href="#thm-comp-measurable" title="Copy heading and permalink for Theorem 28: Composition of Measurable Functions" aria-label="Copy heading and permalink for Theorem 28: Composition of Measurable Functions">🔗</a></div></article><details id="subsec-measurable-function-25" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-25-1">Suppose <span class="process-math">\(B\)</span> is a Borel set. Then <span class="process-math">\((g\circ f)^{-1}(B) = f^{-1}(g^{-1}(B))\text{.}\)</span> Because <span class="process-math">\(g\)</span> is a Borel measurable function <span class="process-math">\(g^{-1}(B)\)</span> is a Borel set. Because <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function <span class="process-math">\(f^{-1}(g^{-1}(B)) \in S\text{.}\)</span> Thus <span class="process-math">\((g\circ f)^{-1}(B) \in S\)</span> and <span class="process-math">\(g \circ f\)</span> is an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4"><a href="#subsec-measurable-function-25" title="Copy heading and permalink for Proof 4" aria-label="Copy heading and permalink for Proof 4">🔗</a></div></article></details><div class="para" id="subsec-measurable-function-26">Example: If <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function then so are <span class="process-math">\(-f,\frac{1}{2} f, f^2, |f|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-26" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-measurable-function-27" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-27-1">All four functions can be written as a composition of <span class="process-math">\(f\)</span> with a continuous function and continuous functions are Borel measurable, so by the previous theorem all four functions are <span class="process-math">\(S\)</span>-measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-27-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5"><a href="#subsec-measurable-function-27" title="Copy heading and permalink for Proof 5" aria-label="Copy heading and permalink for Proof 5">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-alg-operation-measurable-funct"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">29</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Algebraic Operations on Measureable Functions.</span>
+</h4>
+<div class="para logical" id="thm-alg-operation-measurable-funct-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S)\)</span> is a measurable space and <span class="process-math">\(f,g: X \to \mathbf{R}\)</span> are <span class="process-math">\(S\)</span>-measurable. Then</div>
+<ol class="lower-alpha ol-marker-1" id="thm-alg-operation-measurable-funct-2-1-4">
+<li id="thm-alg-operation-measurable-funct-2-1-4-1">
+<div class="para" id="thm-alg-operation-measurable-funct-2-1-4-1-1">
+<span class="process-math">\(f+g\text{,}\)</span> <span class="process-math">\(f-g\text{,}\)</span> <span class="process-math">\(fg\)</span> are <span class="process-math">\(S\)</span>-measurable functions<div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-operation-measurable-funct-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-alg-operation-measurable-funct-2-1-4-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-alg-operation-measurable-funct-2-1-4-2">
+<div class="para" id="thm-alg-operation-measurable-funct-2-1-4-2-1">If <span class="process-math">\(g(x) \neq 0\)</span> for all <span class="process-math">\(x \in X\)</span> then <span class="process-math">\(\frac{f}{g}\)</span> is an <span class="process-math">\(S\)</span>-measurable function<div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-operation-measurable-funct-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-alg-operation-measurable-funct-2-1-4-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-alg-operation-measurable-funct-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 29: Algebraic Operations on Measureable Functions"><a href="#thm-alg-operation-measurable-funct" title="Copy heading and permalink for Theorem 29: Algebraic Operations on Measureable Functions" aria-label="Copy heading and permalink for Theorem 29: Algebraic Operations on Measureable Functions">🔗</a></div></article><details id="subsec-measurable-function-29" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-29-1">We will first show that <span class="process-math">\(f+g\)</span> is <span class="process-math">\(S\)</span>-measurable. Our strategy is to show that <span class="process-math">\((f+g)^{-1}((a,\infty)) \in S\)</span> for all <span class="process-math">\(a\in \mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-29-2">
+<div class="para">Specifically, we will show that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-29-2-1">
+\begin{equation*}
+(f+g)^{-1}((a,\infty)) = \bigcup_{r \in \mathbf{Q}} f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-3">Because this is a countable union of finite intersections of open subsets of <span class="process-math">\(S\text{,}\)</span> this will show that <span class="process-math">\((f+g)^{-1}((a,\infty)) \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-4">Suppose that <span class="process-math">\(x \in (f+g)^{-1}((a,\infty))\text{.}\)</span> (If there is no such <span class="process-math">\(x\)</span> then  <span class="process-math">\((f+g)^{-1}((a,\infty)) = \emptyset \in S\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-5">Thus <span class="process-math">\(a &lt; f(x) + g(x)\)</span> and the open interval <span class="process-math">\((a-g(x),f(x))\)</span> is non-empty and contains a rational number <span class="process-math">\(r\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-6">Hence <span class="process-math">\(r &lt; f(x)\text{,}\)</span> which means that <span class="process-math">\(x \in f^{-1}((r, \infty))\text{.}\)</span> Likewise <span class="process-math">\(a-g(x) &lt; r\)</span> which means that <span class="process-math">\(x \in g^{-1}((a-r, \infty))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-29-7">
+<div class="para">Hence <span class="process-math">\(x \in f^{-1}((r, \infty)) \cap g^{-1}((a-r, \infty))\)</span> which implies that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-29-7-2">
+\begin{equation*}
+(f+g)^{-1}((a,\infty)) \subseteq \bigcup_{r \in \mathbf{Q}} f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-8">To prove the other inclusion suppose <span class="process-math">\(x \in f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))\)</span> for some <span class="process-math">\(r \in \mathbf{Q}\text{.}\)</span> Then <span class="process-math">\(r &lt; f(x)\)</span> and <span class="process-math">\(a-r &lt; g(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-9">Adding these inequalities together gives that <span class="process-math">\(a &lt; f(x) + g(x)\)</span> and thus <span class="process-math">\(x \in (f+g)^{-1}(a,\infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-29-10">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-measurable-function-29-10-1">
+\begin{equation*}
+(f+g)^{-1}((a,\infty)) = \bigcup_{r \in \mathbf{Q}} f^{-1}((r,\infty)) \cap g^{-1}((a-r,\infty))
+\end{equation*}
+</div>
+<div class="para">And thus <span class="process-math">\(f+g\)</span> is an <span class="process-math">\(S\)</span>-measurable function.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-11">To show that <span class="process-math">\(f-g\)</span> is a measurable function we write it as <span class="process-math">\(f + (-g)\text{.}\)</span> Since <span class="process-math">\(g\)</span> is measurable, so is <span class="process-math">\(-g\)</span> and since the sum of measurable functions is measurable, so is <span class="process-math">\(f-g\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-29-12">
+<div class="para">To show that <span class="process-math">\(fg\)</span> is a measurable function we note that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-29-12-2">
+\begin{equation*}
+fg = \frac{(f+g)^2-f^2-g^2}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-13">If <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are measurable then so are <span class="process-math">\(f+g, f^2,\)</span> and <span class="process-math">\(g^2\text{.}\)</span> Hence <span class="process-math">\(fg\)</span> is also a measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-14">Finally, to show that <span class="process-math">\(\frac{f}{g}\)</span> is measurable we note that <span class="process-math">\(\frac{1}{x}\)</span> is continuous on <span class="process-math">\(\mathbf{R}\setminus \{0\}\)</span> and hence Borel measurable. Since <span class="process-math">\(g(x) \neq 0\text{,}\)</span> this means that <span class="process-math">\(\frac{1}{g}\)</span> is an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-29-15">Because <span class="process-math">\(\frac{f}{g} = f \cdot \frac{1}{g}\text{,}\)</span> and the product of measurable functions is measurable, it follows that <span class="process-math">\(\frac{f}{g}\)</span> is also measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-29-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6"><a href="#subsec-measurable-function-29" title="Copy heading and permalink for Proof 6" aria-label="Copy heading and permalink for Proof 6">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-pointwise-limit-meas-funct"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">30</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pointwise Limit of <span class="process-math">\(S\)</span>-Measurable Functions.</span>
+</h4>
+<div class="para logical" id="thm-pointwise-limit-meas-funct-2-1">
+<div class="para">Suppose that <span class="process-math">\((X,S)\)</span> is a measurable space and <span class="process-math">\(f_1, f_2, \ldots\)</span> is a sequence of <span class="process-math">\(S\)</span>-measurable functions from <span class="process-math">\(X\)</span> to <span class="process-math">\(\mathbf{R}\text{.}\)</span> Suppose <span class="process-math">\(\lim_{k\to \infty} f_k(x)\)</span> exists for each <span class="process-math">\(x \in X\text{.}\)</span> Define <span class="process-math">\(f:X \to \mathbf{R}\)</span> by</div>
+<div class="displaymath process-math" id="thm-pointwise-limit-meas-funct-2-1-9">
+\begin{equation*}
+f(x) = \lim_{k\to \infty} f_k(x).
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-pointwise-limit-meas-funct-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 30: Pointwise Limit of S-Measurable Functions"><a href="#thm-pointwise-limit-meas-funct" title="Copy heading and permalink for Theorem 30: Pointwise Limit of S-Measurable Functions" aria-label="Copy heading and permalink for Theorem 30: Pointwise Limit of S-Measurable Functions">🔗</a></div></article><div class="para" id="subsec-measurable-function-31">Note: The fact that convergence only needs to be pointwise is a very nice property to have. Recall that the pointwise limit of a sequence of Riemann integrals is not necessarily Riemann integrable and the pointwise limit of a sequence of continuous functions is not necessarily continuous.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-31" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-measurable-function-32" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-32-1">Once again, our strategy is to show that <span class="process-math">\(f^{-1}((a,\infty)) \in S\)</span> for all <span class="process-math">\(a \in \mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-32-2">
+<div class="para">More precisely, we will show that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-32-2-1">
+\begin{equation*}
+f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-32-3">Since the right side is a countable union of a finite intersection of sets in <span class="process-math">\(S\text{,}\)</span> it belongs to <span class="process-math">\(S\)</span> as well. Thus showing this equality will prove that <span class="process-math">\(f^{-1}((a,\infty)) \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-32-4">First suppose <span class="process-math">\(x \in f^{-1}((a,\infty))\text{.}\)</span> Then <span class="process-math">\(a &lt; f(x)\)</span> and hence there exists a positive integer <span class="process-math">\(j\)</span> such that <span class="process-math">\(a + \frac{1}{j}&lt; f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-32-5">Hence there exists a positive integer <span class="process-math">\(m\)</span> such that <span class="process-math">\(a + \frac{1}{j}&lt; f_k(x)\)</span> for all <span class="process-math">\(k \geq m\text{.}\)</span> So <span class="process-math">\(x \in f_k^{-1}\left(a+ \frac{1}{j}, \infty\right)\)</span> for some <span class="process-math">\(j\)</span> and all <span class="process-math">\(k\geq m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-32-6">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-measurable-function-32-6-1">
+\begin{equation*}
+f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-32-7">
+<div class="para">To prove the opposite inclusion suppose that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-32-7-1">
+\begin{equation*}
+x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-32-8">Thus there exists positive integers <span class="process-math">\(j\)</span> and <span class="process-math">\(m\)</span> so that <span class="process-math">\(x \in f_k^{-1}\left(a+ \frac{1}{j}, \infty\right)\)</span> for all <span class="process-math">\(k \geq m\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-32-9">This implies that <span class="process-math">\(a + \frac{1}{j} &lt; f_k(x)\)</span> for all <span class="process-math">\(k \geq m\text{.}\)</span> Thus taking the limit as <span class="process-math">\(k \to \infty\)</span> yields that <span class="process-math">\(a + \frac{1}{j}&lt; f(x)\)</span> and hence <span class="process-math">\(x \in f^{-1}((a,\infty))\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-32-10">
+<div class="para">Hence we have proven that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-32-10-1">
+\begin{equation*}
+f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+\end{equation*}
+</div>
+<div class="para">which implies that <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 7"><a href="#subsec-measurable-function-32" title="Copy heading and permalink for Proof 7" aria-label="Copy heading and permalink for Proof 7">🔗</a></div></article></details><div class="para" id="subsec-measurable-function-33">Sometimes we will want to consider functions that can attain the value <span class="process-math">\(\infty\)</span> or <span class="process-math">\(-\infty\text{.}\)</span> We can thus extend the notion of Borel sets to subsets of <span class="process-math">\([-\infty, \infty]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-33" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-borel-inf"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">31</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Borel Subsets of <span class="process-math">\([-\infty, \infty]\)</span>.</span>
+</h4>
+<div class="para" id="def-borel-inf-2-1">A subset of <span class="process-math">\([-\infty, \infty]\)</span> is called a <dfn class="terminology">Borel set</dfn> if its intersection with <span class="process-math">\(\mathbf{R}\)</span> is a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#def-borel-inf-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 31: Borel Subsets of [-\infty, \infty]"><a href="#def-borel-inf" title="Copy heading and permalink for Definition 31: Borel Subsets of [-\infty, \infty]" aria-label="Copy heading and permalink for Definition 31: Borel Subsets of [-\infty, \infty]">🔗</a></div></article><div class="para" id="subsec-measurable-function-35">With the above definition, the set of Borel subsets of <span class="process-math">\([-\infty, \infty]\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-35" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-measurable-function-inf"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">32</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measurable Function.</span>
+</h4>
+<div class="para" id="def-measurable-function-inf-2-1">A function <span class="process-math">\(f: X \to [-\infty, \infty]\)</span> is called <span class="process-math">\(S\)</span><dfn class="terminology">-measurable</dfn> if <span class="process-math">\(f^{-1}(B) \in S\)</span> for all Borel subsets <span class="process-math">\(B\)</span> of <span class="process-math">\([-\infty, \infty]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-measurable-function-inf-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 32: Measurable Function"><a href="#def-measurable-function-inf" title="Copy heading and permalink for Definition 32: Measurable Function" aria-label="Copy heading and permalink for Definition 32: Measurable Function">🔗</a></div></article><article class="theorem theorem-like" id="thm-cond-measure-inf"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">33</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Condition for a Measurable Function.</span>
+</h4>
+<div class="para" id="thm-cond-measure-inf-2-1">Suppose <span class="process-math">\((X,S)\)</span> is a measurable space and <span class="process-math">\(f:X \to [\infty,\infty]\)</span> is a function such that <span class="process-math">\(f^{-1}((a,\infty]) \in S\)</span> for all <span class="process-math">\(a \in \mathbf{R}\text{.}\)</span> Then <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#thm-cond-measure-inf-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 33: Condition for a Measurable Function"><a href="#thm-cond-measure-inf" title="Copy heading and permalink for Theorem 33: Condition for a Measurable Function" aria-label="Copy heading and permalink for Theorem 33: Condition for a Measurable Function">🔗</a></div></article><article class="theorem theorem-like" id="thm-pointwise-inf-sup-meas"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">34</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Pointwise Infimum and Supremum of a Sequence of <span class="process-math">\(S\)</span>-Measurable Functions.</span>
+</h4>
+<div class="para logical" id="thm-pointwise-inf-sup-meas-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S)\)</span> is a measurable space and <span class="process-math">\(f_1, f_2, \ldots\)</span> is a sequence of <span class="process-math">\(S\)</span>-measurable functions from <span class="process-math">\(X\)</span> to <span class="process-math">\([-\infty,\infty]\text{.}\)</span> Define <span class="process-math">\(g,h:X \to [\infty,\infty]\)</span> by</div>
+<div class="displaymath process-math" id="thm-pointwise-inf-sup-meas-2-1-7">
+\begin{equation*}
+g(x) = \inf \{ f_k(x): k \in \mathbf{N} \} \quad h(x) = \sup \{ f_k(x): k \in \mathbf{N} \}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are <span class="process-math">\(S\)</span>-measurable functions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-pointwise-inf-sup-meas-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 34: Pointwise Infimum and Supremum of a Sequence of S-Measurable Functions"><a href="#thm-pointwise-inf-sup-meas" title="Copy heading and permalink for Theorem 34: Pointwise Infimum and Supremum of a Sequence of S-Measurable Functions" aria-label="Copy heading and permalink for Theorem 34: Pointwise Infimum and Supremum of a Sequence of S-Measurable Functions">🔗</a></div></article><details id="subsec-measurable-function-39" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-measurable-function-39-1">We will first show that <span class="process-math">\(h\)</span> is an <span class="process-math">\(S\)</span>-measurable function. Our strategy is to show that <span class="process-math">\(h^{-1}((a,\infty]) \in S\)</span> for all <span class="process-math">\(a\in \mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-39-2">
+<div class="para">We will show that</div>
+<div class="displaymath process-math" id="subsec-measurable-function-39-2-1">
+\begin{equation*}
+h^{-1}((a,\infty]) = \bigcup_{k=1}^{\infty} f_k^{-1}((a,\infty])
+\end{equation*}
+</div>
+<div class="para">and since the right hand side is a countable union of functions in <span class="process-math">\(S\)</span> this will show that <span class="process-math">\(h^{-1}((a,\infty]) \in S\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-39-3">Suppose <span class="process-math">\(x \in h^{-1}((a,\infty]\text{.}\)</span> Then <span class="process-math">\(a &lt; h(x)\text{.}\)</span> Since <span class="process-math">\(h\)</span> is the supremum, this means that there exists <span class="process-math">\(K \in \mathbf{N}\)</span> such that <span class="process-math">\(a &lt; f_K(x)\text{.}\)</span> Thus <span class="process-math">\(x \in f_K^{-1}((a,\infty])\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-39-4">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-measurable-function-39-4-1">
+\begin{equation*}
+h^{-1}((a,\infty]) \subseteq \bigcup_{k=1}^{\infty} f_k^{-1}((a,\infty]).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-39-5">To show the other inclusion, suppose <span class="process-math">\(x\)</span> belongs to the right hand side. Then there exists <span class="process-math">\(K \in \mathbf{N}\)</span> such that <span class="process-math">\(x \in f_K^{-1}((a,\infty])\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-measurable-function-39-6">
+<div class="para">Hence <span class="process-math">\(a &lt; f_K(x) \leq h(x)\)</span> since <span class="process-math">\(h(x)\)</span> is the supremum. Thus <span class="process-math">\(x \in h^{-1}((a,\infty])\)</span> and hence</div>
+<div class="displaymath process-math" id="subsec-measurable-function-39-6-4">
+\begin{equation*}
+h^{-1}((a,\infty]) = \bigcup_{k=1}^{\infty} f_k^{-1}((a,\infty]).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-39-7">Thus <span class="process-math">\(h(x)\)</span> is an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-39-8">To show that <span class="process-math">\(g(x)\)</span> is an <span class="process-math">\(S\)</span>-measurable function, note that <span class="process-math">\(g(x) = - \sup \{-f_k(x): k \in \mathbf{N}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-measurable-function-39-9">Thus the result we proved about supremums shows that <span class="process-math">\(g(x)\)</span> is also an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-39-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 8"><a href="#subsec-measurable-function-39" title="Copy heading and permalink for Proof 8" aria-label="Copy heading and permalink for Proof 8">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Measurable Functions"><a href="#subsec-measurable-function" title="Copy heading and permalink for Subsection: Measurable Functions" aria-label="Copy heading and permalink for Subsection: Measurable Functions">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 3: Measurable Spaces and Functions (2B)"><a href="#notes-week-03" title="Copy heading and permalink for Section: Week 3: Measurable Spaces and Functions (2B)" aria-label="Copy heading and permalink for Section: Week 3: Measurable Spaces and Functions (2B)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-02.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="notes-week-04.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

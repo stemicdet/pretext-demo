@@ -14,11 +14,12 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Week 2</title>
+<title>Week 2: Outer Measure on \mathbf{R} (2A)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 <link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
 <script>
 var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
 window.MathJax = {
@@ -77,8 +78,8 @@ window.MathJax = {
 </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
-<meta property="book:title" content="PreTeXt Demo Course">
-<meta property="book:author" content="Instructor Lastname">
+<meta property="book:title" content="Real Variables">
+<meta property="book:author" content="Stephen Deterding">
 <script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
 <!--** No external communication:                              **-->
@@ -101,22 +102,22 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.11.19';
+eBookConfig.runestone_version = '8.2.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.998c9d9ee2a5e7ac.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.98ef3b0c170cd180.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
-<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.b12a7b3f0773ebcd.css">
+<script src="_static/prefix-runtime.40bd1420d3277749.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.b388362b5f43738a.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.8086b62682b271d1.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
 </head>
 <body class="pretext book ignore-math">
 <a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
-<h1 class="heading"><a href="root-1-2.html"><span class="title">PreTeXt Demo Course</span> <span class="subtitle">MATH 101 Semester 2026</span></a></h1>
-<p class="byline">Instructor Lastname</p>
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Real Variables</span> <span class="subtitle">MATH 650 Fall 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
 </div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
 <button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
@@ -135,7 +136,7 @@ eBookConfig.enable_chatcodes =  false;
 <textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
 </div>
 </div>
-<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-01.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="activities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="course-notes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="notes-week-03.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
@@ -162,49 +163,489 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section">
-<div class="toc-title-box"><a href="notes-week-01.html" class="internal"><span class="title">Week 1</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#notes-week-01-3" class="internal"><span class="title">Monday 8/22</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#notes-week-01-4" class="internal"><span class="title">Wednesday 8/24</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-01.html#notes-week-01-5" class="internal"><span class="title">Friday 8/26</span></a></div></li>
-</ul>
-</li>
 <li class="toc-item toc-section contains-active">
-<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2</span></a></div>
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-2" class="internal"><span class="title">Monday</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-3" class="internal"><span class="title">Wednesday</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#notes-week-02-4" class="internal"><span class="title">Friday</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#Motivation" class="internal"><span class="title">Motivation and Definition of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#good-properties" class="internal"><span class="title">Good Properties of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#outer-measure-not-additive" class="internal"><span class="title">Outer Measure is Not Additive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: Measurable Spaces and Functions (2B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#desired" class="internal"><span class="title">Desired Properties of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Simga-Algebras" class="internal"><span class="title">Sigma Algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Borel-Subsets-of-R" class="internal"><span class="title">Borel Subsets of R and Inverse Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-measurable-function" class="internal"><span class="title">Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Measures and Their Properties (2C)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Definition-and-Examples-of-Measures" class="internal"><span class="title">Definition and Examples of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-properties-measr" class="internal"><span class="title">Properties of Measures</span></a></div></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="activities.html" class="internal"><span class="title">In-Class Activities</span></a></div>
-<ul class="structural toc-item-list"><li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="activity-01-intro-activity.html" class="internal"><span class="title">Introduction Activity</span></a></div></li></ul>
-</li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="handouts.html" class="internal"><span class="title">Handouts</span></a></div></li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-02"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 2</span>
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span>
 </h2>
-<section class="subsection" id="notes-week-02-2"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monday</span>
+<section class="subsection" id="Motivation"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Motivation and Definition of Outer Measure</span>
 </h3>
-<div class="para" id="notes-week-02-2-2"><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Subsection: Monday"><a href="#notes-week-02-2" title="Copy heading and permalink for Subsection: Monday" aria-label="Copy heading and permalink for Subsection: Monday">🔗</a></div></section><section class="subsection" id="notes-week-02-3"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Wednesday</span>
+<div class="para" id="Motivation-2">Lebesgue’s revolutionary new idea of how to integrate is that we should partition the range of the function and not the domain.<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Motivation-3">
+<div class="para">This means that the integral will take the form of a sum</div>
+<div class="displaymath process-math" id="Motivation-3-1">
+\begin{equation*}
+S = \sum \eta_i m(E_i)
+\end{equation*}
+</div>
+<div class="para">that ranges over all output values <span class="process-math">\(\eta_i\text{.}\)</span> In this sum, <span class="process-math">\(E_i\)</span> is the set of all <span class="process-math">\(x\)</span> in the domain such that <span class="process-math">\(f(x) = \eta_i\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-4">If <span class="process-math">\(E_i\)</span> is an interval, then <span class="process-math">\(m(E_i)\)</span> should denote the length of the interval. Similarly if <span class="process-math">\(E_i\)</span> is a finite union of intervals, then <span class="process-math">\(m(E_i)\)</span> should be the sum of the lengths of each sub-interval.<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-5">The set <span class="process-math">\(E_i\)</span> can be more complicated then an interval or a union of intervals. How should we define <span class="process-math">\(m(E_i)\)</span> in this case?<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-6">Lebesgue’s first attempt at generalizing the length of an interval led to the development of Outer Measure.<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-7">To define Outer Measure we first define the length of an open interval.<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-length"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Length of an Open Interval.</span>
+</h4>
+<div class="para logical" id="def-length-2-1">
+<div class="para">The length <span class="process-math">\(\ell(I)\)</span> of an open interval is defined by</div>
+<div class="displaymath process-math" id="def-length-2-1-2">
+\begin{equation*}
+\ell(I) = \begin{cases} 
+\hfill  b-a \amp \text{ if $I = (a,b)$ for some $a,b \in \mathbf{R}$ with $a &lt; b$,} \\
+\hfill  0  \amp \text{ if $I = \emptyset$,} \\
+\hfill  \infty \amp \text{ if $I = (-\infty,a)$ or $I = (a, \infty)$ for some $a \in \mathbf{R}$,} \\
+\hfill  \infty  \amp \text{ if $I = (-\infty, \infty)$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-length-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1: Length of an Open Interval"><a href="#def-length" title="Copy heading and permalink for Definition 1: Length of an Open Interval" aria-label="Copy heading and permalink for Definition 1: Length of an Open Interval">🔗</a></div></article><div class="para" id="Motivation-9">If <span class="process-math">\(A \subseteq \mathbf{R}\)</span> is an arbitrary set then the size of <span class="process-math">\(A\)</span> should be less than the lengths of a sequence of intervals that contain <span class="process-math">\(A\text{.}\)</span> By taking the infinimum over all such covers of <span class="process-math">\(A\)</span> we get a pretty good estimate for the size of <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-outer-measure"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="def-outer-measure-1-1">
+<div class="para">The outer measure of <span class="process-math">\(A \subseteq \mathbf{R}\)</span> is denoted by <span class="process-math">\(|A|\)</span> and defined by</div>
+<div class="displaymath process-math" id="def-outer-measure-1-1-3">
+\begin{equation*}
+|A| = \inf \left\{ \sum_{k=1}^{\infty} \ell(I_k): I_1, I_2, \ldots \text{ are open intervals such that } A \subseteq \bigcup_{k=1}^{\infty} I_k \right\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-outer-measure-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2"><a href="#def-outer-measure" title="Copy heading and permalink for Definition 2" aria-label="Copy heading and permalink for Definition 2">🔗</a></div></article><div class="para" id="Motivation-11">Example: The outer measure of the closed interval <span class="process-math">\([a,b]\)</span> is <span class="process-math">\(b-a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="Motivation-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="Motivation-12-1">First we will show that <span class="process-math">\(|[a,b]| \leq b-a\text{.}\)</span> Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then <span class="process-math">\([a,b]\)</span> is contained in the open interval <span class="process-math">\((a-\epsilon, b+\epsilon)\text{,}\)</span> which has length <span class="process-math">\(b-a+2\epsilon\text{.}\)</span> Since <span class="process-math">\(\epsilon\)</span> can be made arbitrarily small, it follows that <span class="process-math">\(|[a,b]| \leq b-a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-12-2">To prove the other direction we will need the Heine-Borel theorem.<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#Motivation-12" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-heine-borel"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="thm-heine-borel-1-1">
+<div class="para">Let <span class="process-math">\(F \subseteq \mathbf{R}\text{.}\)</span> The following are equivalent.</div>
+<ol class="decimal" id="thm-heine-borel-1-1-2">
+<li id="thm-heine-borel-1-1-2-1">
+<div class="para" id="thm-heine-borel-1-1-2-1-1">
+<span class="process-math">\(F\)</span> is compact. (That is, every sequence of points in <span class="process-math">\(F\)</span> has a subsequence that converges in <span class="process-math">\(F\text{.}\)</span>)<div class="autopermalink" data-description="Paragraph"><a href="#thm-heine-borel-1-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-heine-borel-1-1-2-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-heine-borel-1-1-2-2">
+<div class="para" id="thm-heine-borel-1-1-2-2-1">
+<span class="process-math">\(F\)</span> is closed and bounded.<div class="autopermalink" data-description="Paragraph"><a href="#thm-heine-borel-1-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-heine-borel-1-1-2-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="thm-heine-borel-1-1-2-3">
+<div class="para" id="thm-heine-borel-1-1-2-3-1">Every open cover of <span class="process-math">\(F\)</span> contains a finite subcover.<div class="autopermalink" data-description="Paragraph"><a href="#thm-heine-borel-1-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#thm-heine-borel-1-1-2-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-heine-borel-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3"><a href="#thm-heine-borel" title="Copy heading and permalink for Theorem 3" aria-label="Copy heading and permalink for Theorem 3">🔗</a></div></article><div class="para" id="Motivation-14">We now return to the proof that <span class="process-math">\(|[a,b]| \geq b-a\text{,}\)</span> suppose that <span class="process-math">\([a,b] \subseteq \bigcup_{k=1}^{\infty} I_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="Motivation-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="Motivation-15-1">By the Heine-Borel Theorem, there is a finite collection of these sets so that <span class="process-math">\([a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Motivation-15-2">
+<div class="para">We will prove by induction that</div>
+<div class="displaymath process-math" id="Motivation-15-2-1">
+\begin{equation*}
+\sum_{k=1}^n \ell(I_k) \geq b-a
+\end{equation*}
+</div>
+<div class="para">which implies that <span class="process-math">\(|[a,b]| \geq b-a\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-15-3">For the base case, note that if <span class="process-math">\(n = 1\)</span> then this means that <span class="process-math">\([a,b] \subseteq I_1\)</span> and hence <span class="process-math">\(\ell(I_1) \geq b-a\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Motivation-15-4">
+<div class="para">Now we assume that <span class="process-math">\(n &gt; 1\)</span> and <span class="process-math">\([a,b] \subseteq I_1 \cup I_2 \cup \ldots \cup I_n\)</span> implies that</div>
+<div class="displaymath process-math" id="Motivation-15-4-3">
+\begin{equation*}
+\sum_{k=1}^n \ell(I_k) \geq b-a
+\end{equation*}
+</div>
+<div class="para">for all choices of <span class="process-math">\(a,b \in \mathbf{R}\)</span> with <span class="process-math">\(a &lt; b\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-15-5">Now suppose that <span class="process-math">\(I_1, I_2, \ldots I_{n+1}\)</span> are open intervals and <span class="process-math">\([a,b] \subseteq I_1 \cup I_2 \cup  \ldots \cup I_{n+1}\text{.}\)</span> Then <span class="process-math">\(b\)</span> belongs to one of those intervals and by relabeling them if necessary we can assume that <span class="process-math">\(b \in I_{n+1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-15-6">Suppose <span class="process-math">\(I_{n+1} = (c,d)\text{.}\)</span> If <span class="process-math">\(c \leq a\)</span> then <span class="process-math">\(a \in I_{n+1}\)</span> and <span class="process-math">\(\ell(I_{n+1}) \geq b-a\text{.}\)</span> Hence we have proven what we want if this is the case.<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="Motivation-15-7">Thus we can assume that <span class="process-math">\(a &lt; c &lt; b &lt; d\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Motivation-15-8">
+<div class="para">Since <span class="process-math">\(I_{n+1}\)</span> only covers <span class="process-math">\((c,d)\text{,}\)</span> this means that <span class="process-math">\((a,c) \subseteq I_1 \cup I_2 \cup \ldots \cup I_n\text{.}\)</span> Hence by the induction hypothesis,</div>
+<div class="displaymath process-math" id="Motivation-15-8-4">
+\begin{equation*}
+\sum_{k=1}^n \ell(I_k) \geq c-a.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Motivation-15-9">
+<div class="para">Thus,</div>
+<div class="displaymath process-math" id="Motivation-15-9-1">
+\begin{align*}
+\sum_{k=1}^{n+1} \ell(I_k) = \sum_{k=1}^n \ell(I_k) + \ell(I_{n+1}) \amp \geq c-a + b-c \\
+\amp =b-a,
+\end{align*}
+</div>
+<div class="para">which completes the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-15-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#Motivation-15" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="Motivation-16">Example: Finite sets have outer measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="Motivation-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="Motivation-17-1">Suppose <span class="process-math">\(A = \{a_1, a_2, \ldots, a_n\}\)</span> is a finite set of real numbers. Let <span class="process-math">\(\epsilon &gt; 0\)</span> be arbitrary and define a sequence of open intervals <span class="process-math">\(I_1, I_2, \ldots, I_n\)</span> by <span class="process-math">\(I_k = (a_k-\epsilon, a_k+\epsilon)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#Motivation-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="Motivation-17-2">
+<div class="para">Then <span class="process-math">\(A \subseteq I_1 \cup I_2 \cup \ldots \cup I_n\)</span> and</div>
+<div class="displaymath process-math" id="Motivation-17-2-2">
+\begin{equation*}
+\sum_{k=1}^n \ell(I_k) = 2n \epsilon
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(2n \epsilon\)</span> can be made smaller than every positive number it follows that <span class="process-math">\(|A| = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#Motivation-17-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#Motivation-17" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Motivation and Definition of Outer Measure"><a href="#Motivation" title="Copy heading and permalink for Subsection: Motivation and Definition of Outer Measure" aria-label="Copy heading and permalink for Subsection: Motivation and Definition of Outer Measure">🔗</a></div></section><section class="subsection" id="good-properties"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Good Properties of Outer Measure</span>
 </h3>
-<div class="para" id="notes-week-02-3-2"><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Subsection: Wednesday"><a href="#notes-week-02-3" title="Copy heading and permalink for Subsection: Wednesday" aria-label="Copy heading and permalink for Subsection: Wednesday">🔗</a></div></section><section class="subsection" id="notes-week-02-4"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Friday</span>
+<article class="theorem theorem-like" id="thm-measure-zero"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="thm-measure-zero-1-1">Every countable subset of <span class="process-math">\(\mathbf{R}\)</span> has outer measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-measure-zero-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 4"><a href="#thm-measure-zero" title="Copy heading and permalink for Theorem 4" aria-label="Copy heading and permalink for Theorem 4">🔗</a></div></article><details id="good-properties-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="good-properties-3-1">Suppose <span class="process-math">\(A = \{a_1, a_2, \ldots, \}\)</span> is a countable set of real numbers. Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary and define a sequence of open intervals <span class="process-math">\(I_1, I_2, \ldots\)</span> by <span class="process-math">\(I_k = (a_k-\frac{\epsilon}{2^k}, a_k+ \frac{\epsilon}{2^k})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="good-properties-3-2">
+<div class="para">Then <span class="process-math">\(A \subseteq \displaystyle \bigcup_{k=1}^{\infty} I_k\)</span> and</div>
+<div class="displaymath process-math" id="good-properties-3-2-2">
+\begin{equation*}
+\sum_{k=1}^{\infty} \ell(I_k) = \sum_{k=1}^{\infty} \frac{2\epsilon}{2^k} = 2\epsilon.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(2 \epsilon\)</span> can be made smaller than every positive number it follows that <span class="process-math">\(|A| = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#good-properties-3" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="good-properties-4">The next theorem shows that the outer measure of a subset is smaller than the outer measure of the larger set. The fancy word for this is that outer measure is monotone.<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-monotone"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Outer Measure Preserves Order.</span>
+</h4>
+<div class="para" id="thm-monotone-2-1">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are subsets of <span class="process-math">\(\mathbf{R}\)</span> and <span class="process-math">\(A \subseteq B\text{.}\)</span> Then <span class="process-math">\(|A| \leq |B|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-monotone-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 5: Outer Measure Preserves Order"><a href="#thm-monotone" title="Copy heading and permalink for Theorem 5: Outer Measure Preserves Order" aria-label="Copy heading and permalink for Theorem 5: Outer Measure Preserves Order">🔗</a></div></article><details id="good-properties-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="good-properties-6-1">
+<div class="para">Suppose <span class="process-math">\(I_1, I_2, \ldots\)</span> is a sequence of intervals whose union contains <span class="process-math">\(B\text{.}\)</span> Then <span class="process-math">\(A\)</span> is also contained in the union and hence</div>
+<div class="displaymath process-math" id="good-properties-6-1-4">
+\begin{equation*}
+|A| \leq \sum_{k=1}^{\infty} \ell(I_k).
+\end{equation*}
+</div>
+<div class="para">Taking the infimum over all covers of <span class="process-math">\(B\)</span> gives that <span class="process-math">\(|A| \leq |B|\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#good-properties-6" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="good-properties-7">The previous results give us a nice way to show that <span class="process-math">\(\mathbf{R}\)</span> is an uncountable set.<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-nontrivial-sets-uncountable"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Nontrivial Intervals are Uncountable.</span>
+</h4>
+<div class="para" id="cor-nontrivial-sets-uncountable-2-1">Every interval in <span class="process-math">\(\mathbf{R}\)</span> that contains at least 2 distinct elements is uncountable.<div class="autopermalink" data-description="Paragraph"><a href="#cor-nontrivial-sets-uncountable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 6: Nontrivial Intervals are Uncountable"><a href="#cor-nontrivial-sets-uncountable" title="Copy heading and permalink for Corollary 6: Nontrivial Intervals are Uncountable" aria-label="Copy heading and permalink for Corollary 6: Nontrivial Intervals are Uncountable">🔗</a></div></article><details id="good-properties-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="good-properties-9-1">
+<div class="para">Let <span class="process-math">\(I\)</span> be an interval that contains <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> with <span class="process-math">\(a &lt; b\text{.}\)</span> Because outer measure preserves order</div>
+<div class="displaymath process-math" id="good-properties-9-1-5">
+\begin{equation*}
+|I| \geq |[a,b]| = b-a &gt; 0,
+\end{equation*}
+</div>
+<div class="para">and since countable sets have outer measure <span class="process-math">\(0\text{,}\)</span> <span class="process-math">\(I\)</span> is an uncountable set.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#good-properties-9" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="para" id="good-properties-10">The size of a set should not change if it is moved up or down the real line. Shifting a set in this way is called a translation.<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-translation"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Translation.</span>
+</h4>
+<div class="para logical" id="def-translation-2-1">
+<div class="para">If <span class="process-math">\(t \in \mathbf{R}\)</span> and <span class="process-math">\(A \subseteq \mathbf{R}\)</span> then the <dfn class="terminology">translation</dfn> <span class="process-math">\(t+A\)</span> is the set defined by</div>
+<div class="displaymath process-math" id="def-translation-2-1-5">
+\begin{equation*}
+t+A = \{t+a: a \in A  \}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-translation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 7: Translation"><a href="#def-translation" title="Copy heading and permalink for Definition 7: Translation" aria-label="Copy heading and permalink for Definition 7: Translation">🔗</a></div></article><article class="theorem theorem-like" id="thm-translation-invariance"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Outer Measure is Translation Invariant.</span>
+</h4>
+<div class="para" id="thm-translation-invariance-2-1">Suppose <span class="process-math">\(t \in \mathbf{R}\)</span> and <span class="process-math">\(A \subseteq \mathbf{R}\text{.}\)</span> Then <span class="process-math">\(|t+A| = |A|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-translation-invariance-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 8: Outer Measure is Translation Invariant"><a href="#thm-translation-invariance" title="Copy heading and permalink for Theorem 8: Outer Measure is Translation Invariant" aria-label="Copy heading and permalink for Theorem 8: Outer Measure is Translation Invariant">🔗</a></div></article><details id="good-properties-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="good-properties-13-1">
+<div class="para">Let <span class="process-math">\(I_1, I_2, \ldots\)</span> be a sequence of intervals that covers <span class="process-math">\(A\text{.}\)</span> Then the translations <span class="process-math">\(t+I_1, t+I_2, \ldots\)</span> is a sequence of intervals that contains <span class="process-math">\(t+A\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="good-properties-13-1-5">
+\begin{equation*}
+|t+A| \leq \sum_{k=1}^{\infty} \ell(t+I_k) = \sum_{k=1}^{\infty} \ell(I_k)
+\end{equation*}
+</div>
+<div class="para">Taking the infimum over all covers of <span class="process-math">\(A\)</span> gives that <span class="process-math">\(|t+A| \leq |A|\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="good-properties-13-2">
+<div class="para">For the other direction, we can write <span class="process-math">\(A = -t + (t+A)\text{.}\)</span> Thus if <span class="process-math">\(I_1, I_2, \ldots\)</span> is a sequence of intervals that covers <span class="process-math">\(t+A\)</span> then the translations <span class="process-math">\(-t+I_1, -t+I_2, \ldots\)</span> covers <span class="process-math">\(A\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="good-properties-13-2-6">
+\begin{equation*}
+|A| \leq \sum_{k=1}^{\infty} \ell(-t+I_k) = \sum_{k=1}^{\infty} \ell(I_k)
+\end{equation*}
+</div>
+<div class="para">Taking the infimum over all covers of <span class="process-math">\(t+A\)</span> gives that <span class="process-math">\(|A| \leq |t+A|\text{.}\)</span> Thus <span class="process-math">\(|A| = |t+A|\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4"><a href="#good-properties-13" title="Copy heading and permalink for Proof 4" aria-label="Copy heading and permalink for Proof 4">🔗</a></div></article></details><div class="para" id="good-properties-14">The final property concerns how outer measure interacts with unions of sets. If <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint sets then intuitively the length of <span class="process-math">\(A\cup B\)</span> should equal the length of <span class="process-math">\(A\)</span> plus the length of <span class="process-math">\(B\text{,}\)</span> and if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> overlap then the length of <span class="process-math">\(A\cup B\)</span> should be less than or equal to the combined lengths of <span class="process-math">\(A\)</span> and <span class="process-math">\(B\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="good-properties-15">An example with intervals confirms this intuition. If <span class="process-math">\(A = (0,3)\)</span> and <span class="process-math">\(B = (2,4)\)</span> then <span class="process-math">\(A \cup B = (0,4)\text{.}\)</span> Hence <span class="process-math">\(|A| = 3\text{,}\)</span> <span class="process-math">\(|B| = 2\text{,}\)</span> and <span class="process-math">\(|A\cup B| = 4\text{,}\)</span> so <span class="process-math">\(|A \cup B| \leq |A| + |B|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="good-properties-16">In fact, this property, which is called subadditivity, holds for countable unions of arbitrary sets.<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-subadditivity"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Countable Subadditivity of Outer Measure.</span>
+</h4>
+<div class="para logical" id="thm-subadditivity-2-1">
+<div class="para">Suppose <span class="process-math">\(A_1\text{,}\)</span> <span class="process-math">\(A_2\text{,}\)</span> <span class="process-math">\(\ldots\)</span> is a countable sequence of subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm-subadditivity-2-1-5">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} A_k \right| \leq \sum_{k=1}^{\infty}|A_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-subadditivity-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 9: Countable Subadditivity of Outer Measure"><a href="#thm-subadditivity" title="Copy heading and permalink for Theorem 9: Countable Subadditivity of Outer Measure" aria-label="Copy heading and permalink for Theorem 9: Countable Subadditivity of Outer Measure">🔗</a></div></article><div class="para" id="good-properties-18">Note: The theorem is false for the union of uncountably many sets. Consider the union of each point in <span class="process-math">\([0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="good-properties-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="good-properties-19-1">If at least one of the <span class="process-math">\(A_k\)</span> has outer measure <span class="process-math">\(\infty\)</span> then the inequality holds. So we may suppose that <span class="process-math">\(|A_k| &gt; \infty\)</span> for all <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="good-properties-19-2">
+<div class="para">Let <span class="process-math">\(\epsilon&gt;0\text{.}\)</span> For each <span class="process-math">\(k\)</span> let <span class="process-math">\(I_{1,k}, I_{2,k}, \ldots\)</span> be a sequence of intervals that covers <span class="process-math">\(I_k\)</span> such that</div>
+<div class="displaymath process-math" id="good-properties-19-2-5">
+\begin{equation*}
+\sum_{j=1}^{\infty} \ell(I_{j,k}) \leq \frac{\epsilon}{2^k} + |A_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-19-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="good-properties-19-3">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="good-properties-19-3-1">
+\begin{equation*}
+\sum_{k=1}^{\infty} \sum_{j=1}^{\infty} \ell(I_{j,k}) \leq \epsilon + \sum_{k=1}^{\infty}|A_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-19-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="good-properties-19-4">The proof is finished once we show that the doubly indexed intervals <span class="process-math">\(I_{j,k}\)</span> can be rearranged to form a sequence whose union covers <span class="process-math">\(\bigcup_{k=1}^{\infty} A_k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-19-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="good-properties-19-5">Consider the sequence <span class="process-math">\(I_{1,1}, I_{1,2}, I_{2,1}, I_{1,3}, I_{2,2}, I_{3,1}, I_{1,4}, I_{2,3}, I_{3,2}, I_{4,1}, \ldots\text{,}\)</span> where in step <span class="process-math">\(k\)</span> we adjoin the <span class="process-math">\(k-1\)</span> intervals whose indices sum to <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#good-properties-19-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="good-properties-19-6">
+<div class="para">This gives a sequence of intervals whose union covers <span class="process-math">\(\bigcup_{k=1}^{\infty} A_k\)</span> and whose sum is <span class="process-math">\(\displaystyle \leq \epsilon + \sum_{k=1}^{\infty}|A_k|\text{.}\)</span> Since <span class="process-math">\(\epsilon &gt; 0\)</span> is arbitrary,</div>
+<div class="displaymath process-math" id="good-properties-19-6-4">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} A_k \right| \leq \sum_{k=1}^{\infty}|A_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#good-properties-19-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5"><a href="#good-properties-19" title="Copy heading and permalink for Proof 5" aria-label="Copy heading and permalink for Proof 5">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Good Properties of Outer Measure"><a href="#good-properties" title="Copy heading and permalink for Subsection: Good Properties of Outer Measure" aria-label="Copy heading and permalink for Subsection: Good Properties of Outer Measure">🔗</a></div></section><section class="subsection" id="outer-measure-not-additive"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Outer Measure is Not Additive</span>
 </h3>
-<div class="para" id="notes-week-02-4-2"><div class="autopermalink" data-description="Paragraph"><a href="#notes-week-02-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div></div>
-<div class="autopermalink" data-description="Subsection: Friday"><a href="#notes-week-02-4" title="Copy heading and permalink for Subsection: Friday" aria-label="Copy heading and permalink for Subsection: Friday">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 2"><a href="#notes-week-02" title="Copy heading and permalink for Section: Week 2" aria-label="Copy heading and permalink for Section: Week 2">🔗</a></div></section></div>
+<div class="para" id="outer-measure-not-additive-2">We just proved that <span class="process-math">\(|A \cup B| \leq |A| + |B|\text{.}\)</span> Intuitively, we would expect that if <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint sets then <span class="process-math">\(|A \cup B| = |A| + |B|\text{.}\)</span> Unfortunately this is not the case.<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-non-additive"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Non-additivity of Outer Measure.</span>
+</h4>
+<div class="para" id="thm-non-additive-2-1">There exists disjoint subsets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> of <span class="process-math">\(\mathbf{R}\)</span> such that <span class="process-math">\(|A \cup B| \neq |A| + |B|\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-non-additive-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 10: Non-additivity of Outer Measure"><a href="#thm-non-additive" title="Copy heading and permalink for Theorem 10: Non-additivity of Outer Measure" aria-label="Copy heading and permalink for Theorem 10: Non-additivity of Outer Measure">🔗</a></div></article><div class="para logical" id="outer-measure-not-additive-4">
+<div class="para">We constuct these sets as follows. For <span class="process-math">\(a \in [-1,1]\text{,}\)</span> let <span class="process-math">\(\tilde{a}\)</span> be the set of numbers in <span class="process-math">\([-1,1]\)</span> that differ from <span class="process-math">\(a\)</span> by a rational number. That is,</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-4-5">
+\begin{equation*}
+\tilde{a}= \{c \in [-1,1]: a-c \in \mathbf{Q}\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-tilde"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="lem-tilde-1-1">If <span class="process-math">\(a, b \in [-1,1]\)</span> and <span class="process-math">\(\tilde{a} \cap \tilde{b} \neq \emptyset\text{,}\)</span> then <span class="process-math">\(\tilde{a} = \tilde{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#lem-tilde-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 11"><a href="#lem-tilde" title="Copy heading and permalink for Lemma 11" aria-label="Copy heading and permalink for Lemma 11">🔗</a></div></article><details id="outer-measure-not-additive-6" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="outer-measure-not-additive-6-1">Suppose <span class="process-math">\(d \in \tilde{a} \cap \tilde{b}\text{.}\)</span> Then <span class="process-math">\(a-d\)</span> and <span class="process-math">\(b-d\)</span> are both rational numbers. By subtraction <span class="process-math">\(a-b\)</span> is also a rational number.<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-6-2">Thus <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> differ by rational numbers, so <span class="process-math">\(a \in \tilde{b}\)</span> and <span class="process-math">\(b \in \tilde{a}\text{.}\)</span> Hence if <span class="process-math">\(c \in \tilde{a}\)</span> then <span class="process-math">\(c\)</span> differs from <span class="process-math">\(a\)</span> by a rational number so <span class="process-math">\(c\)</span> differs from <span class="process-math">\(b\)</span> by a rational number and hence <span class="process-math">\(c \in \tilde{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-6-3">Similarly if <span class="process-math">\(c \in \tilde{b}\)</span> then <span class="process-math">\(c \in \tilde{a}\text{.}\)</span> Hence <span class="process-math">\(\tilde{a} = \tilde{b}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-6-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#outer-measure-not-additive-6" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="outer-measure-not-additive-7">Since <span class="process-math">\(a \in \tilde{a}\)</span> for each <span class="process-math">\(a \in [-1,1]\text{,}\)</span> it follows that <span class="process-math">\([-1,1] = \displaystyle \bigcup_{a \in [-1,1]} \tilde{a}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-8">Using the axiom of choice we may create a set <span class="process-math">\(V\)</span> by choosing exactly one element from each of the distinct sets in <span class="process-math">\(\{\tilde{a}: a \in [-1,1]\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-9">In other words for each <span class="process-math">\(a \in [-1,1]\)</span> the set <span class="process-math">\(V \cap \tilde{a}\)</span> contains exactly one element.<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-10">
+<div class="para">Let <span class="process-math">\(r_1, r_2, \ldots\)</span> be a sequence of distinct rational numbers such that</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-10-2">
+\begin{equation*}
+[-2,2] \cap \mathbf{Q} = \{r_1, r_2, \ldots \}
+\end{equation*}
+</div>
+<div class="para">Then</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-10-3">
+\begin{equation*}
+[-1,1] \subseteq \bigcup_{k=1}^{\infty} (r_k+V)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-11">This is because if <span class="process-math">\(a \in [-1,1]\)</span> and <span class="process-math">\(v\)</span> is the unique element in <span class="process-math">\(V \cap \tilde{a}\)</span> then <span class="process-math">\(a-v\)</span> is a rational number in <span class="process-math">\([-2,2]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-12">
+<div class="para">It thus follows from the countable subadditivity of outer measure that</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-12-1">
+\begin{equation*}
+|[-1,1]| \leq \sum_{k=1}^{\infty} |r_k+V|
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-13">
+<div class="para">Since <span class="process-math">\([-1,1]\)</span> is a closed interval <span class="process-math">\(|[-1,1]|=2\)</span> and by translation invariance <span class="process-math">\(|r_k+V| = |V|\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-13-4">
+\begin{equation*}
+2 \leq \sum_{k=1}^{\infty} |V|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-14">This shows that <span class="process-math">\(|V|&gt;0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="lemma theorem-like" id="lem-disjoint"><h4 class="heading">
+<span class="type">Lemma</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="lem-disjoint-1-1">The sets <span class="process-math">\(r_1 +V, r_2+V, \ldots\)</span> are disjoint.<div class="autopermalink" data-description="Paragraph"><a href="#lem-disjoint-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Lemma 12"><a href="#lem-disjoint" title="Copy heading and permalink for Lemma 12" aria-label="Copy heading and permalink for Lemma 12">🔗</a></div></article><details id="outer-measure-not-additive-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="outer-measure-not-additive-16-1">Suppose that <span class="process-math">\(t \in (r_j+V) \cap (r_k+V)\text{.}\)</span> This means that <span class="process-math">\(t = r_j+v_1 = r_k + v_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-16-2">Hence <span class="process-math">\(v_1-v_2 = r_j-r_k \in \mathbf{Q}\text{.}\)</span> Since <span class="process-math">\(v_1\)</span> and <span class="process-math">\(v_2\)</span> differ by a rational number they belong to the same <span class="process-math">\(\tilde{a}\text{.}\)</span> But since <span class="process-math">\(V\)</span> contains a single element from each <span class="process-math">\(\tilde{a}\)</span> this means that <span class="process-math">\(v_1 = v_2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="outer-measure-not-additive-16-3">Hence <span class="process-math">\(r_j = r_k\)</span> and thus <span class="process-math">\(j=k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#outer-measure-not-additive-16" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="outer-measure-not-additive-17">We now have our disjoint sets. Now we need to show that the outer measure of the union of these sets is not equal to the sum of the outer measure of each individual set.<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-18">
+<div class="para">Let <span class="process-math">\(n\)</span> be an arbitrary positive integer. Because <span class="process-math">\(V \subseteq [-1,1]\)</span> and each <span class="process-math">\(r_k \in [-2,2]\)</span> it follows that</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-18-4">
+\begin{equation*}
+\bigcup_{k=1}^n (r_k + V) \subseteq [-3,3].
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-19">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-19-1">
+\begin{equation*}
+\left| \bigcup_{k=1}^n (r_k + V)\right| \leq 6.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-20">
+<div class="para">However,</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-20-1">
+\begin{equation*}
+\sum_{k=1}^n |r_k+V| = \sum_{k=1}^n |V| = n|V|
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-21">
+<div class="para">So if we choose <span class="process-math">\(n\)</span> so that <span class="process-math">\(n|V| &gt; 6\)</span> (Remember that <span class="process-math">\(|V| &gt; 0)\)</span> then we have that</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-21-4">
+\begin{equation*}
+\left| \bigcup_{k=1}^n (r_k + V)\right| &lt; \sum_{k=1}^n |r_k+V|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-21" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-22">
+<div class="para">If it were true that <span class="process-math">\(|A \cup B| = |A|+|B|\)</span> for all disjoint subsets of <span class="process-math">\(\mathbf{R}\)</span> then by induction it would follow that</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-22-3">
+\begin{equation*}
+\left| \bigcup_{k=1}^n A_k \right| = \sum_{k=1}^n A_k
+\end{equation*}
+</div>
+<div class="para">for all disjoint subsets <span class="process-math">\(A_k\)</span> of <span class="process-math">\(\mathbf{R}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-22" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="outer-measure-not-additive-23">
+<div class="para">However,</div>
+<div class="displaymath process-math" id="outer-measure-not-additive-23-1">
+\begin{equation*}
+\left| \bigcup_{k=1}^n (r_k + V)\right| &lt; \sum_{k=1}^n |r_k+V|.
+\end{equation*}
+</div>
+<div class="para">so this cannot be true.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#outer-measure-not-additive-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Outer Measure is Not Additive"><a href="#outer-measure-not-additive" title="Copy heading and permalink for Subsection: Outer Measure is Not Additive" aria-label="Copy heading and permalink for Subsection: Outer Measure is Not Additive">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 2: Outer Measure on \mathbf{R} (2A)"><a href="#notes-week-02" title="Copy heading and permalink for Section: Week 2: Outer Measure on \mathbf{R} (2A)" aria-label="Copy heading and permalink for Section: Week 2: Outer Measure on \mathbf{R} (2A)">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="notes-week-01.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="activities.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="course-notes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="notes-week-03.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
