@@ -44,7 +44,7 @@
     
 
     <chapter xml:id="homework">
-      <title>Homework</title>
+      <title>Homework Assignments</title>
 
       <!-- Include homework files -->
       <xi:include href="./homework/homework-01.ptx"/>
