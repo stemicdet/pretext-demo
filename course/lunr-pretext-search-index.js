@@ -1,22 +1,13 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "syllabus",
+  "id": "course-documents",
   "level": "1",
-  "url": "syllabus.html",
-  "type": "Section",
+  "url": "course-documents.html",
+  "type": "Chapter",
   "number": "",
-  "title": "Syllabus",
-  "body": " Syllabus        Course Information  This is the syllabus for course name (MATH xxx, section xxx) for [term] 20xx. It is a [n] credit course.    Instructor  Prof. Lastname, Office Location, prof.lastname@example.edu .    Student Hours  TBD    Class meets  course times and location.    Course Description  course description from catalog    Prerequisite  list of prerequisites    Textbook and course materials   textbook name by textbook author.       Course Overview        Assessments and Grades     "
-},
-{
-  "id": "sec-course-info-2",
-  "level": "2",
-  "url": "syllabus.html#sec-course-info-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "course name (MATH xxx, section xxx) "
+  "title": "Course Documents",
+  "body": " Course Documents     "
 },
 {
   "id": "notes-week-02",
@@ -694,13 +685,40 @@ var ptx_lunr_docs = [
   "body": " Our strategy is to rewrite the left hand side as a disjoint union and apply countable additivity.   Since the right hand side is a disjoint union we have   "
 },
 {
-  "id": "homework",
+  "id": "homework-2",
   "level": "1",
-  "url": "homework.html",
-  "type": "Chapter",
+  "url": "homework-2.html",
+  "type": "Worksheet",
   "number": "",
-  "title": "Homework",
-  "body": " Homework    "
+  "title": "Homework 1 (Due August 27)",
+  "body": " Homework 1 (Due August 27)    Instructions: Complete all the exercises below and submit your work by the due date.      Define by Explain why is not Riemann integrable on .      Suppose . Define by Prove that is Riemann integrable on and       For each , define by      Show that for each the sequence converges pointwise to as .    Show that for all . (This shows that in general .)        "
+},
+{
+  "id": "homework-2-3-1",
+  "level": "2",
+  "url": "homework-2.html#homework-2-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Define by Explain why is not Riemann integrable on .   "
+},
+{
+  "id": "homework-2-3-2",
+  "level": "2",
+  "url": "homework-2.html#homework-2-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Suppose . Define by Prove that is Riemann integrable on and    "
+},
+{
+  "id": "homework-2-3-3",
+  "level": "2",
+  "url": "homework-2.html#homework-2-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  For each , define by      Show that for each the sequence converges pointwise to as .    Show that for all . (This shows that in general .)      "
 }
 ]
 
