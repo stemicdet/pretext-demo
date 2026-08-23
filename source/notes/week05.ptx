@@ -137,9 +137,212 @@
            If we write $G$ as $G = F \cup G \setminus F$, then $G$ is a disjoint union in which one set is open. Hence the previous theorem applies and $|G| = |F| + |G \setminus F|$. 
         </p>
 
+        <p>
+            Moreover, $|A| \leq |G \setminus F|$. Hence 
+            <md>
+                <mrow> |A|+|F| \leq |G \setminus F| + |F| \amp = |G|</mrow>
+                <mrow> \amp \leq \sum_{k=1}^{\infty} \ell(I_k)</mrow>
+            </md>
+            
+        </p>
 
+        <p>
+            Since $\displaystyle \bigcup_{k=1}^{\infty} I_k$ is a cover of $A \cup F$ it follows from taking the infimum over all such covers that 
+            <md>
+                |A| + |F| \leq |A \cup F|
+            </md>
+            
+        </p>
+
+        <p>
+            Since it follows from countable subadditivity that $|A \cup F| \leq |A| + |F|$, we have that $|A| + |F| = |A \cup F|$ and the theorem is proven.
+        </p>
 
     </proof>
+
+     <p>
+            The Borel $\sigma$-algebra is the smallest $\sigma$-algebra that contains all the open sets. In general we cannot represent Borel sets by a finite combination of countable unions and intersections; however, we can nicely approximated Borel sets by closed sets.
+        </p>
+
+        <theorem xml:id="thm-approximation-from-below">
+            <title>Approximation of Borel Sets from Below by Closed Sets</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $B \subseteq \mathbf{R}$ is a Borel set. Then for every $\epsilon>0$, there exists a closed set $F \subseteq B$ such that $|B \setminus F| &lt; \epsilon$.
+                </p>
+            </statement>
+        </theorem>
+
+
+        <proof>
+            <p>
+                Let $L = \{D \subseteq \mathbf{R}: \text{ for every } \epsilon>0  \text{ there exists a closed set } F \subseteq \mathbf{R} \text{ such that } |D \setminus F| &lt; \epsilon\}$. Note that $L$ contains all closed subsets of $\mathbf{R}$. We will show that $L$ is a $\sigma$-algebra. Since $L$ is a $\sigma$-algebra that contains all closed subsets of $\mathbf{R}$ it must also contain all the open subsets of $\mathbf{R}$ and thus contains all Borel sets.
+            </p>
+
+            <p>
+                First, $\emptyset \in L$ since $\emptyset$ is a closed set.
+            </p>
+
+            <p>
+                Before we prove that $L$ is closed under compliments, we will prove that $L$ is closed under countable intersections. Suppose that $D_1, D_2, \ldots $ is a sequence of elements in $L$. Let $\epsilon>0$ be arbitrary. Then for each $k \in \mathbf{N}$, there exists a closed set $F_k$ such that
+                <md>
+                     F_k \subseteq D_k \text{ and } |D_k \setminus F_k| &lt; \frac{\epsilon}{2^k}
+                </md>
+                
+            </p>
+
+            <p>
+                In addition
+                <md>
+                   \left( \bigcap_{k=1}^{\infty} D_k \right) \setminus \left( \bigcap_{k=1}^{\infty} F_k \right) \subseteq \left( \bigcap_{k=1}^{\infty} D_k \setminus F_k \right)
+                </md>
+                
+            </p>
+
+            <p>
+                Hence by monotonicity and subadditivity
+                <md>
+                    <mrow> \left| \left( \bigcap_{k=1}^{\infty} D_k \right) \setminus \left( \bigcap_{k=1}^{\infty} F_k \right) \right| \amp \leq \left| \left( \bigcap_{k=1}^{\infty} D_k \setminus F_k \right)\right|\\ </mrow>
+                    <mrow> \amp \leq \sum_{k=1}^{\infty} \frac{\epsilon}{2^k} \leq \epsilon. </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Thus $\displaystyle \bigcap_{k=1}^{\infty} D_k \in L$. So $L$ is closed under countable intersections.
+            </p>
+
+            <p>
+                Now we want to show that $L$ is closed under compliments. That is, given $D \in L$ we want to show that $\mathbf{R}\setminus D$ is also a subset of $L$. First suppose that $|D| &lt; \infty$. Let $\epsilon>0$ be arbitrary. Then there exists a closed set $F \subseteq D$ such that $|D \setminus F| &lt; \frac{\epsilon}{2}$. It follows from the definition of outer measure that there exists an open set $G$ such that $D \subseteq G$ and $|G| &lt; |D| + \frac{\epsilon}{2}$.
+            </p>
+
+            <p>
+                Then $\mathbf{R} \setminus G$ is a closed subset of $\mathbf{R} \setminus D$ and 
+                <md>
+                     (\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G) = G \setminus D \subseteq G \setminus F
+                </md>
+                
+            </p>
+
+            <p>
+                Thus by subadditivity,
+                <md>
+                    |(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| \leq |G \setminus F|
+                </md>
+                
+            </p>
+
+            <p>
+                Since $G = G\setminus F \cup F$ and these are disjoint sets with $F$ closed it follows from additivity of outer measure with one closed set that $|G| = |G\setminus F| + |F|$. Thus $|G\setminus F| = |G| - |F|$.
+            </p>
+
+            <p>
+                Thus
+
+                <md>
+                    <mrow>  |(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| \amp \leq |G|-|F|</mrow>
+                    <mrow> \amp =|G|-|D| + |D|-|F| </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Since $D = D\setminus F \cup F$ and these are disjoint sets with $F$ closed it follows from additivity of outer measure with one closed set that $|D| = |D\setminus F| + |F|$. Thus $|D\setminus F| = |D| - |F|$.
+            </p>
+
+            <p>
+                Hence
+                <md>
+                    <mrow> |(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| \amp =|G|-|D| + |D|-|F| </mrow>
+                    <mrow> \amp &lt; \frac{\epsilon}{2} + |D\setminus F| </mrow>
+                    <mrow> \amp &lt; \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon. </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Since we have that $|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| < \epsilon$ and $R \setminus G$ is closed, this means that $\mathbf{R}\setminus D \in L$.
+            </p>
+
+            <p>
+                For the case that $|D| = \infty$, let $D_k = D \cap [-k,k]$. Then $D_k \in L$ since $[-k,k]$ is a closed set and belongs to $L$ and as a $\sigma$-algebra, $L$ is closed under finite intersections. Since $|D_k| \leq 2k$ and $D_k \in L$, it follows that $\mathbf{R}\setminus D_k \in L$.
+            </p>
+
+            <p>
+                Because $\displaystyle D = \bigcup_{k=1}^{\infty} D_k$ it follows from De Morgan's Laws that
+                <md>
+                    \mathbf{R}\setminus D = \bigcap_{k=1}^{\infty} \mathbf{R} \setminus D_k.
+                </md>
+                
+            </p>
+
+            <p>
+                Since $L$ is closed under countable intersection, this implies that $\mathbf{R} \setminus D \in L$. Thus $L$ is closed under compliments.
+            </p>
+
+            <p>
+                Finally we show that $L$ is closed under countable unions. Let $D_1, D_2, \ldots$ be a sequence of subsets in $L$. Then it follows from DeMorgan's laws that
+                <md>
+                    \mathbf{R}\setminus \bigcup_{k=1}^{\infty} D_k = \bigcap_{k=1}^{\infty} \mathbf{R} \setminus D_k.
+                </md>
+                
+            </p>
+
+            <p>
+                Since $L$ is closed under countable intersection, this implies that $\displaystyle \mathbf{R} \setminus \bigcup_{k=1}^{\infty} D_k \in L$. Since $L$ is closed under compliments this means that $\displaystyle \bigcup_{k=1}^{\infty} D_k \in L$. Thus $L$ is closed under countable unions and hence $L$ is a $\sigma$-algebra that contains all Borel subsets of $\mathbf{R}$. 
+            </p>
+
+        </proof>
+
+        <p>
+            Now we can prove that the outer measure is additive provided that one of the sets is a Borel set.
+        </p>
+
+        <theorem xml:id="thm-additivity-outer-measure-Borel">
+            <title>Additivity of Outer Measure if One Set is a Borel Set</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose that $A$ and $B$ are disjoint subsets of $\mathbf{R}$ and $B$ is a Borel set. Then $|A \cup B| = |A| + |B|$.
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                Let $\epsilon>0$ be arbitrary and let $F$ be a closed set such that $F \subseteq B$ and $|B \setminus F| &lt; \epsilon$. Then it follows from monotonicity and additivity of outer measure when one set is closed that
+                <md>
+                    <mrow> |A \cup B| \amp |A \cup F| </mrow>
+                    <mrow> \amp = |A| + |F|</mrow>
+                    <mrow> \amp = |A|+ |B| - |B \setminus F| </mrow>
+                    <mrow> \amp \geq |A| + |B| - \epsilon</mrow>
+                </md>
+                 
+            </p>
+
+            <p>
+                Because this inequality holds for all $\epsilon>0$ we have that $|A \cup B| \geq |A|+|B|$ and hence $|A \cup B| = |A| + |B|$.
+            </p>
+
+        </proof>
+
+        <p>
+            As a corollary, we can show that there are subsets of $\mathbf{R}$ that are not Borel sets.
+        </p>
+
+        <corollary xml:id="cor-non-Borel-set">
+            <title>Existence of a Subset of $\mathbf{R}$that is Not a Borel Set</title>
+            
+            
+            <statement>
+                <p>
+                    There exists a subset $B$ of $\mathbf{R}$ that is not a Borel set.
+                </p>
+            </statement>
+        </corollary>
     
 
 
