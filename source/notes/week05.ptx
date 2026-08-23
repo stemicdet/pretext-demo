@@ -263,7 +263,7 @@
             </p>
 
             <p>
-                Since we have that $|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| < \epsilon$ and $R \setminus G$ is closed, this means that $\mathbf{R}\setminus D \in L$.
+                Since we have that $|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| &lt; \epsilon$ and $R \setminus G$ is closed, this means that $\mathbf{R}\setminus D \in L$.
             </p>
 
             <p>
@@ -345,7 +345,178 @@
         </corollary>
     
 
+        <proof>
+            <p>
+                When we proved that outer measure is not additive in general, we constructed disjoint sets $A$ and $B$ with $|A| + |B| \neq |A \cup B|$. By the previous theorem this means that neither $A$ nor $B$ can be Borel sets.
+            </p>
+        </proof>
 
+        <p>
+            We can finally prove that outer measure restricted to Borel sets is a bonafide measure.
+        </p>
+
+        <theorem xml:id="thm-outer-measure-is-measure">
+            <title>Outer Measure is a Measure on Borel Sets</title>
+            
+            
+            <statement>
+                <p>
+                    Outer measure is a measure on $(\mathbf{R}, B)$ where $B$ is the set of Borel subsets of $\mathbf{R}$.
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                We need to show that outer measure on Borel sets satisfies countable additivity. Let $B_1, B_2, \ldots$ be a sequence of Borel sets. Then it follows from additivity of outer measure on Borel sets that 
+                <md>
+                    \left| \bigcup_{k=1}^{\infty} B_k\right| \geq \left| \bigcup_{k=1}^{n} B_k\right| = \sum_{k=1}^n |B_k|.
+                </md>
+                
+            </p>
+
+            <p>
+                Thus by taking the limit as $n \to \infty$ we have that
+                <md>
+                    \left| \bigcup_{k=1}^{\infty} B_k\right| \geq  \sum_{k=1}^{\infty} |B_k|.
+                </md>
+                
+            </p>
+
+            <p>
+                Since the other direction of the inequality follows from countable subadditivity we have that 
+                <md>
+                    \left| \bigcup_{k=1}^{\infty} B_k\right| =  \sum_{k=1}^{\infty} |B_k|.
+                </md>
+                and thus outer measure on Borel sets is countably additive and hence is a measure.
+            </p>
+
+        </proof>
+
+        <p>
+            We are now in position to define Lebesgue measure.
+        </p>
+        
+        <definition xml:id="def-lebesgue-measure">
+            <title>Lebesgue Measure</title>
+            
+            
+            <statement>
+                <p>
+                    <term>Lebesgue Measure</term> is the measure on $(\mathbf{R}, B)$ where $B$ is the $\sigma$-algebra of Borel subsets of $\mathbf{R}$, that assigns to each Borel set its outer measure.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            Lebesgue measure is the same thing as outer measure except that it is only applied to Borel sets. Unlike outer measure, Lebesgue measure is truly a measure. We have shown that outer measure restricted to Borel sets is a bonafide measure; however, as it turns out we can do a little better. Outer measure is still a measure if restricted to a larger collection of functions called Lebesgue measurable sets.
+        </p>
+
+
+
+  </subsection>
+
+  <subsection xml:id="subsec-Lebesgue-Measurable-Sets">
+    <title>Lebesgue Measurable Sets</title>
+
+     <definition xml:id="def-lebesgue-measureable-set">
+            <statement>
+                <p>
+                    A set $A \subseteq \mathbf{R}$ is called <term>Lebesgue measurable</term> if there exists a Borel set $B \subseteq A$ such that $|A \setminus B| =0$.
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            Every Borel set is a Lebesgue measurable set; however, there are Lebesgue measurable sets that are not Borel sets, but it is rather difficult to come with up an example of one. However, it can be shown that the cardinality of the collection of Borel subsets of $\mathbf{R}$ is equal to the cardinality of the real numbers, but the cardinality of the Lebesgue measurable sets is equal to the cardinality of the power set of the real numbers which is strictly greater. Thus there are vastly more Lebesgue measurable sets than Borel sets.
+        </p>
+
+        <theorem xml:id="thm-lebesgue-set-equiv">
+            <title>Equivalences for Being a Lebesgue Measurable Set</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose $A \subseteq \mathbf{R}$. Then the following are equivalent:
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                $A$ is Lebesgue measurable.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                For every $\epsilon>0$ there exists a closed set $F \subseteq A$ with $|A \setminus F| &lt; \epsilon$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                There exist closed sets $F_1, F_2, \ldots$ contained in $A$ such that $\displaystyle |A \setminus \bigcup_{k=1}^{\infty} F_k| = 0$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                There exists a Borel set $B \subseteq A$ such that $|A\setminus B| = 0$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                For every $\epsilon>0$ there exists an open set $G \supseteq A$ with $|G \setminus A| &lt; \epsilon$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                There exist open sets $G_1, G_2, \ldots$ containing $A$ such that $\displaystyle \left| \left(\bigcap_{k=1}^{\infty} G_k\right) \setminus A\right| = 0$
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                There exists a Borel set $B \supseteq A$ such that $|B \setminus A| = 0$.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                (d) is the definition of Lebesgue measure so clearly (a) and (d) are equivalent. Thus we can prove the Theorem by proving the following chain of implications: (b) implies (c) implies (d) implies $\ldots$ implies (g) implies (b). Since a lot of these implications are similar, we will just show one of them. We will show that (b) implies (c).
+            </p>
+
+            <p>
+                Suppose that (b) is true; that is, for every $\epsilon>0$ there exists a closed set $F \subseteq A$ with $|A \setminus F| &lt; \epsilon$.
+            </p>
+
+            <p>
+                Thus for each $n \in \mathbf{N}$ there exists a closed set $F_n \subseteq A$ with $|A \setminus F_n| &lt; \frac{1}{n}$. Since
+                <md>
+                    A \setminus \bigcup_{k=1}^{\infty} F_k \subseteq A \setminus F_n
+                </md>
+                for each $n \in \mathbf{N}$ it follows from subadditivity of outer measure that
+                <md>
+                    \left| A \setminus \bigcup_{k=1}^{\infty} F_k \right| \leq |A \setminus F_n| &lt; \frac{1}{n}.
+                </md>
+                
+            </p>
+
+            <p>
+                Thus by letting $n \to \infty$ we obtain that
+                <md>
+                    \left| A \setminus \bigcup_{k=1}^{\infty} F_k \right| = 0.
+                </md>
+                
+            </p>
+
+            <p>
+                Thus we have shown that (b) implies (c) in our chain of implications. The other implications are similarly proved. 
+            </p>
+
+        
+
+        </proof>
+        
+    
   </subsection>
 
   </section>
