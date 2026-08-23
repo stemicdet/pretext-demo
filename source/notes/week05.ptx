@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-05">
+  <title>Week 5: Lebesgue Measure (2D) </title>
+
+  <subsection xml:id="subsec-Additivity-of-Outer">
+    <title>Additivity of Outer Measure on Borel Sets</title>
+    
+    <p>
+        Recall that outer measure is not additive on all subsets of $\mathbf{R}$. This means that there exists disjoint subsets $A$ and $B$ of $\mathbf{R}$ such that $|A\cup B| \neq |A|+|B|$.
+    </p>
+
+    <p>
+        Thus outer measure defined on all subsets of $\mathbf{R}$ is not actually a measure. However, we will show that outer measure is a bonafide measure when restricted to Borel subsets of $\mathbf{R}$.
+    </p>
+
+    <p>
+        This restricted outer measure, which is called Lebesgue measure, is the generalization of the concept of the length of an interval that we have been seeking.
+    </p>
+
+    <p>
+        We start our proof of the additivity of outer measure on Borel sets by showing that outer measure is additive when one of the sets is open.
+    </p>
+
+    <theorem xml:id="thm-Addivitity-outer-measure">
+
+        <title>Additivity of Outer Measure if One of the Sets is Open</title>
+        
+        
+
+        <statement>
+            <p>
+                Suppose $A$ and $G$ are disjoint subsets of $\mathbf{R}$ and $G$ is open. Then $|A \cup G| = |A| + |G|$.
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            If $|G| = \infty$ then both sides are equal, so we may suppose that $|G| &lt; \infty$.
+        </p>
+
+        <p>
+            By subadditivity of outer measure we know that $|A \cup G| \leq |A| + |G|$. Hence we just need to prove the other direction.
+        </p>
+
+        <p>
+            First suppose that $G$ is the open interval $(a,b)$ with $a &lt; b$. We may also suppose that $a,b \notin A$ because removing two points from $A$ does not change its outer measure.
+        </p>
+
+        <p>
+            Recall that we defined the outer measure of a set by taking the infimum over all open covers of the set. So let $I_1, I_2, \ldots$ be a sequence of open intervals whose union contains $A \cup G$.
+        </p>
+
+        <p>
+            For each $N \in \mathbf{N}$ let $J_n = I_n \cap (\infty,a)$, $K_n = I_n \cap (a,b)$, and $L_n = I_n \cap (b,\infty)$. Hence $\ell(I_n) = \ell(J_n) + \ell(K_n) + \ell(J_n)$.
+        </p>
+
+        <p>
+           Since $A$ and $G$ are disjoint, $K_1, K_2, \ldots$ is a sequence of open intervals that cover $G$ and $J_1, L_1, J_2, L_2, \ldots$ is a sequence of open intervals that cover $A$. Thus
+           <md>
+            <mrow> \sum_{n=1}^{\infty}\ell(I_n) \amp = \sum_{n=1}^{\infty} \ell(J_n) + \ell (L_n) + \sum_{n=1}^{\infty} \ell (K_n) </mrow>
+            <mrow> \amp \geq |A|+|G| </mrow>
+           </md>
+            
+            Thus $|A\cup G| \geq |A| + |G|$ and hence $|A \cup G| = |A|+|G|$ in this special case.
+        </p>
+
+        <p>
+            By Induction it follows that if  $G$ is a union of finitely many disjoint intervals that are all disjoint from $A$, then $|A \cup G| = |A| + |G|$.
+        </p>
+
+        <p>
+            Finally suppose that $G$ is an arbitrary open set that is disjoint from $A$. Then $G = \cup_{n=1}^{\infty} I_n$ for some sequence of disjoint open intervals $I_1, I_2, \ldots$ each of which is disjoint from $A$.
+        </p>
+
+        <p>
+            Hence for each $m \in \mathbf{N}$ we have
+            <md>
+                <mrow> |A \cup G| \amp \geq \left|A \cup \bigcup_{n=1}^m I_n\right| </mrow>
+                <mrow> \amp = |A| + \sum_{n=1}^m \ell(I_n)</mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            Thus
+            <md>
+                <mrow> |A \cup G| \amp \geq |A| + \sum_{n=1}^m \ell(I_n) </mrow>
+                <mrow> \amp \geq |A|+|G|</mrow>
+            </md>
+
+            Thus $|A \cup G| = |A| + |G|$ and the proof is complete.
+            
+        </p>
+
+
+
+
+
+    </proof>
+
+    <p>
+        Next we show that outer measure is additive if one of the two sets is closed.
+    </p>
+
+    <theorem xml:id="thm-addivitity-when-closed">
+        <title>Additivity of Outer Measure if One of the Sets is Closed</title>
+        
+        
+        <statement>
+            <p>
+                Suppose $A$ and $F$ are disjoint subsets of $\mathbf{R}$ and $F$ is closed. Then 
+                <md>
+                    |A \cup F| \leq |A| + |F|.
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+    
+
+    <proof>
+        <p>
+            Suppose $I_1, I_2, \ldots$ is a sequence of open intervals whose union contains $A \cup F$ and let
+            <md>
+                G = \bigcup_{k=1}^{\infty} I_k
+            </md>
+            
+        </p>
+
+        <p>
+            Then $G$ is an open set and $A \cup F \subseteq G$. Hence $A \subseteq G \setminus F$, which is open because it is an open set minus a closed set.
+        </p>
+
+        <p>
+           If we write $G$ as $G = F \cup G \setminus F$, then $G$ is a disjoint union in which one set is open. Hence the previous theorem applies and $|G| = |F| + |G \setminus F|$. 
+        </p>
+
+
+
+    </proof>
+    
+
+
+  </subsection>
+
+  </section>
