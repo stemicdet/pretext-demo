@@ -355,7 +355,7 @@
             We can finally prove that outer measure restricted to Borel sets is a bonafide measure.
         </p>
 
-        <theorem xml:id="thm-outer-measure-is-measure">
+        <theorem xml:id="thm-outer-measure-is-measure-borel">
             <title>Outer Measure is a Measure on Borel Sets</title>
             
             
@@ -516,7 +516,242 @@
 
         </proof>
         
+        <p>
+            Now we can show that outer measure restricted to Lebesgue measurable sets is still a measure.
+        </p>
+
+        <theorem xml:id="thm-outer-measure-is-measure-lebesgue">
+            <title>Outer Measure is a Measure on Lebesgue Integrable Sets</title>
+            
+            
+            <statement>
+                <p>
+                    <ol marker="(a)">
+                        <li>
+                            <p>
+                                The set $L$ of Lebesgue measurable subsets of $\mathbf{R}$ is a $\sigma$-algebra on $\mathbf{R}$.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Outer measure is a measure on $(\mathbf{R},L)$.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+
+        <proof>
+            <p>
+                We already showed that $L$ is a $\sigma$-algebra so it remains to show that outer measure on $(\mathbf{R}, L)$ is a measure. To do this we must show countable additivity of disjoint sets.
+            </p>
+
+            <p>
+                Let $A_1, A_2, \ldots$ be a disjoint sequence of Lebesgue measurable sets. By the definition of Lebesgue measurable measurable sets, for each $k$, there exists a Borel set $B_k \subseteq A_k$ such that $|A_k \setminus B_k| = 0$.
+            </p>
+
+            <p>
+                Because outer measure on Borel sets is countably additive, we have that
+                <md>
+                    <mrow> \left| \bigcup_{k=1}^{\infty} A_k \right| \amp \geq \left| \bigcup_{k=1}^{\infty} B_k \right| </mrow>
+                    <mrow> \amp = \sum_{k=1}^{\infty} |B_k|.</mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                Now it follows from the subadditivity of outer measure that 
+                <md>
+                    <mrow> |A_k| \amp = |A_k \setminus B_k \cup B_k| </mrow>
+                    <mrow> \amp \leq |A_k\setminus B_k| + |B_k| </mrow>
+                    <mrow> \amp = |B_k| </mrow>
+                </md>
+                since $|A_k \setminus B_k| = 0$.
+                
+            </p>
+
+            <p>
+                Since outer measure is monotone and $B_k \subseteq A_k$, $|B_k| \leq |A_k|$ it follows that $|B_k| = |A_k|$. Hence
+                <md>
+                    \left| \bigcup_{k=1}^{\infty} A_k \right| \geq \sum_{k=1}^n |A_k|.
+                </md>
+                
+            </p>
+
+            <p>
+                By subadditivity of outer measure we have that
+                <md>
+                    \left| \bigcup_{k=1}^{\infty} A_k \right| \leq \sum_{k=1}^n |A_k|,
+                </md>
+                and hence 
+                <md>
+                    \left| \bigcup_{k=1}^{\infty} A_k \right| = \sum_{k=1}^n |A_k|.
+                </md>
+                
+            </p>
+
+            <p>
+                Since outer measure is countably additive on Lebesgue measurable sets, outer measure restricted to Lebesgue measurable sets is a measure.
+            </p>
+
+        </proof>
+
+        <p>
+            If $A$ is a set with outer measure $0$, then $A$ must be a Lebesgue measurable set since $\emptyset$ is a Borel set and $|A \setminus \emptyset| = 0$.
+        </p>
+
+        <p>
+            Thus the set of Lebesgue measurable sets is the smallest Borel algebra containing both all open subsets of $\mathbf{R}$ and all subsets of $\mathbf{R}$ with outer measure $0$.
+        </p>
+
+        <p>
+            Because outer measure is not additive on all subsets of $\mathbf{R}$ there are subsets of $\mathbf{R}$ that are not Lebesgue measurable sets.
+        </p>
+
+        <definition xml:id="def-lebesgue-measure-2">
+            <title>Lebesgue Measure</title>
+            
+            
+            <statement>
+                <p>
+                    <term>Lebesgue measure</term> is the measure on $(\mathbf{R}, L)$ where $L$ is the $\sigma$-algebra of Lebesgue measurable subsets of $\mathbf{R}$, that assigns to each Lebesgue measurable set its outer measure. 
+                </p>
+            </statement>
+        </definition>
+
+        <p>
+            We have two different definitions for Lebesgue measure which only differ on the domain of the measure-- is it the $\sigma$-algebra of Borel sets or Lebesgue measurable sets?
+        </p>
+
+        <p>
+            Usually it doesn't matter whether you use Borel sets or Lebesgue measurable sets. I will specify whether Lebesgue measure refers to Borel sets or Lebesgue measurable sets, unless it is irrelevant.
+        </p>
+        
     
+  </subsection>
+
+  <subsection xml:id="subsec-Cantor">
+    <title>The Cantor Set and Cantor Function</title>
+    
+
+    <p>
+        We might hope that Lebesgue measurable sets would behave nicely with respect to continuous functions; in other words, if $A$ is a Lebesgue measurable set and $f: A \to \mathbf{R}$ is a continuous function then $f(A)$ would also be a Lebesgue measurable set. 
+    </p>
+
+    <p>
+        Unfortunately, this is not the case as we will demonstrate by constructing a counterexample. For this we will need to use the Cantor set.
+    </p>
+
+    <p>
+        Recall that the Cantor set is constructed by starting with the interval $[0,1]$ and successively removing the middle thirds from each interval.
+    </p>
+
+    <definition xml:id="def-Cantor-set">
+        <title>Cantor Set</title>
+        
+        
+        <statement>
+            <p>
+                The <term>Cantor Set</term> $C$ is $\displaystyle [0,1] \setminus \cup_{n=1}^{\infty} G_n$ where $G_1 = (1/3, 2/3)$ and $G_n$ for $n &gt; 1$ is the union of the middle third open intervals in the intervals of $\displaystyle [0,1] \setminus \cup_{j=1}^{n-1} G_j$.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+       The Cantor set can also be represented using Ternary (Base 3) expansions. In Ternary, place values represent powers of 3: threes, nines, twenty-sevens, $\frac{1}{3}$, $\frac{1}{9}$, $\ldots$. 
+    </p>
+
+    <p>
+        Suppose a number has Ternary expansion $0.a_1 a_2 a_3 \ldots$. where $a_n = 0$, $1$, or $2$. The value of $a_1$ tells which third of the interval $[0,1]$ the point belongs to.
+    </p>
+
+    <p>
+        If $a_1 = 0$, the point is in the left third of $[0,1]$, if $a_1 = 1$, the point is in the middle third of $[0,1]$, and if $a_1 = 2$, the point is in the right third of $[0,1]$.
+    </p>
+
+    <p>
+        This means that any number whose Ternary expansion has $a_1=1$ belongs to the middle third interval and is removed in the first step of constructing the Cantor set.
+    </p>
+
+    <p>
+        Likewise the value of $a_2$ tells which third of the interval $[0,\frac{1}{3}]$ or $[\frac{2}{3},1]$ the point belongs to, with $a_2 = 1$ corresponding to the middle third of that interval. 
+    </p>
+
+    <p>
+        Thus any number whose Ternary expansion contains a $1$ in it will be in the middle third of some interval and will be removed in the construction of the Cantor set. Thus a point is in the Cantor set if and only if its Ternary expansion only contains the digits $0$ or $2$. 
+    </p>
+
+    <theorem xml:id="thm-Cantor-set-properties">
+        <title>Properties of the Cantor Set</title>
+        
+        
+        <statement>
+            <p>
+                <ol marker ="(a)">
+                    <li>
+                        <p>
+                            The Cantor set is a closed subset of $\mathbf{R}$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           The Cantor set has Lebesgue measure $0$. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The Cantor set contains no intervals with more than one element.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            (a) The compliment of the Cantor set is a countable union of open intervals, so it is an open set. Thus the Cantor set must be closed.
+        </p>
+
+        <p>
+            (b) In MTH 527 we proved that the compliment of the Cantor set has length $1$, hence it has Lebesgue measure $1$ and thus the Cantor set has Lebesgue measure $0$.
+        </p>
+
+        <p>
+            (c) Since an interval with at least two elements has positive measure, it follows from (b) that the Cantor set can't contain intervals with more than one element.
+        </p>
+    </proof>
+
+    <p>
+        We will refer to the following function several times throughout this course.
+    </p>
+
+    <definition xml:id="def-Cantor-Function">
+        <title>The Cantor Function</title>
+        
+        
+        <statement>
+            <p>
+               The <term>Cantor function</term> or <term>Cantor-Lebesgue Function</term> $\Lambda: [0,1] \to [0,1]$ is defined by converting base 3 representations into base 2 representations as follows.  
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        If $x$ belongs to the Cantor set then $\Lambda(x)$ is computed from the unique base 3 representation of $x$ consisting only of $0$'s and $2$'s by replacing all $2$'s in the expansion by $1$'s and interpreting the resulting string as a base 2 number.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If $x$ does not belong to the Cantor set, then $\Lambda(x)$ is computed by truncating after the first $1$, replacing each $2$ before the first $1$ with $1$ and interpreting the resulting string as a base 2 number.
+                    </p>
+                </li>
+            </ul>
+        </statement>
+    </definition>
+    
+
   </subsection>
 
   </section>
