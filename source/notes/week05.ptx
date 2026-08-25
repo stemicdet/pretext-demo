@@ -7,11 +7,11 @@
     <title>Additivity of Outer Measure on Borel Sets</title>
     
     <p>
-        Recall that outer measure is not additive on all subsets of $\mathbf{R}$. This means that there exists disjoint subsets $A$ and $B$ of $\mathbf{R}$ such that $|A\cup B| \neq |A|+|B|$.
+        Recall that outer measure is not additive on all subsets of <m>\mathbf{R}</m>. This means that there exists disjoint subsets <m>A</m> and <m>B</m> of <m>\mathbf{R}</m> such that <m>|A\cup B| \neq |A|+|B|</m>.
     </p>
 
     <p>
-        Thus outer measure defined on all subsets of $\mathbf{R}$ is not actually a measure. However, we will show that outer measure is a bonafide measure when restricted to Borel subsets of $\mathbf{R}$.
+        Thus outer measure defined on all subsets of <m>\mathbf{R}</m> is not actually a measure. However, we will show that outer measure is a bonafide measure when restricted to Borel subsets of <m>\mathbf{R}</m>.
     </p>
 
     <p>
@@ -30,52 +30,52 @@
 
         <statement>
             <p>
-                Suppose $A$ and $G$ are disjoint subsets of $\mathbf{R}$ and $G$ is open. Then $|A \cup G| = |A| + |G|$.
+                Suppose <m>A</m> and <m>G</m> are disjoint subsets of <m>\mathbf{R}</m> and <m>G</m> is open. Then <m>|A \cup G| = |A| + |G|</m>.
             </p>
         </statement>
     </theorem>
 
     <proof>
         <p>
-            If $|G| = \infty$ then both sides are equal, so we may suppose that $|G| &lt; \infty$.
+            If <m>|G| = \infty</m> then both sides are equal, so we may suppose that <m>|G| &lt; \infty</m>.
         </p>
 
         <p>
-            By subadditivity of outer measure we know that $|A \cup G| \leq |A| + |G|$. Hence we just need to prove the other direction.
+            By subadditivity of outer measure we know that <m>|A \cup G| \leq |A| + |G|</m>. Hence we just need to prove the other direction.
         </p>
 
         <p>
-            First suppose that $G$ is the open interval $(a,b)$ with $a &lt; b$. We may also suppose that $a,b \notin A$ because removing two points from $A$ does not change its outer measure.
+            First suppose that <m>G</m> is the open interval <m>(a,b)</m> with <m>a &lt; b</m>. We may also suppose that <m>a,b \notin A</m> because removing two points from <m>A</m> does not change its outer measure.
         </p>
 
         <p>
-            Recall that we defined the outer measure of a set by taking the infimum over all open covers of the set. So let $I_1, I_2, \ldots$ be a sequence of open intervals whose union contains $A \cup G$.
+            Recall that we defined the outer measure of a set by taking the infimum over all open covers of the set. So let <m>I_1, I_2, \ldots</m> be a sequence of open intervals whose union contains <m>A \cup G</m>.
         </p>
 
         <p>
-            For each $N \in \mathbf{N}$ let $J_n = I_n \cap (\infty,a)$, $K_n = I_n \cap (a,b)$, and $L_n = I_n \cap (b,\infty)$. Hence $\ell(I_n) = \ell(J_n) + \ell(K_n) + \ell(J_n)$.
+            For each <m>N \in \mathbf{N}</m> let <m>J_n = I_n \cap (\infty,a)</m>, <m>K_n = I_n \cap (a,b)</m>, and <m>L_n = I_n \cap (b,\infty)</m>. Hence <m>\ell(I_n) = \ell(J_n) + \ell(K_n) + \ell(J_n)</m>.
         </p>
 
         <p>
-           Since $A$ and $G$ are disjoint, $K_1, K_2, \ldots$ is a sequence of open intervals that cover $G$ and $J_1, L_1, J_2, L_2, \ldots$ is a sequence of open intervals that cover $A$. Thus
+           Since <m>A</m> and <m>G</m> are disjoint, <m>K_1, K_2, \ldots</m> is a sequence of open intervals that cover <m>G</m> and <m>J_1, L_1, J_2, L_2, \ldots</m> is a sequence of open intervals that cover <m>A</m>. Thus
            <md>
             <mrow> \sum_{n=1}^{\infty}\ell(I_n) \amp = \sum_{n=1}^{\infty} \ell(J_n) + \ell (L_n) + \sum_{n=1}^{\infty} \ell (K_n) </mrow>
             <mrow> \amp \geq |A|+|G| </mrow>
            </md>
             
-            Thus $|A\cup G| \geq |A| + |G|$ and hence $|A \cup G| = |A|+|G|$ in this special case.
+            Thus <m>|A\cup G| \geq |A| + |G|</m> and hence <m>|A \cup G| = |A|+|G|</m> in this special case.
         </p>
 
         <p>
-            By Induction it follows that if  $G$ is a union of finitely many disjoint intervals that are all disjoint from $A$, then $|A \cup G| = |A| + |G|$.
+            By Induction it follows that if  <m>G</m> is a union of finitely many disjoint intervals that are all disjoint from <m>A</m>, then <m>|A \cup G| = |A| + |G|</m>.
         </p>
 
         <p>
-            Finally suppose that $G$ is an arbitrary open set that is disjoint from $A$. Then $G = \cup_{n=1}^{\infty} I_n$ for some sequence of disjoint open intervals $I_1, I_2, \ldots$ each of which is disjoint from $A$.
+            Finally suppose that <m>G</m> is an arbitrary open set that is disjoint from <m>A</m>. Then <m>G = \cup_{n=1}^{\infty} I_n</m> for some sequence of disjoint open intervals <m>I_1, I_2, \ldots</m> each of which is disjoint from <m>A</m>.
         </p>
 
         <p>
-            Hence for each $m \in \mathbf{N}$ we have
+            Hence for each <m>m \in \mathbf{N}</m> we have
             <md>
                 <mrow> |A \cup G| \amp \geq \left|A \cup \bigcup_{n=1}^m I_n\right| </mrow>
                 <mrow> \amp = |A| + \sum_{n=1}^m \ell(I_n)</mrow>
@@ -90,7 +90,7 @@
                 <mrow> \amp \geq |A|+|G|</mrow>
             </md>
 
-            Thus $|A \cup G| = |A| + |G|$ and the proof is complete.
+            Thus <m>|A \cup G| = |A| + |G|</m> and the proof is complete.
             
         </p>
 
@@ -110,7 +110,7 @@
         
         <statement>
             <p>
-                Suppose $A$ and $F$ are disjoint subsets of $\mathbf{R}$ and $F$ is closed. Then 
+                Suppose <m>A</m> and <m>F</m> are disjoint subsets of <m>\mathbf{R}</m> and <m>F</m> is closed. Then 
                 <md>
                     |A \cup F| \leq |A| + |F|.
                 </md>
@@ -122,7 +122,7 @@
 
     <proof>
         <p>
-            Suppose $I_1, I_2, \ldots$ is a sequence of open intervals whose union contains $A \cup F$ and let
+            Suppose <m>I_1, I_2, \ldots</m> is a sequence of open intervals whose union contains <m>A \cup F</m> and let
             <md>
                 G = \bigcup_{k=1}^{\infty} I_k
             </md>
@@ -130,15 +130,15 @@
         </p>
 
         <p>
-            Then $G$ is an open set and $A \cup F \subseteq G$. Hence $A \subseteq G \setminus F$, which is open because it is an open set minus a closed set.
+            Then <m>G</m> is an open set and <m>A \cup F \subseteq G</m>. Hence <m>A \subseteq G \setminus F</m>, which is open because it is an open set minus a closed set.
         </p>
 
         <p>
-           If we write $G$ as $G = F \cup G \setminus F$, then $G$ is a disjoint union in which one set is open. Hence the previous theorem applies and $|G| = |F| + |G \setminus F|$. 
+           If we write <m>G</m> as <m>G = F \cup G \setminus F</m>, then <m>G</m> is a disjoint union in which one set is open. Hence the previous theorem applies and <m>|G| = |F| + |G \setminus F|</m>. 
         </p>
 
         <p>
-            Moreover, $|A| \leq |G \setminus F|$. Hence 
+            Moreover, <m>|A| \leq |G \setminus F|</m>. Hence 
             <md>
                 <mrow> |A|+|F| \leq |G \setminus F| + |F| \amp = |G|</mrow>
                 <mrow> \amp \leq \sum_{k=1}^{\infty} \ell(I_k)</mrow>
@@ -147,7 +147,7 @@
         </p>
 
         <p>
-            Since $\displaystyle \bigcup_{k=1}^{\infty} I_k$ is a cover of $A \cup F$ it follows from taking the infimum over all such covers that 
+            Since <m>\displaystyle \bigcup_{k=1}^{\infty} I_k</m> is a cover of <m>A \cup F</m> it follows from taking the infimum over all such covers that 
             <md>
                 |A| + |F| \leq |A \cup F|
             </md>
@@ -155,13 +155,13 @@
         </p>
 
         <p>
-            Since it follows from countable subadditivity that $|A \cup F| \leq |A| + |F|$, we have that $|A| + |F| = |A \cup F|$ and the theorem is proven.
+            Since it follows from countable subadditivity that <m>|A \cup F| \leq |A| + |F|</m>, we have that <m>|A| + |F| = |A \cup F|</m> and the theorem is proven.
         </p>
 
     </proof>
 
      <p>
-            The Borel $\sigma$-algebra is the smallest $\sigma$-algebra that contains all the open sets. In general we cannot represent Borel sets by a finite combination of countable unions and intersections; however, we can nicely approximated Borel sets by closed sets.
+            The Borel <m>\sigma</m>-algebra is the smallest <m>\sigma</m>-algebra that contains all the open sets. In general we cannot represent Borel sets by a finite combination of countable unions and intersections; however, we can nicely approximated Borel sets by closed sets.
         </p>
 
         <theorem xml:id="thm-approximation-from-below">
@@ -170,7 +170,7 @@
             
             <statement>
                 <p>
-                    Suppose $B \subseteq \mathbf{R}$ is a Borel set. Then for every $\epsilon>0$, there exists a closed set $F \subseteq B$ such that $|B \setminus F| &lt; \epsilon$.
+                    Suppose <m>B \subseteq \mathbf{R}</m> is a Borel set. Then for every <m>\epsilon>0</m>, there exists a closed set <m>F \subseteq B</m> such that <m>|B \setminus F| &lt; \epsilon</m>.
                 </p>
             </statement>
         </theorem>
@@ -178,15 +178,15 @@
 
         <proof>
             <p>
-                Let $L = \{D \subseteq \mathbf{R}: \text{ for every } \epsilon>0  \text{ there exists a closed set } F \subseteq \mathbf{R} \text{ such that } |D \setminus F| &lt; \epsilon\}$. Note that $L$ contains all closed subsets of $\mathbf{R}$. We will show that $L$ is a $\sigma$-algebra. Since $L$ is a $\sigma$-algebra that contains all closed subsets of $\mathbf{R}$ it must also contain all the open subsets of $\mathbf{R}$ and thus contains all Borel sets.
+                Let <m>L = \{D \subseteq \mathbf{R}: \text{ for every } \epsilon>0  \text{ there exists a closed set } F \subseteq \mathbf{R} \text{ such that } |D \setminus F| &lt; \epsilon\}</m>. Note that <m>L</m> contains all closed subsets of <m>\mathbf{R}</m>. We will show that <m>L</m> is a <m>\sigma</m>-algebra. Since <m>L</m> is a <m>\sigma</m>-algebra that contains all closed subsets of <m>\mathbf{R}</m> it must also contain all the open subsets of <m>\mathbf{R}</m> and thus contains all Borel sets.
             </p>
 
             <p>
-                First, $\emptyset \in L$ since $\emptyset$ is a closed set.
+                First, <m>\emptyset \in L</m> since <m>\emptyset</m> is a closed set.
             </p>
 
             <p>
-                Before we prove that $L$ is closed under compliments, we will prove that $L$ is closed under countable intersections. Suppose that $D_1, D_2, \ldots $ is a sequence of elements in $L$. Let $\epsilon>0$ be arbitrary. Then for each $k \in \mathbf{N}$, there exists a closed set $F_k$ such that
+                Before we prove that <m>L</m> is closed under compliments, we will prove that <m>L</m> is closed under countable intersections. Suppose that <m>D_1, D_2, \ldots </m> is a sequence of elements in <m>L</m>. Let <m>\epsilon>0</m> be arbitrary. Then for each <m>k \in \mathbf{N}</m>, there exists a closed set <m>F_k</m> such that
                 <md>
                      F_k \subseteq D_k \text{ and } |D_k \setminus F_k| &lt; \frac{\epsilon}{2^k}
                 </md>
@@ -211,15 +211,15 @@
             </p>
 
             <p>
-                Thus $\displaystyle \bigcap_{k=1}^{\infty} D_k \in L$. So $L$ is closed under countable intersections.
+                Thus <m>\displaystyle \bigcap_{k=1}^{\infty} D_k \in L</m>. So <m>L</m> is closed under countable intersections.
             </p>
 
             <p>
-                Now we want to show that $L$ is closed under compliments. That is, given $D \in L$ we want to show that $\mathbf{R}\setminus D$ is also a subset of $L$. First suppose that $|D| &lt; \infty$. Let $\epsilon>0$ be arbitrary. Then there exists a closed set $F \subseteq D$ such that $|D \setminus F| &lt; \frac{\epsilon}{2}$. It follows from the definition of outer measure that there exists an open set $G$ such that $D \subseteq G$ and $|G| &lt; |D| + \frac{\epsilon}{2}$.
+                Now we want to show that <m>L</m> is closed under compliments. That is, given <m>D \in L</m> we want to show that <m>\mathbf{R}\setminus D</m> is also a subset of <m>L</m>. First suppose that <m>|D| &lt; \infty</m>. Let <m>\epsilon>0</m> be arbitrary. Then there exists a closed set <m>F \subseteq D</m> such that <m>|D \setminus F| &lt; \frac{\epsilon}{2}</m>. It follows from the definition of outer measure that there exists an open set <m>G</m> such that <m>D \subseteq G</m> and <m>|G| &lt; |D| + \frac{\epsilon}{2}</m>.
             </p>
 
             <p>
-                Then $\mathbf{R} \setminus G$ is a closed subset of $\mathbf{R} \setminus D$ and 
+                Then <m>\mathbf{R} \setminus G</m> is a closed subset of <m>\mathbf{R} \setminus D</m> and 
                 <md>
                      (\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G) = G \setminus D \subseteq G \setminus F
                 </md>
@@ -235,7 +235,7 @@
             </p>
 
             <p>
-                Since $G = G\setminus F \cup F$ and these are disjoint sets with $F$ closed it follows from additivity of outer measure with one closed set that $|G| = |G\setminus F| + |F|$. Thus $|G\setminus F| = |G| - |F|$.
+                Since <m>G = G\setminus F \cup F</m> and these are disjoint sets with <m>F</m> closed it follows from additivity of outer measure with one closed set that <m>|G| = |G\setminus F| + |F|</m>. Thus <m>|G\setminus F| = |G| - |F|</m>.
             </p>
 
             <p>
@@ -249,7 +249,7 @@
             </p>
 
             <p>
-                Since $D = D\setminus F \cup F$ and these are disjoint sets with $F$ closed it follows from additivity of outer measure with one closed set that $|D| = |D\setminus F| + |F|$. Thus $|D\setminus F| = |D| - |F|$.
+                Since <m>D = D\setminus F \cup F</m> and these are disjoint sets with <m>F</m> closed it follows from additivity of outer measure with one closed set that <m>|D| = |D\setminus F| + |F|</m>. Thus <m>|D\setminus F| = |D| - |F|</m>.
             </p>
 
             <p>
@@ -263,15 +263,15 @@
             </p>
 
             <p>
-                Since we have that $|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| &lt; \epsilon$ and $R \setminus G$ is closed, this means that $\mathbf{R}\setminus D \in L$.
+                Since we have that <m>|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| &lt; \epsilon</m> and <m>R \setminus G</m> is closed, this means that <m>\mathbf{R}\setminus D \in L</m>.
             </p>
 
             <p>
-                For the case that $|D| = \infty$, let $D_k = D \cap [-k,k]$. Then $D_k \in L$ since $[-k,k]$ is a closed set and belongs to $L$ and as a $\sigma$-algebra, $L$ is closed under finite intersections. Since $|D_k| \leq 2k$ and $D_k \in L$, it follows that $\mathbf{R}\setminus D_k \in L$.
+                For the case that <m>|D| = \infty</m>, let <m>D_k = D \cap [-k,k]</m>. Then <m>D_k \in L</m> since <m>[-k,k]</m> is a closed set and belongs to <m>L</m> and as a <m>\sigma</m>-algebra, <m>L</m> is closed under finite intersections. Since <m>|D_k| \leq 2k</m> and <m>D_k \in L</m>, it follows that <m>\mathbf{R}\setminus D_k \in L</m>.
             </p>
 
             <p>
-                Because $\displaystyle D = \bigcup_{k=1}^{\infty} D_k$ it follows from De Morgan's Laws that
+                Because <m>\displaystyle D = \bigcup_{k=1}^{\infty} D_k</m> it follows from De Morgan's Laws that
                 <md>
                     \mathbf{R}\setminus D = \bigcap_{k=1}^{\infty} \mathbf{R} \setminus D_k.
                 </md>
@@ -279,11 +279,11 @@
             </p>
 
             <p>
-                Since $L$ is closed under countable intersection, this implies that $\mathbf{R} \setminus D \in L$. Thus $L$ is closed under compliments.
+                Since <m>L</m> is closed under countable intersection, this implies that <m>\mathbf{R} \setminus D \in L</m>. Thus <m>L</m> is closed under compliments.
             </p>
 
             <p>
-                Finally we show that $L$ is closed under countable unions. Let $D_1, D_2, \ldots$ be a sequence of subsets in $L$. Then it follows from DeMorgan's laws that
+                Finally we show that <m>L</m> is closed under countable unions. Let <m>D_1, D_2, \ldots</m> be a sequence of subsets in <m>L</m>. Then it follows from DeMorgan's laws that
                 <md>
                     \mathbf{R}\setminus \bigcup_{k=1}^{\infty} D_k = \bigcap_{k=1}^{\infty} \mathbf{R} \setminus D_k.
                 </md>
@@ -291,7 +291,7 @@
             </p>
 
             <p>
-                Since $L$ is closed under countable intersection, this implies that $\displaystyle \mathbf{R} \setminus \bigcup_{k=1}^{\infty} D_k \in L$. Since $L$ is closed under compliments this means that $\displaystyle \bigcup_{k=1}^{\infty} D_k \in L$. Thus $L$ is closed under countable unions and hence $L$ is a $\sigma$-algebra that contains all Borel subsets of $\mathbf{R}$. 
+                Since <m>L</m> is closed under countable intersection, this implies that <m>\displaystyle \mathbf{R} \setminus \bigcup_{k=1}^{\infty} D_k \in L</m>. Since <m>L</m> is closed under compliments this means that <m>\displaystyle \bigcup_{k=1}^{\infty} D_k \in L</m>. Thus <m>L</m> is closed under countable unions and hence <m>L</m> is a <m>\sigma</m>-algebra that contains all Borel subsets of <m>\mathbf{R}</m>. 
             </p>
 
         </proof>
@@ -306,14 +306,14 @@
             
             <statement>
                 <p>
-                    Suppose that $A$ and $B$ are disjoint subsets of $\mathbf{R}$ and $B$ is a Borel set. Then $|A \cup B| = |A| + |B|$.
+                    Suppose that <m>A</m> and <m>B</m> are disjoint subsets of <m>\mathbf{R}</m> and <m>B</m> is a Borel set. Then <m>|A \cup B| = |A| + |B|</m>.
                 </p>
             </statement>
         </theorem>
         
         <proof>
             <p>
-                Let $\epsilon>0$ be arbitrary and let $F$ be a closed set such that $F \subseteq B$ and $|B \setminus F| &lt; \epsilon$. Then it follows from monotonicity and additivity of outer measure when one set is closed that
+                Let <m>\epsilon>0</m> be arbitrary and let <m>F</m> be a closed set such that <m>F \subseteq B</m> and <m>|B \setminus F| &lt; \epsilon</m>. Then it follows from monotonicity and additivity of outer measure when one set is closed that
                 <md>
                     <mrow> |A \cup B| \amp |A \cup F| </mrow>
                     <mrow> \amp = |A| + |F|</mrow>
@@ -324,22 +324,22 @@
             </p>
 
             <p>
-                Because this inequality holds for all $\epsilon>0$ we have that $|A \cup B| \geq |A|+|B|$ and hence $|A \cup B| = |A| + |B|$.
+                Because this inequality holds for all <m>\epsilon>0</m> we have that <m>|A \cup B| \geq |A|+|B|</m> and hence <m>|A \cup B| = |A| + |B|</m>.
             </p>
 
         </proof>
 
         <p>
-            As a corollary, we can show that there are subsets of $\mathbf{R}$ that are not Borel sets.
+            As a corollary, we can show that there are subsets of <m>\mathbf{R}</m> that are not Borel sets.
         </p>
 
         <corollary xml:id="cor-non-Borel-set">
-            <title>Existence of a Subset of $\mathbf{R}$that is Not a Borel Set</title>
+            <title>Existence of a Subset of <m>\mathbf{R}</m>that is Not a Borel Set</title>
             
             
             <statement>
                 <p>
-                    There exists a subset $B$ of $\mathbf{R}$ that is not a Borel set.
+                    There exists a subset <m>B</m> of <m>\mathbf{R}</m> that is not a Borel set.
                 </p>
             </statement>
         </corollary>
@@ -347,7 +347,7 @@
 
         <proof>
             <p>
-                When we proved that outer measure is not additive in general, we constructed disjoint sets $A$ and $B$ with $|A| + |B| \neq |A \cup B|$. By the previous theorem this means that neither $A$ nor $B$ can be Borel sets.
+                When we proved that outer measure is not additive in general, we constructed disjoint sets <m>A</m> and <m>B</m> with <m>|A| + |B| \neq |A \cup B|</m>. By the previous theorem this means that neither <m>A</m> nor <m>B</m> can be Borel sets.
             </p>
         </proof>
 
@@ -361,14 +361,14 @@
             
             <statement>
                 <p>
-                    Outer measure is a measure on $(\mathbf{R}, B)$ where $B$ is the set of Borel subsets of $\mathbf{R}$.
+                    Outer measure is a measure on <m>(\mathbf{R}, B)</m> where <m>B</m> is the set of Borel subsets of <m>\mathbf{R}</m>.
                 </p>
             </statement>
         </theorem>
 
         <proof>
             <p>
-                We need to show that outer measure on Borel sets satisfies countable additivity. Let $B_1, B_2, \ldots$ be a sequence of Borel sets. Then it follows from additivity of outer measure on Borel sets that 
+                We need to show that outer measure on Borel sets satisfies countable additivity. Let <m>B_1, B_2, \ldots</m> be a sequence of Borel sets. Then it follows from additivity of outer measure on Borel sets that 
                 <md>
                     \left| \bigcup_{k=1}^{\infty} B_k\right| \geq \left| \bigcup_{k=1}^{n} B_k\right| = \sum_{k=1}^n |B_k|.
                 </md>
@@ -376,7 +376,7 @@
             </p>
 
             <p>
-                Thus by taking the limit as $n \to \infty$ we have that
+                Thus by taking the limit as <m>n \to \infty</m> we have that
                 <md>
                     \left| \bigcup_{k=1}^{\infty} B_k\right| \geq  \sum_{k=1}^{\infty} |B_k|.
                 </md>
@@ -403,7 +403,7 @@
             
             <statement>
                 <p>
-                    <term>Lebesgue Measure</term> is the measure on $(\mathbf{R}, B)$ where $B$ is the $\sigma$-algebra of Borel subsets of $\mathbf{R}$, that assigns to each Borel set its outer measure.
+                    <term>Lebesgue Measure</term> is the measure on <m>(\mathbf{R}, B)</m> where <m>B</m> is the <m>\sigma</m>-algebra of Borel subsets of <m>\mathbf{R}</m>, that assigns to each Borel set its outer measure.
                 </p>
             </statement>
         </definition>
@@ -422,13 +422,13 @@
      <definition xml:id="def-lebesgue-measureable-set">
             <statement>
                 <p>
-                    A set $A \subseteq \mathbf{R}$ is called <term>Lebesgue measurable</term> if there exists a Borel set $B \subseteq A$ such that $|A \setminus B| =0$.
+                    A set <m>A \subseteq \mathbf{R}</m> is called <term>Lebesgue measurable</term> if there exists a Borel set <m>B \subseteq A</m> such that <m>|A \setminus B| =0</m>.
                 </p>
             </statement>
         </definition>
 
         <p>
-            Every Borel set is a Lebesgue measurable set; however, there are Lebesgue measurable sets that are not Borel sets, but it is rather difficult to come with up an example of one. However, it can be shown that the cardinality of the collection of Borel subsets of $\mathbf{R}$ is equal to the cardinality of the real numbers, but the cardinality of the Lebesgue measurable sets is equal to the cardinality of the power set of the real numbers which is strictly greater. Thus there are vastly more Lebesgue measurable sets than Borel sets.
+            Every Borel set is a Lebesgue measurable set; however, there are Lebesgue measurable sets that are not Borel sets, but it is rather difficult to come with up an example of one. However, it can be shown that the cardinality of the collection of Borel subsets of <m>\mathbf{R}</m> is equal to the cardinality of the real numbers, but the cardinality of the Lebesgue measurable sets is equal to the cardinality of the power set of the real numbers which is strictly greater. Thus there are vastly more Lebesgue measurable sets than Borel sets.
         </p>
 
         <theorem xml:id="thm-lebesgue-set-equiv">
@@ -437,41 +437,41 @@
             
             <statement>
                 <p>
-                    Suppose $A \subseteq \mathbf{R}$. Then the following are equivalent:
+                    Suppose <m>A \subseteq \mathbf{R}</m>. Then the following are equivalent:
                     <ol marker="(a)">
                         <li>
                             <p>
-                                $A$ is Lebesgue measurable.
+                                <m>A</m> is Lebesgue measurable.
                             </p>
                         </li>
                         <li>
                             <p>
-                                For every $\epsilon>0$ there exists a closed set $F \subseteq A$ with $|A \setminus F| &lt; \epsilon$.
+                                For every <m>\epsilon>0</m> there exists a closed set <m>F \subseteq A</m> with <m>|A \setminus F| &lt; \epsilon</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                There exist closed sets $F_1, F_2, \ldots$ contained in $A$ such that $\displaystyle |A \setminus \bigcup_{k=1}^{\infty} F_k| = 0$.
+                                There exist closed sets <m>F_1, F_2, \ldots</m> contained in <m>A</m> such that <m>\displaystyle |A \setminus \bigcup_{k=1}^{\infty} F_k| = 0</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                There exists a Borel set $B \subseteq A$ such that $|A\setminus B| = 0$.
+                                There exists a Borel set <m>B \subseteq A</m> such that <m>|A\setminus B| = 0</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                For every $\epsilon>0$ there exists an open set $G \supseteq A$ with $|G \setminus A| &lt; \epsilon$.
+                                For every <m>\epsilon>0</m> there exists an open set <m>G \supseteq A</m> with <m>|G \setminus A| &lt; \epsilon</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                There exist open sets $G_1, G_2, \ldots$ containing $A$ such that $\displaystyle \left| \left(\bigcap_{k=1}^{\infty} G_k\right) \setminus A\right| = 0$
+                                There exist open sets <m>G_1, G_2, \ldots</m> containing <m>A</m> such that <m>\displaystyle \left| \left(\bigcap_{k=1}^{\infty} G_k\right) \setminus A\right| = 0</m>
                             </p>
                         </li>
                         <li>
                             <p>
-                                There exists a Borel set $B \supseteq A$ such that $|B \setminus A| = 0$.
+                                There exists a Borel set <m>B \supseteq A</m> such that <m>|B \setminus A| = 0</m>.
                             </p>
                         </li>
                     </ol>
@@ -481,19 +481,19 @@
 
         <proof>
             <p>
-                (d) is the definition of Lebesgue measure so clearly (a) and (d) are equivalent. Thus we can prove the Theorem by proving the following chain of implications: (b) implies (c) implies (d) implies $\ldots$ implies (g) implies (b). Since a lot of these implications are similar, we will just show one of them. We will show that (b) implies (c).
+                (d) is the definition of Lebesgue measure so clearly (a) and (d) are equivalent. Thus we can prove the Theorem by proving the following chain of implications: (b) implies (c) implies (d) implies <m>\ldots</m> implies (g) implies (b). Since a lot of these implications are similar, we will just show one of them. We will show that (b) implies (c).
             </p>
 
             <p>
-                Suppose that (b) is true; that is, for every $\epsilon>0$ there exists a closed set $F \subseteq A$ with $|A \setminus F| &lt; \epsilon$.
+                Suppose that (b) is true; that is, for every <m>\epsilon>0</m> there exists a closed set <m>F \subseteq A</m> with <m>|A \setminus F| &lt; \epsilon</m>.
             </p>
 
             <p>
-                Thus for each $n \in \mathbf{N}$ there exists a closed set $F_n \subseteq A$ with $|A \setminus F_n| &lt; \frac{1}{n}$. Since
+                Thus for each <m>n \in \mathbf{N}</m> there exists a closed set <m>F_n \subseteq A</m> with <m>|A \setminus F_n| &lt; \frac{1}{n}</m>. Since
                 <md>
                     A \setminus \bigcup_{k=1}^{\infty} F_k \subseteq A \setminus F_n
                 </md>
-                for each $n \in \mathbf{N}$ it follows from subadditivity of outer measure that
+                for each <m>n \in \mathbf{N}</m> it follows from subadditivity of outer measure that
                 <md>
                     \left| A \setminus \bigcup_{k=1}^{\infty} F_k \right| \leq |A \setminus F_n| &lt; \frac{1}{n}.
                 </md>
@@ -501,7 +501,7 @@
             </p>
 
             <p>
-                Thus by letting $n \to \infty$ we obtain that
+                Thus by letting <m>n \to \infty</m> we obtain that
                 <md>
                     \left| A \setminus \bigcup_{k=1}^{\infty} F_k \right| = 0.
                 </md>
@@ -529,12 +529,12 @@
                     <ol marker="(a)">
                         <li>
                             <p>
-                                The set $L$ of Lebesgue measurable subsets of $\mathbf{R}$ is a $\sigma$-algebra on $\mathbf{R}$.
+                                The set <m>L</m> of Lebesgue measurable subsets of <m>\mathbf{R}</m> is a <m>\sigma</m>-algebra on <m>\mathbf{R}</m>.
                             </p>
                         </li>
                         <li>
                             <p>
-                                Outer measure is a measure on $(\mathbf{R},L)$.
+                                Outer measure is a measure on <m>(\mathbf{R},L)</m>.
                             </p>
                         </li>
                     </ol>
@@ -544,11 +544,11 @@
 
         <proof>
             <p>
-                We already showed that $L$ is a $\sigma$-algebra so it remains to show that outer measure on $(\mathbf{R}, L)$ is a measure. To do this we must show countable additivity of disjoint sets.
+                We already showed that <m>L</m> is a <m>\sigma</m>-algebra so it remains to show that outer measure on <m>(\mathbf{R}, L)</m> is a measure. To do this we must show countable additivity of disjoint sets.
             </p>
 
             <p>
-                Let $A_1, A_2, \ldots$ be a disjoint sequence of Lebesgue measurable sets. By the definition of Lebesgue measurable measurable sets, for each $k$, there exists a Borel set $B_k \subseteq A_k$ such that $|A_k \setminus B_k| = 0$.
+                Let <m>A_1, A_2, \ldots</m> be a disjoint sequence of Lebesgue measurable sets. By the definition of Lebesgue measurable measurable sets, for each <m>k</m>, there exists a Borel set <m>B_k \subseteq A_k</m> such that <m>|A_k \setminus B_k| = 0</m>.
             </p>
 
             <p>
@@ -567,12 +567,12 @@
                     <mrow> \amp \leq |A_k\setminus B_k| + |B_k| </mrow>
                     <mrow> \amp = |B_k| </mrow>
                 </md>
-                since $|A_k \setminus B_k| = 0$.
+                since <m>|A_k \setminus B_k| = 0</m>.
                 
             </p>
 
             <p>
-                Since outer measure is monotone and $B_k \subseteq A_k$, $|B_k| \leq |A_k|$ it follows that $|B_k| = |A_k|$. Hence
+                Since outer measure is monotone and <m>B_k \subseteq A_k</m>, <m>|B_k| \leq |A_k|</m> it follows that <m>|B_k| = |A_k|</m>. Hence
                 <md>
                     \left| \bigcup_{k=1}^{\infty} A_k \right| \geq \sum_{k=1}^n |A_k|.
                 </md>
@@ -598,15 +598,15 @@
         </proof>
 
         <p>
-            If $A$ is a set with outer measure $0$, then $A$ must be a Lebesgue measurable set since $\emptyset$ is a Borel set and $|A \setminus \emptyset| = 0$.
+            If <m>A</m> is a set with outer measure <m>0</m>, then <m>A</m> must be a Lebesgue measurable set since <m>\emptyset</m> is a Borel set and <m>|A \setminus \emptyset| = 0</m>.
         </p>
 
         <p>
-            Thus the set of Lebesgue measurable sets is the smallest Borel algebra containing both all open subsets of $\mathbf{R}$ and all subsets of $\mathbf{R}$ with outer measure $0$.
+            Thus the set of Lebesgue measurable sets is the smallest Borel algebra containing both all open subsets of <m>\mathbf{R}</m> and all subsets of <m>\mathbf{R}</m> with outer measure <m>0</m>.
         </p>
 
         <p>
-            Because outer measure is not additive on all subsets of $\mathbf{R}$ there are subsets of $\mathbf{R}$ that are not Lebesgue measurable sets.
+            Because outer measure is not additive on all subsets of <m>\mathbf{R}</m> there are subsets of <m>\mathbf{R}</m> that are not Lebesgue measurable sets.
         </p>
 
         <definition xml:id="def-lebesgue-measure-2">
@@ -615,13 +615,13 @@
             
             <statement>
                 <p>
-                    <term>Lebesgue measure</term> is the measure on $(\mathbf{R}, L)$ where $L$ is the $\sigma$-algebra of Lebesgue measurable subsets of $\mathbf{R}$, that assigns to each Lebesgue measurable set its outer measure. 
+                    <term>Lebesgue measure</term> is the measure on <m>(\mathbf{R}, L)</m> where <m>L</m> is the <m>\sigma</m>-algebra of Lebesgue measurable subsets of <m>\mathbf{R}</m>, that assigns to each Lebesgue measurable set its outer measure. 
                 </p>
             </statement>
         </definition>
 
         <p>
-            We have two different definitions for Lebesgue measure which only differ on the domain of the measure-- is it the $\sigma$-algebra of Borel sets or Lebesgue measurable sets?
+            We have two different definitions for Lebesgue measure which only differ on the domain of the measure-- is it the <m>\sigma</m>-algebra of Borel sets or Lebesgue measurable sets?
         </p>
 
         <p>
@@ -636,7 +636,7 @@
     
 
     <p>
-        We might hope that Lebesgue measurable sets would behave nicely with respect to continuous functions; in other words, if $A$ is a Lebesgue measurable set and $f: A \to \mathbf{R}$ is a continuous function then $f(A)$ would also be a Lebesgue measurable set. 
+        We might hope that Lebesgue measurable sets would behave nicely with respect to continuous functions; in other words, if <m>A</m> is a Lebesgue measurable set and <m>f: A \to \mathbf{R}</m> is a continuous function then <m>f(A)</m> would also be a Lebesgue measurable set. 
     </p>
 
     <p>
@@ -644,7 +644,7 @@
     </p>
 
     <p>
-        Recall that the Cantor set is constructed by starting with the interval $[0,1]$ and successively removing the middle thirds from each interval.
+        Recall that the Cantor set is constructed by starting with the interval <m>[0,1]</m> and successively removing the middle thirds from each interval.
     </p>
 
     <definition xml:id="def-Cantor-set">
@@ -653,33 +653,33 @@
         
         <statement>
             <p>
-                The <term>Cantor Set</term> $C$ is $\displaystyle [0,1] \setminus \cup_{n=1}^{\infty} G_n$ where $G_1 = (1/3, 2/3)$ and $G_n$ for $n &gt; 1$ is the union of the middle third open intervals in the intervals of $\displaystyle [0,1] \setminus \cup_{j=1}^{n-1} G_j$.
+                The <term>Cantor Set</term> <m>C</m> is <m>\displaystyle [0,1] \setminus \cup_{n=1}^{\infty} G_n</m> where <m>G_1 = (1/3, 2/3)</m> and <m>G_n</m> for <m>n &gt; 1</m> is the union of the middle third open intervals in the intervals of <m>\displaystyle [0,1] \setminus \cup_{j=1}^{n-1} G_j</m>.
             </p>
         </statement>
     </definition>
 
     <p>
-       The Cantor set can also be represented using Ternary (Base 3) expansions. In Ternary, place values represent powers of 3: threes, nines, twenty-sevens, $\frac{1}{3}$, $\frac{1}{9}$, $\ldots$. 
+       The Cantor set can also be represented using Ternary (Base 3) expansions. In Ternary, place values represent powers of 3: threes, nines, twenty-sevens, <m>\frac{1}{3}</m>, <m>\frac{1}{9}</m>, <m>\ldots</m>. 
     </p>
 
     <p>
-        Suppose a number has Ternary expansion $0.a_1 a_2 a_3 \ldots$. where $a_n = 0$, $1$, or $2$. The value of $a_1$ tells which third of the interval $[0,1]$ the point belongs to.
+        Suppose a number has Ternary expansion <m>0.a_1 a_2 a_3 \ldots</m>. where <m>a_n = 0</m>, <m>1</m>, or <m>2</m>. The value of <m>a_1</m> tells which third of the interval <m>[0,1]</m> the point belongs to.
     </p>
 
     <p>
-        If $a_1 = 0$, the point is in the left third of $[0,1]$, if $a_1 = 1$, the point is in the middle third of $[0,1]$, and if $a_1 = 2$, the point is in the right third of $[0,1]$.
+        If <m>a_1 = 0</m>, the point is in the left third of <m>[0,1]</m>, if <m>a_1 = 1</m>, the point is in the middle third of <m>[0,1]</m>, and if <m>a_1 = 2</m>, the point is in the right third of <m>[0,1]</m>.
     </p>
 
     <p>
-        This means that any number whose Ternary expansion has $a_1=1$ belongs to the middle third interval and is removed in the first step of constructing the Cantor set.
+        This means that any number whose Ternary expansion has <m>a_1=1</m> belongs to the middle third interval and is removed in the first step of constructing the Cantor set.
     </p>
 
     <p>
-        Likewise the value of $a_2$ tells which third of the interval $[0,\frac{1}{3}]$ or $[\frac{2}{3},1]$ the point belongs to, with $a_2 = 1$ corresponding to the middle third of that interval. 
+        Likewise the value of <m>a_2</m> tells which third of the interval <m>[0,\frac{1}{3}]</m> or <m>[\frac{2}{3},1]</m> the point belongs to, with <m>a_2 = 1</m> corresponding to the middle third of that interval. 
     </p>
 
     <p>
-        Thus any number whose Ternary expansion contains a $1$ in it will be in the middle third of some interval and will be removed in the construction of the Cantor set. Thus a point is in the Cantor set if and only if its Ternary expansion only contains the digits $0$ or $2$. 
+        Thus any number whose Ternary expansion contains a <m>1</m> in it will be in the middle third of some interval and will be removed in the construction of the Cantor set. Thus a point is in the Cantor set if and only if its Ternary expansion only contains the digits <m>0</m> or <m>2</m>. 
     </p>
 
     <theorem xml:id="thm-Cantor-set-properties">
@@ -691,12 +691,12 @@
                 <ol marker ="(a)">
                     <li>
                         <p>
-                            The Cantor set is a closed subset of $\mathbf{R}$.
+                            The Cantor set is a closed subset of <m>\mathbf{R}</m>.
                         </p>
                     </li>
                     <li>
                         <p>
-                           The Cantor set has Lebesgue measure $0$. 
+                           The Cantor set has Lebesgue measure <m>0</m>. 
                         </p>
                     </li>
                     <li>
@@ -715,7 +715,7 @@
         </p>
 
         <p>
-            (b) In MTH 527 we proved that the compliment of the Cantor set has length $1$, hence it has Lebesgue measure $1$ and thus the Cantor set has Lebesgue measure $0$.
+            (b) In MTH 527 we proved that the compliment of the Cantor set has length <m>1</m>, hence it has Lebesgue measure <m>1</m> and thus the Cantor set has Lebesgue measure <m>0</m>.
         </p>
 
         <p>
@@ -733,24 +733,129 @@
         
         <statement>
             <p>
-               The <term>Cantor function</term> or <term>Cantor-Lebesgue Function</term> $\Lambda: [0,1] \to [0,1]$ is defined by converting base 3 representations into base 2 representations as follows.  
+               The <term>Cantor function</term> or <term>Cantor-Lebesgue Function</term> <m>\Lambda: [0,1] \to [0,1]</m> is defined by converting base 3 representations into base 2 representations as follows.  
             </p>
 
             <ul>
                 <li>
                     <p>
-                        If $x$ belongs to the Cantor set then $\Lambda(x)$ is computed from the unique base 3 representation of $x$ consisting only of $0$'s and $2$'s by replacing all $2$'s in the expansion by $1$'s and interpreting the resulting string as a base 2 number.
+                        If <m>x</m> belongs to the Cantor set then <m>\Lambda(x)</m> is computed from the unique base 3 representation of <m>x</m> consisting only of <m>0</m>'s and <m>2</m>'s by replacing all <m>2</m>'s in the expansion by <m>1</m>'s and interpreting the resulting string as a base 2 number.
                     </p>
                 </li>
                 <li>
                     <p>
-                        If $x$ does not belong to the Cantor set, then $\Lambda(x)$ is computed by truncating after the first $1$, replacing each $2$ before the first $1$ with $1$ and interpreting the resulting string as a base 2 number.
+                        If <m>x</m> does not belong to the Cantor set, then <m>\Lambda(x)</m> is computed by truncating after the first <m>1</m>, replacing each <m>2</m> before the first <m>1</m> with <m>1</m> and interpreting the resulting string as a base 2 number.
                     </p>
                 </li>
             </ul>
         </statement>
     </definition>
+
+   <p>
+    As an example, suppose <m>x = \frac{8}{9}</m>, which is an element of the Cantor set. Since <m>\frac{8}{9} = \frac{2}{3}+ \frac{2}{9}</m>, the base 3 representation of <m>\frac{8}{9}</m> is <m>0.22_3</m>. Hence <m>\Lambda(\frac{8}{9}) = 0.11_2 = \frac{1}{2}+ \frac{1}{4} = \frac{3}{4}</m>.
+   </p>
+
+   <p>
+    For another example, suppose <m>x = \frac{1}{3}</m>, which is also an element of the Cantor set. One base 3 representation of <m>\frac{1}{3}</m> is <m>0.1_3</m>, but we don't want to use this because it contains a <m>1</m>. Instead we note that the infinite series <m>\frac{2}{9} + \frac{2}{27} + \frac{2}{81} + \ldots = \frac{1}{3}</m>. So another base 3 representation of <m>\frac{1}{3}</m> is <m>0.0222\ldots_3</m> and this representation does not contain a <m>1</m>. Hence <m>\Lambda(\frac{1}{3}) = 0.0111\ldots_2 = \frac{1}{4}+ \frac{1}{16}+ \frac{1}{64}+ \ldots = \frac{1}{2}</m>.
+   </p>
+
+   <p>
+    For an example involving a number outside the Cantor set, suppose <m>x = \frac{1}{2}</m>, which is not an element of the Cantor set since it is removed during the first iteration. Since <m>\frac{1}{2} = \frac{1}{3}+ \frac{1}{9} + \frac{1}{27}+ \ldots</m>, the base 3 representation of <m>\frac{1}{2}</m> is <m>0.1111\ldots_3</m>. Since <m>\frac{1}{2}</m> is not an element of the Cantor set, we truncate everything after the first <m>1</m> to get <m>0.1_3</m>. There are no <m>2</m>'s to replace so we interpret this as the base <m>2</m> number <m>0.1_2 = \frac{1}{2}</m>. Thus <m>\Lambda(\frac{1}{2}) = \frac{1}{2}</m>.
+   </p>
+
+   <p>
+    In fact, for every <m>x \in (\frac{1}{3}, \frac{2}{3})</m>, <m>\Lambda(x) = \frac{1}{2}</m>. This is because the base 3 representation of every number in <m>(\frac{1}{3}, \frac{2}{3})</m> starts with <m>0.1</m> and thus is truncated to <m>0.1_3</m>, just like with <m>\frac{1}{2}</m>.
+   </p>
+
+   <p>
+    As a final example, suppose <m>x \in (\frac{7}{9}, \frac{8}{9})</m>. For every number in this interval the base 3 representation starts with <m>0.21</m>. Truncating after the first <m>1</m> gives <m>0.21_3</m> and replacing the <m>2</m> with a <m>1</m> and interpreting the result as a base 2 number gives <m>0.11_2 = \frac{1}{2}+ \frac{1}{4} = \frac{3}{4}</m>. Thus <m>\Lambda(x) = \frac{3}{4}</m> for every <m>x \in (\frac{7}{9}, \frac{8}{9})</m>.
+   </p>
     
+
+
+
+
+
+
+
+
+
+
+
+
+   <theorem xml:id="thm-cantor-function-properties">
+    <title>Properties of the Cantor Function</title>
+    
+    
+    <statement>
+        <p>
+            The Cantor function <m>\Lambda</m> is a continuous, increasing function from <m>[0,1]</m> onto <m> [0,1]</m>. Furthermore <m>\Lambda(C) = [0,1]</m>, where <m>C</m> denotes the Cantor set.
+        </p>
+    </statement>
+   </theorem>
+
+   <proof>
+    <p>
+        We'll first show that <m>\Lambda(C) = [0,1]</m>. To do this, let <m>y \in [0,1]</m>. Then <m>y</m> has a base 2 representation consisting only of <m>0</m>'s and <m>1</m>'s. By replacing the <m>1</m>'s with <m>2</m>'s, we end up with a base 3 representation that consists only of <m>0</m>'s and <m>2</m>'s and thus represents an element of the Cantor set. If we denote this element by <m>x</m> then <m>\Lambda(x) = y</m>. Thus <m>y \in \Lambda(C)</m> and hence <m>\Lambda(C) = [0,1]</m>.
+    </p>
+
+    <p>
+        To show that the Cantor function is increasing, suppose <m>x_1 &lt; x_2</m> and that <m>x_1</m> has base 3 representation <m>a_1a_2a_3\ldots</m> and <m>x_2</m> has base 3 representation <m>b_1b_2b_3\ldots</m>. Then at some point their base 3 representations first differ and <m>a_n &lt; b_n</m>. The only possibilities are that <m>a_n = 0</m> and <m>b_n = 1</m> or <m>2</m> or that <m>a_n = 1</m> and <m>b_n = 2</m>. Either way, when the Cantor function is applied and 2's are replaced by 1's <m>a_n \leq b_n</m> and hence <m>\Lambda(x_1) \leq \Lambda(x_2)</m>, so the Cantor function is increasing.
+    </p>
+
+    <p>
+        To show that the Cantor function is continuous, we first recall that an increasing function can only have jump discontinuities. Thus if the Cantor function is discontinuous at <m>c</m> then it must have a jump discontinuity there and hence 
+        <md>
+            \lim_{x \to c^-} \Lambda(x) &lt; \lim_{x\to c^+} \Lambda(x).
+        </md>
+         But this means that the Cantor function fails to attain all values between <m>\displaystyle \lim_{x \to c^-} \Lambda(x)</m> and <m>\displaystyle \lim_{x \to c^+} \Lambda(x)</m>, which contradicts the fact that the range of the Cantor function is all <m>[0,1]</m>. Thus the Cantor function must be continuous on <m>[0,1]</m>.
+    </p>
+
+   </proof>
+
+   <p>
+    We can use the Cantor function to give a short proof that the Cantor set is uncountable.
+   </p>
+   
+   <theorem xml:id="thm-cantor-st-uncountable">
+    <title>The Cantor Set is Uncountable</title>
+    
+    
+    <statement>
+        <p>
+           The Cantor set is uncountable. 
+        </p>
+    </statement>
+   </theorem>
+
+   <proof>
+    <p>
+        If the Cantor set <m>C</m> was countable then <m>\Lambda(C)</m> would also be countable since <m>\Lambda</m> is a bijection from <m>C</m> to <m>\Lambda(C)</m>, but since <m>\Lambda(C) = [0,1]</m> which is uncountable, the Cantor set must also be uncountable.
+    </p>
+   </proof>
+
+   <p>
+    Lastly, we use the Cantor function to show that even a continuous function can map a set of measure <m>0</m> to a non-measurable set.
+   </p>
+
+   <theorem xml:id="thm-continuous-image-non-measurable">
+    <title>Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable</title>
+    
+    
+    <statement>
+        <p>
+           There exists a Lebesgue measurable set <m>A \subseteq [0,1]</m> such that <m>|A| = 0</m> and <m>\Lambda(A)</m> is not a measurable set. 
+        </p>
+    </statement>
+   </theorem>
+
+   <proof>
+    <p>
+        Let <m>E</m> be a non-measurable subset of <m>[0,1]</m> and let <m>A = C \cap \Lambda^{-1}(E)</m>. Then <m>|A| \leq |C| = 0</m> by monotonicity. Hence <m>A</m> is a Lebesgue measurable set because every set with measure <m>0</m> is Lebesgue measurable. Since <m>\Lambda(C) = [0,1]</m>, <m>\Lambda(A) = E</m> which is not a measurable set. Thus <m>A</m> is a Lebesgue measurable set whose image under <m>\Lambda</m> is not Lebesgue measurable. 
+    </p>
+   </proof>
+   
+   
 
   </subsection>
 
