@@ -25,7 +25,7 @@
     <theorem xml:id="thm-Addivitity-outer-measure">
 
         <title>Additivity of Outer Measure if One of the Sets is Open</title>
-        
+
         
         
 
@@ -776,7 +776,13 @@
 
 
 
-
+<figure>
+      <caption>A graph of the Cantor Function.</caption>
+      <image source="CantorEscalier-2 (1).png" width="50%">
+        <description>A graph of a function that increases from top to bottom but which contains many intervals where the graph is constant giving the overall graph the appearance of a staircase with steps of various lengths. The x axis is labeled using multiples of 1/9, while the y axis is labled with multiples of 1/8 because the constant intervals on the graph have endpoints at multiples of 1/9 on the x axis, while the value of the function on that interval is a multiple of 1/8.
+</description>
+      </image>
+    </figure>
 
 
 
