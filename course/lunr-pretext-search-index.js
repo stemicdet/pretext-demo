@@ -685,6 +685,285 @@ var ptx_lunr_docs = [
   "body": " Our strategy is to rewrite the left hand side as a disjoint union and apply countable additivity.   Since the right hand side is a disjoint union we have   "
 },
 {
+  "id": "notes-week-05",
+  "level": "1",
+  "url": "notes-week-05.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 5: Lebesgue Measure (2D)",
+  "body": " Week 5: Lebesgue Measure (2D)   Additivity of Outer Measure on Borel Sets  Recall that outer measure is not additive on all subsets of . This means that there exists disjoint subsets and of such that .  Thus outer measure defined on all subsets of is not actually a measure. However, we will show that outer measure is a bonafide measure when restricted to Borel subsets of .  This restricted outer measure, which is called Lebesgue measure, is the generalization of the concept of the length of an interval that we have been seeking.  We start our proof of the additivity of outer measure on Borel sets by showing that outer measure is additive when one of the sets is open.   Additivity of Outer Measure if One of the Sets is Open   Suppose and are disjoint subsets of and is open. Then .     If then both sides are equal, so we may suppose that .  By subadditivity of outer measure we know that . Hence we just need to prove the other direction.  First suppose that is the open interval with . We may also suppose that because removing two points from does not change its outer measure.  Recall that we defined the outer measure of a set by taking the infimum over all open covers of the set. So let be a sequence of open intervals whose union contains .  For each let , , and . Hence .  Since and are disjoint, is a sequence of open intervals that cover and is a sequence of open intervals that cover . Thus Thus and hence in this special case.  By Induction it follows that if is a union of finitely many disjoint intervals that are all disjoint from , then .  Finally suppose that is an arbitrary open set that is disjoint from . Then for some sequence of disjoint open intervals each of which is disjoint from .  Hence for each we have   Thus Thus and the proof is complete.   Next we show that outer measure is additive if one of the two sets is closed.   Additivity of Outer Measure if One of the Sets is Closed   Suppose and are disjoint subsets of and is closed. Then      Suppose is a sequence of open intervals whose union contains and let   Then is an open set and . Hence , which is open because it is an open set minus a closed set.  If we write as , then is a disjoint union in which one set is open. Hence the previous theorem applies and .  Moreover, . Hence   Since is a cover of it follows from taking the infimum over all such covers that   Since it follows from countable subadditivity that , we have that and the theorem is proven.   The Borel -algebra is the smallest -algebra that contains all the open sets. In general we cannot represent Borel sets by a finite combination of countable unions and intersections; however, we can nicely approximated Borel sets by closed sets.   Approximation of Borel Sets from Below by Closed Sets   Suppose is a Borel set. Then for every , there exists a closed set such that .     Let . Note that contains all closed subsets of . We will show that is a -algebra. Since is a -algebra that contains all closed subsets of it must also contain all the open subsets of and thus contains all Borel sets.  First, since is a closed set.  Before we prove that is closed under compliments, we will prove that is closed under countable intersections. Suppose that is a sequence of elements in . Let be arbitrary. Then for each , there exists a closed set such that   In addition   Hence by monotonicity and subadditivity   Thus . So is closed under countable intersections.  Now we want to show that is closed under compliments. That is, given we want to show that is also a subset of . First suppose that . Let be arbitrary. Then there exists a closed set such that . It follows from the definition of outer measure that there exists an open set such that and .  Then is a closed subset of and   Thus by subadditivity,   Since and these are disjoint sets with closed it follows from additivity of outer measure with one closed set that . Thus .  Thus   Since and these are disjoint sets with closed it follows from additivity of outer measure with one closed set that . Thus .  Hence   Since we have that and is closed, this means that .  For the case that , let . Then since is a closed set and belongs to and as a -algebra, is closed under finite intersections. Since and , it follows that .  Because it follows from De Morgan's Laws that   Since is closed under countable intersection, this implies that . Thus is closed under compliments.  Finally we show that is closed under countable unions. Let be a sequence of subsets in . Then it follows from DeMorgan's laws that   Since is closed under countable intersection, this implies that . Since is closed under compliments this means that . Thus is closed under countable unions and hence is a -algebra that contains all Borel subsets of .   Now we can prove that the outer measure is additive provided that one of the sets is a Borel set.   Additivity of Outer Measure if One Set is a Borel Set   Suppose that and are disjoint subsets of and is a Borel set. Then .     Let be arbitrary and let be a closed set such that and . Then it follows from monotonicity and additivity of outer measure when one set is closed that   Because this inequality holds for all we have that and hence .   As a corollary, we can show that there are subsets of that are not Borel sets.   Existence of a Subset of that is Not a Borel Set   There exists a subset of that is not a Borel set.     When we proved that outer measure is not additive in general, we constructed disjoint sets and with . By the previous theorem this means that neither nor can be Borel sets.   We can finally prove that outer measure restricted to Borel sets is a bonafide measure.   Outer Measure is a Measure on Borel Sets   Outer measure is a measure on where is the set of Borel subsets of .     We need to show that outer measure on Borel sets satisfies countable additivity. Let be a sequence of Borel sets. Then it follows from additivity of outer measure on Borel sets that   Thus by taking the limit as we have that   Since the other direction of the inequality follows from countable subadditivity we have that and thus outer measure on Borel sets is countably additive and hence is a measure.   We are now in position to define Lebesgue measure.   Lebesgue Measure    Lebesgue Measure is the measure on where is the -algebra of Borel subsets of , that assigns to each Borel set its outer measure.    Lebesgue measure is the same thing as outer measure except that it is only applied to Borel sets. Unlike outer measure, Lebesgue measure is truly a measure. We have shown that outer measure restricted to Borel sets is a bonafide measure; however, as it turns out we can do a little better. Outer measure is still a measure if restricted to a larger collection of functions called Lebesgue measurable sets.    Lebesgue Measurable Sets    A set is called Lebesgue measurable if there exists a Borel set such that .    Every Borel set is a Lebesgue measurable set; however, there are Lebesgue measurable sets that are not Borel sets, but it is rather difficult to come with up an example of one. However, it can be shown that the cardinality of the collection of Borel subsets of is equal to the cardinality of the real numbers, but the cardinality of the Lebesgue measurable sets is equal to the cardinality of the power set of the real numbers which is strictly greater. Thus there are vastly more Lebesgue measurable sets than Borel sets.   Equivalences for Being a Lebesgue Measurable Set   Suppose . Then the following are equivalent:    is Lebesgue measurable.    For every there exists a closed set with .    There exist closed sets contained in such that .    There exists a Borel set such that .    For every there exists an open set with .    There exist open sets containing such that     There exists a Borel set such that .        (d) is the definition of Lebesgue measure so clearly (a) and (d) are equivalent. Thus we can prove the Theorem by proving the following chain of implications: (b) implies (c) implies (d) implies implies (g) implies (b). Since a lot of these implications are similar, we will just show one of them. We will show that (b) implies (c).  Suppose that (b) is true; that is, for every there exists a closed set with .  Thus for each there exists a closed set with . Since for each it follows from subadditivity of outer measure that   Thus by letting we obtain that   Thus we have shown that (b) implies (c) in our chain of implications. The other implications are similarly proved.   Now we can show that outer measure restricted to Lebesgue measurable sets is still a measure.   Outer Measure is a Measure on Lebesgue Integrable Sets      The set of Lebesgue measurable subsets of is a -algebra on .    Outer measure is a measure on .        We already showed that is a -algebra so it remains to show that outer measure on is a measure. To do this we must show countable additivity of disjoint sets.  Let be a disjoint sequence of Lebesgue measurable sets. By the definition of Lebesgue measurable measurable sets, for each , there exists a Borel set such that .  Because outer measure on Borel sets is countably additive, we have that   Now it follows from the subadditivity of outer measure that since .  Since outer measure is monotone and , it follows that . Hence   By subadditivity of outer measure we have that and hence   Since outer measure is countably additive on Lebesgue measurable sets, outer measure restricted to Lebesgue measurable sets is a measure.   If is a set with outer measure , then must be a Lebesgue measurable set since is a Borel set and .  Thus the set of Lebesgue measurable sets is the smallest Borel algebra containing both all open subsets of and all subsets of with outer measure .  Because outer measure is not additive on all subsets of there are subsets of that are not Lebesgue measurable sets.   Lebesgue Measure    Lebesgue measure is the measure on where is the -algebra of Lebesgue measurable subsets of , that assigns to each Lebesgue measurable set its outer measure.    We have two different definitions for Lebesgue measure which only differ on the domain of the measure-- is it the -algebra of Borel sets or Lebesgue measurable sets?  Usually it doesn't matter whether you use Borel sets or Lebesgue measurable sets. I will specify whether Lebesgue measure refers to Borel sets or Lebesgue measurable sets, unless it is irrelevant.    The Cantor Set and Cantor Function  We might hope that Lebesgue measurable sets would behave nicely with respect to continuous functions; in other words, if is a Lebesgue measurable set and is a continuous function then would also be a Lebesgue measurable set.  Unfortunately, this is not the case as we will demonstrate by constructing a counterexample. For this we will need to use the Cantor set.  Recall that the Cantor set is constructed by starting with the interval and successively removing the middle thirds from each interval.   Cantor Set   The Cantor Set  is where and for is the union of the middle third open intervals in the intervals of .    The Cantor set can also be represented using Ternary (Base 3) expansions. In Ternary, place values represent powers of 3: threes, nines, twenty-sevens, , , .  Suppose a number has Ternary expansion . where , , or . The value of tells which third of the interval the point belongs to.  If , the point is in the left third of , if , the point is in the middle third of , and if , the point is in the right third of .  This means that any number whose Ternary expansion has belongs to the middle third interval and is removed in the first step of constructing the Cantor set.  Likewise the value of tells which third of the interval or the point belongs to, with corresponding to the middle third of that interval.  Thus any number whose Ternary expansion contains a in it will be in the middle third of some interval and will be removed in the construction of the Cantor set. Thus a point is in the Cantor set if and only if its Ternary expansion only contains the digits or .   Properties of the Cantor Set      The Cantor set is a closed subset of .    The Cantor set has Lebesgue measure .    The Cantor set contains no intervals with more than one element.        (a) The compliment of the Cantor set is a countable union of open intervals, so it is an open set. Thus the Cantor set must be closed.  (b) In MTH 527 we proved that the compliment of the Cantor set has length , hence it has Lebesgue measure and thus the Cantor set has Lebesgue measure .  (c) Since an interval with at least two elements has positive measure, it follows from (b) that the Cantor set can't contain intervals with more than one element.   We will refer to the following function several times throughout this course.   The Cantor Function   The Cantor function or Cantor-Lebesgue Function  is defined by converting base 3 representations into base 2 representations as follows.    If belongs to the Cantor set then is computed from the unique base 3 representation of consisting only of 's and 's by replacing all 's in the expansion by 's and interpreting the resulting string as a base 2 number.    If does not belong to the Cantor set, then is computed by truncating after the first , replacing each before the first with and interpreting the resulting string as a base 2 number.      As an example, suppose , which is an element of the Cantor set. Since , the base 3 representation of is . Hence .  For another example, suppose , which is also an element of the Cantor set. One base 3 representation of is , but we don't want to use this because it contains a . Instead we note that the infinite series . So another base 3 representation of is and this representation does not contain a . Hence .  For an example involving a number outside the Cantor set, suppose , which is not an element of the Cantor set since it is removed during the first iteration. Since , the base 3 representation of is . Since is not an element of the Cantor set, we truncate everything after the first to get . There are no 's to replace so we interpret this as the base number . Thus .  In fact, for every , . This is because the base 3 representation of every number in starts with and thus is truncated to , just like with .  As a final example, suppose . For every number in this interval the base 3 representation starts with . Truncating after the first gives and replacing the with a and interpreting the result as a base 2 number gives . Thus for every .   A graph of the Cantor Function.   A graph of a function that increases from top to bottom but which contains many intervals where the graph is constant giving the overall graph the appearance of a staircase with steps of various lengths. The x axis is labeled using multiples of 1\/9, while the y axis is labled with multiples of 1\/8 because the constant intervals on the graph have endpoints at multiples of 1\/9 on the x axis, while the value of the function on that interval is a multiple of 1\/8.     Properties of the Cantor Function   The Cantor function is a continuous, increasing function from onto . Furthermore , where denotes the Cantor set.     We'll first show that . To do this, let . Then has a base 2 representation consisting only of 's and 's. By replacing the 's with 's, we end up with a base 3 representation that consists only of 's and 's and thus represents an element of the Cantor set. If we denote this element by then . Thus and hence .  To show that the Cantor function is increasing, suppose and that has base 3 representation and has base 3 representation . Then at some point their base 3 representations first differ and . The only possibilities are that and or or that and . Either way, when the Cantor function is applied and 2's are replaced by 1's and hence , so the Cantor function is increasing.  To show that the Cantor function is continuous, we first recall that an increasing function can only have jump discontinuities. Thus if the Cantor function is discontinuous at then it must have a jump discontinuity there and hence But this means that the Cantor function fails to attain all values between and , which contradicts the fact that the range of the Cantor function is all . Thus the Cantor function must be continuous on .   We can use the Cantor function to give a short proof that the Cantor set is uncountable.   The Cantor Set is Uncountable   The Cantor set is uncountable.     If the Cantor set was countable then would also be countable since is a bijection from to , but since which is uncountable, the Cantor set must also be uncountable.   Lastly, we use the Cantor function to show that even a continuous function can map a set of measure to a non-measurable set.   Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable   There exists a Lebesgue measurable set such that and is not a measurable set.     Let be a non-measurable subset of and let . Then by monotonicity. Hence is a Lebesgue measurable set because every set with measure is Lebesgue measurable. Since , which is not a measurable set. Thus is a Lebesgue measurable set whose image under is not Lebesgue measurable.    "
+},
+{
+  "id": "thm-Addivitity-outer-measure",
+  "level": "2",
+  "url": "notes-week-05.html#thm-Addivitity-outer-measure",
+  "type": "Theorem",
+  "number": "42",
+  "title": "Additivity of Outer Measure if One of the Sets is Open.",
+  "body": " Additivity of Outer Measure if One of the Sets is Open   Suppose and are disjoint subsets of and is open. Then .   "
+},
+{
+  "id": "subsec-Additivity-of-Outer-7",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Additivity-of-Outer-7",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " If then both sides are equal, so we may suppose that .  By subadditivity of outer measure we know that . Hence we just need to prove the other direction.  First suppose that is the open interval with . We may also suppose that because removing two points from does not change its outer measure.  Recall that we defined the outer measure of a set by taking the infimum over all open covers of the set. So let be a sequence of open intervals whose union contains .  For each let , , and . Hence .  Since and are disjoint, is a sequence of open intervals that cover and is a sequence of open intervals that cover . Thus Thus and hence in this special case.  By Induction it follows that if is a union of finitely many disjoint intervals that are all disjoint from , then .  Finally suppose that is an arbitrary open set that is disjoint from . Then for some sequence of disjoint open intervals each of which is disjoint from .  Hence for each we have   Thus Thus and the proof is complete.  "
+},
+{
+  "id": "thm-addivitity-when-closed",
+  "level": "2",
+  "url": "notes-week-05.html#thm-addivitity-when-closed",
+  "type": "Theorem",
+  "number": "43",
+  "title": "Additivity of Outer Measure if One of the Sets is Closed.",
+  "body": " Additivity of Outer Measure if One of the Sets is Closed   Suppose and are disjoint subsets of and is closed. Then    "
+},
+{
+  "id": "subsec-Additivity-of-Outer-10",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Additivity-of-Outer-10",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " Suppose is a sequence of open intervals whose union contains and let   Then is an open set and . Hence , which is open because it is an open set minus a closed set.  If we write as , then is a disjoint union in which one set is open. Hence the previous theorem applies and .  Moreover, . Hence   Since is a cover of it follows from taking the infimum over all such covers that   Since it follows from countable subadditivity that , we have that and the theorem is proven.  "
+},
+{
+  "id": "thm-approximation-from-below",
+  "level": "2",
+  "url": "notes-week-05.html#thm-approximation-from-below",
+  "type": "Theorem",
+  "number": "44",
+  "title": "Approximation of Borel Sets from Below by Closed Sets.",
+  "body": " Approximation of Borel Sets from Below by Closed Sets   Suppose is a Borel set. Then for every , there exists a closed set such that .   "
+},
+{
+  "id": "subsec-Additivity-of-Outer-13",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Additivity-of-Outer-13",
+  "type": "Proof",
+  "number": "3",
+  "title": "",
+  "body": " Let . Note that contains all closed subsets of . We will show that is a -algebra. Since is a -algebra that contains all closed subsets of it must also contain all the open subsets of and thus contains all Borel sets.  First, since is a closed set.  Before we prove that is closed under compliments, we will prove that is closed under countable intersections. Suppose that is a sequence of elements in . Let be arbitrary. Then for each , there exists a closed set such that   In addition   Hence by monotonicity and subadditivity   Thus . So is closed under countable intersections.  Now we want to show that is closed under compliments. That is, given we want to show that is also a subset of . First suppose that . Let be arbitrary. Then there exists a closed set such that . It follows from the definition of outer measure that there exists an open set such that and .  Then is a closed subset of and   Thus by subadditivity,   Since and these are disjoint sets with closed it follows from additivity of outer measure with one closed set that . Thus .  Thus   Since and these are disjoint sets with closed it follows from additivity of outer measure with one closed set that . Thus .  Hence   Since we have that and is closed, this means that .  For the case that , let . Then since is a closed set and belongs to and as a -algebra, is closed under finite intersections. Since and , it follows that .  Because it follows from De Morgan's Laws that   Since is closed under countable intersection, this implies that . Thus is closed under compliments.  Finally we show that is closed under countable unions. Let be a sequence of subsets in . Then it follows from DeMorgan's laws that   Since is closed under countable intersection, this implies that . Since is closed under compliments this means that . Thus is closed under countable unions and hence is a -algebra that contains all Borel subsets of .  "
+},
+{
+  "id": "thm-additivity-outer-measure-Borel",
+  "level": "2",
+  "url": "notes-week-05.html#thm-additivity-outer-measure-Borel",
+  "type": "Theorem",
+  "number": "45",
+  "title": "Additivity of Outer Measure if One Set is a Borel Set.",
+  "body": " Additivity of Outer Measure if One Set is a Borel Set   Suppose that and are disjoint subsets of and is a Borel set. Then .   "
+},
+{
+  "id": "subsec-Additivity-of-Outer-16",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Additivity-of-Outer-16",
+  "type": "Proof",
+  "number": "4",
+  "title": "",
+  "body": " Let be arbitrary and let be a closed set such that and . Then it follows from monotonicity and additivity of outer measure when one set is closed that   Because this inequality holds for all we have that and hence .  "
+},
+{
+  "id": "cor-non-Borel-set",
+  "level": "2",
+  "url": "notes-week-05.html#cor-non-Borel-set",
+  "type": "Corollary",
+  "number": "46",
+  "title": "Existence of a Subset of <span class=\"process-math\">\\(\\mathbf{R}\\)<\/span>that is Not a Borel Set.",
+  "body": " Existence of a Subset of that is Not a Borel Set   There exists a subset of that is not a Borel set.   "
+},
+{
+  "id": "subsec-Additivity-of-Outer-19",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Additivity-of-Outer-19",
+  "type": "Proof",
+  "number": "5",
+  "title": "",
+  "body": " When we proved that outer measure is not additive in general, we constructed disjoint sets and with . By the previous theorem this means that neither nor can be Borel sets.  "
+},
+{
+  "id": "thm-outer-measure-is-measure-borel",
+  "level": "2",
+  "url": "notes-week-05.html#thm-outer-measure-is-measure-borel",
+  "type": "Theorem",
+  "number": "47",
+  "title": "Outer Measure is a Measure on Borel Sets.",
+  "body": " Outer Measure is a Measure on Borel Sets   Outer measure is a measure on where is the set of Borel subsets of .   "
+},
+{
+  "id": "subsec-Additivity-of-Outer-22",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Additivity-of-Outer-22",
+  "type": "Proof",
+  "number": "6",
+  "title": "",
+  "body": " We need to show that outer measure on Borel sets satisfies countable additivity. Let be a sequence of Borel sets. Then it follows from additivity of outer measure on Borel sets that   Thus by taking the limit as we have that   Since the other direction of the inequality follows from countable subadditivity we have that and thus outer measure on Borel sets is countably additive and hence is a measure.  "
+},
+{
+  "id": "def-lebesgue-measure",
+  "level": "2",
+  "url": "notes-week-05.html#def-lebesgue-measure",
+  "type": "Definition",
+  "number": "48",
+  "title": "Lebesgue Measure.",
+  "body": " Lebesgue Measure    Lebesgue Measure is the measure on where is the -algebra of Borel subsets of , that assigns to each Borel set its outer measure.   "
+},
+{
+  "id": "def-lebesgue-measureable-set",
+  "level": "2",
+  "url": "notes-week-05.html#def-lebesgue-measureable-set",
+  "type": "Definition",
+  "number": "49",
+  "title": "",
+  "body": "  A set is called Lebesgue measurable if there exists a Borel set such that .   "
+},
+{
+  "id": "thm-lebesgue-set-equiv",
+  "level": "2",
+  "url": "notes-week-05.html#thm-lebesgue-set-equiv",
+  "type": "Theorem",
+  "number": "50",
+  "title": "Equivalences for Being a Lebesgue Measurable Set.",
+  "body": " Equivalences for Being a Lebesgue Measurable Set   Suppose . Then the following are equivalent:    is Lebesgue measurable.    For every there exists a closed set with .    There exist closed sets contained in such that .    There exists a Borel set such that .    For every there exists an open set with .    There exist open sets containing such that     There exists a Borel set such that .      "
+},
+{
+  "id": "subsec-Lebesgue-Measurable-Sets-5",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Lebesgue-Measurable-Sets-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " (d) is the definition of Lebesgue measure so clearly (a) and (d) are equivalent. Thus we can prove the Theorem by proving the following chain of implications: (b) implies (c) implies (d) implies implies (g) implies (b). Since a lot of these implications are similar, we will just show one of them. We will show that (b) implies (c).  Suppose that (b) is true; that is, for every there exists a closed set with .  Thus for each there exists a closed set with . Since for each it follows from subadditivity of outer measure that   Thus by letting we obtain that   Thus we have shown that (b) implies (c) in our chain of implications. The other implications are similarly proved.  "
+},
+{
+  "id": "thm-outer-measure-is-measure-lebesgue",
+  "level": "2",
+  "url": "notes-week-05.html#thm-outer-measure-is-measure-lebesgue",
+  "type": "Theorem",
+  "number": "51",
+  "title": "Outer Measure is a Measure on Lebesgue Integrable Sets.",
+  "body": " Outer Measure is a Measure on Lebesgue Integrable Sets      The set of Lebesgue measurable subsets of is a -algebra on .    Outer measure is a measure on .      "
+},
+{
+  "id": "subsec-Lebesgue-Measurable-Sets-8",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Lebesgue-Measurable-Sets-8",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " We already showed that is a -algebra so it remains to show that outer measure on is a measure. To do this we must show countable additivity of disjoint sets.  Let be a disjoint sequence of Lebesgue measurable sets. By the definition of Lebesgue measurable measurable sets, for each , there exists a Borel set such that .  Because outer measure on Borel sets is countably additive, we have that   Now it follows from the subadditivity of outer measure that since .  Since outer measure is monotone and , it follows that . Hence   By subadditivity of outer measure we have that and hence   Since outer measure is countably additive on Lebesgue measurable sets, outer measure restricted to Lebesgue measurable sets is a measure.  "
+},
+{
+  "id": "def-lebesgue-measure-2",
+  "level": "2",
+  "url": "notes-week-05.html#def-lebesgue-measure-2",
+  "type": "Definition",
+  "number": "52",
+  "title": "Lebesgue Measure.",
+  "body": " Lebesgue Measure    Lebesgue measure is the measure on where is the -algebra of Lebesgue measurable subsets of , that assigns to each Lebesgue measurable set its outer measure.   "
+},
+{
+  "id": "def-Cantor-set",
+  "level": "2",
+  "url": "notes-week-05.html#def-Cantor-set",
+  "type": "Definition",
+  "number": "53",
+  "title": "Cantor Set.",
+  "body": " Cantor Set   The Cantor Set  is where and for is the union of the middle third open intervals in the intervals of .   "
+},
+{
+  "id": "thm-Cantor-set-properties",
+  "level": "2",
+  "url": "notes-week-05.html#thm-Cantor-set-properties",
+  "type": "Theorem",
+  "number": "54",
+  "title": "Properties of the Cantor Set.",
+  "body": " Properties of the Cantor Set      The Cantor set is a closed subset of .    The Cantor set has Lebesgue measure .    The Cantor set contains no intervals with more than one element.      "
+},
+{
+  "id": "subsec-Cantor-13",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Cantor-13",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " (a) The compliment of the Cantor set is a countable union of open intervals, so it is an open set. Thus the Cantor set must be closed.  (b) In MTH 527 we proved that the compliment of the Cantor set has length , hence it has Lebesgue measure and thus the Cantor set has Lebesgue measure .  (c) Since an interval with at least two elements has positive measure, it follows from (b) that the Cantor set can't contain intervals with more than one element.  "
+},
+{
+  "id": "def-Cantor-Function",
+  "level": "2",
+  "url": "notes-week-05.html#def-Cantor-Function",
+  "type": "Definition",
+  "number": "55",
+  "title": "The Cantor Function.",
+  "body": " The Cantor Function   The Cantor function or Cantor-Lebesgue Function  is defined by converting base 3 representations into base 2 representations as follows.    If belongs to the Cantor set then is computed from the unique base 3 representation of consisting only of 's and 's by replacing all 's in the expansion by 's and interpreting the resulting string as a base 2 number.    If does not belong to the Cantor set, then is computed by truncating after the first , replacing each before the first with and interpreting the resulting string as a base 2 number.     "
+},
+{
+  "id": "subsec-Cantor-21",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Cantor-21",
+  "type": "Figure",
+  "number": "56",
+  "title": "",
+  "body": " A graph of the Cantor Function.   A graph of a function that increases from top to bottom but which contains many intervals where the graph is constant giving the overall graph the appearance of a staircase with steps of various lengths. The x axis is labeled using multiples of 1\/9, while the y axis is labled with multiples of 1\/8 because the constant intervals on the graph have endpoints at multiples of 1\/9 on the x axis, while the value of the function on that interval is a multiple of 1\/8.   "
+},
+{
+  "id": "thm-cantor-function-properties",
+  "level": "2",
+  "url": "notes-week-05.html#thm-cantor-function-properties",
+  "type": "Theorem",
+  "number": "57",
+  "title": "Properties of the Cantor Function.",
+  "body": " Properties of the Cantor Function   The Cantor function is a continuous, increasing function from onto . Furthermore , where denotes the Cantor set.   "
+},
+{
+  "id": "subsec-Cantor-23",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Cantor-23",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " We'll first show that . To do this, let . Then has a base 2 representation consisting only of 's and 's. By replacing the 's with 's, we end up with a base 3 representation that consists only of 's and 's and thus represents an element of the Cantor set. If we denote this element by then . Thus and hence .  To show that the Cantor function is increasing, suppose and that has base 3 representation and has base 3 representation . Then at some point their base 3 representations first differ and . The only possibilities are that and or or that and . Either way, when the Cantor function is applied and 2's are replaced by 1's and hence , so the Cantor function is increasing.  To show that the Cantor function is continuous, we first recall that an increasing function can only have jump discontinuities. Thus if the Cantor function is discontinuous at then it must have a jump discontinuity there and hence But this means that the Cantor function fails to attain all values between and , which contradicts the fact that the range of the Cantor function is all . Thus the Cantor function must be continuous on .  "
+},
+{
+  "id": "thm-cantor-st-uncountable",
+  "level": "2",
+  "url": "notes-week-05.html#thm-cantor-st-uncountable",
+  "type": "Theorem",
+  "number": "58",
+  "title": "The Cantor Set is Uncountable.",
+  "body": " The Cantor Set is Uncountable   The Cantor set is uncountable.   "
+},
+{
+  "id": "subsec-Cantor-26",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Cantor-26",
+  "type": "Proof",
+  "number": "3",
+  "title": "",
+  "body": " If the Cantor set was countable then would also be countable since is a bijection from to , but since which is uncountable, the Cantor set must also be uncountable.  "
+},
+{
+  "id": "thm-continuous-image-non-measurable",
+  "level": "2",
+  "url": "notes-week-05.html#thm-continuous-image-non-measurable",
+  "type": "Theorem",
+  "number": "59",
+  "title": "Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable.",
+  "body": " Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable   There exists a Lebesgue measurable set such that and is not a measurable set.   "
+},
+{
+  "id": "subsec-Cantor-29",
+  "level": "2",
+  "url": "notes-week-05.html#subsec-Cantor-29",
+  "type": "Proof",
+  "number": "4",
+  "title": "",
+  "body": " Let be a non-measurable subset of and let . Then by monotonicity. Hence is a Lebesgue measurable set because every set with measure is Lebesgue measurable. Since , which is not a measurable set. Thus is a Lebesgue measurable set whose image under is not Lebesgue measurable.  "
+},
+{
   "id": "homework-2",
   "level": "1",
   "url": "homework-2.html",
@@ -719,6 +998,60 @@ var ptx_lunr_docs = [
   "number": "3",
   "title": "",
   "body": "  For each , define by      Show that for each the sequence converges pointwise to as .    Show that for all . (This shows that in general .)      "
+},
+{
+  "id": "homework-3",
+  "level": "1",
+  "url": "homework-3.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 2 (Due September 3)",
+  "body": " Homework 2 (Due September 3)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose that and are subsets of and . Show that .      Prove that if and , then .      Suppose are real numbers with and . Show that if and only if .      Prove that .      Suppose that and . Let . Show that .     "
+},
+{
+  "id": "homework-3-3-1",
+  "level": "2",
+  "url": "homework-3.html#homework-3-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Suppose that and are subsets of and . Show that .   "
+},
+{
+  "id": "homework-3-3-2",
+  "level": "2",
+  "url": "homework-3.html#homework-3-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Prove that if and , then .   "
+},
+{
+  "id": "homework-3-3-3",
+  "level": "2",
+  "url": "homework-3.html#homework-3-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Suppose are real numbers with and . Show that if and only if .   "
+},
+{
+  "id": "homework-3-3-4",
+  "level": "2",
+  "url": "homework-3.html#homework-3-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Prove that .   "
+},
+{
+  "id": "homework-3-3-5",
+  "level": "2",
+  "url": "homework-3.html#homework-3-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Suppose that and . Let . Show that .   "
 }
 ]
 

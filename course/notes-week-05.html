@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 5: Lebesgue Measure (2D)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Real Variables">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.7';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.7d3f08d51c2b60f8.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.bb5ac777721d4056.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Real Variables</span> <span class="subtitle">MATH 650 Fall 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-04.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#Motivation" class="internal"><span class="title">Motivation and Definition of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#good-properties" class="internal"><span class="title">Good Properties of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#outer-measure-not-additive" class="internal"><span class="title">Outer Measure is Not Additive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: Measurable Spaces and Functions (2B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#desired" class="internal"><span class="title">Desired Properties of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Simga-Algebras" class="internal"><span class="title">Sigma Algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Borel-Subsets-of-R" class="internal"><span class="title">Borel Subsets of R and Inverse Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-measurable-function" class="internal"><span class="title">Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Measures and Their Properties (2C)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Definition-and-Examples-of-Measures" class="internal"><span class="title">Definition and Examples of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-properties-measr" class="internal"><span class="title">Properties of Measures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Lebesgue Measure (2D)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Additivity-of-Outer" class="internal"><span class="title">Additivity of Outer Measure on Borel Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Lebesgue-Measurable-Sets" class="internal"><span class="title">Lebesgue Measurable Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Cantor" class="internal"><span class="title">The Cantor Set and Cantor Function</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-2.html" class="internal"><span class="title">Homework 1 (Due August 27)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-3.html" class="internal"><span class="title">Homework 2 (Due September 3)</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-05"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 5: Lebesgue Measure (2D)</span>
+</h2>
+<section class="subsection" id="subsec-Additivity-of-Outer"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additivity of Outer Measure on Borel Sets</span>
+</h3>
+<div class="para" id="subsec-Additivity-of-Outer-2">Recall that outer measure is not additive on all subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> This means that there exists disjoint subsets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> of <span class="process-math">\(\mathbf{R}\)</span> such that <span class="process-math">\(|A\cup B| \neq |A|+|B|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-3">Thus outer measure defined on all subsets of <span class="process-math">\(\mathbf{R}\)</span> is not actually a measure. However, we will show that outer measure is a bonafide measure when restricted to Borel subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-4">This restricted outer measure, which is called Lebesgue measure, is the generalization of the concept of the length of an interval that we have been seeking.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-5">We start our proof of the additivity of outer measure on Borel sets by showing that outer measure is additive when one of the sets is open.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Addivitity-outer-measure"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">42</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additivity of Outer Measure if One of the Sets is Open.</span>
+</h4>
+<div class="para" id="thm-Addivitity-outer-measure-2-1">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(G\)</span> are disjoint subsets of <span class="process-math">\(\mathbf{R}\)</span> and <span class="process-math">\(G\)</span> is open. Then <span class="process-math">\(|A \cup G| = |A| + |G|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Addivitity-outer-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 42: Additivity of Outer Measure if One of the Sets is Open"><a href="#thm-Addivitity-outer-measure" title="Copy heading and permalink for Theorem 42: Additivity of Outer Measure if One of the Sets is Open" aria-label="Copy heading and permalink for Theorem 42: Additivity of Outer Measure if One of the Sets is Open">🔗</a></div></article><details id="subsec-Additivity-of-Outer-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Additivity-of-Outer-7-1">If <span class="process-math">\(|G| = \infty\)</span> then both sides are equal, so we may suppose that <span class="process-math">\(|G| &lt; \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-7-2">By subadditivity of outer measure we know that <span class="process-math">\(|A \cup G| \leq |A| + |G|\text{.}\)</span> Hence we just need to prove the other direction.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-7-3">First suppose that <span class="process-math">\(G\)</span> is the open interval <span class="process-math">\((a,b)\)</span> with <span class="process-math">\(a &lt; b\text{.}\)</span> We may also suppose that <span class="process-math">\(a,b \notin A\)</span> because removing two points from <span class="process-math">\(A\)</span> does not change its outer measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-7-4">Recall that we defined the outer measure of a set by taking the infimum over all open covers of the set. So let <span class="process-math">\(I_1, I_2, \ldots\)</span> be a sequence of open intervals whose union contains <span class="process-math">\(A \cup G\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-7-5">For each <span class="process-math">\(N \in \mathbf{N}\)</span> let <span class="process-math">\(J_n = I_n \cap (\infty,a)\text{,}\)</span> <span class="process-math">\(K_n = I_n \cap (a,b)\text{,}\)</span> and <span class="process-math">\(L_n = I_n \cap (b,\infty)\text{.}\)</span> Hence <span class="process-math">\(\ell(I_n) = \ell(J_n) + \ell(K_n) + \ell(J_n)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-7-6">
+<div class="para">Since <span class="process-math">\(A\)</span> and <span class="process-math">\(G\)</span> are disjoint, <span class="process-math">\(K_1, K_2, \ldots\)</span> is a sequence of open intervals that cover <span class="process-math">\(G\)</span> and <span class="process-math">\(J_1, L_1, J_2, L_2, \ldots\)</span> is a sequence of open intervals that cover <span class="process-math">\(A\text{.}\)</span> Thus</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-7-6-7">
+\begin{align*}
+\sum_{n=1}^{\infty}\ell(I_n) \amp = \sum_{n=1}^{\infty} \ell(J_n) + \ell (L_n) + \sum_{n=1}^{\infty} \ell (K_n) \\
+\amp \geq |A|+|G| 
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(|A\cup G| \geq |A| + |G|\)</span> and hence <span class="process-math">\(|A \cup G| = |A|+|G|\)</span> in this special case.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-7-7">By Induction it follows that if  <span class="process-math">\(G\)</span> is a union of finitely many disjoint intervals that are all disjoint from <span class="process-math">\(A\text{,}\)</span> then <span class="process-math">\(|A \cup G| = |A| + |G|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-7-8">Finally suppose that <span class="process-math">\(G\)</span> is an arbitrary open set that is disjoint from <span class="process-math">\(A\text{.}\)</span> Then <span class="process-math">\(G = \cup_{n=1}^{\infty} I_n\)</span> for some sequence of disjoint open intervals <span class="process-math">\(I_1, I_2, \ldots\)</span> each of which is disjoint from <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-7-9">
+<div class="para">Hence for each <span class="process-math">\(m \in \mathbf{N}\)</span> we have</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-7-9-2">
+\begin{align*}
+|A \cup G| \amp \geq \left|A \cup \bigcup_{n=1}^m I_n\right| \\
+\amp = |A| + \sum_{n=1}^m \ell(I_n)
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-7-10">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-7-10-1">
+\begin{align*}
+|A \cup G| \amp \geq |A| + \sum_{n=1}^m \ell(I_n) \\
+\amp \geq |A|+|G|
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(|A \cup G| = |A| + |G|\)</span> and the proof is complete.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-7-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Additivity-of-Outer-7" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Additivity-of-Outer-8">Next we show that outer measure is additive if one of the two sets is closed.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-addivitity-when-closed"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">43</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additivity of Outer Measure if One of the Sets is Closed.</span>
+</h4>
+<div class="para logical" id="thm-addivitity-when-closed-2-1">
+<div class="para">Suppose <span class="process-math">\(A\)</span> and <span class="process-math">\(F\)</span> are disjoint subsets of <span class="process-math">\(\mathbf{R}\)</span> and <span class="process-math">\(F\)</span> is closed. Then</div>
+<div class="displaymath process-math" id="thm-addivitity-when-closed-2-1-5">
+\begin{equation*}
+|A \cup F| \leq |A| + |F|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-addivitity-when-closed-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 43: Additivity of Outer Measure if One of the Sets is Closed"><a href="#thm-addivitity-when-closed" title="Copy heading and permalink for Theorem 43: Additivity of Outer Measure if One of the Sets is Closed" aria-label="Copy heading and permalink for Theorem 43: Additivity of Outer Measure if One of the Sets is Closed">🔗</a></div></article><details id="subsec-Additivity-of-Outer-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Additivity-of-Outer-10-1">
+<div class="para">Suppose <span class="process-math">\(I_1, I_2, \ldots\)</span> is a sequence of open intervals whose union contains <span class="process-math">\(A \cup F\)</span> and let</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-10-1-3">
+\begin{equation*}
+G = \bigcup_{k=1}^{\infty} I_k
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-10-2">Then <span class="process-math">\(G\)</span> is an open set and <span class="process-math">\(A \cup F \subseteq G\text{.}\)</span> Hence <span class="process-math">\(A \subseteq G \setminus F\text{,}\)</span> which is open because it is an open set minus a closed set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-10-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-10-3">If we write <span class="process-math">\(G\)</span> as <span class="process-math">\(G = F \cup G \setminus F\text{,}\)</span> then <span class="process-math">\(G\)</span> is a disjoint union in which one set is open. Hence the previous theorem applies and <span class="process-math">\(|G| = |F| + |G \setminus F|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-10-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-10-4">
+<div class="para">Moreover, <span class="process-math">\(|A| \leq |G \setminus F|\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-10-4-2">
+\begin{align*}
+|A|+|F| \leq |G \setminus F| + |F| \amp = |G|\\
+\amp \leq \sum_{k=1}^{\infty} \ell(I_k)
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-10-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-10-5">
+<div class="para">Since <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} I_k\)</span> is a cover of <span class="process-math">\(A \cup F\)</span> it follows from taking the infimum over all such covers that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-10-5-3">
+\begin{equation*}
+|A| + |F| \leq |A \cup F|
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-10-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-10-6">Since it follows from countable subadditivity that <span class="process-math">\(|A \cup F| \leq |A| + |F|\text{,}\)</span> we have that <span class="process-math">\(|A| + |F| = |A \cup F|\)</span> and the theorem is proven.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-10-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Additivity-of-Outer-10" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="subsec-Additivity-of-Outer-11">The Borel <span class="process-math">\(\sigma\)</span>-algebra is the smallest <span class="process-math">\(\sigma\)</span>-algebra that contains all the open sets. In general we cannot represent Borel sets by a finite combination of countable unions and intersections; however, we can nicely approximated Borel sets by closed sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-approximation-from-below"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">44</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Approximation of Borel Sets from Below by Closed Sets.</span>
+</h4>
+<div class="para" id="thm-approximation-from-below-2-1">Suppose <span class="process-math">\(B \subseteq \mathbf{R}\)</span> is a Borel set. Then for every <span class="process-math">\(\epsilon&gt;0\text{,}\)</span> there exists a closed set <span class="process-math">\(F \subseteq B\)</span> such that <span class="process-math">\(|B \setminus F| &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-approximation-from-below-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 44: Approximation of Borel Sets from Below by Closed Sets"><a href="#thm-approximation-from-below" title="Copy heading and permalink for Theorem 44: Approximation of Borel Sets from Below by Closed Sets" aria-label="Copy heading and permalink for Theorem 44: Approximation of Borel Sets from Below by Closed Sets">🔗</a></div></article><details id="subsec-Additivity-of-Outer-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Additivity-of-Outer-13-1">Let <span class="process-math">\(L = \{D \subseteq \mathbf{R}: \text{ for every } \epsilon&gt;0  \text{ there exists a closed set } F \subseteq \mathbf{R} \text{ such that } |D \setminus F| &lt; \epsilon\}\text{.}\)</span> Note that <span class="process-math">\(L\)</span> contains all closed subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> We will show that <span class="process-math">\(L\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra. Since <span class="process-math">\(L\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra that contains all closed subsets of <span class="process-math">\(\mathbf{R}\)</span> it must also contain all the open subsets of <span class="process-math">\(\mathbf{R}\)</span> and thus contains all Borel sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-2">First, <span class="process-math">\(\emptyset \in L\)</span> since <span class="process-math">\(\emptyset\)</span> is a closed set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-3">
+<div class="para">Before we prove that <span class="process-math">\(L\)</span> is closed under compliments, we will prove that <span class="process-math">\(L\)</span> is closed under countable intersections. Suppose that <span class="process-math">\(D_1, D_2, \ldots \)</span> is a sequence of elements in <span class="process-math">\(L\text{.}\)</span> Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then for each <span class="process-math">\(k \in \mathbf{N}\text{,}\)</span> there exists a closed set <span class="process-math">\(F_k\)</span> such that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-3-8">
+\begin{equation*}
+F_k \subseteq D_k \text{ and } |D_k \setminus F_k| &lt; \frac{\epsilon}{2^k}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-4">
+<div class="para">In addition</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-4-1">
+\begin{equation*}
+\left( \bigcap_{k=1}^{\infty} D_k \right) \setminus \left( \bigcap_{k=1}^{\infty} F_k \right) \subseteq \left( \bigcap_{k=1}^{\infty} D_k \setminus F_k \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-5">
+<div class="para">Hence by monotonicity and subadditivity</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-5-1">
+\begin{align*}
+\left| \left( \bigcap_{k=1}^{\infty} D_k \right) \setminus \left( \bigcap_{k=1}^{\infty} F_k \right) \right| \amp \leq \left| \left( \bigcap_{k=1}^{\infty} D_k \setminus F_k \right)\right|\\ \\
+\amp \leq \sum_{k=1}^{\infty} \frac{\epsilon}{2^k} \leq \epsilon. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-6">Thus <span class="process-math">\(\displaystyle \bigcap_{k=1}^{\infty} D_k \in L\text{.}\)</span> So <span class="process-math">\(L\)</span> is closed under countable intersections.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-7">Now we want to show that <span class="process-math">\(L\)</span> is closed under compliments. That is, given <span class="process-math">\(D \in L\)</span> we want to show that <span class="process-math">\(\mathbf{R}\setminus D\)</span> is also a subset of <span class="process-math">\(L\text{.}\)</span> First suppose that <span class="process-math">\(|D| &lt; \infty\text{.}\)</span> Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary. Then there exists a closed set <span class="process-math">\(F \subseteq D\)</span> such that <span class="process-math">\(|D \setminus F| &lt; \frac{\epsilon}{2}\text{.}\)</span> It follows from the definition of outer measure that there exists an open set <span class="process-math">\(G\)</span> such that <span class="process-math">\(D \subseteq G\)</span> and <span class="process-math">\(|G| &lt; |D| + \frac{\epsilon}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-8">
+<div class="para">Then <span class="process-math">\(\mathbf{R} \setminus G\)</span> is a closed subset of <span class="process-math">\(\mathbf{R} \setminus D\)</span> and</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-8-3">
+\begin{equation*}
+(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G) = G \setminus D \subseteq G \setminus F
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-9">
+<div class="para">Thus by subadditivity,</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-9-1">
+\begin{equation*}
+|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| \leq |G \setminus F|
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-10">Since <span class="process-math">\(G = G\setminus F \cup F\)</span> and these are disjoint sets with <span class="process-math">\(F\)</span> closed it follows from additivity of outer measure with one closed set that <span class="process-math">\(|G| = |G\setminus F| + |F|\text{.}\)</span> Thus <span class="process-math">\(|G\setminus F| = |G| - |F|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-11">
+<div class="para">Thus</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-11-1">
+\begin{align*}
+|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| \amp \leq |G|-|F|\\
+\amp =|G|-|D| + |D|-|F| 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-12">Since <span class="process-math">\(D = D\setminus F \cup F\)</span> and these are disjoint sets with <span class="process-math">\(F\)</span> closed it follows from additivity of outer measure with one closed set that <span class="process-math">\(|D| = |D\setminus F| + |F|\text{.}\)</span> Thus <span class="process-math">\(|D\setminus F| = |D| - |F|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-13">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-13-1">
+\begin{align*}
+|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| \amp =|G|-|D| + |D|-|F| \\
+\amp &lt; \frac{\epsilon}{2} + |D\setminus F| \\
+\amp &lt; \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-14">Since we have that <span class="process-math">\(|(\mathbf{R}\setminus D) \setminus (\mathbf{R}\setminus G)| &lt; \epsilon\)</span> and <span class="process-math">\(R \setminus G\)</span> is closed, this means that <span class="process-math">\(\mathbf{R}\setminus D \in L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-15">For the case that <span class="process-math">\(|D| = \infty\text{,}\)</span> let <span class="process-math">\(D_k = D \cap [-k,k]\text{.}\)</span> Then <span class="process-math">\(D_k \in L\)</span> since <span class="process-math">\([-k,k]\)</span> is a closed set and belongs to <span class="process-math">\(L\)</span> and as a <span class="process-math">\(\sigma\)</span>-algebra, <span class="process-math">\(L\)</span> is closed under finite intersections. Since <span class="process-math">\(|D_k| \leq 2k\)</span> and <span class="process-math">\(D_k \in L\text{,}\)</span> it follows that <span class="process-math">\(\mathbf{R}\setminus D_k \in L\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-16">
+<div class="para">Because <span class="process-math">\(\displaystyle D = \bigcup_{k=1}^{\infty} D_k\)</span> it follows from De Morgan’s Laws that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-16-2">
+\begin{equation*}
+\mathbf{R}\setminus D = \bigcap_{k=1}^{\infty} \mathbf{R} \setminus D_k.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-17">Since <span class="process-math">\(L\)</span> is closed under countable intersection, this implies that <span class="process-math">\(\mathbf{R} \setminus D \in L\text{.}\)</span> Thus <span class="process-math">\(L\)</span> is closed under compliments.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-13-18">
+<div class="para">Finally we show that <span class="process-math">\(L\)</span> is closed under countable unions. Let <span class="process-math">\(D_1, D_2, \ldots\)</span> be a sequence of subsets in <span class="process-math">\(L\text{.}\)</span> Then it follows from DeMorgan’s laws that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-13-18-4">
+\begin{equation*}
+\mathbf{R}\setminus \bigcup_{k=1}^{\infty} D_k = \bigcap_{k=1}^{\infty} \mathbf{R} \setminus D_k.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-13-19">Since <span class="process-math">\(L\)</span> is closed under countable intersection, this implies that <span class="process-math">\(\displaystyle \mathbf{R} \setminus \bigcup_{k=1}^{\infty} D_k \in L\text{.}\)</span> Since <span class="process-math">\(L\)</span> is closed under compliments this means that <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty} D_k \in L\text{.}\)</span> Thus <span class="process-math">\(L\)</span> is closed under countable unions and hence <span class="process-math">\(L\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra that contains all Borel subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-13-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-Additivity-of-Outer-13" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="para" id="subsec-Additivity-of-Outer-14">Now we can prove that the outer measure is additive provided that one of the sets is a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-additivity-outer-measure-Borel"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">45</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additivity of Outer Measure if One Set is a Borel Set.</span>
+</h4>
+<div class="para" id="thm-additivity-outer-measure-Borel-2-1">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> are disjoint subsets of <span class="process-math">\(\mathbf{R}\)</span> and <span class="process-math">\(B\)</span> is a Borel set. Then <span class="process-math">\(|A \cup B| = |A| + |B|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-additivity-outer-measure-Borel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 45: Additivity of Outer Measure if One Set is a Borel Set"><a href="#thm-additivity-outer-measure-Borel" title="Copy heading and permalink for Theorem 45: Additivity of Outer Measure if One Set is a Borel Set" aria-label="Copy heading and permalink for Theorem 45: Additivity of Outer Measure if One Set is a Borel Set">🔗</a></div></article><details id="subsec-Additivity-of-Outer-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Additivity-of-Outer-16-1">
+<div class="para">Let <span class="process-math">\(\epsilon&gt;0\)</span> be arbitrary and let <span class="process-math">\(F\)</span> be a closed set such that <span class="process-math">\(F \subseteq B\)</span> and <span class="process-math">\(|B \setminus F| &lt; \epsilon\text{.}\)</span> Then it follows from monotonicity and additivity of outer measure when one set is closed that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-16-1-5">
+\begin{align*}
+|A \cup B| \amp |A \cup F| \\
+\amp = |A| + |F|\\
+\amp = |A|+ |B| - |B \setminus F| \\
+\amp \geq |A| + |B| - \epsilon
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Additivity-of-Outer-16-2">Because this inequality holds for all <span class="process-math">\(\epsilon&gt;0\)</span> we have that <span class="process-math">\(|A \cup B| \geq |A|+|B|\)</span> and hence <span class="process-math">\(|A \cup B| = |A| + |B|\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4"><a href="#subsec-Additivity-of-Outer-16" title="Copy heading and permalink for Proof 4" aria-label="Copy heading and permalink for Proof 4">🔗</a></div></article></details><div class="para" id="subsec-Additivity-of-Outer-17">As a corollary, we can show that there are subsets of <span class="process-math">\(\mathbf{R}\)</span> that are not Borel sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="corollary theorem-like" id="cor-non-Borel-set"><h4 class="heading">
+<span class="type">Corollary</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">46</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Existence of a Subset of <span class="process-math">\(\mathbf{R}\)</span>that is Not a Borel Set.</span>
+</h4>
+<div class="para" id="cor-non-Borel-set-2-1">There exists a subset <span class="process-math">\(B\)</span> of <span class="process-math">\(\mathbf{R}\)</span> that is not a Borel set.<div class="autopermalink" data-description="Paragraph"><a href="#cor-non-Borel-set-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Corollary 46: Existence of a Subset of \mathbf{R}that is Not a Borel Set"><a href="#cor-non-Borel-set" title="Copy heading and permalink for Corollary 46: Existence of a Subset of \mathbf{R}that is Not a Borel Set" aria-label="Copy heading and permalink for Corollary 46: Existence of a Subset of \mathbf{R}that is Not a Borel Set">🔗</a></div></article><details id="subsec-Additivity-of-Outer-19" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Additivity-of-Outer-19-1">When we proved that outer measure is not additive in general, we constructed disjoint sets <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> with <span class="process-math">\(|A| + |B| \neq |A \cup B|\text{.}\)</span> By the previous theorem this means that neither <span class="process-math">\(A\)</span> nor <span class="process-math">\(B\)</span> can be Borel sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 5"><a href="#subsec-Additivity-of-Outer-19" title="Copy heading and permalink for Proof 5" aria-label="Copy heading and permalink for Proof 5">🔗</a></div></article></details><div class="para" id="subsec-Additivity-of-Outer-20">We can finally prove that outer measure restricted to Borel sets is a bonafide measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-outer-measure-is-measure-borel"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">47</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Outer Measure is a Measure on Borel Sets.</span>
+</h4>
+<div class="para" id="thm-outer-measure-is-measure-borel-2-1">Outer measure is a measure on <span class="process-math">\((\mathbf{R}, B)\)</span> where <span class="process-math">\(B\)</span> is the set of Borel subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-outer-measure-is-measure-borel-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 47: Outer Measure is a Measure on Borel Sets"><a href="#thm-outer-measure-is-measure-borel" title="Copy heading and permalink for Theorem 47: Outer Measure is a Measure on Borel Sets" aria-label="Copy heading and permalink for Theorem 47: Outer Measure is a Measure on Borel Sets">🔗</a></div></article><details id="subsec-Additivity-of-Outer-22" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Additivity-of-Outer-22-1">
+<div class="para">We need to show that outer measure on Borel sets satisfies countable additivity. Let <span class="process-math">\(B_1, B_2, \ldots\)</span> be a sequence of Borel sets. Then it follows from additivity of outer measure on Borel sets that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-22-1-2">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} B_k\right| \geq \left| \bigcup_{k=1}^{n} B_k\right| = \sum_{k=1}^n |B_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-22-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-22-2">
+<div class="para">Thus by taking the limit as <span class="process-math">\(n \to \infty\)</span> we have that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-22-2-2">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} B_k\right| \geq  \sum_{k=1}^{\infty} |B_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-22-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Additivity-of-Outer-22-3">
+<div class="para">Since the other direction of the inequality follows from countable subadditivity we have that</div>
+<div class="displaymath process-math" id="subsec-Additivity-of-Outer-22-3-1">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} B_k\right| =  \sum_{k=1}^{\infty} |B_k|.
+\end{equation*}
+</div>
+<div class="para">and thus outer measure on Borel sets is countably additive and hence is a measure.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-22-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 6"><a href="#subsec-Additivity-of-Outer-22" title="Copy heading and permalink for Proof 6" aria-label="Copy heading and permalink for Proof 6">🔗</a></div></article></details><div class="para" id="subsec-Additivity-of-Outer-23">We are now in position to define Lebesgue measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-23" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-lebesgue-measure"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">48</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Measure.</span>
+</h4>
+<div class="para" id="def-lebesgue-measure-2-1">
+<dfn class="terminology">Lebesgue Measure</dfn> is the measure on <span class="process-math">\((\mathbf{R}, B)\)</span> where <span class="process-math">\(B\)</span> is the <span class="process-math">\(\sigma\)</span>-algebra of Borel subsets of <span class="process-math">\(\mathbf{R}\text{,}\)</span> that assigns to each Borel set its outer measure.<div class="autopermalink" data-description="Paragraph"><a href="#def-lebesgue-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 48: Lebesgue Measure"><a href="#def-lebesgue-measure" title="Copy heading and permalink for Definition 48: Lebesgue Measure" aria-label="Copy heading and permalink for Definition 48: Lebesgue Measure">🔗</a></div></article><div class="para" id="subsec-Additivity-of-Outer-25">Lebesgue measure is the same thing as outer measure except that it is only applied to Borel sets. Unlike outer measure, Lebesgue measure is truly a measure. We have shown that outer measure restricted to Borel sets is a bonafide measure; however, as it turns out we can do a little better. Outer measure is still a measure if restricted to a larger collection of functions called Lebesgue measurable sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Additivity-of-Outer-25" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Additivity of Outer Measure on Borel Sets"><a href="#subsec-Additivity-of-Outer" title="Copy heading and permalink for Subsection: Additivity of Outer Measure on Borel Sets" aria-label="Copy heading and permalink for Subsection: Additivity of Outer Measure on Borel Sets">🔗</a></div></section><section class="subsection" id="subsec-Lebesgue-Measurable-Sets"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Measurable Sets</span>
+</h3>
+<article class="definition definition-like" id="def-lebesgue-measureable-set"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">49</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-lebesgue-measureable-set-1-1">A set <span class="process-math">\(A \subseteq \mathbf{R}\)</span> is called <dfn class="terminology">Lebesgue measurable</dfn> if there exists a Borel set <span class="process-math">\(B \subseteq A\)</span> such that <span class="process-math">\(|A \setminus B| =0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-lebesgue-measureable-set-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 49"><a href="#def-lebesgue-measureable-set" title="Copy heading and permalink for Definition 49" aria-label="Copy heading and permalink for Definition 49">🔗</a></div></article><div class="para" id="subsec-Lebesgue-Measurable-Sets-3">Every Borel set is a Lebesgue measurable set; however, there are Lebesgue measurable sets that are not Borel sets, but it is rather difficult to come with up an example of one. However, it can be shown that the cardinality of the collection of Borel subsets of <span class="process-math">\(\mathbf{R}\)</span> is equal to the cardinality of the real numbers, but the cardinality of the Lebesgue measurable sets is equal to the cardinality of the power set of the real numbers which is strictly greater. Thus there are vastly more Lebesgue measurable sets than Borel sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-lebesgue-set-equiv"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">50</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equivalences for Being a Lebesgue Measurable Set.</span>
+</h4>
+<div class="para logical" id="thm-lebesgue-set-equiv-2-1">
+<div class="para">Suppose <span class="process-math">\(A \subseteq \mathbf{R}\text{.}\)</span> Then the following are equivalent:</div>
+<ol class="lower-alpha ol-marker-1" id="thm-lebesgue-set-equiv-2-1-2">
+<li id="thm-lebesgue-set-equiv-2-1-2-1">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-1-1">
+<span class="process-math">\(A\)</span> is Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-lebesgue-set-equiv-2-1-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-lebesgue-set-equiv-2-1-2-2">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-2-1">For every <span class="process-math">\(\epsilon&gt;0\)</span> there exists a closed set <span class="process-math">\(F \subseteq A\)</span> with <span class="process-math">\(|A \setminus F| &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-lebesgue-set-equiv-2-1-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="thm-lebesgue-set-equiv-2-1-2-3">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-3-1">There exist closed sets <span class="process-math">\(F_1, F_2, \ldots\)</span> contained in <span class="process-math">\(A\)</span> such that <span class="process-math">\(\displaystyle |A \setminus \bigcup_{k=1}^{\infty} F_k| = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#thm-lebesgue-set-equiv-2-1-2-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="thm-lebesgue-set-equiv-2-1-2-4">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-4-1">There exists a Borel set <span class="process-math">\(B \subseteq A\)</span> such that <span class="process-math">\(|A\setminus B| = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#thm-lebesgue-set-equiv-2-1-2-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+<li id="thm-lebesgue-set-equiv-2-1-2-5">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-5-1">For every <span class="process-math">\(\epsilon&gt;0\)</span> there exists an open set <span class="process-math">\(G \supseteq A\)</span> with <span class="process-math">\(|G \setminus A| &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item e"><a href="#thm-lebesgue-set-equiv-2-1-2-5" title="Copy heading and permalink for Item e" aria-label="Copy heading and permalink for Item e">🔗</a></div>
+</li>
+<li id="thm-lebesgue-set-equiv-2-1-2-6">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-6-1">There exist open sets <span class="process-math">\(G_1, G_2, \ldots\)</span> containing <span class="process-math">\(A\)</span> such that <span class="process-math">\(\displaystyle \left| \left(\bigcap_{k=1}^{\infty} G_k\right) \setminus A\right| = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item f"><a href="#thm-lebesgue-set-equiv-2-1-2-6" title="Copy heading and permalink for Item f" aria-label="Copy heading and permalink for Item f">🔗</a></div>
+</li>
+<li id="thm-lebesgue-set-equiv-2-1-2-7">
+<div class="para" id="thm-lebesgue-set-equiv-2-1-2-7-1">There exists a Borel set <span class="process-math">\(B \supseteq A\)</span> such that <span class="process-math">\(|B \setminus A| = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1-2-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item g"><a href="#thm-lebesgue-set-equiv-2-1-2-7" title="Copy heading and permalink for Item g" aria-label="Copy heading and permalink for Item g">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-lebesgue-set-equiv-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 50: Equivalences for Being a Lebesgue Measurable Set"><a href="#thm-lebesgue-set-equiv" title="Copy heading and permalink for Theorem 50: Equivalences for Being a Lebesgue Measurable Set" aria-label="Copy heading and permalink for Theorem 50: Equivalences for Being a Lebesgue Measurable Set">🔗</a></div></article><details id="subsec-Lebesgue-Measurable-Sets-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Lebesgue-Measurable-Sets-5-1">(d) is the definition of Lebesgue measure so clearly (a) and (d) are equivalent. Thus we can prove the Theorem by proving the following chain of implications: (b) implies (c) implies (d) implies <span class="process-math">\(\ldots\)</span> implies (g) implies (b). Since a lot of these implications are similar, we will just show one of them. We will show that (b) implies (c).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-5-2">Suppose that (b) is true; that is, for every <span class="process-math">\(\epsilon&gt;0\)</span> there exists a closed set <span class="process-math">\(F \subseteq A\)</span> with <span class="process-math">\(|A \setminus F| &lt; \epsilon\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lebesgue-Measurable-Sets-5-3">
+<div class="para">Thus for each <span class="process-math">\(n \in \mathbf{N}\)</span> there exists a closed set <span class="process-math">\(F_n \subseteq A\)</span> with <span class="process-math">\(|A \setminus F_n| &lt; \frac{1}{n}\text{.}\)</span> Since</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-5-3-4">
+\begin{equation*}
+A \setminus \bigcup_{k=1}^{\infty} F_k \subseteq A \setminus F_n
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(n \in \mathbf{N}\)</span> it follows from subadditivity of outer measure that</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-5-3-6">
+\begin{equation*}
+\left| A \setminus \bigcup_{k=1}^{\infty} F_k \right| \leq |A \setminus F_n| &lt; \frac{1}{n}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-5-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lebesgue-Measurable-Sets-5-4">
+<div class="para">Thus by letting <span class="process-math">\(n \to \infty\)</span> we obtain that</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-5-4-2">
+\begin{equation*}
+\left| A \setminus \bigcup_{k=1}^{\infty} F_k \right| = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-5-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-5-5">Thus we have shown that (b) implies (c) in our chain of implications. The other implications are similarly proved.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-5-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Lebesgue-Measurable-Sets-5" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Lebesgue-Measurable-Sets-6">Now we can show that outer measure restricted to Lebesgue measurable sets is still a measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-outer-measure-is-measure-lebesgue"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">51</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Outer Measure is a Measure on Lebesgue Integrable Sets.</span>
+</h4>
+<div class="para logical" id="thm-outer-measure-is-measure-lebesgue-2-1">
+<ol class="lower-alpha ol-marker-1" id="thm-outer-measure-is-measure-lebesgue-2-1-1">
+<li id="thm-outer-measure-is-measure-lebesgue-2-1-1-1">
+<div class="para" id="thm-outer-measure-is-measure-lebesgue-2-1-1-1-1">The set <span class="process-math">\(L\)</span> of Lebesgue measurable subsets of <span class="process-math">\(\mathbf{R}\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-outer-measure-is-measure-lebesgue-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-outer-measure-is-measure-lebesgue-2-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-outer-measure-is-measure-lebesgue-2-1-1-2">
+<div class="para" id="thm-outer-measure-is-measure-lebesgue-2-1-1-2-1">Outer measure is a measure on <span class="process-math">\((\mathbf{R},L)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-outer-measure-is-measure-lebesgue-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-outer-measure-is-measure-lebesgue-2-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-outer-measure-is-measure-lebesgue-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 51: Outer Measure is a Measure on Lebesgue Integrable Sets"><a href="#thm-outer-measure-is-measure-lebesgue" title="Copy heading and permalink for Theorem 51: Outer Measure is a Measure on Lebesgue Integrable Sets" aria-label="Copy heading and permalink for Theorem 51: Outer Measure is a Measure on Lebesgue Integrable Sets">🔗</a></div></article><details id="subsec-Lebesgue-Measurable-Sets-8" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Lebesgue-Measurable-Sets-8-1">We already showed that <span class="process-math">\(L\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra so it remains to show that outer measure on <span class="process-math">\((\mathbf{R}, L)\)</span> is a measure. To do this we must show countable additivity of disjoint sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-8-2">Let <span class="process-math">\(A_1, A_2, \ldots\)</span> be a disjoint sequence of Lebesgue measurable sets. By the definition of Lebesgue measurable measurable sets, for each <span class="process-math">\(k\text{,}\)</span> there exists a Borel set <span class="process-math">\(B_k \subseteq A_k\)</span> such that <span class="process-math">\(|A_k \setminus B_k| = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lebesgue-Measurable-Sets-8-3">
+<div class="para">Because outer measure on Borel sets is countably additive, we have that</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-8-3-1">
+\begin{align*}
+\left| \bigcup_{k=1}^{\infty} A_k \right| \amp \geq \left| \bigcup_{k=1}^{\infty} B_k \right| \\
+\amp = \sum_{k=1}^{\infty} |B_k|.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lebesgue-Measurable-Sets-8-4">
+<div class="para">Now it follows from the subadditivity of outer measure that</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-8-4-1">
+\begin{align*}
+|A_k| \amp = |A_k \setminus B_k \cup B_k| \\
+\amp \leq |A_k\setminus B_k| + |B_k| \\
+\amp = |B_k| 
+\end{align*}
+</div>
+<div class="para">since <span class="process-math">\(|A_k \setminus B_k| = 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lebesgue-Measurable-Sets-8-5">
+<div class="para">Since outer measure is monotone and <span class="process-math">\(B_k \subseteq A_k\text{,}\)</span> <span class="process-math">\(|B_k| \leq |A_k|\)</span> it follows that <span class="process-math">\(|B_k| = |A_k|\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-8-5-4">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} A_k \right| \geq \sum_{k=1}^n |A_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Lebesgue-Measurable-Sets-8-6">
+<div class="para">By subadditivity of outer measure we have that</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-8-6-1">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} A_k \right| \leq \sum_{k=1}^n |A_k|,
+\end{equation*}
+</div>
+<div class="para">and hence</div>
+<div class="displaymath process-math" id="subsec-Lebesgue-Measurable-Sets-8-6-2">
+\begin{equation*}
+\left| \bigcup_{k=1}^{\infty} A_k \right| = \sum_{k=1}^n |A_k|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-8-7">Since outer measure is countably additive on Lebesgue measurable sets, outer measure restricted to Lebesgue measurable sets is a measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-8-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Lebesgue-Measurable-Sets-8" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="subsec-Lebesgue-Measurable-Sets-9">If <span class="process-math">\(A\)</span> is a set with outer measure <span class="process-math">\(0\text{,}\)</span> then <span class="process-math">\(A\)</span> must be a Lebesgue measurable set since <span class="process-math">\(\emptyset\)</span> is a Borel set and <span class="process-math">\(|A \setminus \emptyset| = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-10">Thus the set of Lebesgue measurable sets is the smallest Borel algebra containing both all open subsets of <span class="process-math">\(\mathbf{R}\)</span> and all subsets of <span class="process-math">\(\mathbf{R}\)</span> with outer measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-11">Because outer measure is not additive on all subsets of <span class="process-math">\(\mathbf{R}\)</span> there are subsets of <span class="process-math">\(\mathbf{R}\)</span> that are not Lebesgue measurable sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-lebesgue-measure-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">52</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Measure.</span>
+</h4>
+<div class="para" id="def-lebesgue-measure-2-2-1">
+<dfn class="terminology">Lebesgue measure</dfn> is the measure on <span class="process-math">\((\mathbf{R}, L)\)</span> where <span class="process-math">\(L\)</span> is the <span class="process-math">\(\sigma\)</span>-algebra of Lebesgue measurable subsets of <span class="process-math">\(\mathbf{R}\text{,}\)</span> that assigns to each Lebesgue measurable set its outer measure.<div class="autopermalink" data-description="Paragraph"><a href="#def-lebesgue-measure-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 52: Lebesgue Measure"><a href="#def-lebesgue-measure-2" title="Copy heading and permalink for Definition 52: Lebesgue Measure" aria-label="Copy heading and permalink for Definition 52: Lebesgue Measure">🔗</a></div></article><div class="para" id="subsec-Lebesgue-Measurable-Sets-13">We have two different definitions for Lebesgue measure which only differ on the domain of the measure-- is it the <span class="process-math">\(\sigma\)</span>-algebra of Borel sets or Lebesgue measurable sets?<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Lebesgue-Measurable-Sets-14">Usually it doesn’t matter whether you use Borel sets or Lebesgue measurable sets. I will specify whether Lebesgue measure refers to Borel sets or Lebesgue measurable sets, unless it is irrelevant.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Lebesgue-Measurable-Sets-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Lebesgue Measurable Sets"><a href="#subsec-Lebesgue-Measurable-Sets" title="Copy heading and permalink for Subsection: Lebesgue Measurable Sets" aria-label="Copy heading and permalink for Subsection: Lebesgue Measurable Sets">🔗</a></div></section><section class="subsection" id="subsec-Cantor"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Cantor Set and Cantor Function</span>
+</h3>
+<div class="para" id="subsec-Cantor-2">We might hope that Lebesgue measurable sets would behave nicely with respect to continuous functions; in other words, if <span class="process-math">\(A\)</span> is a Lebesgue measurable set and <span class="process-math">\(f: A \to \mathbf{R}\)</span> is a continuous function then <span class="process-math">\(f(A)\)</span> would also be a Lebesgue measurable set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-3">Unfortunately, this is not the case as we will demonstrate by constructing a counterexample. For this we will need to use the Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-4">Recall that the Cantor set is constructed by starting with the interval <span class="process-math">\([0,1]\)</span> and successively removing the middle thirds from each interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-Cantor-set"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">53</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cantor Set.</span>
+</h4>
+<div class="para" id="def-Cantor-set-2-1">The <dfn class="terminology">Cantor Set</dfn> <span class="process-math">\(C\)</span> is <span class="process-math">\(\displaystyle [0,1] \setminus \cup_{n=1}^{\infty} G_n\)</span> where <span class="process-math">\(G_1 = (1/3, 2/3)\)</span> and <span class="process-math">\(G_n\)</span> for <span class="process-math">\(n &gt; 1\)</span> is the union of the middle third open intervals in the intervals of <span class="process-math">\(\displaystyle [0,1] \setminus \cup_{j=1}^{n-1} G_j\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-Cantor-set-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 53: Cantor Set"><a href="#def-Cantor-set" title="Copy heading and permalink for Definition 53: Cantor Set" aria-label="Copy heading and permalink for Definition 53: Cantor Set">🔗</a></div></article><div class="para" id="subsec-Cantor-6">The Cantor set can also be represented using Ternary (Base 3) expansions. In Ternary, place values represent powers of 3: threes, nines, twenty-sevens, <span class="process-math">\(\frac{1}{3}\text{,}\)</span> <span class="process-math">\(\frac{1}{9}\text{,}\)</span> <span class="process-math">\(\ldots\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-7">Suppose a number has Ternary expansion <span class="process-math">\(0.a_1 a_2 a_3 \ldots\text{.}\)</span> where <span class="process-math">\(a_n = 0\text{,}\)</span> <span class="process-math">\(1\text{,}\)</span> or <span class="process-math">\(2\text{.}\)</span> The value of <span class="process-math">\(a_1\)</span> tells which third of the interval <span class="process-math">\([0,1]\)</span> the point belongs to.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-8">If <span class="process-math">\(a_1 = 0\text{,}\)</span> the point is in the left third of <span class="process-math">\([0,1]\text{,}\)</span> if <span class="process-math">\(a_1 = 1\text{,}\)</span> the point is in the middle third of <span class="process-math">\([0,1]\text{,}\)</span> and if <span class="process-math">\(a_1 = 2\text{,}\)</span> the point is in the right third of <span class="process-math">\([0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-9">This means that any number whose Ternary expansion has <span class="process-math">\(a_1=1\)</span> belongs to the middle third interval and is removed in the first step of constructing the Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-10">Likewise the value of <span class="process-math">\(a_2\)</span> tells which third of the interval <span class="process-math">\([0,\frac{1}{3}]\)</span> or <span class="process-math">\([\frac{2}{3},1]\)</span> the point belongs to, with <span class="process-math">\(a_2 = 1\)</span> corresponding to the middle third of that interval.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-11">Thus any number whose Ternary expansion contains a <span class="process-math">\(1\)</span> in it will be in the middle third of some interval and will be removed in the construction of the Cantor set. Thus a point is in the Cantor set if and only if its Ternary expansion only contains the digits <span class="process-math">\(0\)</span> or <span class="process-math">\(2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Cantor-set-properties"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">54</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Cantor Set.</span>
+</h4>
+<div class="para logical" id="thm-Cantor-set-properties-2-1">
+<ol class="lower-alpha ol-marker-1" id="thm-Cantor-set-properties-2-1-1">
+<li id="thm-Cantor-set-properties-2-1-1-1">
+<div class="para" id="thm-Cantor-set-properties-2-1-1-1-1">The Cantor set is a closed subset of <span class="process-math">\(\mathbf{R}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Cantor-set-properties-2-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-Cantor-set-properties-2-1-1-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-Cantor-set-properties-2-1-1-2">
+<div class="para" id="thm-Cantor-set-properties-2-1-1-2-1">The Cantor set has Lebesgue measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-Cantor-set-properties-2-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-Cantor-set-properties-2-1-1-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="thm-Cantor-set-properties-2-1-1-3">
+<div class="para" id="thm-Cantor-set-properties-2-1-1-3-1">The Cantor set contains no intervals with more than one element.<div class="autopermalink" data-description="Paragraph"><a href="#thm-Cantor-set-properties-2-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#thm-Cantor-set-properties-2-1-1-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Cantor-set-properties-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 54: Properties of the Cantor Set"><a href="#thm-Cantor-set-properties" title="Copy heading and permalink for Theorem 54: Properties of the Cantor Set" aria-label="Copy heading and permalink for Theorem 54: Properties of the Cantor Set">🔗</a></div></article><details id="subsec-Cantor-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Cantor-13-1">(a) The compliment of the Cantor set is a countable union of open intervals, so it is an open set. Thus the Cantor set must be closed.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-13-2">(b) In MTH 527 we proved that the compliment of the Cantor set has length <span class="process-math">\(1\text{,}\)</span> hence it has Lebesgue measure <span class="process-math">\(1\)</span> and thus the Cantor set has Lebesgue measure <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-13-3">(c) Since an interval with at least two elements has positive measure, it follows from (b) that the Cantor set can’t contain intervals with more than one element.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Cantor-13" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Cantor-14">We will refer to the following function several times throughout this course.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-Cantor-Function"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">55</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Cantor Function.</span>
+</h4>
+<div class="para" id="def-Cantor-Function-2-1">The <dfn class="terminology">Cantor function</dfn> or <dfn class="terminology">Cantor-Lebesgue Function</dfn> <span class="process-math">\(\Lambda: [0,1] \to [0,1]\)</span> is defined by converting base 3 representations into base 2 representations as follows.<div class="autopermalink" data-description="Paragraph"><a href="#def-Cantor-Function-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="def-Cantor-Function-2-2">
+<li id="def-Cantor-Function-2-2-1">
+<div class="para" id="def-Cantor-Function-2-2-1-1">If <span class="process-math">\(x\)</span> belongs to the Cantor set then <span class="process-math">\(\Lambda(x)\)</span> is computed from the unique base 3 representation of <span class="process-math">\(x\)</span> consisting only of <span class="process-math">\(0\)</span>’s and <span class="process-math">\(2\)</span>’s by replacing all <span class="process-math">\(2\)</span>’s in the expansion by <span class="process-math">\(1\)</span>’s and interpreting the resulting string as a base 2 number.<div class="autopermalink" data-description="Paragraph"><a href="#def-Cantor-Function-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-Cantor-Function-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-Cantor-Function-2-2-2">
+<div class="para" id="def-Cantor-Function-2-2-2-1">If <span class="process-math">\(x\)</span> does not belong to the Cantor set, then <span class="process-math">\(\Lambda(x)\)</span> is computed by truncating after the first <span class="process-math">\(1\text{,}\)</span> replacing each <span class="process-math">\(2\)</span> before the first <span class="process-math">\(1\)</span> with <span class="process-math">\(1\)</span> and interpreting the resulting string as a base 2 number.<div class="autopermalink" data-description="Paragraph"><a href="#def-Cantor-Function-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-Cantor-Function-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Definition 55: The Cantor Function"><a href="#def-Cantor-Function" title="Copy heading and permalink for Definition 55: The Cantor Function" aria-label="Copy heading and permalink for Definition 55: The Cantor Function">🔗</a></div></article><div class="para" id="subsec-Cantor-16">As an example, suppose <span class="process-math">\(x = \frac{8}{9}\text{,}\)</span> which is an element of the Cantor set. Since <span class="process-math">\(\frac{8}{9} = \frac{2}{3}+ \frac{2}{9}\text{,}\)</span> the base 3 representation of <span class="process-math">\(\frac{8}{9}\)</span> is <span class="process-math">\(0.22_3\text{.}\)</span> Hence <span class="process-math">\(\Lambda(\frac{8}{9}) = 0.11_2 = \frac{1}{2}+ \frac{1}{4} = \frac{3}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-17">For another example, suppose <span class="process-math">\(x = \frac{1}{3}\text{,}\)</span> which is also an element of the Cantor set. One base 3 representation of <span class="process-math">\(\frac{1}{3}\)</span> is <span class="process-math">\(0.1_3\text{,}\)</span> but we don’t want to use this because it contains a <span class="process-math">\(1\text{.}\)</span> Instead we note that the infinite series <span class="process-math">\(\frac{2}{9} + \frac{2}{27} + \frac{2}{81} + \ldots = \frac{1}{3}\text{.}\)</span> So another base 3 representation of <span class="process-math">\(\frac{1}{3}\)</span> is <span class="process-math">\(0.0222\ldots_3\)</span> and this representation does not contain a <span class="process-math">\(1\text{.}\)</span> Hence <span class="process-math">\(\Lambda(\frac{1}{3}) = 0.0111\ldots_2 = \frac{1}{4}+ \frac{1}{16}+ \frac{1}{64}+ \ldots = \frac{1}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-18">For an example involving a number outside the Cantor set, suppose <span class="process-math">\(x = \frac{1}{2}\text{,}\)</span> which is not an element of the Cantor set since it is removed during the first iteration. Since <span class="process-math">\(\frac{1}{2} = \frac{1}{3}+ \frac{1}{9} + \frac{1}{27}+ \ldots\text{,}\)</span> the base 3 representation of <span class="process-math">\(\frac{1}{2}\)</span> is <span class="process-math">\(0.1111\ldots_3\text{.}\)</span> Since <span class="process-math">\(\frac{1}{2}\)</span> is not an element of the Cantor set, we truncate everything after the first <span class="process-math">\(1\)</span> to get <span class="process-math">\(0.1_3\text{.}\)</span> There are no <span class="process-math">\(2\)</span>’s to replace so we interpret this as the base <span class="process-math">\(2\)</span> number <span class="process-math">\(0.1_2 = \frac{1}{2}\text{.}\)</span> Thus <span class="process-math">\(\Lambda(\frac{1}{2}) = \frac{1}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-19">In fact, for every <span class="process-math">\(x \in (\frac{1}{3}, \frac{2}{3})\text{,}\)</span> <span class="process-math">\(\Lambda(x) = \frac{1}{2}\text{.}\)</span> This is because the base 3 representation of every number in <span class="process-math">\((\frac{1}{3}, \frac{2}{3})\)</span> starts with <span class="process-math">\(0.1\)</span> and thus is truncated to <span class="process-math">\(0.1_3\text{,}\)</span> just like with <span class="process-math">\(\frac{1}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-20">As a final example, suppose <span class="process-math">\(x \in (\frac{7}{9}, \frac{8}{9})\text{.}\)</span> For every number in this interval the base 3 representation starts with <span class="process-math">\(0.21\text{.}\)</span> Truncating after the first <span class="process-math">\(1\)</span> gives <span class="process-math">\(0.21_3\)</span> and replacing the <span class="process-math">\(2\)</span> with a <span class="process-math">\(1\)</span> and interpreting the result as a base 2 number gives <span class="process-math">\(0.11_2 = \frac{1}{2}+ \frac{1}{4} = \frac{3}{4}\text{.}\)</span> Thus <span class="process-math">\(\Lambda(x) = \frac{3}{4}\)</span> for every <span class="process-math">\(x \in (\frac{7}{9}, \frac{8}{9})\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="figure figure-like" id="subsec-Cantor-21"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="external/CantorEscalier-2%20(1).png" class="contained" alt="A graph of a function that increases from top to bottom but which contains many intervals where the graph is constant giving the overall graph the appearance of a staircase with steps of various lengths. The x axis is labeled using multiples of 1/9, while the y axis is labled with multiples of 1/8 because the constant intervals on the graph have endpoints at multiples of 1/9 on the x axis, while the value of the function on that interval is a multiple of 1/8."></div>
+<figcaption><span class="type">Figure</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">56<span class="period heading-divison-mark heading-divison-mark__period">.</span></span><span class="space heading-divison-mark heading-divison-mark__space"> </span>A graph of the Cantor Function.<div class="autopermalink" data-description="Figure 56"><a href="#subsec-Cantor-21" title="Copy heading and permalink for Figure 56" aria-label="Copy heading and permalink for Figure 56">🔗</a></div></figcaption></figure><article class="theorem theorem-like" id="thm-cantor-function-properties"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">57</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Cantor Function.</span>
+</h4>
+<div class="para" id="thm-cantor-function-properties-2-1">The Cantor function <span class="process-math">\(\Lambda\)</span> is a continuous, increasing function from <span class="process-math">\([0,1]\)</span> onto <span class="process-math">\([0,1]\text{.}\)</span> Furthermore <span class="process-math">\(\Lambda(C) = [0,1]\text{,}\)</span> where <span class="process-math">\(C\)</span> denotes the Cantor set.<div class="autopermalink" data-description="Paragraph"><a href="#thm-cantor-function-properties-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 57: Properties of the Cantor Function"><a href="#thm-cantor-function-properties" title="Copy heading and permalink for Theorem 57: Properties of the Cantor Function" aria-label="Copy heading and permalink for Theorem 57: Properties of the Cantor Function">🔗</a></div></article><details id="subsec-Cantor-23" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Cantor-23-1">We’ll first show that <span class="process-math">\(\Lambda(C) = [0,1]\text{.}\)</span> To do this, let <span class="process-math">\(y \in [0,1]\text{.}\)</span> Then <span class="process-math">\(y\)</span> has a base 2 representation consisting only of <span class="process-math">\(0\)</span>’s and <span class="process-math">\(1\)</span>’s. By replacing the <span class="process-math">\(1\)</span>’s with <span class="process-math">\(2\)</span>’s, we end up with a base 3 representation that consists only of <span class="process-math">\(0\)</span>’s and <span class="process-math">\(2\)</span>’s and thus represents an element of the Cantor set. If we denote this element by <span class="process-math">\(x\)</span> then <span class="process-math">\(\Lambda(x) = y\text{.}\)</span> Thus <span class="process-math">\(y \in \Lambda(C)\)</span> and hence <span class="process-math">\(\Lambda(C) = [0,1]\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-23-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Cantor-23-2">To show that the Cantor function is increasing, suppose <span class="process-math">\(x_1 &lt; x_2\)</span> and that <span class="process-math">\(x_1\)</span> has base 3 representation <span class="process-math">\(a_1a_2a_3\ldots\)</span> and <span class="process-math">\(x_2\)</span> has base 3 representation <span class="process-math">\(b_1b_2b_3\ldots\text{.}\)</span> Then at some point their base 3 representations first differ and <span class="process-math">\(a_n &lt; b_n\text{.}\)</span> The only possibilities are that <span class="process-math">\(a_n = 0\)</span> and <span class="process-math">\(b_n = 1\)</span> or <span class="process-math">\(2\)</span> or that <span class="process-math">\(a_n = 1\)</span> and <span class="process-math">\(b_n = 2\text{.}\)</span> Either way, when the Cantor function is applied and 2’s are replaced by 1’s <span class="process-math">\(a_n \leq b_n\)</span> and hence <span class="process-math">\(\Lambda(x_1) \leq \Lambda(x_2)\text{,}\)</span> so the Cantor function is increasing.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-23-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Cantor-23-3">
+<div class="para">To show that the Cantor function is continuous, we first recall that an increasing function can only have jump discontinuities. Thus if the Cantor function is discontinuous at <span class="process-math">\(c\)</span> then it must have a jump discontinuity there and hence</div>
+<div class="displaymath process-math" id="subsec-Cantor-23-3-2">
+\begin{equation*}
+\lim_{x \to c^-} \Lambda(x) &lt; \lim_{x\to c^+} \Lambda(x).
+\end{equation*}
+</div>
+<div class="para">But this means that the Cantor function fails to attain all values between <span class="process-math">\(\displaystyle \lim_{x \to c^-} \Lambda(x)\)</span> and <span class="process-math">\(\displaystyle \lim_{x \to c^+} \Lambda(x)\text{,}\)</span> which contradicts the fact that the range of the Cantor function is all <span class="process-math">\([0,1]\text{.}\)</span> Thus the Cantor function must be continuous on <span class="process-math">\([0,1]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-23-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Cantor-23" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="para" id="subsec-Cantor-24">We can use the Cantor function to give a short proof that the Cantor set is uncountable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-cantor-st-uncountable"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">58</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">The Cantor Set is Uncountable.</span>
+</h4>
+<div class="para" id="thm-cantor-st-uncountable-2-1">The Cantor set is uncountable.<div class="autopermalink" data-description="Paragraph"><a href="#thm-cantor-st-uncountable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 58: The Cantor Set is Uncountable"><a href="#thm-cantor-st-uncountable" title="Copy heading and permalink for Theorem 58: The Cantor Set is Uncountable" aria-label="Copy heading and permalink for Theorem 58: The Cantor Set is Uncountable">🔗</a></div></article><details id="subsec-Cantor-26" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Cantor-26-1">If the Cantor set <span class="process-math">\(C\)</span> was countable then <span class="process-math">\(\Lambda(C)\)</span> would also be countable since <span class="process-math">\(\Lambda\)</span> is a bijection from <span class="process-math">\(C\)</span> to <span class="process-math">\(\Lambda(C)\text{,}\)</span> but since <span class="process-math">\(\Lambda(C) = [0,1]\)</span> which is uncountable, the Cantor set must also be uncountable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-26-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-Cantor-26" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="para" id="subsec-Cantor-27">Lastly, we use the Cantor function to show that even a continuous function can map a set of measure <span class="process-math">\(0\)</span> to a non-measurable set.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-continuous-image-non-measurable"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">59</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable.</span>
+</h4>
+<div class="para" id="thm-continuous-image-non-measurable-2-1">There exists a Lebesgue measurable set <span class="process-math">\(A \subseteq [0,1]\)</span> such that <span class="process-math">\(|A| = 0\)</span> and <span class="process-math">\(\Lambda(A)\)</span> is not a measurable set.<div class="autopermalink" data-description="Paragraph"><a href="#thm-continuous-image-non-measurable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 59: Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable"><a href="#thm-continuous-image-non-measurable" title="Copy heading and permalink for Theorem 59: Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable" aria-label="Copy heading and permalink for Theorem 59: Continuous Image of a Lebesgue Measurable Set Can Be Non-Measurable">🔗</a></div></article><details id="subsec-Cantor-29" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Cantor-29-1">Let <span class="process-math">\(E\)</span> be a non-measurable subset of <span class="process-math">\([0,1]\)</span> and let <span class="process-math">\(A = C \cap \Lambda^{-1}(E)\text{.}\)</span> Then <span class="process-math">\(|A| \leq |C| = 0\)</span> by monotonicity. Hence <span class="process-math">\(A\)</span> is a Lebesgue measurable set because every set with measure <span class="process-math">\(0\)</span> is Lebesgue measurable. Since <span class="process-math">\(\Lambda(C) = [0,1]\text{,}\)</span> <span class="process-math">\(\Lambda(A) = E\)</span> which is not a measurable set. Thus <span class="process-math">\(A\)</span> is a Lebesgue measurable set whose image under <span class="process-math">\(\Lambda\)</span> is not Lebesgue measurable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Cantor-29-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4"><a href="#subsec-Cantor-29" title="Copy heading and permalink for Proof 4" aria-label="Copy heading and permalink for Proof 4">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: The Cantor Set and Cantor Function"><a href="#subsec-Cantor" title="Copy heading and permalink for Subsection: The Cantor Set and Cantor Function" aria-label="Copy heading and permalink for Subsection: The Cantor Set and Cantor Function">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 5: Lebesgue Measure (2D)"><a href="#notes-week-05" title="Copy heading and permalink for Section: Week 5: Lebesgue Measure (2D)" aria-label="Copy heading and permalink for Section: Week 5: Lebesgue Measure (2D)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-04.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
