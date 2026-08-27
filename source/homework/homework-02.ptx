@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 2 (Due September 3)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>A</m> and <m>B</m> are subsets of <m>\mathbf{R}</m> and <m>|B| = 0</m>. Show that <m>|A \cup B| = |A|</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+            Prove that if <m>A,B \subseteq \mathbf{R}</m> and <m>|A| &lt; \infty</m>, then <m>|B \setminus A| \geq |B|-|A|</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>a,b,c,d</m> are real numbers with <m>a &lt; b</m> and <m>c &lt; d</m>. Show that <m>|(a,b) \cup (c,d)| = (b-a)+(d-c)</m> if and only if <m>(a,b) \cap (c,d) = \emptyset</m>.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Prove that <m>|[0,1] \setminus \mathbf{Q}| = 1</m>.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>A \subseteq \mathbf{R}</m> and <m>t \in \mathbf{R}</m>. Let <m>tA = \{ta: a \in A\}</m>. Show that <m>|tA| = |t| \cdot |A|</m>.
+        </p>
+
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
