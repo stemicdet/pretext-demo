@@ -204,5 +204,118 @@
     
   </subsection>
 
+  <subsection xml:id="subsec-simple-functions">
+    <title>Approximation by Simple Functions</title>
+    
+
+    <p>
+        The simplest function is a constant function, since it only attains a single value. The next simplest are functions that only attain a finite number of values.
+    </p>
+
+    <definition xml:id="def-simple-function">
+        <title>Simple Function</title>
+        
+        
+        <statement>
+            <p>
+                A function is called <term>simple</term> if it takes on only a finite number of values.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Example: Dirichlet's function
+        <md>
+            f(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+        </md>
+
+        is a simple function since it only takes on 2 values.
+        
+    </p>
+
+    <p>
+        Suppose $(X,S)$ is a measurable space, $f: X \to \mathbf{R}$ is a simple function and $c_1, c_2, \ldots c_n$ are the distinct nonzero values of $f$. Then $f = c_1 \chi_{E_1} + c_2 \chi_{E_2} + \ldots + c_n \chi_{E_n}$ where $E_k = f^{-1}(c_k)$. This function is an $S$-measurable function if and only if all $E_k \in S$. 
+    </p>
+
+    <theorem xml:id="thm-approximation-simple-functions">
+        <title>Approximation by Simple Functions</title>
+        
+        
+        <statement>
+            <p>
+                Suppose $(X,S)$ is a measurable space and $f:X \to [-\infty, \infty]$ is $S$-measurable. Then there exists a sequence $f_1, f_2, \ldots,$ of functions from $X$ to $\mathbf{R}$ such that
+                <ol marker="(a)">
+                    <li>
+                        <p>
+                            Each $f_k$ is a simple $S$-measurable function.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            $|f_k(x)| \leq |f_{k+1}(x)| \leq |f(x)|$ for all $k \in \mathbf{N}$ and $x \in X$. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            $\displaystyle \lim_{k\to \infty} f_k(x) = f(x)$ for every $x \in X$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            $f_1, f_2, \ldots$ converges uniformly to $f$ if $f$ is bounded.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            Define $f_k(x)$ by 
+            <md>
+                f_k(x) = \begin{cases} 
+      \hfill  \frac{m}{2^k} \amp \text{ if $0 \leq f(x) \leq k$ and $m \in \mathbf{Z}$ is such that $f(x) \in [\frac{m}{2^k}, \frac{m+1}{2^k})$} \\
+      \hfill  \frac{m+1}{2^k} \amp \text{ if $-k \leq f(x) &lt; 0$ and $m \in \mathbf{Z}$ is such that $f(x) \in [\frac{m}{2^k}, \frac{m+1}{2^k})$} \\
+      \hfill k \amp \text{ if $f(x) &gt; k$} \\
+      \hfill -k \amp \text{ if $f(x) &lt; -k$} \\
+  \end{cases}
+            </md>
+            
+        </p>
+
+        <p>
+            In other words, we divide $[-k,k]$ into equally spaced subintervals. If $f(x) \in [0,k]$ we define $f_k(x)$ to be the left endpoint of the subinterval it's in and if $f(x) \in [-k,0)$ we define $f_k(x)$ to be the right endpoint of the subintervals it's in. If $|f(x)| &gt; k$ then we define $f_k(x) = \pm k$.
+        </p>
+
+        <p>
+            For each $k$, $f_k(x)$ only attains a finite number of values, so it is a simple function. Moreover, because $f$ is an $S$-measurable function $f^{-1}\left([\frac{m}{2^k}, \frac{m+1}{2^k})\right) \in S$. 
+        </p>
+
+        <p>
+            Thus for each $y \in \mathbf{R}$ $f_k^{-1}(y)$ is a Borel set and thus $f_k$ is also an $S$-measurable function, proving (a). Also (b) holds because of how we define $f_k(x)$. For example if $k &lt; j$ and $f(x)$ is in $ [\frac{m}{2^k}, \frac{m+1}{2^k})$ and also in $[\frac{p}{2^j}, \frac{p+1}{2^j})$, then $\frac{m}{2^k} &lt; \frac{p}{2^j}$.
+        </p>
+
+        <p>
+            It follows from how we defined $f_k$ that
+            <md>
+                |f_k(x)-f(x)| \leq \frac{1}{2^k} 
+            </md>
+            for all $x$ such that $f(x) \in [-k,k]$. Hence for each $x \in X$, $\displaystyle \lim_{k\to \infty} f_k(x) = f(x)$. Thus (c) is proved.
+        </p>
+
+        <p>
+            Finally if $f$ is bounded then there exists some $K$ such that for all $x$ $f(x) \in [-K,K]$ and thus the previous limit gives that $\{f_k\}$ converges uniformly to $f$, proving (d).
+        </p>
+
+    </proof>
+    
+
+
+  </subsection>
+
 
   </section>
