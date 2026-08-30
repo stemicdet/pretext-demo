@@ -16,21 +16,21 @@
         
         <statement>
             <p>
-                Suppose $X$ is a set, $f_1, f_2, \ldots$ are functions from $X$ to $\mathbf{R}$ and $f$ is a function from $X$ to $\mathbf{R}$. 
+                Suppose <m>X</m> is a set, <m>f_1, f_2, \ldots</m> are functions from <m>X</m> to <m>\mathbf{R}</m> and <m>f</m> is a function from <m>X</m> to <m>\mathbf{R}</m>. 
             </p>
             <ul>
                 <li>
                     <p>
-                        The sequence $f_1, f_2, \ldots $ converges pointwise on $X$ to $f$ if 
+                        The sequence <m>f_1, f_2, \ldots </m> converges pointwise on <m>X</m> to <m>f</m> if 
                         <md>
                             \lim_{k\to \infty} f_k(x) = f(x)
                         </md>
-                        for each $x \in X$. In other words, $f_1, f_2, \ldots$ converges pointwise on $X$ to $f$ if for each $x \in X$ and every $\epsilon &gt; 0$ there exists $n \in \mathbf{N}$ such that $|f_k(x)-f(x)| &lt; \epsilon$ for all integers $k \geq n$.
+                        for each <m>x \in X</m>. In other words, <m>f_1, f_2, \ldots</m> converges pointwise on <m>X</m> to <m>f</m> if for each <m>x \in X</m> and every <m>\epsilon &gt; 0</m> there exists <m>n \in \mathbf{N}</m> such that <m>|f_k(x)-f(x)| &lt; \epsilon</m> for all integers <m>k \geq n</m>.
                     </p>
                 </li>
                 <li>
                     <p>
-                        The sequence $f_1, f_2, \ldots$ converges uniformly on $X$ to $f$ if for every $\epsilon &gt; 0$ there exists $n \in \mathbf{N}$ such that $|f_k(x)-f(x)| &lt; \epsilon$ for all integers $k \geq n$ and all $x \in X$.
+                        The sequence <m>f_1, f_2, \ldots</m> converges uniformly on <m>X</m> to <m>f</m> if for every <m>\epsilon &gt; 0</m> there exists <m>n \in \mathbf{N}</m> such that <m>|f_k(x)-f(x)| &lt; \epsilon</m> for all integers <m>k \geq n</m> and all <m>x \in X</m>.
                     </p>
                 </li>
             </ul>
@@ -38,14 +38,14 @@
     </definition>
 
     <p>
-        Example: Let $g_n(x) = x^n$ on $[0,1]$. Then $g(x)$ converges pointwise to 
+        Example: Let <m>g_n(x) = x^n</m> on <m>[0,1]</m>. Then <m>g(x)</m> converges pointwise to 
         <md>
             g(x) = \begin{cases} 
       \hfill 0 \amp \text{ if $ 0 \leq x &lt; 1$} \\
       \hfill  1 \hfill \amp \text{ if $x = 1$} 
   \end{cases}
         </md>
-        However, $g_n(x)$ does not converge uniformly on $[0,1]$.
+        However, <m>g_n(x)</m> does not converge uniformly on <m>[0,1]</m>.
     </p>
 
     <p>
@@ -58,7 +58,7 @@
         
         <statement>
             <p>
-                Suppose $B \subseteq \mathbf{R}$ and $f_1, f_2, \ldots$ is a sequence of functions from $B$ to $\mathbf{R}$. Suppose $b \in B$ and $f_k$ is continuous at $b$ for each $k \in \mathbf{R}$. Then $f$ is continuous at $B$.
+                Suppose <m>B \subseteq \mathbf{R}</m> and <m>f_1, f_2, \ldots</m> is a sequence of functions from <m>B</m> to <m>\mathbf{R}</m>. Suppose <m>b \in B</m> and <m>f_k</m> is continuous at <m>b</m> for each <m>k \in \mathbf{R}</m>. Then <m>f</m> is continuous at <m>B</m>.
             </p>
         </statement>
     </theorem>
@@ -126,13 +126,13 @@
         
         <statement>
             <p>
-                Suppose $(X,S,\mu)$ is a measure space with $\mu(X) &lt; \infty$. Suppose $f_1,f_2, \ldots$ is a sequence of $S$-measurable functions from $X$ to $\mathbf{R}$ that converges pointwise on $X$ to a function $f:X \to \mathbf{R}$. Then for every $\epsilon &gt; 0$ there exists a set $E \in S$ such that $\mu(X \setminus E) &lt; \epsilon$ and $f_1,f_2,\ldots$ converges uniformly to $f$ on $X$.
+                Suppose <m>(X,S,\mu)</m> is a measure space with <m>\mu(X) &lt; \infty</m>. Suppose <m>f_1,f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>\mathbf{R}</m> that converges pointwise on <m>X</m> to a function <m>f:X \to \mathbf{R}</m>. Then for every <m>\epsilon &gt; 0</m> there exists a set <m>E \in S</m> such that <m>\mu(X \setminus E) &lt; \epsilon</m> and <m>f_1,f_2,\ldots</m> converges uniformly to <m>f</m> on <m>X</m>.
             </p>
         </statement>
     </theorem>
 
     <p>
-        Example: Consider the sequence $g_n(x) = x^n$, which is a sequence of Lebesgue measurable functions from $X = [0,1]$ to $\mathbf{R}$ which converges pointwise to
+        Example: Consider the sequence <m>g_n(x) = x^n</m>, which is a sequence of Lebesgue measurable functions from <m>X = [0,1]</m> to <m>\mathbf{R}</m> which converges pointwise to
         <md>
             g(x) = \begin{cases} 
       \hfill 0 \amp \text{ if $ 0 \leq x &lt; 1$} \\
@@ -143,12 +143,12 @@
     </p>
 
     <p>
-        Given $\epsilon &gt; 0$, let $E = [0, 1-\frac{\epsilon}{2}]$. Then $\mu(X \setminus E) = \frac{\epsilon}{2} &lt; \epsilon$ and $g_n(x)$ converges uniformly to $g(x)$ on $E$.
+        Given <m>\epsilon &gt; 0</m>, let <m>E = [0, 1-\frac{\epsilon}{2}]</m>. Then <m>\mu(X \setminus E) = \frac{\epsilon}{2} &lt; \epsilon</m> and <m>g_n(x)</m> converges uniformly to <m>g(x)</m> on <m>E</m>.
     </p>
 
     <proof>
         <p>
-            Suppose $\epsilon &gt; 0$ and temporarily fix $n \in \mathbf{N}$. Because $\{f_n\}$ converges pointwise to $f$, we have that
+            Suppose <m>\epsilon &gt; 0</m> and temporarily fix <m>n \in \mathbf{N}</m>. Because <m>\{f_n\}</m> converges pointwise to <m>f</m>, we have that
             <md>
                 \bigcup_{m=1}^{\infty} \bigcap_{k=m}^{\infty} \left\{x\in X: |f_k(x)-f(x)| &lt;  \frac{1}{n}\right\} = X
             </md>
@@ -156,7 +156,7 @@
         </p>
 
         <p>
-           For $m \in \mathbf{N}$ let 
+           For <m>m \in \mathbf{N}</m> let 
            <md>
             A_{m,n} = \bigcap_{k=m}^{\infty} \left\{x\in X: |f_k(x)-f(x)| &lt; \frac{1}{n}\right\}.
            </md>
@@ -164,24 +164,24 @@
         </p>
 
         <p>
-            Because each $f_k$ is an $S$-measurable function $f$ is an $S$-measurable function. Hence each $f_k-f$ is an $S$-measurable function and $A_{m,n} \in S$.
+            Because each <m>f_k</m> is an <m>S</m>-measurable function <m>f</m> is an <m>S</m>-measurable function. Hence each <m>f_k-f</m> is an <m>S</m>-measurable function and <m>A_{m,n} \in S</m>.
         </p>
 
         <p>
-            Since $A_{1,n} \subseteq A_{2,n} \subseteq \ldots$ is an increasing sequence of sets and 
+            Since <m>A_{1,n} \subseteq A_{2,n} \subseteq \ldots</m> is an increasing sequence of sets and 
             <md>
                 \bigcup_{m=1}^{\infty} A_{m,n} = X
             </md>
-            it follows that $\displaystyle \lim_{m\to \infty} \mu(A_{m,n}) = \mu(X)$.
+            it follows that <m>\displaystyle \lim_{m\to \infty} \mu(A_{m,n}) = \mu(X)</m>.
             
         </p>
 
         <p>
-            Thus there exists $m_n \in \mathbf{N}$ such that $\mu(X) - \mu(A_{m_n,n}) &lt; \frac{\epsilon}{2^n}$.
+            Thus there exists <m>m_n \in \mathbf{N}</m> such that <m>\mu(X) - \mu(A_{m_n,n}) &lt; \frac{\epsilon}{2^n}</m>.
         </p>
 
         <p>
-            Now let $E = \displaystyle \bigcap_{n=1}^{\infty} A_{m_n,n}$. Then
+            Now let <m>E = \displaystyle \bigcap_{n=1}^{\infty} A_{m_n,n}</m>. Then
             <md>
                 <mrow> \mu(X \setminus E) \amp \left( X \setminus \bigcap_{n=1}^{\infty} A_{m_n,n} \right) </mrow>
                 <mrow> \amp = \mu \left( \bigcup_{n=1}^{\infty} X \setminus A_{m_n,n} \right)</mrow>
@@ -192,11 +192,11 @@
         </p>
 
         <p>
-            To complete the proof, we need to show that the sequence $f_1, f_2, \ldots$ converges to $f$ uniformly on $E$. Suppose $\epsilon' &gt; 0$ and let $n \in \mathbf{N}$ be such that $\frac{1}{n} &lt; \epsilon'$. Then because $E \subseteq A_{m_n,n}$ we have that
+            To complete the proof, we need to show that the sequence <m>f_1, f_2, \ldots</m> converges to <m>f</m> uniformly on <m>E</m>. Suppose <m>\epsilon' &gt; 0</m> and let <m>n \in \mathbf{N}</m> be such that <m>\frac{1}{n} &lt; \epsilon'</m>. Then because <m>E \subseteq A_{m_n,n}</m> we have that
             <md>
                 |f_k(x)-f(x)| &lt; \frac{1}{n} &lt; \epsilon'
             </md>
-             for all $k \geq m_n$ and $x \in E$. Hence $f_1, f_2, \ldots$ converges uniformly to $f$ on $E$.
+             for all <m>k \geq m_n</m> and <m>x \in E</m>. Hence <m>f_1, f_2, \ldots</m> converges uniformly to <m>f</m> on <m>E</m>.
         </p>
 
     </proof>
@@ -237,7 +237,7 @@
     </p>
 
     <p>
-        Suppose $(X,S)$ is a measurable space, $f: X \to \mathbf{R}$ is a simple function and $c_1, c_2, \ldots c_n$ are the distinct nonzero values of $f$. Then $f = c_1 \chi_{E_1} + c_2 \chi_{E_2} + \ldots + c_n \chi_{E_n}$ where $E_k = f^{-1}(c_k)$. This function is an $S$-measurable function if and only if all $E_k \in S$. 
+        Suppose <m>(X,S)</m> is a measurable space, <m>f: X \to \mathbf{R}</m> is a simple function and <m>c_1, c_2, \ldots c_n</m> are the distinct nonzero values of <m>f</m>. Then <m>f = c_1 \chi_{E_1} + c_2 \chi_{E_2} + \ldots + c_n \chi_{E_n}</m> where <m>E_k = f^{-1}(c_k)</m>. This function is an <m>S</m>-measurable function if and only if all <m>E_k \in S</m>. 
     </p>
 
     <theorem xml:id="thm-approximation-simple-functions">
@@ -246,26 +246,26 @@
         
         <statement>
             <p>
-                Suppose $(X,S)$ is a measurable space and $f:X \to [-\infty, \infty]$ is $S$-measurable. Then there exists a sequence $f_1, f_2, \ldots,$ of functions from $X$ to $\mathbf{R}$ such that
+                Suppose <m>(X,S)</m> is a measurable space and <m>f:X \to [-\infty, \infty]</m> is <m>S</m>-measurable. Then there exists a sequence <m>f_1, f_2, \ldots,</m> of functions from <m>X</m> to <m>\mathbf{R}</m> such that
                 <ol marker="(a)">
                     <li>
                         <p>
-                            Each $f_k$ is a simple $S$-measurable function.
+                            Each <m>f_k</m> is a simple <m>S</m>-measurable function.
                         </p>
                     </li>
                     <li>
                         <p>
-                            $|f_k(x)| \leq |f_{k+1}(x)| \leq |f(x)|$ for all $k \in \mathbf{N}$ and $x \in X$. 
+                            <m>|f_k(x)| \leq |f_{k+1}(x)| \leq |f(x)|</m> for all <m>k \in \mathbf{N}</m> and <m>x \in X</m>. 
                         </p>
                     </li>
                     <li>
                         <p>
-                            $\displaystyle \lim_{k\to \infty} f_k(x) = f(x)$ for every $x \in X$.
+                            <m>\displaystyle \lim_{k\to \infty} f_k(x) = f(x)</m> for every <m>x \in X</m>.
                         </p>
                     </li>
                     <li>
                         <p>
-                            $f_1, f_2, \ldots$ converges uniformly to $f$ if $f$ is bounded.
+                            <m>f_1, f_2, \ldots</m> converges uniformly to <m>f</m> if <m>f</m> is bounded.
                         </p>
                     </li>
                 </ol>
@@ -275,7 +275,7 @@
 
     <proof>
         <p>
-            Define $f_k(x)$ by 
+            Define <m>f_k(x)</m> by 
             <md>
                 f_k(x) = \begin{cases} 
       \hfill  \frac{m}{2^k} \amp \text{ if $0 \leq f(x) \leq k$ and $m \in \mathbf{Z}$ is such that $f(x) \in [\frac{m}{2^k}, \frac{m+1}{2^k})$} \\
@@ -288,33 +288,280 @@
         </p>
 
         <p>
-            In other words, we divide $[-k,k]$ into equally spaced subintervals. If $f(x) \in [0,k]$ we define $f_k(x)$ to be the left endpoint of the subinterval it's in and if $f(x) \in [-k,0)$ we define $f_k(x)$ to be the right endpoint of the subintervals it's in. If $|f(x)| &gt; k$ then we define $f_k(x) = \pm k$.
+            In other words, we divide <m>[-k,k]</m> into equally spaced subintervals. If <m>f(x) \in [0,k]</m> we define <m>f_k(x)</m> to be the left endpoint of the subinterval it's in and if <m>f(x) \in [-k,0)</m> we define <m>f_k(x)</m> to be the right endpoint of the subintervals it's in. If <m>|f(x)| &gt; k</m> then we define <m>f_k(x) = \pm k</m>.
         </p>
 
         <p>
-            For each $k$, $f_k(x)$ only attains a finite number of values, so it is a simple function. Moreover, because $f$ is an $S$-measurable function $f^{-1}\left([\frac{m}{2^k}, \frac{m+1}{2^k})\right) \in S$. 
+            For each <m>k</m>, <m>f_k(x)</m> only attains a finite number of values, so it is a simple function. Moreover, because <m>f</m> is an <m>S</m>-measurable function <m>f^{-1}\left([\frac{m}{2^k}, \frac{m+1}{2^k})\right) \in S</m>. 
         </p>
 
         <p>
-            Thus for each $y \in \mathbf{R}$ $f_k^{-1}(y)$ is a Borel set and thus $f_k$ is also an $S$-measurable function, proving (a). Also (b) holds because of how we define $f_k(x)$. For example if $k &lt; j$ and $f(x)$ is in $ [\frac{m}{2^k}, \frac{m+1}{2^k})$ and also in $[\frac{p}{2^j}, \frac{p+1}{2^j})$, then $\frac{m}{2^k} &lt; \frac{p}{2^j}$.
+            Thus for each <m>y \in \mathbf{R}</m> <m>f_k^{-1}(y)</m> is a Borel set and thus <m>f_k</m> is also an <m>S</m>-measurable function, proving (a). Also (b) holds because of how we define <m>f_k(x)</m>. For example if <m>k &lt; j</m> and <m>f(x)</m> is in <m> [\frac{m}{2^k}, \frac{m+1}{2^k})</m> and also in <m>[\frac{p}{2^j}, \frac{p+1}{2^j})</m>, then <m>\frac{m}{2^k} &lt; \frac{p}{2^j}</m>.
         </p>
 
         <p>
-            It follows from how we defined $f_k$ that
+            It follows from how we defined <m>f_k</m> that
             <md>
                 |f_k(x)-f(x)| \leq \frac{1}{2^k} 
             </md>
-            for all $x$ such that $f(x) \in [-k,k]$. Hence for each $x \in X$, $\displaystyle \lim_{k\to \infty} f_k(x) = f(x)$. Thus (c) is proved.
+            for all <m>x</m> such that <m>f(x) \in [-k,k]</m>. Hence for each <m>x \in X</m>, <m>\displaystyle \lim_{k\to \infty} f_k(x) = f(x)</m>. Thus (c) is proved.
         </p>
 
         <p>
-            Finally if $f$ is bounded then there exists some $K$ such that for all $x$ $f(x) \in [-K,K]$ and thus the previous limit gives that $\{f_k\}$ converges uniformly to $f$, proving (d).
+            Finally if <m>f</m> is bounded then there exists some <m>K</m> such that for all <m>x</m> <m>f(x) \in [-K,K]</m> and thus the previous limit gives that <m>\{f_k\}</m> converges uniformly to <m>f</m>, proving (d).
         </p>
 
     </proof>
     
 
 
+  </subsection>
+
+  <subsection xml:id="subsec-Luzin">
+    <title>Luzin's Theorem</title>
+
+    <p>
+        Now we will prove the second of Littlewood's Three Principles. 
+    </p>
+
+    <theorem xml:id="thm-luzin">
+        <title>Luzin's Theorem</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>g: \mathbf{R} \to \mathbf{R}</m> is a Borel Measurable function. Then for every <m>\epsilon>0</m> there exists a closed set <m>F \subseteq \mathbf{R}</m> such that <m>|\mathbf{R} \setminus F| &lt; \epsilon</m> and <m>g|_F</m> is a continuous function on <m>F</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        Note that Luzin's Theorem does not say that <m>g</m> is continuous on <m>F</m>, only that <m>g|_F</m> is continuous on <m>F</m>. For example, Dirichlet's function
+        <md>
+            g(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+        </md>
+        is nowhere continuous on <m>\mathbf{R}</m>. Let <m>\epsilon &gt; 0</m> and let <m>G</m> be an open cover of <m>\mathbf{Q}</m> with <m>|G| &lt; \epsilon</m>. Let <m>F = \mathbf{R} \setminus G</m>. Then <m>F</m> is a closed set and <m>|\mathbf{R} \setminus F| &lt; \epsilon</m>. Since <m>g(x) = 0</m> on <m>F</m>, <m>g|_F</m> is a continuous function on <m>F</m>. 
+    </p>
+
+    <proof>
+        <p>
+            We will build up the proof through a series of special cases. First consider the case that <m>g</m> is a simple function. Recall that this means that <m>g</m> can be written as
+            <md>
+                g = d_1 \chi_{D_1} + d_2 \chi_{D_2} + \ldots + d_n \chi_{D_n}
+            </md>
+            where <m>d_1, \ldots d_n</m> are distinct nonzero real numbers and <m>D_1, \ldots D_n</m> are disjoint Borel sets.
+        </p>
+
+        <p>
+            Suppose <m>\epsilon>0</m>. Then for each <m>k \in \{1,2, \ldots n\}</m> there exists a closed set <m>F_k \subseteq D_k</m> and an open set <m>G_k \supseteq D_k</m> such that
+            <md>
+                |G_k \setminus D_k| &lt; \frac{\epsilon}{2n} \text{ and } |D_k \setminus F_k| &lt; \frac{\epsilon}{2n}.
+            </md>
+            
+        </p>
+
+        <p>
+            Because <m>G_k \setminus F_k = (G_k \setminus D_k) \cup (D_k \setminus F_k)</m>, we have that <m>|G_k \setminus F_k| &lt; \frac{\epsilon}{2n} + \frac{\epsilon}{2n} = \frac{\epsilon}{n}</m>  for each <m>k \in \mathbf{N}</m>. Now let
+            <md>
+                 F = \left( \bigcup_{k=1}^n F_k \right) \cup \bigcap_{k=1}^n \left( \mathbf{R} \setminus G_k \right).
+            </md>
+            
+        </p>
+
+        <p>
+            Since <m>F</m> is a finite union of closed sets, <m>F</m> is closed. Moverover,
+            <md>
+                \mathbf{R} \setminus F \subseteq \bigcup_{k=1}^n G_k \setminus F_k
+            </md>
+            and hence <m>\displaystyle |\mathbf{R}\setminus F| \leq \sum_{k=1}^n \frac{\epsilon}{n} = \epsilon</m>. Thus it remains to show that <m>g|_F</m> is a continuous function on <m>F</m>.
+        </p>
+
+        <p>
+            Because <m>F_k \subseteq D_k</m> it follows that <m>g(x) = d_k</m> on <m>F_k</m>. Thus <m>g</m> is continuous on <m>F_k</m> for all <m>k \in \{1, \ldots, n\}</m>. In addition, since
+            <md>
+                \bigcap_{k=1}^n \mathbf{R} \setminus G_k \subseteq \bigcap_{k=1}^n \mathbf{R} \setminus D_k
+            </md>
+            it follows that <m>g(x) = 0</m> on this set, and hence <m>g</m> is continuous here as well. Thus <m>g</m> is continuous on <m>F</m> and the theorem is proven for simple functions.
+        </p>
+
+        <p>
+            Now suppose that <m>g</m> is an arbitrary Borel function. Then there is a sequence of simple Borel measurable functions <m>g_1, g_2, \ldots</m> that converges to <m>g</m>. Suppose <m>\epsilon &gt; 0</m>. Then by the special case we just proved, for each <m>k</m> there exists a closed set <m>C_k</m> such that <m>|\mathbf{R} \setminus C_k| &lt; \frac{\epsilon}{2^{k+1}}</m> and <m>g_k|_{C_k}</m> is continuous on <m>C_k</m>.  
+        </p>
+
+        <p>
+            Let
+            <md>
+                C = \bigcap_{k=1}^{\infty} C_k.
+            </md>
+            Then <m>C</m> is a closed set and <m>g_k|_C</m> is continuous on <m>C</m> for all <m>k</m>. Note that
+            <md>
+                \mathbf{R} \setminus C = \bigcup_{k=1}^{\infty} \mathbf{R} \setminus C_k.
+            </md>
+            Hence
+            <md>
+                |\mathbf{R}\setminus C| \leq \sum_{k=1}^{\infty} |\mathbf{R}\setminus C_k| &lt; \sum_{k=1}^{\infty} \frac{\epsilon}{2^{k+1}} = \frac{\epsilon}{2}. 
+            </md>
+            
+        </p>
+
+        <p>
+            For each <m>m \in \mathbf{Z}</m> the sequence <m>g_1|_{(m,m+1)}, g_2|_{(m,m+1)}, \ldots</m> converges pointwise on <m>(m,m+1)</m> to <m>g|_{(m,m+1)}</m>. Thus by Egorov's Theorem for each <m>m \in \mathbf{Z}</m> there is a Borel set <m>E_m \subseteq (m,m+1)</m> such that <m>g_1, g_2, \ldots</m> converges uniformly to <m>g</m> and
+            <md>
+                |(m, m+1) \setminus E_m| \leq \frac{\epsilon}{2^{|m|+3}}.
+            </md>
+            
+        </p>
+
+        <p>
+            Hence <m>g_1, g_2, \ldots</m> converges uniformly to <m>g</m> on <m>C \cap E_m</m> for each <m>m \in \mathbf{Z}</m>. Since each <m>g_k|_C</m> is continuous it follows that <m>g</m> is continuous on <m>C \cap E_m</m> for each <m>m \in \mathbf{Z}</m>. Thus <m>g|_D</m> is continuous, where
+            <md>
+                D = \bigcup_{m \in \mathbf{Z}} C \cap E_m.
+            </md>
+            
+        </p>
+
+        <p>
+            Now
+            <md>
+                \mathbf{R} \setminus D \subseteq \left(\mathbf{R}\setminus C\right) \cup \bigcup_{m \in \mathbf{Z}} \left((m,m+1) \setminus E_m) \right) \cup \mathbf{Z}.
+            </md>
+            Hence
+            <md>
+                <mrow> |\mathbf{R}\setminus D| \amp \leq |\mathbf{R}\setminus C| + \sum_{m\in \mathbf{Z}} |(m, m+1) \setminus E_m| + |\mathbf{Z}| </mrow>
+                <mrow> \amp &lt; \frac{\epsilon}{2} + \sum_{m\in \mathbf{Z}}\frac{\epsilon}{2^{|m|+3}} + 0 </mrow>
+                <mrow> \amp = \frac{\epsilon}{2} + \frac{\epsilon}{8} + 2\sum_{m=1}^{\infty}\frac{\epsilon}{2^{m+3}} </mrow>
+                <mrow> \amp =\frac{\epsilon}{2} + \frac{\epsilon}{8} + \frac{\epsilon}{4} &lt; \epsilon. </mrow>
+            </md>
+        Hence <m>|\mathbf{R}\setminus D| &lt; \epsilon</m>.
+        </p>
+
+        <p>
+            Since <m>D</m> is a Borel set, we can approximate it from below by closed sets. This means there exists a closed set <m>F</m> such that <m>F \subseteq D</m> and <m>|D \setminus F| &lt; \epsilon - |\mathbf{R} \setminus D|</m>.
+        </p>
+
+        <p>
+            Hence
+            <md>
+                |\mathbf{R} \setminus F| = |(\mathbf{R} \setminus D) \cup (D \setminus F)| \leq |\mathbf{R}\setminus D| + |D \setminus F| = \epsilon.
+            </md>
+            
+        </p>
+
+        <p>
+            Thus <m>F</m> is a closed set with <m>|\mathbf{R} \setminus F| &lt; \epsilon</m>. Moreover, since a continuous function is still continuous when restricted to a smaller set, <m>g|_F</m> is continuous on <m>F</m>, which completes the proof.
+        </p>
+
+    </proof>
+
+    <p>
+        There is another version of Luzin's Theorem which is sometimes more useful.
+    </p>
+
+    <theorem xml:id="thm-luzin-2">
+        <title>Luzin's Theorem, Second Version</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>E \subseteq \mathbf{R}</m> and <m>g: E \to \mathbf{R}</m> is a Borel measurable function. Then for every <m>\epsilon &gt; 0</m> there exists a closed set <m>F \subseteq E</m> and a continuous function <m>h: \mathbf{R} \to \mathbf{R}</m> such that <m>|E \setminus F| &lt; \epsilon</m> and <m>h|_F = g|_F</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        See the textbook for the proof
+    </p>
+
+    
+    
+    
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Lebesgue-Measurable-Functions">
+    <title>Lebesgue Measurable Functions</title>
+
+    <definition xml:id="def-Lebesgue-measurable-function">
+        <title>Lebesgue Measurable Function</title>
+        
+        
+        <statement>
+            <p>
+                 A function <m>f: A \to \mathbf{R}</m> is called <term>Lebesgue measurable</term> if <m>f^{-1}(B)</m> is a Lebesgue measurable set for every Borel set <m>B</m> in <m>\mathbf{R}</m>. 
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Recall that a Lebesgue measurable set differs from a Borel set by a set with outer measure <m>0</m>. Likewise we expect that every Lebesgue measurable function is nearly a Borel measurable function.
+    </p>
+
+    <theorem xml:id="thm-lebesgue-meas-funct">
+        <title>Every Lebesgue Measurable Function is Almost Borel Measurable</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>f: \mathbf{R} \to \mathbf{R}</m> is a Lebesgue measurable function. Then there exists a Borel measurable function <m>g: \mathbf{R} \to \mathbf{R}</m> such that 
+                <md>
+                    |\{x \in \mathbf{R}: g(x) \neq f(x)\}| = 0.
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            There exists a sequence <m>f_1, f_2, \ldots</m> of Lebesgue measurable simple functions that converges pointwise to <m>f</m>. This means that for each <m>k \in \mathbf{N}</m>, there exists <m>c_1, \ldots, c_n \in \mathbf{R}</m> and disjoint Lebesgue measurable sets <m>A_1, \ldots A_n</m> such that
+            <md>
+                f_k = c_1 \chi_{A_1} + c_2 \chi_{A_2} + \ldots c_n \chi_{A_n}.
+            </md>
+             
+        </p>
+
+        <p>
+            We now approximate these Lebesgue measurable sets by Borel sets. For each <m>j \in \{1, \ldots, n\}</m> there exists a Borel set <m>B_j</m> such that <m>|A_j \setminus B_j| = 0</m>. Let
+            <md>
+                g_k = c_1 \chi_{B_1} + c_2 \chi_{B_2} + \ldots c_n \chi_{B_n}.
+            </md>
+            Then <m>g_k</m> is a Borel measurable function and <m>|\{x \in \mathbf{R}: g_k(x) \neq f_k(x)\}| = 0</m>.
+        </p>
+
+        <p>
+            We will show that the sequence <m>\{g_k\}</m> converges to the Borel measurable function that we want. If <m>x \notin \displaystyle \bigcup_{k=1}^{\infty} \{x \in \mathbf{R}: g_k(x) \neq f_k(x)\}</m>, then <m>g_k(x) = f_k(x)</m> for all <m>k \in \mathbf{N}</m> and hence <m>\lim_{k \to \infty} g_k(x) = f(x)</m>. 
+        </p>
+
+        <p>
+            Let <m>\displaystyle E = \{x \in \mathbf{R}: \lim_{k\to \infty} g_k(x) \text{ exists in } \mathbf{R}\}</m>. It follows from an exercise in the book (#14 b in Section 2B) that <m>E</m> is a Borel subset of <m>\mathbf{R}</m>. Also,
+            <md>
+                \mathbf{R} \setminus E \subseteq \bigcup_{k=1}^{\infty} \{x\in \mathbf{R}: g_k(x) \neq f_k(x)\}.
+            </md>
+            
+        </p>
+
+        <p>
+           Since <m>\mathbf{R} \setminus E</m> is contained in a countable union of sets with measure <m>0</m>, it follows that <m>|\mathbf{R} \setminus E| = 0</m>. 
+        </p>
+
+        <p>
+           Let <m>g(x) = \lim_{k\to \infty} (\chi_E g_k)(x)</m>. If <m>x \in E</m>, then the limit exists because of how we defined <m>E</m>, and if <m>x\notin E</m>, then <m>\chi_E = 0</m> and the limit is <m>0</m> and hence exists. So <m>g(x)</m> is well defined. Since the product of Borel measurable functions is a Borel measurable function it follows that for each <m>k \in \mathbf{N}</m>, <m>\chi_E g_k</m> is a Borel measurable function. Since the pointwise limit of a sequence of Borel measurable functions is Borel measurable, it follows that <m>g</m> is a Borel measurable function.
+        </p>
+
+        <p>
+            Finally,
+            <md>
+                \{x\in \mathbf{R}: g(x) \neq f(x) \} \subseteq \bigcup_{k=1}^{\infty} \{x\in \mathbf{R}: g_k(x) \neq f_k(x) \}.
+            </md>
+            Thus <m>\{x\in \mathbf{R}: g(x) \neq f(x) \}</m> is contained in a countable union of sets with measure <m>0</m> and thus <m>|\{x\in \mathbf{R}: g(x) \neq f(x) \}| = 0</m>. Thus <m>g</m> is a Borel measurable function with <m>|\{x\in \mathbf{R}: g(x) \neq f(x) \}| = 0</m>, which completes the proof.
+        </p>
+
+    </proof>
+    
+    
   </subsection>
 
 
