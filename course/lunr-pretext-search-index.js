@@ -964,6 +964,141 @@ var ptx_lunr_docs = [
   "body": " Let be a non-measurable subset of and let . Then by monotonicity. Hence is a Lebesgue measurable set because every set with measure is Lebesgue measurable. Since , which is not a measurable set. Thus is a Lebesgue measurable set whose image under is not Lebesgue measurable.  "
 },
 {
+  "id": "notes-week-06",
+  "level": "1",
+  "url": "notes-week-06.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 6: Convergence of Measurable Functions (2E)",
+  "body": " Week 6: Convergence of Measurable Functions (2E)   Littlewood's Three Principles  Recall the definitions of pointwise and uniform convergence.   Pointwise and Uniform Convergence   Suppose is a set, are functions from to and is a function from to .    The sequence converges pointwise on to if for each . In other words, converges pointwise on to if for each and every there exists such that for all integers .    The sequence converges uniformly on to if for every there exists such that for all integers and all .      Example: Let on . Then converges pointwise to However, does not converge uniformly on .  The previous example shows that the pointwise limit of a sequence of continuous functions need not be continuous; however, the uniform limit of a sequence of continuous functions will always be continuous.   Uniform Limit of a Sequence of Continuous Function is Continuous   Suppose and is a sequence of functions from to . Suppose and is continuous at for each . Then is continuous at .    The following propositions are clearly false.    Every measurable set is a finite union of intervals.    Every measurable function is continuous.    Every pointwise convergent sequence is uniformly convergent.    However, it only takes a slight modification to change them into true statements. These are called Littlewood's Three Principles . The following are true statements.    Every measureable set is nearly a finite union of intervals.    Every measurable function is nearly continuous.    Every pointwise convergent sequence is nearly uniformly convergent.    Here nearly means that the statement holds outside a set with arbitrarily small measure.    Egorov's Theorem  We essentially proved (a) in our theorem of equivalences of being a Lebesgue measurable set. Next we will prove (c).   Egorov's Theorem   Suppose is a measure space with . Suppose is a sequence of -measurable functions from to that converges pointwise on to a function . Then for every there exists a set such that and converges uniformly to on .    Example: Consider the sequence , which is a sequence of Lebesgue measurable functions from to which converges pointwise to   Given , let . Then and converges uniformly to on .   Suppose and temporarily fix . Because converges pointwise to , we have that   For let   Because each is an -measurable function is an -measurable function. Hence each is an -measurable function and .  Since is an increasing sequence of sets and it follows that .  Thus there exists such that .  Now let . Then   To complete the proof, we need to show that the sequence converges to uniformly on . Suppose and let be such that . Then because we have that for all and . Hence converges uniformly to on .     Approximation by Simple Functions  The simplest function is a constant function, since it only attains a single value. The next simplest are functions that only attain a finite number of values.   Simple Function   A function is called simple if it takes on only a finite number of values.    Example: Dirichlet's function is a simple function since it only takes on 2 values.  Suppose is a measurable space, is a simple function and are the distinct nonzero values of . Then where . This function is an -measurable function if and only if all .   Approximation by Simple Functions   Suppose is a measurable space and is -measurable. Then there exists a sequence of functions from to such that   Each is a simple -measurable function.     for all and .     for every .     converges uniformly to if is bounded.        Define by   In other words, we divide into equally spaced subintervals. If we define to be the left endpoint of the subinterval it's in and if we define to be the right endpoint of the subintervals it's in. If then we define .  For each , only attains a finite number of values, so it is a simple function. Moreover, because is an -measurable function .  Thus for each  is a Borel set and thus is also an -measurable function, proving (a). Also (b) holds because of how we define . For example if and is in and also in , then .  It follows from how we defined that for all such that . Hence for each , . Thus (c) is proved.  Finally if is bounded then there exists some such that for all  and thus the previous limit gives that converges uniformly to , proving (d).     Luzin's Theorem  Now we will prove the second of Littlewood's Three Principles.   Luzin's Theorem   Suppose is a Borel Measurable function. Then for every there exists a closed set such that and is a continuous function on .    Note that Luzin's Theorem does not say that is continuous on , only that is continuous on . For example, Dirichlet's function is nowhere continuous on . Let and let be an open cover of with . Let . Then is a closed set and . Since on , is a continuous function on .   We will build up the proof through a series of special cases. First consider the case that is a simple function. Recall that this means that can be written as where are distinct nonzero real numbers and are disjoint Borel sets.  Suppose . Then for each there exists a closed set and an open set such that   Because , we have that for each . Now let   Since is a finite union of closed sets, is closed. Moverover, and hence . Thus it remains to show that is a continuous function on .  Because it follows that on . Thus is continuous on for all . In addition, since it follows that on this set, and hence is continuous here as well. Thus is continuous on and the theorem is proven for simple functions.  Now suppose that is an arbitrary Borel function. Then there is a sequence of simple Borel measurable functions that converges to . Suppose . Then by the special case we just proved, for each there exists a closed set such that and is continuous on .  Let Then is a closed set and is continuous on for all . Note that Hence   For each the sequence converges pointwise on to . Thus by Egorov's Theorem for each there is a Borel set such that converges uniformly to and   Hence converges uniformly to on for each . Since each is continuous it follows that is continuous on for each . Thus is continuous, where   Now Hence Hence .  Since is a Borel set, we can approximate it from below by closed sets. This means there exists a closed set such that and .  Hence   Thus is a closed set with . Moreover, since a continuous function is still continuous when restricted to a smaller set, is continuous on , which completes the proof.   There is another version of Luzin's Theorem which is sometimes more useful.   Luzin's Theorem, Second Version   Suppose and is a Borel measurable function. Then for every there exists a closed set and a continuous function such that and .    See the textbook for the proof    Lebesgue Measurable Functions   Lebesgue Measurable Function   A function is called Lebesgue measurable if is a Lebesgue measurable set for every Borel set in .    Recall that a Lebesgue measurable set differs from a Borel set by a set with outer measure . Likewise we expect that every Lebesgue measurable function is nearly a Borel measurable function.   Every Lebesgue Measurable Function is Almost Borel Measurable   Suppose is a Lebesgue measurable function. Then there exists a Borel measurable function such that      There exists a sequence of Lebesgue measurable simple functions that converges pointwise to . This means that for each , there exists and disjoint Lebesgue measurable sets such that   We now approximate these Lebesgue measurable sets by Borel sets. For each there exists a Borel set such that . Let Then is a Borel measurable function and .  We will show that the sequence converges to the Borel measurable function that we want. If , then for all and hence .  Let . It follows from an exercise in the book (#14 b in Section 2B) that is a Borel subset of . Also,   Since is contained in a countable union of sets with measure , it follows that .  Let . If , then the limit exists because of how we defined , and if , then and the limit is and hence exists. So is well defined. Since the product of Borel measurable functions is a Borel measurable function it follows that for each , is a Borel measurable function. Since the pointwise limit of a sequence of Borel measurable functions is Borel measurable, it follows that is a Borel measurable function.  Finally, Thus is contained in a countable union of sets with measure and thus . Thus is a Borel measurable function with , which completes the proof.    "
+},
+{
+  "id": "def-pointwise-convergence",
+  "level": "2",
+  "url": "notes-week-06.html#def-pointwise-convergence",
+  "type": "Definition",
+  "number": "60",
+  "title": "Pointwise and Uniform Convergence.",
+  "body": " Pointwise and Uniform Convergence   Suppose is a set, are functions from to and is a function from to .    The sequence converges pointwise on to if for each . In other words, converges pointwise on to if for each and every there exists such that for all integers .    The sequence converges uniformly on to if for every there exists such that for all integers and all .     "
+},
+{
+  "id": "thm-unfiform-limit-continuous",
+  "level": "2",
+  "url": "notes-week-06.html#thm-unfiform-limit-continuous",
+  "type": "Theorem",
+  "number": "61",
+  "title": "Uniform Limit of a Sequence of Continuous Function is Continuous.",
+  "body": " Uniform Limit of a Sequence of Continuous Function is Continuous   Suppose and is a sequence of functions from to . Suppose and is continuous at for each . Then is continuous at .   "
+},
+{
+  "id": "subsec-Littlewood-9",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Littlewood-9",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Littlewood's Three Principles "
+},
+{
+  "id": "thm-Egorov",
+  "level": "2",
+  "url": "notes-week-06.html#thm-Egorov",
+  "type": "Theorem",
+  "number": "62",
+  "title": "Egorov’s Theorem.",
+  "body": " Egorov's Theorem   Suppose is a measure space with . Suppose is a sequence of -measurable functions from to that converges pointwise on to a function . Then for every there exists a set such that and converges uniformly to on .   "
+},
+{
+  "id": "subsec-Egorov-6",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Egorov-6",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose and temporarily fix . Because converges pointwise to , we have that   For let   Because each is an -measurable function is an -measurable function. Hence each is an -measurable function and .  Since is an increasing sequence of sets and it follows that .  Thus there exists such that .  Now let . Then   To complete the proof, we need to show that the sequence converges to uniformly on . Suppose and let be such that . Then because we have that for all and . Hence converges uniformly to on .  "
+},
+{
+  "id": "def-simple-function",
+  "level": "2",
+  "url": "notes-week-06.html#def-simple-function",
+  "type": "Definition",
+  "number": "63",
+  "title": "Simple Function.",
+  "body": " Simple Function   A function is called simple if it takes on only a finite number of values.   "
+},
+{
+  "id": "thm-approximation-simple-functions",
+  "level": "2",
+  "url": "notes-week-06.html#thm-approximation-simple-functions",
+  "type": "Theorem",
+  "number": "64",
+  "title": "Approximation by Simple Functions.",
+  "body": " Approximation by Simple Functions   Suppose is a measurable space and is -measurable. Then there exists a sequence of functions from to such that   Each is a simple -measurable function.     for all and .     for every .     converges uniformly to if is bounded.      "
+},
+{
+  "id": "subsec-simple-functions-7",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-simple-functions-7",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Define by   In other words, we divide into equally spaced subintervals. If we define to be the left endpoint of the subinterval it's in and if we define to be the right endpoint of the subintervals it's in. If then we define .  For each , only attains a finite number of values, so it is a simple function. Moreover, because is an -measurable function .  Thus for each  is a Borel set and thus is also an -measurable function, proving (a). Also (b) holds because of how we define . For example if and is in and also in , then .  It follows from how we defined that for all such that . Hence for each , . Thus (c) is proved.  Finally if is bounded then there exists some such that for all  and thus the previous limit gives that converges uniformly to , proving (d).  "
+},
+{
+  "id": "thm-luzin",
+  "level": "2",
+  "url": "notes-week-06.html#thm-luzin",
+  "type": "Theorem",
+  "number": "65",
+  "title": "Luzin’s Theorem.",
+  "body": " Luzin's Theorem   Suppose is a Borel Measurable function. Then for every there exists a closed set such that and is a continuous function on .   "
+},
+{
+  "id": "subsec-Luzin-5",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Luzin-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " We will build up the proof through a series of special cases. First consider the case that is a simple function. Recall that this means that can be written as where are distinct nonzero real numbers and are disjoint Borel sets.  Suppose . Then for each there exists a closed set and an open set such that   Because , we have that for each . Now let   Since is a finite union of closed sets, is closed. Moverover, and hence . Thus it remains to show that is a continuous function on .  Because it follows that on . Thus is continuous on for all . In addition, since it follows that on this set, and hence is continuous here as well. Thus is continuous on and the theorem is proven for simple functions.  Now suppose that is an arbitrary Borel function. Then there is a sequence of simple Borel measurable functions that converges to . Suppose . Then by the special case we just proved, for each there exists a closed set such that and is continuous on .  Let Then is a closed set and is continuous on for all . Note that Hence   For each the sequence converges pointwise on to . Thus by Egorov's Theorem for each there is a Borel set such that converges uniformly to and   Hence converges uniformly to on for each . Since each is continuous it follows that is continuous on for each . Thus is continuous, where   Now Hence Hence .  Since is a Borel set, we can approximate it from below by closed sets. This means there exists a closed set such that and .  Hence   Thus is a closed set with . Moreover, since a continuous function is still continuous when restricted to a smaller set, is continuous on , which completes the proof.  "
+},
+{
+  "id": "thm-luzin-2",
+  "level": "2",
+  "url": "notes-week-06.html#thm-luzin-2",
+  "type": "Theorem",
+  "number": "66",
+  "title": "Luzin’s Theorem, Second Version.",
+  "body": " Luzin's Theorem, Second Version   Suppose and is a Borel measurable function. Then for every there exists a closed set and a continuous function such that and .   "
+},
+{
+  "id": "def-Lebesgue-measurable-function",
+  "level": "2",
+  "url": "notes-week-06.html#def-Lebesgue-measurable-function",
+  "type": "Definition",
+  "number": "67",
+  "title": "Lebesgue Measurable Function.",
+  "body": " Lebesgue Measurable Function   A function is called Lebesgue measurable if is a Lebesgue measurable set for every Borel set in .   "
+},
+{
+  "id": "thm-lebesgue-meas-funct",
+  "level": "2",
+  "url": "notes-week-06.html#thm-lebesgue-meas-funct",
+  "type": "Theorem",
+  "number": "68",
+  "title": "Every Lebesgue Measurable Function is Almost Borel Measurable.",
+  "body": " Every Lebesgue Measurable Function is Almost Borel Measurable   Suppose is a Lebesgue measurable function. Then there exists a Borel measurable function such that    "
+},
+{
+  "id": "subsec-Lebesgue-Measurable-Functions-5",
+  "level": "2",
+  "url": "notes-week-06.html#subsec-Lebesgue-Measurable-Functions-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " There exists a sequence of Lebesgue measurable simple functions that converges pointwise to . This means that for each , there exists and disjoint Lebesgue measurable sets such that   We now approximate these Lebesgue measurable sets by Borel sets. For each there exists a Borel set such that . Let Then is a Borel measurable function and .  We will show that the sequence converges to the Borel measurable function that we want. If , then for all and hence .  Let . It follows from an exercise in the book (#14 b in Section 2B) that is a Borel subset of . Also,   Since is contained in a countable union of sets with measure , it follows that .  Let . If , then the limit exists because of how we defined , and if , then and the limit is and hence exists. So is well defined. Since the product of Borel measurable functions is a Borel measurable function it follows that for each , is a Borel measurable function. Since the pointwise limit of a sequence of Borel measurable functions is Borel measurable, it follows that is a Borel measurable function.  Finally, Thus is contained in a countable union of sets with measure and thus . Thus is a Borel measurable function with , which completes the proof.  "
+},
+{
   "id": "homework-2",
   "level": "1",
   "url": "homework-2.html",
@@ -1052,6 +1187,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Suppose that and . Let . Show that .   "
+},
+{
+  "id": "homework-4",
+  "level": "1",
+  "url": "homework-4.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 3 (Due September 10)",
+  "body": " Homework 3 (Due September 10)    Instructions: Complete all the exercises below and submit your work by the due date.      Prove that if and then and .      Suppose is a set and . Show that the collection is a -algebra on .      Show that is a -algebra on .      Suppose that is the smallest -algebra on containing . Show that is the collection of Borel subsets of .      Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to both and . Is a sigma algebra? Provide a proof or a counterexample to support your answer.     "
+},
+{
+  "id": "homework-4-3-1",
+  "level": "2",
+  "url": "homework-4.html#homework-4-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Prove that if and then and .   "
+},
+{
+  "id": "homework-4-3-2",
+  "level": "2",
+  "url": "homework-4.html#homework-4-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Suppose is a set and . Show that the collection is a -algebra on .   "
+},
+{
+  "id": "homework-4-3-3",
+  "level": "2",
+  "url": "homework-4.html#homework-4-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Show that is a -algebra on .   "
+},
+{
+  "id": "homework-4-3-4",
+  "level": "2",
+  "url": "homework-4.html#homework-4-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Suppose that is the smallest -algebra on containing . Show that is the collection of Borel subsets of .   "
+},
+{
+  "id": "homework-4-3-5",
+  "level": "2",
+  "url": "homework-4.html#homework-4-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to both and . Is a sigma algebra? Provide a proof or a counterexample to support your answer.   "
 }
 ]
 
