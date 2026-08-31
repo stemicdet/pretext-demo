@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 3 (Due September 10)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+          Prove that if $a,b \in \mathbf{R}$ and $a<b$ then $|(a,b]| = b-a$ and $|[a,b)| = b-a$.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+            Let A = $\{a_1, a_2, \ldots\}$ be a countable subset of $\mathbf{R}$. Find an open covering of $A$ whose total length is less than $1$.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Show that $S=\left\{\bigcup_{n\in K} (n, n+1): K \subseteq \mathbf{Z}\right\}$ is a $\sigma$-algebra on $\mathbf{R}$.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose that $S$ is the smallest $\sigma$-algebra on $\mathbf{R}$ containing $\{(r,s]: r,s \in \mathbf{Q}\}$. Show that $S$ is the collection of Borel subsets of $\mathbf{R}$.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose $X$ is a set and $S_1$ and $S_2$ are $\sigma$-algebras on $X$. Let $S = \{E \subseteq X: E \in S_1 \text{ and } E \in S_2\}$; that is, $S$ is the collection of subsets of $X$ that belong to both $S_1$ and $S_2$. Is $S$ a sigma algebra? Provide a proof or a counterexample to support your answer.
+        </p>
+
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
