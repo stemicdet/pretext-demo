@@ -1195,7 +1195,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet",
   "number": "",
   "title": "Homework 3 (Due September 10)",
-  "body": " Homework 3 (Due September 10)    Instructions: Complete all the exercises below and submit your work by the due date.      Prove that if and then and .      Suppose is a set and . Show that the collection is a -algebra on .      Show that is a -algebra on .      Suppose that is the smallest -algebra on containing . Show that is the collection of Borel subsets of .      Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to both and . Is a sigma algebra? Provide a proof or a counterexample to support your answer.     "
+  "body": " Homework 3 (Due September 10)    Instructions: Complete all the exercises below and submit your work by the due date.      Prove that if and then and .      Suppose is a set and . Show that the collection is a -algebra on .      Show that is a -algebra on .      Suppose that is the smallest -algebra on containing . Show that is the collection of Borel subsets of .      Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to either or . Is a sigma algebra? Provide a proof or a counterexample to support your answer.     "
 },
 {
   "id": "homework-4-3-1",
@@ -1240,7 +1240,7 @@ var ptx_lunr_docs = [
   "type": "Worksheet Exercise",
   "number": "5",
   "title": "",
-  "body": "  Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to both and . Is a sigma algebra? Provide a proof or a counterexample to support your answer.   "
+  "body": "  Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to either or . Is a sigma algebra? Provide a proof or a counterexample to support your answer.   "
 }
 ]
 
