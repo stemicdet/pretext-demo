@@ -46,7 +46,7 @@
     <exercise>
       <statement>
         <p>
-          Suppose <m>X</m> is a set and <m>S_1</m> and <m>S_2</m> are <m>\sigma</m>-algebras on <m>X</m>. Let <m>S = \{E \subseteq X: E \in S_1 \text{ or } E \in S_2\}</m>; that is, <m>S</m> is the collection of subsets of <m>X</m> that belong to either <m>S_1</m> or <m>S_2</m>. Is <m>S</m> a sigma algebra? Provide a proof or a counterexample to support your answer.
+          Suppose <m>X</m> is a set and <m>S_1</m> and <m>S_2</m> are <m>\sigma</m>-algebras on <m>X</m>. Let <m>S = \{E \subseteq X: E \in S_1 \text{ or } E \in S_2\}</m>; that is, <m>S</m> is the collection of subsets of <m>X</m> that belong to either <m>S_1</m> or <m>S_2</m>. Is <m>S</m> a <m>\sigma</m>-algebra? Provide a proof or a counterexample to support your answer.
         </p>
 
       </statement>
