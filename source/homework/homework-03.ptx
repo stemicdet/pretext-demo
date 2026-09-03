@@ -28,7 +28,7 @@
     <exercise>
       <statement>
         <p>
-          Show that <m>S=\left\{\bigcup_{n\in K} (n, n+1): K \subseteq \mathbf{Z}\right\}</m> is a <m>\sigma</m>-algebra on <m>\mathbf{R}</m>.
+          Show that <m>S=\left\{\bigcup_{n\in K} (n, n+1]: K \subseteq \mathbf{Z}\right\}</m> is a <m>\sigma</m>-algebra on <m>\mathbf{R}</m>.
         </p>
 
       </statement>
