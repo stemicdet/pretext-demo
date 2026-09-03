@@ -766,7 +766,7 @@
         </p>
 
         <p>
-            Since we have written <m>f^{-1}(a, \infty)</m> as a countable union of open sets intersected with <m>X</m>, it is a Borel set. Thus <m>f</m> is a Borel measurable function.
+            Since we have written <m>f^{-1}(a, \infty)</m> as an open set intersected with <m>X</m>, it is a Borel set. Thus <m>f</m> is a Borel measurable function.
         </p>
         </proof>
 
