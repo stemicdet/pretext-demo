@@ -380,7 +380,220 @@
         </p>
 
     </proof>
+
+    <theorem xml:id="thm-monotone-convergence">
+        <title>Monotone Convergence Theorem</title>
+        
+        
+        <statement>
+            <p>
+                Let $(X,S,\mu)$ be a measure space and let $\{f_n\}$ be a monotonically increasing sequence of non-negative functions. If there is a finite $A$ for which $\int_E f_n d\mu &lt; A$ for all $n$, then $f_n$ converges to a finite-valued function $f$ almost everywhere, $f$ is integrable, and 
+                <md>
+                    \int_E f d\mu = \lim_{n\to \infty} \int_E f_n d\mu.
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            We will first prove that $\{f_n\}$ converges almost everywhere, then we will show that $\int_E f d\mu \geq \lim_{n\to \infty} \int_E f_n d\mu$ and lastly we will show that $\int_E f d\mu \leq \lim_{n\to \infty} \int_E f_n d\mu$
+        </p>
+
+        <p>
+            From the monotone convergent Theorem we know that for a given $x$, $\{f_n(x)\}$ converges provided that the sequence is bounded. Thus we want to show that the set of $x$ where $\{f_n(x)\}$ is unbounded has measure zero. We know that each function $f_n$ is the limit of an increasing sequence of simple functions $\phi_{n,k}$. Define a new sequence of simple functions by
+            <md>
+                \phi_n(x) = \sup_{1\leq j,k \leq n} \phi_{j,k}(x).
+            </md>
+             
+        </p>
+
+        <p>
+            Since
+            <md>
+                \phi_n(x) = \sup_{1\leq j,k \leq n} \phi_{j,k}(x) \geq \sup_{1\leq j,k \leq n-1} \phi_{j,k}(x) = \phi_{n-1}(x)
+            </md>
+            $\{\phi_n\}$ is an increasing sequence.
+        </p>
+
+        <p>
+            Since $\phi_n \leq f_n$, the integrals $\int_E \phi_n d\mu$ are bounded. If $x$ is a point for which $\{f_n(x)\}$ is unbounded, then for any $M$, we can find an $n$ for which $f_n(x) &gt; M+1$. Since $\phi_{n,k}$ converges to $f_n$, we can find a $k$ for which $\phi_{n,k} &gt; M$.
+        </p>
+
+        <p>
+            Hence $\phi_{\max\{n,k\}}(x) > M$ and thus the sequence $\{\phi_{n}(x)\}$ is also unbounded.
+        </p>
+
+        <p>
+            By the Monotone Convergence Theorem for Simple Functions $U$, the set of $x$ for which $\{\phi_n(x)\}$ is unbounded has measure zero. Thus we are free to set $f(x) = 0$ on $U$. We now have that $f_n$ is bounded almost everywhere and thus converges to a finite valued function $f$ almost everywhere, which is the first part of the proof.
+        </p>
+
+        <p>
+            For the next part suppose that $g$ and $h$ are non-negative measurable functions with $g(x) \leq h(x)$ for all $x \in E$. Then the set of simple functions that are less than or equal to $g$ is a subset of the set of simple functions that are less than or equal to $h$ and hence
+            <md>
+                \int_E g d\mu = \sup_{\phi \leq g} \int_E \phi d\mu \leq \sup_{\phi \leq h} \int_E \phi d\mu =  \int_E h d\mu
+            </md>
+            
+        </p>
+
+        <p>
+           If $g(x) \leq h(x)$ except possibly for $x\in U$ where $\mu(U) = 0$, then
+           <md>
+            \int_E g d\mu =  \int_{E\setminus U} g d\mu \leq  \int_{E\setminus U} h d\mu =  \int_E h d\mu
+           </md>
+            
+        </p>
+
+        <p>
+            We have shown that functional inequalities that hold almost everywhere imply integral inequalities that hold on all $E$. Since $f_n(x) \leq f(x)$ almost everywhere, it follows that for all $n$
+            <md>
+                \int_E f_n d\mu \leq \int_E f d\mu.
+            </md>
+            and therefore,
+            <md>
+                \lim_{n\to \infty} \int_E f_n d\mu \leq \int_E f d\mu.
+            </md>
+            
+        </p>
+
+        <p>
+            To finish the proof of the Monotone Convergence Theorem we need to show the reverse inequality holds as well. To show the reverse inequality let $\phi$ be a non-negative simple function that is less than or equal to $f$. That is,
+            <md>
+                \phi = \sum_{k=1}^m c_k \chi_{E_k}  \leq f
+            </md>
+            where the $E_k$ are disjoint sets with $\displaystyle \bigcup_{k=1}^m E_k = E$.
+        </p>
+
+        <p>
+            Choose $\alpha$ with $0 &lt;\alpha &lt; 1$ and define the sets
+            <md>
+                A_n = \{x\in E: f_n(x) \geq \alpha \phi(x)\}
+            </md>
+            
+        </p>
+
+        <p>
+            Since $\{f_n\}$ is an increasing sequence it follows that $A_n$ is an increasing sequence of sets with $\displaystyle \bigcup_{n=1}^{\infty} A_n = E$. Hence
+            <md>
+                \lim_{n\to \infty} \mu(E_k \cap A_n) = \mu(E_k \cap E).
+            </md>
+            
+        </p>
+
+        <p>
+            Now choose $\epsilon &gt; 0$. Then for each $E_k$, we can find $N_k \in \mathbf{N}$ such that whenever $n \geq N_k$,
+            <md>
+                \mu(E_k \cap A_n) &gt; \left(1-\frac{\epsilon}{\alpha c_k}\right) \mu(E_k \cap E).
+            </md>
+            
+        </p>
+
+        <p>
+            Let $N = \max\{N_1,N_2,\ldots N_m\}$. Then for $n \geq N$,
+            <md>
+                <mrow> \int_E f_n d\mu \amp \geq \int_{A_n} f_n d\mu </mrow>
+                <mrow> \amp \geq \alpha \int_{A_n} \phi_n d\mu</mrow>
+                <mrow> \amp = \alpha \sum_{k=1}^m c_k \mu(E_k \cap A_n)</mrow>
+                <mrow> \amp &lt; \alpha \sum_{k=1}^m c_k \left(1- \frac{\epsilon}{\alpha c_k} \right) \mu(E_k \cap E).</mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            Hence,
+            <md>
+                <mrow> \int_E f_n d\mu \amp &lt; \alpha \sum_{k=1}^m c_k \mu(E_k \cap E) - \epsilon \sum_{k=1}^m \mu(E_k \cap E)</mrow>
+                <mrow> \amp = \alpha \int_E \phi d\mu - \epsilon \mu(E). </mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            Since this is true for every $\epsilon &gt; 0$ and $\alpha$ with $0 &lt; \alpha &lt; 1$, it follows that
+            <md>
+                \int_E f_n d\mu \geq \int_E \phi d\mu.
+            </md>
+            
+        </p>
+
+        <p>
+            Thus every simple function $\phi \leq f$ has an integral bounded above by $\int_E f_n d\mu$ for all $n$ sufficiently large. Hence
+            <md>
+                \lim_{n\to \infty} \int_E f_n d\mu \geq \sup_{\phi \leq f} \int_E \phi d\mu = \int_E f d\mu
+            </md>
+            and thus
+            <md>
+                \lim_{n\to \infty} \int_E f_n d\mu = \int_E f d\mu
+            </md>
+            which completes the proof.
+        </p>
+
+    </proof>
+
+    <theorem xml:id="thm-homogenous-integration">
+        <title>Integration is Homogeneous</title>
+        
+        
+        <statement>
+            <p>
+                Suppose $(X,S,\mu)$ is a measure space and $f:X \to [-\infty,\infty]$ is a non-negative function. If $c &gt; 0 \in \mathbf{R}$, then 
+                <md>
+                    \int c f d\mu = c \int f d\mu.
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
     
+    <proof>
+        <p>
+            Note that $g$ is a simple function with $g \leq f$ if and only if $cg$ is a simple function with $cg \leq cf$. Hence
+            <md>
+                \int cf d\mu = \sup_{cg \leq cf} \int cg d\mu = \sup_{g\leq f} c \int g d\mu = c \int f d\mu.
+            </md>
+            
+        </p>
+    </proof>
+    
+    
+
+  </subsection>
+
+  <subsection xml:id="subsec-Integration-of-Real-Valued-Functions">
+    <title>Integration of Real Valued Functions</title>
+    
+
+    <p>
+        We first note that every real valued function can be written as a difference of non-negative functions.
+    </p>
+
+    <definition xml:id="def-f-plus">
+        <title><m>f^+</m> and <m>f^-</m></title>
+        
+        
+        <statement>
+            <p>
+               Suppose $f:X \to [-\infty,\infty]$ is a function. Define functions $f^+$ and $f^-$ by
+               <md>
+                f^+ = \begin{cases} 
+      \hfill  f(x) \amp \text{ if $f(x)\geq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $f(x) &lt;0$} \\
+  \end{cases} \quad ,f^- = \begin{cases} 
+      \hfill  0 \amp \text{ if $f(x)\geq 0$} \\
+      \hfill  -f(x) \hfill \amp \text{ if $f(x) &lt; 0$} \\
+  \end{cases}
+               </md>
+                
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Note that $f = f^+ - f^-$ and $|f| = f^+ + f^-$.
+    </p>
+
+
 
   </subsection>
 
