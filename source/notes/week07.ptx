@@ -89,7 +89,7 @@
         <statement>
             <p>
                 Let $(X,S,\mu)$ be a measure space, $f$ and $g$ be simple functions, $A \in \mathbf{R}$ and $E = E_1 \cup E_2$, where $E_1$ and $E_2$ are disjoint measurable sets. The following properties hold
-                <ol>
+                <ol marker="(a)">
                     <li>
                         <p>
                             <md>
@@ -127,8 +127,260 @@
     <p>
         The last statement is a generalization of the familiar property $ \displaystyle \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx$.
     </p>
-    
 
+    <proof>
+        <p>
+            We start by writing $f$ and $g$ as
+            <md>
+                f = \sum_{k=1}^m c_k \chi_{S_k}, \quad g = \sum_{j=1}^n d_j \chi_{T_j}
+            </md>
+            where the $c_k$'s are distinct, the $d_j$'s are distinct, the $S_k$'s are pairwise disjoint, the $T_j$'s are pairwise disjoint, and $\displaystyle E = \bigcup_{k=1}^m S_k = \bigcup_{j=1}^n T_j$.
+        </p>
+   
+
+    <p>
+        To prove the first proposition, it follows from the definition of the Lebesgue integral that
+        <md>
+            \int_E A f d\mu = \sum_{k=1}^m A c_k \mu(S_k \cap E) = A \sum_{k=1}^m c_k \mu(S_k \cap E) = A \int_E f d\mu.
+        </md>
+        
+    </p>
+
+    <p>
+        To prove the second proposition, note that $f+g$ is a simple function since
+        <md>
+            f+g = \sum_{k=1}^m \sum_{j=1}^n (c_k + d_j) \chi_{S_k \cap T_j}
+        </md>
+        
+    </p>
+
+    <p>
+        Hence
+        <md>
+            <mrow> \int_E f+g d\mu \amp = \sum_{k=1}^m \sum_{j=1}^n (c_k+d_j) \mu(S_k \cap T_j \cap E) </mrow>
+            <mrow> \amp =\sum_{k=1}^m c_k \sum_{j=1}^n \mu(S_k \cap T_j \cap E) +  \sum_{j=1}^n d_j \sum_{k=1}^m \mu(S_k \cap T_j \cap E) </mrow>
+            <mrow> \amp = \sum_{k=1}^m c_k \mu(S_k \cap E) +  \sum_{j=1}^n d_j \mu( T_j \cap E) </mrow>
+            <mrow> \amp = \int_E f d\mu + \int_E g d\mu</mrow>
+        </md>
+        Thus the second proposition is proved.
+    </p>
+
+    <p>
+        To prove the third proposition we will rewrite our functions as 
+        <md>
+            f = \sum_{k=1}^m\sum_{j=1}^n c_k \chi_{S_k\cap T_j}, \quad g = \sum_{k=1}^m \sum_{j=1}^n d_j \chi_{S_k \cap T_j}.
+        </md>
+        Since $f(x) \leq g(x)$ on $E$, it follows that $c_k \leq d_j$ for each pair, $k,j$ for which $S_k \cap T_j \cap E \neq \emptyset$.
+    </p>
+
+    <p>
+        Hence,
+        <md>
+            \int_E f d\mu  = \sum_{k=1}^m \sum_{j=1}^n c_k \mu(S_k \cap T_j \cap E) \leq \sum_{k=1}^m \sum_{j=1}^n d_j \mu(S_k \cap T_j \cap E) = \int_E g d\mu.
+        </md>
+        
+    </p>
+
+    <p>
+        Finally, to prove the last proposition we use the fact that measures are countably additive.
+        <md>
+            <mrow> \int_E f d\mu \amp = \sum_{k=1}^m c_k \mu(S_k \cap E) = \sum_{k=1}^m c_k \left(\mu(S_k \cap E_1)+ \mu(S_k \cap E_2)\right) </mrow>
+            <mrow> \amp = \sum_{k=1}^m c_k \mu(S_k \cap E_1) + \sum_{k=1}^m c_k \mu(S_k \cap E_2) </mrow>
+            <mrow> \amp = \int_{E_1} f d\mu + \int_{E_2} f d\mu. </mrow>
+        </md>
+        
+    </p>
+
+ </proof>
+
+ <p>
+    The Monotone Convergence Theorem (Also called the Beppo Levi Theorem) is one of the key results in the theory of Lebesgue Integration. We first prove it for simple functions.
+ </p>
+    
+<theorem xml:id="thm-monotone-convergence-simple">
+    <title>Monotone Convergence Theorem for Simple Functions</title>
+    
+    
+    <statement>
+        <p>
+            Let $f_n$ be a monotonically increasing sequence of non-negative simple functions. If there is a finite $A$ for which $\displaystyle \int_E f_n d\mu &lt; A$ for all $n$, then $f_n$ converges to a finite valued function $f$ almost everywhere.
+        </p>
+    </statement>
+</theorem>
+
+<definition xml:id="def-almost-everywhere">
+    <title>Almost Everywhere</title>
+    
+    
+    <statement>
+        <p>
+            A property is said to occur <term>almost everywhere</term> if the set where it does not occur has measure zero.
+        </p>
+    </statement>
+</definition>
+
+<p>
+    In probability, an event is said to occur <term>almost surely</term> if it happens with probability $1$. This is the same as saying that the probability that the event does not occur is $0$.
+</p>
+
+<p>
+    Example: Suppose you choose a real number at random. Since the set of rational numbers is a set with measure $0$, the probability that the chosen number is rational is $0$. Thus the event that the chosen number is irrational occurs almost surely.
+</p>
+
+<proof>
+    <p>
+        Recall the Monotone Convergence Theorem which states that a bounded monotonic sequence converges. This means that we can prove that $f_n$ converges almost everywhere by showing that the set of points in $E$ for which $\{f_n(x)\}$ is unbounded is a set of measure zero.
+    </p>
+
+    <p>
+       Choose $\epsilon &gt; 0$ and let  
+       <md>
+         E_n = \left\{x \in E: f_n(x) &gt; \frac{A}{\epsilon}\right\}.
+       </md>
+       
+    </p>
+
+    <p>
+        Then since $f_n$ is non-negative,
+        <md>
+            <mrow> \frac{A}{\epsilon} \mu(E_n) \amp \leq \int_{E_n} f_n d\mu </mrow>
+            <mrow> \amp \leq \int_E f_n d\mu &lt; A. </mrow>
+        </md>
+        
+    </p>
+
+    <p>
+        Hence $\mu(E_n) &lt; \epsilon$. Since $\{f_n\}$ is increasing, we have that $E_1 \subseteq E_2 \subseteq \ldots$.
+    </p>
+
+    <p>
+        Let $U$ denote the set of $x \in E$ for which $\{f_n(x)\}$ is unbounded. Then $U$ is contained in the union of the $E_n$'s. Thus it follows from monotonicity and the theorem about measure of an increasing union that 
+        <md>
+            \mu(U) \leq \mu \left( \bigcup_{n=1} E_n \right) = \lim_{n\to \infty} E_n &lt; \epsilon.
+        </md>
+        Since the above inequality is true for all $\epsilon &gt; 0$, it follows that $\mu(U) = 0$. Hence $\{f_n\}$ is bounded almost everywhere and thus converges to a finite valued function $f$ almost everywhere.
+    </p>
+
+</proof>
+
+  </subsection>
+
+  <subsection xml:id="subsec-Integration-of-Non-negative-Functions">
+    <title>Integration of Non-negative Functions</title>
+
+    <p>
+        We now extend the definition of Lebesgue integration to non-negative functions. The main idea is that every bounded non-negative function can be approximated from below by a sequence of simple functions.
+    </p>
+
+    <definition xml:id="def-integral-non-negative">
+        <title>Lebesgue Integral of Non-negative Measurable Functions</title>
+        
+        
+        <statement>
+            <p>
+                Let $(X,S,\mu)$ be a measure space. Given a non-negative measurable function $f$ and a measurable set $E$, we define 
+                <md>
+                    \int_E f d\mu = \sup_{g \leq f} \int_E g d\mu
+                </md>
+                where the supremum is taken over all simple functions $g$ for which $g(x) \leq f(x)$ for all $x \in E$.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Example: Let $f(x) = x$. We'll evaluate $\displaystyle \int_0^1 f d\mu$ using the definition of Lebesgue integration. Choose $n \in \mathbf{N}$ and divide $[0,1]$ into $n$ equally spaced intervals of width $\frac{1}{n}$. We define a simple function $f_n(x)$ by setting it equal to the left endpoint of each interval. That is,
+        <md>
+            f_n(x) = \begin{cases} 
+      \hfill  0 \amp \text{ if $0 \leq x &lt; \frac{1}{n}$} \\
+      \hfill  \frac{1}{n} \hfill \amp \text{ if $\frac{1}{n} \leq x &lt; \frac{2}{n}$} \\
+      \hfill \amp \vdots \\
+      \hfill  \frac{n-1}{n} \hfill \amp \text{ if $\frac{n-1}{n} \leq x \leq 1$} \\
+  \end{cases}
+        </md>
+         Then $f_n(x)$ is a simple function and $f_n(x) \leq f(x)$ on $[0,1]$.
+    </p>
+
+    <p>
+        It follows that
+        <md>
+            <mrow> \int_0^1 f_n d\mu \amp = 0 \cdot \frac{1}{n} + \frac{1}{n}\cdot \frac{1}{n} + \frac{2}{n} \cdot \frac{1}{n} + \ldots + \frac{n-1}{n} \cdot \frac{1}{n} </mrow>
+            <mrow> \amp = \frac{1}{n^2} \left(1+2+\ldots + (n-1) \right) </mrow>
+            <mrow> \amp = \frac{1}{n^2} \left(\frac{n^2-n}{2} \right) = \frac{1}{2}\left(1-\frac{1}{n}\right) </mrow>
+        </md>
+        
+    </p>
+
+    <p>
+        Taking the supremum over all $n$ gives $\displaystyle \sup_n \int_0^1 f_n d\mu = \frac{1}{2}$.
+    </p>
+
+    <p>
+        In the Lebesgue integral the supremum must be taken over all simple functions $g$ with $g(x) \leq f(x)$, not just the $f_n$'s. However, if $g(x)$ is a simple function with $g(x) \leq f(x)$, then there exists $N \in \mathbf{N}$ such that $g(x) \leq f_N(x)$ and thus by the properties of the integrals of simple functions $\displaystyle \int_0^1 g d\mu \leq \int_0^1 f_N d\mu$. Thus we are justified in only taking the supremum over the $f_n$'s and can conclude that 
+        <md>
+            \int_0^1 f d\mu = \frac{1}{2}.
+        </md>
+        
+    </p>
+
+    <theorem xml:id="thm-integral-over-set-of-measure-0">
+        <title>Integral over a Set of Measure Zero</title>
+        
+        
+        <statement>
+            <p>
+                Let $(X,S,\mu)$ be a measure space. 
+            </p>
+
+            <ol marker="(a)">
+                <li>
+                    <p>
+                        If $f$ is a measurable function and $\mu(E) = 0$, then $\int_E f d\mu = 0$.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                       If $E = E_1 \cup E_2$, where $E_1$ and $E_2$ are disjoint measurable sets, then $\int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu$. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                       If $f = g$ almost everywhere, then $\int_E f d\mu = \int_E g d\mu$ 
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            For part (a) it follows from the definition of the Lebesgue integral for simple functions, that every simple function on $E$ has integral $0$. Thus the supremum over all simple functions is also $0$ and $\int_E f d\mu = 0$.
+        </p>
+
+        <p>
+            For the proof of (b), we showed that for simple functions we have
+            <md>
+                \int_E g d\mu = \int_{E_1} g d\mu + \int_{E_2} g d\mu.
+            </md>
+            Taking the supremum over all simple functions $g$ with $g \leq f$ thus gives that
+            <md>
+                \int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu.
+            </md>
+            
+        </p>
+
+        <p>
+            To prove (c), let $E_1$ denote the subset of $x \in E$ such that $f(x) = g(x)$ and let $E_2 = E - E_1$. Then $\mu(E_2) = 0$ and
+            <md>
+                <mrow> \int_E f d\mu \amp = \int_{E_1} f d\mu + \int_{E_2} f d\mu </mrow>
+                <mrow> \amp = \int_{E_1} g d\mu </mrow>
+                <mrow> \amp = \int_{E_1} g d\mu + \int_{E_2} g d\mu </mrow>
+                <mrow> \amp = \int_E g d\mu. </mrow>
+            </md>
+            
+        </p>
+
+    </proof>
+    
 
   </subsection>
 
