@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-07">
+  <title>Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue's Theory of Integration) </title>
+
+  <subsection xml:id="subsec-Integration-of-Simple-Functions">
+    <title>Integration of Simple Functions</title>
+    
+
+    <p>
+        Now that we have developed the theory of measures, we have a way to assign a length to subsets of $\mathbf{R}$. Thus we have the tools to define integration in the sense of Lebesgue. We will build up the Lebesgue integral in stages. First we define the Lebesgue integral for simple functions, and then we extend this definition to non-negative functions. We can then generalize this to all functions by splitting them up into positive and negative parts. Recall that the main idea of Lebesgue integration is that we are going to partition the range, rather than the domain. It is convenient to first define integration on simple functions, since the range of a simple function is finite.
+    </p>
+
+    <definition xml:id="def-simple-function-integral">
+        <title>Lebesgue Integral of Simple Functions</title>
+        
+        
+        <statement>
+            <p>
+                Suppose $(X,S,\mu)$ is a measure space, $S_1, \ldots, S_n$ are disjoint sets in $S$, and $c_1, \ldots, c_n \in [0, \infty]$. Let 
+                <md>
+                     f = \sum_{k=1}^n c_k \chi_{S_k}. 
+                </md>
+                Then we define the Lebesgue integral of $f$ with respect to the measure $\mu$ over the measurable set $E$ to be
+                <md>
+                    \int_E f d\mu = \sum_{k=1}^n c_k \mu(S_k \cap E)
+                </md>
+                
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        In other words, for each element in the range, we multiply it by the size of the pre-image and take the sum over all elements in the range. 
+    </p>
+
+    <p>
+        Example: Consider the function $f$ on $[0,1]$ defined by
+        <md>
+            f(x) = \begin{cases} 
+      \hfill  3 \amp \text{ if $0 \leq x \leq \frac{1}{4}$} \\
+      \hfill  0 \hfill \amp \text{ if $\frac{1}{4} &lt; x &lt; \frac{1}{2}$} \\
+      \hfill  -2 \hfill \amp \text{ if $\frac{1}{2} \leq x \leq 1$} \\
+  \end{cases}
+        </md>
+        
+    </p>
+
+    <p>
+        $f(x)$ is a simple function because it can be rewritten as
+        <md>
+            f(x) = 3\chi_{[0,\frac{1}{4}]} + (-2) \chi_{[\frac{1}{2}, 1]}
+        </md>
+        
+    </p>
+
+    <p>
+        Let $\mu$ denote Lebesgue measure. It thus follows that
+        <md>
+            <mrow> \int_0^1 f d\mu \amp = 3 \mu\left(\left[0,\frac{1}{4}\right]\right) + (-2) \mu\left(\left[\frac{1}{2}, 1\right]\right) </mrow>
+            <mrow> \amp = 3\cdot \frac{1}{4} -2 \cdot \frac{1}{2} = -\frac{1}{4}. </mrow>
+        </md>
+        
+    </p>
+
+    <p>
+        Thus the Lebesgue integral gives the result that we would expect from Calculus and geometry.
+    </p>
+
+    <p>
+        Recall that Dirichlet's function
+        <md>
+            g(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+  \end{cases}
+        </md>
+        is not Riemann integrable. However, since it is the characteristic function of the rationals, it is Lebesgue integrable and 
+        <md>
+            \int g d\mu = 1 \cdot \mu(\mathbf{Q}) = 0.
+        </md>
+        
+    </p>
+
+    <theorem xml:id="thm-properties-integral-simple-functions">
+        <title>Properties of the Lebesgue Integral for Simple Functions</title>
+        
+        
+        <statement>
+            <p>
+                Let $(X,S,\mu)$ be a measure space, $f$ and $g$ be simple functions, $A \in \mathbf{R}$ and $E = E_1 \cup E_2$, where $E_1$ and $E_2$ are disjoint measurable sets. The following properties hold
+                <ol>
+                    <li>
+                        <p>
+                            <md>
+                                \int_E A f d\mu = A \int_E f d\mu
+                            </md>
+                            
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                \int_E f + g d\mu = \int_E f d\mu + \int_E g d\mu
+                            </md>
+                            
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If $f(x) \leq g(x)$ for all $x \in E$, then $\displaystyle \int_E f d\mu \leq \int_E g d\mu$.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                \int_E f d\mu =  \int_{E_1} f d\mu + \int_{E_2} f d\mu
+                            </md>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        The last statement is a generalization of the familiar property $ \displaystyle \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx$.
+    </p>
+    
+
+
+  </subsection>
+
+
+  </section>
