@@ -8,7 +8,7 @@
     
 
     <p>
-        Now that we have developed the theory of measures, we have a way to assign a length to subsets of $\mathbf{R}$. Thus we have the tools to define integration in the sense of Lebesgue. We will build up the Lebesgue integral in stages. First we define the Lebesgue integral for simple functions, and then we extend this definition to non-negative functions. We can then generalize this to all functions by splitting them up into positive and negative parts. Recall that the main idea of Lebesgue integration is that we are going to partition the range, rather than the domain. It is convenient to first define integration on simple functions, since the range of a simple function is finite.
+        Now that we have developed the theory of measures, we have a way to assign a length to subsets of <m>\mathbf{R}</m>. Thus we have the tools to define integration in the sense of Lebesgue. We will build up the Lebesgue integral in stages. First we define the Lebesgue integral for simple functions, and then we extend this definition to non-negative functions. We can then generalize this to all functions by splitting them up into positive and negative parts. Recall that the main idea of Lebesgue integration is that we are going to partition the range, rather than the domain. It is convenient to first define integration on simple functions, since the range of a simple function is finite.
     </p>
 
     <definition xml:id="def-simple-function-integral">
@@ -17,11 +17,11 @@
         
         <statement>
             <p>
-                Suppose $(X,S,\mu)$ is a measure space, $S_1, \ldots, S_n$ are disjoint sets in $S$, and $c_1, \ldots, c_n \in [0, \infty]$. Let 
+                Suppose <m>(X,S,\mu)</m> is a measure space, <m>S_1, \ldots, S_n</m> are disjoint sets in <m>S</m>, and <m>c_1, \ldots, c_n \in [0, \infty]</m>. Let 
                 <md>
                      f = \sum_{k=1}^n c_k \chi_{S_k}. 
                 </md>
-                Then we define the Lebesgue integral of $f$ with respect to the measure $\mu$ over the measurable set $E$ to be
+                Then we define the Lebesgue integral of <m>f</m> with respect to the measure <m>\mu</m> over the measurable set <m>E</m> to be
                 <md>
                     \int_E f d\mu = \sum_{k=1}^n c_k \mu(S_k \cap E)
                 </md>
@@ -35,7 +35,7 @@
     </p>
 
     <p>
-        Example: Consider the function $f$ on $[0,1]$ defined by
+        Example: Consider the function <m>f</m> on <m>[0,1]</m> defined by
         <md>
             f(x) = \begin{cases} 
       \hfill  3 \amp \text{ if $0 \leq x \leq \frac{1}{4}$} \\
@@ -47,7 +47,7 @@
     </p>
 
     <p>
-        $f(x)$ is a simple function because it can be rewritten as
+        <m>f(x)</m> is a simple function because it can be rewritten as
         <md>
             f(x) = 3\chi_{[0,\frac{1}{4}]} + (-2) \chi_{[\frac{1}{2}, 1]}
         </md>
@@ -55,7 +55,7 @@
     </p>
 
     <p>
-        Let $\mu$ denote Lebesgue measure. It thus follows that
+        Let <m>\mu</m> denote Lebesgue measure. It thus follows that
         <md>
             <mrow> \int_0^1 f d\mu \amp = 3 \mu\left(\left[0,\frac{1}{4}\right]\right) + (-2) \mu\left(\left[\frac{1}{2}, 1\right]\right) </mrow>
             <mrow> \amp = 3\cdot \frac{1}{4} -2 \cdot \frac{1}{2} = -\frac{1}{4}. </mrow>
@@ -88,7 +88,7 @@
         
         <statement>
             <p>
-                Let $(X,S,\mu)$ be a measure space, $f$ and $g$ be simple functions, $A \in \mathbf{R}$ and $E = E_1 \cup E_2$, where $E_1$ and $E_2$ are disjoint measurable sets. The following properties hold
+                Let <m>(X,S,\mu)</m> be a measure space, <m>f</m> and <m>g</m> be simple functions, <m>A \in \mathbf{R}</m> and <m>E = E_1 \cup E_2</m>, where <m>E_1</m> and <m>E_2</m> are disjoint measurable sets. The following properties hold
                 <ol marker="(a)">
                     <li>
                         <p>
@@ -108,7 +108,7 @@
                     </li>
                     <li>
                         <p>
-                            If $f(x) \leq g(x)$ for all $x \in E$, then $\displaystyle \int_E f d\mu \leq \int_E g d\mu$.
+                            If <m>f(x) \leq g(x)</m> for all <m>x \in E</m>, then <m>\displaystyle \int_E f d\mu \leq \int_E g d\mu</m>.
                         </p>
                     </li>
                     <li>
@@ -125,16 +125,16 @@
     </theorem>
 
     <p>
-        The last statement is a generalization of the familiar property $ \displaystyle \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx$.
+        The last statement is a generalization of the familiar property <m> \displaystyle \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx</m>.
     </p>
 
     <proof>
         <p>
-            We start by writing $f$ and $g$ as
+            We start by writing <m>f</m> and <m>g</m> as
             <md>
                 f = \sum_{k=1}^m c_k \chi_{S_k}, \quad g = \sum_{j=1}^n d_j \chi_{T_j}
             </md>
-            where the $c_k$'s are distinct, the $d_j$'s are distinct, the $S_k$'s are pairwise disjoint, the $T_j$'s are pairwise disjoint, and $\displaystyle E = \bigcup_{k=1}^m S_k = \bigcup_{j=1}^n T_j$.
+            where the <m>c_k</m>'s are distinct, the <m>d_j</m>'s are distinct, the <m>S_k</m>'s are pairwise disjoint, the <m>T_j</m>'s are pairwise disjoint, and <m>\displaystyle E = \bigcup_{k=1}^m S_k = \bigcup_{j=1}^n T_j</m>.
         </p>
    
 
@@ -147,7 +147,7 @@
     </p>
 
     <p>
-        To prove the second proposition, note that $f+g$ is a simple function since
+        To prove the second proposition, note that <m>f+g</m> is a simple function since
         <md>
             f+g = \sum_{k=1}^m \sum_{j=1}^n (c_k + d_j) \chi_{S_k \cap T_j}
         </md>
@@ -170,7 +170,7 @@
         <md>
             f = \sum_{k=1}^m\sum_{j=1}^n c_k \chi_{S_k\cap T_j}, \quad g = \sum_{k=1}^m \sum_{j=1}^n d_j \chi_{S_k \cap T_j}.
         </md>
-        Since $f(x) \leq g(x)$ on $E$, it follows that $c_k \leq d_j$ for each pair, $k,j$ for which $S_k \cap T_j \cap E \neq \emptyset$.
+        Since <m>f(x) \leq g(x)</m> on <m>E</m>, it follows that <m>c_k \leq d_j</m> for each pair, <m>k,j</m> for which <m>S_k \cap T_j \cap E \neq \emptyset</m>.
     </p>
 
     <p>
@@ -203,7 +203,7 @@
     
     <statement>
         <p>
-            Let $f_n$ be a monotonically increasing sequence of non-negative simple functions. If there is a finite $A$ for which $\displaystyle \int_E f_n d\mu &lt; A$ for all $n$, then $f_n$ converges to a finite valued function $f$ almost everywhere.
+            Let <m>f_n</m> be a monotonically increasing sequence of non-negative simple functions. If there is a finite <m>A</m> for which <m>\displaystyle \int_E f_n d\mu &lt; A</m> for all <m>n</m>, then <m>f_n</m> converges to a finite valued function <m>f</m> almost everywhere.
         </p>
     </statement>
 </theorem>
@@ -220,20 +220,20 @@
 </definition>
 
 <p>
-    In probability, an event is said to occur <term>almost surely</term> if it happens with probability $1$. This is the same as saying that the probability that the event does not occur is $0$.
+    In probability, an event is said to occur <term>almost surely</term> if it happens with probability <m>1</m>. This is the same as saying that the probability that the event does not occur is <m>0</m>.
 </p>
 
 <p>
-    Example: Suppose you choose a real number at random. Since the set of rational numbers is a set with measure $0$, the probability that the chosen number is rational is $0$. Thus the event that the chosen number is irrational occurs almost surely.
+    Example: Suppose you choose a real number at random. Since the set of rational numbers is a set with measure <m>0</m>, the probability that the chosen number is rational is <m>0</m>. Thus the event that the chosen number is irrational occurs almost surely.
 </p>
 
 <proof>
     <p>
-        Recall the Monotone Convergence Theorem which states that a bounded monotonic sequence converges. This means that we can prove that $f_n$ converges almost everywhere by showing that the set of points in $E$ for which $\{f_n(x)\}$ is unbounded is a set of measure zero.
+        Recall the Monotone Convergence Theorem which states that a bounded monotonic sequence converges. This means that we can prove that <m>f_n</m> converges almost everywhere by showing that the set of points in <m>E</m> for which <m>\{f_n(x)\}</m> is unbounded is a set of measure zero.
     </p>
 
     <p>
-       Choose $\epsilon &gt; 0$ and let  
+       Choose <m>\epsilon &gt; 0</m> and let  
        <md>
          E_n = \left\{x \in E: f_n(x) &gt; \frac{A}{\epsilon}\right\}.
        </md>
@@ -241,7 +241,7 @@
     </p>
 
     <p>
-        Then since $f_n$ is non-negative,
+        Then since <m>f_n</m> is non-negative,
         <md>
             <mrow> \frac{A}{\epsilon} \mu(E_n) \amp \leq \int_{E_n} f_n d\mu </mrow>
             <mrow> \amp \leq \int_E f_n d\mu &lt; A. </mrow>
@@ -250,15 +250,15 @@
     </p>
 
     <p>
-        Hence $\mu(E_n) &lt; \epsilon$. Since $\{f_n\}$ is increasing, we have that $E_1 \subseteq E_2 \subseteq \ldots$.
+        Hence <m>\mu(E_n) &lt; \epsilon</m>. Since <m>\{f_n\}</m> is increasing, we have that <m>E_1 \subseteq E_2 \subseteq \ldots</m>.
     </p>
 
     <p>
-        Let $U$ denote the set of $x \in E$ for which $\{f_n(x)\}$ is unbounded. Then $U$ is contained in the union of the $E_n$'s. Thus it follows from monotonicity and the theorem about measure of an increasing union that 
+        Let <m>U</m> denote the set of <m>x \in E</m> for which <m>\{f_n(x)\}</m> is unbounded. Then <m>U</m> is contained in the union of the <m>E_n</m>'s. Thus it follows from monotonicity and the theorem about measure of an increasing union that 
         <md>
             \mu(U) \leq \mu \left( \bigcup_{n=1} E_n \right) = \lim_{n\to \infty} E_n &lt; \epsilon.
         </md>
-        Since the above inequality is true for all $\epsilon &gt; 0$, it follows that $\mu(U) = 0$. Hence $\{f_n\}$ is bounded almost everywhere and thus converges to a finite valued function $f$ almost everywhere.
+        Since the above inequality is true for all <m>\epsilon &gt; 0</m>, it follows that <m>\mu(U) = 0</m>. Hence <m>\{f_n\}</m> is bounded almost everywhere and thus converges to a finite valued function <m>f</m> almost everywhere.
     </p>
 
 </proof>
@@ -278,17 +278,17 @@
         
         <statement>
             <p>
-                Let $(X,S,\mu)$ be a measure space. Given a non-negative measurable function $f$ and a measurable set $E$, we define 
+                Let <m>(X,S,\mu)</m> be a measure space. Given a non-negative measurable function <m>f</m> and a measurable set <m>E</m>, we define 
                 <md>
                     \int_E f d\mu = \sup_{g \leq f} \int_E g d\mu
                 </md>
-                where the supremum is taken over all simple functions $g$ for which $g(x) \leq f(x)$ for all $x \in E$.
+                where the supremum is taken over all simple functions <m>g</m> for which <m>g(x) \leq f(x)</m> for all <m>x \in E</m>.
             </p>
         </statement>
     </definition>
 
     <p>
-        Example: Let $f(x) = x$. We'll evaluate $\displaystyle \int_0^1 f d\mu$ using the definition of Lebesgue integration. Choose $n \in \mathbf{N}$ and divide $[0,1]$ into $n$ equally spaced intervals of width $\frac{1}{n}$. We define a simple function $f_n(x)$ by setting it equal to the left endpoint of each interval. That is,
+        Example: Let <m>f(x) = x</m>. We'll evaluate <m>\displaystyle \int_0^1 f d\mu</m> using the definition of Lebesgue integration. Choose <m>n \in \mathbf{N}</m> and divide <m>[0,1]</m> into <m>n</m> equally spaced intervals of width <m>\frac{1}{n}</m>. We define a simple function <m>f_n(x)</m> by setting it equal to the left endpoint of each interval. That is,
         <md>
             f_n(x) = \begin{cases} 
       \hfill  0 \amp \text{ if $0 \leq x &lt; \frac{1}{n}$} \\
@@ -297,7 +297,7 @@
       \hfill  \frac{n-1}{n} \hfill \amp \text{ if $\frac{n-1}{n} \leq x \leq 1$} \\
   \end{cases}
         </md>
-         Then $f_n(x)$ is a simple function and $f_n(x) \leq f(x)$ on $[0,1]$.
+         Then <m>f_n(x)</m> is a simple function and <m>f_n(x) \leq f(x)</m> on <m>[0,1]</m>.
     </p>
 
     <p>
@@ -311,11 +311,11 @@
     </p>
 
     <p>
-        Taking the supremum over all $n$ gives $\displaystyle \sup_n \int_0^1 f_n d\mu = \frac{1}{2}$.
+        Taking the supremum over all <m>n</m> gives <m>\displaystyle \sup_n \int_0^1 f_n d\mu = \frac{1}{2}</m>.
     </p>
 
     <p>
-        In the Lebesgue integral the supremum must be taken over all simple functions $g$ with $g(x) \leq f(x)$, not just the $f_n$'s. However, if $g(x)$ is a simple function with $g(x) \leq f(x)$, then there exists $N \in \mathbf{N}$ such that $g(x) \leq f_N(x)$ and thus by the properties of the integrals of simple functions $\displaystyle \int_0^1 g d\mu \leq \int_0^1 f_N d\mu$. Thus we are justified in only taking the supremum over the $f_n$'s and can conclude that 
+        In the Lebesgue integral the supremum must be taken over all simple functions <m>g</m> with <m>g(x) \leq f(x)</m>, not just the <m>f_n</m>'s. However, if <m>g(x)</m> is a simple function with <m>g(x) \leq f(x)</m>, then there exists <m>N \in \mathbf{N}</m> such that <m>g(x) \leq f_N(x)</m> and thus by the properties of the integrals of simple functions <m>\displaystyle \int_0^1 g d\mu \leq \int_0^1 f_N d\mu</m>. Thus we are justified in only taking the supremum over the <m>f_n</m>'s and can conclude that 
         <md>
             \int_0^1 f d\mu = \frac{1}{2}.
         </md>
@@ -328,23 +328,23 @@
         
         <statement>
             <p>
-                Let $(X,S,\mu)$ be a measure space. 
+                Let <m>(X,S,\mu)</m> be a measure space. 
             </p>
 
             <ol marker="(a)">
                 <li>
                     <p>
-                        If $f$ is a measurable function and $\mu(E) = 0$, then $\int_E f d\mu = 0$.
+                        If <m>f</m> is a measurable function and <m>\mu(E) = 0</m>, then <m>\int_E f d\mu = 0</m>.
                     </p>
                 </li>
                 <li>
                     <p>
-                       If $E = E_1 \cup E_2$, where $E_1$ and $E_2$ are disjoint measurable sets, then $\int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu$. 
+                       If <m>E = E_1 \cup E_2</m>, where <m>E_1</m> and <m>E_2</m> are disjoint measurable sets, then <m>\int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu</m>. 
                     </p>
                 </li>
                 <li>
                     <p>
-                       If $f = g$ almost everywhere, then $\int_E f d\mu = \int_E g d\mu$ 
+                       If <m>f = g</m> almost everywhere, then <m>\int_E f d\mu = \int_E g d\mu</m> 
                     </p>
                 </li>
             </ol>
@@ -353,7 +353,7 @@
 
     <proof>
         <p>
-            For part (a) it follows from the definition of the Lebesgue integral for simple functions, that every simple function on $E$ has integral $0$. Thus the supremum over all simple functions is also $0$ and $\int_E f d\mu = 0$.
+            For part (a) it follows from the definition of the Lebesgue integral for simple functions, that every simple function on <m>E</m> has integral <m>0</m>. Thus the supremum over all simple functions is also <m>0</m> and <m>\int_E f d\mu = 0</m>.
         </p>
 
         <p>
@@ -361,7 +361,7 @@
             <md>
                 \int_E g d\mu = \int_{E_1} g d\mu + \int_{E_2} g d\mu.
             </md>
-            Taking the supremum over all simple functions $g$ with $g \leq f$ thus gives that
+            Taking the supremum over all simple functions <m>g</m> with <m>g \leq f</m> thus gives that
             <md>
                 \int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu.
             </md>
@@ -369,7 +369,7 @@
         </p>
 
         <p>
-            To prove (c), let $E_1$ denote the subset of $x \in E$ such that $f(x) = g(x)$ and let $E_2 = E - E_1$. Then $\mu(E_2) = 0$ and
+            To prove (c), let <m>E_1</m> denote the subset of <m>x \in E</m> such that <m>f(x) = g(x)</m> and let <m>E_2 = E - E_1</m>. Then <m>\mu(E_2) = 0</m> and
             <md>
                 <mrow> \int_E f d\mu \amp = \int_{E_1} f d\mu + \int_{E_2} f d\mu </mrow>
                 <mrow> \amp = \int_{E_1} g d\mu </mrow>
@@ -387,7 +387,7 @@
         
         <statement>
             <p>
-                Let $(X,S,\mu)$ be a measure space and let $\{f_n\}$ be a monotonically increasing sequence of non-negative functions. If there is a finite $A$ for which $\int_E f_n d\mu &lt; A$ for all $n$, then $f_n$ converges to a finite-valued function $f$ almost everywhere, $f$ is integrable, and 
+                Let <m>(X,S,\mu)</m> be a measure space and let <m>\{f_n\}</m> be a monotonically increasing sequence of non-negative functions. If there is a finite <m>A</m> for which <m>\int_E f_n d\mu &lt; A</m> for all <m>n</m>, then <m>f_n</m> converges to a finite-valued function <m>f</m> almost everywhere, <m>f</m> is integrable, and 
                 <md>
                     \int_E f d\mu = \lim_{n\to \infty} \int_E f_n d\mu.
                 </md>
@@ -398,11 +398,11 @@
 
     <proof>
         <p>
-            We will first prove that $\{f_n\}$ converges almost everywhere, then we will show that $\int_E f d\mu \geq \lim_{n\to \infty} \int_E f_n d\mu$ and lastly we will show that $\int_E f d\mu \leq \lim_{n\to \infty} \int_E f_n d\mu$
+            We will first prove that <m>\{f_n\}</m> converges almost everywhere, then we will show that <m>\int_E f d\mu \geq \lim_{n\to \infty} \int_E f_n d\mu</m> and lastly we will show that <m>\int_E f d\mu \leq \lim_{n\to \infty} \int_E f_n d\mu</m>
         </p>
 
         <p>
-            From the monotone convergent Theorem we know that for a given $x$, $\{f_n(x)\}$ converges provided that the sequence is bounded. Thus we want to show that the set of $x$ where $\{f_n(x)\}$ is unbounded has measure zero. We know that each function $f_n$ is the limit of an increasing sequence of simple functions $\phi_{n,k}$. Define a new sequence of simple functions by
+            From the monotone convergent Theorem we know that for a given <m>x</m>, <m>\{f_n(x)\}</m> converges provided that the sequence is bounded. Thus we want to show that the set of <m>x</m> where <m>\{f_n(x)\}</m> is unbounded has measure zero. We know that each function <m>f_n</m> is the limit of an increasing sequence of simple functions <m>\phi_{n,k}</m>. Define a new sequence of simple functions by
             <md>
                 \phi_n(x) = \sup_{1\leq j,k \leq n} \phi_{j,k}(x).
             </md>
@@ -414,23 +414,23 @@
             <md>
                 \phi_n(x) = \sup_{1\leq j,k \leq n} \phi_{j,k}(x) \geq \sup_{1\leq j,k \leq n-1} \phi_{j,k}(x) = \phi_{n-1}(x)
             </md>
-            $\{\phi_n\}$ is an increasing sequence.
+            <m>\{\phi_n\}</m> is an increasing sequence.
         </p>
 
         <p>
-            Since $\phi_n \leq f_n$, the integrals $\int_E \phi_n d\mu$ are bounded. If $x$ is a point for which $\{f_n(x)\}$ is unbounded, then for any $M$, we can find an $n$ for which $f_n(x) &gt; M+1$. Since $\phi_{n,k}$ converges to $f_n$, we can find a $k$ for which $\phi_{n,k} &gt; M$.
+            Since <m>\phi_n \leq f_n</m>, the integrals <m>\int_E \phi_n d\mu</m> are bounded. If <m>x</m> is a point for which <m>\{f_n(x)\}</m> is unbounded, then for any <m>M</m>, we can find an <m>n</m> for which <m>f_n(x) &gt; M+1</m>. Since <m>\phi_{n,k}</m> converges to <m>f_n</m>, we can find a <m>k</m> for which <m>\phi_{n,k} &gt; M</m>.
         </p>
 
         <p>
-            Hence $\phi_{\max\{n,k\}}(x) > M$ and thus the sequence $\{\phi_{n}(x)\}$ is also unbounded.
+            Hence <m>\phi_{\max\{n,k\}}(x) > M</m> and thus the sequence <m>\{\phi_{n}(x)\}</m> is also unbounded.
         </p>
 
         <p>
-            By the Monotone Convergence Theorem for Simple Functions $U$, the set of $x$ for which $\{\phi_n(x)\}$ is unbounded has measure zero. Thus we are free to set $f(x) = 0$ on $U$. We now have that $f_n$ is bounded almost everywhere and thus converges to a finite valued function $f$ almost everywhere, which is the first part of the proof.
+            By the Monotone Convergence Theorem for Simple Functions <m>U</m>, the set of <m>x</m> for which <m>\{\phi_n(x)\}</m> is unbounded has measure zero. Thus we are free to set <m>f(x) = 0</m> on <m>U</m>. We now have that <m>f_n</m> is bounded almost everywhere and thus converges to a finite valued function <m>f</m> almost everywhere, which is the first part of the proof.
         </p>
 
         <p>
-            For the next part suppose that $g$ and $h$ are non-negative measurable functions with $g(x) \leq h(x)$ for all $x \in E$. Then the set of simple functions that are less than or equal to $g$ is a subset of the set of simple functions that are less than or equal to $h$ and hence
+            For the next part suppose that <m>g</m> and <m>h</m> are non-negative measurable functions with <m>g(x) \leq h(x)</m> for all <m>x \in E</m>. Then the set of simple functions that are less than or equal to <m>g</m> is a subset of the set of simple functions that are less than or equal to <m>h</m> and hence
             <md>
                 \int_E g d\mu = \sup_{\phi \leq g} \int_E \phi d\mu \leq \sup_{\phi \leq h} \int_E \phi d\mu =  \int_E h d\mu
             </md>
@@ -438,7 +438,7 @@
         </p>
 
         <p>
-           If $g(x) \leq h(x)$ except possibly for $x\in U$ where $\mu(U) = 0$, then
+           If <m>g(x) \leq h(x)</m> except possibly for <m>x\in U</m> where <m>\mu(U) = 0</m>, then
            <md>
             \int_E g d\mu =  \int_{E\setminus U} g d\mu \leq  \int_{E\setminus U} h d\mu =  \int_E h d\mu
            </md>
@@ -446,7 +446,7 @@
         </p>
 
         <p>
-            We have shown that functional inequalities that hold almost everywhere imply integral inequalities that hold on all $E$. Since $f_n(x) \leq f(x)$ almost everywhere, it follows that for all $n$
+            We have shown that functional inequalities that hold almost everywhere imply integral inequalities that hold on all <m>E</m>. Since <m>f_n(x) \leq f(x)</m> almost everywhere, it follows that for all <m>n</m>
             <md>
                 \int_E f_n d\mu \leq \int_E f d\mu.
             </md>
@@ -458,15 +458,15 @@
         </p>
 
         <p>
-            To finish the proof of the Monotone Convergence Theorem we need to show the reverse inequality holds as well. To show the reverse inequality let $\phi$ be a non-negative simple function that is less than or equal to $f$. That is,
+            To finish the proof of the Monotone Convergence Theorem we need to show the reverse inequality holds as well. To show the reverse inequality let <m>\phi</m> be a non-negative simple function that is less than or equal to <m>f</m>. That is,
             <md>
                 \phi = \sum_{k=1}^m c_k \chi_{E_k}  \leq f
             </md>
-            where the $E_k$ are disjoint sets with $\displaystyle \bigcup_{k=1}^m E_k = E$.
+            where the <m>E_k</m> are disjoint sets with <m>\displaystyle \bigcup_{k=1}^m E_k = E</m>.
         </p>
 
         <p>
-            Choose $\alpha$ with $0 &lt;\alpha &lt; 1$ and define the sets
+            Choose <m>\alpha</m> with <m>0 &lt;\alpha &lt; 1</m> and define the sets
             <md>
                 A_n = \{x\in E: f_n(x) \geq \alpha \phi(x)\}
             </md>
@@ -474,7 +474,7 @@
         </p>
 
         <p>
-            Since $\{f_n\}$ is an increasing sequence it follows that $A_n$ is an increasing sequence of sets with $\displaystyle \bigcup_{n=1}^{\infty} A_n = E$. Hence
+            Since <m>\{f_n\}</m> is an increasing sequence it follows that <m>A_n</m> is an increasing sequence of sets with <m>\displaystyle \bigcup_{n=1}^{\infty} A_n = E</m>. Hence
             <md>
                 \lim_{n\to \infty} \mu(E_k \cap A_n) = \mu(E_k \cap E).
             </md>
@@ -482,7 +482,7 @@
         </p>
 
         <p>
-            Now choose $\epsilon &gt; 0$. Then for each $E_k$, we can find $N_k \in \mathbf{N}$ such that whenever $n \geq N_k$,
+            Now choose <m>\epsilon &gt; 0</m>. Then for each <m>E_k</m>, we can find <m>N_k \in \mathbf{N}</m> such that whenever <m>n \geq N_k</m>,
             <md>
                 \mu(E_k \cap A_n) &gt; \left(1-\frac{\epsilon}{\alpha c_k}\right) \mu(E_k \cap E).
             </md>
@@ -490,7 +490,7 @@
         </p>
 
         <p>
-            Let $N = \max\{N_1,N_2,\ldots N_m\}$. Then for $n \geq N$,
+            Let <m>N = \max\{N_1,N_2,\ldots N_m\}</m>. Then for <m>n \geq N</m>,
             <md>
                 <mrow> \int_E f_n d\mu \amp \geq \int_{A_n} f_n d\mu </mrow>
                 <mrow> \amp \geq \alpha \int_{A_n} \phi_n d\mu</mrow>
@@ -510,7 +510,7 @@
         </p>
 
         <p>
-            Since this is true for every $\epsilon &gt; 0$ and $\alpha$ with $0 &lt; \alpha &lt; 1$, it follows that
+            Since this is true for every <m>\epsilon &gt; 0</m> and <m>\alpha</m> with <m>0 &lt; \alpha &lt; 1</m>, it follows that
             <md>
                 \int_E f_n d\mu \geq \int_E \phi d\mu.
             </md>
@@ -518,7 +518,7 @@
         </p>
 
         <p>
-            Thus every simple function $\phi \leq f$ has an integral bounded above by $\int_E f_n d\mu$ for all $n$ sufficiently large. Hence
+            Thus every simple function <m>\phi \leq f</m> has an integral bounded above by <m>\int_E f_n d\mu</m> for all <m>n</m> sufficiently large. Hence
             <md>
                 \lim_{n\to \infty} \int_E f_n d\mu \geq \sup_{\phi \leq f} \int_E \phi d\mu = \int_E f d\mu
             </md>
@@ -537,7 +537,7 @@
         
         <statement>
             <p>
-                Suppose $(X,S,\mu)$ is a measure space and $f:X \to [-\infty,\infty]$ is a non-negative function. If $c &gt; 0 \in \mathbf{R}$, then 
+                Suppose <m>(X,S,\mu)</m> is a measure space and <m>f:X \to [-\infty,\infty]</m> is a non-negative function. If <m>c &gt; 0 \in \mathbf{R}</m>, then 
                 <md>
                     \int c f d\mu = c \int f d\mu.
                 </md>
@@ -548,7 +548,7 @@
     
     <proof>
         <p>
-            Note that $g$ is a simple function with $g \leq f$ if and only if $cg$ is a simple function with $cg \leq cf$. Hence
+            Note that <m>g</m> is a simple function with <m>g \leq f</m> if and only if <m>cg</m> is a simple function with <m>cg \leq cf</m>. Hence
             <md>
                 \int cf d\mu = \sup_{cg \leq cf} \int cg d\mu = \sup_{g\leq f} c \int g d\mu = c \int f d\mu.
             </md>
@@ -574,7 +574,7 @@
         
         <statement>
             <p>
-               Suppose $f:X \to [-\infty,\infty]$ is a function. Define functions $f^+$ and $f^-$ by
+               Suppose <m>f:X \to [-\infty,\infty]</m> is a function. Define functions <m>f^+</m> and <m>f^-</m> by
                <md>
                 f^+ = \begin{cases} 
       \hfill  f(x) \amp \text{ if $f(x)\geq 0$} \\
@@ -590,10 +590,233 @@
     </definition>
 
     <p>
-        Note that $f = f^+ - f^-$ and $|f| = f^+ + f^-$.
+        Note that <m>f = f^+ - f^-</m> and <m>|f| = f^+ + f^-</m>.
     </p>
 
+    <definition xml:id="def-real-integral">
+        <title>Integral of a Real Valued Function</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> is a measure space and <m>f:X \to [-\infty,\infty]</m> is an <m>S</m>-measurable function such that at least one of <m>\int f^+ d\mu</m> or <m>\int f^- d\mu</m> is finite. The integral of <m>f</m> with respect to <m>\mu</m> denoted by <m>\int f d\mu</m>, is defined by
+                <md>
+                    \int f d\mu = \int f^+ d\mu - \int f^- d\mu
+                </md>
+                
+            </p>
+        </statement>
+    </definition>
 
+    <p>
+        The geometrical interpretation of this definition is that we are subtracting the integral of the negative part of the function from the integral of the positive part, much like how in Calculus we found the value of the integral by subtracting the area of the function beneath the <m>x</m> axis from the area of the function above the <m>x</m> axis.
+    </p>
+
+    <p>
+        Example: Suppose that
+        <md>
+            f(x) = \begin{cases} 
+      \hfill  x^2 \amp \text{ if $0 \leq x &lt; \frac{1}{3}$ or $\frac{2}{3} &lt; x \leq 1$} \\
+      \hfill  -2x \hfill \amp \text{ if $\frac{1}{3} \leq x \leq \frac{2}{3}$} \\
+  \end{cases}
+        </md>
+        Let <m>\mu</m> denote Lebesgue measure. Find 
+        <md>
+            \int_0^1 f d\mu.
+        </md>
+        
+        
+    </p>
+
+    <p>
+        Example: Suppose that
+        <md>
+            g(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \geq 0$} \\
+      \hfill  -1 \hfill \amp \text{ if $x &lt; 0$} \\
+  \end{cases}
+        </md>
+        Then <m>\int g d\mu</m> is not defined because <m>\int g^+ \mu = \int g^- \mu = \infty</m>.
+    </p>
+
+    <p>
+        We can now verify that the familiar properties of integration hold in general for the Riemann integral.
+    </p>
+
+    <theorem xml:id="thm-integration-is-homogeneous">
+        <title>Integration is Homogeneous</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> is a measure space and <m>f:X \to [-\infty,\infty]</m> is a measurable function such that <m>\int f d\mu</m> is defined. If <m>c \in \mathbf{R}</m>, then 
+                <md>
+                    \int c f d\mu = c \int f d\mu.
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+    
+
+    <proof>
+        <p>
+            First suppose <m>c &lt; 0</m>. Then <m>(cf)^+ = c(f^+)</m> and <m>(cf)^- = c(f^-)</m>. Hence
+            <md>
+                <mrow> \int cf d\mu \amp = \int c(f^+)d\mu - \int c(f^-) d\mu </mrow>
+                <mrow> \amp =c \left(\int f^+ d\mu -\int f^- d\mu \right) </mrow>
+                <mrow> \amp = c \int f d\mu.</mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            If <m>c &lt; 0</m>, then <m>-c>0</m> and thus <m>(cf)^+ = -c(f^-)</m> and <m>(cf)^- = -c(f^+)</m>. Hence
+            <md>
+                <mrow> \int cf d\mu \amp = \int -c(f^-)d\mu - \int -c(f^+) d\mu </mrow>
+                <mrow> \amp =-c \left(\int f^- d\mu -\int f^+ d\mu \right) </mrow>
+                <mrow> \amp = c \int f d\mu. </mrow>
+            </md>
+            
+        </p>
+
+    </proof>
+
+    <theorem xml:id="thm-additivity-integral">
+        <title>Additivity of Integration</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> is a measure space and <m>f,g: X \to [-\infty,\infty]</m> are <m>S</m>-measurable functions such that <m>\int |f| d\mu &lt; \infty</m> and <m>\int |g| d\mu &lt; \infty</m>. Then
+                <md>
+                    \int f+g d\mu = \int f d\mu + \int g d\mu.
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+    
+    <proof>
+        <p>
+            We first observe that <m>(f+g)^+ - (f+g)^- = f+g = f^+ - f^- +g^+-g^-</m>. Hence
+            <md>
+                (f+g)^+ + f^- + g^- = (f+g)^- + f^+ + g^+.
+            </md>
+            
+        </p>
+
+        <p>
+            Since both sides are non-negative functions we can integrate both sides of the above equation with respect to <m>\mu</m> to get
+            <md>
+                <mrow> \int (f+g)^+ d\mu + \int f^- d\mu + \int g^- d\mu \amp = \int (f+g)^- d\mu </mrow>
+                <mrow> \amp + \int f^+ d\mu + \int g^+ d\mu </mrow>
+            </md>
+           Rearranging the above equation gives
+           <md>
+            <mrow> \int (f+g)^+ d\mu - \int (f+g)^- d\mu \amp = \int f^+ d\mu - \int f^- d\mu </mrow>
+            <mrow> \amp + \int g^+ d\mu - \int g^- d\mu.</mrow>
+           </md>
+            
+        </p>
+
+        <p>
+            We note that the left side is not of the form <m>\infty - \infty</m> since <m>(f+g)^+ \leq f^+ + g^+</m> and <m>(f+g)^- \leq f^- + g^-</m>. Thus we can simplify the above equation to obtain
+            <md>
+                \int f+g d\mu = \int f d\mu + \int g d\mu
+            </md>
+             which is what we wanted to prove.
+        </p>
+
+
+
+    </proof>
+
+    <theorem xml:id="thm-integration-order">
+        <title>Integration is Order Preserving</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> is a measure space and <m>f,g:X \to \mathbf{R}</m> are <m>S</m>-measurable functions such that <m>\int f d\mu</m> and <m>\int g d\mu</m> are defined. Suppose also that <m>f(x) \leq g(x)</m> for all <m>x \in X</m>. Then <m>\int f d\mu \leq \int g d\mu</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            If <m>\int g d\mu = \infty</m> or <m>\int f d\mu = -\infty</m> then the conclusion is always true, so suppose that <m>\int g d\mu &lt; \infty</m> and <m>\int f d\mu &gt; -\infty</m>. It follows from additivity that
+            <md>
+                \int g d\mu - \int f d\mu = \int (g-f) d\mu.
+            </md>
+
+    
+            
+        </p>
+
+        <p>
+            The right hand side is non-negative since <m>f(x) \leq g(x)</m> for all <m>x</m>. Moreover, the left hand side is finite due to our assumptions. Hence
+            <md>
+                \int g d\mu \geq \int fd\mu.
+            </md>
+            
+        </p>
+
+
+
+
+    </proof>
+
+
+    <theorem xml:id="thm-absolute-value-integral">
+        <title>Absolute Value of Integral <m>\leq</m> than Integral of Absolute Value</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>f:X \to [-\infty,\infty]</m> is a function such that <m>\int f d\mu</m> is defined. Then
+                <md>
+                    \left|\int f d\mu \right| \leq \int |f| d\mu
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+    
+    <proof>
+        <p>
+            Because <m>f</m> is defined and <m>f</m> is an <m>S</m>-measureable function at least one of <m>\int f^+ d\mu</m> and <m>\int f^- d\mu</m> is finite. Hence,
+            <md>
+                <mrow> \left| \int f d\mu \right| \amp \left| \int f^+ d\mu - \int f^- d\mu \right| </mrow>
+                <mrow>  \amp \leq \left|\int f^+ d\mu\right| + \left|\int f^-  d\mu \right| </mrow>
+                <mrow> \amp = \int f^+ d\mu + \int f^- d\mu = \int |f| d\mu. </mrow>
+            </md>
+            which is what we want to show.
+        </p>
+    </proof>
+
+
+    <p>
+        In probability the expected value is a generalization of the weighted average. In the case that there are infinitely many possible outcomes, the expected value is defined using the Lebesgue integral.
+    </p>
+
+    <definition xml:id="def-expected-value">
+        <title>Expected Value</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>X</m> is a real valued random variable on a probability space <m>(\Omega,S,\mu)</m>. Then the <term>expected value</term> of <m>X</m> is denoted <m>E</m> is defined as the Lebesgue integral
+                <md>
+                    E[X] = \int_\Omega X d\mu.
+                </md>
+                
+            </p>
+        </statement>
+    </definition>
+    <p>
+        If <m>X</m> has only a finite number of possible outcomes, then this definition reduces to the weighted average of the outcomes.
+    </p>
 
   </subsection>
 
