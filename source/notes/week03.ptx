@@ -971,13 +971,13 @@
             <p>
                 More precisely, we will show that
                 <md>
-                    f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                    f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
                 </md>
                 
             </p>
 
             <p>
-                Since the right side is a countable union of a finite intersection of sets in <m>S</m>, it belongs to <m>S</m> as well. Thus showing this equality will prove that <m>f^{-1}((a,\infty)) \in S</m>.
+                Since the right side is a countable union of a countable intersection of sets in <m>S</m>, it belongs to <m>S</m> as well. Thus showing this equality will prove that <m>f^{-1}((a,\infty)) \in S</m>.
             </p>
 
             <p>
@@ -991,7 +991,7 @@
             <p>
                 Hence
                 <md>
-                    f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                    f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
                 </md>
                 
             </p>
@@ -999,7 +999,7 @@
             <p>
                 To prove the opposite inclusion suppose that
                 <md>
-                    x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                    x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
                 </md>
                 
             </p>
@@ -1015,7 +1015,7 @@
             <p>
                 Hence we have proven that
                 <md>
-                    f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+                    f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
                 </md>
                 which implies that <m>f</m> is an <m>S</m>-measurable function.
             </p>
