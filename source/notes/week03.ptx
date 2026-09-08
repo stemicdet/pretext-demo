@@ -1069,7 +1069,7 @@
             
             <statement>
                 <p>
-                    Suppose <m>(X,S)</m> is a measurable space and <m>f_1, f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>[-\infty,\infty]</m>. Define <m>g,h:X \to [\infty,\infty]</m> by 
+                    Suppose <m>(X,S)</m> is a measurable space and <m>f_1, f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>[-\infty,\infty]</m>. Define <m>g,h:X \to [-\infty,\infty]</m> by 
                     <md>
                         g(x) = \inf \{ f_k(x): k \in \mathbf{N} \} \quad h(x) = \sup \{ f_k(x): k \in \mathbf{N} \}
                     </md>
