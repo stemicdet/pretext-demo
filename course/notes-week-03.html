@@ -196,6 +196,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Lebesgue-Measurable-Functions" class="internal"><span class="title">Lebesgue Measurable Functions</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-07.html" class="internal"><span class="title">Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Simple-Functions" class="internal"><span class="title">Integration of Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Non-negative-Functions" class="internal"><span class="title">Integration of Non-negative Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Real-Valued-Functions" class="internal"><span class="title">Integration of Real Valued Functions</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -976,12 +984,12 @@ f(x) = \lim_{k\to \infty} f_k(x).
 <div class="para">More precisely, we will show that</div>
 <div class="displaymath process-math" id="subsec-measurable-function-32-2-1">
 \begin{equation*}
-f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-measurable-function-32-3">Since the right side is a countable union of a finite intersection of sets in <span class="process-math">\(S\text{,}\)</span> it belongs to <span class="process-math">\(S\)</span> as well. Thus showing this equality will prove that <span class="process-math">\(f^{-1}((a,\infty)) \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+<div class="para" id="subsec-measurable-function-32-3">Since the right side is a countable union of a countable intersection of sets in <span class="process-math">\(S\text{,}\)</span> it belongs to <span class="process-math">\(S\)</span> as well. Thus showing this equality will prove that <span class="process-math">\(f^{-1}((a,\infty)) \in S\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-measurable-function-32-4">First suppose <span class="process-math">\(x \in f^{-1}((a,\infty))\text{.}\)</span> Then <span class="process-math">\(a &lt; f(x)\)</span> and hence there exists a positive integer <span class="process-math">\(j\)</span> such that <span class="process-math">\(a + \frac{1}{j}&lt; f(x)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
@@ -991,7 +999,7 @@ f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}
 <div class="para">Hence</div>
 <div class="displaymath process-math" id="subsec-measurable-function-32-6-1">
 \begin{equation*}
-f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1000,7 +1008,7 @@ f^{-1}((a,\infty)) \subseteq \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigc
 <div class="para">To prove the opposite inclusion suppose that</div>
 <div class="displaymath process-math" id="subsec-measurable-function-32-7-1">
 \begin{equation*}
-x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
 \end{equation*}
 </div>
 <div class="autopermalink" data-description="Paragraph"><a href="#subsec-measurable-function-32-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
@@ -1013,7 +1021,7 @@ x \in  \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\le
 <div class="para">Hence we have proven that</div>
 <div class="displaymath process-math" id="subsec-measurable-function-32-10-1">
 \begin{equation*}
-f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=1}^m f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
+f^{-1}((a,\infty)) = \bigcup_{j=1}^{\infty} \bigcup_{m=1}^{\infty} \bigcap_{k=m}^\infty f_k^{-1}\left(a+ \frac{1}{j}, \infty\right).
 \end{equation*}
 </div>
 <div class="para">which implies that <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measurable function.</div>

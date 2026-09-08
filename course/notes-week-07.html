@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Real Variables">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.2.10';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.e3f9706509fcf6f7.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.c5ba0ffa5f963084.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.efe427683fc41f98.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Real Variables</span> <span class="subtitle">MATH 650 Fall 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-06.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="course-documents.html" class="internal"><span class="title">Course Documents</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#Motivation" class="internal"><span class="title">Motivation and Definition of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#good-properties" class="internal"><span class="title">Good Properties of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#outer-measure-not-additive" class="internal"><span class="title">Outer Measure is Not Additive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: Measurable Spaces and Functions (2B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#desired" class="internal"><span class="title">Desired Properties of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Simga-Algebras" class="internal"><span class="title">Sigma Algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Borel-Subsets-of-R" class="internal"><span class="title">Borel Subsets of R and Inverse Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-measurable-function" class="internal"><span class="title">Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Measures and Their Properties (2C)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Definition-and-Examples-of-Measures" class="internal"><span class="title">Definition and Examples of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-properties-measr" class="internal"><span class="title">Properties of Measures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Lebesgue Measure (2D)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Additivity-of-Outer" class="internal"><span class="title">Additivity of Outer Measure on Borel Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Lebesgue-Measurable-Sets" class="internal"><span class="title">Lebesgue Measurable Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Cantor" class="internal"><span class="title">The Cantor Set and Cantor Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-06.html" class="internal"><span class="title">Week 6: Convergence of Measurable Functions (2E)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Littlewood" class="internal"><span class="title">Littlewood’s Three Principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Egorov" class="internal"><span class="title">Egorov’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-simple-functions" class="internal"><span class="title">Approximation by Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Luzin" class="internal"><span class="title">Luzin’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Lebesgue-Measurable-Functions" class="internal"><span class="title">Lebesgue Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-07.html" class="internal"><span class="title">Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Simple-Functions" class="internal"><span class="title">Integration of Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Non-negative-Functions" class="internal"><span class="title">Integration of Non-negative Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Real-Valued-Functions" class="internal"><span class="title">Integration of Real Valued Functions</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-2.html" class="internal"><span class="title">Homework 1 (Due August 27)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-3.html" class="internal"><span class="title">Homework 2 (Due September 3)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-4.html" class="internal"><span class="title">Homework 3 (Due September 10)</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-07"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)</span>
+</h2>
+<section class="subsection" id="subsec-Integration-of-Simple-Functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration of Simple Functions</span>
+</h3>
+<div class="para" id="subsec-Integration-of-Simple-Functions-2">Now that we have developed the theory of measures, we have a way to assign a length to subsets of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Thus we have the tools to define integration in the sense of Lebesgue. We will build up the Lebesgue integral in stages. First we define the Lebesgue integral for simple functions, and then we extend this definition to non-negative functions. We can then generalize this to all functions by splitting them up into positive and negative parts. Recall that the main idea of Lebesgue integration is that we are going to partition the range, rather than the domain. It is convenient to first define integration on simple functions, since the range of a simple function is finite.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-simple-function-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">69</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Integral of Simple Functions.</span>
+</h4>
+<div class="para logical" id="def-simple-function-integral-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space, <span class="process-math">\(S_1, \ldots, S_n\)</span> are disjoint sets in <span class="process-math">\(S\text{,}\)</span> and <span class="process-math">\(c_1, \ldots, c_n \in [0, \infty]\text{.}\)</span> Let</div>
+<div class="displaymath process-math" id="def-simple-function-integral-2-1-5">
+\begin{equation*}
+f = \sum_{k=1}^n c_k \chi_{S_k}. 
+\end{equation*}
+</div>
+<div class="para">Then we define the Lebesgue integral of <span class="process-math">\(f\)</span> with respect to the measure <span class="process-math">\(\mu\)</span> over the measurable set <span class="process-math">\(E\)</span> to be</div>
+<div class="displaymath process-math" id="def-simple-function-integral-2-1-9">
+\begin{equation*}
+\int_E f d\mu = \sum_{k=1}^n c_k \mu(S_k \cap E)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-simple-function-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 69: Lebesgue Integral of Simple Functions"><a href="#def-simple-function-integral" title="Copy heading and permalink for Definition 69: Lebesgue Integral of Simple Functions" aria-label="Copy heading and permalink for Definition 69: Lebesgue Integral of Simple Functions">🔗</a></div></article><div class="para" id="subsec-Integration-of-Simple-Functions-4">In other words, for each element in the range, we multiply it by the size of the pre-image and take the sum over all elements in the range.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-5">
+<div class="para">Example: Consider the function <span class="process-math">\(f\)</span> on <span class="process-math">\([0,1]\)</span> defined by</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-5-3">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  3 \amp \text{ if $0 \leq x \leq \frac{1}{4}$} \\
+\hfill  0 \hfill \amp \text{ if $\frac{1}{4} &lt; x &lt; \frac{1}{2}$} \\
+\hfill  -2 \hfill \amp \text{ if $\frac{1}{2} \leq x \leq 1$} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-6">
+<div class="para">
+<span class="process-math">\(f(x)\)</span> is a simple function because it can be rewritten as</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-6-2">
+\begin{equation*}
+f(x) = 3\chi_{[0,\frac{1}{4}]} + (-2) \chi_{[\frac{1}{2}, 1]}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-7">
+<div class="para">Let <span class="process-math">\(\mu\)</span> denote Lebesgue measure. It thus follows that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-7-2">
+\begin{align*}
+\int_0^1 f d\mu \amp = 3 \mu\left(\left[0,\frac{1}{4}\right]\right) + (-2) \mu\left(\left[\frac{1}{2}, 1\right]\right) \\
+\amp = 3\cdot \frac{1}{4} -2 \cdot \frac{1}{2} = -\frac{1}{4}. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Simple-Functions-8">Thus the Lebesgue integral gives the result that we would expect from Calculus and geometry.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-9">
+<div class="para">Recall that Dirichlet’s function</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-9-1">
+\begin{equation*}
+g(x) = \begin{cases} 
+\hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+\hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">is not Riemann integrable. However, since it is the characteristic function of the rationals, it is Lebesgue integrable and</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-9-2">
+\begin{equation*}
+\int g d\mu = 1 \cdot \mu(\mathbf{Q}) = 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-properties-integral-simple-functions"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">70</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Properties of the Lebesgue Integral for Simple Functions.</span>
+</h4>
+<div class="para logical" id="thm-properties-integral-simple-functions-2-1">
+<div class="para">Let <span class="process-math">\((X,S,\mu)\)</span> be a measure space, <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> be simple functions, <span class="process-math">\(A \in \mathbf{R}\)</span> and <span class="process-math">\(E = E_1 \cup E_2\text{,}\)</span> where <span class="process-math">\(E_1\)</span> and <span class="process-math">\(E_2\)</span> are disjoint measurable sets. The following properties hold</div>
+<ol class="lower-alpha ol-marker-1" id="thm-properties-integral-simple-functions-2-1-8">
+<li id="thm-properties-integral-simple-functions-2-1-8-1">
+<div class="para logical" id="thm-properties-integral-simple-functions-2-1-8-1-1">
+<div class="displaymath process-math" id="thm-properties-integral-simple-functions-2-1-8-1-1-1">
+\begin{equation*}
+\int_E A f d\mu = A \int_E f d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-properties-integral-simple-functions-2-1-8-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-properties-integral-simple-functions-2-1-8-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-properties-integral-simple-functions-2-1-8-2">
+<div class="para logical" id="thm-properties-integral-simple-functions-2-1-8-2-1">
+<div class="displaymath process-math" id="thm-properties-integral-simple-functions-2-1-8-2-1-1">
+\begin{equation*}
+\int_E f + g d\mu = \int_E f d\mu + \int_E g d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-properties-integral-simple-functions-2-1-8-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-properties-integral-simple-functions-2-1-8-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="thm-properties-integral-simple-functions-2-1-8-3">
+<div class="para" id="thm-properties-integral-simple-functions-2-1-8-3-1">If <span class="process-math">\(f(x) \leq g(x)\)</span> for all <span class="process-math">\(x \in E\text{,}\)</span> then <span class="process-math">\(\displaystyle \int_E f d\mu \leq \int_E g d\mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-properties-integral-simple-functions-2-1-8-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#thm-properties-integral-simple-functions-2-1-8-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+<li id="thm-properties-integral-simple-functions-2-1-8-4">
+<div class="para logical" id="thm-properties-integral-simple-functions-2-1-8-4-1">
+<div class="displaymath process-math" id="thm-properties-integral-simple-functions-2-1-8-4-1-1">
+\begin{equation*}
+\int_E f d\mu =  \int_{E_1} f d\mu + \int_{E_2} f d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-properties-integral-simple-functions-2-1-8-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item d"><a href="#thm-properties-integral-simple-functions-2-1-8-4" title="Copy heading and permalink for Item d" aria-label="Copy heading and permalink for Item d">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-properties-integral-simple-functions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 70: Properties of the Lebesgue Integral for Simple Functions"><a href="#thm-properties-integral-simple-functions" title="Copy heading and permalink for Theorem 70: Properties of the Lebesgue Integral for Simple Functions" aria-label="Copy heading and permalink for Theorem 70: Properties of the Lebesgue Integral for Simple Functions">🔗</a></div></article><div class="para" id="subsec-Integration-of-Simple-Functions-11">The last statement is a generalization of the familiar property <span class="process-math">\(\displaystyle \int_a^b f(x) dx = \int_a^c f(x) dx + \int_c^b f(x) dx\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Integration-of-Simple-Functions-12" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Integration-of-Simple-Functions-12-1">
+<div class="para">We start by writing <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> as</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-1-3">
+\begin{equation*}
+f = \sum_{k=1}^m c_k \chi_{S_k}, \quad g = \sum_{j=1}^n d_j \chi_{T_j}
+\end{equation*}
+</div>
+<div class="para">where the <span class="process-math">\(c_k\)</span>’s are distinct, the <span class="process-math">\(d_j\)</span>’s are distinct, the <span class="process-math">\(S_k\)</span>’s are pairwise disjoint, the <span class="process-math">\(T_j\)</span>’s are pairwise disjoint, and <span class="process-math">\(\displaystyle E = \bigcup_{k=1}^m S_k = \bigcup_{j=1}^n T_j\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-12-2">
+<div class="para">To prove the first proposition, it follows from the definition of the Lebesgue integral that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-2-1">
+\begin{equation*}
+\int_E A f d\mu = \sum_{k=1}^m A c_k \mu(S_k \cap E) = A \sum_{k=1}^m c_k \mu(S_k \cap E) = A \int_E f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-12-3">
+<div class="para">To prove the second proposition, note that <span class="process-math">\(f+g\)</span> is a simple function since</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-3-2">
+\begin{equation*}
+f+g = \sum_{k=1}^m \sum_{j=1}^n (c_k + d_j) \chi_{S_k \cap T_j}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-12-4">
+<div class="para">Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-4-1">
+\begin{align*}
+\int_E f+g d\mu \amp = \sum_{k=1}^m \sum_{j=1}^n (c_k+d_j) \mu(S_k \cap T_j \cap E) \\
+\amp =\sum_{k=1}^m c_k \sum_{j=1}^n \mu(S_k \cap T_j \cap E) +  \sum_{j=1}^n d_j \sum_{k=1}^m \mu(S_k \cap T_j \cap E) \\
+\amp = \sum_{k=1}^m c_k \mu(S_k \cap E) +  \sum_{j=1}^n d_j \mu( T_j \cap E) \\
+\amp = \int_E f d\mu + \int_E g d\mu
+\end{align*}
+</div>
+<div class="para">Thus the second proposition is proved.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-12-5">
+<div class="para">To prove the third proposition we will rewrite our functions as</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-5-1">
+\begin{equation*}
+f = \sum_{k=1}^m\sum_{j=1}^n c_k \chi_{S_k\cap T_j}, \quad g = \sum_{k=1}^m \sum_{j=1}^n d_j \chi_{S_k \cap T_j}.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(f(x) \leq g(x)\)</span> on <span class="process-math">\(E\text{,}\)</span> it follows that <span class="process-math">\(c_k \leq d_j\)</span> for each pair, <span class="process-math">\(k,j\)</span> for which <span class="process-math">\(S_k \cap T_j \cap E \neq \emptyset\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-12-6">
+<div class="para">Hence,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-6-1">
+\begin{equation*}
+\int_E f d\mu  = \sum_{k=1}^m \sum_{j=1}^n c_k \mu(S_k \cap T_j \cap E) \leq \sum_{k=1}^m \sum_{j=1}^n d_j \mu(S_k \cap T_j \cap E) = \int_E g d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-12-7">
+<div class="para">Finally, to prove the last proposition we use the fact that measures are countably additive.</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-12-7-1">
+\begin{align*}
+\int_E f d\mu \amp = \sum_{k=1}^m c_k \mu(S_k \cap E) = \sum_{k=1}^m c_k \left(\mu(S_k \cap E_1)+ \mu(S_k \cap E_2)\right) \\
+\amp = \sum_{k=1}^m c_k \mu(S_k \cap E_1) + \sum_{k=1}^m c_k \mu(S_k \cap E_2) \\
+\amp = \int_{E_1} f d\mu + \int_{E_2} f d\mu. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-12-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Integration-of-Simple-Functions-12" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="para" id="subsec-Integration-of-Simple-Functions-13">The Monotone Convergence Theorem (Also called the Beppo Levi Theorem) is one of the key results in the theory of Lebesgue Integration. We first prove it for simple functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-monotone-convergence-simple"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">71</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Convergence Theorem for Simple Functions.</span>
+</h4>
+<div class="para" id="thm-monotone-convergence-simple-2-1">Let <span class="process-math">\(f_n\)</span> be a monotonically increasing sequence of non-negative simple functions. If there is a finite <span class="process-math">\(A\)</span> for which <span class="process-math">\(\displaystyle \int_E f_n d\mu &lt; A\)</span> for all <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(f_n\)</span> converges to a finite valued function <span class="process-math">\(f\)</span> almost everywhere.<div class="autopermalink" data-description="Paragraph"><a href="#thm-monotone-convergence-simple-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 71: Monotone Convergence Theorem for Simple Functions"><a href="#thm-monotone-convergence-simple" title="Copy heading and permalink for Theorem 71: Monotone Convergence Theorem for Simple Functions" aria-label="Copy heading and permalink for Theorem 71: Monotone Convergence Theorem for Simple Functions">🔗</a></div></article><article class="definition definition-like" id="def-almost-everywhere"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">72</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Almost Everywhere.</span>
+</h4>
+<div class="para" id="def-almost-everywhere-2-1">A property is said to occur <dfn class="terminology">almost everywhere</dfn> if the set where it does not occur has measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#def-almost-everywhere-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 72: Almost Everywhere"><a href="#def-almost-everywhere" title="Copy heading and permalink for Definition 72: Almost Everywhere" aria-label="Copy heading and permalink for Definition 72: Almost Everywhere">🔗</a></div></article><div class="para" id="subsec-Integration-of-Simple-Functions-16">In probability, an event is said to occur <dfn class="terminology">almost surely</dfn> if it happens with probability <span class="process-math">\(1\text{.}\)</span> This is the same as saying that the probability that the event does not occur is <span class="process-math">\(0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Simple-Functions-17">Example: Suppose you choose a real number at random. Since the set of rational numbers is a set with measure <span class="process-math">\(0\text{,}\)</span> the probability that the chosen number is rational is <span class="process-math">\(0\text{.}\)</span> Thus the event that the chosen number is irrational occurs almost surely.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Integration-of-Simple-Functions-18" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Integration-of-Simple-Functions-18-1">Recall the Monotone Convergence Theorem which states that a bounded monotonic sequence converges. This means that we can prove that <span class="process-math">\(f_n\)</span> converges almost everywhere by showing that the set of points in <span class="process-math">\(E\)</span> for which <span class="process-math">\(\{f_n(x)\}\)</span> is unbounded is a set of measure zero.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-18-2">
+<div class="para">Choose <span class="process-math">\(\epsilon &gt; 0\)</span> and let</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-18-2-2">
+\begin{equation*}
+E_n = \left\{x \in E: f_n(x) &gt; \frac{A}{\epsilon}\right\}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-18-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-18-3">
+<div class="para">Then since <span class="process-math">\(f_n\)</span> is non-negative,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-18-3-2">
+\begin{align*}
+\frac{A}{\epsilon} \mu(E_n) \amp \leq \int_{E_n} f_n d\mu \\
+\amp \leq \int_E f_n d\mu &lt; A. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-18-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Simple-Functions-18-4">Hence <span class="process-math">\(\mu(E_n) &lt; \epsilon\text{.}\)</span> Since <span class="process-math">\(\{f_n\}\)</span> is increasing, we have that <span class="process-math">\(E_1 \subseteq E_2 \subseteq \ldots\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-18-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Simple-Functions-18-5">
+<div class="para">Let <span class="process-math">\(U\)</span> denote the set of <span class="process-math">\(x \in E\)</span> for which <span class="process-math">\(\{f_n(x)\}\)</span> is unbounded. Then <span class="process-math">\(U\)</span> is contained in the union of the <span class="process-math">\(E_n\)</span>’s. Thus it follows from monotonicity and the theorem about measure of an increasing union that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Simple-Functions-18-5-6">
+\begin{equation*}
+\mu(U) \leq \mu \left( \bigcup_{n=1} E_n \right) = \lim_{n\to \infty} E_n &lt; \epsilon.
+\end{equation*}
+</div>
+<div class="para">Since the above inequality is true for all <span class="process-math">\(\epsilon &gt; 0\text{,}\)</span> it follows that <span class="process-math">\(\mu(U) = 0\text{.}\)</span> Hence <span class="process-math">\(\{f_n\}\)</span> is bounded almost everywhere and thus converges to a finite valued function <span class="process-math">\(f\)</span> almost everywhere.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Simple-Functions-18-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Integration-of-Simple-Functions-18" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Integration of Simple Functions"><a href="#subsec-Integration-of-Simple-Functions" title="Copy heading and permalink for Subsection: Integration of Simple Functions" aria-label="Copy heading and permalink for Subsection: Integration of Simple Functions">🔗</a></div></section><section class="subsection" id="subsec-Integration-of-Non-negative-Functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration of Non-negative Functions</span>
+</h3>
+<div class="para" id="subsec-Integration-of-Non-negative-Functions-2">We now extend the definition of Lebesgue integration to non-negative functions. The main idea is that every bounded non-negative function can be approximated from below by a sequence of simple functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-integral-non-negative"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">73</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Lebesgue Integral of Non-negative Measurable Functions.</span>
+</h4>
+<div class="para logical" id="def-integral-non-negative-2-1">
+<div class="para">Let <span class="process-math">\((X,S,\mu)\)</span> be a measure space. Given a non-negative measurable function <span class="process-math">\(f\)</span> and a measurable set <span class="process-math">\(E\text{,}\)</span> we define</div>
+<div class="displaymath process-math" id="def-integral-non-negative-2-1-4">
+\begin{equation*}
+\int_E f d\mu = \sup_{g \leq f} \int_E g d\mu
+\end{equation*}
+</div>
+<div class="para">where the supremum is taken over all simple functions <span class="process-math">\(g\)</span> for which <span class="process-math">\(g(x) \leq f(x)\)</span> for all <span class="process-math">\(x \in E\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-integral-non-negative-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 73: Lebesgue Integral of Non-negative Measurable Functions"><a href="#def-integral-non-negative" title="Copy heading and permalink for Definition 73: Lebesgue Integral of Non-negative Measurable Functions" aria-label="Copy heading and permalink for Definition 73: Lebesgue Integral of Non-negative Measurable Functions">🔗</a></div></article><div class="para logical" id="subsec-Integration-of-Non-negative-Functions-4">
+<div class="para">Example: Let <span class="process-math">\(f(x) = x\text{.}\)</span> We’ll evaluate <span class="process-math">\(\displaystyle \int_0^1 f d\mu\)</span> using the definition of Lebesgue integration. Choose <span class="process-math">\(n \in \mathbf{N}\)</span> and divide <span class="process-math">\([0,1]\)</span> into <span class="process-math">\(n\)</span> equally spaced intervals of width <span class="process-math">\(\frac{1}{n}\text{.}\)</span> We define a simple function <span class="process-math">\(f_n(x)\)</span> by setting it equal to the left endpoint of each interval. That is,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-4-8">
+\begin{equation*}
+f_n(x) = \begin{cases} 
+\hfill  0 \amp \text{ if $0 \leq x &lt; \frac{1}{n}$} \\
+\hfill  \frac{1}{n} \hfill \amp \text{ if $\frac{1}{n} \leq x &lt; \frac{2}{n}$} \\
+\hfill \amp \vdots \\
+\hfill  \frac{n-1}{n} \hfill \amp \text{ if $\frac{n-1}{n} \leq x \leq 1$} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(f_n(x)\)</span> is a simple function and <span class="process-math">\(f_n(x) \leq f(x)\)</span> on <span class="process-math">\([0,1]\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-5">
+<div class="para">It follows that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-5-1">
+\begin{align*}
+\int_0^1 f_n d\mu \amp = 0 \cdot \frac{1}{n} + \frac{1}{n}\cdot \frac{1}{n} + \frac{2}{n} \cdot \frac{1}{n} + \ldots + \frac{n-1}{n} \cdot \frac{1}{n} \\
+\amp = \frac{1}{n^2} \left(1+2+\ldots + (n-1) \right) \\
+\amp = \frac{1}{n^2} \left(\frac{n^2-n}{2} \right) = \frac{1}{2}\left(1-\frac{1}{n}\right) 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Non-negative-Functions-6">Taking the supremum over all <span class="process-math">\(n\)</span> gives <span class="process-math">\(\displaystyle \sup_n \int_0^1 f_n d\mu = \frac{1}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-7">
+<div class="para">In the Lebesgue integral the supremum must be taken over all simple functions <span class="process-math">\(g\)</span> with <span class="process-math">\(g(x) \leq f(x)\text{,}\)</span> not just the <span class="process-math">\(f_n\)</span>’s. However, if <span class="process-math">\(g(x)\)</span> is a simple function with <span class="process-math">\(g(x) \leq f(x)\text{,}\)</span> then there exists <span class="process-math">\(N \in \mathbf{N}\)</span> such that <span class="process-math">\(g(x) \leq f_N(x)\)</span> and thus by the properties of the integrals of simple functions <span class="process-math">\(\displaystyle \int_0^1 g d\mu \leq \int_0^1 f_N d\mu\text{.}\)</span> Thus we are justified in only taking the supremum over the <span class="process-math">\(f_n\)</span>’s and can conclude that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-7-10">
+\begin{equation*}
+\int_0^1 f d\mu = \frac{1}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-integral-over-set-of-measure-0"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">74</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integral over a Set of Measure Zero.</span>
+</h4>
+<div class="para" id="thm-integral-over-set-of-measure-0-2-1">Let <span class="process-math">\((X,S,\mu)\)</span> be a measure space.<div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-over-set-of-measure-0-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="lower-alpha ol-marker-1" id="thm-integral-over-set-of-measure-0-2-2">
+<li id="thm-integral-over-set-of-measure-0-2-2-1">
+<div class="para" id="thm-integral-over-set-of-measure-0-2-2-1-1">If <span class="process-math">\(f\)</span> is a measurable function and <span class="process-math">\(\mu(E) = 0\text{,}\)</span> then <span class="process-math">\(\int_E f d\mu = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-over-set-of-measure-0-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-integral-over-set-of-measure-0-2-2-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-integral-over-set-of-measure-0-2-2-2">
+<div class="para" id="thm-integral-over-set-of-measure-0-2-2-2-1">If <span class="process-math">\(E = E_1 \cup E_2\text{,}\)</span> where <span class="process-math">\(E_1\)</span> and <span class="process-math">\(E_2\)</span> are disjoint measurable sets, then <span class="process-math">\(\int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-over-set-of-measure-0-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-integral-over-set-of-measure-0-2-2-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="thm-integral-over-set-of-measure-0-2-2-3">
+<div class="para" id="thm-integral-over-set-of-measure-0-2-2-3-1">If <span class="process-math">\(f = g\)</span> almost everywhere, then <span class="process-math">\(\int_E f d\mu = \int_E g d\mu\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integral-over-set-of-measure-0-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#thm-integral-over-set-of-measure-0-2-2-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 74: Integral over a Set of Measure Zero"><a href="#thm-integral-over-set-of-measure-0" title="Copy heading and permalink for Theorem 74: Integral over a Set of Measure Zero" aria-label="Copy heading and permalink for Theorem 74: Integral over a Set of Measure Zero">🔗</a></div></article><details id="subsec-Integration-of-Non-negative-Functions-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Integration-of-Non-negative-Functions-9-1">For part (a) it follows from the definition of the Lebesgue integral for simple functions, that every simple function on <span class="process-math">\(E\)</span> has integral <span class="process-math">\(0\text{.}\)</span> Thus the supremum over all simple functions is also <span class="process-math">\(0\)</span> and <span class="process-math">\(\int_E f d\mu = 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-9-2">
+<div class="para">For the proof of (b), we showed that for simple functions we have</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-9-2-1">
+\begin{equation*}
+\int_E g d\mu = \int_{E_1} g d\mu + \int_{E_2} g d\mu.
+\end{equation*}
+</div>
+<div class="para">Taking the supremum over all simple functions <span class="process-math">\(g\)</span> with <span class="process-math">\(g \leq f\)</span> thus gives that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-9-2-4">
+\begin{equation*}
+\int_E f d\mu = \int_{E_1} f d\mu + \int_{E_2} f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-9-3">
+<div class="para">To prove (c), let <span class="process-math">\(E_1\)</span> denote the subset of <span class="process-math">\(x \in E\)</span> such that <span class="process-math">\(f(x) = g(x)\)</span> and let <span class="process-math">\(E_2 = E - E_1\text{.}\)</span> Then <span class="process-math">\(\mu(E_2) = 0\)</span> and</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-9-3-6">
+\begin{align*}
+\int_E f d\mu \amp = \int_{E_1} f d\mu + \int_{E_2} f d\mu \\
+\amp = \int_{E_1} g d\mu \\
+\amp = \int_{E_1} g d\mu + \int_{E_2} g d\mu \\
+\amp = \int_E g d\mu. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Integration-of-Non-negative-Functions-9" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-monotone-convergence"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">75</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Convergence Theorem.</span>
+</h4>
+<div class="para logical" id="thm-monotone-convergence-2-1">
+<div class="para">Let <span class="process-math">\((X,S,\mu)\)</span> be a measure space and let <span class="process-math">\(\{f_n\}\)</span> be a monotonically increasing sequence of non-negative functions. If there is a finite <span class="process-math">\(A\)</span> for which <span class="process-math">\(\int_E f_n d\mu &lt; A\)</span> for all <span class="process-math">\(n\text{,}\)</span> then <span class="process-math">\(f_n\)</span> converges to a finite-valued function <span class="process-math">\(f\)</span> almost everywhere, <span class="process-math">\(f\)</span> is integrable, and</div>
+<div class="displaymath process-math" id="thm-monotone-convergence-2-1-9">
+\begin{equation*}
+\int_E f d\mu = \lim_{n\to \infty} \int_E f_n d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-monotone-convergence-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 75: Monotone Convergence Theorem"><a href="#thm-monotone-convergence" title="Copy heading and permalink for Theorem 75: Monotone Convergence Theorem" aria-label="Copy heading and permalink for Theorem 75: Monotone Convergence Theorem">🔗</a></div></article><details id="subsec-Integration-of-Non-negative-Functions-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Integration-of-Non-negative-Functions-11-1">We will first prove that <span class="process-math">\(\{f_n\}\)</span> converges almost everywhere, then we will show that <span class="process-math">\(\int_E f d\mu \geq \lim_{n\to \infty} \int_E f_n d\mu\)</span> and lastly we will show that <span class="process-math">\(\int_E f d\mu \leq \lim_{n\to \infty} \int_E f_n d\mu\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-2">
+<div class="para">From the monotone convergent Theorem we know that for a given <span class="process-math">\(x\text{,}\)</span> <span class="process-math">\(\{f_n(x)\}\)</span> converges provided that the sequence is bounded. Thus we want to show that the set of <span class="process-math">\(x\)</span> where <span class="process-math">\(\{f_n(x)\}\)</span> is unbounded has measure zero. We know that each function <span class="process-math">\(f_n\)</span> is the limit of an increasing sequence of simple functions <span class="process-math">\(\phi_{n,k}\text{.}\)</span> Define a new sequence of simple functions by</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-2-7">
+\begin{equation*}
+\phi_n(x) = \sup_{1\leq j,k \leq n} \phi_{j,k}(x).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-3">
+<div class="para">Since</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-3-1">
+\begin{equation*}
+\phi_n(x) = \sup_{1\leq j,k \leq n} \phi_{j,k}(x) \geq \sup_{1\leq j,k \leq n-1} \phi_{j,k}(x) = \phi_{n-1}(x)
+\end{equation*}
+</div>
+<div class="para">
+<span class="process-math">\(\{\phi_n\}\)</span> is an increasing sequence.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Non-negative-Functions-11-4">Since <span class="process-math">\(\phi_n \leq f_n\text{,}\)</span> the integrals <span class="process-math">\(\int_E \phi_n d\mu\)</span> are bounded. If <span class="process-math">\(x\)</span> is a point for which <span class="process-math">\(\{f_n(x)\}\)</span> is unbounded, then for any <span class="process-math">\(M\text{,}\)</span> we can find an <span class="process-math">\(n\)</span> for which <span class="process-math">\(f_n(x) &gt; M+1\text{.}\)</span> Since <span class="process-math">\(\phi_{n,k}\)</span> converges to <span class="process-math">\(f_n\text{,}\)</span> we can find a <span class="process-math">\(k\)</span> for which <span class="process-math">\(\phi_{n,k} &gt; M\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Non-negative-Functions-11-5">Hence <span class="process-math">\(\phi_{\max\{n,k\}}(x) &gt; M\)</span> and thus the sequence <span class="process-math">\(\{\phi_{n}(x)\}\)</span> is also unbounded.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Non-negative-Functions-11-6">By the Monotone Convergence Theorem for Simple Functions <span class="process-math">\(U\text{,}\)</span> the set of <span class="process-math">\(x\)</span> for which <span class="process-math">\(\{\phi_n(x)\}\)</span> is unbounded has measure zero. Thus we are free to set <span class="process-math">\(f(x) = 0\)</span> on <span class="process-math">\(U\text{.}\)</span> We now have that <span class="process-math">\(f_n\)</span> is bounded almost everywhere and thus converges to a finite valued function <span class="process-math">\(f\)</span> almost everywhere, which is the first part of the proof.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-7">
+<div class="para">For the next part suppose that <span class="process-math">\(g\)</span> and <span class="process-math">\(h\)</span> are non-negative measurable functions with <span class="process-math">\(g(x) \leq h(x)\)</span> for all <span class="process-math">\(x \in E\text{.}\)</span> Then the set of simple functions that are less than or equal to <span class="process-math">\(g\)</span> is a subset of the set of simple functions that are less than or equal to <span class="process-math">\(h\)</span> and hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-7-7">
+\begin{equation*}
+\int_E g d\mu = \sup_{\phi \leq g} \int_E \phi d\mu \leq \sup_{\phi \leq h} \int_E \phi d\mu =  \int_E h d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-8">
+<div class="para">If <span class="process-math">\(g(x) \leq h(x)\)</span> except possibly for <span class="process-math">\(x\in U\)</span> where <span class="process-math">\(\mu(U) = 0\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-8-4">
+\begin{equation*}
+\int_E g d\mu =  \int_{E\setminus U} g d\mu \leq  \int_{E\setminus U} h d\mu =  \int_E h d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-9">
+<div class="para">We have shown that functional inequalities that hold almost everywhere imply integral inequalities that hold on all <span class="process-math">\(E\text{.}\)</span> Since <span class="process-math">\(f_n(x) \leq f(x)\)</span> almost everywhere, it follows that for all <span class="process-math">\(n\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-9-4">
+\begin{equation*}
+\int_E f_n d\mu \leq \int_E f d\mu.
+\end{equation*}
+</div>
+<div class="para">and therefore,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-9-5">
+\begin{equation*}
+\lim_{n\to \infty} \int_E f_n d\mu \leq \int_E f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-10">
+<div class="para">To finish the proof of the Monotone Convergence Theorem we need to show the reverse inequality holds as well. To show the reverse inequality let <span class="process-math">\(\phi\)</span> be a non-negative simple function that is less than or equal to <span class="process-math">\(f\text{.}\)</span> That is,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-10-3">
+\begin{equation*}
+\phi = \sum_{k=1}^m c_k \chi_{E_k}  \leq f
+\end{equation*}
+</div>
+<div class="para">where the <span class="process-math">\(E_k\)</span> are disjoint sets with <span class="process-math">\(\displaystyle \bigcup_{k=1}^m E_k = E\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-11">
+<div class="para">Choose <span class="process-math">\(\alpha\)</span> with <span class="process-math">\(0 &lt;\alpha &lt; 1\)</span> and define the sets</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-11-3">
+\begin{equation*}
+A_n = \{x\in E: f_n(x) \geq \alpha \phi(x)\}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-12">
+<div class="para">Since <span class="process-math">\(\{f_n\}\)</span> is an increasing sequence it follows that <span class="process-math">\(A_n\)</span> is an increasing sequence of sets with <span class="process-math">\(\displaystyle \bigcup_{n=1}^{\infty} A_n = E\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-12-4">
+\begin{equation*}
+\lim_{n\to \infty} \mu(E_k \cap A_n) = \mu(E_k \cap E).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-13">
+<div class="para">Now choose <span class="process-math">\(\epsilon &gt; 0\text{.}\)</span> Then for each <span class="process-math">\(E_k\text{,}\)</span> we can find <span class="process-math">\(N_k \in \mathbf{N}\)</span> such that whenever <span class="process-math">\(n \geq N_k\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-13-5">
+\begin{equation*}
+\mu(E_k \cap A_n) &gt; \left(1-\frac{\epsilon}{\alpha c_k}\right) \mu(E_k \cap E).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-14">
+<div class="para">Let <span class="process-math">\(N = \max\{N_1,N_2,\ldots N_m\}\text{.}\)</span> Then for <span class="process-math">\(n \geq N\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-14-3">
+\begin{align*}
+\int_E f_n d\mu \amp \geq \int_{A_n} f_n d\mu \\
+\amp \geq \alpha \int_{A_n} \phi_n d\mu\\
+\amp = \alpha \sum_{k=1}^m c_k \mu(E_k \cap A_n)\\
+\amp &lt; \alpha \sum_{k=1}^m c_k \left(1- \frac{\epsilon}{\alpha c_k} \right) \mu(E_k \cap E).
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-15">
+<div class="para">Hence,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-15-1">
+\begin{align*}
+\int_E f_n d\mu \amp &lt; \alpha \sum_{k=1}^m c_k \mu(E_k \cap E) - \epsilon \sum_{k=1}^m \mu(E_k \cap E)\\
+\amp = \alpha \int_E \phi d\mu - \epsilon \mu(E). 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-16">
+<div class="para">Since this is true for every <span class="process-math">\(\epsilon &gt; 0\)</span> and <span class="process-math">\(\alpha\)</span> with <span class="process-math">\(0 &lt; \alpha &lt; 1\text{,}\)</span> it follows that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-16-4">
+\begin{equation*}
+\int_E f_n d\mu \geq \int_E \phi d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Non-negative-Functions-11-17">
+<div class="para">Thus every simple function <span class="process-math">\(\phi \leq f\)</span> has an integral bounded above by <span class="process-math">\(\int_E f_n d\mu\)</span> for all <span class="process-math">\(n\)</span> sufficiently large. Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-17-4">
+\begin{equation*}
+\lim_{n\to \infty} \int_E f_n d\mu \geq \sup_{\phi \leq f} \int_E \phi d\mu = \int_E f d\mu
+\end{equation*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-11-17-5">
+\begin{equation*}
+\lim_{n\to \infty} \int_E f_n d\mu = \int_E f d\mu
+\end{equation*}
+</div>
+<div class="para">which completes the proof.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-11-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Integration-of-Non-negative-Functions-11" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-homogenous-integration"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">76</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration is Homogeneous.</span>
+</h4>
+<div class="para logical" id="thm-homogenous-integration-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(f:X \to [-\infty,\infty]\)</span> is a non-negative function. If <span class="process-math">\(c &gt; 0 \in \mathbf{R}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="thm-homogenous-integration-2-1-4">
+\begin{equation*}
+\int c f d\mu = c \int f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-homogenous-integration-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 76: Integration is Homogeneous"><a href="#thm-homogenous-integration" title="Copy heading and permalink for Theorem 76: Integration is Homogeneous" aria-label="Copy heading and permalink for Theorem 76: Integration is Homogeneous">🔗</a></div></article><details id="subsec-Integration-of-Non-negative-Functions-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Integration-of-Non-negative-Functions-13-1">
+<div class="para">Note that <span class="process-math">\(g\)</span> is a simple function with <span class="process-math">\(g \leq f\)</span> if and only if <span class="process-math">\(cg\)</span> is a simple function with <span class="process-math">\(cg \leq cf\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Non-negative-Functions-13-1-5">
+\begin{equation*}
+\int cf d\mu = \sup_{cg \leq cf} \int cg d\mu = \sup_{g\leq f} c \int g d\mu = c \int f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Non-negative-Functions-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-Integration-of-Non-negative-Functions-13" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Integration of Non-negative Functions"><a href="#subsec-Integration-of-Non-negative-Functions" title="Copy heading and permalink for Subsection: Integration of Non-negative Functions" aria-label="Copy heading and permalink for Subsection: Integration of Non-negative Functions">🔗</a></div></section><section class="subsection" id="subsec-Integration-of-Real-Valued-Functions"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration of Real Valued Functions</span>
+</h3>
+<div class="para" id="subsec-Integration-of-Real-Valued-Functions-2">We first note that every real valued function can be written as a difference of non-negative functions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-f-plus"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">77</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><span class="process-math">\(f^+\)</span> and <span class="process-math">\(f^-\)</span>.</span>
+</h4>
+<div class="para logical" id="def-f-plus-2-1">
+<div class="para">Suppose <span class="process-math">\(f:X \to [-\infty,\infty]\)</span> is a function. Define functions <span class="process-math">\(f^+\)</span> and <span class="process-math">\(f^-\)</span> by</div>
+<div class="displaymath process-math" id="def-f-plus-2-1-4">
+\begin{equation*}
+f^+ = \begin{cases} 
+\hfill  f(x) \amp \text{ if $f(x)\geq 0$} \\
+\hfill  0 \hfill \amp \text{ if $f(x) &lt;0$} \\
+\end{cases} \quad ,f^- = \begin{cases} 
+\hfill  0 \amp \text{ if $f(x)\geq 0$} \\
+\hfill  -f(x) \hfill \amp \text{ if $f(x) &lt; 0$} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-f-plus-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 77: f^+ and f^-"><a href="#def-f-plus" title="Copy heading and permalink for Definition 77: f^+ and f^-" aria-label="Copy heading and permalink for Definition 77: f^+ and f^-">🔗</a></div></article><div class="para" id="subsec-Integration-of-Real-Valued-Functions-4">Note that <span class="process-math">\(f = f^+ - f^-\)</span> and <span class="process-math">\(|f| = f^+ + f^-\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-real-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">78</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integral of a Real Valued Function.</span>
+</h4>
+<div class="para logical" id="def-real-integral-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(f:X \to [-\infty,\infty]\)</span> is an <span class="process-math">\(S\)</span>-measurable function such that at least one of <span class="process-math">\(\int f^+ d\mu\)</span> or <span class="process-math">\(\int f^- d\mu\)</span> is finite. The integral of <span class="process-math">\(f\)</span> with respect to <span class="process-math">\(\mu\)</span> denoted by <span class="process-math">\(\int f d\mu\text{,}\)</span> is defined by</div>
+<div class="displaymath process-math" id="def-real-integral-2-1-9">
+\begin{equation*}
+\int f d\mu = \int f^+ d\mu - \int f^- d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-real-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 78: Integral of a Real Valued Function"><a href="#def-real-integral" title="Copy heading and permalink for Definition 78: Integral of a Real Valued Function" aria-label="Copy heading and permalink for Definition 78: Integral of a Real Valued Function">🔗</a></div></article><div class="para" id="subsec-Integration-of-Real-Valued-Functions-6">The geometrical interpretation of this definition is that we are subtracting the integral of the negative part of the function from the integral of the positive part, much like how in Calculus we found the value of the integral by subtracting the area of the function beneath the <span class="process-math">\(x\)</span> axis from the area of the function above the <span class="process-math">\(x\)</span> axis.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-7">
+<div class="para">Example: Suppose that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-7-1">
+\begin{equation*}
+f(x) = \begin{cases} 
+\hfill  x^2 \amp \text{ if $0 \leq x &lt; \frac{1}{3}$ or $\frac{2}{3} &lt; x \leq 1$} \\
+\hfill  -2x \hfill \amp \text{ if $\frac{1}{3} \leq x \leq \frac{2}{3}$} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\mu\)</span> denote Lebesgue measure. Find</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-7-3">
+\begin{equation*}
+\int_0^1 f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-8">
+<div class="para">Example: Suppose that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-8-1">
+\begin{equation*}
+g(x) = \begin{cases} 
+\hfill  1 \amp \text{ if $x \geq 0$} \\
+\hfill  -1 \hfill \amp \text{ if $x &lt; 0$} \\
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Then <span class="process-math">\(\int g d\mu\)</span> is not defined because <span class="process-math">\(\int g^+ \mu = \int g^- \mu = \infty\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Integration-of-Real-Valued-Functions-9">We can now verify that the familiar properties of integration hold in general for the Riemann integral.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-integration-is-homogeneous"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">79</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration is Homogeneous.</span>
+</h4>
+<div class="para logical" id="thm-integration-is-homogeneous-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(f:X \to [-\infty,\infty]\)</span> is a measurable function such that <span class="process-math">\(\int f d\mu\)</span> is defined. If <span class="process-math">\(c \in \mathbf{R}\text{,}\)</span> then</div>
+<div class="displaymath process-math" id="thm-integration-is-homogeneous-2-1-5">
+\begin{equation*}
+\int c f d\mu = c \int f d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-integration-is-homogeneous-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 79: Integration is Homogeneous"><a href="#thm-integration-is-homogeneous" title="Copy heading and permalink for Theorem 79: Integration is Homogeneous" aria-label="Copy heading and permalink for Theorem 79: Integration is Homogeneous">🔗</a></div></article><details id="subsec-Integration-of-Real-Valued-Functions-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-11-1">
+<div class="para">First suppose <span class="process-math">\(c &lt; 0\text{.}\)</span> Then <span class="process-math">\((cf)^+ = c(f^+)\)</span> and <span class="process-math">\((cf)^- = c(f^-)\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-11-1-4">
+\begin{align*}
+\int cf d\mu \amp = \int c(f^+)d\mu - \int c(f^-) d\mu \\
+\amp =c \left(\int f^+ d\mu -\int f^- d\mu \right) \\
+\amp = c \int f d\mu.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-11-2">
+<div class="para">If <span class="process-math">\(c &lt; 0\text{,}\)</span> then <span class="process-math">\(-c&gt;0\)</span> and thus <span class="process-math">\((cf)^+ = -c(f^-)\)</span> and <span class="process-math">\((cf)^- = -c(f^+)\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-11-2-5">
+\begin{align*}
+\int cf d\mu \amp = \int -c(f^-)d\mu - \int -c(f^+) d\mu \\
+\amp =-c \left(\int f^- d\mu -\int f^+ d\mu \right) \\
+\amp = c \int f d\mu. 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Integration-of-Real-Valued-Functions-11" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-additivity-integral"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">80</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Additivity of Integration.</span>
+</h4>
+<div class="para logical" id="thm-additivity-integral-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(f,g: X \to [-\infty,\infty]\)</span> are <span class="process-math">\(S\)</span>-measurable functions such that <span class="process-math">\(\int |f| d\mu &lt; \infty\)</span> and <span class="process-math">\(\int |g| d\mu &lt; \infty\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm-additivity-integral-2-1-6">
+\begin{equation*}
+\int f+g d\mu = \int f d\mu + \int g d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-additivity-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 80: Additivity of Integration"><a href="#thm-additivity-integral" title="Copy heading and permalink for Theorem 80: Additivity of Integration" aria-label="Copy heading and permalink for Theorem 80: Additivity of Integration">🔗</a></div></article><details id="subsec-Integration-of-Real-Valued-Functions-13" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-13-1">
+<div class="para">We first observe that <span class="process-math">\((f+g)^+ - (f+g)^- = f+g = f^+ - f^- +g^+-g^-\text{.}\)</span> Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-13-1-2">
+\begin{equation*}
+(f+g)^+ + f^- + g^- = (f+g)^- + f^+ + g^+.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-13-2">
+<div class="para">Since both sides are non-negative functions we can integrate both sides of the above equation with respect to <span class="process-math">\(\mu\)</span> to get</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-13-2-2">
+\begin{align*}
+\int (f+g)^+ d\mu + \int f^- d\mu + \int g^- d\mu \amp = \int (f+g)^- d\mu \\
+\amp + \int f^+ d\mu + \int g^+ d\mu 
+\end{align*}
+</div>
+<div class="para">Rearranging the above equation gives</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-13-2-3">
+\begin{align*}
+\int (f+g)^+ d\mu - \int (f+g)^- d\mu \amp = \int f^+ d\mu - \int f^- d\mu \\
+\amp + \int g^+ d\mu - \int g^- d\mu.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-13-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-13-3">
+<div class="para">We note that the left side is not of the form <span class="process-math">\(\infty - \infty\)</span> since <span class="process-math">\((f+g)^+ \leq f^+ + g^+\)</span> and <span class="process-math">\((f+g)^- \leq f^- + g^-\text{.}\)</span> Thus we can simplify the above equation to obtain</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-13-3-4">
+\begin{equation*}
+\int f+g d\mu = \int f d\mu + \int g d\mu
+\end{equation*}
+</div>
+<div class="para">which is what we wanted to prove.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-13-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Integration-of-Real-Valued-Functions-13" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-integration-order"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">81</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration is Order Preserving.</span>
+</h4>
+<div class="para" id="thm-integration-order-2-1">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(f,g:X \to \mathbf{R}\)</span> are <span class="process-math">\(S\)</span>-measurable functions such that <span class="process-math">\(\int f d\mu\)</span> and <span class="process-math">\(\int g d\mu\)</span> are defined. Suppose also that <span class="process-math">\(f(x) \leq g(x)\)</span> for all <span class="process-math">\(x \in X\text{.}\)</span> Then <span class="process-math">\(\int f d\mu \leq \int g d\mu\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-integration-order-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 81: Integration is Order Preserving"><a href="#thm-integration-order" title="Copy heading and permalink for Theorem 81: Integration is Order Preserving" aria-label="Copy heading and permalink for Theorem 81: Integration is Order Preserving">🔗</a></div></article><details id="subsec-Integration-of-Real-Valued-Functions-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-15-1">
+<div class="para">If <span class="process-math">\(\int g d\mu = \infty\)</span> or <span class="process-math">\(\int f d\mu = -\infty\)</span> then the conclusion is always true, so suppose that <span class="process-math">\(\int g d\mu &lt; \infty\)</span> and <span class="process-math">\(\int f d\mu &gt; -\infty\text{.}\)</span> It follows from additivity that</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-15-1-5">
+\begin{equation*}
+\int g d\mu - \int f d\mu = \int (g-f) d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-15-2">
+<div class="para">The right hand side is non-negative since <span class="process-math">\(f(x) \leq g(x)\)</span> for all <span class="process-math">\(x\text{.}\)</span> Moreover, the left hand side is finite due to our assumptions. Hence</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-15-2-3">
+\begin{equation*}
+\int g d\mu \geq \int fd\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3"><a href="#subsec-Integration-of-Real-Valued-Functions-15" title="Copy heading and permalink for Proof 3" aria-label="Copy heading and permalink for Proof 3">🔗</a></div></article></details><article class="theorem theorem-like" id="thm-absolute-value-integral"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">82</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Absolute Value of Integral <span class="process-math">\(\leq\)</span> than Integral of Absolute Value.</span>
+</h4>
+<div class="para logical" id="thm-absolute-value-integral-2-1">
+<div class="para">Suppose <span class="process-math">\(f:X \to [-\infty,\infty]\)</span> is a function such that <span class="process-math">\(\int f d\mu\)</span> is defined. Then</div>
+<div class="displaymath process-math" id="thm-absolute-value-integral-2-1-3">
+\begin{equation*}
+\left|\int f d\mu \right| \leq \int |f| d\mu
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-absolute-value-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 82: Absolute Value of Integral \leq than Integral of Absolute Value"><a href="#thm-absolute-value-integral" title="Copy heading and permalink for Theorem 82: Absolute Value of Integral \leq than Integral of Absolute Value" aria-label="Copy heading and permalink for Theorem 82: Absolute Value of Integral \leq than Integral of Absolute Value">🔗</a></div></article><details id="subsec-Integration-of-Real-Valued-Functions-17" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Integration-of-Real-Valued-Functions-17-1">
+<div class="para">Because <span class="process-math">\(f\)</span> is defined and <span class="process-math">\(f\)</span> is an <span class="process-math">\(S\)</span>-measureable function at least one of <span class="process-math">\(\int f^+ d\mu\)</span> and <span class="process-math">\(\int f^- d\mu\)</span> is finite. Hence,</div>
+<div class="displaymath process-math" id="subsec-Integration-of-Real-Valued-Functions-17-1-6">
+\begin{align*}
+\left| \int f d\mu \right| \amp \left| \int f^+ d\mu - \int f^- d\mu \right| \\
+\amp \leq \left|\int f^+ d\mu\right| + \left|\int f^-  d\mu \right| \\
+\amp = \int f^+ d\mu + \int f^- d\mu = \int |f| d\mu. 
+\end{align*}
+</div>
+<div class="para">which is what we want to show.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 4"><a href="#subsec-Integration-of-Real-Valued-Functions-17" title="Copy heading and permalink for Proof 4" aria-label="Copy heading and permalink for Proof 4">🔗</a></div></article></details><div class="para" id="subsec-Integration-of-Real-Valued-Functions-18">In probability the expected value is a generalization of the weighted average. In the case that there are infinitely many possible outcomes, the expected value is defined using the Lebesgue integral.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-expected-value"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">83</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expected Value.</span>
+</h4>
+<div class="para logical" id="def-expected-value-2-1">
+<div class="para">Suppose <span class="process-math">\(X\)</span> is a real valued random variable on a probability space <span class="process-math">\((\Omega,S,\mu)\text{.}\)</span> Then the <dfn class="terminology">expected value</dfn> of <span class="process-math">\(X\)</span> is denoted <span class="process-math">\(E\)</span> is defined as the Lebesgue integral</div>
+<div class="displaymath process-math" id="def-expected-value-2-1-6">
+\begin{equation*}
+E[X] = \int_\Omega X d\mu.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-expected-value-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 83: Expected Value"><a href="#def-expected-value" title="Copy heading and permalink for Definition 83: Expected Value" aria-label="Copy heading and permalink for Definition 83: Expected Value">🔗</a></div></article><div class="para" id="subsec-Integration-of-Real-Valued-Functions-20">If <span class="process-math">\(X\)</span> has only a finite number of possible outcomes, then this definition reduces to the weighted average of the outcomes.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Integration-of-Real-Valued-Functions-20" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Integration of Real Valued Functions"><a href="#subsec-Integration-of-Real-Valued-Functions" title="Copy heading and permalink for Subsection: Integration of Real Valued Functions" aria-label="Copy heading and permalink for Subsection: Integration of Real Valued Functions">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)"><a href="#notes-week-07" title="Copy heading and permalink for Section: Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)" aria-label="Copy heading and permalink for Section: Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-06.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
