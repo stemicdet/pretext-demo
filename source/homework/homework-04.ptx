@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 4 (Due September 17)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>X</m> is a subset of <m>\mathbf{R}</m> and <m>f:X \to \mathbf{R}</m>. Let <m>S = \{ \emptyset, X\}</m>. Show that <m>f</m> is <m>S</m>-measurable if and only if <m>f</m> is a constant function on <m>X</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+            Give an example of a function <m>f</m>, set <m>X</m>, and <m>\sigma</m>-algebras <m>S_1</m> and <m>S_2</m> so that <m>f</m> is <m>S_1</m>-measurable on <m>X</m> but not <m>S_2</m>-measurable.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+         Give an example of a measurable space <m>(X,S)</m> and a function <m>f: X \to \mathbf{R}</m> such that <m>|f|</m> is <m>S</m>-measurable but <m>f</m> is not <m>S</m>-measurable.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>(X,S)</m> is a measurable space, <m>E_1, \ldots, E_n</m> are disjoint subsets of <m>X</m> and <m>c_1, \ldots, c_n</m> are distinct non-zero real numbers. Prove that <m>c_1 \chi_{E_1} + \ldots + c_n \chi_{E_n}</m> is a <m>S</m>-measurable function if and only if <m>E_1, \ldots E_n \in S</m>. 
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>X</m> is a Borel subset of <m>\mathbf{R}</m> and <m>f:X \to \mathbf{R}</m> is a function such that <m>\{x \in X: f \text{ is not continuous at } x\}</m> is a countable set. Prove that <m>f</m> is a Borel measurable function.
+        </p>
+
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
