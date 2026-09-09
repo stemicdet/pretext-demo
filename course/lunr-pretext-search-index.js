@@ -1475,6 +1475,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Suppose is a set and and are -algebras on . Let ; that is, is the collection of subsets of that belong to either or . Is a -algebra? Provide a proof or a counterexample to support your answer.   "
+},
+{
+  "id": "homework-5",
+  "level": "1",
+  "url": "homework-5.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 4 (Due September 17)",
+  "body": " Homework 4 (Due September 17)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose is a subset of and . Let . Show that is -measurable if and only if is a constant function on .      Give an example of a function , set , and -algebras and so that is -measurable on but not -measurable.      Give an example of a measurable space and a function such that is -measurable but is not -measurable.      Suppose is a measurable space, are disjoint subsets of and are distinct non-zero real numbers. Prove that is a -measurable function if and only if .      Suppose is a Borel subset of and is a function such that is a countable set. Prove that is a Borel measurable function.     "
+},
+{
+  "id": "homework-5-3-1",
+  "level": "2",
+  "url": "homework-5.html#homework-5-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Suppose is a subset of and . Let . Show that is -measurable if and only if is a constant function on .   "
+},
+{
+  "id": "homework-5-3-2",
+  "level": "2",
+  "url": "homework-5.html#homework-5-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Give an example of a function , set , and -algebras and so that is -measurable on but not -measurable.   "
+},
+{
+  "id": "homework-5-3-3",
+  "level": "2",
+  "url": "homework-5.html#homework-5-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Give an example of a measurable space and a function such that is -measurable but is not -measurable.   "
+},
+{
+  "id": "homework-5-3-4",
+  "level": "2",
+  "url": "homework-5.html#homework-5-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Suppose is a measurable space, are disjoint subsets of and are distinct non-zero real numbers. Prove that is a -measurable function if and only if .   "
+},
+{
+  "id": "homework-5-3-5",
+  "level": "2",
+  "url": "homework-5.html#homework-5-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Suppose is a Borel subset of and is a function such that is a countable set. Prove that is a Borel measurable function.   "
 }
 ]
 
