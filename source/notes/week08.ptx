@@ -231,8 +231,285 @@
       </p>
     </statement>
   </theorem>
+
+  <p>
+    To prove the DCT we will need the following lemma.
+  </p>
+
+  <lemma xml:id="lem-integrals-on-small-sets-are-small">
+    <statement>
+      <p>
+        Suppose $(X,S,\mu) $ is a measure space, $g: X \to [0,\infty]$ is $S$-measurable and $\int g d\mu &lt; \infty$. Then for every $\epsilon &gt; 0$, there exists $\delta &gt; 0$ such that
+        <md>
+          \int_B g d\mu &lt; \epsilon
+        </md>
+        for every set $B$ in $S$ with $\mu(B) &lt; \delta$.
+      </p>
+    </statement>
+  </lemma>
+
+  <proof>
+    <p>
+      Choose $\epsilon &lt; 0$ and let $h$ be a simple function such that $0 \leq h \leq g$ and
+      <md>
+        \int g d\mu - \int h d\mu &lt; \frac{\epsilon}{2}.
+      </md>
+      The existence of such a function is given by the definition of the Lebesgue integral for non-negative functions. Let $H = \sup\{h(x): x \in X\} $ and choose $\delta &gt; 0$ such that $H\delta &lt; \frac{\epsilon}{2}$.
+    </p>
+
+    <p>
+      Now suppose $B \in S$ and $\mu(B) &lt; \delta$. Then
+      <md>
+        <mrow>  \int_B g d\mu \amp = \int_B (g-h) d\mu + \int_B h d\mu </mrow>
+        <mrow> \amp \leq \int (g-h) d\mu + \int_B H d\mu </mrow>
+        <mrow> \amp &lt; \frac{\epsilon}{2} + H \mu(B) </mrow>
+        <mrow> \amp &lt; \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon. </mrow>
+      </md>
+      
+    </p>
+
+  </proof>
+
+  <p>
+    Now we can prove the Dominated Convergence Theorem.
+  </p>
+
+  <proof>
+    <p>
+      Suppose $g:X \to [0,\infty]$ satisfies the hypotheses of the theorem. If $E\in S$, then 
+      <md>
+        <mrow> \left| \int f_k d\mu - \int fd\mu \right| \amp = \left| \int_{X\setminus E} f_k d\mu - \int_{X\setminus E} fd\mu + \int_E f_k d\mu - \int_E fd\mu \right|</mrow>
+        <mrow> \amp \leq \left| \int_{X\setminus E} f_k d\mu  \right|+ \left|\int_{X\setminus E} fd\mu  \right| + \left|  \int_E f_k d\mu - \int_E fd\mu \right|</mrow>
+        <mrow> \amp \leq 2 \left| \int_{X\setminus E} g d\mu  \right|+ \left|  \int_E f_k d\mu - \int_E fd\mu \right|</mrow>
+      </md>
+      
+    </p>
+
+    <p>
+      Suppose that $\mu(X) &lt; \infty$. Then by the first lemma, there exists $\delta &gt; 0$ such that 
+      <md>
+         \int_B g d\mu &lt; \epsilon
+      </md>
+      for every set $B \in S$ such that $\mu(B) &lt; \delta$.
+    </p>
+
+    <p>
+      By Egorov's Theorem, there exists a set $E \in S$ such that $\mu(X\setminus E) &lt; \delta$ and the sequence $f_1, f_2, \ldots$ converges uniformly to $f$ on $E$. Thus for $k$ sufficiently large,
+      <md>
+        <mrow> \left| \int f_k d\mu - \int fd\mu \right| \amp \leq 2 \left| \int_{X\setminus E} g d\mu  \right|+ \left|  \int_E f_k d\mu - \int_E fd\mu \right| </mrow>
+        <mrow> \amp \leq 2 \epsilon + \int_E (f_k - f) d\mu</mrow>
+        <mrow> \amp \leq 2 \epsilon + \mu(E) \epsilon</mrow>
+      </md>
+      
+    </p>
+
+    <p>
+      Since $\epsilon &gt; 0$ was arbitrarily chosen, this can be made as small as desired and hence 
+      <md>
+        \lim_{k\to \infty} \int f_k d\mu = \int f d\mu.
+      </md>
+      
+    </p>
+
+  </proof>
   
   
+</subsection>
+
+<subsection xml:id="subsec-Riemann-Integral-and-Lebesgue-Integral">
+  <title>Riemann Integral and Lebesgue Integral</title>
+  
+<p>
+  In MTH 528 we discussed Lebesgue's theorem, which stated that a function is Riemann integrable if and only if its discontinuities form a set of measure zero. We now have the tools to prove this result.
+</p>
+
+<theorem xml:id="thm-Lebesgue">
+  <title>Lebesgue's Theorem</title>
+  
+  
+  <statement>
+    <p>
+      Suppose $a &lt; b$ and $f: [a,b] \to \mathbf{R}$ is a bounded function. Then $f$ is Riemann integrable if and only if 
+      <md>
+        |\{x\in [a,b]: f \text{ is not continuous at } x\}| = 0
+      </md>
+      Furthermore if $f$ is Riemann integrable and $\lambda$ denotes Lebesgue measure on $\mathbf{R}$ then $f$ is Lebesgue measurable and
+      <md>
+        \int_a^b f(x) dx = \int_{[a,b]} f d\lambda.  
+      </md>
+      
+    </p>
+  </statement>
+</theorem>
+
+
+<proof>
+  <p>
+    For this proof we will make use of the fact that the Riemann integral and the Darboux integral are equivalent so that we can use the definition of the Darboux integral. Choose $n \in \mathbf{N}$ and let $P_n$ be the partition that divides $[a,b]$ into $2^n$ subintervals of equal size. Let $I_1, I_2, \ldots I_{2^n}$ be the corresponding subintervals and note that each has length $\frac{b-a}{2^n}$.
+  </p>
+
+  <p>
+    Now define
+    <md>
+      g_n = \sum_{j=1}^{2^n} (\inf_{I_j} f) \chi_{I_j} \quad \text{ and } \quad h_n = \sum_{j=1}^{2^n} (\sup_{I_j} f) \chi_{I_j}
+    </md>
+    This allows us to define the Lower and Upper sums in terms of integrals.
+    <md>
+      L(f,P_n) = \int_{[a,b]} g_n d \lambda \quad \text{ and } \quad U(f,P_n) = \int_{[a,b]} h_n d \lambda
+    </md>
+    
+  </p>
+
+  <p>
+    There is an issue with points on the boundary of two subintervals, so we will need to modify our definitions of $g_n$ and $h_n$ slightly. At points on a boundary of two subintervals, define $g_n$ to be the infimum over both subintervals and define $h_n$ to be the supremum over both subintervals. Since this only changes the values of $g_n$ and $h_n$ at a finite number of points, the lower and upper sums are still defined by the exact same integrals.
+  </p>
+
+  <p>
+    Taking the limit as $n\to \infty$ is makes the partitions finer. Thus $g_1 \leq g_2 \leq \ldots$ is an increasing sequence of functions and $h_1 \geq h_2 \geq \ldots$ is a decreasing sequence of functions on $[a,b]$. Define a lower function $f^L$ and upper function $f^U: [a,b] \to \mathbf{R}$ by
+    <md>
+      f^L(x) = \lim_{n\to \infty} g_n(x) \quad \text{ and } \quad f^U(x) = \lim_{n\to \infty} h_n(x).
+    </md>
+     
+  </p>
+
+  <p>
+    Since these sequences are bounded we can apply the BCT or DCT to interchange limit and integral. Hence
+    <md>
+      <mrow> \int_{[a,b]} f^L d \lambda \amp = \int_{[a,b]} \lim_{n\to \infty} g_n d \lambda </mrow>
+      <mrow> \amp = \lim_{n\to \infty} \int_{[a,b]} g_n d \lambda </mrow>
+      <mrow> \amp = \lim_{n\to \infty} L(f, P_n) = L(f).</mrow>
+    </md>
+    
+  </p>
+
+  <p>
+    Likewise
+    <md>
+      \int_{[a,b]} f^U d \lambda  = U(f).
+    </md>
+    
+  </p>
+
+  <p>
+    The function $f$ is Riemann integrable if and only if $U(f) - L(F) = 0$. This means that $f$ is Riemann integrable if and only if
+    <md>
+      \int_{[a,b]} f^U - f^L d\lambda = 0.
+    </md>
+    
+  </p>
+
+  <p>
+    Since $f^L \leq f^U$ the only way that this integral is $0$ is for $f^L = f^U$ almost everywhere. In other words, the integral is $0$ if and only if
+    <md>
+      |\{x \in [a,b]: f^L(x) \neq f^U(x)\}| = 0
+    </md>
+    
+  </p>
+
+  <p>
+    It follows from how $f^L$ and $f^U$ are defined that 
+    <md>
+      \{x \in [a,b]: f^L(x) \neq f^U(x)\} = \{x \in [a,b]: f \text{ is discontinuous at } x\}
+    </md>
+    Thus $f$ is Riemann integrable if and only if its discontinuities form a set of measure zero.
+  </p>
+
+</proof>
+
+<p>
+  Since every Riemann integrable function is Lebesgue integrable, we no longer need to distinguish between the two types of integrals. From now on, when we use the term integrable, we understand it to mean the Lebesgue integral. This also means that in many cases we don't need to use the definition of the Lebesgue integral when working with integrals. If we are integrating a function that is nicely integrable using the Riemann integral, we can use that instead, and likewise if we are integrating a function which has a nice antiderivative we can use the Fundamental Theorem of Calculus to integrate it.
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec-Approximation-by-Nice-Functions">
+  <title>Approximation by Nice Functions</title>
+  
+  <definition xml:id="def-Banach-space">
+    <title>Banach Space</title>
+    
+    
+    <statement>
+      <p>
+        A <term>Banach space</term> is a complete normed vector space.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Informally a Banach space is a set of functions which is closed under addition, scalar multiplication, and limits, and in which there is a well defined notion of distance. Banach spaces are widely studied in functional analysis. The set of Lebesgue integrable functions on a measure space is almost, but not quite, a Banach space. We will prove some of the properties of this set. 
+  </p>
+
+  <definition xml:id="def-L-1">
+    <title>$||f||_1$, $\mathcal{L}^1(\mu)$</title>
+    
+    
+    <statement>
+      <p>
+        Suppose $(X,S, \mu)$ is a measure space. If $f:X \to [-\infty,\infty]$ is $S$-measurable, then the $\mathcal{L}^1$ norm of $f$ is denoted by $||f||_1$ and defined by 
+        <md>
+          ||f||_1 = \int |f| d\mu
+        </md>
+        
+      </p>
+
+      <p>
+        The Lebesgue space $\mathcal{L}^1(\mu)$ is defined by 
+        <md>
+           \mathcal{L}^1(\mu) = \{f: f \text{ is a measurable function from } X \text{ to } \mathbf{R} \text{ and } ||f||_1 &lt; \infty\}.
+        </md>
+        
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Note: Technically $||f||_1$ is a semi-norm, not a norm, but for convenience we will call it a norm.
+  </p>
+
+  <p>
+    Example: Let $\lambda$ denote Lebesgue measure on $\mathbf{R}$. Then $\mathcal{L}^1(\lambda)$ is the set of functions whose Lebesgue integral over the entire real line is finite. This is typically denoted as $\mathcal{L}^1(\mathbf{R})$.
+  </p>
+
+  <p>
+    Let $\mu$ denote the counting measure on $\mathbf{N}$ and let $x = (x_1, x_2, \ldots,)$ be a sequence of real numbers. (Recall that a sequence of numbers can be thought of as a function on $\mathbf{N}$.) Then $||x||_1 = \displaystyle \sum_{k=1}^{\infty} |x_k|$. In this case $\mathcal{L}^1(\mu)$ is denoted by $\ell^1$. In other words $\ell^1$ is the set of sequences $(x_1, x_2, \ldots)$ of real numbers such that $\displaystyle \sum_{k=1}^{\infty} |x_k| &lt; \infty$.
+  </p>
+
+  <theorem xml:id="thm-L-1-properties">
+    <title>Properties of the $\mathcal{L}^1$ Norm</title>
+    
+    
+    <statement>
+      <p>
+        Suppose $(X,S,\mu)$ is a measure space and $f,g \in \mathcal{L}^1(\mu)$. Then 
+        <ol marker="(a)">
+          <li>
+            <p>
+    $||f||_1 \geq 0$.
+            </p>
+          </li>
+          <li>
+            <p>
+              $||f||_1 = 0$ if and only if $f = 0$ for almost every $x\in X$.
+            </p>
+          </li>
+          <li>
+            <p>
+              $||cf||_1 = |c| ||f||_1$ for every $c \in \mathbf{R}$.
+            </p>
+          </li>
+          <li>
+            <p>
+              $||f+g||_1 \leq ||f||_1 + ||g||_1$. (Triangle Inequality)
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+  
+
+
 </subsection>
 
   </section>
