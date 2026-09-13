@@ -8,7 +8,7 @@
   <title>Bounded Convergence Theorem</title>
 
   <p>
-    Suppose that $\{f_n\}$ is a sequence of integrable functions that converges to a limit function $f$. An important question with many applications is when is it true that
+    Suppose that <m>\{f_n\}</m> is a sequence of integrable functions that converges to a limit function <m>f</m>. An important question with many applications is when is it true that
     <md>
        \lim_{n\to \infty} \int f_n d\mu = \int f d\mu;
     </md>
@@ -20,7 +20,7 @@
   </p>
 
   <p>
-    Example: Let $r_n$ be a (countable) list of the rational numbers and define functions $f_n(x)$ by 
+    Example: Let <m>r_n</m> be a (countable) list of the rational numbers and define functions <m>f_n(x)</m> by 
     <md>
       f_n(x) = \begin{cases} 
       \hfill  1 \amp \text{ if $x \in \{r_1, r_2, \ldots, r_n\}$} \\
@@ -31,29 +31,29 @@
   </p>
 
   <p>
-    Each $f_n$ is $0$ except at a finite number of points, so it is Riemann integrable with integral $0$, but $f_n$ converges pointwise to Dirichlet's function 
+    Each <m>f_n</m> is <m>0</m> except at a finite number of points, so it is Riemann integrable with integral <m>0</m>, but <m>f_n</m> converges pointwise to Dirichlet's function 
     <md>
        f(x) = \begin{cases} 
-      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
-      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} 
+      \hfill  1 \amp \text{ if <m>x \in \mathbf{Q}</m>} \\
+      \hfill  0 \hfill \amp \text{ if <m>x \notin \mathbf{Q}</m>} 
   \end{cases}
     </md>
-    which is not Riemann integrable. However, it is Lebesgue integrable with integral $0$.
+    which is not Riemann integrable. However, it is Lebesgue integrable with integral <m>0</m>.
   </p>
 
   <p>
     Example: Let
     <md>
       g_n(x) = \begin{cases} 
-      \hfill  n \amp \text{ if $0 &lt; x &lt; \frac{1}{n}$} \\
-      \hfill  0 \hfill \amp \text{ if $x =0 $ or $x \geq \frac{1}{n}$} 
+      \hfill  n \amp \text{ if <m>0 &lt; x &lt; \frac{1}{n}</m>} \\
+      \hfill  0 \hfill \amp \text{ if <m>x =0 </m> or <m>x \geq \frac{1}{n}</m>} 
   \end{cases}
     </md>
     
   </p>
 
   <p>
-    For each $n$, $g_n(x)$ is Lebesgue integrable with integral $1$; however, $\{g_n\}$ converges pointwise to $g(x) = 0$, which has Lebesgue integral $0$, so we can't exchange limit and integral. Notice that in the first example $|f_n(x)| \leq 1$ for all $n$, but in the second example $\{g_n\}$ is unbounded.
+    For each <m>n</m>, <m>g_n(x)</m> is Lebesgue integrable with integral <m>1</m>; however, <m>\{g_n\}</m> converges pointwise to <m>g(x) = 0</m>, which has Lebesgue integral <m>0</m>, so we can't exchange limit and integral. Notice that in the first example <m>|f_n(x)| \leq 1</m> for all <m>n</m>, but in the second example <m>\{g_n\}</m> is unbounded.
   </p>
 
   <theorem xml:id="thm-BCT">
@@ -62,11 +62,11 @@
     
     <statement>
       <p>
-        Suppose $(X,S,\mu)$ is a measure space with $\mu(X) &lt; \infty$. Suppose $f_1, f_2, \ldots$ is a sequence of $S$-measurable functions from $X \to \mathbf{R}$ that converges pointwise on $X$ to a function $f:X \to \mathbf{R}$. If there exists $c \in (0,\infty)$ such that 
+        Suppose <m>(X,S,\mu)</m> is a measure space with <m>\mu(X) &lt; \infty</m>. Suppose <m>f_1, f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X \to \mathbf{R}</m> that converges pointwise on <m>X</m> to a function <m>f:X \to \mathbf{R}</m>. If there exists <m>c \in (0,\infty)</m> such that 
         <md>
           |f_k(x)| \leq c
         </md>
-        for all $k \in \mathbf{N}$ and $x \in X$, then
+        for all <m>k \in \mathbf{N}</m> and <m>x \in X</m>, then
         <md>
           \lim_{k\to \infty} \int f_k d\mu = \int f d\mu.
         </md>
@@ -82,7 +82,7 @@
   
     <statement>
       <p>
-        Suppose $(X,S, \mu)$ is a measure space, $E$ is a subset in $S$, and $f:X \to [-\infty,\infty]$ is a function such that $\int_E f d\mu$ is defined. Then
+        Suppose <m>(X,S, \mu)</m> is a measure space, <m>E</m> is a subset in <m>S</m>, and <m>f:X \to [-\infty,\infty]</m> is a function such that <m>\int_E f d\mu</m> is defined. Then
         <md>
           \int_E f d\mu \leq \mu(E) \sup_E |f|.
         </md>
@@ -93,7 +93,7 @@
   
   <proof>
     <p>
-    Let $c = \sup_E |f|$. Then
+    Let <m>c = \sup_E |f|</m>. Then
     <md>
       \int_E f d\mu \leq \int_E c d\mu  = c \int_E d\mu = c \mu(E).
     </md>
@@ -111,7 +111,7 @@
     </p>
 
 <p>
-  Let $\epsilon &gt; 0$. Then by Egorov's Theorem there is a subset $E \in S$ such that $\mu(X \setminus E) &lt; \epsilon$ and $f_1, f_2, \ldots$ converges uniformly to $f$ on $E$. Then
+  Let <m>\epsilon &gt; 0</m>. Then by Egorov's Theorem there is a subset <m>E \in S</m> such that <m>\mu(X \setminus E) &lt; \epsilon</m> and <m>f_1, f_2, \ldots</m> converges uniformly to <m>f</m> on <m>E</m>. Then
   <md>
     <mrow>  \left|\int f_k d\mu - \int f d\mu\right| \amp = \left| \int_{X \setminus E} f_k d\mu - \int_{X\setminus E} f d\mu + \int_E (f_k-f) d\mu \right| </mrow>
     <mrow> \amp \leq \int_{X\setminus E} |f_k| d\mu + \int_{X\setminus E} |f| d\mu + \int_E |f_k -f| d\mu </mrow>
@@ -121,11 +121,11 @@
 </p>
 
 <p>
-  Since $\{f_k\}$ converges uniformly to $f$ on $E$, it follows that for large $k$, $|f_k-f| &lt; \epsilon$. Hence for $k$ sufficiently large,
+  Since <m>\{f_k\}</m> converges uniformly to <m>f</m> on <m>E</m>, it follows that for large <m>k</m>, <m>|f_k-f| &lt; \epsilon</m>. Hence for <m>k</m> sufficiently large,
   <md>
     \left|\int f_k d\mu - \int f d\mu\right| &lt; 2c \epsilon + \mu(E) \epsilon,
   </md>
-  and since $\epsilon &gt; 0$ is arbitrary this can be made as small as possible. Thus $\int f_k d\mu \to \int f d\mu$ as $k \to \infty$.
+  and since <m>\epsilon &gt; 0</m> is arbitrary this can be made as small as possible. Thus <m>\int f_k d\mu \to \int f d\mu</m> as <m>k \to \infty</m>.
 </p>
 
 
@@ -141,41 +141,41 @@
     Example: Suppose that
     <md>
       f_n(x) = \begin{cases} 
-      \hfill  n \amp \text{ if $x \in [0,1] \cap \mathbf{Q} $} \\
-       \hfill  \frac{x}{n} \hfill \amp \text{ if $x \in [0,1] \setminus \mathbf{Q} $} 
+      \hfill  n \amp \text{ if <m>x \in [0,1] \cap \mathbf{Q} </m>} \\
+       \hfill  \frac{x}{n} \hfill \amp \text{ if <m>x \in [0,1] \setminus \mathbf{Q} </m>} 
   \end{cases}
     </md>
     
   </p>
 
   <p>
-    Then $\{f_n\}$ converges pointwise to 
+    Then <m>\{f_n\}</m> converges pointwise to 
     <md>
       f(x) = \begin{cases} 
-      \hfill  \infty \amp \text{ if $x \in [0,1] \cap \mathbf{Q} $} \\
-       \hfill  0 \hfill \amp \text{ if $x \in [0,1] \setminus \mathbf{Q} $} 
+      \hfill  \infty \amp \text{ if <m>x \in [0,1] \cap \mathbf{Q} </m>} \\
+       \hfill  0 \hfill \amp \text{ if <m>x \in [0,1] \setminus \mathbf{Q} </m>} 
   \end{cases}
     </md>
-    but both $\{f_n\}$ and $f$ are unbounded, so we can't use Bounded Convergence Theorem, or can we?
+    but both <m>\{f_n\}</m> and <m>f</m> are unbounded, so we can't use Bounded Convergence Theorem, or can we?
   </p>
 
   <p>
-    Note that $\{f_n\}$ is bounded almost everywhere; that is, it is only unbounded on a set of measure zero and since sets of measure zero are negligible with respect to integration we can still use BCT.
+    Note that <m>\{f_n\}</m> is bounded almost everywhere; that is, it is only unbounded on a set of measure zero and since sets of measure zero are negligible with respect to integration we can still use BCT.
   </p>
 
   <p>
-    Define a new function $g_n(x)$ by
+    Define a new function <m>g_n(x)</m> by
     <md>
       g_n(x) = \begin{cases} 
-      \hfill  0 \amp \text{ if $x \in [0,1] \cap \mathbf{Q} $} \\
-       \hfill  \frac{x}{n} \hfill \amp \text{ if $x \in [0,1] \setminus \mathbf{Q} $} 
+      \hfill  0 \amp \text{ if <m>x \in [0,1] \cap \mathbf{Q} </m>} \\
+       \hfill  \frac{x}{n} \hfill \amp \text{ if <m>x \in [0,1] \setminus \mathbf{Q} </m>} 
        \end{cases}
     </md>
     
   </p>
 
   <p>
-    Then $\{g_n\}$ converges pointwise to <m>g(x) = 0</m>. Since $\{g_n\}$ is bounded by $1$, we can use BCT to conclude that
+    Then <m>\{g_n\}</m> converges pointwise to <m>g(x) = 0</m>. Since <m>\{g_n\}</m> is bounded by <m>1</m>, we can use BCT to conclude that
     <md>
       \int_0^1 g_n d\mu = \int_0^1 g d\mu = 0.
     </md>
@@ -195,7 +195,7 @@
   </p>
 
   <p>
-    The ideas of this example can be universally applied to theorems about integrals. In most every case, the hypotheses of a theorem about integrals can be relaxed so that the hypotheses just hold almost everywhere; that is, outside a set of measure zero. The previous example shows that the BCT still holds if the sequence of functions is bounded almost everywhere on $X$ instead of needing to be bounded on all $X$.
+    The ideas of this example can be universally applied to theorems about integrals. In most every case, the hypotheses of a theorem about integrals can be relaxed so that the hypotheses just hold almost everywhere; that is, outside a set of measure zero. The previous example shows that the BCT still holds if the sequence of functions is bounded almost everywhere on <m>X</m> instead of needing to be bounded on all <m>X</m>.
   </p>
 
 
@@ -215,15 +215,15 @@
     
     <statement>
       <p>
-        Suppose $(X,S,\mu)$ is a measure space, $f:X \to [-\infty,\infty]$ is $S$-measurable, and $f_1, f_2, \ldots$ are $S$-measurable functions from $X \to [-\infty,\infty]$ such that 
+        Suppose <m>(X,S,\mu)</m> is a measure space, <m>f:X \to [-\infty,\infty]</m> is <m>S</m>-measurable, and <m>f_1, f_2, \ldots</m> are <m>S</m>-measurable functions from <m>X \to [-\infty,\infty]</m> such that 
         <md>
           \lim_{k\to \infty} f_k(x) = f(x)
         </md>
-        for almost every $x \in X$. If there exists an $S$-measurable function $g:X \to [0,\infty]$ such that
+        for almost every <m>x \in X</m>. If there exists an <m>S</m>-measurable function <m>g:X \to [0,\infty]</m> such that
         <md>
           \int g d\mu &lt; \infty \text{ and } |f_K(x)| \leq g(x)
         </md>
-        for every $k \in \mathbf{N}$ and almost every $x \in X$, then
+        for every <m>k \in \mathbf{N}</m> and almost every <m>x \in X</m>, then
         <md>
           \lim_{k \to \infty} f_k d\mu = \int f d\mu.
         </md>
@@ -239,26 +239,26 @@
   <lemma xml:id="lem-integrals-on-small-sets-are-small">
     <statement>
       <p>
-        Suppose $(X,S,\mu) $ is a measure space, $g: X \to [0,\infty]$ is $S$-measurable and $\int g d\mu &lt; \infty$. Then for every $\epsilon &gt; 0$, there exists $\delta &gt; 0$ such that
+        Suppose <m>(X,S,\mu) </m> is a measure space, <m>g: X \to [0,\infty]</m> is <m>S</m>-measurable and <m>\int g d\mu &lt; \infty</m>. Then for every <m>\epsilon &gt; 0</m>, there exists <m>\delta &gt; 0</m> such that
         <md>
           \int_B g d\mu &lt; \epsilon
         </md>
-        for every set $B$ in $S$ with $\mu(B) &lt; \delta$.
+        for every set <m>B</m> in <m>S</m> with <m>\mu(B) &lt; \delta</m>.
       </p>
     </statement>
   </lemma>
 
   <proof>
     <p>
-      Choose $\epsilon &lt; 0$ and let $h$ be a simple function such that $0 \leq h \leq g$ and
+      Choose <m>\epsilon &lt; 0</m> and let <m>h</m> be a simple function such that <m>0 \leq h \leq g</m> and
       <md>
         \int g d\mu - \int h d\mu &lt; \frac{\epsilon}{2}.
       </md>
-      The existence of such a function is given by the definition of the Lebesgue integral for non-negative functions. Let $H = \sup\{h(x): x \in X\} $ and choose $\delta &gt; 0$ such that $H\delta &lt; \frac{\epsilon}{2}$.
+      The existence of such a function is given by the definition of the Lebesgue integral for non-negative functions. Let <m>H = \sup\{h(x): x \in X\} </m> and choose <m>\delta &gt; 0</m> such that <m>H\delta &lt; \frac{\epsilon}{2}</m>.
     </p>
 
     <p>
-      Now suppose $B \in S$ and $\mu(B) &lt; \delta$. Then
+      Now suppose <m>B \in S</m> and <m>\mu(B) &lt; \delta</m>. Then
       <md>
         <mrow>  \int_B g d\mu \amp = \int_B (g-h) d\mu + \int_B h d\mu </mrow>
         <mrow> \amp \leq \int (g-h) d\mu + \int_B H d\mu </mrow>
@@ -276,7 +276,7 @@
 
   <proof>
     <p>
-      Suppose $g:X \to [0,\infty]$ satisfies the hypotheses of the theorem. If $E\in S$, then 
+      Suppose <m>g:X \to [0,\infty]</m> satisfies the hypotheses of the theorem. If <m>E\in S</m>, then 
       <md>
         <mrow> \left| \int f_k d\mu - \int fd\mu \right| \amp = \left| \int_{X\setminus E} f_k d\mu - \int_{X\setminus E} fd\mu + \int_E f_k d\mu - \int_E fd\mu \right|</mrow>
         <mrow> \amp \leq \left| \int_{X\setminus E} f_k d\mu  \right|+ \left|\int_{X\setminus E} fd\mu  \right| + \left|  \int_E f_k d\mu - \int_E fd\mu \right|</mrow>
@@ -286,15 +286,15 @@
     </p>
 
     <p>
-      Suppose that $\mu(X) &lt; \infty$. Then by the first lemma, there exists $\delta &gt; 0$ such that 
+      Suppose that <m>\mu(X) &lt; \infty</m>. Then by the first lemma, there exists <m>\delta &gt; 0</m> such that 
       <md>
          \int_B g d\mu &lt; \epsilon
       </md>
-      for every set $B \in S$ such that $\mu(B) &lt; \delta$.
+      for every set <m>B \in S</m> such that <m>\mu(B) &lt; \delta</m>.
     </p>
 
     <p>
-      By Egorov's Theorem, there exists a set $E \in S$ such that $\mu(X\setminus E) &lt; \delta$ and the sequence $f_1, f_2, \ldots$ converges uniformly to $f$ on $E$. Thus for $k$ sufficiently large,
+      By Egorov's Theorem, there exists a set <m>E \in S</m> such that <m>\mu(X\setminus E) &lt; \delta</m> and the sequence <m>f_1, f_2, \ldots</m> converges uniformly to <m>f</m> on <m>E</m>. Thus for <m>k</m> sufficiently large,
       <md>
         <mrow> \left| \int f_k d\mu - \int fd\mu \right| \amp \leq 2 \left| \int_{X\setminus E} g d\mu  \right|+ \left|  \int_E f_k d\mu - \int_E fd\mu \right| </mrow>
         <mrow> \amp \leq 2 \epsilon + \int_E (f_k - f) d\mu</mrow>
@@ -304,7 +304,7 @@
     </p>
 
     <p>
-      Since $\epsilon &gt; 0$ was arbitrarily chosen, this can be made as small as desired and hence 
+      Since <m>\epsilon &gt; 0</m> was arbitrarily chosen, this can be made as small as desired and hence 
       <md>
         \lim_{k\to \infty} \int f_k d\mu = \int f d\mu.
       </md>
@@ -329,11 +329,11 @@
   
   <statement>
     <p>
-      Suppose $a &lt; b$ and $f: [a,b] \to \mathbf{R}$ is a bounded function. Then $f$ is Riemann integrable if and only if 
+      Suppose <m>a &lt; b</m> and <m>f: [a,b] \to \mathbf{R}</m> is a bounded function. Then <m>f</m> is Riemann integrable if and only if 
       <md>
         |\{x\in [a,b]: f \text{ is not continuous at } x\}| = 0
       </md>
-      Furthermore if $f$ is Riemann integrable and $\lambda$ denotes Lebesgue measure on $\mathbf{R}$ then $f$ is Lebesgue measurable and
+      Furthermore if <m>f</m> is Riemann integrable and <m>\lambda</m> denotes Lebesgue measure on <m>\mathbf{R}</m> then <m>f</m> is Lebesgue measurable and
       <md>
         \int_a^b f(x) dx = \int_{[a,b]} f d\lambda.  
       </md>
@@ -345,7 +345,7 @@
 
 <proof>
   <p>
-    For this proof we will make use of the fact that the Riemann integral and the Darboux integral are equivalent so that we can use the definition of the Darboux integral. Choose $n \in \mathbf{N}$ and let $P_n$ be the partition that divides $[a,b]$ into $2^n$ subintervals of equal size. Let $I_1, I_2, \ldots I_{2^n}$ be the corresponding subintervals and note that each has length $\frac{b-a}{2^n}$.
+    For this proof we will make use of the fact that the Riemann integral and the Darboux integral are equivalent so that we can use the definition of the Darboux integral. Choose <m>n \in \mathbf{N}</m> and let <m>P_n</m> be the partition that divides <m>[a,b]</m> into <m>2^n</m> subintervals of equal size. Let <m>I_1, I_2, \ldots I_{2^n}</m> be the corresponding subintervals and note that each has length <m>\frac{b-a}{2^n}</m>.
   </p>
 
   <p>
@@ -361,11 +361,11 @@
   </p>
 
   <p>
-    There is an issue with points on the boundary of two subintervals, so we will need to modify our definitions of $g_n$ and $h_n$ slightly. At points on a boundary of two subintervals, define $g_n$ to be the infimum over both subintervals and define $h_n$ to be the supremum over both subintervals. Since this only changes the values of $g_n$ and $h_n$ at a finite number of points, the lower and upper sums are still defined by the exact same integrals.
+    There is an issue with points on the boundary of two subintervals, so we will need to modify our definitions of <m>g_n</m> and <m>h_n</m> slightly. At points on a boundary of two subintervals, define <m>g_n</m> to be the infimum over both subintervals and define <m>h_n</m> to be the supremum over both subintervals. Since this only changes the values of <m>g_n</m> and <m>h_n</m> at a finite number of points, the lower and upper sums are still defined by the exact same integrals.
   </p>
 
   <p>
-    Taking the limit as $n\to \infty$ is makes the partitions finer. Thus $g_1 \leq g_2 \leq \ldots$ is an increasing sequence of functions and $h_1 \geq h_2 \geq \ldots$ is a decreasing sequence of functions on $[a,b]$. Define a lower function $f^L$ and upper function $f^U: [a,b] \to \mathbf{R}$ by
+    Taking the limit as <m>n\to \infty</m> is makes the partitions finer. Thus <m>g_1 \leq g_2 \leq \ldots</m> is an increasing sequence of functions and <m>h_1 \geq h_2 \geq \ldots</m> is a decreasing sequence of functions on <m>[a,b]</m>. Define a lower function <m>f^L</m> and upper function <m>f^U: [a,b] \to \mathbf{R}</m> by
     <md>
       f^L(x) = \lim_{n\to \infty} g_n(x) \quad \text{ and } \quad f^U(x) = \lim_{n\to \infty} h_n(x).
     </md>
@@ -391,7 +391,7 @@
   </p>
 
   <p>
-    The function $f$ is Riemann integrable if and only if $U(f) - L(F) = 0$. This means that $f$ is Riemann integrable if and only if
+    The function <m>f</m> is Riemann integrable if and only if <m>U(f) - L(F) = 0</m>. This means that <m>f</m> is Riemann integrable if and only if
     <md>
       \int_{[a,b]} f^U - f^L d\lambda = 0.
     </md>
@@ -399,7 +399,7 @@
   </p>
 
   <p>
-    Since $f^L \leq f^U$ the only way that this integral is $0$ is for $f^L = f^U$ almost everywhere. In other words, the integral is $0$ if and only if
+    Since <m>f^L \leq f^U</m> the only way that this integral is <m>0</m> is for <m>f^L = f^U</m> almost everywhere. In other words, the integral is <m>0</m> if and only if
     <md>
       |\{x \in [a,b]: f^L(x) \neq f^U(x)\}| = 0
     </md>
@@ -407,11 +407,11 @@
   </p>
 
   <p>
-    It follows from how $f^L$ and $f^U$ are defined that 
+    It follows from how <m>f^L</m> and <m>f^U</m> are defined that 
     <md>
       \{x \in [a,b]: f^L(x) \neq f^U(x)\} = \{x \in [a,b]: f \text{ is discontinuous at } x\}
     </md>
-    Thus $f$ is Riemann integrable if and only if its discontinuities form a set of measure zero.
+    Thus <m>f</m> is Riemann integrable if and only if its discontinuities form a set of measure zero.
   </p>
 
 </proof>
@@ -441,12 +441,12 @@
   </p>
 
   <definition xml:id="def-L-1">
-    <title>$||f||_1$, $\mathcal{L}^1(\mu)$</title>
+    <title><m>||f||_1</m>, <m>\mathcal{L}^1(\mu)</m></title>
     
     
     <statement>
       <p>
-        Suppose $(X,S, \mu)$ is a measure space. If $f:X \to [-\infty,\infty]$ is $S$-measurable, then the $\mathcal{L}^1$ norm of $f$ is denoted by $||f||_1$ and defined by 
+        Suppose <m>(X,S, \mu)</m> is a measure space. If <m>f:X \to [-\infty,\infty]</m> is <m>S</m>-measurable, then the <m>\mathcal{L}^1</m> norm of <m>f</m> is denoted by <m>||f||_1</m> and defined by 
         <md>
           ||f||_1 = \int |f| d\mu
         </md>
@@ -454,7 +454,7 @@
       </p>
 
       <p>
-        The Lebesgue space $\mathcal{L}^1(\mu)$ is defined by 
+        The Lebesgue space <m>\mathcal{L}^1(\mu)</m> is defined by 
         <md>
            \mathcal{L}^1(\mu) = \{f: f \text{ is a measurable function from } X \text{ to } \mathbf{R} \text{ and } ||f||_1 &lt; \infty\}.
         </md>
@@ -464,49 +464,281 @@
   </definition>
 
   <p>
-    Note: Technically $||f||_1$ is a semi-norm, not a norm, but for convenience we will call it a norm.
+    Note: Technically <m>||f||_1</m> is a semi-norm, not a norm, but for convenience we will call it a norm.
   </p>
 
   <p>
-    Example: Let $\lambda$ denote Lebesgue measure on $\mathbf{R}$. Then $\mathcal{L}^1(\lambda)$ is the set of functions whose Lebesgue integral over the entire real line is finite. This is typically denoted as $\mathcal{L}^1(\mathbf{R})$.
+    Example: Let <m>\lambda</m> denote Lebesgue measure on <m>\mathbf{R}</m>. Then <m>\mathcal{L}^1(\lambda)</m> is the set of functions whose Lebesgue integral over the entire real line is finite. This is typically denoted as <m>\mathcal{L}^1(\mathbf{R})</m>.
   </p>
 
   <p>
-    Let $\mu$ denote the counting measure on $\mathbf{N}$ and let $x = (x_1, x_2, \ldots,)$ be a sequence of real numbers. (Recall that a sequence of numbers can be thought of as a function on $\mathbf{N}$.) Then $||x||_1 = \displaystyle \sum_{k=1}^{\infty} |x_k|$. In this case $\mathcal{L}^1(\mu)$ is denoted by $\ell^1$. In other words $\ell^1$ is the set of sequences $(x_1, x_2, \ldots)$ of real numbers such that $\displaystyle \sum_{k=1}^{\infty} |x_k| &lt; \infty$.
+    Let <m>\mu</m> denote the counting measure on <m>\mathbf{N}</m> and let <m>x = (x_1, x_2, \ldots,)</m> be a sequence of real numbers. (Recall that a sequence of numbers can be thought of as a function on <m>\mathbf{N}</m>.) Then <m>||x||_1 = \displaystyle \sum_{k=1}^{\infty} |x_k|</m>. In this case <m>\mathcal{L}^1(\mu)</m> is denoted by <m>\ell^1</m>. In other words <m>\ell^1</m> is the set of sequences <m>(x_1, x_2, \ldots)</m> of real numbers such that <m>\displaystyle \sum_{k=1}^{\infty} |x_k| &lt; \infty</m>.
   </p>
 
   <theorem xml:id="thm-L-1-properties">
-    <title>Properties of the $\mathcal{L}^1$ Norm</title>
+    <title>Properties of the <m>\mathcal{L}^1</m> Norm</title>
     
     
     <statement>
       <p>
-        Suppose $(X,S,\mu)$ is a measure space and $f,g \in \mathcal{L}^1(\mu)$. Then 
+        Suppose <m>(X,S,\mu)</m> is a measure space and <m>f,g \in \mathcal{L}^1(\mu)</m>. Then 
         <ol marker="(a)">
           <li>
             <p>
-    $||f||_1 \geq 0$.
+    <m>||f||_1 \geq 0</m>.
             </p>
           </li>
           <li>
             <p>
-              $||f||_1 = 0$ if and only if $f = 0$ for almost every $x\in X$.
+              <m>||f||_1 = 0</m> if and only if <m>f = 0</m> for almost every <m>x\in X</m>.
             </p>
           </li>
           <li>
             <p>
-              $||cf||_1 = |c| ||f||_1$ for every $c \in \mathbf{R}$.
+              <m>||cf||_1 = |c| ||f||_1</m> for every <m>c \in \mathbf{R}</m>.
             </p>
           </li>
           <li>
             <p>
-              $||f+g||_1 \leq ||f||_1 + ||g||_1$. (Triangle Inequality)
+              <m>||f+g||_1 \leq ||f||_1 + ||g||_1</m>. (Triangle Inequality)
             </p>
           </li>
         </ol>
       </p>
     </statement>
   </theorem>
+  
+<proof>
+  <p>
+    Because <m>|f| \geq 0</m>, it follows that
+    <md>
+      ||f||_1 = \int |f| d\mu \geq \int 0 d\mu = 0.
+    </md>
+    Thus (a) is proven.
+  </p>
+
+  <p>
+    Moreover <m>||f||_1 = 0</m> if and only if
+    <md>
+      \int |f| d\mu = 0
+    </md>
+    if and only if <m>f = 0</m> for almost every <m>x \in X</m>. Thus (b) is proved.
+  </p>
+
+  <p>
+    To prove (c) note that
+    <md>
+      ||cf||_1 = \int |cf| d\mu = |c| \int |f| d\mu = |c| ||f||_1.
+    </md>
+    
+  </p>
+
+  <p>
+    Finally we prove (d).
+    <md>
+       ||f+g||_1 = \int |f+g| d\mu \leq \int |f| d\mu + \int |g| d\mu = ||f||_1 + ||g||_1.
+    </md>
+    
+  </p>
+
+  </proof>
+
+  <p>
+    Next we will show that every function in <m>\mathcal{L}^1(\mu)</m> can be approximated in <m>\mathcal{L}^1</m> by simple functions.
+  </p>
+
+  <theorem xml:id="thm-approximation-simple-function">
+    <title>Approximation by Simple Functions</title>
+    
+    
+    <statement>
+      <p>
+        Suppose <m>\mu</m> is a measure and <m>f \in \mathcal{L}^1(\mu)</m>. Then for every <m>\epsilon>0</m> there exists a simple function <m>g \in \mathcal{L}^1(\mu)</m> such that 
+        <md>
+          ||f-g||_1 &lt; \epsilon.
+        </md>
+        
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    A corollary of this theorem is that given <m>f \in \mathcal{L}^1(\mu)</m>, there exists a sequence <m>\{g_n\}</m> of simple functions that converges to <m>f</m> in the <m>\mathcal{L}^1</m> norm; that is,
+    <md>
+      ||f-g_n||_1 \to 0 \text{ as } n \to \infty. 
+    </md>
+    
+  </p>
+
+  <proof>
+    <p>
+      The idea of the proof is that we can approximate <m>f^+</m> and <m>f^-</m> by simple functions and we can use these to approximate <m>f</m>. Let <m>\epsilon &gt; 0</m>. Then there exists simple functions <m>g_1</m> and <m>g_2</m> such that <m>0 \leq g_1 \leq f^+</m>, <m>0 \leq g_2 \leq f^-</m>, and 
+      <md>
+        \int (f^+-g_1) d\mu &lt; \frac{\epsilon}{2} \quad \text{ and } \quad \int (f^- -g_2) d\mu &lt; \frac{\epsilon}{2}
+      </md>
+      
+    </p>
+
+    <p>
+      Now let <m>g = g_1 - g_2</m>. Then <m>g</m> is a simple function and
+      <md>
+        <mrow> ||f-g||_1 \amp = ||(f^+-g_1) - (f^- -g_2)||_1</mrow>
+        <mrow> \amp \leq \int (f^+ -g_1) d\mu + \int (f^- -g_2) d\mu </mrow>
+        <mrow> \amp &lt; \epsilon </mrow>
+      </md>
+      as desired.
+    </p>
+
+  </proof>
+
+  <p>
+    It turns out that we can do even better than approximate <m>\mathcal{L}^1</m> functions by simple functions; we can approximate them by step functions.
+  </p>
+
+  <definition xml:id="def-step-function">
+    <title>Step Function</title>
+    
+    
+    <statement>
+      <p>
+        A <term>step function</term> is a function <m>g: \mathbf{R}\to \mathbf{R}</m> of the form
+        <md>
+          g = a_1 \chi_{I_1} + a_2 \chi_{I_2} + \ldots + a_n \chi_{I_n}
+        </md>
+        where <m>I_1</m>, <m>I_2</m>, \ldots <m>I_n</m> are intervals of <m>\mathbf{R}</m> and <m>a_1, a_2, \ldots a_n</m> are nonzero real numbers.
+      </p>
+
+      <p>
+        Recall that every simple function can be written in the form
+        <md>
+          g = a_1 \chi_{E_1} + a_2 \chi_{E_2} + \ldots + a_n \chi_{E_n}
+        </md>
+        where each <m>E_k = g^{-1}(c_k)</m> for real number <m>c_k</m>.
+      </p>
+
+      <p>
+        The difference between a step function and a simple function is that in a simple function the sets <m>E_k</m> do not have to be intervals, but they do in a step function. Every step function is a simple function, but not every simple function is a step function. 
+      </p>
+
+      <theorem xml:id="thm-approximation-step-functions">
+        <title>Approximation by Step Functions</title>
+        
+        
+        <statement>
+          <p>
+            Suppose <m>f \in \mathcal{L}^1(\mathbf{R})</m>. Then for every <m>\epsilon &gt; 0</m>, there exists a step function <m>g \in \mathcal{L}^1(\mathbf{R})</m> such that <m>||f-g||_1 &lt; \epsilon</m>.   
+          </p>
+        </statement>
+      </theorem>
+
+      <proof>
+        <p>
+          The idea of the proof is to first approximate <m>f</m> by simple functions and then approximate the simple functions by step functions. Let <m>\epsilon &gt; 0</m>. Then there exists Lebesgue measurable sets <m>A_1</m>, <m>A_2</m>, \ldots <m>A_n</m> of <m>\mathbf{R}</m> and nonzero numbers <m>a_1</m>, <m>a_2</m>, \ldots <m>a_n</m> such that <m>|A_k| &lt; \infty</m> for all <m>k \in \{1, 2, \ldots n\}</m> and 
+          <md>
+            \left \Vert f- \sum_{k=1}^n a_k \chi_{A_k} \right\Vert_1 &lt; \epsilon.
+          </md>
+          
+        </p>
+
+        <p>
+          Now because every measurable set is almost an open set, for each <m>A_k</m> there exists an open set <m>G_k</m> such that <m>A_k \subseteq G_k</m> and <m>|G_k \setminus A_k| &lt; \epsilon</m>. Moreover, each open subset of <m>\mathbf{R}</m> can be expressed as a countable union of disjoint open intervals. Thus for each <m>k</m> there exists a set <m>E_k</m> that is a finite union of disjoint open intervals such that <m>E_k \subseteq G_k</m> and <m>|G_k \setminus E_k| &lt; \epsilon</m>.  
+        </p>
+
+        <p>
+          Hence <m>|E_k \setminus A_k| + |A_k \setminus E_k| \leq |G_k \setminus A_k| + |G_k \setminus E_k| &lt; \epsilon+\epsilon = 2\epsilon</m>. Observe that
+          <md>
+            \chi_{A_k} - \chi_{E_k} = \begin{cases} 
+      \hfill  1 \amp \text{ if <m>x \in A_k \setminus E_k</m>} \\
+      \hfill  0 \hfill \amp \text{ if <m>x \in A_k \cap E_k</m> or <m>x \notin A_k \cup E_k</m>} \\
+      \hfill  -1 \amp \text{ if <m>x \in E_k \setminus A_k</m>} \\
+  \end{cases}
+          </md>
+          
+        </p>
+
+        <p>
+          Hence
+          <md>
+             ||\chi_{A_k} - \chi_{E_k}||_1  = |E_k \setminus A_k| + |A_k \setminus E_k| &lt; 2\epsilon.
+          </md>
+          
+        </p>
+
+        <p>
+          Thus it follows that
+          <md>
+            <mrow> \left\Vert f- \sum_{k=1}^n a_k \chi_{E_k} \right\Vert_1\amp \leq \left\Vert f- \sum_{k=1}^n a_k \chi_{A_k} \right\Vert_1 + \left\Vert \sum_{k=1}^n a_k \chi_{A_k}- \sum_{k=1}^n a_k \chi_{E_k} \right\Vert_1 </mrow>
+            <mrow> \amp \leq \left\Vert f- \sum_{k=1}^n a_k \chi_{A_k} \right\Vert_1 + \left\Vert \sum_{k=1}^n a_k \chi_{A_k}- \sum_{k=1}^n a_k \chi_{E_k} \right\Vert_1 </mrow>
+            <mrow> \amp &lt; \epsilon + \epsilon \sum_{k=1}^n |a_k| </mrow>
+          </md>
+          
+        </p>
+
+        <p>
+          Since <m>\epsilon &gt; 0</m> can be made arbitrarily small, the last line can be made as small as we desire. Thus we can approximate <m>f</m> by step functions.
+        </p>
+
+      </proof>
+
+      <p>
+        Finally we approximate <m>\mathcal{L}^1</m> functions by continuous functions.
+      </p>
+
+      <theorem xml:id="thm-approximation-continuous-function">
+        <title>Approximation by Continuous Functions</title>
+        
+        
+        <statement>
+          <p>
+            Suppose <m>f \in \mathcal{L}^1(\mathbf{R})</m>. Then for every <m>\epsilon &gt; 0</m> there exists a continuous function <m>g: \mathbf{R} \to \mathbf{R}</m> such that 
+            <md>
+              ||f-g||_1 &lt; \epsilon
+            </md>
+            and <m>\{x \in \mathbf{R}: g(x) \neq 0\}</m> is a bounded set.
+          </p>
+        </statement>
+      </theorem>
+
+      <proof>
+        <p>
+          The idea of the proof is that we can approximate step functions by continuous functions by connecting the pieces with lines.
+        </p>
+
+
+
+
+
+
+        <p>
+          For every <m>a_1, \ldots a_n</m>, <m>b_1, \ldots b_n</m>, <m>c_1, \ldots c_n \in \mathbf{R}</m> and <m>g_1 \ldots g_n \in \mathcal{L}^1(f)</m> it follows from the properties of the <m>\mathcal{L}^1</m> norm that
+          <md>
+            <mrow> \left\Vert f- \sum_{k=1}^n a_k g_k \right\Vert_1 \amp  \leq \left\Vert f- \sum_{k=1}^n a_k \chi_{[b_k,c_k]} \right\Vert_1 + \left\Vert \sum_{k=1}^n a_k(\chi_{[b_k, c_k]}-g_k) \right\Vert_1</mrow>
+            <mrow> \amp \leq \left\Vert f- \sum_{k=1}^n a_k \chi_{[b_k,c_k]} \right\Vert_1 +  \sum_{k=1}^n |a_k| \cdot ||\chi_{[b_k, c_k]}-g_k||_1</mrow>
+          </md>
+          
+        </p>
+
+        <p>
+          Since we can approximate <m>\mathcal{L}^1</m> functions by step functions, we can find numbers <m>b_k</m> and <m>c_k</m> to make <m>\displaystyle \left\Vert f- \sum_{k=1}^n a_k \chi_{[b_k,c_k]} \right\Vert_1</m> as small as we want.
+        </p>
+
+        <p>
+          As in the picture, we can construct continuous functions <m>g_1, g_2, \ldots, g_n</m> so that <m>\displaystyle \sum_{k=1}^n |a_k| \cdot ||\chi_{[b_k, c_k]}-g_k||_1</m> is as small as we want. Thus letting <m>g = \displaystyle \sum_{k=1}^n a_k g_k</m> gives us a continuous function that can be made arbitrarily close to <m>f</m> as desired.
+        </p>
+
+
+
+
+      </proof>
+      
+      
+
+
+    </statement>
+  </definition>
+  
+
+
   
 
 
