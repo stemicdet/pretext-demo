@@ -45,8 +45,8 @@
     Example: Let
     <md>
       g_n(x) = \begin{cases} 
-      \hfill  n \amp \text{ if <m>0 &lt; x &lt; \frac{1}{n}</m>} \\
-      \hfill  0 \hfill \amp \text{ if <m>x =0 </m> or <m>x \geq \frac{1}{n}</m>} 
+      \hfill  n \amp \text{ if $0 &lt; x &lt; \frac{1}{n}$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0 $ or $x \geq \frac{1}{n}$} 
   \end{cases}
     </md>
     
@@ -141,8 +141,8 @@
     Example: Suppose that
     <md>
       f_n(x) = \begin{cases} 
-      \hfill  n \amp \text{ if <m>x \in [0,1] \cap \mathbf{Q} </m>} \\
-       \hfill  \frac{x}{n} \hfill \amp \text{ if <m>x \in [0,1] \setminus \mathbf{Q} </m>} 
+      \hfill  n \amp \text{ if $x \in [0,1] \cap \mathbf{Q} $} \\
+       \hfill  \frac{x}{n} \hfill \amp \text{ if $x \in [0,1] \setminus \mathbf{Q} $} 
   \end{cases}
     </md>
     
@@ -152,8 +152,8 @@
     Then <m>\{f_n\}</m> converges pointwise to 
     <md>
       f(x) = \begin{cases} 
-      \hfill  \infty \amp \text{ if <m>x \in [0,1] \cap \mathbf{Q} </m>} \\
-       \hfill  0 \hfill \amp \text{ if <m>x \in [0,1] \setminus \mathbf{Q} </m>} 
+      \hfill  \infty \amp \text{ if $x \in [0,1] \cap \mathbf{Q} $} \\
+       \hfill  0 \hfill \amp \text{ if $x \in [0,1] \setminus \mathbf{Q} $} 
   \end{cases}
     </md>
     but both <m>\{f_n\}</m> and <m>f</m> are unbounded, so we can't use Bounded Convergence Theorem, or can we?
@@ -167,8 +167,8 @@
     Define a new function <m>g_n(x)</m> by
     <md>
       g_n(x) = \begin{cases} 
-      \hfill  0 \amp \text{ if <m>x \in [0,1] \cap \mathbf{Q} </m>} \\
-       \hfill  \frac{x}{n} \hfill \amp \text{ if <m>x \in [0,1] \setminus \mathbf{Q} </m>} 
+      \hfill  0 \amp \text{ if $x \in [0,1] \cap \mathbf{Q} $} \\
+       \hfill  \frac{x}{n} \hfill \amp \text{ if $x \in [0,1] \setminus \mathbf{Q} $} 
        \end{cases}
     </md>
     
@@ -607,6 +607,8 @@
         </md>
         where <m>I_1</m>, <m>I_2</m>, \ldots <m>I_n</m> are intervals of <m>\mathbf{R}</m> and <m>a_1, a_2, \ldots a_n</m> are nonzero real numbers.
       </p>
+      </statement>
+      </definition>
 
       <p>
         Recall that every simple function can be written in the form
@@ -648,9 +650,9 @@
           Hence <m>|E_k \setminus A_k| + |A_k \setminus E_k| \leq |G_k \setminus A_k| + |G_k \setminus E_k| &lt; \epsilon+\epsilon = 2\epsilon</m>. Observe that
           <md>
             \chi_{A_k} - \chi_{E_k} = \begin{cases} 
-      \hfill  1 \amp \text{ if <m>x \in A_k \setminus E_k</m>} \\
-      \hfill  0 \hfill \amp \text{ if <m>x \in A_k \cap E_k</m> or <m>x \notin A_k \cup E_k</m>} \\
-      \hfill  -1 \amp \text{ if <m>x \in E_k \setminus A_k</m>} \\
+      \hfill  1 \amp \text{ if $x \in A_k \setminus E_k$} \\
+      \hfill  0 \hfill \amp \text{ if $x \in A_k \cap E_k$ or $x \notin A_k \cup E_k$} \\
+      \hfill  -1 \amp \text{ if $x \in E_k \setminus A_k$} \\
   \end{cases}
           </md>
           
@@ -734,8 +736,8 @@
       
 
 
-    </statement>
-  </definition>
+  
+  
   
 
 

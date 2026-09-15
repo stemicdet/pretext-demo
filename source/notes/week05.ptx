@@ -54,7 +54,7 @@
         </p>
 
         <p>
-            For each <m>N \in \mathbf{N}</m> let <m>J_n = I_n \cap (\infty,a)</m>, <m>K_n = I_n \cap (a,b)</m>, and <m>L_n = I_n \cap (b,\infty)</m>. Hence <m>\ell(I_n) = \ell(J_n) + \ell(K_n) + \ell(J_n)</m>.
+            For each <m>N \in \mathbf{N}</m> let <m>J_n = I_n \cap (-\infty,a)</m>, <m>K_n = I_n \cap (a,b)</m>, and <m>L_n = I_n \cap (b,\infty)</m>. Hence <m>\ell(I_n) = \ell(J_n) + \ell(K_n) + \ell(J_n)</m>.
         </p>
 
         <p>
@@ -87,7 +87,7 @@
         <p>
             Thus
             <md>
-                <mrow> |A \cup G| \amp \geq |A| + \sum_{n=1}^m \ell(I_n) </mrow>
+                <mrow> |A \cup G| \amp \geq |A| + \sum_{n=1}^\infty \ell(I_n) </mrow>
                 <mrow> \amp \geq |A|+|G|</mrow>
             </md>
 
@@ -113,7 +113,7 @@
             <p>
                 Suppose <m>A</m> and <m>F</m> are disjoint subsets of <m>\mathbf{R}</m> and <m>F</m> is closed. Then 
                 <md>
-                    |A \cup F| \leq |A| + |F|.
+                    |A \cup F| = |A| + |F|.
                 </md>
                 
             </p>
