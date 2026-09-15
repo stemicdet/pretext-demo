@@ -1680,8 +1680,8 @@ var ptx_lunr_docs = [
   "url": "homework-5.html",
   "type": "Worksheet",
   "number": "",
-  "title": "Homework 4 (Due September 17)",
-  "body": " Homework 4 (Due September 17)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose is a subset of and . Let . Show that is -measurable if and only if is a constant function on .      Give an example of a function , set , and -algebras and so that is -measurable on but not -measurable.      Give an example of a measurable space and a function such that is -measurable but is not -measurable.      Suppose is a measurable space, are disjoint subsets of and are distinct non-zero real numbers. Prove that is a -measurable function if and only if .      Suppose is a Borel subset of and is a function such that is a countable set. Prove that is a Borel measurable function.     "
+  "title": "Homework 4 (Due September 24)",
+  "body": " Homework 4 (Due September 24)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose is a subset of and . Let . Show that is -measurable if and only if is a constant function on .      Give an example of a function , set , and -algebras and so that is -measurable on but not -measurable.      Give an example of a measurable space and a function such that is -measurable but is not -measurable.      Suppose is a measurable space, are disjoint subsets of and are distinct non-zero real numbers. Prove that is a -measurable function if and only if .      Suppose is a Borel subset of and is a function such that is a countable set. Prove that is a Borel measurable function.     "
 },
 {
   "id": "homework-5-3-1",
