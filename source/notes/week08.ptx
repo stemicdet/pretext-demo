@@ -709,9 +709,17 @@
 
 
         <figure>
-      <caption>A graph of the Cantor Function.</caption>
-      <image source="CantorEscalier-2 (1).png" width="50%">
-        <description>A graph of a function that increases from top to bottom but which contains many intervals where the graph is constant giving the overall graph the appearance of a staircase with steps of various lengths. The x axis is labeled using multiples of 1/9, while the y axis is labled with multiples of 1/8 because the constant intervals on the graph have endpoints at multiples of 1/9 on the x axis, while the value of the function on that interval is a multiple of 1/8.
+      <caption>A graph of a step function.</caption>
+      <image source="step function.png" width="50%">
+        <description>Graph of a step function with three yellow-orange horizontal segments: a short segment along the horizontal axis near the origin, followed by a high constant segment, and then a lower constant segment farther to the right. The coordinate axes are black.
+</description>
+      </image>
+    </figure>
+
+    <figure>
+      <caption> A continuous piecewise-linear approximation to the step function.</caption>
+      <image source="step function 2.png" width="50%">
+        <description>Graph comparing a yellow-orange three-level step function with a blue continuous piecewise-linear approximation. The blue graph follows each horizontal portion of the step function and uses steep sloping segments to transition continuously from the horizontal axis to the highest level and then down to the intermediate level. The axes are unlabeled and black.
 </description>
       </image>
     </figure>
