@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 5 (Due October 1)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+          Let <m>S</m> denote the Borel <m>\sigma</m>-algebra on <m>\mathbf{R}</m> and let <m>\mu(E): S \to \mathbf{R}</m> be defined by
+          <md>
+            \begin{cases}
+            \mu(E) = 1 \amp \text{ if } \pi \in E\\
+            \mu(E) = 0 \amp \text{ if } \pi \notin E
+        \end{cases}
+          </md>
+          Prove that <m>\mu</m> is a measure on <m>(\mathbf{R}, S)</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+            Let <m>X \subseteq \mathbf{R}</m> and suppose that <m>(X,S,\mu)</m> is a measure space. Either prove that <m>\mu</m> is translation invariant; that is for <m>t \in \mathbf{R}</m>, <m>\mu(E) = \mu(t+E)</m>, where <m>t+E = \{t+x: x\in E\}</m>, or find a counterexample to this claim.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Let <m>X \subseteq \mathbf{R}</m> and suppose that <m>(X,S,\mu)</m> is a measure space. Is it always true that for <m>t \in \mathbf{R}</m>, <m>\mu(tE) = |t|\mu(E)</m>, where <m>tE = \{tx: x\in E\}</m>? Provide a proof or a counterexample.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Give an example of a <m>\sigma</m>-algebra <m>S</m> and measures <m>\mu</m> and <m>\nu</m> such that <m>\mu(E) = \nu(E)</m> for all <m>E \in S</m>, but <m>\mu \neq \nu</m>. 
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>\mu</m> and <m>\nu</m> are measures on a measurable space <m>(X,S)</m>. Define a set function <m>\mu+\nu</m> by <m>(\mu+\nu)(E) = \mu(E) + \nu(E)</m> for <m>E \in S</m>. Show that <m>\mu+\nu</m> is a measure on <m>(X,S)</m>
+          </p>
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
