@@ -1,13 +1,22 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "course-documents",
+  "id": "project",
   "level": "1",
-  "url": "course-documents.html",
-  "type": "Chapter",
+  "url": "project.html",
+  "type": "Section",
   "number": "",
-  "title": "Course Documents",
-  "body": " Course Documents     "
+  "title": "Final Project Instructions",
+  "body": " Final Project Instructions   General Requirements  Each student in MTH 650 will choose a topic in real analysis and measure theory to research during the semester, write a paper of at least 8 pages describing the topic and give a 20-25 minute presentation to the class. Here are the overall guidelines.     The topic of the presentation can draw from any aspect of real analysis and measure theory. Sample topics are provided below. You will need to decide on a topic by Tuesday October 6 .    A rough draft of at least 4 pages is due on Friday November 13 . It does not need to be complete; however, I will provide feedback on the rough draft so the more you have finished, the more comprehensive feedback I can provide.    The final paper will be due on Wednesday December 9 . Presentations will be held during the week of November 30 .    Your paper and presentation should have at least one theorem and one proof.    You are encouraged to include examples and counterexamples, discuss why the topic matters (not just proofs), and use visuals when possible.       Suggested Topics  Here are some suggested topic for the presentation. Topics that can be found in the textbook have the relevant chapter listed in parenthesis.     Regular Measures    Real Measures and the Hahn Decomposition Theorem (9A-9B)    Hausdorff Measure and Hausdorff Dimension    Radon-Nikodym Theorem (9B)    Functions of Bounded Variation    Layer Cake Representation    Banach-Tarski Paradox    Borel-Cantelli Lemma (12)      "
+},
+{
+  "id": "subsec-General-Requirements-3",
+  "level": "2",
+  "url": "project.html#subsec-General-Requirements-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Tuesday October 6 Friday November 13 Wednesday December 9 November 30 "
 },
 {
   "id": "notes-week-02",
