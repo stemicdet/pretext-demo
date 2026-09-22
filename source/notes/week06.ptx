@@ -126,7 +126,7 @@
         
         <statement>
             <p>
-                Suppose <m>(X,S,\mu)</m> is a measure space with <m>\mu(X) &lt; \infty</m>. Suppose <m>f_1,f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>\mathbf{R}</m> that converges pointwise on <m>X</m> to a function <m>f:X \to \mathbf{R}</m>. Then for every <m>\epsilon &gt; 0</m> there exists a set <m>E \in S</m> such that <m>\mu(X \setminus E) &lt; \epsilon</m> and <m>f_1,f_2,\ldots</m> converges uniformly to <m>f</m> on <m>X</m>.
+                Suppose <m>(X,S,\mu)</m> is a measure space with <m>\mu(X) &lt; \infty</m>. Suppose <m>f_1,f_2, \ldots</m> is a sequence of <m>S</m>-measurable functions from <m>X</m> to <m>\mathbf{R}</m> that converges pointwise on <m>X</m> to a function <m>f:X \to \mathbf{R}</m>. Then for every <m>\epsilon &gt; 0</m> there exists a set <m>E \in S</m> such that <m>\mu(X \setminus E) &lt; \epsilon</m> and <m>f_1,f_2,\ldots</m> converges uniformly to <m>f</m> on <m>E</m>.
             </p>
         </statement>
     </theorem>
