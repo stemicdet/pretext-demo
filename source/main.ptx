@@ -13,8 +13,9 @@
     <!-- Optional: include frontmatter with author info and date -->
     <xi:include href="./frontmatter.ptx" />
 
-    <chapter xml:id="course-documents">
-      <title>Course Documents</title>
+    <chapter xml:id="final-project">
+      <title>Final Project</title>
+      <xi:include href="./final-project.ptx" />
 
       <!-- Course syllabus -->
       <!--<xi:include href="./syllabus/syllabus.ptx" /> -->

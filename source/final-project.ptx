@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<section xml:id="project" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Final Project Instructions</title>
+
+ <subsection xml:id="subsec-General-Requirements">
+  <title>General Requirements</title>
+
+  <p>
+    Each student in MTH 650 will choose a topic in real analysis and measure theory to research during the semester, write a paper of at least 8 pages describing the topic and give a 20-25 minute presentation to the class. Here are the overall guidelines.
+  </p>
+
+  <p>
+    <ol>
+      <li>
+        <p>
+          The topic of the presentation can draw from any aspect of real analysis and measure theory. Sample topics are provided below. You will need to decide on a topic by <term>Tuesday October 6</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          A rough draft of at least 4 pages is due on <term>Friday November 13</term>. It does not need to be complete; however, I will provide feedback on the rough draft so the more you have finished, the more comprehensive feedback I can provide.
+        </p>
+      </li>
+      <li>
+        <p>
+          The final paper will be due on <term>Wednesday December 9</term>. Presentations will be held during the week of <term>November 30</term>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Your paper and presentation should have at least one theorem and one proof.
+        </p>
+      </li>
+      <li>
+        <p>
+          You are encouraged to include examples and counterexamples, discuss why the topic matters (not just proofs), and use visuals when possible.
+        </p>
+      </li>
+    </ol>
+  </p>
+  
+ </subsection>
+
+ <subsection xml:id="subsec-Suggested-Topics">
+  <title>Suggested Topics</title>
+  
+  <p>
+    Here are some suggested topic for the presentation. Topics that can be found in the textbook have the relevant chapter listed in parenthesis.
+  </p>
+
+  <p>
+    <ol>
+      <li>
+        <p>
+          Regular Measures
+        </p>
+      </li>
+      <li>
+        <p>
+          Real Measures and the Hahn Decomposition Theorem (9A-9B)
+        </p>
+      </li>
+      <li>
+        <p>
+          Hausdorff Measure and Hausdorff Dimension
+        </p>
+      </li>
+      <li>
+        <p>
+          Radon-Nikodym Theorem (9B)
+        </p>
+      </li>
+      <li>
+        <p>
+          Functions of Bounded Variation
+        </p>
+      </li>
+      <li>
+        <p>
+          Layer Cake Representation
+        </p>
+      </li>
+      <li>
+        <p>
+          Banach-Tarski Paradox
+        </p>
+      </li>
+      <li>
+        <p>
+          Borel-Cantelli Lemma (12)
+        </p>
+      </li>
+    </ol>
+  </p>
+
+ </subsection>
+</section>
