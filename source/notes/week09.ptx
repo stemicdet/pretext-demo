@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="notes-week-08">
+<section xml:id="notes-week-09">
   <title>Week 9: The Hardy-Littlewood Maximal Function (4A) </title>
 
 <subsection xml:id="subsec-Markov-vitali">
@@ -17,7 +17,7 @@
     
     <statement>
       <p>
-        Suppose $(X,S,\mu)$ is a measure space and $h \in \mathcal{L}^1(\mu)$. Then for every $c &lt; 0$, 
+        Suppose <m>(X,S,\mu)</m> is a measure space and <m>h \in \mathcal{L}^1(\mu)</m>. Then for every <m>c &lt; 0</m>, 
         <md>
           \mu(\{x\in X: |h(x)| \geq c\}) \leq \frac{1}{c} ||h||_1.
         </md>
@@ -32,7 +32,7 @@
     
     <statement>
       <p>
-        If $X$ is a non-negative random variable and $c &lt; 0$, then the probability that $X$ is at least $c$ is at most the expected value of $X$ divided by $c$.
+        If <m>X</m> is a non-negative random variable and <m>c &lt; 0</m>, then the probability that <m>X</m> is at least <m>c</m> is at most the expected value of <m>X</m> divided by <m>c</m>.
         <md>
           P(X \geq c) \leq \frac{E[X]}{c}
         </md>
@@ -56,13 +56,13 @@
   <definition xml:id="def-3-times">
     <statement>
       <p>
-        Suppose $I$ is a bounded non-empty open interval of $\mathbf{R}$. Then $3* I$ denotes the open interval with the same center as $I$ and $3$ times the length as $I$.
+        Suppose <m>I</m> is a bounded non-empty open interval of <m>\mathbf{R}</m>. Then <m>3* I</m> denotes the open interval with the same center as <m>I</m> and <m>3</m> times the length as <m>I</m>.
       </p>
     </statement>
   </definition>
 
   <p>
-    Example: Suppose $I = (-2,10)$. Since the center of $I$ is $4$, and the radius of $I$ is $6$, $3*I = (4-18,4+18) = (-14,22)$.
+    Example: Suppose <m>I = (-2,10)</m>. Since the center of <m>I</m> is <m>4</m>, and the radius of <m>I</m> is <m>6</m>, <m>3*I = (4-18,4+18) = (-14,22)</m>.
   </p>
   
 
@@ -72,7 +72,7 @@
     
     <statement>
       <p>
-        Suppose $I_1, \ldots, I_n$ is a list of bounded non-empty open intervals of $\mathbf{R}$. Then there exists a disjoint sublist $I_{k_1}, \ldots I_{k_m}$ such that 
+        Suppose <m>I_1, \ldots, I_n</m> is a list of bounded non-empty open intervals of <m>\mathbf{R}</m>. Then there exists a disjoint sublist <m>I_{k_1}, \ldots I_{k_m}</m> such that 
         <md>
            I_1 \cup \ldots I_n \subset (3*I_{k_1}) \cup \ldots \cup (3*I_{k_m}).
         </md>
@@ -86,40 +86,179 @@
   </p>
 
   <p>
-    Example:  Let $I_1 = (0,4)$, $I_2 = (-3,3)$, $I_3 = (2,10)$ and $I_4 = (-7,1)$. Then $3*I_1 = (-4,8)$, $3*I_2 = (-9,9)$, $3*I_3 = (-6,18)$, and $3*I_4 = (-15,9)$. $I_1 \cup I_2 \cup I_3 \cup I_4 = (-7,10) \subset 3*I_3 \cup 3*I_4$ which satisfies the conclusion of the Vitali covering Lemma. 
+    Example:  Let <m>I_1 = (0,4)</m>, <m>I_2 = (-3,3)</m>, <m>I_3 = (2,10)</m> and <m>I_4 = (-7,1)</m>. Then <m>3*I_1 = (-4,8)</m>, <m>3*I_2 = (-9,9)</m>, <m>3*I_3 = (-6,18)</m>, and <m>3*I_4 = (-15,9)</m>. <m>I_1 \cup I_2 \cup I_3 \cup I_4 = (-7,10) \subset 3*I_3 \cup 3*I_4</m> which satisfies the conclusion of the Vitali covering Lemma. 
   </p>
   
   <proof>
     <p>
-      We choose our disjoint sublist in the following way. Let $I_{k_1}$ be the longest interval on the list. (If multiple intervals are tied for longest, choose one of them arbitrarily.) Now choose $I_{k_2}$ to be the longest remaining interval on the list that is disjoint from $I_{k_1}$.
+      We choose our disjoint sublist in the following way. Let <m>I_{k_1}</m> be the longest interval on the list. (If multiple intervals are tied for longest, choose one of them arbitrarily.) Now choose <m>I_{k_2}</m> to be the longest remaining interval on the list that is disjoint from <m>I_{k_1}</m>.
     </p>
 
     <p>
-      We inductively repeat this process. If $I_{k_1}, \ldots, I_{k_j}$ have already been chosen, then choose $I_{k_{j+1}}$ to be the longest remaining interval that is disjoint from the ones already chosen. When there are no more intervals left that are disjoint from the ones previously chosen, the process terminates and the intervals already chosen form our sublist.
+      We inductively repeat this process. If <m>I_{k_1}, \ldots, I_{k_j}</m> have already been chosen, then choose <m>I_{k_{j+1}}</m> to be the longest remaining interval that is disjoint from the ones already chosen. When there are no more intervals left that are disjoint from the ones previously chosen, the process terminates and the intervals already chosen form our sublist.
     </p>
 
     <p>
-      Example: If we apply this procedure to the previous example, both $I_3 = (2,10)$ and $I_4 = (-7,1)$ have length $8$, so we arbitrarily choose one to be the first interval in the sublist. Since $I_3$ and $I_4$ are disjoint, we choose the other one to be the second interval in the sublist. None of the other intervals are disjoint, so our sublist only consists of $I_3$ and $I_4$. 
+      Example: If we apply this procedure to the previous example, both <m>I_3 = (2,10)</m> and <m>I_4 = (-7,1)</m> have length <m>8</m>, so we arbitrarily choose one to be the first interval in the sublist. Since <m>I_3</m> and <m>I_4</m> are disjoint, we choose the other one to be the second interval in the sublist. None of the other intervals are disjoint, so our sublist only consists of <m>I_3</m> and <m>I_4</m>. 
     </p>
 
     <p>
-      Suppose $j \in \{1, \ldots, n\}$. To complete the proof we must show that $I_j \subseteq 3*I_{k_1} \cup 3*I_{k_m}$. If $j \in \{k_1, \ldots, k_m\}$ then this is true, so we can suppose that $j \notin \{k_1, \ldots, k_m\}$. This means that $I_j$ is an interval that was not chosen on our sublist, so it is not disjoint from all of $I_{k_1}, \ldots I_{k_m}$.
+      Suppose <m>j \in \{1, \ldots, n\}</m>. To complete the proof we must show that <m>I_j \subseteq 3*I_{k_1} \cup 3*I_{k_m}</m>. If <m>j \in \{k_1, \ldots, k_m\}</m> then this is true, so we can suppose that <m>j \notin \{k_1, \ldots, k_m\}</m>. This means that <m>I_j</m> is an interval that was not chosen on our sublist, so it is not disjoint from all of <m>I_{k_1}, \ldots I_{k_m}</m>.
     </p>
 
     <p>
-      Let $I_{k_L}$ be the first interval on the sublist that is not disjoint from $I_j$. This means that $I_j$ is disjoint from all of $I_{k_1} \ldots I_{k_{L-1}}$. Because $I_{k_L}$ was chosen instead of $I_j$ to be on the sublist, this means that $|I_{k_L}| \geq |I_j|$. This implies that $I_j \subseteq 3*I_{k_L}$ and the lemma is proved.
+      Let <m>I_{k_L}</m> be the first interval on the sublist that is not disjoint from <m>I_j</m>. This means that <m>I_j</m> is disjoint from all of <m>I_{k_1} \ldots I_{k_{L-1}}</m>. Because <m>I_{k_L}</m> was chosen instead of <m>I_j</m> to be on the sublist, this means that <m>|I_{k_L}| \geq |I_j|</m>. This implies that <m>I_j \subseteq 3*I_{k_L}</m> and the lemma is proved.
     </p>
 
     <p>
-      To see this, shift the intervals so that $I_{k_L}$ is centered at $0$. Then $I_{k_L} = (-a,a)$. Since $I_j$ is not disjoint, it has the form $(b,c)$ where $b &lt; a$ and $c-b \leq 2a$. Hence $c &lt; 3a$ and $I_j \subseteq 3*I_{k_L}$.
+      To see this, shift the intervals so that <m>I_{k_L}</m> is centered at <m>0</m>. Then <m>I_{k_L} = (-a,a)</m>. Since <m>I_j</m> is not disjoint, it has the form <m>(b,c)</m> where <m>b &lt; a</m> and <m>c-b \leq 2a</m>. Hence <m>c &lt; 3a</m> and <m>I_j \subseteq 3*I_{k_L}</m>.
     </p>
 
 
 
 
   </proof>
+
+
   
 
+
+</subsection>
+
+<subsection xml:id="subsec-Hardy-Littlewood-Maximal-Inequality">
+  <title>Hardy Littlewood Maximal Inequality</title>
+
+  <definition xml:id="def-hl-max-inequality">
+    <title>Hardy-Littlewood Maximal Function, <m>h^*</m></title>
+    
+    
+    <statement>
+      <p>
+        Suppose <m>h: \mathbf{R} \to \mathbf{R}</m> is a Lebesgue measurable function. Then the <term>Hardy-Littlewood maximal function</term> of <m>h</m> is the function <m>h^*: \mathbf{R} \to [0,\infty]</m> defined by
+      </p>
+
+      <md>
+        h^*(b) = \sup_{t>0} \frac{1}{2t} \int_{b-t}^{b+t} |h|.
+      </md>
+      
+
+    </statement>
+  </definition>
+
+  <p>
+    In other words <m>h^*(b)</m> is the supremum of the average of <m>h</m>, where the supremum is taken over all bounded intervals centered at <m>b</m>.
+  </p>
+
+  <p>
+    Example: Let <m>h = \chi_{[0,1]}</m> denote the characteristic function on <m>[0,1]</m>. Find <m>h^*(b)</m>.
+  </p>
+  
+
+  <p>
+    Markov's inequality gives an estimate for the size of the set on which <m>h &lt; c</m>. The next result gives an estimate for the size of the set on which <m>h^*(b) &lt; c</m>
+  </p>
+
+  <theorem xml:id="thm-hl-max-ineq">
+    <title>Hardy-Littlewood Maximal Inequality</title>
+    
+    
+    <statement>
+      <p>
+        Suppose <m>h \in \mathcal{L}^1(\mathbf{R})</m>. Then
+        <md>
+          |\{b\in \mathbf{R}: h^*(b) &gt; c\}| \leq \frac{3}{c} ||h||_1
+        </md>
+        for every <m>c &lt; 0</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Suppose that <m>F</m> is a closed bounded subset of <m>\{b\in \mathbf{R}: h^*(b) &lt; c\}</m>. We will show that
+      <md>
+        |F| \leq \frac{3}{c} \int_{-\infty}^{\infty} |h|.
+      </md>
+      
+    </p>
+
+    <p>
+      Assuming that we have shown this, then by taking the supremum over all closed bounded subsets of <m>\{b\in \mathbf{R}: h^*(b) &lt; c\}</m> gives the desired result.
+    </p>
+
+    <p>
+      It follows from how the Hardy-Littlewood maximal function is defined that for each <m>b \in F</m>, there exists <m>t_b&gt; 0</m> such that
+      <md>
+        \frac{1}{2t_b} \int_{b-t_b}^{b+t_b} |h| &gt; c.
+      </md>
+      
+    </p>
+
+    <p>
+      Since
+      <md>
+         F \subseteq \bigcup_{b \in F} (b-t_b, b+t_b),
+      </md>
+      it follows from the Heine-Borel Theorem that this open cover has a finite subcover.
+    </p>
+
+    <p>
+      This means that there exists <m>b_1, \ldots b_n \in F</m> such that
+      <md>
+        F \subseteq (b_1 -t_{b_1}, b_1 + t_{b_1}) \cup \ldots \cup (b_n - t_{b_n}, b_n + t_{b_n})
+      </md>
+      
+    </p>
+
+    <p>
+      For clarity, let's relabel the above open intervals as <m>I_1, \ldots, I_n</m>. By the Vitali Covering Lemma, there exits disjoint subsets <m>I_{k_1}, \ldots I_{k_m}</m> of the open intervals such that
+      <md>
+        I_1, \ldots, I_n \subseteq (3*I_{k_1} \cup \ldots \cup (3*I_{k_m})
+      </md>
+       
+    </p>
+
+    <p>
+      Hence,
+      <md>
+        <mrow> |F| \amp \leq |I_1 \cup \ldots \cup I_n| </mrow>
+        <mrow> \amp \leq |(3*I_{k_1}) \ldots (3*I_{k_m})|</mrow>
+        <mrow> \amp \leq |3*I_{k_1}| + \ldots +  |3*I_{k_m}|</mrow>
+        <mrow> \amp = 3(|I_{k_1}| + \ldots + |I_{k_m}|). </mrow>
+      </md>
+      
+    </p>
+
+    <p>
+      Now <m>|I_{k_j}| = 2t_b</m> for the choice of <m>t_b</m> that corresponds to <m>I_{k_j}</m>. Hence it follows from the definition of the Hardy-Littlewood maximal function that
+      <md>
+        \frac{1}{|I_{k_j}|} \int_{b-t_b}^{b+t_b} |h| &gt; c.
+      </md>
+      
+    </p>
+
+    <p>
+      Rearranging this inequality gives that
+      <md>
+        |I_{k_j}| &lt; \frac{1}{c} \int_{b-t_b}^{b+t_b} |h|.
+      </md>
+      Hence it follows that
+      <md>
+        |F| \leq \frac{3}{c} \left(\int_{I_{k_1}} |h| + \ldots + \int_{I_{k_m}} |h| \right).
+      </md>
+      
+    </p>
+
+    <p>
+      Since <m>I_{k_1}, \ldots, I_{k_m}</m> are disjoint, we conclude that
+      <md>
+        |F| \leq \frac{3}{c} \int_{-\infty}^{\infty} |h|,
+      </md>
+      which is what we want to prove.
+    </p>
+
+  </proof>
+  
 
 </subsection>
 
