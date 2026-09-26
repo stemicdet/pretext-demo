@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-08">
+  <title>Week 9: The Hardy-Littlewood Maximal Function (4A) </title>
+
+<subsection xml:id="subsec-Markov-vitali">
+  <title>Markov's Inequality and the Vitali Covering Lemma</title>
+  
+
+  <p>
+    In this chapter, we introduce the Hardy-Littlewood maximal function, which is of great importance in measure theory. We will use the Hardy-Littlewood maximal function to prove the fundamental theorem of calculus for Lebesgue integrable functions. Before we define the Hardy-Littlewood maximal function, we introduce a couple key theorems that we will need in the chapter.
+  </p>
+
+  <theorem xml:id="thm-Markov">
+    <title>Markov's Inequality</title>
+    
+    
+    <statement>
+      <p>
+        Suppose $(X,S,\mu)$ is a measure space and $h \in \mathcal{L}^1(\mu)$. Then for every $c &lt; 0$, 
+        <md>
+          \mu(\{x\in X: |h(x)| \geq c\}) \leq \frac{1}{c} ||h||_1.
+        </md>
+        
+      </p>
+    </statement>
+  </theorem>
+
+  <theorem xml:id="thm-Markov-prob">
+    <title>Markov's Inequality (Probability Version)</title>
+    
+    
+    <statement>
+      <p>
+        If $X$ is a non-negative random variable and $c &lt; 0$, then the probability that $X$ is at least $c$ is at most the expected value of $X$ divided by $c$.
+        <md>
+          P(X \geq c) \leq \frac{E[X]}{c}
+        </md>
+        
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      Suppose <m>c &lt; 0</m>. Then 
+      <md>
+        <mrow> \mu(\{x\in X: |h(x)| \geq c\}) \amp = \frac{1}{c} \int_{\{x\in X: |h(x)| \geq c\}} c d\mu </mrow>
+        <mrow> \amp \leq \frac{1}{c} \int_{\{x\in X: |h(x)| \geq c\}} |h| d\mu</mrow>
+        <mrow> \amp = \frac{1}{c} ||h||_1</mrow>
+      </md>
+      as desired.
+    </p>
+  </proof>
+
+  <definition xml:id="def-3-times">
+    <statement>
+      <p>
+        Suppose $I$ is a bounded non-empty open interval of $\mathbf{R}$. Then $3* I$ denotes the open interval with the same center as $I$ and $3$ times the length as $I$.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Example: Suppose $I = (-2,10)$. Since the center of $I$ is $4$, and the radius of $I$ is $6$, $3*I = (4-18,4+18) = (-14,22)$.
+  </p>
+  
+
+  <theorem xml:id="thm-Vitali">
+    <title>Vitali Covering Lemma</title>
+    
+    
+    <statement>
+      <p>
+        Suppose $I_1, \ldots, I_n$ is a list of bounded non-empty open intervals of $\mathbf{R}$. Then there exists a disjoint sublist $I_{k_1}, \ldots I_{k_m}$ such that 
+        <md>
+           I_1 \cup \ldots I_n \subset (3*I_{k_1}) \cup \ldots \cup (3*I_{k_m}).
+        </md>
+        
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    The importance of the Vitali Covering Lemma is that it allows us to replace an arbitrary collection of intervals with a disjoint collection.
+  </p>
+
+  <p>
+    Example:  Let $I_1 = (0,4)$, $I_2 = (-3,3)$, $I_3 = (2,10)$ and $I_4 = (-7,1)$. Then $3*I_1 = (-4,8)$, $3*I_2 = (-9,9)$, $3*I_3 = (-6,18)$, and $3*I_4 = (-15,9)$. $I_1 \cup I_2 \cup I_3 \cup I_4 = (-7,10) \subset 3*I_3 \cup 3*I_4$ which satisfies the conclusion of the Vitali covering Lemma. 
+  </p>
+  
+  <proof>
+    <p>
+      We choose our disjoint sublist in the following way. Let $I_{k_1}$ be the longest interval on the list. (If multiple intervals are tied for longest, choose one of them arbitrarily.) Now choose $I_{k_2}$ to be the longest remaining interval on the list that is disjoint from $I_{k_1}$.
+    </p>
+
+    <p>
+      We inductively repeat this process. If $I_{k_1}, \ldots, I_{k_j}$ have already been chosen, then choose $I_{k_{j+1}}$ to be the longest remaining interval that is disjoint from the ones already chosen. When there are no more intervals left that are disjoint from the ones previously chosen, the process terminates and the intervals already chosen form our sublist.
+    </p>
+
+    <p>
+      Example: If we apply this procedure to the previous example, both $I_3 = (2,10)$ and $I_4 = (-7,1)$ have length $8$, so we arbitrarily choose one to be the first interval in the sublist. Since $I_3$ and $I_4$ are disjoint, we choose the other one to be the second interval in the sublist. None of the other intervals are disjoint, so our sublist only consists of $I_3$ and $I_4$. 
+    </p>
+
+    <p>
+      Suppose $j \in \{1, \ldots, n\}$. To complete the proof we must show that $I_j \subseteq 3*I_{k_1} \cup 3*I_{k_m}$. If $j \in \{k_1, \ldots, k_m\}$ then this is true, so we can suppose that $j \notin \{k_1, \ldots, k_m\}$. This means that $I_j$ is an interval that was not chosen on our sublist, so it is not disjoint from all of $I_{k_1}, \ldots I_{k_m}$.
+    </p>
+
+    <p>
+      Let $I_{k_L}$ be the first interval on the sublist that is not disjoint from $I_j$. This means that $I_j$ is disjoint from all of $I_{k_1} \ldots I_{k_{L-1}}$. Because $I_{k_L}$ was chosen instead of $I_j$ to be on the sublist, this means that $|I_{k_L}| \geq |I_j|$. This implies that $I_j \subseteq 3*I_{k_L}$ and the lemma is proved.
+    </p>
+
+    <p>
+      To see this, shift the intervals so that $I_{k_L}$ is centered at $0$. Then $I_{k_L} = (-a,a)$. Since $I_j$ is not disjoint, it has the form $(b,c)$ where $b &lt; a$ and $c-b \leq 2a$. Hence $c &lt; 3a$ and $I_j \subseteq 3*I_{k_L}$.
+    </p>
+
+
+
+
+  </proof>
+  
+
+
+</subsection>
+
+</section>
