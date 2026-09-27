@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-10">
+  <title>Week 10: Deriatives of Integrals (4B) </title>
+
+  <subsection xml:id="subsec-Lebesgue-Differentiation-Theorem">
+    <title>Lebesgue Differentiation Theorem</title>
+    
+    <p>
+       Our goal in this section is to prove the Fundamental Theorem of Calculus for the Lebesgue integral. The first step will be to prove the following theorem, which has many uses. 
+    </p>
+
+    <theorem xml:id="thm-Lebesgue-differentiation-first">
+        <title>Lebesgue Differentiation Theorem, first version</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>f \in \mathcal{L}(\mathbf{R})</m>. Then
+                <md>
+                     \lim_{t\to 0^+} \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx = 0
+                </md>
+                for almost every <m>b \in \mathbf{R}</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            The proof is motivated by the following observation. It follows from the properties of the Lebesgue integral that
+            <md>
+                \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx \leq \sup \{|f(x)-f(b)|: |x-b|\leq t\}.
+            </md>
+            
+        </p>
+
+        <p>
+            If <m>f</m> is continuous at <m>b</m>, the the right hand side tends to <m>0</m> as <m>t \to 0^+</m> and the proof is complete. For the general case, we will approximate <m>f</m> by continuous functions and use that to verify that <m>f</m> has the desired property.
+        </p>
+
+        <p>
+            Let <m>\delta>0</m>. Then since <m>\mathcal{L}^1</m> functions can be approximated by continuous functions, for each <m>k \in \mathbf{N}</m> there exists a continuous function <m>h_k: \mathbf{R} \to \mathbf{R}</m> such that 
+            <md>
+                ||f-h_k||_1 &lt; \frac{\delta}{k 2^k}.
+            </md>
+            
+        </p>
+
+        <p>
+            Let <m>B_k</m> be the following set.
+            <md>
+                 B_k = \left\{b \in \mathbf{R}: |f(b) - h_k(b)| \leq \frac{1}{k} \text{ and } (f-h_k)^*(b) \leq \frac{1}{k}\right\}
+            </md>
+
+            Then
+
+            <md>
+                \mathbf{R} \setminus B_k = \left\{b \in \mathbf{R}: |f(b) - h_k(b)| &gt; \frac{1}{k}\right\} \cup \left\{b \in \mathbf{R}: (f-h_k)^*(b) &gt; \frac{1}{k}\right\}
+            </md>
+            
+            
+        </p>
+
+        <p>
+            It follows from Markov's inequality that 
+            <md>
+                 |\{b \in \mathbf{R}: |f(b)-h_k(b)| &gt; \frac{1}{k} \}| \leq k ||f-h_k||_1 &lt; \frac{\delta}{2^k}
+            </md>
+            
+        </p>
+
+        <p>
+            Likewise, it follows from the Hardy-Littlewood maximal inequality that 
+            <md>
+                |\{b \in \mathbf{R}: (f-h_k)^*(b) &gt; \frac{1}{k} \}| \leq 3k||f-h_k||_1 &lt; \frac{3\delta}{2^k}
+            </md>
+            
+        </p>
+
+        <p>
+            It thus follows that <m>|\mathbf{R} \setminus B_k| &lt; \frac{4\delta}{2^k}</m>. Let
+            <md>
+                B = \bigcap_{k=1}^{\infty} B_k
+            </md>
+            Then
+            <md>
+                <mrow> |\mathbf{R}\setminus B| \amp = \left| \bigcup_{k=1}^{\infty} \mathbf{R} \setminus B_k \right| \leq \sum_{k=1}^{\infty} |\mathbf{R} \setminus B_k|</mrow>
+                <mrow> \amp &lt; \sum_{k=1}^{\infty} \frac{4\delta}{2^k} </mrow>
+                <mrow> \amp = 4\delta </mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            Suppose <m>b\in B</m> and <m>t>0</m>. Then for each <m>k \in \mathbf{N}</m> we have 
+            <md>
+                <mrow> \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx \amp \leq \frac{1}{2t} \int_{b-t}^{b+t} (|f(x)-h_k(x)| + |h_k(x) - h_k(b)| + |h_k(b) -f(b)|) dx </mrow>
+                <mrow> \amp \leq (f-h_k)^*(b) + \left(\frac{1}{2t}\int_{t-b}^{t+b} |h_k(x) - h_k(b)|dx \right) + |h_k(b) - f(b)|. </mrow>
+            </md>
+            
+        </p>
+
+        <p>
+            Since <m>b \in B</m>, both the first and last terms are less than <m>\frac{1}{k}</m>. Hence
+            <md>
+                \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx \leq \frac{2}{k} + \left(\frac{1}{2t}\int_{t-b}^{t+b} |h_k(x) - h_k(b)| \right).
+            </md>
+            
+        </p>
+
+        <p>
+            Because <m>h_k</m> is continuous, the last term can be made arbitrarily small by taking <m>t</m> sufficiently close to <m>0</m>. In particular, we can choose <m>t</m> small enough that the integral is less than <m>\frac{1}{k}</m>. Thus for each <m>k \in \mathbf{N}</m> we have that
+            <md>
+                \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx \leq \frac{3}{k}
+            </md>
+            for all <m>t</m> sufficiently close to <m>0</m>.
+        </p>
+
+        <p>
+            Hence,
+
+            <md>
+                \lim_{t\to 0^+} \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx = 0
+            </md>
+            for all <m>b \in B</m>.
+        </p>
+
+        <p>
+            The proof would be complete if we knew that <m>\mathbf{R} \setminus B</m> had measure zero but we don't know this. However, we do know that for an arbitrary <m>\delta</m> we can make the set <m>B</m> in the proof such that <m>|\mathbf{R} \setminus B| &lt; \delta</m>, and we can use this to finish the proof.
+        </p>
+
+        <p>
+            Let <m>A</m> denote the set of numbers <m>a \in \mathbf{R}</m> such that
+            <md>
+                \lim_{t\to 0^+} \frac{1}{2t} \int_{a-t}^{a+t} |f(x)-f(a)| dx
+            </md>
+            is not equal to <m>0</m>. Then <m>A \subseteq \mathbf{R} \setminus B</m>
+        </p>
+
+        <p>
+            Hence <m>|A| \leq |\mathbf{R} \setminus B| &lt; 4 \delta</m>. Since <m>\delta &gt; 0</m> is arbitrary, it follows that <m>|A| = 0</m>, which completes the proof.
+        </p>
+
+
+    </proof>
+    
+
+
+  </subsection>
+
+  <subsection xml:id="subsec-Derivatives">
+    <title>Derivatives</title>
+
+    <definition xml:id="def-derivative">
+        <title>Derivative</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>g: I \to \mathbf{R}</m> is a function defined on an open interval <m>I \in \mathbf{R}</m> and <m>b \in I</m>. The <term>derivative</term> of <m>g</m> at <m>b</m>, denoted <m>g'(b)</m>, is defined by
+                <md>
+                    g'(b) = \lim_{t\to 0} \frac{g(b+t) - g(b)}{t}
+                </md>
+
+                provided that the above limit exists, in which case we say <m>g</m> is <term>differentiable</term> at <m>b</m>.
+                
+            </p>
+        </statement>
+    </definition>
+
+    <theorem xml:id="thm-FTC1">
+        <title>Fundamental Theorem of Calculus</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>f \in L^1(\mathbf{R})</m>. Define <m>g: \mathbf{R} \to \mathbf{R}</m> by 
+                <md>
+                    g(x) = \int_{-\infty}^{x} f(t) dt.
+                </md>
+                Suppose <m>b \in \mathbf{R}</m> and <m>f</m> is continuous at <m>b</m>. Then <m>g</m> is differentiable at <m>b</m> and
+                <md>
+                    g'(b) = f(b)
+                </md>
+                
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        In MTH 528 we proved the Fundamental Theorem of Calculus for Riemann integrable functions. Nothing in that proof specifically required the integral used to be the Riemann integral. Thus the exact same proof can be used to proof FTC for Lebesgue integrable functions.
+    </p>
+
+    <p>
+        The restriction in FTC that <m>f</m> be continuous at <m>b</m> is a pretty significant drawback, especially since a Lebesgue integrable function does not need to be continuous anywhere. However, the next result shows that even in the absence of continuity FTC holds almost everywhere. 
+    </p>
+
+    <theorem xml:id="thm-Lebesgue-diff-thm-2">
+        <title>Lebesgue Differentiation Theorem, second version</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>f \in \mathcal{L}^1(\mathbf{R})</m>. Define <m>g: \mathbf{R} \to \mathbf{R}</m> by
+                <md>
+                    g(x) = \int_{-\infty}^x f(u) du.
+                </md>
+                Then <m>g'(b) = f(b)</m> for almost every <m>b \in \mathbf{R}</m>.
+            </p>
+        </statement>
+    </theorem>
+    
+
+    <proof>
+        <p>
+            Suppose <m>t \neq 0</m>. Then for all <m>b \in \mathbf{R}</m>,
+            <md>
+                <mrow> \left|\frac{g(b+t)-g(b)}{t} - f(b)\right| \amp = \left| \frac{\int_{-\infty}^{b+t} f(u) du - \int_{-\infty}^{b} f(u) du}{t} - f(b) \right| </mrow>
+                <mrow> \amp = \left| \frac{\int_{b}^{b+t} f(u) du}{t} - f(b) \right|</mrow>
+                <mrow> \amp = \left| \frac{\int_{b}^{b+t} f(u) -f(b) du}{t}  \right| </mrow>
+                <mrow> \amp = \frac{1}{t} \int_{b}^{b+t} |f(u) -f(b)| du</mrow>
+                <mrow> \amp \leq \frac{1}{t} \int_{b-t}^{b+t} |f(u)-f(b)| du</mrow>
+            </md>
+            
+        </p>
+
+        <p>
+           However, it follows from the first version of the Lebesgue Differentiation Theorem that this last integral tends to <m>0</m> as <m>t\to 0^+</m> for almost every <m>b \in \mathbf{R}</m>. Hence for almost every <m>b \in \mathbf{R}</m>,
+           <md>
+            \left|\frac{g(b+t)-g(b)}{t} - f(b)\right| \to 0
+           </md>
+            as <m>t \to 0^+</m>. Thus <m>g'(b) = f(b)</m> for almost every <m>b \in \mathbf{R}</m>.
+        </p>
+
+    </proof>
+
+    <p>
+        Example: Let <m>g(x)</m> be Dirichlet's function
+        <md>
+            f(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \mathbf{Q}$} \\
+      \hfill  0 \hfill \amp \text{ if $x \notin \mathbf{Q}$} \\
+  \end{cases}
+        </md>
+        Then
+        <md>
+            g(b) = \int_{-\infty}^{b} f(t) dt = 0
+        </md>
+        for all <m>b \in \mathbf{R}</m> and <m>g'(b) = 0</m>. Thus <m>g'(b) = f(b)</m> for all <m>b \notin \mathbf{Q}</m>.
+    </p>
+
+    <p>
+        Consider the set <m>E = [0,\frac{1}{8}] \cup [\frac{1}{4}, \frac{3}{8}] \cup [\frac{1}{2}, \frac{5}{8}] \cup [\frac{3}{4},\frac{7}{8}]</m>. This set has the property that <m>|E \cap [0,b]| = \frac{b}{2}</m> for <m>b = 0, \frac{1}{4}, \frac{1}{2}, \frac{3}{4}, 1</m>. In other words, <m>E</m> takes up exactly half of the intervals <m>[0,\frac{1}{4}]</m>, <m>[0,\frac{1}{2}], [0,\frac{3}{4}]</m> and <m>[0,1]</m>.
+    </p>
+
+    <p>
+        Does there exist a set <m>E \subseteq [0,1]</m> for which the above equation holds for all <m>b \in [0,1]</m>? This would mean that <m>E</m> contains exactly half of each interval <m>[0,b]</m>.
+    </p>
+
+    <p>
+        The Lebesgue Differentiation Theorem allows us to answer the question in the negative.
+    </p>
+
+    <theorem xml:id="thm-no-half-interval">
+        <title>No Set Constitutes Half of Each Interval</title>
+        
+        
+        <statement>
+            <p>
+                There does not exist a Lebesgue measurable set <m>E \subseteq [0,1]</m> such that 
+                <md>
+                    |E \cap [0,b]| = \frac{b}{2}
+                </md>
+                for all <m>b \in [0,1]</m>
+            </p>
+        </statement>
+    </theorem>
+    
+
+    <proof>
+        <p>
+            The proof will be by contradiction. Suppose <m>E</m> is a Lebesgue measurable set with the above property and let <m>g: \mathbf{R} \to \mathbf{R}</m> be defined by
+            <md>
+                g(b) = \int_{-\infty}^b \chi_E(t) dt.
+            </md>
+            
+        </p>
+
+        <p>
+            Then <m>g(b) = |E \cap [0,b]| = \frac{b}{2}</m> for all <m>b \in [0,1]</m>. Thus <m>g'(b) = \frac{1}{2}</m> for all <m>b \in [0,1]</m>.
+        </p>
+
+        <p>
+            The Lebesgue Differentiation Theorem implies that <m>g'(b) = \chi_E(b)</m> for almost every <m>b \in [0,1]</m>. Hence <m>\chi_E(b) = \frac{1}{2}</m> for almost every <m>b \in [0,1]</m>. But <m>\chi_E</m> only attains the values <m>0</m> and <m>1</m>, so we have a contradiction. Thus no set constitutes half of each interval. 
+        </p>
+
+            </proof>
+
+        <p>
+            Our next result states that locally an <m>\mathcal{L}^1</m> function is equal to its average almost everywhere.
+        </p>
+
+        <theorem xml:id="thm-L1-almost-equal-average">
+            <title><m>\mathcal{L}^1</m> Functions are Almost Everywhere Equal to Their Local Average</title>
+            
+            
+            <statement>
+                <p>
+                    Suppose <m>f \in \mathcal{L}^1(\mathbf{R})</m>. Then 
+                    <md>
+                        f(b) = \lim_{t\to 0^+} \frac{1}{2t} \int_{b-t}^{b+t} f(x) dx
+                    </md>
+                    for almost every <m>b \in \mathbf{R}</m>.
+                </p>
+            </statement>
+        </theorem>
+        
+        <proof>
+            <p>
+                Suppose <m>t &gt; 0</m>. Then
+                <md>
+                    <mrow> \left| \left(\frac{1}{2t} \int_{b-t}^{b+t} f(x) dx \right) - f(b) \right| \amp = \left| \frac{1}{2t} \int_{b-t}^{b+t} (f(x) - f(b)) dx \right| </mrow>
+                    <mrow> \amp \leq  \frac{1}{2t} \int_{b-t}^{b+t} |f(x) - f(b)| dx </mrow>
+                </md>
+                
+            </p>
+
+            <p>
+                It then follows from the first version of the Lebesgue Differentiation Theorem that the last line tends to <m>0</m> as <m> t \to 0</m> for almost every <m>b \in \mathbf{R}</m>. 
+            </p>
+
+        </proof>
+
+        
+
+
+
+    
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Density">
+    <title>Density</title>
+
+    <p>
+        Let <m>b</m> be a point on the real line and let <m>E</m> be a subset of <m>\mathbf{R}</m>. The density of <m>E</m> at <m>b</m> measures the proportion that <m>b</m> is contained by <m>E</m>. 
+    </p>
+
+    <definition xml:id="def-density">
+        <title>Density</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>E \subseteq \mathbf{R}</m>. The <term>density</term> of <m>E</m> at the number <m>b \in \mathbf{R}</m> is
+                <md>
+                    \lim_{t\to 0^+} \frac{|E \cap (b-t, b+t)|}{2t}
+                </md>
+                if this limit exists. Otherwise the density is said to be undefined.
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Note: The concept of density can be extended to higher dimensions. The 2 dimensional version appears in my doctoral thesis.
+    </p>
+
+    <p>
+        Example: The density of the interval <m>[0,1]</m> at <m>b</m> is <m>1</m> if <m>b \in (0,1)</m>, <m>0</m> if <m>b \in (-\infty,0) \cup (1,\infty)</m> and <m>\frac{1}{2}</m> if <m>b = 0</m> or <m>b=1</m>.
+    </p>
+
+    <p>
+        Observe that for almost every <m>b \in [0,1]</m> the density of <m>[0,1]</m> at <m>b</m> is either <m>0</m> or <m>1</m>.
+    </p>
+
+    <theorem xml:id="thm-lebesgue-density">
+        <title>Lebesgue Density Theorem</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>E \subseteq \mathbf{R}</m> is a Lebesgue measurable set. Then the density of <m>E</m> is <m>1</m> at almost every element of <m>E</m> and is <m>0</m> at almost every element of <m>\mathbf{R} \setminus E</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            First consider the case that <m>|E| &lt; \infty</m>. Then <m>\chi_E \in \mathcal{L}^1(\mathbf{R})</m>. Since
+            <md>
+                \frac{|E \cap (b-t, b+t)|}{2t} = \frac{1}{2t} \int_{b-t}^{b+t} \chi_E 
+            </md>
+            for every <m>t &gt; 0</m> and <m>b\in \mathbf{R}</m> the theorem follows from the previous result.
+        </p>
+
+        <p>
+            If <m>|E| = \infty</m> then <m>\chi_E \notin \mathcal{L}^1(\mathbf{R})</m> and thus we cannot use the previous theorem. Instead we'll approximate <m>E</m> by sets of finite length.
+        </p>
+
+        <p>
+            For <m>k \in \mathbf{N}</m> let <m>E_k = E \cap (-k,k)</m>. Then if <m>|b| &lt; k</m> the density of <m>E</m> at <m>b</m> is the same as the density of <m>E_k</m> at 
+        </p>
+
+        <p>
+            It follows from the result for sets of finite length that for each <m>k</m> there are sets <m>F_k \subseteq E_k</m> and <m>G_k \subseteq \mathbf{R}\setminus E_k</m> with <m>|F_k| = |G_k| = 0</m> and the density of <m>E_k</m> is <m>1</m> at each element of <m>E_k \setminus F_k</m> and <m>0</m> at each element of <m>(\mathbf{R} \setminus E_k) \setminus G_k</m>.
+        </p>
+
+        <p>
+            Let <m>\displaystyle F = \bigcup_{k=1}^{\infty} F_k</m> and let <m>\displaystyle G = \bigcup_{k=1}^{\infty} G_k</m>. 
+        </p>
+
+        <p>
+            Then <m>|F| = |G| = 0</m> and the density of <m>E</m> is <m>1</m> at every element of <m>E \setminus F</m> and <m>0</m> at every element of <m>(\mathbf{R} \setminus E) \setminus G</m>. Thus the theorem is proven.
+        </p>
+
+    </proof>
+    
+    
+  </subsection>
+
+  </section>
