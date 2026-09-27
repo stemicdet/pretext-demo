@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 6 (Due October 8)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+           Suppose <m>X</m> is a finite set. Explain why a sequence of functions that converges pointwise on <m>X</m> also converges uniformly on <m>X</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+           Give an example to show that Egorov's Theorem can fail without the hypothesis that <m>\mu(X) &lt; \infty</m>. 
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Suppose that <m>F_1, F_2, \ldots F_n</m> are disjoint closed subsets of <m>\mathbf{R}</m>. Prove that if
+        <md>
+            g: F_1 \cup F_2 \cup F_n \to \mathbf{R}
+        </md>
+        is a function such that <m>g|_{F_k}</m> is a continuous function for all <m>k \in \{1,2, \ldots\}</m> then <m>g</m> is a continuous function.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>g: \mathbf{R} \to \mathbf{R}</m> be defined by
+          <md>
+            g(x) = \begin{cases} 
+      \hfill  \sin(\frac{1}{x}) \amp \text{ if $x \neq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x =0$} 
+  \end{cases}
+          </md>
+          Let <m>\epsilon &gt; 0</m>. Find a closed set <m>F</m> such that <m>|\mathbf{R}\setminus F| &lt; \epsilon</m> and <m>g|_F</m> is a continuous function on <m>F</m>.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Give an example of a Borel measurable function <m>f: \mathbf{R}\to \mathbf{R}</m> such that there does not exist a closed set <m>F \subseteq \mathbf{R}</m> such that <m>|\mathbf{R \setminus }F| = 0</m> and <m>f|_F</m> is a continuous function on <m>F</m>.
+          </p>
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
