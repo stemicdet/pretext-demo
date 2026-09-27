@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 9: The Hardy-Littlewood Maximal Function (4A)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Real Variables">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.2';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.6ad113829064d43a.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.02090e9f6a81e70e.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Real Variables</span> <span class="subtitle">MATH 650 Fall 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-08.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="notes-week-10.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="final-project.html" class="internal"><span class="title">Final Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="project.html" class="internal"><span class="title">Final Project Instructions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="project.html#subsec-General-Requirements" class="internal"><span class="title">General Requirements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="project.html#subsec-Suggested-Topics" class="internal"><span class="title">Suggested Topics</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#Motivation" class="internal"><span class="title">Motivation and Definition of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#good-properties" class="internal"><span class="title">Good Properties of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#outer-measure-not-additive" class="internal"><span class="title">Outer Measure is Not Additive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: Measurable Spaces and Functions (2B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#desired" class="internal"><span class="title">Desired Properties of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Simga-Algebras" class="internal"><span class="title">Sigma Algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Borel-Subsets-of-R" class="internal"><span class="title">Borel Subsets of R and Inverse Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-measurable-function" class="internal"><span class="title">Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Measures and Their Properties (2C)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Definition-and-Examples-of-Measures" class="internal"><span class="title">Definition and Examples of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-properties-measr" class="internal"><span class="title">Properties of Measures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Lebesgue Measure (2D)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Additivity-of-Outer" class="internal"><span class="title">Additivity of Outer Measure on Borel Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Lebesgue-Measurable-Sets" class="internal"><span class="title">Lebesgue Measurable Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Cantor" class="internal"><span class="title">The Cantor Set and Cantor Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-06.html" class="internal"><span class="title">Week 6: Convergence of Measurable Functions (2E)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Littlewood" class="internal"><span class="title">Littlewood’s Three Principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Egorov" class="internal"><span class="title">Egorov’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-simple-functions" class="internal"><span class="title">Approximation by Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Luzin" class="internal"><span class="title">Luzin’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Lebesgue-Measurable-Functions" class="internal"><span class="title">Lebesgue Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-07.html" class="internal"><span class="title">Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Simple-Functions" class="internal"><span class="title">Integration of Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Non-negative-Functions" class="internal"><span class="title">Integration of Non-negative Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Real-Valued-Functions" class="internal"><span class="title">Integration of Real Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-08.html" class="internal"><span class="title">Week 8: Limits of Integrals and Integrals of Limits (3B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Bounded-Convergence-Theroem" class="internal"><span class="title">Bounded Convergence Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Sets-of-Measure-Zero-in-Integration" class="internal"><span class="title">Sets of Measure Zero in Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Dominated-Convergence-Theorem" class="internal"><span class="title">Dominated Convergence Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Riemann-Integral-and-Lebesgue-Integral" class="internal"><span class="title">Riemann Integral and Lebesgue Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Approximation-by-Nice-Functions" class="internal"><span class="title">Approximation by Nice Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-09.html" class="internal"><span class="title">Week 9: The Hardy-Littlewood Maximal Function (4A)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-Markov-vitali" class="internal"><span class="title">Markov’s Inequality and the Vitali Covering Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-Hardy-Littlewood-Maximal-Inequality" class="internal"><span class="title">Hardy Littlewood Maximal Inequality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-10.html" class="internal"><span class="title">Week 10: Deriatives of Integrals (4B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-10.html#subsec-Lebesgue-Differentiation-Theorem" class="internal"><span class="title">Lebesgue Differentiation Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-10.html#subsec-Derivatives" class="internal"><span class="title">Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-10.html#subsec-Density" class="internal"><span class="title">Density</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-2.html" class="internal"><span class="title">Homework 1 (Due August 27)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-3.html" class="internal"><span class="title">Homework 2 (Due September 3)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-4.html" class="internal"><span class="title">Homework 3 (Due September 10)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-5.html" class="internal"><span class="title">Homework 4 (Due September 24)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-6.html" class="internal"><span class="title">Homework 5 (Due October 1)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-7.html" class="internal"><span class="title">Homework 6 (Due October 8)</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-09"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 9: The Hardy-Littlewood Maximal Function (4A)</span>
+</h2>
+<section class="subsection" id="subsec-Markov-vitali"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Markov’s Inequality and the Vitali Covering Lemma</span>
+</h3>
+<div class="para" id="subsec-Markov-vitali-2">In this chapter, we introduce the Hardy-Littlewood maximal function, which is of great importance in measure theory. We will use the Hardy-Littlewood maximal function to prove the fundamental theorem of calculus for Lebesgue integrable functions. Before we define the Hardy-Littlewood maximal function, we introduce a couple key theorems that we will need in the chapter.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Markov"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">98</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Markov’s Inequality.</span>
+</h4>
+<div class="para logical" id="thm-Markov-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(h \in \mathcal{L}^1(\mu)\text{.}\)</span> Then for every <span class="process-math">\(c &lt; 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="thm-Markov-2-1-4">
+\begin{equation*}
+\mu(\{x\in X: |h(x)| \geq c\}) \leq \frac{1}{c} ||h||_1.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Markov-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 98: Markov’s Inequality"><a href="#thm-Markov" title="Copy heading and permalink for Theorem 98: Markov’s Inequality" aria-label="Copy heading and permalink for Theorem 98: Markov’s Inequality">🔗</a></div></article><article class="theorem theorem-like" id="thm-Markov-prob"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">99</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Markov’s Inequality (Probability Version).</span>
+</h4>
+<div class="para logical" id="thm-Markov-prob-2-1">
+<div class="para">If <span class="process-math">\(X\)</span> is a non-negative random variable and <span class="process-math">\(c &lt; 0\text{,}\)</span> then the probability that <span class="process-math">\(X\)</span> is at least <span class="process-math">\(c\)</span> is at most the expected value of <span class="process-math">\(X\)</span> divided by <span class="process-math">\(c\text{.}\)</span>
+</div>
+<div class="displaymath process-math" id="thm-Markov-prob-2-1-7">
+\begin{equation*}
+P(X \geq c) \leq \frac{E[X]}{c}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Markov-prob-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 99: Markov’s Inequality (Probability Version)"><a href="#thm-Markov-prob" title="Copy heading and permalink for Theorem 99: Markov’s Inequality (Probability Version)" aria-label="Copy heading and permalink for Theorem 99: Markov’s Inequality (Probability Version)">🔗</a></div></article><details id="subsec-Markov-vitali-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Markov-vitali-5-1">
+<div class="para">Suppose <span class="process-math">\(c &lt; 0\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Markov-vitali-5-1-2">
+\begin{align*}
+\mu(\{x\in X: |h(x)| \geq c\}) \amp = \frac{1}{c} \int_{\{x\in X: |h(x)| \geq c\}} c d\mu \\
+\amp \leq \frac{1}{c} \int_{\{x\in X: |h(x)| \geq c\}} |h| d\mu\\
+\amp = \frac{1}{c} ||h||_1
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Markov-vitali-5" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="definition definition-like" id="def-3-times"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">100</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="def-3-times-1-1">Suppose <span class="process-math">\(I\)</span> is a bounded non-empty open interval of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Then <span class="process-math">\(3* I\)</span> denotes the open interval with the same center as <span class="process-math">\(I\)</span> and <span class="process-math">\(3\)</span> times the length as <span class="process-math">\(I\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-3-times-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 100"><a href="#def-3-times" title="Copy heading and permalink for Definition 100" aria-label="Copy heading and permalink for Definition 100">🔗</a></div></article><div class="para" id="subsec-Markov-vitali-7">Example: Suppose <span class="process-math">\(I = (-2,10)\text{.}\)</span> Since the center of <span class="process-math">\(I\)</span> is <span class="process-math">\(4\text{,}\)</span> and the radius of <span class="process-math">\(I\)</span> is <span class="process-math">\(6\text{,}\)</span> <span class="process-math">\(3*I = (4-18,4+18) = (-14,22)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-Vitali"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">101</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Vitali Covering Lemma.</span>
+</h4>
+<div class="para logical" id="thm-Vitali-2-1">
+<div class="para">Suppose <span class="process-math">\(I_1, \ldots, I_n\)</span> is a list of bounded non-empty open intervals of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Then there exists a disjoint sublist <span class="process-math">\(I_{k_1}, \ldots I_{k_m}\)</span> such that</div>
+<div class="displaymath process-math" id="thm-Vitali-2-1-4">
+\begin{equation*}
+I_1 \cup \ldots I_n \subset (3*I_{k_1}) \cup \ldots \cup (3*I_{k_m}).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-Vitali-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 101: Vitali Covering Lemma"><a href="#thm-Vitali" title="Copy heading and permalink for Theorem 101: Vitali Covering Lemma" aria-label="Copy heading and permalink for Theorem 101: Vitali Covering Lemma">🔗</a></div></article><div class="para" id="subsec-Markov-vitali-9">The importance of the Vitali Covering Lemma is that it allows us to replace an arbitrary collection of intervals with a disjoint collection.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Markov-vitali-10">Example:  Let <span class="process-math">\(I_1 = (0,4)\text{,}\)</span> <span class="process-math">\(I_2 = (-3,3)\text{,}\)</span> <span class="process-math">\(I_3 = (2,10)\)</span> and <span class="process-math">\(I_4 = (-7,1)\text{.}\)</span> Then <span class="process-math">\(3*I_1 = (-4,8)\text{,}\)</span> <span class="process-math">\(3*I_2 = (-9,9)\text{,}\)</span> <span class="process-math">\(3*I_3 = (-6,18)\text{,}\)</span> and <span class="process-math">\(3*I_4 = (-15,9)\text{.}\)</span> <span class="process-math">\(I_1 \cup I_2 \cup I_3 \cup I_4 = (-7,10) \subset 3*I_3 \cup 3*I_4\)</span> which satisfies the conclusion of the Vitali covering Lemma.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Markov-vitali-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Markov-vitali-11-1">We choose our disjoint sublist in the following way. Let <span class="process-math">\(I_{k_1}\)</span> be the longest interval on the list. (If multiple intervals are tied for longest, choose one of them arbitrarily.) Now choose <span class="process-math">\(I_{k_2}\)</span> to be the longest remaining interval on the list that is disjoint from <span class="process-math">\(I_{k_1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Markov-vitali-11-2">We inductively repeat this process. If <span class="process-math">\(I_{k_1}, \ldots, I_{k_j}\)</span> have already been chosen, then choose <span class="process-math">\(I_{k_{j+1}}\)</span> to be the longest remaining interval that is disjoint from the ones already chosen. When there are no more intervals left that are disjoint from the ones previously chosen, the process terminates and the intervals already chosen form our sublist.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Markov-vitali-11-3">Example: If we apply this procedure to the previous example, both <span class="process-math">\(I_3 = (2,10)\)</span> and <span class="process-math">\(I_4 = (-7,1)\)</span> have length <span class="process-math">\(8\text{,}\)</span> so we arbitrarily choose one to be the first interval in the sublist. Since <span class="process-math">\(I_3\)</span> and <span class="process-math">\(I_4\)</span> are disjoint, we choose the other one to be the second interval in the sublist. None of the other intervals are disjoint, so our sublist only consists of <span class="process-math">\(I_3\)</span> and <span class="process-math">\(I_4\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Markov-vitali-11-4">Suppose <span class="process-math">\(j \in \{1, \ldots, n\}\text{.}\)</span> To complete the proof we must show that <span class="process-math">\(I_j \subseteq 3*I_{k_1} \cup 3*I_{k_m}\text{.}\)</span> If <span class="process-math">\(j \in \{k_1, \ldots, k_m\}\)</span> then this is true, so we can suppose that <span class="process-math">\(j \notin \{k_1, \ldots, k_m\}\text{.}\)</span> This means that <span class="process-math">\(I_j\)</span> is an interval that was not chosen on our sublist, so it is not disjoint from all of <span class="process-math">\(I_{k_1}, \ldots I_{k_m}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Markov-vitali-11-5">Let <span class="process-math">\(I_{k_L}\)</span> be the first interval on the sublist that is not disjoint from <span class="process-math">\(I_j\text{.}\)</span> This means that <span class="process-math">\(I_j\)</span> is disjoint from all of <span class="process-math">\(I_{k_1} \ldots I_{k_{L-1}}\text{.}\)</span> Because <span class="process-math">\(I_{k_L}\)</span> was chosen instead of <span class="process-math">\(I_j\)</span> to be on the sublist, this means that <span class="process-math">\(|I_{k_L}| \geq |I_j|\text{.}\)</span> This implies that <span class="process-math">\(I_j \subseteq 3*I_{k_L}\)</span> and the lemma is proved.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Markov-vitali-11-6">To see this, shift the intervals so that <span class="process-math">\(I_{k_L}\)</span> is centered at <span class="process-math">\(0\text{.}\)</span> Then <span class="process-math">\(I_{k_L} = (-a,a)\text{.}\)</span> Since <span class="process-math">\(I_j\)</span> is not disjoint, it has the form <span class="process-math">\((b,c)\)</span> where <span class="process-math">\(b &lt; a\)</span> and <span class="process-math">\(c-b \leq 2a\text{.}\)</span> Hence <span class="process-math">\(c &lt; 3a\)</span> and <span class="process-math">\(I_j \subseteq 3*I_{k_L}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Markov-vitali-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Markov-vitali-11" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Markov’s Inequality and the Vitali Covering Lemma"><a href="#subsec-Markov-vitali" title="Copy heading and permalink for Subsection: Markov’s Inequality and the Vitali Covering Lemma" aria-label="Copy heading and permalink for Subsection: Markov’s Inequality and the Vitali Covering Lemma">🔗</a></div></section><section class="subsection" id="subsec-Hardy-Littlewood-Maximal-Inequality"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hardy Littlewood Maximal Inequality</span>
+</h3>
+<article class="definition definition-like" id="def-hl-max-inequality"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">102</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hardy-Littlewood Maximal Function, <span class="process-math">\(h^*\)</span>.</span>
+</h4>
+<div class="para" id="def-hl-max-inequality-2-1">Suppose <span class="process-math">\(h: \mathbf{R} \to \mathbf{R}\)</span> is a Lebesgue measurable function. Then the <dfn class="terminology">Hardy-Littlewood maximal function</dfn> of <span class="process-math">\(h\)</span> is the function <span class="process-math">\(h^*: \mathbf{R} \to [0,\infty]\)</span> defined by<div class="autopermalink" data-description="Paragraph"><a href="#def-hl-max-inequality-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="displaymath process-math" id="def-hl-max-inequality-2-2">
+\begin{equation*}
+h^*(b) = \sup_{t&gt;0} \frac{1}{2t} \int_{b-t}^{b+t} |h|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Definition 102: Hardy-Littlewood Maximal Function, h^*"><a href="#def-hl-max-inequality" title="Copy heading and permalink for Definition 102: Hardy-Littlewood Maximal Function, h^*" aria-label="Copy heading and permalink for Definition 102: Hardy-Littlewood Maximal Function, h^*">🔗</a></div></article><div class="para" id="subsec-Hardy-Littlewood-Maximal-Inequality-3">In other words <span class="process-math">\(h^*(b)\)</span> is the supremum of the average of <span class="process-math">\(h\text{,}\)</span> where the supremum is taken over all bounded intervals centered at <span class="process-math">\(b\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hardy-Littlewood-Maximal-Inequality-4">Example: Let <span class="process-math">\(h = \chi_{[0,1]}\)</span> denote the characteristic function on <span class="process-math">\([0,1]\text{.}\)</span> Find <span class="process-math">\(h^*(b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hardy-Littlewood-Maximal-Inequality-5">Markov’s inequality gives an estimate for the size of the set on which <span class="process-math">\(h &lt; c\text{.}\)</span> The next result gives an estimate for the size of the set on which <span class="process-math">\(h^*(b) &lt; c\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-hl-max-ineq"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">103</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Hardy-Littlewood Maximal Inequality.</span>
+</h4>
+<div class="para logical" id="thm-hl-max-ineq-2-1">
+<div class="para">Suppose <span class="process-math">\(h \in \mathcal{L}^1(\mathbf{R})\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="thm-hl-max-ineq-2-1-2">
+\begin{equation*}
+|\{b\in \mathbf{R}: h^*(b) &gt; c\}| \leq \frac{3}{c} ||h||_1
+\end{equation*}
+</div>
+<div class="para">for every <span class="process-math">\(c &lt; 0\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-hl-max-ineq-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 103: Hardy-Littlewood Maximal Inequality"><a href="#thm-hl-max-ineq" title="Copy heading and permalink for Theorem 103: Hardy-Littlewood Maximal Inequality" aria-label="Copy heading and permalink for Theorem 103: Hardy-Littlewood Maximal Inequality">🔗</a></div></article><details id="subsec-Hardy-Littlewood-Maximal-Inequality-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-1">
+<div class="para">Suppose that <span class="process-math">\(F\)</span> is a closed bounded subset of <span class="process-math">\(\{b\in \mathbf{R}: h^*(b) &lt; c\}\text{.}\)</span> We will show that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-1-3">
+\begin{equation*}
+|F| \leq \frac{3}{c} \int_{-\infty}^{\infty} |h|.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-2">Assuming that we have shown this, then by taking the supremum over all closed bounded subsets of <span class="process-math">\(\{b\in \mathbf{R}: h^*(b) &lt; c\}\)</span> gives the desired result.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-3">
+<div class="para">It follows from how the Hardy-Littlewood maximal function is defined that for each <span class="process-math">\(b \in F\text{,}\)</span> there exists <span class="process-math">\(t_b&gt; 0\)</span> such that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-3-3">
+\begin{equation*}
+\frac{1}{2t_b} \int_{b-t_b}^{b+t_b} |h| &gt; c.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-4">
+<div class="para">Since</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-4-1">
+\begin{equation*}
+F \subseteq \bigcup_{b \in F} (b-t_b, b+t_b),
+\end{equation*}
+</div>
+<div class="para">it follows from the Heine-Borel Theorem that this open cover has a finite subcover.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-5">
+<div class="para">This means that there exists <span class="process-math">\(b_1, \ldots b_n \in F\)</span> such that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-5-2">
+\begin{equation*}
+F \subseteq (b_1 -t_{b_1}, b_1 + t_{b_1}) \cup \ldots \cup (b_n - t_{b_n}, b_n + t_{b_n})
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-6">
+<div class="para">For clarity, let’s relabel the above open intervals as <span class="process-math">\(I_1, \ldots, I_n\text{.}\)</span> By the Vitali Covering Lemma, there exits disjoint subsets <span class="process-math">\(I_{k_1}, \ldots I_{k_m}\)</span> of the open intervals such that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-6-3">
+\begin{equation*}
+I_1, \ldots, I_n \subseteq (3*I_{k_1} \cup \ldots \cup (3*I_{k_m})
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-7">
+<div class="para">Hence,</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-7-1">
+\begin{align*}
+|F| \amp \leq |I_1 \cup \ldots \cup I_n| \\
+\amp \leq |(3*I_{k_1}) \ldots (3*I_{k_m})|\\
+\amp \leq |3*I_{k_1}| + \ldots +  |3*I_{k_m}|\\
+\amp = 3(|I_{k_1}| + \ldots + |I_{k_m}|). 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-8">
+<div class="para">Now <span class="process-math">\(|I_{k_j}| = 2t_b\)</span> for the choice of <span class="process-math">\(t_b\)</span> that corresponds to <span class="process-math">\(I_{k_j}\text{.}\)</span> Hence it follows from the definition of the Hardy-Littlewood maximal function that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-8-4">
+\begin{equation*}
+\frac{1}{|I_{k_j}|} \int_{b-t_b}^{b+t_b} |h| &gt; c.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-9">
+<div class="para">Rearranging this inequality gives that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-9-1">
+\begin{equation*}
+|I_{k_j}| &lt; \frac{1}{c} \int_{b-t_b}^{b+t_b} |h|.
+\end{equation*}
+</div>
+<div class="para">Hence it follows that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-9-2">
+\begin{equation*}
+|F| \leq \frac{3}{c} \left(\int_{I_{k_1}} |h| + \ldots + \int_{I_{k_m}} |h| \right).
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-10">
+<div class="para">Since <span class="process-math">\(I_{k_1}, \ldots, I_{k_m}\)</span> are disjoint, we conclude that</div>
+<div class="displaymath process-math" id="subsec-Hardy-Littlewood-Maximal-Inequality-7-10-2">
+\begin{equation*}
+|F| \leq \frac{3}{c} \int_{-\infty}^{\infty} |h|,
+\end{equation*}
+</div>
+<div class="para">which is what we want to prove.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality-7" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Hardy Littlewood Maximal Inequality"><a href="#subsec-Hardy-Littlewood-Maximal-Inequality" title="Copy heading and permalink for Subsection: Hardy Littlewood Maximal Inequality" aria-label="Copy heading and permalink for Subsection: Hardy Littlewood Maximal Inequality">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 9: The Hardy-Littlewood Maximal Function (4A)"><a href="#notes-week-09" title="Copy heading and permalink for Section: Week 9: The Hardy-Littlewood Maximal Function (4A)" aria-label="Copy heading and permalink for Section: Week 9: The Hardy-Littlewood Maximal Function (4A)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-08.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="notes-week-10.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

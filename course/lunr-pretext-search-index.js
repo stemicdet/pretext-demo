@@ -1540,6 +1540,222 @@ var ptx_lunr_docs = [
   "body": " The idea of the proof is that we can approximate step functions by continuous functions by connecting the pieces with lines.   A graph of a step function.   Graph of a step function with three yellow-orange horizontal segments: a short segment along the horizontal axis near the origin, followed by a high constant segment, and then a lower constant segment farther to the right. The coordinate axes are black.     A continuous piecewise-linear approximation to the step function.   Graph comparing a yellow-orange three-level step function with a blue continuous piecewise-linear approximation. The blue graph follows each horizontal portion of the step function and uses steep sloping segments to transition continuously from the horizontal axis to the highest level and then down to the intermediate level. The axes are unlabeled and black.    For every , , and it follows from the properties of the norm that   Since we can approximate functions by step functions, we can find numbers and to make as small as we want.  As in the picture, we can construct continuous functions so that is as small as we want. Thus letting gives us a continuous function that can be made arbitrarily close to as desired.  "
 },
 {
+  "id": "notes-week-09",
+  "level": "1",
+  "url": "notes-week-09.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 9: The Hardy-Littlewood Maximal Function (4A)",
+  "body": " Week 9: The Hardy-Littlewood Maximal Function (4A)   Markov's Inequality and the Vitali Covering Lemma  In this chapter, we introduce the Hardy-Littlewood maximal function, which is of great importance in measure theory. We will use the Hardy-Littlewood maximal function to prove the fundamental theorem of calculus for Lebesgue integrable functions. Before we define the Hardy-Littlewood maximal function, we introduce a couple key theorems that we will need in the chapter.   Markov's Inequality   Suppose is a measure space and . Then for every ,      Markov's Inequality (Probability Version)   If is a non-negative random variable and , then the probability that is at least is at most the expected value of divided by .      Suppose . Then as desired.     Suppose is a bounded non-empty open interval of . Then denotes the open interval with the same center as and times the length as .    Example: Suppose . Since the center of is , and the radius of is , .   Vitali Covering Lemma   Suppose is a list of bounded non-empty open intervals of . Then there exists a disjoint sublist such that     The importance of the Vitali Covering Lemma is that it allows us to replace an arbitrary collection of intervals with a disjoint collection.  Example: Let , , and . Then , , , and . which satisfies the conclusion of the Vitali covering Lemma.   We choose our disjoint sublist in the following way. Let be the longest interval on the list. (If multiple intervals are tied for longest, choose one of them arbitrarily.) Now choose to be the longest remaining interval on the list that is disjoint from .  We inductively repeat this process. If have already been chosen, then choose to be the longest remaining interval that is disjoint from the ones already chosen. When there are no more intervals left that are disjoint from the ones previously chosen, the process terminates and the intervals already chosen form our sublist.  Example: If we apply this procedure to the previous example, both and have length , so we arbitrarily choose one to be the first interval in the sublist. Since and are disjoint, we choose the other one to be the second interval in the sublist. None of the other intervals are disjoint, so our sublist only consists of and .  Suppose . To complete the proof we must show that . If then this is true, so we can suppose that . This means that is an interval that was not chosen on our sublist, so it is not disjoint from all of .  Let be the first interval on the sublist that is not disjoint from . This means that is disjoint from all of . Because was chosen instead of to be on the sublist, this means that . This implies that and the lemma is proved.  To see this, shift the intervals so that is centered at . Then . Since is not disjoint, it has the form where and . Hence and .     Hardy Littlewood Maximal Inequality   Hardy-Littlewood Maximal Function,   Suppose is a Lebesgue measurable function. Then the Hardy-Littlewood maximal function of is the function defined by     In other words is the supremum of the average of , where the supremum is taken over all bounded intervals centered at .  Example: Let denote the characteristic function on . Find .  Markov's inequality gives an estimate for the size of the set on which . The next result gives an estimate for the size of the set on which    Hardy-Littlewood Maximal Inequality   Suppose . Then for every .     Suppose that is a closed bounded subset of . We will show that   Assuming that we have shown this, then by taking the supremum over all closed bounded subsets of gives the desired result.  It follows from how the Hardy-Littlewood maximal function is defined that for each , there exists such that   Since it follows from the Heine-Borel Theorem that this open cover has a finite subcover.  This means that there exists such that   For clarity, let's relabel the above open intervals as . By the Vitali Covering Lemma, there exits disjoint subsets of the open intervals such that   Hence,   Now for the choice of that corresponds to . Hence it follows from the definition of the Hardy-Littlewood maximal function that   Rearranging this inequality gives that Hence it follows that   Since are disjoint, we conclude that which is what we want to prove.    "
+},
+{
+  "id": "thm-Markov",
+  "level": "2",
+  "url": "notes-week-09.html#thm-Markov",
+  "type": "Theorem",
+  "number": "98",
+  "title": "Markov’s Inequality.",
+  "body": " Markov's Inequality   Suppose is a measure space and . Then for every ,    "
+},
+{
+  "id": "thm-Markov-prob",
+  "level": "2",
+  "url": "notes-week-09.html#thm-Markov-prob",
+  "type": "Theorem",
+  "number": "99",
+  "title": "Markov’s Inequality (Probability Version).",
+  "body": " Markov's Inequality (Probability Version)   If is a non-negative random variable and , then the probability that is at least is at most the expected value of divided by .    "
+},
+{
+  "id": "subsec-Markov-vitali-5",
+  "level": "2",
+  "url": "notes-week-09.html#subsec-Markov-vitali-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose . Then as desired.  "
+},
+{
+  "id": "def-3-times",
+  "level": "2",
+  "url": "notes-week-09.html#def-3-times",
+  "type": "Definition",
+  "number": "100",
+  "title": "",
+  "body": "  Suppose is a bounded non-empty open interval of . Then denotes the open interval with the same center as and times the length as .   "
+},
+{
+  "id": "thm-Vitali",
+  "level": "2",
+  "url": "notes-week-09.html#thm-Vitali",
+  "type": "Theorem",
+  "number": "101",
+  "title": "Vitali Covering Lemma.",
+  "body": " Vitali Covering Lemma   Suppose is a list of bounded non-empty open intervals of . Then there exists a disjoint sublist such that    "
+},
+{
+  "id": "subsec-Markov-vitali-11",
+  "level": "2",
+  "url": "notes-week-09.html#subsec-Markov-vitali-11",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " We choose our disjoint sublist in the following way. Let be the longest interval on the list. (If multiple intervals are tied for longest, choose one of them arbitrarily.) Now choose to be the longest remaining interval on the list that is disjoint from .  We inductively repeat this process. If have already been chosen, then choose to be the longest remaining interval that is disjoint from the ones already chosen. When there are no more intervals left that are disjoint from the ones previously chosen, the process terminates and the intervals already chosen form our sublist.  Example: If we apply this procedure to the previous example, both and have length , so we arbitrarily choose one to be the first interval in the sublist. Since and are disjoint, we choose the other one to be the second interval in the sublist. None of the other intervals are disjoint, so our sublist only consists of and .  Suppose . To complete the proof we must show that . If then this is true, so we can suppose that . This means that is an interval that was not chosen on our sublist, so it is not disjoint from all of .  Let be the first interval on the sublist that is not disjoint from . This means that is disjoint from all of . Because was chosen instead of to be on the sublist, this means that . This implies that and the lemma is proved.  To see this, shift the intervals so that is centered at . Then . Since is not disjoint, it has the form where and . Hence and .  "
+},
+{
+  "id": "def-hl-max-inequality",
+  "level": "2",
+  "url": "notes-week-09.html#def-hl-max-inequality",
+  "type": "Definition",
+  "number": "102",
+  "title": "Hardy-Littlewood Maximal Function, <span class=\"process-math\">\\(h^*\\)<\/span>.",
+  "body": " Hardy-Littlewood Maximal Function,   Suppose is a Lebesgue measurable function. Then the Hardy-Littlewood maximal function of is the function defined by    "
+},
+{
+  "id": "thm-hl-max-ineq",
+  "level": "2",
+  "url": "notes-week-09.html#thm-hl-max-ineq",
+  "type": "Theorem",
+  "number": "103",
+  "title": "Hardy-Littlewood Maximal Inequality.",
+  "body": " Hardy-Littlewood Maximal Inequality   Suppose . Then for every .   "
+},
+{
+  "id": "subsec-Hardy-Littlewood-Maximal-Inequality-7",
+  "level": "2",
+  "url": "notes-week-09.html#subsec-Hardy-Littlewood-Maximal-Inequality-7",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose that is a closed bounded subset of . We will show that   Assuming that we have shown this, then by taking the supremum over all closed bounded subsets of gives the desired result.  It follows from how the Hardy-Littlewood maximal function is defined that for each , there exists such that   Since it follows from the Heine-Borel Theorem that this open cover has a finite subcover.  This means that there exists such that   For clarity, let's relabel the above open intervals as . By the Vitali Covering Lemma, there exits disjoint subsets of the open intervals such that   Hence,   Now for the choice of that corresponds to . Hence it follows from the definition of the Hardy-Littlewood maximal function that   Rearranging this inequality gives that Hence it follows that   Since are disjoint, we conclude that which is what we want to prove.  "
+},
+{
+  "id": "notes-week-10",
+  "level": "1",
+  "url": "notes-week-10.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 10: Deriatives of Integrals (4B)",
+  "body": " Week 10: Deriatives of Integrals (4B)   Lebesgue Differentiation Theorem  Our goal in this section is to prove the Fundamental Theorem of Calculus for the Lebesgue integral. The first step will be to prove the following theorem, which has many uses.   Lebesgue Differentiation Theorem, first version   Suppose . Then for almost every .     The proof is motivated by the following observation. It follows from the properties of the Lebesgue integral that   If is continuous at , the the right hand side tends to as and the proof is complete. For the general case, we will approximate by continuous functions and use that to verify that has the desired property.  Let . Then since functions can be approximated by continuous functions, for each there exists a continuous function such that   Let be the following set. Then   It follows from Markov's inequality that   Likewise, it follows from the Hardy-Littlewood maximal inequality that   It thus follows that . Let Then   Suppose and . Then for each we have   Since , both the first and last terms are less than . Hence   Because is continuous, the last term can be made arbitrarily small by taking sufficiently close to . In particular, we can choose small enough that the integral is less than . Thus for each we have that for all sufficiently close to .  Hence, for all .  The proof would be complete if we knew that had measure zero but we don't know this. However, we do know that for an arbitrary we can make the set in the proof such that , and we can use this to finish the proof.  Let denote the set of numbers such that is not equal to . Then   Hence . Since is arbitrary, it follows that , which completes the proof.     Derivatives   Derivative   Suppose is a function defined on an open interval and . The derivative of at , denoted , is defined by provided that the above limit exists, in which case we say is differentiable at .     Fundamental Theorem of Calculus   Suppose . Define by Suppose and is continuous at . Then is differentiable at and     In MTH 528 we proved the Fundamental Theorem of Calculus for Riemann integrable functions. Nothing in that proof specifically required the integral used to be the Riemann integral. Thus the exact same proof can be used to proof FTC for Lebesgue integrable functions.  The restriction in FTC that be continuous at is a pretty significant drawback, especially since a Lebesgue integrable function does not need to be continuous anywhere. However, the next result shows that even in the absence of continuity FTC holds almost everywhere.   Lebesgue Differentiation Theorem, second version   Suppose . Define by Then for almost every .     Suppose . Then for all ,   However, it follows from the first version of the Lebesgue Differentiation Theorem that this last integral tends to as for almost every . Hence for almost every , as . Thus for almost every .   Example: Let be Dirichlet's function Then for all and . Thus for all .  Consider the set . This set has the property that for . In other words, takes up exactly half of the intervals , and .  Does there exist a set for which the above equation holds for all ? This would mean that contains exactly half of each interval .  The Lebesgue Differentiation Theorem allows us to answer the question in the negative.   No Set Constitutes Half of Each Interval   There does not exist a Lebesgue measurable set such that for all      The proof will be by contradiction. Suppose is a Lebesgue measurable set with the above property and let be defined by   Then for all . Thus for all .  The Lebesgue Differentiation Theorem implies that for almost every . Hence for almost every . But only attains the values and , so we have a contradiction. Thus no set constitutes half of each interval.   Our next result states that locally an function is equal to its average almost everywhere.   Functions are Almost Everywhere Equal to Their Local Average   Suppose . Then for almost every .     Suppose . Then   It then follows from the first version of the Lebesgue Differentiation Theorem that the last line tends to as for almost every .     Density  Let be a point on the real line and let be a subset of . The density of at measures the proportion that is contained by .   Density   Suppose . The density of at the number is if this limit exists. Otherwise the density is said to be undefined.    Note: The concept of density can be extended to higher dimensions. The 2 dimensional version appears in my doctoral thesis.  Example: The density of the interval at is if , if and if or .  Observe that for almost every the density of at is either or .   Lebesgue Density Theorem   Suppose is a Lebesgue measurable set. Then the density of is at almost every element of and is at almost every element of .     First consider the case that . Then . Since for every and the theorem follows from the previous result.  If then and thus we cannot use the previous theorem. Instead we'll approximate by sets of finite length.  For let . Then if the density of at is the same as the density of at  It follows from the result for sets of finite length that for each there are sets and with and the density of is at each element of and at each element of .  Let and let .  Then and the density of is at every element of and at every element of . Thus the theorem is proven.    "
+},
+{
+  "id": "thm-Lebesgue-differentiation-first",
+  "level": "2",
+  "url": "notes-week-10.html#thm-Lebesgue-differentiation-first",
+  "type": "Theorem",
+  "number": "104",
+  "title": "Lebesgue Differentiation Theorem, first version.",
+  "body": " Lebesgue Differentiation Theorem, first version   Suppose . Then for almost every .   "
+},
+{
+  "id": "subsec-Lebesgue-Differentiation-Theorem-4",
+  "level": "2",
+  "url": "notes-week-10.html#subsec-Lebesgue-Differentiation-Theorem-4",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " The proof is motivated by the following observation. It follows from the properties of the Lebesgue integral that   If is continuous at , the the right hand side tends to as and the proof is complete. For the general case, we will approximate by continuous functions and use that to verify that has the desired property.  Let . Then since functions can be approximated by continuous functions, for each there exists a continuous function such that   Let be the following set. Then   It follows from Markov's inequality that   Likewise, it follows from the Hardy-Littlewood maximal inequality that   It thus follows that . Let Then   Suppose and . Then for each we have   Since , both the first and last terms are less than . Hence   Because is continuous, the last term can be made arbitrarily small by taking sufficiently close to . In particular, we can choose small enough that the integral is less than . Thus for each we have that for all sufficiently close to .  Hence, for all .  The proof would be complete if we knew that had measure zero but we don't know this. However, we do know that for an arbitrary we can make the set in the proof such that , and we can use this to finish the proof.  Let denote the set of numbers such that is not equal to . Then   Hence . Since is arbitrary, it follows that , which completes the proof.  "
+},
+{
+  "id": "def-derivative",
+  "level": "2",
+  "url": "notes-week-10.html#def-derivative",
+  "type": "Definition",
+  "number": "105",
+  "title": "Derivative.",
+  "body": " Derivative   Suppose is a function defined on an open interval and . The derivative of at , denoted , is defined by provided that the above limit exists, in which case we say is differentiable at .   "
+},
+{
+  "id": "thm-FTC1",
+  "level": "2",
+  "url": "notes-week-10.html#thm-FTC1",
+  "type": "Theorem",
+  "number": "106",
+  "title": "Fundamental Theorem of Calculus.",
+  "body": " Fundamental Theorem of Calculus   Suppose . Define by Suppose and is continuous at . Then is differentiable at and    "
+},
+{
+  "id": "thm-Lebesgue-diff-thm-2",
+  "level": "2",
+  "url": "notes-week-10.html#thm-Lebesgue-diff-thm-2",
+  "type": "Theorem",
+  "number": "107",
+  "title": "Lebesgue Differentiation Theorem, second version.",
+  "body": " Lebesgue Differentiation Theorem, second version   Suppose . Define by Then for almost every .   "
+},
+{
+  "id": "subsec-Derivatives-7",
+  "level": "2",
+  "url": "notes-week-10.html#subsec-Derivatives-7",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Suppose . Then for all ,   However, it follows from the first version of the Lebesgue Differentiation Theorem that this last integral tends to as for almost every . Hence for almost every , as . Thus for almost every .  "
+},
+{
+  "id": "thm-no-half-interval",
+  "level": "2",
+  "url": "notes-week-10.html#thm-no-half-interval",
+  "type": "Theorem",
+  "number": "108",
+  "title": "No Set Constitutes Half of Each Interval.",
+  "body": " No Set Constitutes Half of Each Interval   There does not exist a Lebesgue measurable set such that for all    "
+},
+{
+  "id": "subsec-Derivatives-13",
+  "level": "2",
+  "url": "notes-week-10.html#subsec-Derivatives-13",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " The proof will be by contradiction. Suppose is a Lebesgue measurable set with the above property and let be defined by   Then for all . Thus for all .  The Lebesgue Differentiation Theorem implies that for almost every . Hence for almost every . But only attains the values and , so we have a contradiction. Thus no set constitutes half of each interval.  "
+},
+{
+  "id": "thm-L1-almost-equal-average",
+  "level": "2",
+  "url": "notes-week-10.html#thm-L1-almost-equal-average",
+  "type": "Theorem",
+  "number": "109",
+  "title": "<span class=\"process-math\">\\(\\mathcal{L}^1\\)<\/span> Functions are Almost Everywhere Equal to Their Local Average.",
+  "body": " Functions are Almost Everywhere Equal to Their Local Average   Suppose . Then for almost every .   "
+},
+{
+  "id": "subsec-Derivatives-16",
+  "level": "2",
+  "url": "notes-week-10.html#subsec-Derivatives-16",
+  "type": "Proof",
+  "number": "3",
+  "title": "",
+  "body": " Suppose . Then   It then follows from the first version of the Lebesgue Differentiation Theorem that the last line tends to as for almost every .  "
+},
+{
+  "id": "def-density",
+  "level": "2",
+  "url": "notes-week-10.html#def-density",
+  "type": "Definition",
+  "number": "110",
+  "title": "Density.",
+  "body": " Density   Suppose . The density of at the number is if this limit exists. Otherwise the density is said to be undefined.   "
+},
+{
+  "id": "thm-lebesgue-density",
+  "level": "2",
+  "url": "notes-week-10.html#thm-lebesgue-density",
+  "type": "Theorem",
+  "number": "111",
+  "title": "Lebesgue Density Theorem.",
+  "body": " Lebesgue Density Theorem   Suppose is a Lebesgue measurable set. Then the density of is at almost every element of and is at almost every element of .   "
+},
+{
+  "id": "subsec-Density-8",
+  "level": "2",
+  "url": "notes-week-10.html#subsec-Density-8",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " First consider the case that . Then . Since for every and the theorem follows from the previous result.  If then and thus we cannot use the previous theorem. Instead we'll approximate by sets of finite length.  For let . Then if the density of at is the same as the density of at  It follows from the result for sets of finite length that for each there are sets and with and the density of is at each element of and at each element of .  Let and let .  Then and the density of is at every element of and at every element of . Thus the theorem is proven.  "
+},
+{
   "id": "homework-2",
   "level": "1",
   "url": "homework-2.html",
@@ -1790,6 +2006,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Suppose that and are measures on a measurable space . Define a set function by for . Show that is a measure on    "
+},
+{
+  "id": "homework-7",
+  "level": "1",
+  "url": "homework-7.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 6 (Due October 8)",
+  "body": " Homework 6 (Due October 8)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose is a finite set. Explain why a sequence of functions that converges pointwise on also converges uniformly on .      Give an example to show that Egorov's Theorem can fail without the hypothesis that .      Suppose that are disjoint closed subsets of . Prove that if is a function such that is a continuous function for all then is a continuous function.      Let be defined by Let . Find a closed set such that and is a continuous function on .      Give an example of a Borel measurable function such that there does not exist a closed set such that and is a continuous function on .     "
+},
+{
+  "id": "homework-7-3-1",
+  "level": "2",
+  "url": "homework-7.html#homework-7-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Suppose is a finite set. Explain why a sequence of functions that converges pointwise on also converges uniformly on .   "
+},
+{
+  "id": "homework-7-3-2",
+  "level": "2",
+  "url": "homework-7.html#homework-7-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Give an example to show that Egorov's Theorem can fail without the hypothesis that .   "
+},
+{
+  "id": "homework-7-3-3",
+  "level": "2",
+  "url": "homework-7.html#homework-7-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Suppose that are disjoint closed subsets of . Prove that if is a function such that is a continuous function for all then is a continuous function.   "
+},
+{
+  "id": "homework-7-3-4",
+  "level": "2",
+  "url": "homework-7.html#homework-7-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Let be defined by Let . Find a closed set such that and is a continuous function on .   "
+},
+{
+  "id": "homework-7-3-5",
+  "level": "2",
+  "url": "homework-7.html#homework-7-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Give an example of a Borel measurable function such that there does not exist a closed set such that and is a continuous function on .   "
 }
 ]
 
