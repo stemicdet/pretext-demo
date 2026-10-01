@@ -640,7 +640,7 @@
     </p>
 
     <p>
-        We can now verify that the familiar properties of integration hold in general for the Riemann integral.
+        We can now verify that the familiar properties of integration hold in general for the Lebesgue integral.
     </p>
 
     <theorem xml:id="thm-integration-is-homogeneous">
