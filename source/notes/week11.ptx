@@ -33,7 +33,7 @@
 
   <statement>
     <p>
-      Suppose $(X,S)$ and $(Y,T)$ are measurable spaces. Then the product $S \otimes T$ is defined to be the smallest $\sigma$-algebra on $X \times Y$ that contains $\{A \times B: A \in S, B \in T\}$.
+      Suppose <m>(X,S)</m> and <m>(Y,T)</m> are measurable spaces. Then the product <m>S \otimes T</m> is defined to be the smallest <m>\sigma</m>-algebra on <m>X \times Y</m> that contains <m>\{A \times B: A \in S, B \in T\}</m>.
     </p>
   </statement>
 </definition>
@@ -288,7 +288,7 @@
     
     <statement>
       <p>
-        Suppose $(X,S)$ and $(Y,T)$ are measurable spaces. Then
+        Suppose <m>(X,S)</m> and <m>(Y,T)</m> are measurable spaces. Then
         <ol marker="(1)">
           <li>
             <p>
@@ -522,6 +522,353 @@
 </p>
 
   </proof>
+  
+</subsection>
+
+<subsection xml:id="subsec-Products-of-Measures">
+  <title>Products of Measures</title>
+
+<definition xml:id="def-finite-measure">
+  <title>Finite Measure</title>
+  
+  
+  <statement>
+    <p>
+      A measure <m>\mu</m> on a measurable space <m>(X,S)</m> is said to be finite if
+            <m>\mu(X) &lt; \infty</m>.
+    </p>
+  </statement>
+</definition>
+
+<definition xml:id="def-sigma-finite-measure">
+  <title><p>
+        <m>\sigma</m>-Finite Measures
+    </p></title>
+  
+  
+  <statement>
+    <p>
+      A measure is called <m>\sigma</m>-finite if the whole space can be written as
+            the countable union of sets with finite measures.
+            In other words, a measure <m>\mu</m> on a measurable space <m>(X,S)</m> is
+            called <m>\sigma</m>-finite if there exists a sequence <m>X_{1}</m>,
+            <m>X_{2}, \ldots</m> of sets in <m>S</m> such that
+            <md>
+               X = \bigcup_{k=1}^{\infty} X_k \text{ and } \mu(X_k) &lt; \infty \text{ for every } k \in \mathbf{N}
+            </md>
+            
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Example: Every probability measure on a probability space is a finite measure.
+</p>
+
+<p>
+  Example: Lebesgue measure on <m>[0,1]</m> is a finite measure.
+</p>
+
+<p>
+  Example: Lebesgue measure on <m>\mathbf{R}</m> is not a finite measure, but it
+    is a <m>\sigma</m>-finite measure.
+</p>
+
+<p>
+  Example: Counting measure on <m>\mathbf{R}</m> is not a <m>\sigma</m>-finite
+    measure, since the countable union of finite sets is countable.
+</p>
+
+<p>
+  The next result will allow us to define product measures for finite measures.
+</p>
+
+<theorem xml:id="thm-measure-cross-section-measurable-function">
+  <title>Measure of a Cross-Section is a Measurable Function</title>
+  
+  
+  <statement>
+    <p>
+      Suppose <m>(X,S,\mu)</m> and <m>(Y,T, \nu)</m> are measure spaces.
+            If <m>E \in S \otimes T</m>, then
+            <ol marker="(1)">
+              <li>
+                <p>
+                  <m>x \to \nu([E]_{X})</m> is an <m>S</m>-measurable function on <m>X</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>y \to \mu([E]^{y})</m> is a <m>T</m>-measurable function on <m>Y</m>.
+                </p>
+              </li>
+            </ol>
+    </p>
+  </statement>
+</theorem>
+
+<p>
+  It is this proof that requires the use of the Monotone Class Theorem.
+</p>
+
+<proof>
+  <p>
+    We'll prove (1). The proof of (2) is similar. If <m>E \in S \otimes T</m>, then <m>[E]_{x} \in T</m> for every <m>x \in X</m>
+        by the Theorem that cross sections of measurable sets are measurable.
+        Thus the function <m>x \to \nu([E]_{x})</m> is an <m>S</m>-measurable function
+        on <m>X</m>. 
+  </p>
+
+  <p>
+    We first consider the case that <m>\nu</m> is a finite measure.
+        Let
+        <md>
+            M = \{E \in S \otimes T: x \to \nu([E]_x) \text{ is an <m>S</m>-measurable function on <m>X</m>}\}
+        </md>
+        We want to show that <m>M = S \otimes T</m>.
+  </p>
+
+  <p>
+    If <m>A \in S</m> and <m>B \in T</m>, then one can show that
+        <m>\nu([A \times B]_{x}) = \nu(B) \chi_{A}(x)</m> for every <m>x \in X</m>. Thus the function <m>x \to \nu([A \times B]_{x})</m> equals the function
+                <m>\nu(B) \chi_{A}(x)</m> as a function of <m>x</m>, which is an
+                <m>S</m>-measurable function on <m>X</m>. Thus <m>M</m> contains all measurable rectangles in <m>S \otimes T</m>.
+  </p>
+
+  <p>
+    Let <m>\mathcal{A}</m> denote the set of finite unions of measurable rectangles
+        in <m>S \otimes T</m> and suppose <m>E \in \mathcal{A}</m>.
+  </p>
+
+  <p>
+    This means that <m>E</m> can be written as a finite union of disjoint measurable
+        rectangles.
+        That is,
+        <md>
+          E = E_1 \cup E_2 \cup \ldots \cup E_n
+        </md>
+        where <m>E_{1}, E_{2}, \ldots E_{n}</m> are disjoint measurable rectangles.
+  </p>
+
+  <p>
+    Thus,
+    <md>
+      <mrow> \nu([E]_x) \amp = \nu(E_1 \cup E_2 \cup \ldots \cup E_n)_x)</mrow>
+      <mrow> \amp = \nu([E_1]_x \cup [E_2]_x \cup \ldots \cup [E_n]_x) </mrow>
+      <mrow> \amp =\nu([E_1]_x) + \nu([E_2]_x) + \ldots + \nu([E_n]_x)</mrow>
+    </md>
+    where the last line follows because <m>\nu</m> is a measure and the sets are
+        disjoint.
+  </p>
+
+  <p>
+    This shows that <m>x \to \nu([E]_{x})</m> is a finite sum of <m>S</m>-measurable
+        functions and thus is an <m>S</m>-measurable function.
+  </p>
+
+  <p>
+    This proves that <m>E \in M</m> and hence <m>\mathcal{A}\subseteq M</m>.
+        Now we will show that <m>M</m> is a monotone class so that we can apply the
+        Monotone Class Theorem.
+  </p>
+
+  <p>
+    We will first show closure under increasing unions.
+        Suppose <m>E_{1} \subseteq E_{2} \subseteq \ldots</m> is an increasing sequence
+        of sets in <m>M</m>. Then
+        <md>
+          <mrow> \nu\left(\left[ \bigcup_{k=1}^{\infty} E_k \right]_x \right) \amp = \nu\left( \bigcup_{k=1}^{\infty} [E_k]_x \right) </mrow>
+          <mrow> \amp =\lim_{k\to \infty} \nu([E_k]_x)</mrow>
+        </md>
+        
+  </p>
+<p>
+    Since the pointwise limit of <m>S</m>-measurable functions is
+    <m>S</m>-measurable, this shows that
+    <m>x \to \nu\left(\left[ \bigcup_{k=1}^{\infty}E_{k} \right]_{x} \right)</m>
+    is an <m>S</m>-measurable function.
+    Hence <m>\bigcup_{k=1}^{\infty}E_{k} \in M</m> and <m>M</m> is closed under
+    increasing unions.
+</p>
+  <p>
+    The proof that <m>M</m> is closed under decreasing intersections is similar.
+        It is worth pointing out that in that proof we need to use the fact that
+        <m>\nu</m> is a finite measure in order to show that the measure of a decreasing
+        intersection is equal to taking the limit of the measures of each set. This shows that <m>M</m> is a monotone class that contains <m>\mathcal{A}</m>,
+                the algebra of all finite unions of measurable rectangles in <m>S \otimes T</m>.
+                Thus the monotone class theorem implies that <m>M</m> is the smallest
+                <m>\sigma</m>-algebra containing <m>\mathcal{A}</m>.
+                Thus <m>M</m> contains <m>S \otimes T</m> which completes the proof in the case
+                that <m>\nu</m> is a finite measure.
+  </p>
+
+  <p>
+    We now consider the case that <m>\mu</m> is a <m>\sigma</m>-finite measure.
+        This means that there exists a sequence of sets
+        <m>Y_{1}, Y_{2}, \ldots \in T</m> such that
+        <m>\displaystyle \bigcup_{k=1}^{\infty}Y_{k} = Y</m> and
+        <m>\nu(Y_{k}) &lt; \infty</m> for each <m>k</m>.
+  </p>
+
+  <p>
+    By replacing each <m>Y_{k}</m> with <m>Y_{1} \cup \ldots \cup Y_{k}</m>, we can
+        create an increasing sequence <m>Y_{1} \subseteq Y_{2} \subseteq \ldots</m>.
+  </p>
+
+  <p>
+    If <m>E \in S \otimes T</m> then
+    <md>
+      \nu([E]_x) = \lim_{k\to \infty} \nu([E\cap (X \times Y_k)]_x)
+    </md>
+    
+  </p>
+
+  <p>
+    We can see that the function <m>x \to \nu([E\cap (X \times Y_{k})]_{x})</m> is
+        an <m>S</m>-measurable function as follows by considering the finite measure
+        obtained by restricting <m>\nu</m> to the <m>\sigma</m>-algebra on <m>Y</m> of
+        sets that are contained in <m>Y_{k}</m>. The previous equation then implies that <m>x \to \nu([E]_{x})</m> is an
+                <m>S</m>-measurable function on <m>X</m>, which completes the proof of
+                <m>(1)</m>.
+  </p>
+</proof>
+
+<definition xml:id="def-integration-notation">
+  <title>Integration Notation</title>
+  
+  
+  <statement>
+    <p>
+      Suppose that <m>(X,S,\mu)</m> is a measure space and
+            <m>g:X \to [-\infty,\infty]</m> is a function.
+            The notation <m>\displaystyle \int g(x) d\mu(x)</m> means
+            <m>\displaystyle \int g d\mu</m> where <m>d\mu(x)</m> indicates that all
+            variables other than <m>x</m> should be treated as constant.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Example: If <m>\mu</m> is Lebesgue measure on <m>[0,1]</m> then
+  <md>
+    \int_0^1 xy^2 -x d\mu(x) = \frac{1}{2}y^2 - \frac{1}{2}
+  </md>
+  and
+  <md>
+    \int_0^1 xy^2 -x d\mu(y) = \frac{1}{3}x-x = \frac{-2}{3}x
+  </md>
+  
+  
+</p>
+
+<definition xml:id="def-iterated-integral">
+  <title>Iterated Integrals</title>
+  
+  
+  <statement>
+    <p>
+      Suppose <m>(X,S,\mu)</m> and <m>(T,Y,\nu)</m> are measure spaces and
+            <m>f: X \times Y \to \mathbf{R}</m> is a function.
+            Then
+            <md>
+              \int_X \int_Y f(x,y) d\nu(y) d\mu(x) \text{ means } \int_x \left( \int_Y f(x,y) d\nu(y) \right) d\mu(x)
+            </md>
+            In other words, first fix <m>x</m> and integrate <m>f(x,y)</m> as a function of
+                        <m>y</m>, then fix <m>y</m> and integrate the output as a function of <m>x</m>.
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Example: If <m>mu</m> denotes Lebesgue measure on <m>[0,1]</m> then
+  <md>
+    \int_0^1 \int_0^1 xy^2 -x d\mu(y) d\mu(x) = \int_0^1 \frac{-2}{3}x d\mu(x) = \frac{-1}{3}
+  </md>
+  and
+  <md>
+    \int_0^1 \int_0^1 xy^2-x d\mu(x) d\mu(y) = \int_0^1 \frac{1}{2}y^2 - \frac{1}{2} d\mu(y) = \frac{1}{6}-\frac{1}{2} = \frac{-1}{3}
+  </md>
+  
+</p>
+
+<definition xml:id="def-measure-product">
+  <title>Product of a Measure</title>
+  
+  
+  <statement>
+    <p>
+      Suppose <m>(X,S,\mu)</m> and <m>(Y,T,\nu)</m> are <m>\sigma</m>-finite measure
+            spaces.
+            For <m>E \in S\otimes T</m> define <m>(\mu \times \nu)(E)</m> by
+            <md>
+              (\mu \times \nu)(E) = \int_X \int_Y \chi_E(x,y) d\nu(y) d\mu(x)
+            </md>
+            
+    </p>
+  </statement>
+</definition>
+
+<p>
+  This integral is well defined because the inner integral is equal to
+    <m>\nu([E]_{x}) \in T</m> and the function <m>x \to \nu([E]_{x})</m> is
+    <m>S</m>-measurable by the previous theorem.
+</p>
+
+<p>
+  Example: Suppose <m>(X,S,\mu)</m> and <m>(Y,T,\nu)</m> are <m>\sigma</m>-finite
+    measure spaces.
+    If <m>A \in S</m> and <m>B \in T</m> then
+    <md>
+      <mrow> (\mu \times \nu)(A\times B) \amp = \int_X \int_Y \chi_{A \times B}(x,y) d\nu(y) d\mu(x)</mrow>
+      <mrow> \amp =\int_X \chi_{A} \nu(B) d\mu(x) </mrow>
+      <mrow> \amp = \mu(A) \nu(B) </mrow>
+    </md>
+    
+</p>
+
+<p>
+  Thus the product measure of a measurable rectangle is the product of the measures of the corresponding sets.
+</p>
+
+<theorem xml:id="thm-product-measure-is-measure">
+  <title>Product of Two Measures is a Measure</title>
+  
+  
+  <statement>
+    <p>
+      Suppose <m>(X,S,\mu)</m> and <m>(Y,T,\nu)</m> are <m>\sigma</m>-finite measure spaces. Then <m>\mu \times \nu</m> is a measure on <m>(X \times Y, S\otimes T)</m>
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Since <m>(\mu \times \nu)(\emptyset) = 0</m> we just need to show countable
+        additivity.
+        Suppose <m>E_{1}, E_{2}, \ldots</m> is a disjoint sequence of sets in
+        <m>S \otimes T</m>. Then
+        <md>
+          <mrow>(\mu \times \nu)\left( \bigcup_{k=1}^{\infty} E_k \right) \amp = \int_X \int_Y \chi_{(\bigcup_{k=1}^{\infty} E_k)} d\nu(y) d\mu(x) </mrow>
+          <mrow> \amp = \int_X \nu \left( \left[ \bigcup_{k=1}^{\infty} E_k \right]_x \right) d\mu(x) </mrow>
+          <mrow> \amp = \int_X \nu \left(  \bigcup_{k=1}^{\infty} [E_k ]_x \right) d\mu(x)</mrow>
+          <mrow> \amp = \int_X \sum_{k=1}^{\infty} \nu([E_k]_x) d\mu(x) </mrow>
+        </md>
+        
+  </p>
+
+  <p>
+    Since the partial sums of
+        <m>\displaystyle \sum_{k=1}^{\infty}\nu([E_{k}]_{x})</m> form an increasing
+        sequence of non-negative measurable functions, the Monotone Convergence Theorem
+        allows us to interchange the sum and the integral. Hence,
+        <md>
+          <mrow> \int_X \sum_{k=1}^{\infty} \nu([E_k]_x) d\mu(x)\amp =  \sum_{k=1}^{\infty} \int_X \nu([E_k]_x) d\mu(x) </mrow>
+          <mrow> \amp = \sum_{k=1}^{\infty} (\mu \times \nu) (E_k). </mrow>
+        </md>
+        which shows that <m>(\mu\times \nu)</m> is countably additive.
+  </p>
+</proof>
+
   
 </subsection>
 
