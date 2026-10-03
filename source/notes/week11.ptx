@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-11">
+  <title>Week 11: Products of Measure Spaces (5A) </title>
+
+<subsection xml:id="subsec-Products-of">
+  <title>Products of <m>\sigma</m>-algebras</title>
+  
+<p>
+  Thus far everything we have done have involved subsets of the real line.
+    However, if we want to integrate multi-variable functions, or study subsets of
+    <m>\mathbf{R^n}</m> then we need to define measure for these higher dimensional
+    spaces. The starting point will be to define measures for product spaces, This will allow us to define the product of two measures.
+</p>
+
+<definition xml:id="def-rectangle">
+<title>Rectangle</title>
+
+
+  <statement>
+    <p>
+      Suppose <m>X</m> and <m>Y</m> are sets.
+            A <term>rectangle</term> in <m>X \times Y</m> is a set of the form <m>A \times B</m> where
+            <m>A \subseteq X</m> and <m>B \subseteq Y</m>.
+    </p>
+
+  </statement>
+</definition>
+
+<definition xml:id="def-product-sigma-algebra">
+<title>Products of <m>\sigma</m>-algebras</title>
+
+
+  <statement>
+    <p>
+      Suppose $(X,S)$ and $(Y,T)$ are measurable spaces. Then the product $S \otimes T$ is defined to be the smallest $\sigma$-algebra on $X \times Y$ that contains $\{A \times B: A \in S, B \in T\}$.
+    </p>
+  </statement>
+</definition>
+
+<definition xml:id="def-measurable-rectangle">
+<title>Measureable Rectangle</title>
+
+
+  <statement>
+    <p>
+      A measurable rectangle in <m>S \otimes T</m> is a set of the form
+            <m>A \times B</m> where <m>A \in S</m> and <m>B \in T</m>
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Example: Let <m>X = Y = \mathbf{R}</m>.
+    Let
+    <m>S = \{\emptyset, \mathbf{Q}, \mathbf{R}\setminus \mathbf{Q}, \mathbf{R}\}</m>
+    and let <m>T = \{\emptyset, \{0\}, \mathbf{R}\setminus \{0\}, \mathbf{R}\}</m>.
+    Determine all measurable rectangles in <m>S \otimes T</m>.
+</p>
+
+
+<p>
+  We now define cross-sections of sets. These play an important role in the definition of product measures.
+</p>
+
+<definition xml:id="def-cross-section">
+<title>Cross Sections of Sets</title>
+
+
+  <statement>
+    <p>
+      Suppose <m>X</m> and <m>Y</m> are sets and <m>E \subseteq X \times Y</m>.
+            Then for <m>a \in X</m> and <m>b \in Y</m> the <term>cross sections</term> <m>[E]_{a}</m> and
+            <m>[E]^{b}</m> are defined by
+            <md>
+              [E]_a = \{y \in Y: (a,y) \in E\} \quad \textnormal{ and } \quad [E]^b = \{x \in X: (x,b) \in E\}.
+            </md>
+            
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Example: Let <m>X = [1,3] \cup [4,5]</m> and <m>Y = [1,5]</m>.
+    Suppose <m>E = X \times Y</m>.
+    Find <m>[E]_{2}</m>, <m>[E]_{3.5}</m>, and <m>[E]^{3}</m>
+</p>
+
+<theorem xml:id="thm-cross-section-measurable">
+  <title>Cross Sections of Measurable Sets are Measurable</title>
+  
+  
+  <statement>
+    <p>
+      Suppose <m>S</m> is a <m>\sigma</m>-algebra on <m>X</m> and <m>T</m> is a
+            <m>\sigma</m>-algebra on <m>Y</m>.
+            If <m>E \in S \otimes T</m> then <m>[E]_{a} \in T</m> for every <m>a \in X</m>
+            and <m>[E]^{b} \in S</m> for every <m>b \in Y</m>.
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+    Let <m>U</m> denote the collection of subsets of <m>X \times Y</m> for which the
+        result holds.
+        Note that <m>[A \times B]_{a} = B</m> if <m>a \in A</m> and <m>\emptyset</m> if
+        <m>a \notin A</m> and <m>[A \times B]^{b} = A</m> if <m>b \in B</m> and
+        <m>\emptyset</m> if <m>b \notin B</m>.
+        Hence <m>A \times B \in U</m> for all <m>A \in S</m> and <m>B \in T</m>.
+  </p>
+
+  <p>
+    Since <m>[(X \times Y)\setminus E]_{a} = Y \setminus [E]_{a}</m>, and similarly
+        for cross sections of <m>Y</m>, <m>U</m> is closed under compliments.
+  </p>
+
+  <p>
+    Since
+        <m>[E_{1} \cup E_{2} \cup \ldots]_{a} = [E_{1}]_{a} \cup [E_{2}]_{a} \cup \ldots</m>,
+        and similarly for cross sections of <m>Y</m>, <m>U</m> is closed under countable
+        unions.
+  </p>
+
+  <p>
+    Hence <m>U</m> is a <m>\sigma</m>-algebra that contains all measurable
+        rectangles in <m>S \otimes T</m>, so it contains <m>S \otimes T</m>.
+  </p>
+</proof>
+
+<definition xml:id="def-cross-section-function">
+<title>Cross Sections of Functions</title>
+
+
+  <statement>
+    <p>
+      Suppose <m>X</m> and <m>Y</m> are sets and <m>f:X \times Y \to \mathbf{R}</m> is
+            a function.
+            Then for <m>a \in X</m> and <m>b \in Y</m>, the <term>cross section functions</term>
+            <m>[f]_{a}: Y \to \mathbf{R}</m> and <m>[f]^{b}: X \to \mathbf{R}</m> are
+            defined by
+
+            <md>
+              [f]_a(y) = f(a,y) \text{ for } y \in Y
+            </md>
+            and
+
+            <md>
+              [f]^b(x) = f(x,b) \text{ for } x \in X
+            </md>
+            
+    </p>
+  </statement>
+</definition>
+
+<p>
+  Example: Suppose <m>f: \mathbf{R}\times \mathbf{R}\to \mathbf{R}</m> is defined
+    by
+    <md>
+      f(x,y) = \frac{2x-y}{x^2+y^2}.
+    </md>
+    Find <m>[f]_{2}</m> and <m>[f]^{-3}</m>.
+</p>
+
+<theorem xml:id="thm-cross-section-function-measurable">
+  <title>Cross Sections of Measurable Functions are Measurable</title>
+  
+  
+  <statement>
+    <p>
+      Suppose <m>S</m> is a <m>\sigma</m>-algebra on <m>X</m> and <m>T</m> is a
+            <m>\sigma</m>-algebra on <m>Y</m>.
+            Suppose <m>f:X \times Y</m> is an <m>S \otimes T</m> measurable function.
+            Then
+            <ol marker="(a)">
+              <li>
+                <p>
+                  <m>[f]_{a}</m> is a <m>T</m> measurable function on <m>Y</m> for every
+                                    <m>a \in X</m>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>[f]^{b}</m> is an <m>S</m> measurable function on <m>X</m> for every
+                                    <m>b \in Y</m>.
+                </p>
+              </li>
+            </ol>
+    </p>
+  </statement>
+</theorem>
+
+<proof>
+  <p>
+     We will prove the first statement. The proof of the second is similar. Suppose <m>D</m> is a Borel subset of <m>\mathbf{R}</m> and <m>a\in X</m>.
+          If <m>y \in Y</m> then
+          <md>
+            <mrow> y \in ([f]_a)^{-1}(D) \amp \Leftrightarrow [f]_a(y) \in D</mrow>
+            <mrow> \amp \Leftrightarrow f(a,y) \in D </mrow>
+            <mrow> \amp \Leftrightarrow (a,y) \in f^{-1}(D)</mrow>
+            <mrow> \amp \Leftrightarrow y \in [f^{-1}(D)]_a</mrow>
+          </md>
+          Thus <m>([f]_{a})^{-1}(D) = [f^{-1}(D)]_{a}</m>.
+  </p>
+
+<p>
+  Because <m>f</m> is an <m>S \otimes T</m> measurable function,
+    <m>f^{-1}(D) \in S \otimes T</m>.
+    Since cross sections are measurable <m>[f^{-1}(D)]_{a} \in T</m>. The previous computation shows that <m>([f]_{a})^{-1}(D) \in T</m>.
+        Hence <m>[f]_{a}</m> is a <m>T</m> measurable function. 
+</p>
+
+</proof>
+
+
+
+</subsection>
+
+<subsection xml:id="subsec-Monotone-Class-Theorem">
+  <title>Monotone Class Theorem</title>
+
+  <p>
+    We have used the following strategy to prove that a <m>\sigma</m>-algebra has a
+        certain property. First, find a collection of sets with that property which generates the
+                <m>\sigma</m>-algebra, and second show that this collection of sets is itself a
+                <m>\sigma</m>-algebra.
+  </p>
+
+  <p>
+    We used this strategy in showing that the cross sections of measurable sets are
+        measurable.
+        First we found a collection of subsets of <m>X \times Y</m> where the result
+        held, and then we showed that the collection was a <m>\sigma</m>-algebra.
+  </p>
+
+  <p>
+    When we prove that the measure of a cross section is a measurable function, we will be unable to utilize this strategy. Instead we will need another technique that involves what are called monotone classes.
+  </p>
+
+  <definition xml:id="def-Set-algebra">
+  <title>Set Algebra</title>
+  
+  
+    <statement>
+      <p>
+        Suppose <m>W</m> is a set and <m>A</m> is a set of subsets of <m>W</m>.
+                Then <m>A</m> is called a set algebra, or simply, an algebra, on <m>W</m> if the
+                following three conditions are satisfied.
+                <ol marker ="(a)">
+                  <li>
+                    <p>
+                      <m>\emptyset \in A</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      If <m>E \in A</m>, then <m>W \setminus E \in A</m> (closed under compliments)
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      If <m>E</m> and <m>F</m> are elements of <m>A</m> then <m>E \cup F \in A</m>.
+                                            (closed under <em>finite</em> unions)
+                    </p>
+                  </li>
+                </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The difference between algebras and <m>\sigma</m>-algebras is that
+        <m>\sigma</m>-algebras are closed under countable unions.
+        Every <m>\sigma</m>-algebra is an algebra, but not every algebra is a
+        <m>\sigma</m>-algebra.
+  </p>
+
+  <p>
+    Example: Let <m>W = \mathbf{R}</m> and let <m>A</m> be the collection of sets
+        with a finite number of elements or whose compliment has a finite number of
+        elements.
+        Then <m>A</m> is an algebra on <m>W</m>, but not a <m>\sigma</m>-algebra.
+  </p>
+
+  <theorem xml:id="thm-sets-of-finite-union-measureable-rectangle">
+    <title>Set of Finite Unions of Measurable Rectangles is an Algebra</title>
+    
+    
+    <statement>
+      <p>
+        Suppose $(X,S)$ and $(Y,T)$ are measurable spaces. Then
+        <ol marker="(1)">
+          <li>
+            <p>
+              The set of finite unions of measurable rectangles in <m>S \otimes T</m> is an
+                            algebra on <m>X \times Y</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Every finite union of measurable rectangles in <m>S \otimes T</m> can be written
+                            as a finite union of disjoint measurable rectangles in <m>S \otimes T</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <proof>
+    <p>
+      We will first prove (1) Let <m>A</m> denote the finite unions of measurable
+            rectangles in <m>S \otimes T</m>.
+            Since <m>A</m> is closed under finite unions and contains <m>\emptyset</m>, we
+            just need to show that it is closed under compliments.
+    </p>
+
+<p>
+  If <m>A \in S</m> and <m>B \in T</m> then
+  <md>
+    (X \times Y) \setminus (A \times B) = \left( (X \setminus A) \times Y\right) \cup \left(X \times (Y \setminus B) \right)
+  </md>
+  
+</p>
+
+<p>
+  The right hand side is a finite union of measurable rectangles in
+    <m>S \otimes T</m> and thus belongs to <m>A</m>.
+    Thus the compliment of a measurable rectangle in <m>S \otimes T</m> belongs to
+    <m>A</m>
+</p>
+
+<p>
+  It follows from De Morgan's laws that to show that <m>A</m> is closed under
+    compliments, we need to show that <m>A</m> is closed under finite intersections.
+</p>
+
+<p>
+  Suppose <m>A_{1}, \ldots A_{n},C_{1} \ldots C_{m} \in S</m> and
+    <m>B_{1}, \ldots B_{n},D_{1} \ldots D_{m} \in T</m>.
+    Then
+    <md>
+      <mrow> \left(  (A_1 \times B_1) \cup \ldots \cup (A_n \times B_n) \right) \cap \left((C_1 \times D_1) \cup \ldots \cup (C_m \times D_m)\right) \amp = \bigcup_{j=1}^n \bigcup_{k=1}^m \left((A_j \times B_j) \cap (C_k \times D_k) \right)</mrow>
+      <mrow> \amp = \bigcup_{j=1}^n \bigcup_{k=1}^m \left((A_j \cap C_k) \times (B_j \cap D_k) \right)</mrow>
+    </md>
+    
+</p>
+
+<p>
+  Since this is a finite union of measurable rectangles in <m>S \otimes T</m>, A
+    is closed under finite intersections.
+    Thus (1) is proved.
+</p>
+
+<p>
+  To prove (2) suppose that <m>A \times B</m> and <m>C \times D</m> are measurable
+    rectangles in <m>S \otimes T</m>. Then
+    <md>
+      (A \times B) \cup (C \times D) = (A \times B) \cup \left(C \times (D \setminus B)\right) \cup \left((C\setminus A) \cup (B \cap D) \right)
+    </md>
+    Thus a union of 2 measurable rectangles can be written as a disjoint union of three measurable rectangles.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+  If we have some arbitrary finite union of rectangles, and they are not disjoint, we can take a pair of non-disjoint rectangles and replace them with three disjoint rectangles. Repeating this process eventually results in a finite disjoint union of measurable rectangles.
+</p>
+
+</proof>
+
+<definition xml:id="def-monotone-class">
+<title>Monotone Class</title>
+
+
+  <statement>
+    <p>
+      Suppose <m>W</m> is a set and <m>M</m> is a set of subsets of <m>W</m>.
+            Then <m>M</m> is called a monotone class on <m>W</m> if the following conditions
+            are satisfied.
+            <ol marker="(a)">
+              <li>
+                <p>
+                  If <m>E_{1} \subseteq E_{2} \subseteq \ldots</m> is an increasing sequence of
+                                    sets in <m>M</m> then <m>\displaystyle \bigcup_{k=1}^{\infty}E_{n} \in M</m>
+                                    (closed under countable increasing unions)
+                </p>
+              </li>
+              <li>
+                <p>
+                  If <m>E_{1} \supseteq E_{2} \supseteq \ldots</m> is an decreasing sequence of
+                                    sets in <m>M</m> then <m>\displaystyle \bigcap_{k=1}^{\infty}E_{n} \in M</m>
+                                    (closed under countable decreasing intersections)
+                </p>
+              </li>
+            </ol>
+    </p>
+
+
+  </statement>
+</definition>
+
+<p>
+  Every <m>\sigma</m>-algebra is a monotone class, but not every monotone class is
+    a <m>\sigma</m>-algebra, or even an algebra.
+</p>
+
+  <p>
+    Example: Let <m>A</m> be the set of all intervals of <m>\mathbf{R}</m>.
+        Then <m>A</m> is closed under countable increasing unions and countable
+        decreasing intersections so <m>A</m> is a monotone class.
+        However, <m>A</m> is not closed under compliments so <m>A</m> is not an algebra.
+  </p>
+
+  <p>
+    Example: Suppose <m>A</m> is a collection of some subsets of <m>W</m>.
+        Then the intersection of all monotone classes of <m>W</m> containing <m>A</m> is
+        a monotone class containing <m>A</m>.
+        This is the smallest monotone class that contains <m>A</m>.
+  </p>
+  
+  <theorem xml:id="thm-monotone-class">
+    <title>Monotone Class Theorem</title>
+    
+    
+    <statement>
+      <p>
+        Suppose <m>\mathcal{A}</m> is an algebra on a set <m>W</m>.
+                Then the smallest <m>\sigma</m>-algebra containing <m>\mathcal{A}</m> is the
+                smallest monotone class containing <m>\mathcal{A}</m>.
+      </p>
+    </statement>
+  </theorem>
+  
+  <p>
+    Intuitively this makes sense because a <m>\sigma</m>-algebra is an algebra that
+        is closed under countable unions rather than finite unions, much like a monotone
+        class.
+  </p>
+
+  <proof>
+    <p>
+      Let <m>\mathcal{M}</m> denote the smallest monotone class containing
+            <m>\mathcal{A}</m>.
+            Since every <m>\sigma</m>-algebra is a monotone class, it follows that
+            <m>\mathcal{M}</m> is contained in the smallest <m>\sigma</m>-algebra containing
+            <m>\mathcal{A}</m>.
+    </p>
+
+<p>
+  It remains to prove that the smallest <m>\sigma</m>-algebra containing
+    <m>\mathcal{A}</m> is contained in <m>\mathcal{M}</m>. First suppose <m>A \in \mathcal{A}</m> and let
+        <m>\mathcal{E}= \{E \in \mathcal{M}: A \cup E \in M\}</m>.
+</p>
+
+<p>
+  Then <m>\mathcal{A}\subseteq \mathcal{E}</m> because the union of two sets in
+    <m>\mathcal{A}</m> is still in <m>\mathcal{A}</m>. In fact you can verify that <m>E</m> is a monotone class that contains
+        <m>\mathcal{A}</m>.
+        Thus the smallest monotone class that contains <m>\mathcal{A}</m> is contained
+        in <m>\mathcal{E}</m>.
+        Thus <m>M \subseteq \mathcal{E}</m>.
+        This proves that <m>A \cup E \in M</m> for every <m>E \in \mathcal{M}</m>.
+</p>
+
+<p>
+  Now let
+    <m>\mathcal{D}= \{D \in \mathcal{M}: D \cup E \in \mathcal{M}\text{ for all }E \in \mathcal{M}\}</m>.
+</p>
+
+<p>
+  We just showed that <m>A \cup E \in \mathcal{M}</m> for all <m>E \in M</m>.
+    By repeating the previous argument we may conclude that this holds for all
+    <m>A \in \mathcal{A}</m> This shows that <m>\mathcal{A}\subseteq \mathcal{D}</m>
+</p>
+
+<p>
+  You can also verify that <m>\mathcal{D}</m> is a monotone class.
+    Thus <m>\mathcal{M}\subseteq \mathcal{D}</m> and we have proved that
+    <m>D \cup E \in \mathcal{M}</m> for all <m>D,E \in \mathcal{M}</m>. This can be generalized to show that <m>\mathcal{M}</m> is closed under finite
+        unions.
+</p>
+
+<p>
+  In addition if <m>E_{1}, E_{2}, \ldots \in \mathcal{M}</m> then
+  <md>
+    E_1 \cup E_2 \cup E_3 \cup \ldots = E_1 \cup (E_1 \cup E_2) \cup (E_1 \cup E_2 \cup E_3)
+  </md>
+  which is an increasing union of sets in <m>\mathcal{M}</m> and thus belongs to
+    <m>\mathcal{M}</m>.
+    Thus <m>\mathcal{M}</m> is closed under countable unions.
+</p>
+
+<p>
+  Finally let
+    <m>\mathcal{M}' = \{E \in \mathcal{M}: W \setminus E \in \mathcal{M}\}</m>. Since <m>\mathcal{A}\subseteq \mathcal{M}</m> and <m>A</m> is closed under
+        complements, <m>\mathcal{A}\subseteq \mathcal{M}'</m>. In addition one can verify that <m>\mathcal{M}'</m> is a monotone class.
+                Thus <m>\mathcal{M}\subseteq \mathcal{M}'</m>. This means that <m>M</m> is closed under compliments.
+</p>
+
+<p>
+  We have shown that <m>\mathcal{M}</m> is closed under countable unions and
+    complements.
+    It also trivially contains <m>\emptyset</m>.
+    Thus <m>\mathcal{M}</m> is a <m>\sigma</m>-algebra that contains
+    <m>\mathcal{A}</m>. Thus <m>\mathcal{M}</m> is the smallest <m>\sigma</m>-algebra that contains
+        <m>\mathcal{A}</m>, which completes the proof.
+</p>
+
+  </proof>
+  
+</subsection>
+
+
+  </section>
