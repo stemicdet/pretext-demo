@@ -30,7 +30,7 @@
         <p>
         Suppose that <m>F_1, F_2, \ldots F_n</m> are disjoint closed subsets of <m>\mathbf{R}</m>. Prove that if
         <md>
-            g: F_1 \cup F_2 \cup F_n \to \mathbf{R}
+            g: F_1 \cup F_2 \cup \ldots \cup F_n \to \mathbf{R}
         </md>
         is a function such that <m>g|_{F_k}</m> is a continuous function for all <m>k \in \{1,2, \ldots\}</m> then <m>g</m> is a continuous function.
         </p>
