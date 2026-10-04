@@ -2285,6 +2285,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Give an example of a Borel measurable function such that there does not exist a closed set such that and is a continuous function on .   "
+},
+{
+  "id": "homework-8",
+  "level": "1",
+  "url": "homework-8.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 7 (Due October 15)",
+  "body": " Homework 7 (Due October 15)    Instructions: Complete all the exercises below and submit your work by the due date.      Consider the function on defined by Let denote Lebesgue measure. Evaluate the integral .      Suppose that is a measure space and is an -measurable function. Prove that       Suppose that is a Lebesgue Measurable function on and that there exists a real number such that almost everywhere on . Prove that       Give an example that shows that the Monotone Convergence Theorem can fail if the hypothesis that the sequence consists of non-negative functions is dropped.      Suppose that is a non-negative measurable function on and , where denotes Lebesgue measure. For each let Show that .     "
+},
+{
+  "id": "homework-8-3-1",
+  "level": "2",
+  "url": "homework-8.html#homework-8-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Consider the function on defined by Let denote Lebesgue measure. Evaluate the integral .   "
+},
+{
+  "id": "homework-8-3-2",
+  "level": "2",
+  "url": "homework-8.html#homework-8-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Suppose that is a measure space and is an -measurable function. Prove that    "
+},
+{
+  "id": "homework-8-3-3",
+  "level": "2",
+  "url": "homework-8.html#homework-8-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Suppose that is a Lebesgue Measurable function on and that there exists a real number such that almost everywhere on . Prove that    "
+},
+{
+  "id": "homework-8-3-4",
+  "level": "2",
+  "url": "homework-8.html#homework-8-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Give an example that shows that the Monotone Convergence Theorem can fail if the hypothesis that the sequence consists of non-negative functions is dropped.   "
+},
+{
+  "id": "homework-8-3-5",
+  "level": "2",
+  "url": "homework-8.html#homework-8-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Suppose that is a non-negative measurable function on and , where denotes Lebesgue measure. For each let Show that .   "
 }
 ]
 
