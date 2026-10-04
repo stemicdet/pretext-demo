@@ -1756,6 +1756,231 @@ var ptx_lunr_docs = [
   "body": " First consider the case that . Then . Since for every and the theorem follows from the previous result.  If then and thus we cannot use the previous theorem. Instead we'll approximate by sets of finite length.  For let . Then if the density of at is the same as the density of at  It follows from the result for sets of finite length that for each there are sets and with and the density of is at each element of and at each element of .  Let and let .  Then and the density of is at every element of and at every element of . Thus the theorem is proven.  "
 },
 {
+  "id": "notes-week-11",
+  "level": "1",
+  "url": "notes-week-11.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 11: Products of Measure Spaces (5A)",
+  "body": " Week 11: Products of Measure Spaces (5A)   Products of -algebras  Thus far everything we have done have involved subsets of the real line. However, if we want to integrate multi-variable functions, or study subsets of then we need to define measure for these higher dimensional spaces. The starting point will be to define measures for product spaces, This will allow us to define the product of two measures.   Rectangle   Suppose and are sets. A rectangle in is a set of the form where and .     Products of -algebras   Suppose and are measurable spaces. Then the product is defined to be the smallest -algebra on that contains .     Measureable Rectangle   A measurable rectangle in is a set of the form where and     Example: Let . Let and let . Determine all measurable rectangles in .  We now define cross-sections of sets. These play an important role in the definition of product measures.   Cross Sections of Sets   Suppose and are sets and . Then for and the cross sections  and are defined by     Example: Let and . Suppose . Find , , and    Cross Sections of Measurable Sets are Measurable   Suppose is a -algebra on and is a -algebra on . If then for every and for every .     Let denote the collection of subsets of for which the result holds. Note that if and if and if and if . Hence for all and .  Since , and similarly for cross sections of , is closed under compliments.  Since , and similarly for cross sections of , is closed under countable unions.  Hence is a -algebra that contains all measurable rectangles in , so it contains .    Cross Sections of Functions   Suppose and are sets and is a function. Then for and , the cross section functions  and are defined by and     Example: Suppose is defined by Find and .   Cross Sections of Measurable Functions are Measurable   Suppose is a -algebra on and is a -algebra on . Suppose is an measurable function. Then    is a measurable function on for every .     is an measurable function on for every .        We will prove the first statement. The proof of the second is similar. Suppose is a Borel subset of and . If then Thus .  Because is an measurable function, . Since cross sections are measurable . The previous computation shows that . Hence is a measurable function.     Monotone Class Theorem  We have used the following strategy to prove that a -algebra has a certain property. First, find a collection of sets with that property which generates the -algebra, and second show that this collection of sets is itself a -algebra.  We used this strategy in showing that the cross sections of measurable sets are measurable. First we found a collection of subsets of where the result held, and then we showed that the collection was a -algebra.  When we prove that the measure of a cross section is a measurable function, we will be unable to utilize this strategy. Instead we will need another technique that involves what are called monotone classes.   Set Algebra   Suppose is a set and is a set of subsets of . Then is called a set algebra, or simply, an algebra, on if the following three conditions are satisfied.        If , then (closed under compliments)    If and are elements of then . (closed under finite unions)       The difference between algebras and -algebras is that -algebras are closed under countable unions. Every -algebra is an algebra, but not every algebra is a -algebra.  Example: Let and let be the collection of sets with a finite number of elements or whose compliment has a finite number of elements. Then is an algebra on , but not a -algebra.   Set of Finite Unions of Measurable Rectangles is an Algebra   Suppose and are measurable spaces. Then   The set of finite unions of measurable rectangles in is an algebra on .    Every finite union of measurable rectangles in can be written as a finite union of disjoint measurable rectangles in         We will first prove (1) Let denote the finite unions of measurable rectangles in . Since is closed under finite unions and contains , we just need to show that it is closed under compliments.  If and then   The right hand side is a finite union of measurable rectangles in and thus belongs to . Thus the compliment of a measurable rectangle in belongs to   It follows from De Morgan's laws that to show that is closed under compliments, we need to show that is closed under finite intersections.  Suppose and . Then   Since this is a finite union of measurable rectangles in , A is closed under finite intersections. Thus (1) is proved.  To prove (2) suppose that and are measurable rectangles in . Then Thus a union of 2 measurable rectangles can be written as a disjoint union of three measurable rectangles.  If we have some arbitrary finite union of rectangles, and they are not disjoint, we can take a pair of non-disjoint rectangles and replace them with three disjoint rectangles. Repeating this process eventually results in a finite disjoint union of measurable rectangles.    Monotone Class   Suppose is a set and is a set of subsets of . Then is called a monotone class on if the following conditions are satisfied.   If is an increasing sequence of sets in then (closed under countable increasing unions)    If is an decreasing sequence of sets in then (closed under countable decreasing intersections)       Every -algebra is a monotone class, but not every monotone class is a -algebra, or even an algebra.  Example: Let be the set of all intervals of . Then is closed under countable increasing unions and countable decreasing intersections so is a monotone class. However, is not closed under compliments so is not an algebra.  Example: Suppose is a collection of some subsets of . Then the intersection of all monotone classes of containing is a monotone class containing . This is the smallest monotone class that contains .   Monotone Class Theorem   Suppose is an algebra on a set . Then the smallest -algebra containing is the smallest monotone class containing .    Intuitively this makes sense because a -algebra is an algebra that is closed under countable unions rather than finite unions, much like a monotone class.   Let denote the smallest monotone class containing . Since every -algebra is a monotone class, it follows that is contained in the smallest -algebra containing .  It remains to prove that the smallest -algebra containing is contained in . First suppose and let .  Then because the union of two sets in is still in . In fact you can verify that is a monotone class that contains . Thus the smallest monotone class that contains is contained in . Thus . This proves that for every .  Now let .  We just showed that for all . By repeating the previous argument we may conclude that this holds for all This shows that   You can also verify that is a monotone class. Thus and we have proved that for all . This can be generalized to show that is closed under finite unions.  In addition if then which is an increasing union of sets in and thus belongs to . Thus is closed under countable unions.  Finally let . Since and is closed under complements, . In addition one can verify that is a monotone class. Thus . This means that is closed under compliments.  We have shown that is closed under countable unions and complements. It also trivially contains . Thus is a -algebra that contains . Thus is the smallest -algebra that contains , which completes the proof.     Products of Measures   Finite Measure   A measure on a measurable space is said to be finite if .      -Finite Measures   A measure is called -finite if the whole space can be written as the countable union of sets with finite measures. In other words, a measure on a measurable space is called -finite if there exists a sequence , of sets in such that     Example: Every probability measure on a probability space is a finite measure.  Example: Lebesgue measure on is a finite measure.  Example: Lebesgue measure on is not a finite measure, but it is a -finite measure.  Example: Counting measure on is not a -finite measure, since the countable union of finite sets is countable.  The next result will allow us to define product measures for finite measures.   Measure of a Cross-Section is a Measurable Function   Suppose and are measure spaces. If , then    is an -measurable function on .     is a -measurable function on .       It is this proof that requires the use of the Monotone Class Theorem.   We'll prove (1). The proof of (2) is similar. If , then for every by the Theorem that cross sections of measurable sets are measurable. Thus the function is an -measurable function on .  We first consider the case that is a finite measure. Let We want to show that .  If and , then one can show that for every . Thus the function equals the function as a function of , which is an -measurable function on . Thus contains all measurable rectangles in .  Let denote the set of finite unions of measurable rectangles in and suppose .  This means that can be written as a finite union of disjoint measurable rectangles. That is, where are disjoint measurable rectangles.  Thus, where the last line follows because is a measure and the sets are disjoint.  This shows that is a finite sum of -measurable functions and thus is an -measurable function.  This proves that and hence . Now we will show that is a monotone class so that we can apply the Monotone Class Theorem.  We will first show closure under increasing unions. Suppose is an increasing sequence of sets in . Then   Since the pointwise limit of -measurable functions is -measurable, this shows that is an -measurable function. Hence and is closed under increasing unions.  The proof that is closed under decreasing intersections is similar. It is worth pointing out that in that proof we need to use the fact that is a finite measure in order to show that the measure of a decreasing intersection is equal to taking the limit of the measures of each set. This shows that is a monotone class that contains , the algebra of all finite unions of measurable rectangles in . Thus the monotone class theorem implies that is the smallest -algebra containing . Thus contains which completes the proof in the case that is a finite measure.  We now consider the case that is a -finite measure. This means that there exists a sequence of sets such that and for each .  By replacing each with , we can create an increasing sequence .  If then   We can see that the function is an -measurable function as follows by considering the finite measure obtained by restricting to the -algebra on of sets that are contained in . The previous equation then implies that is an -measurable function on , which completes the proof of .    Integration Notation   Suppose that is a measure space and is a function. The notation means where indicates that all variables other than should be treated as constant.    Example: If is Lebesgue measure on then and    Iterated Integrals   Suppose and are measure spaces and is a function. Then In other words, first fix and integrate as a function of , then fix and integrate the output as a function of .    Example: If denotes Lebesgue measure on then and    Product of a Measure   Suppose and are -finite measure spaces. For define by     This integral is well defined because the inner integral is equal to and the function is -measurable by the previous theorem.  Example: Suppose and are -finite measure spaces. If and then   Thus the product measure of a measurable rectangle is the product of the measures of the corresponding sets.   Product of Two Measures is a Measure   Suppose and are -finite measure spaces. Then is a measure on      Since we just need to show countable additivity. Suppose is a disjoint sequence of sets in . Then   Since the partial sums of form an increasing sequence of non-negative measurable functions, the Monotone Convergence Theorem allows us to interchange the sum and the integral. Hence, which shows that is countably additive.    "
+},
+{
+  "id": "def-rectangle",
+  "level": "2",
+  "url": "notes-week-11.html#def-rectangle",
+  "type": "Definition",
+  "number": "112",
+  "title": "Rectangle.",
+  "body": " Rectangle   Suppose and are sets. A rectangle in is a set of the form where and .   "
+},
+{
+  "id": "def-product-sigma-algebra",
+  "level": "2",
+  "url": "notes-week-11.html#def-product-sigma-algebra",
+  "type": "Definition",
+  "number": "113",
+  "title": "Products of <span class=\"process-math\">\\(\\sigma\\)<\/span>-algebras.",
+  "body": " Products of -algebras   Suppose and are measurable spaces. Then the product is defined to be the smallest -algebra on that contains .   "
+},
+{
+  "id": "def-measurable-rectangle",
+  "level": "2",
+  "url": "notes-week-11.html#def-measurable-rectangle",
+  "type": "Definition",
+  "number": "114",
+  "title": "Measureable Rectangle.",
+  "body": " Measureable Rectangle   A measurable rectangle in is a set of the form where and    "
+},
+{
+  "id": "def-cross-section",
+  "level": "2",
+  "url": "notes-week-11.html#def-cross-section",
+  "type": "Definition",
+  "number": "115",
+  "title": "Cross Sections of Sets.",
+  "body": " Cross Sections of Sets   Suppose and are sets and . Then for and the cross sections  and are defined by    "
+},
+{
+  "id": "thm-cross-section-measurable",
+  "level": "2",
+  "url": "notes-week-11.html#thm-cross-section-measurable",
+  "type": "Theorem",
+  "number": "116",
+  "title": "Cross Sections of Measurable Sets are Measurable.",
+  "body": " Cross Sections of Measurable Sets are Measurable   Suppose is a -algebra on and is a -algebra on . If then for every and for every .   "
+},
+{
+  "id": "subsec-Products-of-11",
+  "level": "2",
+  "url": "notes-week-11.html#subsec-Products-of-11",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " Let denote the collection of subsets of for which the result holds. Note that if and if and if and if . Hence for all and .  Since , and similarly for cross sections of , is closed under compliments.  Since , and similarly for cross sections of , is closed under countable unions.  Hence is a -algebra that contains all measurable rectangles in , so it contains .  "
+},
+{
+  "id": "def-cross-section-function",
+  "level": "2",
+  "url": "notes-week-11.html#def-cross-section-function",
+  "type": "Definition",
+  "number": "117",
+  "title": "Cross Sections of Functions.",
+  "body": " Cross Sections of Functions   Suppose and are sets and is a function. Then for and , the cross section functions  and are defined by and    "
+},
+{
+  "id": "thm-cross-section-function-measurable",
+  "level": "2",
+  "url": "notes-week-11.html#thm-cross-section-function-measurable",
+  "type": "Theorem",
+  "number": "118",
+  "title": "Cross Sections of Measurable Functions are Measurable.",
+  "body": " Cross Sections of Measurable Functions are Measurable   Suppose is a -algebra on and is a -algebra on . Suppose is an measurable function. Then    is a measurable function on for every .     is an measurable function on for every .      "
+},
+{
+  "id": "subsec-Products-of-15",
+  "level": "2",
+  "url": "notes-week-11.html#subsec-Products-of-15",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " We will prove the first statement. The proof of the second is similar. Suppose is a Borel subset of and . If then Thus .  Because is an measurable function, . Since cross sections are measurable . The previous computation shows that . Hence is a measurable function.  "
+},
+{
+  "id": "def-Set-algebra",
+  "level": "2",
+  "url": "notes-week-11.html#def-Set-algebra",
+  "type": "Definition",
+  "number": "119",
+  "title": "Set Algebra.",
+  "body": " Set Algebra   Suppose is a set and is a set of subsets of . Then is called a set algebra, or simply, an algebra, on if the following three conditions are satisfied.        If , then (closed under compliments)    If and are elements of then . (closed under finite unions)      "
+},
+{
+  "id": "thm-sets-of-finite-union-measureable-rectangle",
+  "level": "2",
+  "url": "notes-week-11.html#thm-sets-of-finite-union-measureable-rectangle",
+  "type": "Theorem",
+  "number": "120",
+  "title": "Set of Finite Unions of Measurable Rectangles is an Algebra.",
+  "body": " Set of Finite Unions of Measurable Rectangles is an Algebra   Suppose and are measurable spaces. Then   The set of finite unions of measurable rectangles in is an algebra on .    Every finite union of measurable rectangles in can be written as a finite union of disjoint measurable rectangles in       "
+},
+{
+  "id": "subsec-Monotone-Class-Theorem-9",
+  "level": "2",
+  "url": "notes-week-11.html#subsec-Monotone-Class-Theorem-9",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " We will first prove (1) Let denote the finite unions of measurable rectangles in . Since is closed under finite unions and contains , we just need to show that it is closed under compliments.  If and then   The right hand side is a finite union of measurable rectangles in and thus belongs to . Thus the compliment of a measurable rectangle in belongs to   It follows from De Morgan's laws that to show that is closed under compliments, we need to show that is closed under finite intersections.  Suppose and . Then   Since this is a finite union of measurable rectangles in , A is closed under finite intersections. Thus (1) is proved.  To prove (2) suppose that and are measurable rectangles in . Then Thus a union of 2 measurable rectangles can be written as a disjoint union of three measurable rectangles.  If we have some arbitrary finite union of rectangles, and they are not disjoint, we can take a pair of non-disjoint rectangles and replace them with three disjoint rectangles. Repeating this process eventually results in a finite disjoint union of measurable rectangles.  "
+},
+{
+  "id": "def-monotone-class",
+  "level": "2",
+  "url": "notes-week-11.html#def-monotone-class",
+  "type": "Definition",
+  "number": "121",
+  "title": "Monotone Class.",
+  "body": " Monotone Class   Suppose is a set and is a set of subsets of . Then is called a monotone class on if the following conditions are satisfied.   If is an increasing sequence of sets in then (closed under countable increasing unions)    If is an decreasing sequence of sets in then (closed under countable decreasing intersections)      "
+},
+{
+  "id": "thm-monotone-class",
+  "level": "2",
+  "url": "notes-week-11.html#thm-monotone-class",
+  "type": "Theorem",
+  "number": "122",
+  "title": "Monotone Class Theorem.",
+  "body": " Monotone Class Theorem   Suppose is an algebra on a set . Then the smallest -algebra containing is the smallest monotone class containing .   "
+},
+{
+  "id": "subsec-Monotone-Class-Theorem-16",
+  "level": "2",
+  "url": "notes-week-11.html#subsec-Monotone-Class-Theorem-16",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " Let denote the smallest monotone class containing . Since every -algebra is a monotone class, it follows that is contained in the smallest -algebra containing .  It remains to prove that the smallest -algebra containing is contained in . First suppose and let .  Then because the union of two sets in is still in . In fact you can verify that is a monotone class that contains . Thus the smallest monotone class that contains is contained in . Thus . This proves that for every .  Now let .  We just showed that for all . By repeating the previous argument we may conclude that this holds for all This shows that   You can also verify that is a monotone class. Thus and we have proved that for all . This can be generalized to show that is closed under finite unions.  In addition if then which is an increasing union of sets in and thus belongs to . Thus is closed under countable unions.  Finally let . Since and is closed under complements, . In addition one can verify that is a monotone class. Thus . This means that is closed under compliments.  We have shown that is closed under countable unions and complements. It also trivially contains . Thus is a -algebra that contains . Thus is the smallest -algebra that contains , which completes the proof.  "
+},
+{
+  "id": "def-finite-measure",
+  "level": "2",
+  "url": "notes-week-11.html#def-finite-measure",
+  "type": "Definition",
+  "number": "123",
+  "title": "Finite Measure.",
+  "body": " Finite Measure   A measure on a measurable space is said to be finite if .   "
+},
+{
+  "id": "def-sigma-finite-measure",
+  "level": "2",
+  "url": "notes-week-11.html#def-sigma-finite-measure",
+  "type": "Definition",
+  "number": "124",
+  "title": "<div class=\"para\" id=\"def-sigma-finite-measure-1-1\"><span class=\"process-math\">\\(\\sigma\\)<\/span>-Finite Measures<div class=\"autopermalink\" data-description=\"Paragraph\"><a href=\"#def-sigma-finite-measure-1-1\" title=\"Copy heading and permalink for Paragraph\" aria-label=\"Copy heading and permalink for Paragraph\">🔗<\/a><\/div><\/div>.",
+  "body": "  -Finite Measures   A measure is called -finite if the whole space can be written as the countable union of sets with finite measures. In other words, a measure on a measurable space is called -finite if there exists a sequence , of sets in such that    "
+},
+{
+  "id": "thm-measure-cross-section-measurable-function",
+  "level": "2",
+  "url": "notes-week-11.html#thm-measure-cross-section-measurable-function",
+  "type": "Theorem",
+  "number": "125",
+  "title": "Measure of a Cross-Section is a Measurable Function.",
+  "body": " Measure of a Cross-Section is a Measurable Function   Suppose and are measure spaces. If , then    is an -measurable function on .     is a -measurable function on .      "
+},
+{
+  "id": "subsec-Products-of-Measures-11",
+  "level": "2",
+  "url": "notes-week-11.html#subsec-Products-of-Measures-11",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " We'll prove (1). The proof of (2) is similar. If , then for every by the Theorem that cross sections of measurable sets are measurable. Thus the function is an -measurable function on .  We first consider the case that is a finite measure. Let We want to show that .  If and , then one can show that for every . Thus the function equals the function as a function of , which is an -measurable function on . Thus contains all measurable rectangles in .  Let denote the set of finite unions of measurable rectangles in and suppose .  This means that can be written as a finite union of disjoint measurable rectangles. That is, where are disjoint measurable rectangles.  Thus, where the last line follows because is a measure and the sets are disjoint.  This shows that is a finite sum of -measurable functions and thus is an -measurable function.  This proves that and hence . Now we will show that is a monotone class so that we can apply the Monotone Class Theorem.  We will first show closure under increasing unions. Suppose is an increasing sequence of sets in . Then   Since the pointwise limit of -measurable functions is -measurable, this shows that is an -measurable function. Hence and is closed under increasing unions.  The proof that is closed under decreasing intersections is similar. It is worth pointing out that in that proof we need to use the fact that is a finite measure in order to show that the measure of a decreasing intersection is equal to taking the limit of the measures of each set. This shows that is a monotone class that contains , the algebra of all finite unions of measurable rectangles in . Thus the monotone class theorem implies that is the smallest -algebra containing . Thus contains which completes the proof in the case that is a finite measure.  We now consider the case that is a -finite measure. This means that there exists a sequence of sets such that and for each .  By replacing each with , we can create an increasing sequence .  If then   We can see that the function is an -measurable function as follows by considering the finite measure obtained by restricting to the -algebra on of sets that are contained in . The previous equation then implies that is an -measurable function on , which completes the proof of .  "
+},
+{
+  "id": "def-integration-notation",
+  "level": "2",
+  "url": "notes-week-11.html#def-integration-notation",
+  "type": "Definition",
+  "number": "126",
+  "title": "Integration Notation.",
+  "body": " Integration Notation   Suppose that is a measure space and is a function. The notation means where indicates that all variables other than should be treated as constant.   "
+},
+{
+  "id": "def-iterated-integral",
+  "level": "2",
+  "url": "notes-week-11.html#def-iterated-integral",
+  "type": "Definition",
+  "number": "127",
+  "title": "Iterated Integrals.",
+  "body": " Iterated Integrals   Suppose and are measure spaces and is a function. Then In other words, first fix and integrate as a function of , then fix and integrate the output as a function of .   "
+},
+{
+  "id": "def-measure-product",
+  "level": "2",
+  "url": "notes-week-11.html#def-measure-product",
+  "type": "Definition",
+  "number": "128",
+  "title": "Product of a Measure.",
+  "body": " Product of a Measure   Suppose and are -finite measure spaces. For define by    "
+},
+{
+  "id": "thm-product-measure-is-measure",
+  "level": "2",
+  "url": "notes-week-11.html#thm-product-measure-is-measure",
+  "type": "Theorem",
+  "number": "129",
+  "title": "Product of Two Measures is a Measure.",
+  "body": " Product of Two Measures is a Measure   Suppose and are -finite measure spaces. Then is a measure on    "
+},
+{
+  "id": "subsec-Products-of-Measures-21",
+  "level": "2",
+  "url": "notes-week-11.html#subsec-Products-of-Measures-21",
+  "type": "Proof",
+  "number": "2",
+  "title": "",
+  "body": " Since we just need to show countable additivity. Suppose is a disjoint sequence of sets in . Then   Since the partial sums of form an increasing sequence of non-negative measurable functions, the Monotone Convergence Theorem allows us to interchange the sum and the integral. Hence, which shows that is countably additive.  "
+},
+{
   "id": "homework-2",
   "level": "1",
   "url": "homework-2.html",

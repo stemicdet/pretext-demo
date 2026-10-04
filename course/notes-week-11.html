@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Week 11: Products of Measure Spaces (5A)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Real Variables">
+<meta property="book:author" content="Stephen Deterding">
+<script src="_static/pretext/js/jquery.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '8.3.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.dd07797f77620576.bundle.js"></script><script src="_static/prefix-926.5c7038c8ef173faf.bundle.js"></script><script src="_static/prefix-runestone.11d27cdc38930c2c.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-926.229729d09512acc9.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.347e2ecdeacfed99.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="root-1-2.html"><span class="title">Real Variables</span> <span class="subtitle">MATH 650 Fall 2026</span></a></h1>
+<p class="byline">Stephen Deterding</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="notes-week-10.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="course-notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="final-project.html" class="internal"><span class="title">Final Project</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="project.html" class="internal"><span class="title">Final Project Instructions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="project.html#subsec-General-Requirements" class="internal"><span class="title">General Requirements</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="project.html#subsec-Suggested-Topics" class="internal"><span class="title">Suggested Topics</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="course-notes.html" class="internal"><span class="title">Course Notes</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-02.html" class="internal"><span class="title">Week 2: Outer Measure on <span class="process-math">\(\mathbf{R}\)</span> (2A)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#Motivation" class="internal"><span class="title">Motivation and Definition of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#good-properties" class="internal"><span class="title">Good Properties of Outer Measure</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-02.html#outer-measure-not-additive" class="internal"><span class="title">Outer Measure is Not Additive</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-03.html" class="internal"><span class="title">Week 3: Measurable Spaces and Functions (2B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#desired" class="internal"><span class="title">Desired Properties of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Simga-Algebras" class="internal"><span class="title">Sigma Algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-Borel-Subsets-of-R" class="internal"><span class="title">Borel Subsets of R and Inverse Images</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-03.html#subsec-measurable-function" class="internal"><span class="title">Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-04.html" class="internal"><span class="title">Week 4: Measures and Their Properties (2C)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-Definition-and-Examples-of-Measures" class="internal"><span class="title">Definition and Examples of Measures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-04.html#subsec-properties-measr" class="internal"><span class="title">Properties of Measures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-05.html" class="internal"><span class="title">Week 5: Lebesgue Measure (2D)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Additivity-of-Outer" class="internal"><span class="title">Additivity of Outer Measure on Borel Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Lebesgue-Measurable-Sets" class="internal"><span class="title">Lebesgue Measurable Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-05.html#subsec-Cantor" class="internal"><span class="title">The Cantor Set and Cantor Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-06.html" class="internal"><span class="title">Week 6: Convergence of Measurable Functions (2E)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Littlewood" class="internal"><span class="title">Littlewood’s Three Principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Egorov" class="internal"><span class="title">Egorov’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-simple-functions" class="internal"><span class="title">Approximation by Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Luzin" class="internal"><span class="title">Luzin’s Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-06.html#subsec-Lebesgue-Measurable-Functions" class="internal"><span class="title">Lebesgue Measurable Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-07.html" class="internal"><span class="title">Week 7: Integration with Respect to a Measure (3A Plus 6.2 in A Radical Approach to Lebesgue’s Theory of Integration)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Simple-Functions" class="internal"><span class="title">Integration of Simple Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Non-negative-Functions" class="internal"><span class="title">Integration of Non-negative Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-07.html#subsec-Integration-of-Real-Valued-Functions" class="internal"><span class="title">Integration of Real Valued Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-08.html" class="internal"><span class="title">Week 8: Limits of Integrals and Integrals of Limits (3B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Bounded-Convergence-Theroem" class="internal"><span class="title">Bounded Convergence Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Sets-of-Measure-Zero-in-Integration" class="internal"><span class="title">Sets of Measure Zero in Integration</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Dominated-Convergence-Theorem" class="internal"><span class="title">Dominated Convergence Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Riemann-Integral-and-Lebesgue-Integral" class="internal"><span class="title">Riemann Integral and Lebesgue Integral</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-08.html#subsec-Approximation-by-Nice-Functions" class="internal"><span class="title">Approximation by Nice Functions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-09.html" class="internal"><span class="title">Week 9: The Hardy-Littlewood Maximal Function (4A)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-Markov-vitali" class="internal"><span class="title">Markov’s Inequality and the Vitali Covering Lemma</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-09.html#subsec-Hardy-Littlewood-Maximal-Inequality" class="internal"><span class="title">Hardy Littlewood Maximal Inequality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="notes-week-10.html" class="internal"><span class="title">Week 10: Deriatives of Integrals (4B)</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-10.html#subsec-Lebesgue-Differentiation-Theorem" class="internal"><span class="title">Lebesgue Differentiation Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-10.html#subsec-Derivatives" class="internal"><span class="title">Derivatives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-10.html#subsec-Density" class="internal"><span class="title">Density</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="notes-week-11.html" class="internal"><span class="title">Week 11: Products of Measure Spaces (5A)</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Products-of" class="internal"><span class="title">Products of <span class="process-math">\(\sigma\)</span>-algebras</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Monotone-Class-Theorem" class="internal"><span class="title">Monotone Class Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="notes-week-11.html#subsec-Products-of-Measures" class="internal"><span class="title">Products of Measures</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="homework.html" class="internal"><span class="title">Homework Assignments</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-2.html" class="internal"><span class="title">Homework 1 (Due August 27)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-3.html" class="internal"><span class="title">Homework 2 (Due September 3)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-4.html" class="internal"><span class="title">Homework 3 (Due September 10)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-5.html" class="internal"><span class="title">Homework 4 (Due September 24)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-6.html" class="internal"><span class="title">Homework 5 (Due October 1)</span></a></div></li>
+<li class="toc-item toc-worksheet"><div class="toc-title-box"><a href="homework-7.html" class="internal"><span class="title">Homework 6 (Due October 8)</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="notes-week-11"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Week 11: Products of Measure Spaces (5A)</span>
+</h2>
+<section class="subsection" id="subsec-Products-of"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Products of <span class="process-math">\(\sigma\)</span>-algebras</span>
+</h3>
+<div class="para" id="subsec-Products-of-2">Thus far everything we have done have involved subsets of the real line. However, if we want to integrate multi-variable functions, or study subsets of <span class="process-math">\(\mathbf{R^n}\)</span> then we need to define measure for these higher dimensional spaces. The starting point will be to define measures for product spaces, This will allow us to define the product of two measures.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-rectangle"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">112</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Rectangle.</span>
+</h4>
+<div class="para" id="def-rectangle-2-1">Suppose <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are sets. A <dfn class="terminology">rectangle</dfn> in <span class="process-math">\(X \times Y\)</span> is a set of the form <span class="process-math">\(A \times B\)</span> where <span class="process-math">\(A \subseteq X\)</span> and <span class="process-math">\(B \subseteq Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 112: Rectangle"><a href="#def-rectangle" title="Copy heading and permalink for Definition 112: Rectangle" aria-label="Copy heading and permalink for Definition 112: Rectangle">🔗</a></div></article><article class="definition definition-like" id="def-product-sigma-algebra"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">113</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Products of <span class="process-math">\(\sigma\)</span>-algebras.</span>
+</h4>
+<div class="para" id="def-product-sigma-algebra-2-1">Suppose <span class="process-math">\((X,S)\)</span> and <span class="process-math">\((Y,T)\)</span> are measurable spaces. Then the product <span class="process-math">\(S \otimes T\)</span> is defined to be the smallest <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(X \times Y\)</span> that contains <span class="process-math">\(\{A \times B: A \in S, B \in T\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-product-sigma-algebra-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 113: Products of \sigma-algebras"><a href="#def-product-sigma-algebra" title="Copy heading and permalink for Definition 113: Products of \sigma-algebras" aria-label="Copy heading and permalink for Definition 113: Products of \sigma-algebras">🔗</a></div></article><article class="definition definition-like" id="def-measurable-rectangle"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">114</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measureable Rectangle.</span>
+</h4>
+<div class="para" id="def-measurable-rectangle-2-1">A measurable rectangle in <span class="process-math">\(S \otimes T\)</span> is a set of the form <span class="process-math">\(A \times B\)</span> where <span class="process-math">\(A \in S\)</span> and <span class="process-math">\(B \in T\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-measurable-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 114: Measureable Rectangle"><a href="#def-measurable-rectangle" title="Copy heading and permalink for Definition 114: Measureable Rectangle" aria-label="Copy heading and permalink for Definition 114: Measureable Rectangle">🔗</a></div></article><div class="para" id="subsec-Products-of-6">Example: Let <span class="process-math">\(X = Y = \mathbf{R}\text{.}\)</span> Let <span class="process-math">\(S = \{\emptyset, \mathbf{Q}, \mathbf{R}\setminus \mathbf{Q}, \mathbf{R}\}\)</span> and let <span class="process-math">\(T = \{\emptyset, \{0\}, \mathbf{R}\setminus \{0\}, \mathbf{R}\}\text{.}\)</span> Determine all measurable rectangles in <span class="process-math">\(S \otimes T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-7">We now define cross-sections of sets. These play an important role in the definition of product measures.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-cross-section"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">115</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cross Sections of Sets.</span>
+</h4>
+<div class="para logical" id="def-cross-section-2-1">
+<div class="para">Suppose <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are sets and <span class="process-math">\(E \subseteq X \times Y\text{.}\)</span> Then for <span class="process-math">\(a \in X\)</span> and <span class="process-math">\(b \in Y\)</span> the <dfn class="terminology">cross sections</dfn> <span class="process-math">\([E]_{a}\)</span> and <span class="process-math">\([E]^{b}\)</span> are defined by</div>
+<div class="displaymath process-math" id="def-cross-section-2-1-9">
+\begin{equation*}
+[E]_a = \{y \in Y: (a,y) \in E\} \quad \textnormal{ and } \quad [E]^b = \{x \in X: (x,b) \in E\}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-cross-section-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 115: Cross Sections of Sets"><a href="#def-cross-section" title="Copy heading and permalink for Definition 115: Cross Sections of Sets" aria-label="Copy heading and permalink for Definition 115: Cross Sections of Sets">🔗</a></div></article><div class="para" id="subsec-Products-of-9">Example: Let <span class="process-math">\(X = [1,3] \cup [4,5]\)</span> and <span class="process-math">\(Y = [1,5]\text{.}\)</span> Suppose <span class="process-math">\(E = X \times Y\text{.}\)</span> Find <span class="process-math">\([E]_{2}\text{,}\)</span> <span class="process-math">\([E]_{3.5}\text{,}\)</span> and <span class="process-math">\([E]^{3}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-cross-section-measurable"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">116</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cross Sections of Measurable Sets are Measurable.</span>
+</h4>
+<div class="para" id="thm-cross-section-measurable-2-1">Suppose <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(X\)</span> and <span class="process-math">\(T\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(Y\text{.}\)</span> If <span class="process-math">\(E \in S \otimes T\)</span> then <span class="process-math">\([E]_{a} \in T\)</span> for every <span class="process-math">\(a \in X\)</span> and <span class="process-math">\([E]^{b} \in S\)</span> for every <span class="process-math">\(b \in Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-cross-section-measurable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 116: Cross Sections of Measurable Sets are Measurable"><a href="#thm-cross-section-measurable" title="Copy heading and permalink for Theorem 116: Cross Sections of Measurable Sets are Measurable" aria-label="Copy heading and permalink for Theorem 116: Cross Sections of Measurable Sets are Measurable">🔗</a></div></article><details id="subsec-Products-of-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Products-of-11-1">Let <span class="process-math">\(U\)</span> denote the collection of subsets of <span class="process-math">\(X \times Y\)</span> for which the result holds. Note that <span class="process-math">\([A \times B]_{a} = B\)</span> if <span class="process-math">\(a \in A\)</span> and <span class="process-math">\(\emptyset\)</span> if <span class="process-math">\(a \notin A\)</span> and <span class="process-math">\([A \times B]^{b} = A\)</span> if <span class="process-math">\(b \in B\)</span> and <span class="process-math">\(\emptyset\)</span> if <span class="process-math">\(b \notin B\text{.}\)</span> Hence <span class="process-math">\(A \times B \in U\)</span> for all <span class="process-math">\(A \in S\)</span> and <span class="process-math">\(B \in T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-11-2">Since <span class="process-math">\([(X \times Y)\setminus E]_{a} = Y \setminus [E]_{a}\text{,}\)</span> and similarly for cross sections of <span class="process-math">\(Y\text{,}\)</span> <span class="process-math">\(U\)</span> is closed under compliments.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-11-3">Since <span class="process-math">\([E_{1} \cup E_{2} \cup \ldots]_{a} = [E_{1}]_{a} \cup [E_{2}]_{a} \cup \ldots\text{,}\)</span> and similarly for cross sections of <span class="process-math">\(Y\text{,}\)</span> <span class="process-math">\(U\)</span> is closed under countable unions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-11-4">Hence <span class="process-math">\(U\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra that contains all measurable rectangles in <span class="process-math">\(S \otimes T\text{,}\)</span> so it contains <span class="process-math">\(S \otimes T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Products-of-11" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="definition definition-like" id="def-cross-section-function"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">117</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cross Sections of Functions.</span>
+</h4>
+<div class="para logical" id="def-cross-section-function-2-1">
+<div class="para">Suppose <span class="process-math">\(X\)</span> and <span class="process-math">\(Y\)</span> are sets and <span class="process-math">\(f:X \times Y \to \mathbf{R}\)</span> is a function. Then for <span class="process-math">\(a \in X\)</span> and <span class="process-math">\(b \in Y\text{,}\)</span> the <dfn class="terminology">cross section functions</dfn> <span class="process-math">\([f]_{a}: Y \to \mathbf{R}\)</span> and <span class="process-math">\([f]^{b}: X \to \mathbf{R}\)</span> are defined by</div>
+<div class="displaymath process-math" id="def-cross-section-function-2-1-9">
+\begin{equation*}
+[f]_a(y) = f(a,y) \text{ for } y \in Y
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="def-cross-section-function-2-1-10">
+\begin{equation*}
+[f]^b(x) = f(x,b) \text{ for } x \in X
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-cross-section-function-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 117: Cross Sections of Functions"><a href="#def-cross-section-function" title="Copy heading and permalink for Definition 117: Cross Sections of Functions" aria-label="Copy heading and permalink for Definition 117: Cross Sections of Functions">🔗</a></div></article><div class="para logical" id="subsec-Products-of-13">
+<div class="para">Example: Suppose <span class="process-math">\(f: \mathbf{R}\times \mathbf{R}\to \mathbf{R}\)</span> is defined by</div>
+<div class="displaymath process-math" id="subsec-Products-of-13-2">
+\begin{equation*}
+f(x,y) = \frac{2x-y}{x^2+y^2}.
+\end{equation*}
+</div>
+<div class="para">Find <span class="process-math">\([f]_{2}\)</span> and <span class="process-math">\([f]^{-3}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-cross-section-function-measurable"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">118</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Cross Sections of Measurable Functions are Measurable.</span>
+</h4>
+<div class="para logical" id="thm-cross-section-function-measurable-2-1">
+<div class="para">Suppose <span class="process-math">\(S\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(X\)</span> and <span class="process-math">\(T\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(Y\text{.}\)</span> Suppose <span class="process-math">\(f:X \times Y\)</span> is an <span class="process-math">\(S \otimes T\)</span> measurable function. Then</div>
+<ol class="lower-alpha ol-marker-1" id="thm-cross-section-function-measurable-2-1-9">
+<li id="thm-cross-section-function-measurable-2-1-9-1">
+<div class="para" id="thm-cross-section-function-measurable-2-1-9-1-1">
+<span class="process-math">\([f]_{a}\)</span> is a <span class="process-math">\(T\)</span> measurable function on <span class="process-math">\(Y\)</span> for every <span class="process-math">\(a \in X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-cross-section-function-measurable-2-1-9-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#thm-cross-section-function-measurable-2-1-9-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="thm-cross-section-function-measurable-2-1-9-2">
+<div class="para" id="thm-cross-section-function-measurable-2-1-9-2-1">
+<span class="process-math">\([f]^{b}\)</span> is an <span class="process-math">\(S\)</span> measurable function on <span class="process-math">\(X\)</span> for every <span class="process-math">\(b \in Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-cross-section-function-measurable-2-1-9-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#thm-cross-section-function-measurable-2-1-9-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-cross-section-function-measurable-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 118: Cross Sections of Measurable Functions are Measurable"><a href="#thm-cross-section-function-measurable" title="Copy heading and permalink for Theorem 118: Cross Sections of Measurable Functions are Measurable" aria-label="Copy heading and permalink for Theorem 118: Cross Sections of Measurable Functions are Measurable">🔗</a></div></article><details id="subsec-Products-of-15" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Products-of-15-1">
+<div class="para">We will prove the first statement. The proof of the second is similar. Suppose <span class="process-math">\(D\)</span> is a Borel subset of <span class="process-math">\(\mathbf{R}\)</span> and <span class="process-math">\(a\in X\text{.}\)</span> If <span class="process-math">\(y \in Y\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Products-of-15-1-5">
+\begin{align*}
+y \in ([f]_a)^{-1}(D) \amp \Leftrightarrow [f]_a(y) \in D\\
+\amp \Leftrightarrow f(a,y) \in D \\
+\amp \Leftrightarrow (a,y) \in f^{-1}(D)\\
+\amp \Leftrightarrow y \in [f^{-1}(D)]_a
+\end{align*}
+</div>
+<div class="para">Thus <span class="process-math">\(([f]_{a})^{-1}(D) = [f^{-1}(D)]_{a}\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-15-2">Because <span class="process-math">\(f\)</span> is an <span class="process-math">\(S \otimes T\)</span> measurable function, <span class="process-math">\(f^{-1}(D) \in S \otimes T\text{.}\)</span> Since cross sections are measurable <span class="process-math">\([f^{-1}(D)]_{a} \in T\text{.}\)</span> The previous computation shows that <span class="process-math">\(([f]_{a})^{-1}(D) \in T\text{.}\)</span> Hence <span class="process-math">\([f]_{a}\)</span> is a <span class="process-math">\(T\)</span> measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-15-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Products-of-15" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Products of \sigma-algebras"><a href="#subsec-Products-of" title="Copy heading and permalink for Subsection: Products of \sigma-algebras" aria-label="Copy heading and permalink for Subsection: Products of \sigma-algebras">🔗</a></div></section><section class="subsection" id="subsec-Monotone-Class-Theorem"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Class Theorem</span>
+</h3>
+<div class="para" id="subsec-Monotone-Class-Theorem-2">We have used the following strategy to prove that a <span class="process-math">\(\sigma\)</span>-algebra has a certain property. First, find a collection of sets with that property which generates the <span class="process-math">\(\sigma\)</span>-algebra, and second show that this collection of sets is itself a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-3">We used this strategy in showing that the cross sections of measurable sets are measurable. First we found a collection of subsets of <span class="process-math">\(X \times Y\)</span> where the result held, and then we showed that the collection was a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-4">When we prove that the measure of a cross section is a measurable function, we will be unable to utilize this strategy. Instead we will need another technique that involves what are called monotone classes.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-Set-algebra"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">119</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set Algebra.</span>
+</h4>
+<div class="para logical" id="def-Set-algebra-2-1">
+<div class="para">Suppose <span class="process-math">\(W\)</span> is a set and <span class="process-math">\(A\)</span> is a set of subsets of <span class="process-math">\(W\text{.}\)</span> Then <span class="process-math">\(A\)</span> is called a set algebra, or simply, an algebra, on <span class="process-math">\(W\)</span> if the following three conditions are satisfied.</div>
+<ol class="lower-alpha ol-marker-1" id="def-Set-algebra-2-1-6">
+<li id="def-Set-algebra-2-1-6-1">
+<div class="para" id="def-Set-algebra-2-1-6-1-1">
+<span class="process-math">\(\displaystyle \emptyset \in A\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-Set-algebra-2-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#def-Set-algebra-2-1-6-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="def-Set-algebra-2-1-6-2">
+<div class="para" id="def-Set-algebra-2-1-6-2-1">If <span class="process-math">\(E \in A\text{,}\)</span> then <span class="process-math">\(W \setminus E \in A\)</span> (closed under compliments)<div class="autopermalink" data-description="Paragraph"><a href="#def-Set-algebra-2-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#def-Set-algebra-2-1-6-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+<li id="def-Set-algebra-2-1-6-3">
+<div class="para" id="def-Set-algebra-2-1-6-3-1">If <span class="process-math">\(E\)</span> and <span class="process-math">\(F\)</span> are elements of <span class="process-math">\(A\)</span> then <span class="process-math">\(E \cup F \in A\text{.}\)</span> (closed under <em class="emphasis">finite</em> unions)<div class="autopermalink" data-description="Paragraph"><a href="#def-Set-algebra-2-1-6-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item c"><a href="#def-Set-algebra-2-1-6-3" title="Copy heading and permalink for Item c" aria-label="Copy heading and permalink for Item c">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-Set-algebra-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 119: Set Algebra"><a href="#def-Set-algebra" title="Copy heading and permalink for Definition 119: Set Algebra" aria-label="Copy heading and permalink for Definition 119: Set Algebra">🔗</a></div></article><div class="para" id="subsec-Monotone-Class-Theorem-6">The difference between algebras and <span class="process-math">\(\sigma\)</span>-algebras is that <span class="process-math">\(\sigma\)</span>-algebras are closed under countable unions. Every <span class="process-math">\(\sigma\)</span>-algebra is an algebra, but not every algebra is a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-7">Example: Let <span class="process-math">\(W = \mathbf{R}\)</span> and let <span class="process-math">\(A\)</span> be the collection of sets with a finite number of elements or whose compliment has a finite number of elements. Then <span class="process-math">\(A\)</span> is an algebra on <span class="process-math">\(W\text{,}\)</span> but not a <span class="process-math">\(\sigma\)</span>-algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-sets-of-finite-union-measureable-rectangle"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">120</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Set of Finite Unions of Measurable Rectangles is an Algebra.</span>
+</h4>
+<div class="para logical" id="thm-sets-of-finite-union-measureable-rectangle-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S)\)</span> and <span class="process-math">\((Y,T)\)</span> are measurable spaces. Then</div>
+<ol class="decimal ol-marker-2" id="thm-sets-of-finite-union-measureable-rectangle-2-1-3">
+<li id="thm-sets-of-finite-union-measureable-rectangle-2-1-3-1">
+<div class="para" id="thm-sets-of-finite-union-measureable-rectangle-2-1-3-1-1">The set of finite unions of measurable rectangles in <span class="process-math">\(S \otimes T\)</span> is an algebra on <span class="process-math">\(X \times Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-sets-of-finite-union-measureable-rectangle-2-1-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-sets-of-finite-union-measureable-rectangle-2-1-3-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-sets-of-finite-union-measureable-rectangle-2-1-3-2">
+<div class="para" id="thm-sets-of-finite-union-measureable-rectangle-2-1-3-2-1">Every finite union of measurable rectangles in <span class="process-math">\(S \otimes T\)</span> can be written as a finite union of disjoint measurable rectangles in <span class="process-math">\(S \otimes T\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-sets-of-finite-union-measureable-rectangle-2-1-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-sets-of-finite-union-measureable-rectangle-2-1-3-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-sets-of-finite-union-measureable-rectangle-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 120: Set of Finite Unions of Measurable Rectangles is an Algebra"><a href="#thm-sets-of-finite-union-measureable-rectangle" title="Copy heading and permalink for Theorem 120: Set of Finite Unions of Measurable Rectangles is an Algebra" aria-label="Copy heading and permalink for Theorem 120: Set of Finite Unions of Measurable Rectangles is an Algebra">🔗</a></div></article><details id="subsec-Monotone-Class-Theorem-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Monotone-Class-Theorem-9-1">We will first prove (1) Let <span class="process-math">\(A\)</span> denote the finite unions of measurable rectangles in <span class="process-math">\(S \otimes T\text{.}\)</span> Since <span class="process-math">\(A\)</span> is closed under finite unions and contains <span class="process-math">\(\emptyset\text{,}\)</span> we just need to show that it is closed under compliments.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Monotone-Class-Theorem-9-2">
+<div class="para">If <span class="process-math">\(A \in S\)</span> and <span class="process-math">\(B \in T\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Monotone-Class-Theorem-9-2-3">
+\begin{equation*}
+(X \times Y) \setminus (A \times B) = \left( (X \setminus A) \times Y\right) \cup \left(X \times (Y \setminus B) \right)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-9-3">The right hand side is a finite union of measurable rectangles in <span class="process-math">\(S \otimes T\)</span> and thus belongs to <span class="process-math">\(A\text{.}\)</span> Thus the compliment of a measurable rectangle in <span class="process-math">\(S \otimes T\)</span> belongs to <span class="process-math">\(A\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-9-4">It follows from De Morgan’s laws that to show that <span class="process-math">\(A\)</span> is closed under compliments, we need to show that <span class="process-math">\(A\)</span> is closed under finite intersections.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Monotone-Class-Theorem-9-5">
+<div class="para">Suppose <span class="process-math">\(A_{1}, \ldots A_{n},C_{1} \ldots C_{m} \in S\)</span> and <span class="process-math">\(B_{1}, \ldots B_{n},D_{1} \ldots D_{m} \in T\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Monotone-Class-Theorem-9-5-3">
+\begin{align*}
+\left(  (A_1 \times B_1) \cup \ldots \cup (A_n \times B_n) \right) \cap \left((C_1 \times D_1) \cup \ldots \cup (C_m \times D_m)\right) \amp = \bigcup_{j=1}^n \bigcup_{k=1}^m \left((A_j \times B_j) \cap (C_k \times D_k) \right)\\
+\amp = \bigcup_{j=1}^n \bigcup_{k=1}^m \left((A_j \cap C_k) \times (B_j \cap D_k) \right)
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-9-6">Since this is a finite union of measurable rectangles in <span class="process-math">\(S \otimes T\text{,}\)</span> A is closed under finite intersections. Thus (1) is proved.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Monotone-Class-Theorem-9-7">
+<div class="para">To prove (2) suppose that <span class="process-math">\(A \times B\)</span> and <span class="process-math">\(C \times D\)</span> are measurable rectangles in <span class="process-math">\(S \otimes T\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Monotone-Class-Theorem-9-7-4">
+\begin{equation*}
+(A \times B) \cup (C \times D) = (A \times B) \cup \left(C \times (D \setminus B)\right) \cup \left((C\setminus A) \cup (B \cap D) \right)
+\end{equation*}
+</div>
+<div class="para">Thus a union of 2 measurable rectangles can be written as a disjoint union of three measurable rectangles.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-9-8">If we have some arbitrary finite union of rectangles, and they are not disjoint, we can take a pair of non-disjoint rectangles and replace them with three disjoint rectangles. Repeating this process eventually results in a finite disjoint union of measurable rectangles.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-9-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Monotone-Class-Theorem-9" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="definition definition-like" id="def-monotone-class"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">121</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Class.</span>
+</h4>
+<div class="para logical" id="def-monotone-class-2-1">
+<div class="para">Suppose <span class="process-math">\(W\)</span> is a set and <span class="process-math">\(M\)</span> is a set of subsets of <span class="process-math">\(W\text{.}\)</span> Then <span class="process-math">\(M\)</span> is called a monotone class on <span class="process-math">\(W\)</span> if the following conditions are satisfied.</div>
+<ol class="lower-alpha ol-marker-1" id="def-monotone-class-2-1-6">
+<li id="def-monotone-class-2-1-6-1">
+<div class="para" id="def-monotone-class-2-1-6-1-1">If <span class="process-math">\(E_{1} \subseteq E_{2} \subseteq \ldots\)</span> is an increasing sequence of sets in <span class="process-math">\(M\)</span> then <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty}E_{n} \in M\)</span> (closed under countable increasing unions)<div class="autopermalink" data-description="Paragraph"><a href="#def-monotone-class-2-1-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item a"><a href="#def-monotone-class-2-1-6-1" title="Copy heading and permalink for Item a" aria-label="Copy heading and permalink for Item a">🔗</a></div>
+</li>
+<li id="def-monotone-class-2-1-6-2">
+<div class="para" id="def-monotone-class-2-1-6-2-1">If <span class="process-math">\(E_{1} \supseteq E_{2} \supseteq \ldots\)</span> is an decreasing sequence of sets in <span class="process-math">\(M\)</span> then <span class="process-math">\(\displaystyle \bigcap_{k=1}^{\infty}E_{n} \in M\)</span> (closed under countable decreasing intersections)<div class="autopermalink" data-description="Paragraph"><a href="#def-monotone-class-2-1-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item b"><a href="#def-monotone-class-2-1-6-2" title="Copy heading and permalink for Item b" aria-label="Copy heading and permalink for Item b">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-monotone-class-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 121: Monotone Class"><a href="#def-monotone-class" title="Copy heading and permalink for Definition 121: Monotone Class" aria-label="Copy heading and permalink for Definition 121: Monotone Class">🔗</a></div></article><div class="para" id="subsec-Monotone-Class-Theorem-11">Every <span class="process-math">\(\sigma\)</span>-algebra is a monotone class, but not every monotone class is a <span class="process-math">\(\sigma\)</span>-algebra, or even an algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-12">Example: Let <span class="process-math">\(A\)</span> be the set of all intervals of <span class="process-math">\(\mathbf{R}\text{.}\)</span> Then <span class="process-math">\(A\)</span> is closed under countable increasing unions and countable decreasing intersections so <span class="process-math">\(A\)</span> is a monotone class. However, <span class="process-math">\(A\)</span> is not closed under compliments so <span class="process-math">\(A\)</span> is not an algebra.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-13">Example: Suppose <span class="process-math">\(A\)</span> is a collection of some subsets of <span class="process-math">\(W\text{.}\)</span> Then the intersection of all monotone classes of <span class="process-math">\(W\)</span> containing <span class="process-math">\(A\)</span> is a monotone class containing <span class="process-math">\(A\text{.}\)</span> This is the smallest monotone class that contains <span class="process-math">\(A\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-monotone-class"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">122</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Monotone Class Theorem.</span>
+</h4>
+<div class="para" id="thm-monotone-class-2-1">Suppose <span class="process-math">\(\mathcal{A}\)</span> is an algebra on a set <span class="process-math">\(W\text{.}\)</span> Then the smallest <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{A}\)</span> is the smallest monotone class containing <span class="process-math">\(\mathcal{A}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-monotone-class-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 122: Monotone Class Theorem"><a href="#thm-monotone-class" title="Copy heading and permalink for Theorem 122: Monotone Class Theorem" aria-label="Copy heading and permalink for Theorem 122: Monotone Class Theorem">🔗</a></div></article><div class="para" id="subsec-Monotone-Class-Theorem-15">Intuitively this makes sense because a <span class="process-math">\(\sigma\)</span>-algebra is an algebra that is closed under countable unions rather than finite unions, much like a monotone class.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Monotone-Class-Theorem-16" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Monotone-Class-Theorem-16-1">Let <span class="process-math">\(\mathcal{M}\)</span> denote the smallest monotone class containing <span class="process-math">\(\mathcal{A}\text{.}\)</span> Since every <span class="process-math">\(\sigma\)</span>-algebra is a monotone class, it follows that <span class="process-math">\(\mathcal{M}\)</span> is contained in the smallest <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{A}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-2">It remains to prove that the smallest <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{A}\)</span> is contained in <span class="process-math">\(\mathcal{M}\text{.}\)</span> First suppose <span class="process-math">\(A \in \mathcal{A}\)</span> and let <span class="process-math">\(\mathcal{E}= \{E \in \mathcal{M}: A \cup E \in M\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-3">Then <span class="process-math">\(\mathcal{A}\subseteq \mathcal{E}\)</span> because the union of two sets in <span class="process-math">\(\mathcal{A}\)</span> is still in <span class="process-math">\(\mathcal{A}\text{.}\)</span> In fact you can verify that <span class="process-math">\(E\)</span> is a monotone class that contains <span class="process-math">\(\mathcal{A}\text{.}\)</span> Thus the smallest monotone class that contains <span class="process-math">\(\mathcal{A}\)</span> is contained in <span class="process-math">\(\mathcal{E}\text{.}\)</span> Thus <span class="process-math">\(M \subseteq \mathcal{E}\text{.}\)</span> This proves that <span class="process-math">\(A \cup E \in M\)</span> for every <span class="process-math">\(E \in \mathcal{M}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-4">Now let <span class="process-math">\(\mathcal{D}= \{D \in \mathcal{M}: D \cup E \in \mathcal{M}\text{ for all }E \in \mathcal{M}\}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-5">We just showed that <span class="process-math">\(A \cup E \in \mathcal{M}\)</span> for all <span class="process-math">\(E \in M\text{.}\)</span> By repeating the previous argument we may conclude that this holds for all <span class="process-math">\(A \in \mathcal{A}\)</span> This shows that <span class="process-math">\(\mathcal{A}\subseteq \mathcal{D}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-6">You can also verify that <span class="process-math">\(\mathcal{D}\)</span> is a monotone class. Thus <span class="process-math">\(\mathcal{M}\subseteq \mathcal{D}\)</span> and we have proved that <span class="process-math">\(D \cup E \in \mathcal{M}\)</span> for all <span class="process-math">\(D,E \in \mathcal{M}\text{.}\)</span> This can be generalized to show that <span class="process-math">\(\mathcal{M}\)</span> is closed under finite unions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Monotone-Class-Theorem-16-7">
+<div class="para">In addition if <span class="process-math">\(E_{1}, E_{2}, \ldots \in \mathcal{M}\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Monotone-Class-Theorem-16-7-2">
+\begin{equation*}
+E_1 \cup E_2 \cup E_3 \cup \ldots = E_1 \cup (E_1 \cup E_2) \cup (E_1 \cup E_2 \cup E_3)
+\end{equation*}
+</div>
+<div class="para">which is an increasing union of sets in <span class="process-math">\(\mathcal{M}\)</span> and thus belongs to <span class="process-math">\(\mathcal{M}\text{.}\)</span> Thus <span class="process-math">\(\mathcal{M}\)</span> is closed under countable unions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-8">Finally let <span class="process-math">\(\mathcal{M}' = \{E \in \mathcal{M}: W \setminus E \in \mathcal{M}\}\text{.}\)</span> Since <span class="process-math">\(\mathcal{A}\subseteq \mathcal{M}\)</span> and <span class="process-math">\(A\)</span> is closed under complements, <span class="process-math">\(\mathcal{A}\subseteq \mathcal{M}'\text{.}\)</span> In addition one can verify that <span class="process-math">\(\mathcal{M}'\)</span> is a monotone class. Thus <span class="process-math">\(\mathcal{M}\subseteq \mathcal{M}'\text{.}\)</span> This means that <span class="process-math">\(M\)</span> is closed under compliments.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Monotone-Class-Theorem-16-9">We have shown that <span class="process-math">\(\mathcal{M}\)</span> is closed under countable unions and complements. It also trivially contains <span class="process-math">\(\emptyset\text{.}\)</span> Thus <span class="process-math">\(\mathcal{M}\)</span> is a <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(\mathcal{A}\text{.}\)</span> Thus <span class="process-math">\(\mathcal{M}\)</span> is the smallest <span class="process-math">\(\sigma\)</span>-algebra that contains <span class="process-math">\(\mathcal{A}\text{,}\)</span> which completes the proof.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Monotone-Class-Theorem-16-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Monotone-Class-Theorem-16" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Monotone Class Theorem"><a href="#subsec-Monotone-Class-Theorem" title="Copy heading and permalink for Subsection: Monotone Class Theorem" aria-label="Copy heading and permalink for Subsection: Monotone Class Theorem">🔗</a></div></section><section class="subsection" id="subsec-Products-of-Measures"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Products of Measures</span>
+</h3>
+<article class="definition definition-like" id="def-finite-measure"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">123</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Finite Measure.</span>
+</h4>
+<div class="para" id="def-finite-measure-2-1">A measure <span class="process-math">\(\mu\)</span> on a measurable space <span class="process-math">\((X,S)\)</span> is said to be finite if <span class="process-math">\(\mu(X) &lt; \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-finite-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 123: Finite Measure"><a href="#def-finite-measure" title="Copy heading and permalink for Definition 123: Finite Measure" aria-label="Copy heading and permalink for Definition 123: Finite Measure">🔗</a></div></article><article class="definition definition-like" id="def-sigma-finite-measure"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">124</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title"><div class="para" id="def-sigma-finite-measure-1-1">
+<span class="process-math">\(\sigma\)</span>-Finite Measures<div class="autopermalink" data-description="Paragraph"><a href="#def-sigma-finite-measure-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>.</span>
+</h4>
+<div class="para logical" id="def-sigma-finite-measure-2-1">
+<div class="para">A measure is called <span class="process-math">\(\sigma\)</span>-finite if the whole space can be written as the countable union of sets with finite measures. In other words, a measure <span class="process-math">\(\mu\)</span> on a measurable space <span class="process-math">\((X,S)\)</span> is called <span class="process-math">\(\sigma\)</span>-finite if there exists a sequence <span class="process-math">\(X_{1}\text{,}\)</span> <span class="process-math">\(X_{2}, \ldots\)</span> of sets in <span class="process-math">\(S\)</span> such that</div>
+<div class="displaymath process-math" id="def-sigma-finite-measure-2-1-8">
+\begin{equation*}
+X = \bigcup_{k=1}^{\infty} X_k \text{ and } \mu(X_k) &lt; \infty \text{ for every } k \in \mathbf{N}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-sigma-finite-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 124: \(\sigma\)-Finite Measures🔗"><a href="#def-sigma-finite-measure" title="Copy heading and permalink for Definition 124: \(\sigma\)-Finite Measures🔗" aria-label="Copy heading and permalink for Definition 124: \(\sigma\)-Finite Measures🔗">🔗</a></div></article><div class="para" id="subsec-Products-of-Measures-4">Example: Every probability measure on a probability space is a finite measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-5">Example: Lebesgue measure on <span class="process-math">\([0,1]\)</span> is a finite measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-6">Example: Lebesgue measure on <span class="process-math">\(\mathbf{R}\)</span> is not a finite measure, but it is a <span class="process-math">\(\sigma\)</span>-finite measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-7">Example: Counting measure on <span class="process-math">\(\mathbf{R}\)</span> is not a <span class="process-math">\(\sigma\)</span>-finite measure, since the countable union of finite sets is countable.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-8">The next result will allow us to define product measures for finite measures.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-measure-cross-section-measurable-function"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">125</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Measure of a Cross-Section is a Measurable Function.</span>
+</h4>
+<div class="para logical" id="thm-measure-cross-section-measurable-function-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> and <span class="process-math">\((Y,T, \nu)\)</span> are measure spaces. If <span class="process-math">\(E \in S \otimes T\text{,}\)</span> then</div>
+<ol class="decimal ol-marker-2" id="thm-measure-cross-section-measurable-function-2-1-4">
+<li id="thm-measure-cross-section-measurable-function-2-1-4-1">
+<div class="para" id="thm-measure-cross-section-measurable-function-2-1-4-1-1">
+<span class="process-math">\(x \to \nu([E]_{X})\)</span> is an <span class="process-math">\(S\)</span>-measurable function on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-measure-cross-section-measurable-function-2-1-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-measure-cross-section-measurable-function-2-1-4-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-measure-cross-section-measurable-function-2-1-4-2">
+<div class="para" id="thm-measure-cross-section-measurable-function-2-1-4-2-1">
+<span class="process-math">\(y \to \mu([E]^{y})\)</span> is a <span class="process-math">\(T\)</span>-measurable function on <span class="process-math">\(Y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-measure-cross-section-measurable-function-2-1-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-measure-cross-section-measurable-function-2-1-4-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-measure-cross-section-measurable-function-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 125: Measure of a Cross-Section is a Measurable Function"><a href="#thm-measure-cross-section-measurable-function" title="Copy heading and permalink for Theorem 125: Measure of a Cross-Section is a Measurable Function" aria-label="Copy heading and permalink for Theorem 125: Measure of a Cross-Section is a Measurable Function">🔗</a></div></article><div class="para" id="subsec-Products-of-Measures-10">It is this proof that requires the use of the Monotone Class Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<details id="subsec-Products-of-Measures-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="subsec-Products-of-Measures-11-1">We’ll prove (1). The proof of (2) is similar. If <span class="process-math">\(E \in S \otimes T\text{,}\)</span> then <span class="process-math">\([E]_{x} \in T\)</span> for every <span class="process-math">\(x \in X\)</span> by the Theorem that cross sections of measurable sets are measurable. Thus the function <span class="process-math">\(x \to \nu([E]_{x})\)</span> is an <span class="process-math">\(S\)</span>-measurable function on <span class="process-math">\(X\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-11-2">
+<div class="para">We first consider the case that <span class="process-math">\(\nu\)</span> is a finite measure. Let</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-11-2-2">
+\begin{equation*}
+M = \{E \in S \otimes T: x \to \nu([E]_x) \text{ is an -measurable function on }\}
+\end{equation*}
+</div>
+<div class="para">We want to show that <span class="process-math">\(M = S \otimes T\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-3">If <span class="process-math">\(A \in S\)</span> and <span class="process-math">\(B \in T\text{,}\)</span> then one can show that <span class="process-math">\(\nu([A \times B]_{x}) = \nu(B) \chi_{A}(x)\)</span> for every <span class="process-math">\(x \in X\text{.}\)</span> Thus the function <span class="process-math">\(x \to \nu([A \times B]_{x})\)</span> equals the function <span class="process-math">\(\nu(B) \chi_{A}(x)\)</span> as a function of <span class="process-math">\(x\text{,}\)</span> which is an <span class="process-math">\(S\)</span>-measurable function on <span class="process-math">\(X\text{.}\)</span> Thus <span class="process-math">\(M\)</span> contains all measurable rectangles in <span class="process-math">\(S \otimes T\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-4">Let <span class="process-math">\(\mathcal{A}\)</span> denote the set of finite unions of measurable rectangles in <span class="process-math">\(S \otimes T\)</span> and suppose <span class="process-math">\(E \in \mathcal{A}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-4" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-11-5">
+<div class="para">This means that <span class="process-math">\(E\)</span> can be written as a finite union of disjoint measurable rectangles. That is,</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-11-5-2">
+\begin{equation*}
+E = E_1 \cup E_2 \cup \ldots \cup E_n
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(E_{1}, E_{2}, \ldots E_{n}\)</span> are disjoint measurable rectangles.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-11-6">
+<div class="para">Thus,</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-11-6-1">
+\begin{align*}
+\nu([E]_x) \amp = \nu(E_1 \cup E_2 \cup \ldots \cup E_n)_x)\\
+\amp = \nu([E_1]_x \cup [E_2]_x \cup \ldots \cup [E_n]_x) \\
+\amp =\nu([E_1]_x) + \nu([E_2]_x) + \ldots + \nu([E_n]_x)
+\end{align*}
+</div>
+<div class="para">where the last line follows because <span class="process-math">\(\nu\)</span> is a measure and the sets are disjoint.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-6" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-7">This shows that <span class="process-math">\(x \to \nu([E]_{x})\)</span> is a finite sum of <span class="process-math">\(S\)</span>-measurable functions and thus is an <span class="process-math">\(S\)</span>-measurable function.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-8">This proves that <span class="process-math">\(E \in M\)</span> and hence <span class="process-math">\(\mathcal{A}\subseteq M\text{.}\)</span> Now we will show that <span class="process-math">\(M\)</span> is a monotone class so that we can apply the Monotone Class Theorem.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-11-9">
+<div class="para">We will first show closure under increasing unions. Suppose <span class="process-math">\(E_{1} \subseteq E_{2} \subseteq \ldots\)</span> is an increasing sequence of sets in <span class="process-math">\(M\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-11-9-3">
+\begin{align*}
+\nu\left(\left[ \bigcup_{k=1}^{\infty} E_k \right]_x \right) \amp = \nu\left( \bigcup_{k=1}^{\infty} [E_k]_x \right) \\
+\amp =\lim_{k\to \infty} \nu([E_k]_x)
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-9" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-10">Since the pointwise limit of <span class="process-math">\(S\)</span>-measurable functions is <span class="process-math">\(S\)</span>-measurable, this shows that <span class="process-math">\(x \to \nu\left(\left[ \bigcup_{k=1}^{\infty}E_{k} \right]_{x} \right)\)</span> is an <span class="process-math">\(S\)</span>-measurable function. Hence <span class="process-math">\(\bigcup_{k=1}^{\infty}E_{k} \in M\)</span> and <span class="process-math">\(M\)</span> is closed under increasing unions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-11">The proof that <span class="process-math">\(M\)</span> is closed under decreasing intersections is similar. It is worth pointing out that in that proof we need to use the fact that <span class="process-math">\(\nu\)</span> is a finite measure in order to show that the measure of a decreasing intersection is equal to taking the limit of the measures of each set. This shows that <span class="process-math">\(M\)</span> is a monotone class that contains <span class="process-math">\(\mathcal{A}\text{,}\)</span> the algebra of all finite unions of measurable rectangles in <span class="process-math">\(S \otimes T\text{.}\)</span> Thus the monotone class theorem implies that <span class="process-math">\(M\)</span> is the smallest <span class="process-math">\(\sigma\)</span>-algebra containing <span class="process-math">\(\mathcal{A}\text{.}\)</span> Thus <span class="process-math">\(M\)</span> contains <span class="process-math">\(S \otimes T\)</span> which completes the proof in the case that <span class="process-math">\(\nu\)</span> is a finite measure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-12">We now consider the case that <span class="process-math">\(\mu\)</span> is a <span class="process-math">\(\sigma\)</span>-finite measure. This means that there exists a sequence of sets <span class="process-math">\(Y_{1}, Y_{2}, \ldots \in T\)</span> such that <span class="process-math">\(\displaystyle \bigcup_{k=1}^{\infty}Y_{k} = Y\)</span> and <span class="process-math">\(\nu(Y_{k}) &lt; \infty\)</span> for each <span class="process-math">\(k\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-12" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-13">By replacing each <span class="process-math">\(Y_{k}\)</span> with <span class="process-math">\(Y_{1} \cup \ldots \cup Y_{k}\text{,}\)</span> we can create an increasing sequence <span class="process-math">\(Y_{1} \subseteq Y_{2} \subseteq \ldots\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-11-14">
+<div class="para">If <span class="process-math">\(E \in S \otimes T\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-11-14-2">
+\begin{equation*}
+\nu([E]_x) = \lim_{k\to \infty} \nu([E\cap (X \times Y_k)]_x)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-14" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-11-15">We can see that the function <span class="process-math">\(x \to \nu([E\cap (X \times Y_{k})]_{x})\)</span> is an <span class="process-math">\(S\)</span>-measurable function as follows by considering the finite measure obtained by restricting <span class="process-math">\(\nu\)</span> to the <span class="process-math">\(\sigma\)</span>-algebra on <span class="process-math">\(Y\)</span> of sets that are contained in <span class="process-math">\(Y_{k}\text{.}\)</span> The previous equation then implies that <span class="process-math">\(x \to \nu([E]_{x})\)</span> is an <span class="process-math">\(S\)</span>-measurable function on <span class="process-math">\(X\text{,}\)</span> which completes the proof of <span class="process-math">\((1)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-11-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 1"><a href="#subsec-Products-of-Measures-11" title="Copy heading and permalink for Proof 1" aria-label="Copy heading and permalink for Proof 1">🔗</a></div></article></details><article class="definition definition-like" id="def-integration-notation"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">126</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Integration Notation.</span>
+</h4>
+<div class="para" id="def-integration-notation-2-1">Suppose that <span class="process-math">\((X,S,\mu)\)</span> is a measure space and <span class="process-math">\(g:X \to [-\infty,\infty]\)</span> is a function. The notation <span class="process-math">\(\displaystyle \int g(x) d\mu(x)\)</span> means <span class="process-math">\(\displaystyle \int g d\mu\)</span> where <span class="process-math">\(d\mu(x)\)</span> indicates that all variables other than <span class="process-math">\(x\)</span> should be treated as constant.<div class="autopermalink" data-description="Paragraph"><a href="#def-integration-notation-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 126: Integration Notation"><a href="#def-integration-notation" title="Copy heading and permalink for Definition 126: Integration Notation" aria-label="Copy heading and permalink for Definition 126: Integration Notation">🔗</a></div></article><div class="para logical" id="subsec-Products-of-Measures-13">
+<div class="para">Example: If <span class="process-math">\(\mu\)</span> is Lebesgue measure on <span class="process-math">\([0,1]\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-13-3">
+\begin{equation*}
+\int_0^1 xy^2 -x d\mu(x) = \frac{1}{2}y^2 - \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-13-4">
+\begin{equation*}
+\int_0^1 xy^2 -x d\mu(y) = \frac{1}{3}x-x = \frac{-2}{3}x
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-iterated-integral"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">127</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Iterated Integrals.</span>
+</h4>
+<div class="para logical" id="def-iterated-integral-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> and <span class="process-math">\((T,Y,\nu)\)</span> are measure spaces and <span class="process-math">\(f: X \times Y \to \mathbf{R}\)</span> is a function. Then</div>
+<div class="displaymath process-math" id="def-iterated-integral-2-1-4">
+\begin{equation*}
+\int_X \int_Y f(x,y) d\nu(y) d\mu(x) \text{ means } \int_x \left( \int_Y f(x,y) d\nu(y) \right) d\mu(x)
+\end{equation*}
+</div>
+<div class="para">In other words, first fix <span class="process-math">\(x\)</span> and integrate <span class="process-math">\(f(x,y)\)</span> as a function of <span class="process-math">\(y\text{,}\)</span> then fix <span class="process-math">\(y\)</span> and integrate the output as a function of <span class="process-math">\(x\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-iterated-integral-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 127: Iterated Integrals"><a href="#def-iterated-integral" title="Copy heading and permalink for Definition 127: Iterated Integrals" aria-label="Copy heading and permalink for Definition 127: Iterated Integrals">🔗</a></div></article><div class="para logical" id="subsec-Products-of-Measures-15">
+<div class="para">Example: If <span class="process-math">\(mu\)</span> denotes Lebesgue measure on <span class="process-math">\([0,1]\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-15-3">
+\begin{equation*}
+\int_0^1 \int_0^1 xy^2 -x d\mu(y) d\mu(x) = \int_0^1 \frac{-2}{3}x d\mu(x) = \frac{-1}{3}
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-15-4">
+\begin{equation*}
+\int_0^1 \int_0^1 xy^2-x d\mu(x) d\mu(y) = \int_0^1 \frac{1}{2}y^2 - \frac{1}{2} d\mu(y) = \frac{1}{6}-\frac{1}{2} = \frac{-1}{3}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-15" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="def-measure-product"><h4 class="heading">
+<span class="type">Definition</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">128</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Product of a Measure.</span>
+</h4>
+<div class="para logical" id="def-measure-product-2-1">
+<div class="para">Suppose <span class="process-math">\((X,S,\mu)\)</span> and <span class="process-math">\((Y,T,\nu)\)</span> are <span class="process-math">\(\sigma\)</span>-finite measure spaces. For <span class="process-math">\(E \in S\otimes T\)</span> define <span class="process-math">\((\mu \times \nu)(E)\)</span> by</div>
+<div class="displaymath process-math" id="def-measure-product-2-1-6">
+\begin{equation*}
+(\mu \times \nu)(E) = \int_X \int_Y \chi_E(x,y) d\nu(y) d\mu(x)
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-measure-product-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 128: Product of a Measure"><a href="#def-measure-product" title="Copy heading and permalink for Definition 128: Product of a Measure" aria-label="Copy heading and permalink for Definition 128: Product of a Measure">🔗</a></div></article><div class="para" id="subsec-Products-of-Measures-17">This integral is well defined because the inner integral is equal to <span class="process-math">\(\nu([E]_{x}) \in T\)</span> and the function <span class="process-math">\(x \to \nu([E]_{x})\)</span> is <span class="process-math">\(S\)</span>-measurable by the previous theorem.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-17" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-18">
+<div class="para">Example: Suppose <span class="process-math">\((X,S,\mu)\)</span> and <span class="process-math">\((Y,T,\nu)\)</span> are <span class="process-math">\(\sigma\)</span>-finite measure spaces. If <span class="process-math">\(A \in S\)</span> and <span class="process-math">\(B \in T\)</span> then</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-18-6">
+\begin{align*}
+(\mu \times \nu)(A\times B) \amp = \int_X \int_Y \chi_{A \times B}(x,y) d\nu(y) d\mu(x)\\
+\amp =\int_X \chi_{A} \nu(B) d\mu(x) \\
+\amp = \mu(A) \nu(B) 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-18" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-Products-of-Measures-19">Thus the product measure of a measurable rectangle is the product of the measures of the corresponding sets.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-19" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="thm-product-measure-is-measure"><h4 class="heading">
+<span class="type">Theorem</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">129</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Product of Two Measures is a Measure.</span>
+</h4>
+<div class="para" id="thm-product-measure-is-measure-2-1">Suppose <span class="process-math">\((X,S,\mu)\)</span> and <span class="process-math">\((Y,T,\nu)\)</span> are <span class="process-math">\(\sigma\)</span>-finite measure spaces. Then <span class="process-math">\(\mu \times \nu\)</span> is a measure on <span class="process-math">\((X \times Y, S\otimes T)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-product-measure-is-measure-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 129: Product of Two Measures is a Measure"><a href="#thm-product-measure-is-measure" title="Copy heading and permalink for Theorem 129: Product of Two Measures is a Measure" aria-label="Copy heading and permalink for Theorem 129: Product of Two Measures is a Measure">🔗</a></div></article><details id="subsec-Products-of-Measures-21" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period heading-divison-mark heading-divison-mark__period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="subsec-Products-of-Measures-21-1">
+<div class="para">Since <span class="process-math">\((\mu \times \nu)(\emptyset) = 0\)</span> we just need to show countable additivity. Suppose <span class="process-math">\(E_{1}, E_{2}, \ldots\)</span> is a disjoint sequence of sets in <span class="process-math">\(S \otimes T\text{.}\)</span> Then</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-21-1-4">
+\begin{align*}
+(\mu \times \nu)\left( \bigcup_{k=1}^{\infty} E_k \right) \amp = \int_X \int_Y \chi_{(\bigcup_{k=1}^{\infty} E_k)} d\nu(y) d\mu(x) \\
+\amp = \int_X \nu \left( \left[ \bigcup_{k=1}^{\infty} E_k \right]_x \right) d\mu(x) \\
+\amp = \int_X \nu \left(  \bigcup_{k=1}^{\infty} [E_k ]_x \right) d\mu(x)\\
+\amp = \int_X \sum_{k=1}^{\infty} \nu([E_k]_x) d\mu(x) 
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-21-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-Products-of-Measures-21-2">
+<div class="para">Since the partial sums of <span class="process-math">\(\displaystyle \sum_{k=1}^{\infty}\nu([E_{k}]_{x})\)</span> form an increasing sequence of non-negative measurable functions, the Monotone Convergence Theorem allows us to interchange the sum and the integral. Hence,</div>
+<div class="displaymath process-math" id="subsec-Products-of-Measures-21-2-2">
+\begin{align*}
+\int_X \sum_{k=1}^{\infty} \nu([E_k]_x) d\mu(x)\amp =  \sum_{k=1}^{\infty} \int_X \nu([E_k]_x) d\mu(x) \\
+\amp = \sum_{k=1}^{\infty} (\mu \times \nu) (E_k). 
+\end{align*}
+</div>
+<div class="para">which shows that <span class="process-math">\((\mu\times \nu)\)</span> is countably additive.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-Products-of-Measures-21-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2"><a href="#subsec-Products-of-Measures-21" title="Copy heading and permalink for Proof 2" aria-label="Copy heading and permalink for Proof 2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection: Products of Measures"><a href="#subsec-Products-of-Measures" title="Copy heading and permalink for Subsection: Products of Measures" aria-label="Copy heading and permalink for Subsection: Products of Measures">🔗</a></div></section><div class="autopermalink" data-description="Section: Week 11: Products of Measure Spaces (5A)"><a href="#notes-week-11" title="Copy heading and permalink for Section: Week 11: Products of Measure Spaces (5A)" aria-label="Copy heading and permalink for Section: Week 11: Products of Measure Spaces (5A)">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="notes-week-10.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="homework.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
