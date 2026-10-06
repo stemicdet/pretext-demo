@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="notes-week-12">
+  <title>Week 12: Iterated Integrals (5B) </title>
+
+  <subsection xml:id="subsec-Tonelli">
+    <title>Tonelli's Theorem</title>
+
+    <p>
+        In the previous section we saw an example in which the order of integration of
+                an iterated integral did not affect the final answer.
+                The next theorem tells us that the order of integration can be switched if the
+                function being integrated is non-negative and the measure is
+                <m>\sigma</m>-finite.
+    </p>
+
+    <theorem xml:id="thm-Tonelli">
+        <title>Tonelli's Theorem</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> and <m>(Y,T,\nu)</m> are <m>\sigma</m>-finite measure
+                                spaces.
+                                Suppose <m>f: X \times Y \to [0,\infty]</m> is <m>S\otimes T</m> measurable.
+                                Then
+                                <ol>
+                                    <li>
+                                        <p>
+                                            <m>x \to \int_{Y} f(x,y) d\nu(y)</m> is an <m>S</m>-measurable function on
+                                                                                        <m>X</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <m>y \to \int_{X} f(x,y) d\mu(x)</m> is a <m>T</m>-measurable function on
+                                                                                        <m>Y</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <md>
+                                                <mrow> \int_{X \times Y} f(x,y) d(\mu \times \nu) \amp = \int_X \int_Y f(x,y) d\nu(y) d\mu(x)</mrow>
+                                                <mrow> \amp = \int_Y \int_X f(x,y) d\mu(x) d\nu(y) </mrow>
+                                            </md>
+                                            
+                                        </p>
+                                    </li>
+                                </ol>
+            </p>
+        </statement>
+    </theorem>
+
+    <proof>
+        <p>
+            We start by proving the theorem for characteristic functions.
+                        Suppose that <m>f = \chi_{E}</m> where <m>E \in S \otimes T</m>. In this case
+                        <md>
+                            \int_Y \chi_E(x,y) d\nu(y) = \nu([E]_x)
+                        </md>
+                        for every <m>x \in X</m> and
+                        <md>
+                            \int_X \chi_E(x,y) d\mu(x) = \mu([E]^y)
+                        </md>
+                        for every <m>y \in Y</m>.
+        </p>
+
+        <p>
+            Thus (1) and (2) hold because the measure of a cross-section is a measurable function. To prove (3) we first suppose that <m>\mu</m> and <m>\nu</m> are finite measures
+                        and define
+                        <md>
+                           \left\{ E \in S \otimes T:  \int_X \int_Y \chi_E(x,y) d\nu(y) d\mu(x) = \int_Y \int_X \chi_E(x,y) d\mu(x) d\nu(y) \right\}
+                        </md>
+                        
+        </p>
+
+        <p>
+            If <m>A \in S</m> and <m>B \in T</m> then <m>A \times B \in M</m> because both
+                        sides of the equation defining <m>M</m> are equal to <m>\mu(A) \mu(B)</m>. Let <m>\mathcal{A}</m> denote the set of finite unions of measurable rectangles
+                                                in <m>S \otimes T</m>.
+                                                Because every finite union of measurable rectangles can be written as a disjoint
+                                                finite union of measurable rectangles, every element of <m>\mathcal{A}</m> is a
+                                                disjoint union of rectangles in <m>S \otimes T</m>.
+                                                It thus follows that <m>\mathcal{A}\subseteq M</m>.
+        </p>
+
+        <p>
+            If <m>E \subseteq F</m> then <m>\chi_{E} \leq \chi_{F}</m>.
+                        Hence it follows from the Monotone Convergence Theorem that <m>M</m> is closed
+                        under increasing unions.
+        </p>
+
+        <p>
+            If <m>E \supseteq F</m> then <m>\chi_{E}</m> and <m>\chi_{F}</m> are both
+                        bounded.
+                        Hence it follows from the Bounded Convergence Theorem that <m>M</m> is closed
+                        under decreasing intersections.
+                        (This is where we use the assumption that <m>\mu</m> and <m>\nu</m> are finite
+                        measures.)
+        </p>
+
+        <p>
+            We have shown that <m>M</m> is a monotone class that contains the algebra
+                        <m>A</m> of all finite unions of measurable rectangles in <m>S\otimes T</m>.
+                        Thus by the Monotone Class Theorem <m>M</m> contains the smallest
+                        <m>\sigma</m>-algebra containing <m>A</m>.
+        </p>
+
+        <p>
+            This means that <m>M</m> contains <m>S \otimes T</m> and hence
+            <md>
+                \int_X \int_Y \chi_E(x,y) d\nu(y) d\mu(x) =  \int_Y \int_X \chi_E(x,y) d\mu(x) d\nu(y)
+            </md>
+            for all <m>E \in S \otimes T</m>.
+        </p>
+
+        <p>
+            Now suppose that <m>\mu</m> and <m>\nu</m> are merely <m>\sigma</m>-finite
+                        measures.
+                        Write <m>X</m> as an increasing union of sets
+                        <m>X_{1} \subseteq X_{2} \subseteq \ldots</m> in <m>S</m> with finite measures
+                        and write <m>Y</m> as an increasing union of sets
+                        <m>Y_{1} \subseteq Y_{2} \subseteq \ldots</m> in <m>T</m> with finite measures.
+        </p>
+
+        <p>
+            Suppose <m>E \in S \otimes T</m>.
+                        Then it follows from the finite measure case that
+                        <md>
+                            \int_X \int_Y \chi_{E \cap (X_j \times Y_k)}(x,y) d\nu(y) d\mu(x) =  \int_Y \int_X \chi_{E \cap (X_j \times Y_k)}(x,y) d\mu(x) d\nu(y)
+                        </md>
+                        for all <m>j,k \in \mathbf{N}</m>.
+        </p>
+
+        <p>
+            We can hold <m>k</m> fixed and apply the Monotone Convergence Theorem to
+                        <m>j</m> to conclude that
+                        <md>
+                            \int_X \int_Y \chi_{E \cap (X \times Y_k)}(x,y) d\nu(y) d\mu(x) =  \int_Y \int_X \chi_{E \cap (X \times Y_k)}(x,y) d\mu(x) d\nu(y)
+                        </md>
+                        for all <m>k \in \mathbf{N}</m>.
+                        
+        </p>
+
+        <p>
+            Then we can apply the Monotone Convergence Theorem to <m>k</m> to show that
+            <md>
+                \int_X \int_Y \chi_{E \cap (X \times Y)}(x,y) d\nu(y) d\mu(x) =  \int_Y \int_X \chi_{E \cap (X \times Y)}(x,y) d\mu(x) d\nu(y)
+            </md>
+            for all <m>E \in S\otimes T</m>.
+        </p>
+
+        <p>
+            Now suppose that <m>f: X \times Y \to [0,\infty]</m> is an arbitrary
+                        <m>S \otimes T</m>-measurable function.
+                        Define a sequence <m>f_{1}, f_{2}, \ldots</m> of simple <m>S</m>-measurable
+                        functions from <m>X \times Y</m> to <m>[0, \infty]</m> by
+                        <md>
+                             f_k(x,y) = \begin{cases} 
+                                  \hfill  \frac{m}{2^k} \amp \text{ if <m>f(x,y) &lt; k </m> and <m>m \in \mathbf{Z}</m> with <m>f(x,y) \in \left[ \frac{m}{2^k}, \frac{m+1}{2^k} \right)</m>} \\
+                                  \hfill  k \hfill \amp \text{ if <m>f(x,y) \geq k</m>} 
+                              \end{cases}
+                        </md>
+                        
+        </p>
+
+        <p>
+            We observe that <m>f_{1}(x,y) \leq f_{2}(x,y) \leq \ldots</m> and that
+                        <m>\displaystyle \lim_{k \to \infty}f_{k}(x,y) = f(x,y)</m>.
+        </p>
+
+        <p>
+            For each <m>k</m>, <m>f_{k}(x,y)</m> is a simple function.
+                        Specifically it is a function of the form <m>c_{k} \chi_{E_k}</m> where
+                        <m>E_{k} \in S \otimes T</m>.
+                        Thus
+                        <md>
+                            \int_X \int_Y f_k(x,y) d\nu(y) d\mu(x) = \int_Y \int_X f_k(x,y) d\mu(x) d\nu(y)
+                        </md>
+                        
+        </p>
+
+        <p>
+            Since <m>f_{k}(x,y)</m> is an increasing sequence of functions, it follows from
+                        the Monotone Convergence Theorem that
+                        <md>
+                            \lim_{k\to \infty}  \int_Y f_k(x,y) d\nu(y) = \int_Y f(x,y) d\nu(y)
+                        </md>
+                        and
+                        <md>
+                            \lim_{k\to \infty}  \int_X f_k(x,y) d\mu(x) = \int_X f(x,y) d\mu(x)
+                        </md>
+                        
+        </p>
+
+        <p>
+            Thus the function <m>x \to \int_{Y} f(x,y) d\nu(y)</m> is a pointwise limit of
+                        <m>S</m>-measurable functions and is thus an <m>S</m>-measurable function.
+        </p>
+
+        <p>
+            Likewise the function <m>y \to \int_{X} f(x,y) d\mu(x)</m> is a pointwise limit
+                        of <m>T</m>-measurable functions and is thus a <m>T</m>-measurable function. Thus applying the Monotone Convergence Theorem to both sides of the previous equation we obtain that
+                        <md>
+                            \int_X \int_Y f(x,y) d\nu(y) d\mu(x) = \int_Y \int_X f(x,y) d\mu(x) d\nu(y)
+                        </md>
+                        
+        </p>
+
+    </proof>
+
+    <p>
+        By applying Tonell's Theorem to the counting measure we get the following corollary that allows us to switch the order of summation of a double sum.
+    </p>
+
+    <corollary xml:id="cor-double-sum">
+        <title>Double Sum of Non-negative numbers</title>
+        
+        
+        <statement>
+            <p>
+                If <m>\{x_{jk}: j,k \in \mathbf{Z}\}</m> is a doubly indexed collection of
+                                non-negative numbers, then
+                                <md>
+                                    \sum_{j=1}^{\infty} \sum_{k=1}^{\infty} x_{jk} = \sum_{k=1}^{\infty} \sum_{j=1}^{\infty} x_{jk}
+                                </md>
+                                
+            </p>
+        </statement>
+    </corollary>
+    
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Fubini">
+    <title>Fubini's Theorem</title>
+
+    <p>
+        Tonelli's Theorem has the drawback that the function being integrated be non-negative. Fubini's Theorem has the same conclusion as Tonelli's Theorem but only requires that the integral of the absolute value be finite, which makes it more practical in many situations.
+    </p>
+
+    <p>
+        Historically, Fubini's Theorem was proven before Tonell's Theorem, but we present Tonelli's Theorem first because we can make use of it to greatly simplify the proof of Fubini's Theorem. 
+    </p>
+
+    <theorem xml:id="thm-Fubini">
+        <title>Fubini's Theorem</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> and <m>(Y,T, \nu)</m> are measure spaces.
+                                Suppose <m>f: X \times Y \to [-\infty, \infty]</m> is an <m>S</m>-measurable
+                                function and <m>\int_{X \times Y}|f| d(\mu \times \nu) &lt; \infty</m>.
+                                Then
+                                <ol>
+                                    <li>
+                                        <p>
+                                            <m>\int_{Y} |f(x,y)| d\nu(y) &lt; \infty</m> for almost every <m>x \in X</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <m>\int_{X} |f(x,y)| d\mu(x) &lt; \infty</m> for almost every <m>y \in Y</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <m>x \to \int_{Y} f(x,y) d\nu(y)</m> is an <m>S</m>-measurable function on
+                                                                                        <m>X</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                           <m>y \to \int_{X} f(x,y) d\mu(x)</m> is a <m>T</m>-measurable function on
+                                                                                       <m>Y</m>. 
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <md>
+                                                <mrow> \int_{X \times Y} f(x,y) d(\mu \times \nu) \amp = \int_X \int_Y f(x,y) d\nu(y) d\mu(x) </mrow>
+                                                <mrow> \amp = \int_Y \int_X f(x,y) d\mu(x) d\nu(y) </mrow>
+                                            </md>
+                                            
+                                        </p>
+                                    </li>
+                                </ol>
+            </p>
+        </statement>
+    </theorem>
+    
+    <proof>
+        <p>
+            By applying Tonelli's Theorem to the non-negative function <m>|f|</m> we conclude that <m>x \to \int_Y |f(x,y)| d\nu(y)</m> is an <m>S</m>-measurable function on <m>X</m>.
+        </p>
+
+        <p>
+            Hence
+            <md>
+                \left\{ x \in X: \int_Y |f(x,y)| d\nu(y) = \infty \right\} \in S
+            </md>
+            
+        </p>
+
+        <p>
+            Tonelli's Theorem applied to <m>|f|</m> also implies that
+            <md>
+                \int_X \int_Y |f(x,y)| d\nu(y) d\mu(x) &lt; \infty
+            </md>
+            since the above integrated integral is equal to
+                        <m>\int_{X\times Y}|f| d (\mu \times \nu)</m>.
+        </p>
+
+        <p>
+            Hence
+            <md>
+                \mu \left(\left\{ x \in X: \int_Y |f(x,y)| d\nu(y) = \infty \right\} \right) = 0
+            </md>
+            
+        </p>
+
+        <p>
+            Hence by Tonelli's Theorem
+            <md>
+                 x \to \int_{Y} f^+(x,y) d\nu(y) \text{ and } x \to \int_Y f^-(x,y) d\nu(y)
+            </md>
+            are <m>S</m>-measurable functions from <m>X \to [0,\infty]</m>.
+        </p>
+
+        <p>
+            Since <m>f^{+} \leq |f|</m> and <m>f^{-} \leq |f|</m> it follows that the sets
+                        <m>\{x \in X: \int_{Y} f^{+}(x,y) d\nu(y) = \infty\}</m> and
+                        <m>\{x \in X: \int_{Y} f^{-}(x,y) d\nu(y) = \infty\}</m> both have
+                        <m>\mu</m>-measure <m>0</m>. The intersection of these sets, which is the set of <m>x \in X</m> so that
+                                                <m>\int_{Y} f(x,y) d\nu</m> is undefined also has <m>\mu</m>-measure <m>0</m>.
+        </p>
+
+        <p>
+            This means that by redefining <m>f</m> to be <m>0</m> when both
+                        <m>\int_{Y} f^{+}(x,y) d\nu(y)</m> and
+                        <m>\int_{Y} f^{+}(x,y) d\nu(y) = \infty</m> (but still calling it <m>f</m> ) we
+                        obtain that <m>\int_{Y} f(x,y) d\nu(y)</m> is an <m>S</m>-measurable function.
+        </p>
+
+        <p>
+            Now
+            <md>
+                <mrow> \amp \int_{X \times Y} f(x,y) d( \mu \times \nu) = \int_{X \times Y} f^+(x,y) d( \mu \times \nu)- \int_{X \times Y} f^-(x,y) d( \mu \times \nu) </mrow>
+                <mrow> \amp =\int_X \int_Y f^+(x,y) d\nu(y) d\mu(x) - \int_X \int_Y f^-(x,y) d\nu(y) d\mu(x) </mrow>
+                <mrow> \amp = \int_X \int_Y f^+(x,y) - f^-(x,y) d\nu(y) d\mu(x)</mrow>
+                <mrow> \amp = \int_X \int_Y f(x,y) d\nu(y) d\mu(x)</mrow>
+            </md>
+            where we have used Tonelli's theorem in the second line.
+        </p>
+
+        <p>
+            The same argument with <m>x</m> and <m>y</m> switched proves the other equality
+                        in Fubini's Theorem.
+        </p>
+
+    </proof>
+    
+  </subsection>
+
+  <subsection xml:id="subsec-Area-Under-the-Graph">
+    <title>Area Under the Graph</title>
+
+    <p>
+        In Calculus you learned that the area under the graph of a continuous function is equal to the (Riemann) integral of the function. We now show that the same result is true for the Lebesgue integral of measurable functions.
+    </p>
+
+    <definition xml:id="def-region-under-graph">
+        <title>Region under the Graph</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>X</m> is a set and <m>f:X \to [0,\infty]</m> is a function.
+                                Then the <term>region under the graph</term> of <m>f</m>, denoted <m>U_{f}</m>, is defined by
+                                <md>
+                                     U_f = \{(x,t) \in X \times (0,\infty): 0 &lt; t &lt; f(x)\}
+                                </md>
+                                
+            </p>
+        </statement>
+    </definition>
+
+    <p>
+        Note that <m>f</m> need not be continuous in the previous definition.
+                Thus we can define the region under a graph even for nowhere continuous
+                functions such as Dirichlet's function.
+    </p>
+
+    <theorem xml:id="thm-area-equals-integral">
+        <title>Area under the Graph of a Function Equals the Integral</title>
+        
+        
+        <statement>
+            <p>
+                Suppose <m>(X,S,\mu)</m> is a <m>\sigma</m>-finite measure space and
+                                <m>f:X \to [0,\infty]</m> is an <m>S</m>-measurable function.
+                                Let <m>B</m> denote the <m>\sigma</m>-algebra of Borel subsets of
+                                <m>(0,\infty)</m> and let <m>\lambda</m> denote Lebesgue measure on
+                                <m>((0,\infty),B)</m>.
+                                Then <m>U_{f} \in S \otimes B</m> and
+                                <md>
+                                    (\mu \times \lambda)(U_f) = \int_X f d\mu = \int_{(0,\infty)} \mu(\{x\in X: t &lt; f(x)\}) d\lambda(t)
+                                </md>
+                                
+            </p>
+        </statement>
+    </theorem>
+    
+    
+  </subsection>
+
+  </section>
