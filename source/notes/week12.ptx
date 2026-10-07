@@ -411,7 +411,76 @@
             </p>
         </statement>
     </theorem>
+
+    <proof>
+        <p>
+            For <m>k \in \mathbf{N}</m>, define
+            <md>
+                E_k = \bigcup_{m=0}^{k^2-1} \left( f^{-1}\left(\left[\frac{m}{k}, \frac{m+1}{k}\right)\right) \times \left(0, \frac{m}{k}\right)\right)
+            </md>
+            and
+            <md>
+                 F_k = f^{-1}([k,\infty]) \times (0,k)
+            </md>
+            
+        </p>
+
+        <p>
+            The sets inside the union in <m>E_{k}</m> are products consisting of an inverse
+                        image of a set that makes up a partition of <m>[0,k)</m> multiplied by an
+                        interval (in <m>Y</m> ) with height equal to the infimum of the set. <m>F_{k}</m> is the inverse image of the interval <m>[k,\infty]</m> multiplied
+                                                by an interval (in <m>Y</m> ) with height equal to <m>k</m>. Note that <m>E_{k}</m> is a finite union of <m>S \otimes B</m> measurable
+                                                                                                rectangles and <m>F_{k}</m> is an <m>S \otimes B</m> measurable rectangle.
+        </p>
+
+        <p>
+            Since
+            <md>
+                U_f = \bigcup_{k=1}^{\infty} (E_k \cup F_k)
+            </md>
+            <m>U_{f}</m> is in <m>S \otimes B</m>.
+        </p>
+
+        <p>
+            By the definition of product measure
+            <md>
+                <mrow> (\mu \times \lambda) (U_f) \amp = \int_X \int_{(0,\infty)} \chi_{U_f}(x,t) d\lambda(t)  d\mu(x) </mrow>
+                <mrow> \amp = \int f(x) d\mu(x).</mrow>
+            </md>
+            This is because we are integrating the characteristic function of the region
+                        under the graph in <m>y</m>, which gives us the height of the graph at <m>x</m>,
+                        which is precisely <m>f(x)</m>.
+        </p>
+
+        <p>
+            By Tonelli's theorem we can interchange the order of integration in the above double integral. Hence
+            <md>
+                <mrow> (\mu \times \lambda) (U_t) \amp =  \int_{(0,\infty)} \int_X \chi_{U_f}(x,t) d\mu(x) d\lambda(t) </mrow>
+                <mrow> \amp = \int_{(0,\infty)} \mu(\{x \in X: t &lt; f(x)\}) d\lambda(t).</mrow>
+            </md>
+            This is because we are integrating the characteristic function of the region
+                        under the graph in <m>x</m> which gives us the measure of the set of <m>x</m>
+                        where <m>t&lt; f(x)</m>. 
+        </p>
+
+        <p>
+            Hence we have verified both equalities in the statement of the theorem.
+        </p>
+
+    </proof>
+
+    <p>
+        Recall that Markov's inequality states that 
+        <md>
+            \mu( \{x \in X: f(x) > t\}) \leq \frac{1}{t} \int |f| d\mu
+        </md>
+        for all <m>t &gt; 0</m>.
+    </p>
     
+    <p>
+        When <m>\int f d\mu &lt; \infty</m> the second equality is a stronger version of
+                Markov's inequality since <m>\int_{(0,\infty)}\frac{1}{t}dt = \infty</m>.
+    </p>
     
   </subsection>
 
