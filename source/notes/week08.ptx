@@ -225,7 +225,7 @@
         </md>
         for every <m>k \in \mathbf{N}</m> and almost every <m>x \in X</m>, then
         <md>
-          \lim_{k \to \infty} f_k d\mu = \int f d\mu.
+          \lim_{k \to \infty} \int f_k d\mu = \int f d\mu.
         </md>
         
       </p>
