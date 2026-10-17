@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 8 (Due October 29)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+           Give an example of a sequence <m>f_{1}, f_{2}, \ldots</m> of continuous
+                      functions from <m>\mathbf{R}</m> to <m>[0,1]</m> such that
+
+                      <md>
+                        \lim_{k\to \infty} f_k(x) = 0
+                      </md>
+                      for every <m>x \in \mathbf{R}</m> but
+                                            <m>\displaystyle \lim_{k \to \infty}\int f_{k} d \lambda = \infty</m>, where
+                                            <m>\lambda</m> denotes Lebesgue measure on <m>\mathbf{R}</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+           Give an example of a sequence <m>f_{1}, f_{2}, \ldots</m> of functions from
+                      <m>\mathbf{N}</m> to <m>[0,\infty]</m> such that
+                      <md>
+                        \lim_{k\to \infty} f_k(m) = 0
+                      </md>
+                      for every <m>m \in \mathbf{N}</m> but
+                                            <m>\displaystyle \lim_{k \to \infty}\int f_{k} d \mu = \infty</m>, where
+                                            <m>\mu</m> denotes counting measure on <m>\mathbf{N}</m>.
+                      
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Let <m>\lambda</m> denote Lebesgue measure on <m>\mathbf{R}</m>.
+                Suppose <m>f: \mathbf{R}\to \mathbf{R}</m> is a Borel measurable function such
+                that <m>\int |f| d\lambda &lt; \infty</m>.
+                Prove that
+                <md>
+                    \lim_{k\to \infty} \int_{[-k,k]} f d\lambda = \int f d\lambda.
+                </md>
+                
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>A</m> is a countable subset of <m>\mathbf{R}</m> and let
+                    <m>\{a_{n}\}</m> be a list of the points of <m>A</m>.
+                    Define <m>f_{n}: \mathbf{R}\to \mathbf{R}</m> by
+                    <md>
+                        f_n(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \in \{a_1, a_2, \ldots, a_n\}$} \\
+      \hfill  0 \hfill \amp \text{ otherwise} 
+  \end{cases}
+                    </md>
+                    Show that <m>f_{n}(x)</m> converges pointwise to <m>\chi_{A}(x)</m>, the
+                                        characteristic function of <m>A</m>, and use the Dominated Convergence Theorem
+                                        to show that <m>\chi_{A}(x)</m> is Lebesgue integrable with
+                                        <m>\int \chi_{A} d \lambda = 0</m>, where <m>\lambda</m> denotes Lebesgue
+                                        measure on <m>\mathbf{R}</m>
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>\lambda</m> denote Lebesgue measure on <m>\mathbf{R}</m>.
+                     Suppose <m>f: \mathbf{R}\to [0,\infty]</m> is a Borel measurable function such
+                     that <m>\int f d\lambda &lt; \infty</m>.
+                     Define <m>f_{n}: \mathbf{R}\to [0,\infty]</m> by
+                     <md>
+                        f_n(x) = \begin{cases} 
+      \hfill  f(x) \amp \text{ if $f(x) &lt; n$} \\
+      \hfill  n \hfill \amp \text{ otherwise} \\
+  \end{cases}
+                     </md>
+                      Show that 
+                      <md>
+                        \lim_{n\to \infty} \int f_n(x) d\lambda = \int f(x) d\lambda
+                      </md>
+                      
+          </p>
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
