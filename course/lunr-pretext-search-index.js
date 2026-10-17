@@ -1981,6 +1981,87 @@ var ptx_lunr_docs = [
   "body": " Since we just need to show countable additivity. Suppose is a disjoint sequence of sets in . Then   Since the partial sums of form an increasing sequence of non-negative measurable functions, the Monotone Convergence Theorem allows us to interchange the sum and the integral. Hence, which shows that is countably additive.  "
 },
 {
+  "id": "notes-week-12",
+  "level": "1",
+  "url": "notes-week-12.html",
+  "type": "Section",
+  "number": "",
+  "title": "Week 12: Iterated Integrals (5B)",
+  "body": " Week 12: Iterated Integrals (5B)   Tonelli's Theorem  In the previous section we saw an example in which the order of integration of an iterated integral did not affect the final answer. The next theorem tells us that the order of integration can be switched if the function being integrated is non-negative and the measure is -finite.   Tonelli's Theorem   Suppose and are -finite measure spaces. Suppose is measurable. Then    is an -measurable function on .     is a -measurable function on .             We start by proving the theorem for characteristic functions. Suppose that where . In this case for every and for every .  Thus (1) and (2) hold because the measure of a cross-section is a measurable function. To prove (3) we first suppose that and are finite measures and define   If and then because both sides of the equation defining are equal to . Let denote the set of finite unions of measurable rectangles in . Because every finite union of measurable rectangles can be written as a disjoint finite union of measurable rectangles, every element of is a disjoint union of rectangles in . It thus follows that .  If then . Hence it follows from the Monotone Convergence Theorem that is closed under increasing unions.  If then and are both bounded. Hence it follows from the Bounded Convergence Theorem that is closed under decreasing intersections. (This is where we use the assumption that and are finite measures.)  We have shown that is a monotone class that contains the algebra of all finite unions of measurable rectangles in . Thus by the Monotone Class Theorem contains the smallest -algebra containing .  This means that contains and hence for all .  Now suppose that and are merely -finite measures. Write as an increasing union of sets in with finite measures and write as an increasing union of sets in with finite measures.  Suppose . Then it follows from the finite measure case that for all .  We can hold fixed and apply the Monotone Convergence Theorem to to conclude that for all .  Then we can apply the Monotone Convergence Theorem to to show that for all .  Now suppose that is an arbitrary -measurable function. Define a sequence of simple -measurable functions from to by   We observe that and that .  For each , is a simple function. Specifically it is a function of the form where . Thus   Since is an increasing sequence of functions, it follows from the Monotone Convergence Theorem that and   Thus the function is a pointwise limit of -measurable functions and is thus an -measurable function.  Likewise the function is a pointwise limit of -measurable functions and is thus a -measurable function. Thus applying the Monotone Convergence Theorem to both sides of the previous equation we obtain that    By applying Tonell's Theorem to the counting measure we get the following corollary that allows us to switch the order of summation of a double sum.   Double Sum of Non-negative numbers   If is a doubly indexed collection of non-negative numbers, then       Fubini's Theorem  Tonelli's Theorem has the drawback that the function being integrated be non-negative. Fubini's Theorem has the same conclusion as Tonelli's Theorem but only requires that the integral of the absolute value be finite, which makes it more practical in many situations.  Historically, Fubini's Theorem was proven before Tonell's Theorem, but we present Tonelli's Theorem first because we can make use of it to greatly simplify the proof of Fubini's Theorem.   Fubini's Theorem   Suppose and are measure spaces. Suppose is an -measurable function and . Then    for almost every .     for almost every .     is an -measurable function on .     is a -measurable function on .             By applying Tonelli's Theorem to the non-negative function we conclude that is an -measurable function on .  Hence   Tonelli's Theorem applied to also implies that since the above integrated integral is equal to .  Hence   Hence by Tonelli's Theorem are -measurable functions from .  Since and it follows that the sets and both have -measure . The intersection of these sets, which is the set of so that is undefined also has -measure .  This means that by redefining to be when both and (but still calling it ) we obtain that is an -measurable function.  Now where we have used Tonelli's theorem in the second line.  The same argument with and switched proves the other equality in Fubini's Theorem.     Area Under the Graph  In Calculus you learned that the area under the graph of a continuous function is equal to the (Riemann) integral of the function. We now show that the same result is true for the Lebesgue integral of measurable functions.   Region under the Graph   Suppose is a set and is a function. Then the region under the graph of , denoted , is defined by     Note that need not be continuous in the previous definition. Thus we can define the region under a graph even for nowhere continuous functions such as Dirichlet's function.   Area under the Graph of a Function Equals the Integral   Suppose is a -finite measure space and is an -measurable function. Let denote the -algebra of Borel subsets of and let denote Lebesgue measure on . Then and      For , define and   The sets inside the union in are products consisting of an inverse image of a set that makes up a partition of multiplied by an interval (in ) with height equal to the infimum of the set. is the inverse image of the interval multiplied by an interval (in ) with height equal to . Note that is a finite union of measurable rectangles and is an measurable rectangle.  Since  is in .  By the definition of product measure This is because we are integrating the characteristic function of the region under the graph in , which gives us the height of the graph at , which is precisely .  By Tonelli's theorem we can interchange the order of integration in the above double integral. Hence This is because we are integrating the characteristic function of the region under the graph in which gives us the measure of the set of where .  Hence we have verified both equalities in the statement of the theorem.   Recall that Markov's inequality states that for all .  When the second equality is a stronger version of Markov's inequality since .   "
+},
+{
+  "id": "thm-Tonelli",
+  "level": "2",
+  "url": "notes-week-12.html#thm-Tonelli",
+  "type": "Theorem",
+  "number": "130",
+  "title": "Tonelli’s Theorem.",
+  "body": " Tonelli's Theorem   Suppose and are -finite measure spaces. Suppose is measurable. Then    is an -measurable function on .     is a -measurable function on .           "
+},
+{
+  "id": "subsec-Tonelli-4",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Tonelli-4",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " We start by proving the theorem for characteristic functions. Suppose that where . In this case for every and for every .  Thus (1) and (2) hold because the measure of a cross-section is a measurable function. To prove (3) we first suppose that and are finite measures and define   If and then because both sides of the equation defining are equal to . Let denote the set of finite unions of measurable rectangles in . Because every finite union of measurable rectangles can be written as a disjoint finite union of measurable rectangles, every element of is a disjoint union of rectangles in . It thus follows that .  If then . Hence it follows from the Monotone Convergence Theorem that is closed under increasing unions.  If then and are both bounded. Hence it follows from the Bounded Convergence Theorem that is closed under decreasing intersections. (This is where we use the assumption that and are finite measures.)  We have shown that is a monotone class that contains the algebra of all finite unions of measurable rectangles in . Thus by the Monotone Class Theorem contains the smallest -algebra containing .  This means that contains and hence for all .  Now suppose that and are merely -finite measures. Write as an increasing union of sets in with finite measures and write as an increasing union of sets in with finite measures.  Suppose . Then it follows from the finite measure case that for all .  We can hold fixed and apply the Monotone Convergence Theorem to to conclude that for all .  Then we can apply the Monotone Convergence Theorem to to show that for all .  Now suppose that is an arbitrary -measurable function. Define a sequence of simple -measurable functions from to by   We observe that and that .  For each , is a simple function. Specifically it is a function of the form where . Thus   Since is an increasing sequence of functions, it follows from the Monotone Convergence Theorem that and   Thus the function is a pointwise limit of -measurable functions and is thus an -measurable function.  Likewise the function is a pointwise limit of -measurable functions and is thus a -measurable function. Thus applying the Monotone Convergence Theorem to both sides of the previous equation we obtain that   "
+},
+{
+  "id": "cor-double-sum",
+  "level": "2",
+  "url": "notes-week-12.html#cor-double-sum",
+  "type": "Corollary",
+  "number": "131",
+  "title": "Double Sum of Non-negative numbers.",
+  "body": " Double Sum of Non-negative numbers   If is a doubly indexed collection of non-negative numbers, then    "
+},
+{
+  "id": "thm-Fubini",
+  "level": "2",
+  "url": "notes-week-12.html#thm-Fubini",
+  "type": "Theorem",
+  "number": "132",
+  "title": "Fubini’s Theorem.",
+  "body": " Fubini's Theorem   Suppose and are measure spaces. Suppose is an -measurable function and . Then    for almost every .     for almost every .     is an -measurable function on .     is a -measurable function on .           "
+},
+{
+  "id": "subsec-Fubini-5",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Fubini-5",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " By applying Tonelli's Theorem to the non-negative function we conclude that is an -measurable function on .  Hence   Tonelli's Theorem applied to also implies that since the above integrated integral is equal to .  Hence   Hence by Tonelli's Theorem are -measurable functions from .  Since and it follows that the sets and both have -measure . The intersection of these sets, which is the set of so that is undefined also has -measure .  This means that by redefining to be when both and (but still calling it ) we obtain that is an -measurable function.  Now where we have used Tonelli's theorem in the second line.  The same argument with and switched proves the other equality in Fubini's Theorem.  "
+},
+{
+  "id": "def-region-under-graph",
+  "level": "2",
+  "url": "notes-week-12.html#def-region-under-graph",
+  "type": "Definition",
+  "number": "133",
+  "title": "Region under the Graph.",
+  "body": " Region under the Graph   Suppose is a set and is a function. Then the region under the graph of , denoted , is defined by    "
+},
+{
+  "id": "thm-area-equals-integral",
+  "level": "2",
+  "url": "notes-week-12.html#thm-area-equals-integral",
+  "type": "Theorem",
+  "number": "134",
+  "title": "Area under the Graph of a Function Equals the Integral.",
+  "body": " Area under the Graph of a Function Equals the Integral   Suppose is a -finite measure space and is an -measurable function. Let denote the -algebra of Borel subsets of and let denote Lebesgue measure on . Then and    "
+},
+{
+  "id": "subsec-Area-Under-the-Graph-6",
+  "level": "2",
+  "url": "notes-week-12.html#subsec-Area-Under-the-Graph-6",
+  "type": "Proof",
+  "number": "1",
+  "title": "",
+  "body": " For , define and   The sets inside the union in are products consisting of an inverse image of a set that makes up a partition of multiplied by an interval (in ) with height equal to the infimum of the set. is the inverse image of the interval multiplied by an interval (in ) with height equal to . Note that is a finite union of measurable rectangles and is an measurable rectangle.  Since  is in .  By the definition of product measure This is because we are integrating the characteristic function of the region under the graph in , which gives us the height of the graph at , which is precisely .  By Tonelli's theorem we can interchange the order of integration in the above double integral. Hence This is because we are integrating the characteristic function of the region under the graph in which gives us the measure of the set of where .  Hence we have verified both equalities in the statement of the theorem.  "
+},
+{
   "id": "homework-2",
   "level": "1",
   "url": "homework-2.html",
@@ -2339,6 +2420,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Suppose that is a non-negative measurable function on and , where denotes Lebesgue measure. For each let Show that .   "
+},
+{
+  "id": "homework-9",
+  "level": "1",
+  "url": "homework-9.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 8 (Due October 29)",
+  "body": " Homework 8 (Due October 29)    Instructions: Complete all the exercises below and submit your work by the due date.      Give an example of a sequence of continuous functions from to such that for every but , where denotes Lebesgue measure on .      Give an example of a sequence of functions from to such that for every but , where denotes counting measure on .      Let denote Lebesgue measure on . Suppose is a Borel measurable function such that . Prove that       Suppose that is a countable subset of and let be a list of the points of . Define by Show that converges pointwise to , the characteristic function of , and use the Dominated Convergence Theorem to show that is Lebesgue integrable with , where denotes Lebesgue measure on       Let denote Lebesgue measure on . Suppose is a Borel measurable function such that . Define by Show that      "
+},
+{
+  "id": "homework-9-3-1",
+  "level": "2",
+  "url": "homework-9.html#homework-9-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Give an example of a sequence of continuous functions from to such that for every but , where denotes Lebesgue measure on .   "
+},
+{
+  "id": "homework-9-3-2",
+  "level": "2",
+  "url": "homework-9.html#homework-9-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Give an example of a sequence of functions from to such that for every but , where denotes counting measure on .   "
+},
+{
+  "id": "homework-9-3-3",
+  "level": "2",
+  "url": "homework-9.html#homework-9-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Let denote Lebesgue measure on . Suppose is a Borel measurable function such that . Prove that    "
+},
+{
+  "id": "homework-9-3-4",
+  "level": "2",
+  "url": "homework-9.html#homework-9-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Suppose that is a countable subset of and let be a list of the points of . Define by Show that converges pointwise to , the characteristic function of , and use the Dominated Convergence Theorem to show that is Lebesgue integrable with , where denotes Lebesgue measure on    "
+},
+{
+  "id": "homework-9-3-5",
+  "level": "2",
+  "url": "homework-9.html#homework-9-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Let denote Lebesgue measure on . Suppose is a Borel measurable function such that . Define by Show that    "
 }
 ]
 
