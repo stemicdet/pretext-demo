@@ -103,7 +103,7 @@
     </p>
 
     <p>
-      Suppose <m>j \in \{1, \ldots, n\}</m>. To complete the proof we must show that <m>I_j \subseteq 3*I_{k_1} \cup 3*I_{k_m}</m>. If <m>j \in \{k_1, \ldots, k_m\}</m> then this is true, so we can suppose that <m>j \notin \{k_1, \ldots, k_m\}</m>. This means that <m>I_j</m> is an interval that was not chosen on our sublist, so it is not disjoint from all of <m>I_{k_1}, \ldots I_{k_m}</m>.
+      Suppose <m>j \in \{1, \ldots, n\}</m>. To complete the proof we must show that <m>I_j \subseteq 3*I_{k_1} \cup \ldots \cup 3*I_{k_m}</m>. If <m>j \in \{k_1, \ldots, k_m\}</m> then this is true, so we can suppose that <m>j \notin \{k_1, \ldots, k_m\}</m>. This means that <m>I_j</m> is an interval that was not chosen on our sublist, so it is not disjoint from all of <m>I_{k_1}, \ldots I_{k_m}</m>.
     </p>
 
     <p>
