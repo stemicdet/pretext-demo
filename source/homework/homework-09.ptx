@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 9 (Due November 5)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+           Let <m>I_{1} = (-5,3)</m>, <m>I_{2} = (-6,0)</m>, <m>I_{3} = (2,12)</m>,
+                      <m>I_{4} = (4,8)</m> and <m>I_{5} = (40,42)</m>.
+                      Find a disjoint collection of subsets that satisfies the conclusion of the
+                      Vitali Covering Lemma.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+           
+                  Show that the constant <m>3</m> in the Vitali Covering Lemma cannot be replaced by a smaller positive constant.    
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Find a formula for the Hardy-Littlewood maximal function for the function
+                <m>f: \mathbf{R}\to \mathbf{R}</m> defined by
+                <md>
+                    f(x) = \begin{cases} 
+      \hfill  1 \amp \text{ if $x \geq 0$} \\
+      \hfill  0 \hfill \amp \text{ if $x &lt; 0$} 
+  \end{cases}
+                </md>
+                
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>(X,S, \mu)</m> is a measure space and <m>h: X \to S</m> is an
+                    <m>S</m>-measurable function.
+                    Prove that
+                    <md>
+                        \mu(\{x \in X: |h(x)| \geq c\}) \leq \frac{1}{c^p} \int |h|^p d\mu 
+                    </md>
+                    for all positive numbers <m>c</m> and <m>p</m>.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          <term>(Chebyshev's Inequality)</term> Suppose <m>(X,S,\mu)</m> is a measure space with <m>\mu(X) = 1</m> and
+                    <m>h \in \mathcal{L}^{1}(\mu)</m>.
+                    Prove that
+                    <md>
+                         \mu\left( \left\{ x \in X: \left|h(x) - \int h d\mu \right| \geq c \right\} \right) \leq \frac{1}{c^2} \left( \int h^2 d\mu - \left( \int h d\mu\right)^2\right)
+                    </md>
+                    for all <m>c &gt; 0</m>.
+          </p>
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
