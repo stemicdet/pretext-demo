@@ -2474,6 +2474,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Let denote Lebesgue measure on . Suppose is a Borel measurable function such that . Define by Show that    "
+},
+{
+  "id": "homework-10",
+  "level": "1",
+  "url": "homework-10.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 9 (Due November 5)",
+  "body": " Homework 9 (Due November 5)    Instructions: Complete all the exercises below and submit your work by the due date.      Let , , , and . Find a disjoint collection of subsets that satisfies the conclusion of the Vitali Covering Lemma.      Show that the constant in the Vitali Covering Lemma cannot be replaced by a smaller positive constant.      Find a formula for the Hardy-Littlewood maximal function for the function defined by       Suppose is a measure space and is an -measurable function. Prove that for all positive numbers and .       (Chebyshev's Inequality) Suppose is a measure space with and . Prove that for all .     "
+},
+{
+  "id": "homework-10-3-1",
+  "level": "2",
+  "url": "homework-10.html#homework-10-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Let , , , and . Find a disjoint collection of subsets that satisfies the conclusion of the Vitali Covering Lemma.   "
+},
+{
+  "id": "homework-10-3-2",
+  "level": "2",
+  "url": "homework-10.html#homework-10-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Show that the constant in the Vitali Covering Lemma cannot be replaced by a smaller positive constant.   "
+},
+{
+  "id": "homework-10-3-3",
+  "level": "2",
+  "url": "homework-10.html#homework-10-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Find a formula for the Hardy-Littlewood maximal function for the function defined by    "
+},
+{
+  "id": "homework-10-3-4",
+  "level": "2",
+  "url": "homework-10.html#homework-10-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Suppose is a measure space and is an -measurable function. Prove that for all positive numbers and .   "
+},
+{
+  "id": "homework-10-3-5",
+  "level": "2",
+  "url": "homework-10.html#homework-10-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "   (Chebyshev's Inequality) Suppose is a measure space with and . Prove that for all .   "
 }
 ]
 
