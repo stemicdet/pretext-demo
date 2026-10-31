@@ -2528,6 +2528,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "   (Chebyshev's Inequality) Suppose is a measure space with and . Prove that for all .   "
+},
+{
+  "id": "homework-11",
+  "level": "1",
+  "url": "homework-11.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 10 (Due November 12)",
+  "body": " Homework 10 (Due November 12)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose that is uniformly continuous on . Show that for every  .      Suppose is a Lebesgue measurable function. Prove that for almost every       Give an example of a Lebesgue measurable function and such that .      Prove that if and for all , then for almost every .      Let be the set of positive real numbers. Find the density of at the number when                      "
+},
+{
+  "id": "homework-11-3-1",
+  "level": "2",
+  "url": "homework-11.html#homework-11-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Suppose that is uniformly continuous on . Show that for every  .   "
+},
+{
+  "id": "homework-11-3-2",
+  "level": "2",
+  "url": "homework-11.html#homework-11-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Suppose is a Lebesgue measurable function. Prove that for almost every    "
+},
+{
+  "id": "homework-11-3-3",
+  "level": "2",
+  "url": "homework-11.html#homework-11-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Give an example of a Lebesgue measurable function and such that .   "
+},
+{
+  "id": "homework-11-3-4",
+  "level": "2",
+  "url": "homework-11.html#homework-11-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Prove that if and for all , then for almost every .   "
+},
+{
+  "id": "homework-11-3-5",
+  "level": "2",
+  "url": "homework-11.html#homework-11-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Let be the set of positive real numbers. Find the density of at the number when                    "
 }
 ]
 
