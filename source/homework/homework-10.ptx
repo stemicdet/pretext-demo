@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 10 (Due November 12)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+          Suppose that <m>f \in \mathcal{L}(\mathbf{R})</m> is uniformly continuous on
+                    <m>\mathbf{R}</m>.
+                    Show that
+                    <md>
+                        \lim_{t\to 0^+} \frac{1}{2t} \int_{b-t}^{b+t} |f(x)-f(b)| dx = 0
+                    </md>
+                    for <alert>every</alert> <m>b \in \mathbf{R}</m>.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+           
+                  Suppose <m>f:\mathbf{R}\to \mathbf{R}</m> is a Lebesgue measurable function.
+                                    Prove that <m>|f(b)| \leq f^{*}(b)</m> for almost every <m>b \in \mathbf{R}</m>
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Give an example of a Lebesgue measurable function
+                <m>f:\mathbf{R}\to \mathbf{R}</m> and <m>b \in \mathbf{R}</m> such that
+                <m>|f(b)| &gt; f^{*}(b)</m>.
+                
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+         Prove that if <m>h \in \mathcal{L}^{1}(\mathbf{R})</m> and
+                  <m>\int_{-\infty}^{s}h = 0</m> for all <m>s \in \mathbf{R}</m>, then
+                  <m>h(s) = 0</m> for almost every <m>s \in \mathbf{R}</m>.
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>E</m> be the set of positive real numbers.
+                    Find the density of <m>E</m> at the number <m>b</m> when
+                    <ol>
+                        <li>
+                            <p>
+                                <m>b &gt; 0</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>b &lt; 0</m>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>b = 0</m>
+                            </p>
+                        </li>
+                    </ol>
+          </p>
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
