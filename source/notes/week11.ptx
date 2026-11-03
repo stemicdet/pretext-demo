@@ -366,7 +366,13 @@
 
 
 
-
+<figure xml:id="rectangle-union">
+  <caption>A union of 2 overlapping rectangles <m>(A \times B) \cup (C \times D)</m> can be written as a disjoint union of three measurable rectangles (Blue, Pink, and Green). </caption>
+  <image source="rectangle union.png" width="50%">
+        <description>Diagram illustrating set operations with three overlapping rectangles. A large light-blue horizontal rectangle on the left is labeled “A X B.” A light-green rectangle overlaps the upper-right portion of the blue rectangle and is labeled “C \ A X B ∩ D” (the notation appears to represent the set difference of C and A×B∩D). A tall pink vertical rectangle on the right overlaps the blue rectangle and is labeled “C X D \ B.” Outside the rectangles, the individual set labels appear: “A” to the left of the blue rectangle, “B” below the blue rectangle, “C” to the left of the green rectangle, and “D” below the pink rectangle. The overlap of all three colored regions occurs where the green and pink rectangles intersect within the upper-right portion of the blue rectangle. The figure visually represents relationships among product sets and set differences involving A, B, C, and D.
+</description>
+      </image>
+</figure>
 
 
 
