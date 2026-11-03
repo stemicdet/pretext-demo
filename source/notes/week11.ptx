@@ -170,7 +170,7 @@
     <p>
       Suppose <m>S</m> is a <m>\sigma</m>-algebra on <m>X</m> and <m>T</m> is a
             <m>\sigma</m>-algebra on <m>Y</m>.
-            Suppose <m>f:X \times Y</m> is an <m>S \otimes T</m> measurable function.
+            Suppose <m>f:X \times Y \to \mathbf{R}</m> is an <m>S \otimes T</m> measurable function.
             Then
             <ol marker="(a)">
               <li>
