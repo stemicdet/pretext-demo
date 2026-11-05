@@ -621,7 +621,7 @@
   <p>
     We'll prove (1). The proof of (2) is similar. If <m>E \in S \otimes T</m>, then <m>[E]_{x} \in T</m> for every <m>x \in X</m>
         by the Theorem that cross sections of measurable sets are measurable.
-        Thus the function <m>x \to \nu([E]_{x})</m> is an <m>S</m>-measurable function
+        Thus the function <m>x \to \nu([E]_{x})</m> is a well-defined function
         on <m>X</m>. 
   </p>
 
