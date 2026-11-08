@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<worksheet>
+  <title>Homework 11 (Due November 19)</title>
+  <introduction>
+    <p>
+      <alert>Instructions:</alert> Complete all the exercises below and submit your work by the due date.
+    </p>
+  </introduction>
+
+  <page>
+    <exercise>
+      <statement>
+        <p>
+          Suppose <m>A</m> is a collection of subsets of a set <m>W</m>.
+                    Show that <m>A</m> is an algebra on <m>W</m> if and only if <m>A</m> is closed
+                    under finite intersection and complementation.
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+           
+               Consider the set
+                                 <m>S = \{\emptyset, \mathbf{Q}, \mathbf{R}\setminus \mathbf{Q}, \mathbf{R}\}</m>,
+                                 which is a <m>\sigma</m>-algebra on <m>\mathbf{R}</m>.
+                                 <ol>
+                                    <li>
+                                        <p>
+                                            List out all sets in the collection <m>S \times S = \{(A,B): A, B \in S\}</m>.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Show that the sets <m>(\mathbf{Q}\times \mathbf{R}\setminus \mathbf{Q})</m> and
+                                                                                        <m>(\mathbf{R}\setminus \mathbf{Q}\times \mathbf{Q})</m> belong to the
+                                                                                        collection <m>S\times S</m>, but the set
+                                                                                        <m>(\mathbf{Q}\times \mathbf{R}\setminus \mathbf{Q}) \cup (\mathbf{R}\setminus \mathbf{Q}\times \mathbf{Q})</m>
+                                                                                        does not belong to the collection <m>S \times S</m>.
+                                                                                        (This shows that <m>S \times S</m> is not a <m>\sigma</m>-algebra.)
+                                        </p>
+                                    </li>
+                                 </ol>   
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+        Let <m>\lambda</m> denote Lebesgue measure on <m>\mathbf{R}</m> and let
+                <m>\mu = \lambda \times \lambda</m> be <m>2</m>-dimensional Lebesgue measure on
+                <m>\mathbf{R}^{2}</m>.
+                Show that the <m>x</m>-axis, <m>\{(x,0): x \in \mathbf{R}\}</m>, has
+                <m>2</m>-dimensional Lebesgue measure <m>0</m>.
+                
+        </p>
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+         Let <m>\mu</m> denote Lebesgue measure on <m>\mathbf{R}</m>.
+                  Evaluate the following iterated integrals.
+                  <ol>
+                    <li>
+                        <p>
+                            <md>
+                                \int_0^2 \int_0^1 6xy^2 -3x^2 +4 d\mu(x) d\mu(y)
+                            </md>
+                            
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <md>
+                                \int_0^1 \int_0^2 6xy^2 -3x^2 +4 d\mu(y) d\mu(x)
+                            </md>
+                            
+                        </p>
+                    </li>
+                  </ol>
+        </p>
+
+      </statement>
+    </exercise>
+
+    <exercise>
+      <statement>
+        <p>
+          Let <m>\mu</m> denote Lebesgue measure on <m>\mathbf{R}</m>.
+                    Evaluate the following iterated integral by first using Fubini's theorem to
+                    interchange the order of integration.
+                    <md>
+                         \int_0^1 \int_0^y e^{-y^2} d\mu(x) d\mu(y).
+                    </md>
+                    <alert>Hint: Note that in this problem, the region of integration is a triangle so the limits of integration change when you interchange the order of integration. You might find it helpful to draw a picture of the region of integration to see how the limits change when the order of integration is switched.</alert>
+          </p>
+      </statement>
+    </exercise>
+
+  </page>
+</worksheet>
