@@ -2582,6 +2582,60 @@ var ptx_lunr_docs = [
   "number": "5",
   "title": "",
   "body": "  Let be the set of positive real numbers. Find the density of at the number when                    "
+},
+{
+  "id": "homework-12",
+  "level": "1",
+  "url": "homework-12.html",
+  "type": "Worksheet",
+  "number": "",
+  "title": "Homework 11 (Due November 19)",
+  "body": " Homework 11 (Due November 19)    Instructions: Complete all the exercises below and submit your work by the due date.      Suppose is a collection of subsets of a set . Show that is an algebra on if and only if is closed under finite intersection and complementation.      Consider the set , which is a -algebra on .   List out all sets in the collection .    Show that the sets and belong to the collection , but the set does not belong to the collection . (This shows that is not a -algebra.)         Let denote Lebesgue measure on and let be -dimensional Lebesgue measure on . Show that the -axis, , has -dimensional Lebesgue measure .      Let denote Lebesgue measure on . Evaluate the following iterated integrals.                  Let denote Lebesgue measure on . Evaluate the following iterated integral by first using Fubini's theorem to interchange the order of integration.  Hint: Note that in this problem, the region of integration is a triangle so the limits of integration change when you interchange the order of integration. You might find it helpful to draw a picture of the region of integration to see how the limits change when the order of integration is switched.      "
+},
+{
+  "id": "homework-12-3-1",
+  "level": "2",
+  "url": "homework-12.html#homework-12-3-1",
+  "type": "Worksheet Exercise",
+  "number": "1",
+  "title": "",
+  "body": "  Suppose is a collection of subsets of a set . Show that is an algebra on if and only if is closed under finite intersection and complementation.   "
+},
+{
+  "id": "homework-12-3-2",
+  "level": "2",
+  "url": "homework-12.html#homework-12-3-2",
+  "type": "Worksheet Exercise",
+  "number": "2",
+  "title": "",
+  "body": "  Consider the set , which is a -algebra on .   List out all sets in the collection .    Show that the sets and belong to the collection , but the set does not belong to the collection . (This shows that is not a -algebra.)      "
+},
+{
+  "id": "homework-12-3-3",
+  "level": "2",
+  "url": "homework-12.html#homework-12-3-3",
+  "type": "Worksheet Exercise",
+  "number": "3",
+  "title": "",
+  "body": "  Let denote Lebesgue measure on and let be -dimensional Lebesgue measure on . Show that the -axis, , has -dimensional Lebesgue measure .   "
+},
+{
+  "id": "homework-12-3-4",
+  "level": "2",
+  "url": "homework-12.html#homework-12-3-4",
+  "type": "Worksheet Exercise",
+  "number": "4",
+  "title": "",
+  "body": "  Let denote Lebesgue measure on . Evaluate the following iterated integrals.               "
+},
+{
+  "id": "homework-12-3-5",
+  "level": "2",
+  "url": "homework-12.html#homework-12-3-5",
+  "type": "Worksheet Exercise",
+  "number": "5",
+  "title": "",
+  "body": "  Let denote Lebesgue measure on . Evaluate the following iterated integral by first using Fubini's theorem to interchange the order of integration.  Hint: Note that in this problem, the region of integration is a triangle so the limits of integration change when you interchange the order of integration. You might find it helpful to draw a picture of the region of integration to see how the limits change when the order of integration is switched.    "
 }
 ]
 
